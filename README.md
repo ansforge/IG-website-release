@@ -15,3 +15,6 @@ java -Dfile.encoding=UTF-8 -jar publisher.jar -go-publish -source /Users/nicolas
 ## execute this from the project folder -- i.e. why -source . 
 
 java -jar /Library/WebServer/Documents/FIG_ans-ig-release/publisher.jar -go-publish -source . -web /Library/WebServer/Documents/FIG_ans-ig-release/www -registry /Library/WebServer/Documents/FIG_ans-ig-release/ig-registry/fhir-ig-list.json -history /Library/WebServer/Documents/FIG_ans-ig-release/ig-history -templates /Library/WebServer/Documents/FIG_ans-ig-release/www/templates -temp /Library/WebServer/Documents/tmp
+
+
+git pull --recurse-submodules
