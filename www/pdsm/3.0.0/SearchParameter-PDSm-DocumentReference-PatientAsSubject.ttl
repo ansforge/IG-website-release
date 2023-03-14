@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PatientAsSubject> a fhir:SearchParameter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "PDSm-DocumentReference-PatientAsSubject"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: SearchParameter</b><a name=\"PDSm-DocumentReference-PatientAsSubject\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource SearchParameter &quot;PDSm-DocumentReference-PatientAsSubject&quot; </p></div><p><b>url</b>: <code>https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PatientAsSubject</code></p><p><b>version</b>: 3.0.0</p><p><b>name</b>: PDSm_DocumentReference_PatientAsSubject</p><p><b>derivedFrom</b>: <a href=\"http://hl7.org/fhir/SearchParameter/clinical-patient\">http://hl7.org/fhir/SearchParameter/clinical-patient</a></p><p><b>status</b>: active</p><p><b>date</b>: 2023-03-14 16:50:38+0100</p><p><b>publisher</b>: ANS</p><p><b>contact</b>: ANS: <a href=\"https://esante.gouv.fr\">https://esante.gouv.fr</a></p><p><b>description</b>: Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément patient.identifier</p><p><b>code</b>: patient</p><p><b>base</b>: DocumentReference</p><p><b>type</b>: reference</p><p><b>expression</b>: DocumentReference.patient</p><p><b>xpathUsage</b>: normal</p><p><b>multipleOr</b>: true</p><p><b>multipleAnd</b>: true</p><p><b>modifier</b>: missing, type, identifier</p><p><b>chain</b>: identifier</p></div>"
+  ]; # 
+  fhir:SearchParameter.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PatientAsSubject"]; # 
+  fhir:SearchParameter.version [ fhir:value "3.0.0"]; # 
+  fhir:SearchParameter.name [ fhir:value "PDSm_DocumentReference_PatientAsSubject"]; # 
+  fhir:SearchParameter.derivedFrom [
+     fhir:value "http://hl7.org/fhir/SearchParameter/clinical-patient";
+     fhir:link <http://hl7.org/fhir/SearchParameter/clinical-patient>
+  ]; # 
+  fhir:SearchParameter.status [ fhir:value "active"]; # 
+  fhir:SearchParameter.date [ fhir:value "2023-03-14T16:50:38+01:00"^^xsd:dateTime]; # 
+  fhir:SearchParameter.publisher [ fhir:value "ANS"]; # 
+  fhir:SearchParameter.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "ANS" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ]
+  ]; # 
+  fhir:SearchParameter.description [ fhir:value "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément patient.identifier"]; # 
+  fhir:SearchParameter.code [ fhir:value "patient"]; # 
+  fhir:SearchParameter.base [
+     fhir:value "DocumentReference";
+     fhir:index 0
+  ]; # 
+  fhir:SearchParameter.type [ fhir:value "reference"]; # 
+  fhir:SearchParameter.expression [ fhir:value "DocumentReference.patient"]; # 
+  fhir:SearchParameter.xpathUsage [ fhir:value "normal"]; # 
+  fhir:SearchParameter.multipleOr [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:SearchParameter.multipleAnd [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:SearchParameter.modifier [
+     fhir:value "missing";
+     fhir:index 0
+  ], [
+     fhir:value "type";
+     fhir:index 1
+  ], [
+     fhir:value "identifier";
+     fhir:index 2
+  ]; # 
+  fhir:SearchParameter.chain [
+     fhir:value "identifier";
+     fhir:index 0
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PatientAsSubject.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

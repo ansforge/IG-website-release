@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-isArchived> a fhir:SearchParameter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "PDSm-isArchived"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: SearchParameter</b><a name=\"PDSm-isArchived\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource SearchParameter &quot;PDSm-isArchived&quot; </p></div><p><b>url</b>: <code>https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-isArchived</code></p><p><b>version</b>: 3.0.0</p><p><b>name</b>: PDSm_isArchived</p><p><b>status</b>: active</p><p><b>date</b>: 2021-07-30</p><p><b>publisher</b>: ANS</p><p><b>contact</b>: ANS: <a href=\"https://esante.gouv.fr\">https://esante.gouv.fr</a></p><p><b>description</b>: Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère derecherche l'élément isARchived qui permet distinguer les lots de soumission et les fiches archivés des actives.</p><p><b>code</b>: isArchived</p><p><b>base</b>: DocumentReference, List</p><p><b>type</b>: token</p><p><b>expression</b>: (extension('http://esante.gouv.fr/cisis/fhir/StructureDefinition/PDSm_isArchived').value as Boolean)</p></div>"
+  ]; # 
+  fhir:SearchParameter.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-isArchived"]; # 
+  fhir:SearchParameter.version [ fhir:value "3.0.0"]; # 
+  fhir:SearchParameter.name [ fhir:value "PDSm_isArchived"]; # 
+  fhir:SearchParameter.status [ fhir:value "active"]; # 
+  fhir:SearchParameter.date [ fhir:value "2021-07-30"^^xsd:date]; # 
+  fhir:SearchParameter.publisher [ fhir:value "ANS"]; # 
+  fhir:SearchParameter.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "ANS" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ]
+  ]; # 
+  fhir:SearchParameter.description [ fhir:value "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère derecherche l'élément isARchived qui permet distinguer les lots de soumission et les fiches archivés des actives."]; # 
+  fhir:SearchParameter.code [ fhir:value "isArchived"]; # 
+  fhir:SearchParameter.base [
+     fhir:value "DocumentReference";
+     fhir:index 0
+  ], [
+     fhir:value "List";
+     fhir:index 1
+  ]; # 
+  fhir:SearchParameter.type [ fhir:value "token"]; # 
+  fhir:SearchParameter.expression [ fhir:value "(extension('http://esante.gouv.fr/cisis/fhir/StructureDefinition/PDSm_isArchived').value as Boolean)"] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-isArchived.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
