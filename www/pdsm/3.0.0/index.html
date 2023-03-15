@@ -290,10 +290,10 @@ Ce volet met en place l’option du profil MHD « Comprehensive Metadata » qui 
 <p>Deux sources seront utilisées dans le cadre de ce volet :</p>
 <ul>
   <li>
-    <p>Les profils FHIR « FrPatient », « FrPractitioner » et « FrOrganization » publiés par HL7 France sont utilisés dans ce volet. Les présentes spécifications se basent sur les profils du package <a href="https://registry.fhir.org/package/hl7-france-fhir.administrative%7C11.2021.1">hl7-france-fhir.administrative11.2021.1</a>.</p>
+    <p>Les profils FHIR « FrPatient », « FrPractitioner » et « FrOrganization » publiés par HL7 France sont utilisés dans ce volet. Les présentes spécifications se basent sur les profils du package hl7.fhir.fr.core 1.1.0.</p>
   </li>
   <li>
-    <p>Dans le cadre de l’annuaire santé, l’ANS met à disposition un service national de publication des données des professionnels et des structures au format FHIR5; deux profils de l’annuaire santé, à savoir « PractitionerRoleProfessionalRoleRASS », « PractitionerRoleOrganizationalRoleRASS » sont utilisés pour le cas d’usage cahier de liaison. Les présentes spécifications se basent sur les profils du package <a href="https://simplifier.net/packages/ans.annuaire.fhir.r4/0.2.0">ANS.annuaire.fhir.r4 0.2.0</a>.</p>
+    <p>Dans le cadre de l’annuaire santé, l’ANS met à disposition un service national de publication des données des professionnels et des structures au format FHIR5; deux profils de l’annuaire santé, à savoir « PractitionerRoleProfessionalRoleRASS », « PractitionerRoleOrganizationalRoleRASS » sont utilisés pour le cas d’usage cahier de liaison. Les présentes spécifications se basent sur les profils du package ANS.annuaire.fhir.r4 0.2.0.</p>
   </li>
 </ul>
 
@@ -306,25 +306,25 @@ Pour les ressources et types de données non mentionnés dans ce tableau, le pro
 <ul>
   <li>3 profils pour le flux d’alimentation :
     <ul>
-      <li><a name="l526">​</a>1) la fiche document <a href="StructureDefinition-PDSmComprehensiveDocumentReference.html">PDSm_ComprehensiveDocumentReference</a>,</li>
-      <li><a name="l532">​</a>2) le classeur <a href="StructureDefinition-PDSmFolderComprehensive.html">PDSm_FolderComprehensive</a>,</li>
-      <li><a name="l538">​</a>3) le Lot de soumission <a href="StructureDefinition-PDSmSubmissionSetComprehensive.html">PDSm_SubmissionSetComprehensive</a></li>
+      <li>1) la fiche document <a href="StructureDefinition-pdsm-comprehensive-document-reference.html">PDSm_ComprehensiveDocumentReference</a>,</li>
+      <li>2) le classeur <a href="StructureDefinition-pdsm-folder-comprehensive.html">PDSm_FolderComprehensive</a>,</li>
+      <li>3) le Lot de soumission <a href="StructureDefinition-pdsm-submissionset-comprehensive.html">PDSm_SubmissionSetComprehensive</a></li>
     </ul>
   </li>
   <li>1 profil pour le flux d’alimentation simplifié :
     <ul>
-      <li><a name="l549">​</a>1) la fiche document <a href="StructureDefinition-PDSm-SimplifiedPublish.html">PDSm_SimplifiedPublish</a>,</li>
+      <li>1) la fiche document <a href="StructureDefinition-pdsm-simplified-publish.html">PDSm_SimplifiedPublish</a>,</li>
     </ul>
   </li>
   <li>1 profil Bundle pour encapsuler l’envoi des documents :
     <ul>
-      <li><a name="l561">​</a><a href="StructureDefinition-PDSmComprehensiveProvideDocumentBundle.html">PDSm_ComprehensiveProvideDocumentBundle</a></li>
+      <li><a href="StructureDefinition-pdsm-comprehensive-provide-document-bundle.html">PDSm_ComprehensiveProvideDocumentBundle</a></li>
     </ul>
   </li>
   <li>2 profils Bundle pour encapsuler les résultats de recherche :
     <ul>
-      <li><a name="l571">​</a>1) par fiche <a href="StructureDefinition-PDSmFindDocumentReferencesComprehensiveResponse.html">PDSm_FindDocumentReferencesComprehensiveResponse</a>,</li>
-      <li><a name="l577">​</a>2) par lot de soumission <a href="StructureDefinition-PDSmFindListsResponse.html">PDSm_FindListsResponse</a></li>
+      <li>1) par fiche <a href="StructureDefinition-pdsm-find-documentreferences-comprehensive-response.html">PDSm_FindDocumentReferencesComprehensiveResponse</a>,</li>
+      <li>2) par lot de soumission <a href="StructureDefinition-pdsm-find-lists-response.html">PDSm_FindListsResponse</a></li>
     </ul>
   </li>
 </ul>
@@ -342,42 +342,42 @@ Pour les ressources et types de données non mentionnés dans ce tableau, le pro
   <tbody>
     <tr>
       <td>Bundle</td>
-      <td><a name="l615">​</a><a href="StructureDefinition-PDSmComprehensiveProvideDocumentBundle.html">PDSm_ComprehensiveProvideDocumentBundle</a></td>
-      <td><a name="l619">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html">ComprehensiveProvideDocumentBundle</a> défini dans le profil MHD</td>
+      <td>PDSm_ComprehensiveProvideDocumentBundle</td>
+      <td><a name="l612">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.Comprehensive.ProvideBundle.html">ComprehensiveProvideDocumentBundle</a> défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>Bundle</td>
-      <td><a name="l631">​</a><a href="StructureDefinition-PDSmFindDocumentReferencesComprehensiveResponse.html">PDSm_FindDocumentReferencesComprehensiveResponse</a></td>
-      <td><a name="l635">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html">FindDocumentReferencesComprehensiveResponse</a> défini dans le profil MHD</td>
+      <td>PDSm_FindDocumentReferencesComprehensiveResponse</td>
+      <td><a name="l627">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage.html">FindDocumentReferencesComprehensiveResponse</a> défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>Bundle</td>
-      <td><a name="l647">​</a><a href="StructureDefinition-PDSmFindListsResponse.html">PDSm_FindListsResponse</a></td>
-      <td><a name="l651">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.FindDocumentListsResponseMessage.html">FindListsResponse</a> défini dans le profil MHD</td>
+      <td>PDSm_FindListsResponse</td>
+      <td><a name="l642">​</a>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.FindDocumentListsResponseMessage.html">FindListsResponse</a> défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>Bundle</td>
-      <td><a name="l663">​</a><a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.ProvideDocumentBundleResponse.html">ProvideDocumentBundleResponse</a></td>
+      <td><a name="l654">​</a><a href="https://profiles.ihe.net/ITI/MHD/4.0.1/StructureDefinition-IHE.MHD.ProvideDocumentBundleResponse.html">ProvideDocumentBundleResponse</a></td>
       <td>Profil défini dans le profil MHD Version 4.0.1</td>
     </tr>
     <tr>
       <td>DocumentReference</td>
-      <td><a name="l676">​</a><a href="StructureDefinition-PDSmComprehensiveDocumentReference.html">PDSm_ComprehensiveDocumentReference</a></td>
+      <td>PDSm_ComprehensiveDocumentReference</td>
       <td>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html">ComprehensiveDocumentReference</a> défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>DocumentReference</td>
-      <td><a name="l692">​</a><a href="StructureDefinition-PDSm-SimplifiedPublish.html">PDSm_SimplifiedPublish</a></td>
+      <td>PDSm_SimplifiedPublish</td>
       <td>Profil défini dans ce volet en s’inspirant du flux simplifié défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>List</td>
-      <td><a name="l705">​</a><a href="StructureDefinition-PDSmSubmissionSetComprehensive.html">PDSm_SubmissionSetComprehensive&nbsp;</a></td>
+      <td>PDSm_SubmissionSetComprehensive</td>
       <td>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.SubmissionSet.html">SubmissionSetComprehensive</a> défini dans le profil MHD</td>
     </tr>
     <tr>
       <td>List</td>
-      <td><a name="l721">​</a><a href="StructureDefinition-PDSmFolderComprehensive.html">PDSm_FolderComprehensive</a></td>
+      <td>PDSm_FolderComprehensive</td>
       <td>Profil défini dans ce volet et héritant de <a href="https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.Folder.html">FolderComprehensive</a> défini dans le profil MHD</td>
     </tr>
     <tr>
@@ -509,12 +509,12 @@ Pour les ressources et types de données non mentionnés dans ce tableau, le pro
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 15, 2023 12:08+0100">2023-03-15</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 15, 2023 13:45+0100">2023-03-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html" target="_blank">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" href="https://github.com/ansforge/FIG_ans-ig-PDSm/issues/new" target="_blank">New Issue</a>
+                  | <a style="color: #81BEF7" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html" target="_blank">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new" target="_blank">New Issue</a>
                 
 
           
