@@ -5,380 +5,326 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ConsommateurDeDocuments> a fhir:CapabilityStatement;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "PDSm-ConsommateurDeDocuments"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm_ConsommateurDeDocuments</h2><div><p>Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent.</p>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td><div><p>Recherche de documents de santé et consultation de documents d'intérêt</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>List</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Binary</td><td><a href=\"http://hl7.org/fhir/StructureDefinition/Binary\">http://hl7.org/fhir/StructureDefinition/Binary</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>"
-  ]; # 
-  fhir:CapabilityStatement.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ConsommateurDeDocuments"]; # 
-  fhir:CapabilityStatement.version [ fhir:value "3.0.0"]; # 
-  fhir:CapabilityStatement.name [ fhir:value "PDSm_ConsommateurDeDocuments"]; # 
-  fhir:CapabilityStatement.title [ fhir:value "CI-SIS Partage-De-Documents-De-Sante - ConsommateurDeDocuments"]; # 
-  fhir:CapabilityStatement.status [ fhir:value "active"]; # 
-  fhir:CapabilityStatement.experimental [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:CapabilityStatement.date [ fhir:value "2021-07-30T14:32:30+02:00"^^xsd:dateTime]; # 
-  fhir:CapabilityStatement.publisher [ fhir:value "ANS"]; # 
-  fhir:CapabilityStatement.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "ANS" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.description [ fhir:value "Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent."]; # 
-  fhir:CapabilityStatement.kind [ fhir:value "requirements"]; # 
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.0"]; # 
-  fhir:CapabilityStatement.format [
-     fhir:value "xml";
-     fhir:index 0
-  ], [
-     fhir:value "json";
-     fhir:index 1
-  ]; # 
-  fhir:CapabilityStatement.implementationGuide [
-     fhir:value "http://esante.gouv.fr/ci-sis/fhir/ImplementationGuides/CI-SIS.PartageDeDocumentsDeSante";
-     fhir:index 0;
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ConsommateurDeDocuments> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDSm-ConsommateurDeDocuments"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm_ConsommateurDeDocuments</h2><div><p>Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent.</p>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td><div><p>Recherche de documents de santé et consultation de documents d'intérêt</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>List</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Binary</td><td><a href=\"http://hl7.org/fhir/StructureDefinition/Binary\">http://hl7.org/fhir/StructureDefinition/Binary</a></td><td>y</td><td></td><td></td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ConsommateurDeDocuments"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.0.0"] ; # 
+  fhir:name [ fhir:v "PDSm_ConsommateurDeDocuments"] ; # 
+  fhir:title [ fhir:v "CI-SIS Partage-De-Documents-De-Sante - ConsommateurDeDocuments"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2021-07-30T14:32:30+02:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent."] ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.0"] ; # 
+  fhir:format ( [ fhir:v "xml"] [ fhir:v "json"] ) ; # 
+  fhir:implementationGuide ( [
+     fhir:v "http://esante.gouv.fr/ci-sis/fhir/ImplementationGuides/CI-SIS.PartageDeDocumentsDeSante"^^xsd:anyURI ;
      fhir:link <http://esante.gouv.fr/ci-sis/fhir/ImplementationGuides/CI-SIS.PartageDeDocumentsDeSante>
-  ]; # 
-  fhir:CapabilityStatement.rest [
-     fhir:index 0;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "client" ];
-     fhir:CapabilityStatement.rest.documentation [ fhir:value "Recherche de documents de santé et consultation de documents d'intérêt" ];
-     fhir:CapabilityStatement.rest.security [
-       fhir:CapabilityStatement.rest.security.cors [ fhir:value "false"^^xsd:boolean ];
-       fhir:CapabilityStatement.rest.security.description [ fhir:value "L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)" ]
-     ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "List" ];
-       fhir:CapabilityStatement.rest.resource.profile [
-         fhir:value "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive";
+  ] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "client" ] ;
+     fhir:documentation [ fhir:v "Recherche de documents de santé et consultation de documents d'intérêt" ] ;
+     fhir:security [
+       fhir:cors [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:description [ fhir:v "L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)" ]
+     ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "List" ] ;
+       fhir:profile [
+         fhir:v "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive"^^xsd:anyURI ;
          fhir:link <http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_SubmissionSetComprehensive>
-       ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/clinical-date";
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-date"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/clinical-date>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la date et heure de soumission." ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "DesignationType" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType";
+         ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Représente la date et heure de soumission." ]
+       ] [
+         fhir:name [ fhir:v "DesignationType" ] ;
+         fhir:definition [
+           fhir:v "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType"^^xsd:anyURI ;
            fhir:link <http://profiles.ihe.net/ITI/MHD/SearchParameter/List-DesignationType>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le type d’activité associé à l’événement clinique ayant abouti à la constitution du lot de soumission." ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/clinical-identifier";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le type d’activité associé à l’événement clinique ayant abouti à la constitution du lot de soumission." ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-identifier"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/clinical-identifier>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant." ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/List-status";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant." ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/List-status"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/List-status>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le statut du lot de soumission." ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_isArchived" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le statut du lot de soumission." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_isArchived" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "permet distinguer les lots de soumission et les fiches archivés des actifs." ]
-       ], [
-         fhir:index 5;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "title" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/List-title";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "permet distinguer les lots de soumission et les fiches archivés des actifs." ]
+       ] [
+         fhir:name [ fhir:v "title" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/List-title"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/List-title>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "string" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le titre du lot de soumission." ]
-       ], [
-         fhir:index 6;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "SourceId" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId";
+         ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Représente le titre du lot de soumission." ]
+       ] [
+         fhir:name [ fhir:v "SourceId" ] ;
+         fhir:definition [
+           fhir:v "http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId"^^xsd:anyURI ;
            fhir:link <http://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l’identifiant unique global du système émetteur du lot de soumission." ]
-       ], [
-         fhir:index 7;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "source" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/List-source";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l’identifiant unique global du système émetteur du lot de soumission." ]
+       ] [
+         fhir:name [ fhir:v "source" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/List-source"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/List-source>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l’auteur du lot de soumission, quand l'auteur est de type patient, practitionerrole ou device." ]
-       ], [
-         fhir:index 8;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_authorOrg" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_authorOrg";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l’auteur du lot de soumission, quand l'auteur est de type patient, practitionerrole ou device." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_authorOrg" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_authorOrg"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_authorOrg>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l’auteur du lot de soumission, quand l'auteur est de type organization." ]
-       ], [
-         fhir:index 9;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "code" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/clinical-code";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l’auteur du lot de soumission, quand l'auteur est de type organization." ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-code"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/clinical-code>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le but du lot de soumission." ]
-       ], [
-         fhir:index 10;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_List_PatientAsSource" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSource";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le but du lot de soumission." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_List_PatientAsSource" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSource"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSource>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Recherche sur les éléments source:Patient.given et source:Patient.family." ]
-       ], [
-         fhir:index 11;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_List_PatientAsSubject" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSubject";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche sur les éléments source:Patient.given et source:Patient.family." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_List_PatientAsSubject" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSubject"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PatientAsSubject>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Recherche sur l'élément subject:Patient.identifier." ]
-       ], [
-         fhir:index 12;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_List_PractitionerRoleAsSource" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PractitionerRoleAsSource";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche sur l'élément subject:Patient.identifier." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_List_PractitionerRoleAsSource" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PractitionerRoleAsSource"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_List_PractitionerRoleAsSource>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Recherche sur les éléments source:PractitionerRole.practitioner:Practitioner.given et source:PractitionerRole.practitioner:Practitioner.family." ]
-       ]
-     ], [
-       fhir:index 1;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "DocumentReference" ];
-       fhir:CapabilityStatement.rest.resource.profile [
-         fhir:value "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Recherche sur les éléments source:PractitionerRole.practitioner:Practitioner.given et source:PractitionerRole.practitioner:Practitioner.family." ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "DocumentReference" ] ;
+       fhir:profile [
+         fhir:v "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference"^^xsd:anyURI ;
          fhir:link <http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference>
-       ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "type" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/clinical-type";
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-type"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/clinical-type>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le type du document." ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "setting" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-setting";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le type du document." ]
+       ] [
+         fhir:name [ fhir:v "setting" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-setting"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-setting>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le cadre d’exercice de l’acte qui a engendré la création du document" ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/clinical-identifier";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le cadre d’exercice de l’acte qui a engendré la création du document" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/clinical-identifier"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/clinical-identifier>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant unique d'une fiche d'un document." ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "creation" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant unique d'une fiche d'un document." ]
+       ] [
+         fhir:name [ fhir:v "creation" ] ;
+         fhir:definition [
+           fhir:v "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"^^xsd:anyURI ;
            fhir:link <http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la date et l'heure de la création du document." ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "security-label" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-security-label";
+         ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Représente la date et l'heure de la création du document." ]
+       ] [
+         fhir:name [ fhir:v "security-label" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-security-label"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-security-label>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Contient les informations définissant le niveau de confidentialité d'un document." ]
-       ], [
-         fhir:index 5;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-status";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Contient les informations définissant le niveau de confidentialité d'un document." ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-status"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-status>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente le statut de la fiche d'un document." ]
-       ], [
-         fhir:index 6;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_isArchived" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente le statut de la fiche d'un document." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_isArchived" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_isArchived>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "permet distinguer les lots de soumission et les fiches archivés des actifs." ]
-       ], [
-         fhir:index 7;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_period-start" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-start";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "permet distinguer les lots de soumission et les fiches archivés des actifs." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_period-start" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-start"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-start>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la date de début de l’acte de référence." ]
-       ], [
-         fhir:index 8;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_period-end" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-end";
+         ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Représente la date de début de l’acte de référence." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_period-end" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-end"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_period-end>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la date de fin de l’acte de référence." ]
-       ], [
-         fhir:index 9;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "format" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-format";
+         ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Représente la date de fin de l’acte de référence." ]
+       ] [
+         fhir:name [ fhir:v "format" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-format"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-format>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Format technique détaillé du document." ]
-       ], [
-         fhir:index 10;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "category" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-category";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Format technique détaillé du document." ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-category"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-category>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la classe du document (compte rendu, imagerie médicale, traitement, certificat, ....)." ]
-       ], [
-         fhir:index 11;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "relatesto" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-relatesto";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Représente la classe du document (compte rendu, imagerie médicale, traitement, certificat, ....)." ]
+       ] [
+         fhir:name [ fhir:v "relatesto" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-relatesto"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-relatesto>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant d'une association entre deux fiches." ]
-       ], [
-         fhir:index 12;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "event" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-event";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant d'une association entre deux fiches." ]
+       ] [
+         fhir:name [ fhir:v "event" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-event"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-event>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Actes et pathologies en rapport avec le document." ]
-       ], [
-         fhir:index 13;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "period" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-period";
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Actes et pathologies en rapport avec le document." ]
+       ] [
+         fhir:name [ fhir:v "period" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-period"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-period>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente la période." ]
-       ], [
-         fhir:index 14;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_PatientAsSubject" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsSubject";
+         ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Représente la période." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_PatientAsSubject" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsSubject"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsSubject>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant du patient qui est le sujet du document." ]
-       ], [
-         fhir:index 15;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_DeviceAsAuthor" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_DeviceAsAuthor";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant du patient qui est le sujet du document." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_DeviceAsAuthor" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_DeviceAsAuthor"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_DeviceAsAuthor>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant du dispositif médical qui est l'auteur du document." ]
-       ], [
-         fhir:index 16;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_PatientAsAuthor" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsAuthor";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant du dispositif médical qui est l'auteur du document." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_PatientAsAuthor" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsAuthor"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PatientAsAuthor>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant, le nom, le prénom du patient qui est l'auteur du document." ]
-       ], [
-         fhir:index 17;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "PDSm_DocumentReference_PractitionerRoleAsAuthor" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.definition [
-           fhir:value "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PractitionerRoleAsAuthor";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant, le nom, le prénom du patient qui est l'auteur du document." ]
+       ] [
+         fhir:name [ fhir:v "PDSm_DocumentReference_PractitionerRoleAsAuthor" ] ;
+         fhir:definition [
+           fhir:v "http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PractitionerRoleAsAuthor"^^xsd:anyURI ;
            fhir:link <http://esante.gouv.fr/ci-sis/fhir/SearchParameter/PDSm_DocumentReference_PractitionerRoleAsAuthor>
-         ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "reference" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.documentation [ fhir:value "Représente l'identifiant, le nom, le prénom du praticien dans sa situation d'exercice qui est l'auteur du document." ]
-       ]
-     ], [
-       fhir:index 2;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Binary" ];
-       fhir:CapabilityStatement.rest.resource.profile [
-         fhir:value "http://hl7.org/fhir/StructureDefinition/Binary";
+         ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Représente l'identifiant, le nom, le prénom du praticien dans sa situation d'exercice qui est l'auteur du document." ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Binary" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Binary"^^xsd:anyURI ;
          fhir:link <http://hl7.org/fhir/StructureDefinition/Binary>
-       ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ConsommateurDeDocuments.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] )
+     ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

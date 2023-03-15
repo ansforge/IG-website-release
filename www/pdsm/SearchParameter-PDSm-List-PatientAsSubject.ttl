@@ -5,61 +5,39 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject> a fhir:SearchParameter;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "PDSm-List-PatientAsSubject"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: SearchParameter</b><a name=\"PDSm-List-PatientAsSubject\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource SearchParameter &quot;PDSm-List-PatientAsSubject&quot; </p></div><p><b>url</b>: <code>https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject</code></p><p><b>version</b>: 3.0.0</p><p><b>name</b>: PDSm_List_PatientAsSubject</p><p><b>derivedFrom</b>: <a href=\"http://hl7.org/fhir/SearchParameter/clinical-patient\">http://hl7.org/fhir/SearchParameter/clinical-patient</a></p><p><b>status</b>: active</p><p><b>date</b>: 2021-07-30</p><p><b>publisher</b>: ANS</p><p><b>contact</b>: ANS: <a href=\"https://esante.gouv.fr\">https://esante.gouv.fr</a></p><p><b>description</b>: Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément subject:Patient.identifier</p><p><b>code</b>: patient</p><p><b>base</b>: List</p><p><b>type</b>: reference</p><p><b>expression</b>: List.subject.where(resolve() is Patient)</p><p><b>multipleOr</b>: true</p><p><b>multipleAnd</b>: true</p><p><b>modifier</b>: missing, type, identifier</p><p><b>chain</b>: identifier</p></div>"
-  ]; # 
-  fhir:SearchParameter.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject"]; # 
-  fhir:SearchParameter.version [ fhir:value "3.0.0"]; # 
-  fhir:SearchParameter.name [ fhir:value "PDSm_List_PatientAsSubject"]; # 
-  fhir:SearchParameter.derivedFrom [
-     fhir:value "http://hl7.org/fhir/SearchParameter/clinical-patient";
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDSm-List-PatientAsSubject"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm_List_PatientAsSubject</h2><p>Parameter <code>patient</code>:<code>reference</code></p><div><p>Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément subject:Patient.identifier</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a></td></tr><tr><td>Expression</td><td><code>List.subject.where(resolve() is Patient)</code></td></tr><tr><td>Multiples</td><td>The parameter can repeat (and) and can have repeating values (or)</td></tr><tr><td>Modifiers</td><td>Allowed: missing, type, identifier</td></tr><tr><td>Chains</td><td>Allowed: identifier</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.0.0"] ; # 
+  fhir:name [ fhir:v "PDSm_List_PatientAsSubject"] ; # 
+  fhir:derivedFrom [
+     fhir:v "http://hl7.org/fhir/SearchParameter/clinical-patient"^^xsd:anyURI ;
      fhir:link <http://hl7.org/fhir/SearchParameter/clinical-patient>
-  ]; # 
-  fhir:SearchParameter.status [ fhir:value "active"]; # 
-  fhir:SearchParameter.date [ fhir:value "2021-07-30"^^xsd:date]; # 
-  fhir:SearchParameter.publisher [ fhir:value "ANS"]; # 
-  fhir:SearchParameter.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "ANS" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
-     ]
-  ]; # 
-  fhir:SearchParameter.description [ fhir:value "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément subject:Patient.identifier"]; # 
-  fhir:SearchParameter.code [ fhir:value "patient"]; # 
-  fhir:SearchParameter.base [
-     fhir:value "List";
-     fhir:index 0
-  ]; # 
-  fhir:SearchParameter.type [ fhir:value "reference"]; # 
-  fhir:SearchParameter.expression [ fhir:value "List.subject.where(resolve() is Patient)"]; # 
-  fhir:SearchParameter.multipleOr [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:SearchParameter.multipleAnd [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:SearchParameter.modifier [
-     fhir:value "missing";
-     fhir:index 0
-  ], [
-     fhir:value "type";
-     fhir:index 1
-  ], [
-     fhir:value "identifier";
-     fhir:index 2
-  ]; # 
-  fhir:SearchParameter.chain [
-     fhir:value "identifier";
-     fhir:index 0
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-PatientAsSubject.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2021-07-30"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément subject:Patient.identifier"] ; # 
+  fhir:code [ fhir:v "patient"] ; # 
+  fhir:base ( [ fhir:v "List"] ) ; # 
+  fhir:type [ fhir:v "reference"] ; # 
+  fhir:expression [ fhir:v "List.subject.where(resolve() is Patient)"] ; # 
+  fhir:multipleOr [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:multipleAnd [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:modifier ( [ fhir:v "missing"] [ fhir:v "type"] [ fhir:v "identifier"] ) ; # 
+  fhir:chain ( [ fhir:v "identifier"] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -5,72 +5,55 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments> a fhir:CapabilityStatement;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "PDSm-ProducteurDeDocuments"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm-ProducteurDeDocuments</h2><div><p>Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document.</p>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td><div><p>Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche</p>\n</div></td></tr><tr><td>Transaction</td><td>y</td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"PATCH a new resource version (patch interaction)\">Patch</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>DocumentReference</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference</a></td><td></td><td></td><td></td><td>y</td><td></td></tr></table></div>"
-  ]; # 
-  fhir:CapabilityStatement.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments"]; # 
-  fhir:CapabilityStatement.version [ fhir:value "3.0.0"]; # 
-  fhir:CapabilityStatement.name [ fhir:value "PDSm-ProducteurDeDocuments"]; # 
-  fhir:CapabilityStatement.title [ fhir:value "CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments"]; # 
-  fhir:CapabilityStatement.status [ fhir:value "active"]; # 
-  fhir:CapabilityStatement.experimental [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:CapabilityStatement.date [ fhir:value "2021-07-30T14:32:30+02:00"^^xsd:dateTime]; # 
-  fhir:CapabilityStatement.publisher [ fhir:value "ANS"]; # 
-  fhir:CapabilityStatement.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "ANS" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.description [ fhir:value "Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document."]; # 
-  fhir:CapabilityStatement.kind [ fhir:value "requirements"]; # 
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.0"]; # 
-  fhir:CapabilityStatement.format [
-     fhir:value "xml";
-     fhir:index 0
-  ], [
-     fhir:value "json";
-     fhir:index 1
-  ]; # 
-  fhir:CapabilityStatement.rest [
-     fhir:index 0;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "client" ];
-     fhir:CapabilityStatement.rest.documentation [ fhir:value "Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche" ];
-     fhir:CapabilityStatement.rest.security [
-       fhir:CapabilityStatement.rest.security.cors [ fhir:value "false"^^xsd:boolean ];
-       fhir:CapabilityStatement.rest.security.description [ fhir:value "L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)" ]
-     ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "DocumentReference" ];
-       fhir:CapabilityStatement.rest.resource.profile [
-         fhir:value "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference";
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDSm-ProducteurDeDocuments"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm-ProducteurDeDocuments</h2><div><p>Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document.</p>\n</div><table><tr><td>Mode</td><td>CLIENT</td></tr><tr><td>Description</td><td><div><p>Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche</p>\n</div></td></tr><tr><td>Transaction</td><td>y</td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"PATCH a new resource version (patch interaction)\">Patch</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>DocumentReference</td><td><a href=\"http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference\">http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference</a></td><td></td><td></td><td></td><td>y</td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.0.0"] ; # 
+  fhir:name [ fhir:v "PDSm-ProducteurDeDocuments"] ; # 
+  fhir:title [ fhir:v "CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2021-07-30T14:32:30+02:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document."] ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.0"] ; # 
+  fhir:format ( [ fhir:v "xml"] [ fhir:v "json"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "client" ] ;
+     fhir:documentation [ fhir:v "Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche" ] ;
+     fhir:security [
+       fhir:cors [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:description [ fhir:v "L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)" ]
+     ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "DocumentReference" ] ;
+       fhir:profile [
+         fhir:v "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference"^^xsd:anyURI ;
          fhir:link <http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveDocumentReference>
-       ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "patch" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.conditionalUpdate [ fhir:value "true"^^xsd:boolean ]
-     ];
-     fhir:CapabilityStatement.rest.interaction [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.interaction.code [ fhir:value "transaction" ];
-       fhir:CapabilityStatement.rest.interaction.documentation [ fhir:value "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveProvideDocumentBundle" ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "patch" ]
+       ] ) ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "transaction" ] ;
+       fhir:documentation [ fhir:v "http://esante.gouv.fr/ci-sis/fhir/StructureDefinition/PDSm_ComprehensiveProvideDocumentBundle" ]
+     ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

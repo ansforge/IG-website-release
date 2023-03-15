@@ -5,68 +5,40 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor> a fhir:SearchParameter;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "PDSm-DocumentReference-PractitionerRoleAsAuthor"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: SearchParameter</b><a name=\"PDSm-DocumentReference-PractitionerRoleAsAuthor\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource SearchParameter &quot;PDSm-DocumentReference-PractitionerRoleAsAuthor&quot; </p></div><p><b>url</b>: <code>https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor</code></p><p><b>version</b>: 3.0.0</p><p><b>name</b>: PDSm_DocumentReference_PractitionerRoleAsAuthor</p><p><b>derivedFrom</b>: <a href=\"http://hl7.org/fhir/SearchParameter/DocumentReference-author\">http://hl7.org/fhir/SearchParameter/DocumentReference-author</a></p><p><b>status</b>: active</p><p><b>date</b>: 2021-10-21 14:14:41+0000</p><p><b>publisher</b>: ANS</p><p><b>contact</b>: ANS: <a href=\"https://esante.gouv.fr\">https://esante.gouv.fr</a></p><p><b>description</b>: Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément author:PractitionerRole.practitioner:Practitioner.identifier, author:PractitionerRole.practitioner:Practitioner.given et author:PractitionerRole.practitioner:Practitioner.family</p><p><b>code</b>: author</p><p><b>base</b>: DocumentReference</p><p><b>type</b>: reference</p><p><b>expression</b>: DocumentReference.author</p><p><b>xpathUsage</b>: normal</p><p><b>target</b>: PractitionerRole</p><p><b>multipleOr</b>: true</p><p><b>multipleAnd</b>: true</p><p><b>chain</b>: partOf.practitioner.identifier, partOf.practitioner.given, partOf.practitioner.family, partOf.givenEx, partOf.familyEx</p></div>"
-  ]; # 
-  fhir:SearchParameter.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor"]; # 
-  fhir:SearchParameter.version [ fhir:value "3.0.0"]; # 
-  fhir:SearchParameter.name [ fhir:value "PDSm_DocumentReference_PractitionerRoleAsAuthor"]; # 
-  fhir:SearchParameter.derivedFrom [
-     fhir:value "http://hl7.org/fhir/SearchParameter/DocumentReference-author";
+<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDSm-DocumentReference-PractitionerRoleAsAuthor"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm_DocumentReference_PractitionerRoleAsAuthor</h2><p>Parameter <code>author</code>:<code>reference</code></p><div><p>Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément author:PractitionerRole.practitioner:Practitioner.identifier, author:PractitionerRole.practitioner:Practitioner.given et author:PractitionerRole.practitioner:Practitioner.family</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/documentreference.html\">DocumentReference</a></td></tr><tr><td>Expression</td><td><code>DocumentReference.author</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Target Resources</td><td><a href=\"http://hl7.org/fhir/R4/practitionerrole.html\">PractitionerRole</a></td></tr><tr><td>Multiples</td><td>The parameter can repeat (and) and can have repeating values (or)</td></tr><tr><td>Chains</td><td>Allowed: partOf.practitioner.identifier, partOf.practitioner.given, partOf.practitioner.family, partOf.givenEx, partOf.familyEx</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.0.0"] ; # 
+  fhir:name [ fhir:v "PDSm_DocumentReference_PractitionerRoleAsAuthor"] ; # 
+  fhir:derivedFrom [
+     fhir:v "http://hl7.org/fhir/SearchParameter/DocumentReference-author"^^xsd:anyURI ;
      fhir:link <http://hl7.org/fhir/SearchParameter/DocumentReference-author>
-  ]; # 
-  fhir:SearchParameter.status [ fhir:value "active"]; # 
-  fhir:SearchParameter.date [ fhir:value "2021-10-21T14:14:41.3948746+00:00"^^xsd:dateTime]; # 
-  fhir:SearchParameter.publisher [ fhir:value "ANS"]; # 
-  fhir:SearchParameter.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "ANS" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
-     ]
-  ]; # 
-  fhir:SearchParameter.description [ fhir:value "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément author:PractitionerRole.practitioner:Practitioner.identifier, author:PractitionerRole.practitioner:Practitioner.given et author:PractitionerRole.practitioner:Practitioner.family"]; # 
-  fhir:SearchParameter.code [ fhir:value "author"]; # 
-  fhir:SearchParameter.base [
-     fhir:value "DocumentReference";
-     fhir:index 0
-  ]; # 
-  fhir:SearchParameter.type [ fhir:value "reference"]; # 
-  fhir:SearchParameter.expression [ fhir:value "DocumentReference.author"]; # 
-  fhir:SearchParameter.xpathUsage [ fhir:value "normal"]; # 
-  fhir:SearchParameter.target [
-     fhir:value "PractitionerRole";
-     fhir:index 0
-  ]; # 
-  fhir:SearchParameter.multipleOr [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:SearchParameter.multipleAnd [ fhir:value "true"^^xsd:boolean]; # 
-  fhir:SearchParameter.chain [
-     fhir:value "partOf.practitioner.identifier";
-     fhir:index 0
-  ], [
-     fhir:value "partOf.practitioner.given";
-     fhir:index 1
-  ], [
-     fhir:value "partOf.practitioner.family";
-     fhir:index 2
-  ], [
-     fhir:value "partOf.givenEx";
-     fhir:index 3
-  ], [
-     fhir:value "partOf.familyEx";
-     fhir:index 4
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2021-10-21T14:14:41.3948746+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément author:PractitionerRole.practitioner:Practitioner.identifier, author:PractitionerRole.practitioner:Practitioner.given et author:PractitionerRole.practitioner:Practitioner.family"] ; # 
+  fhir:code [ fhir:v "author"] ; # 
+  fhir:base ( [ fhir:v "DocumentReference"] ) ; # 
+  fhir:type [ fhir:v "reference"] ; # 
+  fhir:expression [ fhir:v "DocumentReference.author"] ; # 
+  fhir:xpathUsage [ fhir:v "normal"] ; # 
+  fhir:target ( [ fhir:v "PractitionerRole"] ) ; # 
+  fhir:multipleOr [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:multipleAnd [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:chain ( [ fhir:v "partOf.practitioner.identifier"] [ fhir:v "partOf.practitioner.given"] [ fhir:v "partOf.practitioner.family"] [ fhir:v "partOf.givenEx"] [ fhir:v "partOf.familyEx"] ) . # 
 
 # -------------------------------------------------------------------------------------
 
