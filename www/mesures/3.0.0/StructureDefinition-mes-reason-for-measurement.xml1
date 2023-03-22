@@ -14,7 +14,7 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
   <version value="3.0.0"/>
   <name value="MesReasonForMeasurement"/>
   <status value="active"/>
-  <date value="2023-03-16T15:26:47+01:00"/>
+  <date value="2023-03-22T16:32:25+01:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -68,6 +68,7 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
     </element>
     <element id="Extension.id">
       <path value="Extension.id"/>
@@ -87,6 +88,8 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
@@ -114,7 +117,6 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
       <type>
         <code value="Extension"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -128,9 +130,11 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Extension.url">
       <path value="Extension.url"/>
@@ -152,6 +156,8 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
       <fixedUri value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mes-reason-for-measurement"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -171,7 +177,6 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
       <type>
         <code value="string"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -180,10 +185,8 @@ Texte libre (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholest�
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
