@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ROR</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:version [ fhir:v "0.1.1"] ; # 
   fhir:name [ fhir:v "ROR"] ; # 
   fhir:title [ fhir:v "Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-04-12T17:55:39+02:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-02T12:02:38+02:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -75,7 +75,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [ fhir:v "STU" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -286,6 +286,9 @@
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "copyrightyear" ]
@@ -300,7 +303,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [ fhir:v "STU" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -721,10 +724,11 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-geolocation> ;
-         fhir:reference [ fhir:v "StructureDefinition/ror-location-geolocation" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-coordinate-reliability> ;
+         fhir:reference [ fhir:v "StructureDefinition/ror-coordinate-reliability" ]
        ] ;
-       fhir:name [ fhir:v "RORGeolocationLocation" ] ;
+       fhir:name [ fhir:v "RORCoordinateReliability" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du ROR pour signaler si les informations des coordonnées géographiques sont issues d'un mode de production qui assure un certain niveau de fiabilité" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1107,7 +1111,7 @@
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/code-region-territorial-division> ;
          fhir:reference [ fhir:v "ValueSet/code-region-territorial-division" ]
        ] ;
-       fhir:name [ fhir:v "Fusion du valueset J223-TypeDivisionTerritoriale-ROR et JDV_J237-RegionOM-ROR" ] ;
+       fhir:name [ fhir:v "Fusion des valuesets pour le code de la division territoriale" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1336,18 +1340,6 @@
        ] ;
        fhir:name [ fhir:v "ror-sp-healthcareservice-psychiatric-sector" ] ;
        fhir:description [ fhir:v "Paramètre de recherche décrivrant le secteur psychiatrique de l'offre opérationnelle" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "SearchParameter" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-specific-competence> ;
-         fhir:reference [ fhir:v "SearchParameter/ror-sp-healthcareservice-specific-competence" ]
-       ] ;
-       fhir:name [ fhir:v "ror-sp-healthcareservice-specific-competence" ] ;
-       fhir:description [ fhir:v "Paramètre de recherche permettant de pointer sur la compétence spécifique" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

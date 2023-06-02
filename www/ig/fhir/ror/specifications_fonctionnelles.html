@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.1.1 - STU
 
 
             </span>
@@ -204,7 +204,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Specifications Fonctionnelles</h2>
   
 
@@ -223,7 +223,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#consultation-des-données-capacitaires" id="markdown-toc-consultation-des-données-capacitaires">Consultation des données capacitaires</a></li>
-  <li><a href="#consultation-de-loffre-synchronisation" id="markdown-toc-consultation-de-loffre-synchronisation">Consultation de l’offre (synchronisation)</a></li>
+  <li><a href="#consultation-de-loffre-extraction" id="markdown-toc-consultation-de-loffre-extraction">Consultation de l’offre (Extraction)</a></li>
   <li><a href="#recherche-doffre-sur-critères-principaux" id="markdown-toc-recherche-doffre-sur-critères-principaux">Recherche d’offre sur critères principaux</a></li>
   <li><a href="#recherche-doffre-avec-données-capacitaires" id="markdown-toc-recherche-doffre-avec-données-capacitaires">Recherche d’offre avec données capacitaires</a></li>
   <li><a href="#signalement-danomalie" id="markdown-toc-signalement-danomalie">Signalement d’anomalie</a></li>
@@ -307,40 +307,40 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scénario 1 : Données capacitaires sur le périmètre national</p>
 
     <ul>
-      <li>un consommateur souhaite récupérer l'ensemble des données capacitaires sur le périmètre national afin de mettre à jour son système (Exemple de ROR urgence qui souhaite afficher l'ensemble des capacités sur une carte).</li>
+      <li>Un consommateur souhaite récupérer l'ensemble des données capacitaires sur le périmètre national afin de mettre à jour son système (Exemple de ROR urgence qui souhaite afficher l'ensemble des capacités sur une carte).</li>
     </ul>
   </li>
   <li>
     <p>Scénario 2 : Données capacitaires sur un lieu de prise en charge identifié</p>
 
     <ul>
-      <li>un consommateur souhaite mettre à jour dans son système les données de capacité sur un lieu de prise en charge -&gt; il connait un des identifiants identifiant de point de saisie ou identifiant externe de synchronisation et demande à lire une donnée capacitaire en particulier.</li>
+      <li>Un consommateur souhaite mettre à jour dans son système les données de capacité sur un lieu de prise en charge -&gt; il connait un des identifiants (identifiant de point de saisie ou identifiant externe de synchronisation) et demande à lire une donnée capacitaire en particulier.</li>
     </ul>
   </li>
   <li>
     <p>Scénario 3 : Données capacitaires sur plusieurs lieux de prise en charge identifiés</p>
 
     <ul>
-      <li>un consommateur souhaite mettre à jour dans son système les données de capacité en lits/places de certains lieux de prise en charge (il connait les identifiants et demande à lire la liste de ces données capacitaires).</li>
+      <li>Un consommateur souhaite mettre à jour dans son système les données de capacité en lits/places de certains lieux de prise en charge (il connait les identifiants et demande à lire la liste de ces données capacitaires).</li>
     </ul>
   </li>
   <li>
     <p>Scénario 4 : Données capacitaires à partir d’une date de mise à jour</p>
 
     <ul>
-      <li>un consommateur souhaite mettre à jour dans son système les données capacitaires mises à jour dans le ROR national depuis une date qu’il précise.</li>
+      <li>Un consommateur souhaite mettre à jour dans son système les données capacitaires mises à jour dans le ROR national depuis une date qu’il précise.</li>
     </ul>
   </li>
   <li>
     <p>Scénario 5 : Données capacitaires d’une offre opérationnelle</p>
 
     <ul>
-      <li>un consommateur ayant recherché au préalable une offre de santé correspondant à ses critères (exemple : Urgences spécialisées cardiologiques via le service de recherche sur le modèle d’exposition 2.4 du ROR) souhaite connaitre la situation des capacités pour ces offres. Le service de recherche lui ayant renvoyé les identifiants de ces offres, il les passe en  paramètre de la recherche.</li>
+      <li>Un consommateur ayant recherché au préalable une offre de santé correspondant à ses critères (exemple : Urgences spécialisées cardiologiques via le service de recherche sur le modèle d’exposition 2.4 du ROR) souhaite connaitre la situation des capacités pour ces offres. Le service de recherche lui ayant renvoyé les identifiants de ces offres, il les passe en  paramètre de la recherche.</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="consultation-de-loffre-synchronisation">Consultation de l’offre (synchronisation)</h3>
+<h3 id="consultation-de-loffre-extraction">Consultation de l’offre (Extraction)</h3>
 
 <h4 id="description-du-cas-dusage-1">Description du cas d’usage</h4>
 
@@ -405,21 +405,21 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scénario 1 : Extraction complète</p>
 
     <ul>
-      <li>Un consommateur souhaite mettre à jour toutes les offres de santé sur le périmètre nationale</li>
+      <li>Un consommateur souhaite mettre à jour toutes les offres de santé sur le périmètre national.</li>
     </ul>
   </li>
   <li>
     <p>Scénario 2 : Extraction de l’ensemble des offres de santé d’un établissement</p>
 
     <ul>
-      <li>Un consommateur souhaite rechercher l'offre de santé proposée par un établissement</li>
+      <li>Un consommateur souhaite rechercher l'offre de santé proposée par un établissement.</li>
     </ul>
   </li>
   <li>
     <p>Scénario 3 : Extraction d’une offre de santé identifiée</p>
 
     <ul>
-      <li>Un consommateur souhaite rechercher une offre de santé à partir de son identifiant</li>
+      <li>Un consommateur souhaite rechercher une offre de santé à partir de son identifiant.</li>
     </ul>
   </li>
   <li>
@@ -433,14 +433,14 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scénario 5 : Extraction à partir d’une date de mise à jour de l’entité géographique</p>
 
     <ul>
-      <li>Un consommateur souhaite mettre à jour toute l'offre dont l’entité géographique est mise à jour depuis une certaine date</li>
+      <li>Un consommateur souhaite mettre à jour toute l'offre dont l’entité géographique est mise à jour depuis une certaine date.</li>
     </ul>
   </li>
   <li>
     <p>Scénario 6 : Extraction à partir d’une date de mise à jour d’un des éléments de l’offre</p>
 
     <ul>
-      <li>Un consommateur souhaite mettre à jour dans son système toute l’offre mise à jour depuis une certaine date ou dont l’organisation est mise à jour depuis une certaine date</li>
+      <li>Un consommateur souhaite par exemple mettre à jour dans son système toute l’offre mise à jour depuis une certaine date ou dont l’organisation est mise à jour depuis une certaine date.</li>
     </ul>
   </li>
   <li>
@@ -454,7 +454,7 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scénario 8 : Extraction d’une offre de santé identifiée avec anomalie</p>
 
     <ul>
-      <li>Un consommateur souhaite rechercher une offre de santé à partir de son identifiant et consulter les anomalies associées si elle sont existantes</li>
+      <li>Un consommateur souhaite rechercher une offre de santé à partir de son identifiant et consulter les anomalies associées si elle sont existantes.</li>
     </ul>
   </li>
 </ul>
@@ -491,77 +491,77 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scenario 1 : Recherche sur un critère en saisissant une valeur</p>
 
     <ul>
-      <li>Un consommateur cherche les offres ayant une activité opérationnelle qui correspond à l’unique valeur recherchée par le consommateur</li>
+      <li>Un consommateur cherche les offres ayant une activité opérationnelle qui correspond à l’unique valeur recherchée par le consommateur.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 2 : Recherche sur un critère en saisissant une liste de valeurs</p>
 
     <ul>
-      <li>Un consommateur cherche les offres ayant une activité opérationnelle qui correspond à l’une des valeurs recherchées par le consommateur</li>
+      <li>Un consommateur cherche les offres ayant une activité opérationnelle qui correspond à l’une des valeurs recherchées par le consommateur.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 3 : Recherche multicritères #1 – ET</p>
 
     <ul>
-      <li>Un consommateur cherche les offres ayant un type d’offre <strong>ET</strong> une modalité d’accueil qu’il indique</li>
+      <li>Un consommateur cherche les offres ayant un type d’offre <strong>ET</strong> une modalité d’accueil qu’il indique.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 4 : Recherche multicritères #2 – OU</p>
 
     <ul>
-      <li>Un consommateur cherche les offres ayant à un type d’offre  <strong>OU</strong> une activité opérationnelle qu’il indique</li>
+      <li>Un consommateur cherche les offres ayant à un type d’offre  <strong>OU</strong> une activité opérationnelle qu’il indique.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 5 : Recherche multicritères #3 – ET/OU</p>
 
     <ul>
-      <li>Un consommateur recherche les offres ayant (une catégorie d’établissement <strong>OU</strong> un type d’offre) <strong>ET</strong> un acte spécifique qu’il indique</li>
+      <li>Un consommateur recherche les offres ayant (une catégorie d’établissement <strong>OU</strong> un type d’offre) <strong>ET</strong> un acte spécifique qu’il indique.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 6 : Recherche à proximité géographique</p>
 
     <ul>
-      <li>Un consommateur cherche les offres ayant une activité opérationnelle, dans un périmètre géographique proche du lieu de résidence d'un patient</li>
+      <li>Un consommateur cherche les offres ayant une activité opérationnelle, dans un périmètre géographique proche du lieu de résidence d'un patient.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 7 : Recherche sur une zone d’intervention</p>
 
     <ul>
-      <li>Un consommateur cherche les offres proposées dans une commune faisant partie d'une zone d'intervention</li>
+      <li>Un consommateur cherche les offres proposées dans une commune faisant partie d'une zone d'intervention.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 8 : Recherche sur un département</p>
 
     <ul>
-      <li>Un consommateur recherche les offres sur un département, ou un ensemble de département (code postal)</li>
+      <li>Un consommateur recherche les offres sur un département, ou un ensemble de département (code postal).</li>
     </ul>
   </li>
   <li>
     <p>Scenario 9 : Recherche sur une ville #1 – Code Postal</p>
 
     <ul>
-      <li>Un consommateur recherche les offres sur une ville, ou un ensemble de villes (code postal)</li>
+      <li>Un consommateur recherche les offres sur une ville, ou un ensemble de villes (code postal).</li>
     </ul>
   </li>
   <li>
     <p>Scenario 10 : Recherche sur une ville #2 – Code commune</p>
 
     <ul>
-      <li>Un consommateur recherche les offres sur une ville, ou un ensemble de villes (code commune)</li>
+      <li>Un consommateur recherche les offres sur une ville, ou un ensemble de villes (code commune).</li>
     </ul>
   </li>
   <li>
     <p>Scenario 11 : Recherche sur un critère du modèle d’exposition 3.0</p>
 
     <ul>
-      <li>Un consommateur recherche les offres proposant une modalité d'accueil et un niveau d'expertise (critères modèle 3.0)</li>
+      <li>Un consommateur recherche les offres proposant une modalité d'accueil et un niveau d'expertise (critères modèle 3.0).</li>
     </ul>
   </li>
   <li>
@@ -605,21 +605,21 @@ Toute suspicion d’anomalie peut être jugée infondée par le responsable de l
     <p>Scenario 1 : Recherche sur un critère capacitaire #1</p>
 
     <ul>
-      <li>Un consommateur cherche les offres proposant une activité opérationnelle et disposant d'un lit disponible</li>
+      <li>Un consommateur cherche les offres proposant une activité opérationnelle et disposant d'un lit disponible.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 2 : Recherche sur un critère capacitaire #2</p>
 
     <ul>
-      <li>Un consommateur cherche les offres proposant une activité opérationnelle et disposant d'un lit fermé réouvrable</li>
+      <li>Un consommateur cherche les offres proposant une activité opérationnelle et disposant d'un lit fermé réouvrable.</li>
     </ul>
   </li>
   <li>
     <p>Scenario 3 : Recherche sur un critère de l’équipement</p>
 
     <ul>
-      <li>Un consommateur cherche une offre de chirurgie traumatologique proposant un appareil de radiologie adapté à l'obésité du patient</li>
+      <li>Un consommateur cherche une offre de chirurgie traumatologique proposant un appareil de radiologie adapté à l'obésité du patient.</li>
     </ul>
   </li>
 </ul>
@@ -674,7 +674,7 @@ Le ROR National répond au consommateur l’identifiant technique, les métadonn
 <p>Un service numérique souhaite mettre à jour une ou plusieurs anomalies qualité.</p>
 
 <p>Le service numérique renseigne l’identifiant technique de l’anomalie à mettre à jour et les informations à modifier (voir description de la <a href="StructureDefinition-ror-task.html">ressource</a>).
-Le ROR National retourne au service numérique l’identifiant technique, les métadonnées et l’identifiant fonctionnel de l’anomalie créée.</p>
+Le ROR National retourne au service numérique l’identifiant technique, les métadonnées et l’identifiant fonctionnel a minima de l’anomalie créée.</p>
 
 <table align="center">
     <tr>
@@ -717,7 +717,7 @@ Le ROR National retourne au service numérique l’identifiant technique, les m�
 <p>Un consommateur souhaite consulter une ou plusieurs anomalies qualité.</p>
 
 <p>Le consommateur renseigne si besoin son (ses) critère(s) de recherche parmi les critères disponibles.
-Le ROR National répond au consommateur la ou les anomalies correspondantes aux critères de recherche</p>
+Le ROR National répond au consommateur la ou les anomalies correspondantes aux critères de recherche.</p>
 
 <table align="center">
     <tr>
@@ -814,7 +814,7 @@ Le ROR National répond au consommateur la ou les anomalies correspondantes aux 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 17:55+0200">2023-04-12</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
