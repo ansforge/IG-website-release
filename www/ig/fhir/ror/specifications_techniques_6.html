@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.1.1 - STU
 
 
             </span>
@@ -204,7 +204,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Mise à jour d’anomalie</h2>
   
 
@@ -323,21 +323,21 @@ Cette partie de la spécification est en cours de construction.
 <p><strong>Construction requ&ecirc;te de base</strong></p>
 </td>
 <td width="538">
-<p><code>PATCH[base]/Task/[id]{&amp;_format=[mime-type]}</code></p>
+<p><code>PATCH [base]/Task/[id]{&amp;_format=[mime-type]}</code></p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><a href="#_ftnref1" name="_ftn1">[1]</a> https://www.hl7.org/fhir/http.html#patch et <a href="https://www.hl7.org/fhir/http.html#general">https://www.hl7.org/fhir/http.html#general</a></p>
+<p><a href="#_ftnref1" name="_ftn1">[1]</a> https://www.hl7.org/fhir/R4/http.html#patch et <a href="https://www.hl7.org/fhir/R4/http.html#general">https://www.hl7.org/fhir/R4/http.html#general</a></p>
 
 <h3 id="construction-de-la-réponse-de-base">Construction de la réponse de base</h3>
 
 <h4 id="réponse-de-base--succès">Réponse de base – Succès</h4>
 
-<p>Lien vers la spécification FHIR : <a href="https://www.hl7.org/fhir/http.html">https://www.hl7.org/fhir/http.html</a></p>
+<p>Lien vers la spécification FHIR : <a href="https://www.hl7.org/fhir/R4/http.html">https://www.hl7.org/fhir/R4/http.html</a></p>
 
-<p>Si la mise à jour est un succès, le serveur répond :</p>
+<p>Si la mise à jour est un succès, le serveur répond en renvoyant a minima:</p>
 <ul>
   <li>Un header avec un code 200 OK HTTP.</li>
   <li>Un header Last-Modified contenant la dernière date de mise à jour de la ressource mise à jour.</li>
@@ -348,9 +348,9 @@ Cette partie de la spécification est en cours de construction.
 <h4 id="réponse-de-base--echec">Réponse de base – Echec</h4>
 
 <p>Lien vers la spécification FHIR :
-<a href="https://www.hl7.org/fhir/operationoutcome.html">https://www.hl7.org/fhir/operationoutcome.html</a></p>
+<a href="https://www.hl7.org/fhir/R4/operationoutcome.html">https://www.hl7.org/fhir/R4/operationoutcome.html</a></p>
 
-<p>Si la mise à jour échoue, le serveur doit répondre :</p>
+<p>Si la mise à jour échoue, le serveur doit répondre:</p>
 <ul>
   <li>Un header avec un un code erreur HTTP 4XX ou 5XX.</li>
   <li>Un body contenant une ressource OperationOutcome  qui donne les détails sur la raison de l’échec</li>
@@ -360,13 +360,13 @@ Cette partie de la spécification est en cours de construction.
 
 <h4 id="scénario-1-mise-à-jour-du-statut-de-plusieurs-anomalies">Scénario 1 : Mise à jour du statut de plusieurs anomalies</h4>
 
-<p><strong>Description du scénario :</strong> Le responsable de la donnée en anomalie corrige des anomalies, le responsable qualité ou le moteur de règle met à jour les statuts métier des anomalies en précisant les identifiants techniques.
+<p><strong>Description du scénario :</strong> le responsable de la donnée en anomalie corrige des anomalies, le responsable qualité ou le moteur de règle met à jour les statuts métier des anomalies en précisant les identifiants techniques.
 Anomalie XX au statut statutXX</p>
 
 <p><strong>Requête :</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/fhir+json
-PATCH[BASE]
+POST [BASE]
 
 {
     "resourceType": "Bundle",
@@ -383,7 +383,7 @@ PATCH[BASE]
 				            "part": [ 
                                 {
                                     "name": "type",
-                                    "valueCode": "replace"
+                                    "valueString": "replace"
                                 }, 
                                 {
                                     "name": "path",
@@ -419,19 +419,19 @@ PATCH[BASE]
 
 <h4 id="scénario-2-inactivation-dune-anomalie">Scénario 2 : Inactivation d’une anomalie</h4>
 
-<p><strong>Description du scénario :</strong> Un responsable qualité décide d’inactiver une anomalie dont l’identifiant technique = XXX (elle a été saisie par erreur par exemple) en mettant à jour son statut métier à YYY.</p>
+<p><strong>Description du scénario :</strong> un responsable qualité décide d’inactiver une anomalie dont l’identifiant technique = XXX (elle a été saisie par erreur par exemple) en mettant à jour son statut métier à YYY.</p>
 
 <p><strong>Requête :</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Type: application/fhir+json
-PATCH[BASE]/RORTask/XXX
+PATCH [BASE]/Task/XXX
 {
 "resourceType": "Parameters",
 	"parameter": [ {
 	"name": "operation",
 	"part": [ {
 		"name": "type",
-		"valueCode": "replace"
+		"valueString": "replace"
 	}, {
 		"name": "path",
 		"valueString": "Task.businessStatus"
@@ -501,7 +501,7 @@ PATCH[BASE]/RORTask/XXX
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 17:55+0200">2023-04-12</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.1.1 - STU
 
 
             </span>
@@ -204,7 +204,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
   <h2>Consultation des données capacitaires</h2>
   
 
@@ -227,7 +227,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#construction-de-la-réponse-de-base" id="markdown-toc-construction-de-la-réponse-de-base">Construction de la réponse de base</a></li>
   <li><a href="#critères-de-recherche" id="markdown-toc-critères-de-recherche">Critères de recherche</a></li>
   <li><a href="#paramètres-et-modificateurs-de-requêtes-fhir" id="markdown-toc-paramètres-et-modificateurs-de-requêtes-fhir">Paramètres et modificateurs de requêtes FHIR</a></li>
-  <li><a href="#exemple-de-requêtes" id="markdown-toc-exemple-de-requêtes">Exemple de requêtes</a></li>
+  <li><a href="#exemples-de-requêtes" id="markdown-toc-exemples-de-requêtes">Exemples de requêtes</a></li>
 </ul>
 
 </div>
@@ -321,19 +321,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><strong>Construction requête de base</strong></p>
 </td>
 <td width="465">
-<p><code>GET[base]/Location{?[parameters]{&amp;_format=[mime-type]}}</code></p>
+<p><code>GET [base]/Location{?[parameters]{&amp;_format=[mime-type]}}</code></p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><a name="_ftn1" href="#_ftnref1">[1]</a> <a href="https://www.hl7.org/fhir/http.html#search">https://www.hl7.org/fhir/http.html#search</a> et <a href="https://www.hl7.org/fhir/http.html#general">https://www.hl7.org/fhir/http.html#general</a></p>
+<p><a name="_ftn1" href="#_ftnref1">[1]</a> <a href="https://www.hl7.org/fhir/R4/http.html#search">https://www.hl7.org/fhir/R4/http.html#search</a> et <a href="https://www.hl7.org/fhir/R4/http.html#general">https://www.hl7.org/fhir/R4/http.html#general</a></p>
 
 <h3 id="construction-de-la-réponse-de-base">Construction de la réponse de base</h3>
 
 <h4 id="réponse-de-base--succès">Réponse de base – Succès</h4>
 
-<p>Lien vers la spécification FHIR&nbsp;: <a href="https://www.hl7.org/fhir/bundle.html">https://www.hl7.org/fhir/bundle.html</a></p>
+<p>Lien vers la spécification FHIR&nbsp;: <a href="https://www.hl7.org/fhir/R4/bundle.html">https://www.hl7.org/fhir/R4/bundle.html</a></p>
 
 <p>Si la recherche est un succès, le serveur répond&nbsp;:</p>
 
@@ -342,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>Un header avec un code 200 OK HTTP</p>
   </li>
   <li>
-    <p>Un body&nbsp;contenant une ressource <a href="https://www.hl7.org/fhir/bundle.html">Bundle</a> dont le type =
+    <p>Un body&nbsp;contenant une ressource <a href="https://www.hl7.org/fhir/R4/bundle.html">Bundle</a> dont le type =
 searchset.
 Le bundle encapsule 0 à n ressources Location corespondant aux
 critères de recherche plus les ressources incluses correspondant aux
@@ -357,12 +357,12 @@ pas de résultat le service renvoie <code class="language-plaintext highlighter-
 peut être exécutée. Il peut il y avoir 0 à n correspondances.</p>
 
 <p>Plus de précision sur la spécification FHIR :
-https://www.hl7.org/fhir/http.html</p>
+https://www.hl7.org/fhir/R4/http.html</p>
 
 <h4 id="réponse-de-base--echec">Réponse de base – Echec</h4>
 
 <p>Lien vers la spécification FHIR&nbsp;:
-<a href="https://www.hl7.org/fhir/operationoutcome.html">https://www.hl7.org/fhir/operationoutcome.html</a></p>
+<a href="https://www.hl7.org/fhir/R4/operationoutcome.html">https://www.hl7.org/fhir/R4/operationoutcome.html</a></p>
 
 <p>Si la recherche échoue, le serveur doit répondre&nbsp;:</p>
 
@@ -379,7 +379,7 @@ détails sur la raison de l’échec</p>
 <p>Remarque&nbsp;: l’échec d’une recherche est la non-possibilité d’exécuter la
 requête, ce qui est différent d’aucune correspondance à la recherche.
 Plus de précision sur la spécification FHIR :
-<a href="https://www.hl7.org/fhir/http.html">https://www.hl7.org/fhir/http.html</a></p>
+<a href="https://www.hl7.org/fhir/R4/http.html">https://www.hl7.org/fhir/R4/http.html</a></p>
 
 <h3 id="critères-de-recherche">Critères de recherche</h3>
 
@@ -418,7 +418,7 @@ sont&nbsp;:</li>
 <p>address-city</p>
 </td>
 <td width="230">
-<p></p>
+<p>capacity-update-date*</p>
 </td>
 <td width="230">
 <p>residential-type</p>
@@ -459,8 +459,7 @@ sont&nbsp;:</li>
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p>*<i>Critères de recherche qui seront applicables ultérieurement</i></p>
 
 <ul>
   <li>Les critères de recherche, définis au <a href="search_param.html#structuredefinition-ror-healthcareservice">paragraphe dédié</a>, de
@@ -482,7 +481,7 @@ d’usage sont&nbsp;:</li>
 </table>
 
 <p>Ces critères de recherche sont applicables à la ressource Location,
-grâce au <a href="https://www.hl7.org/fhir/search.html#has">chainage inversé</a>. Pour cela utiliser la syntaxe suivante&nbsp;:
+grâce au <a href="https://www.hl7.org/fhir/R4/search.html#has">chainage inversé</a>. Pour cela utiliser la syntaxe suivante&nbsp;:
 <code class="language-plaintext highlighter-rouge">_has:HealthcareService:location:[NOM CRITERE]</code></p>
 
 <ul>
@@ -506,7 +505,7 @@ grâce au <a href="https://www.hl7.org/fhir/search.html#has">chainage inversé</
 <p>identifier*</p>
 </td>
 <td width="226">
-<p>authoredOn*</p>
+<p>authored-on*</p>
 </td>
 <td width="226">
 <p>&nbsp;</p>
@@ -517,12 +516,12 @@ grâce au <a href="https://www.hl7.org/fhir/search.html#has">chainage inversé</
 <p>*<i>Critères de recherche qui seront applicables ultérieurement</i></p>
 
 <p>Ces critères de recherche sont applicables à la ressource Location,
-grâce au chainage inversé[^4]. Pour cela utiliser la syntaxe suivante&nbsp;:
+grâce au <a href="https://www.hl7.org/fhir/R4/search.html#has">chainage inversé</a>. Pour cela utiliser la syntaxe suivante&nbsp;:
 <code class="language-plaintext highlighter-rouge">_has:Location:focus:[[NOM CRITERE]</code></p>
 
 <h3 id="paramètres-et-modificateurs-de-requêtes-fhir">Paramètres et modificateurs de requêtes FHIR</h3>
 
-<p><a name="l946">​</a>Les paramètres et modificateurs de requêtes décrits au <a href="specifications_techniques.html#param%C3%A8tres-et-modificateurs-de-requ%C3%AAtes-fhir-1">paragraphe dédié</a>
+<p><a name="l949">​</a>Les paramètres et modificateurs de requêtes décrits au <a href="specifications_techniques.html#param%C3%A8tres-et-modificateurs-de-requ%C3%AAtes-fhir-1">paragraphe dédié</a>
 applicables à ce cas d’usage sont&nbsp;:</p>
 
 <ul>
@@ -537,7 +536,7 @@ applicables à ce cas d’usage sont&nbsp;:</p>
   </li>
 </ul>
 
-<h3 id="exemple-de-requêtes">Exemple de requêtes</h3>
+<h3 id="exemples-de-requêtes">Exemples de requêtes</h3>
 
 <h4 id="scénario-1-données-capacitaires-sur-le-périmètre-national">Scénario 1&nbsp;: Données capacitaires sur le périmètre national</h4>
 
@@ -545,11 +544,11 @@ applicables à ce cas d’usage sont&nbsp;:</p>
 
 <p><strong>Requête :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">get[BASE]/Location?_revinclude=HealthcareService:location</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET [BASE]/Location?_revinclude=HealthcareService:location</code></p>
 
 <p><strong>Requête expliquée&nbsp;:</strong></p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get[BASE]/Location?_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">[</span>BASE]/Location?_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
 
 </code></pre></div></div>
 <p><strong>Réponse “simplifiée”&nbsp;:</strong></p>
@@ -566,15 +565,15 @@ applicables à ce cas d’usage sont&nbsp;:</p>
 </code></pre></div></div>
 <h4 id="scénario-2-données-capacitaires-sur-un-lieu-de-prise-en-charge-identifié">Scénario 2&nbsp;: Données capacitaires sur un lieu de prise en charge identifié</h4>
 
-<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité sur un lieu de prise en charge = Location1</p>
+<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité sur un lieu de prise en charge = Location1.</p>
 
 <p><strong>Requête :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">get[BASE]/Location?identifier=Location1&amp;_revinclude=HealthcareService:location</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET [BASE]/Location?identifier=Location1&amp;_revinclude=HealthcareService:location</code></p>
 
 <p><strong>Requête expliquée&nbsp;:</strong></p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get[BASE]/Location?identifier<span class="o">=</span>Location1 <span class="c">#critère de recherche sur l’identifiant technique du lieu de prise en charge</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">[</span>BASE]/Location?identifier<span class="o">=</span>Location1 <span class="c">#critère de recherche sur l’identifiant technique du lieu de prise en charge</span>
 &amp;_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
 
 
@@ -591,15 +590,15 @@ applicables à ce cas d’usage sont&nbsp;:</p>
 </code></pre></div></div>
 <h4 id="scénario-3-données-capacitaires-sur-plusieurs-lieux-de-prise-en-charge-identifiés">Scénario 3&nbsp;: Données capacitaires sur plusieurs lieux de prise en charge identifiés</h4>
 
-<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité sur plusieurs lieux de prise en charge = Location1 ou Location2</p>
+<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité sur plusieurs lieux de prise en charge = Location1 ou Location2.</p>
 
 <p><strong>Requête :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">get[BASE]/Location?identifier=Location1,Location2&amp;_revinclude=HealthcareService:location</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET [BASE]/Location?identifier=Location1,Location2&amp;_revinclude=HealthcareService:location</code></p>
 
 <p><strong>Requête expliquée&nbsp;:</strong></p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get[BASE]/Location?identifier<span class="o">=</span>Location1,Location2 <span class="c">#critère de recherche sur l’identifiant technique du lieu de prise en charge</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">[</span>BASE]/Location?identifier<span class="o">=</span>Location1,Location2 <span class="c">#critère de recherche sur l’identifiant technique du lieu de prise en charge</span>
 &amp;_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
 
 
@@ -617,14 +616,14 @@ applicables à ce cas d’usage sont&nbsp;:</p>
 </code></pre></div></div>
 <h4 id="scénario-4-données-capacitaires-à-partir-dune-date-de-mise-à-jour">Scénario 4&nbsp;: Données capacitaires à partir d’une date de mise à jour</h4>
 
-<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité à partir d'une date de mise à jour &gt;= 06/11/2022-15h00</p>
+<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite mettre à jour dans son système les données de capacité à partir d'une date de mise à jour &gt;= 06/11/2022-15h00.</p>
 
 <p><strong>Requête :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">get[BASE]/Location?_lastUpdated=ge2022-11-06T15:00&amp;_revinclude=HealthcareService:location</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET [BASE]/Location?_lastUpdated=ge2022-11-06T15:00&amp;_revinclude=HealthcareService:location</code></p>
 
 <p><strong>Requête expliquée&nbsp;:</strong></p>
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get[BASE]/Location?_lastUpdated<span class="o">=</span>ge2022-11-06T15:00 <span class="c">#critère de recherche sur la date de mise à jour/ge=greater or equal</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">[</span>BASE]/Location?_lastUpdated<span class="o">=</span>ge2022-11-06T15:00 <span class="c">#critère de recherche sur la date de mise à jour/ge=greater or equal</span>
 &amp;_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
 </code></pre></div></div>
 <p><strong>Réponse “simplifiée”&nbsp;:</strong></p>
@@ -642,16 +641,15 @@ applicables à ce cas d’usage sont&nbsp;:</p>
 <p><strong>Prérequis&nbsp;:</strong> un consommateur recherche au préalable une offre de santé correspondant à ses critères via le service de recherche
 sur le modèle d'exposition 2.4 du ROR. Le service de recherche envoie les identifiants des offres correspondant aux critères.</p>
 
-<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite connaitre la situation des capacités pour les offres identifiées via le service de recherche
-sur le modèle d'exposition 2.4 du ROR = UE1 ou UE2 ou UE3</p>
+<p><strong>Description du scénario&nbsp;:</strong> un consommateur souhaite connaitre la situation des capacités pour les offres identifiées via le service de recherche sur le modèle d'exposition 2.4 du ROR = UE1 ou UE2 ou UE3.</p>
 
 <p><strong>Requête :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">get[BASE]/Location?_has:HealthcareService:location:identifier=UE1,UE2,UE3&amp;_revinclude=HealthcareService:location</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET [BASE]/Location?_has:HealthcareService:location:identifier=UE1,UE2,UE3&amp;_revinclude=HealthcareService:location</code></p>
 
 <p><strong>Requête expliquée&nbsp;:</strong></p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get[BASE]/Location?_has:HealthcareService:location:identifier<span class="o">=</span>UE1,UE2,UE3 <span class="c">#critère de recherche sur l’identifiant de l’offre. Utilisation _has (reverse chaining) car c’est HealthcareService qui fait référence à Location. </span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="o">[</span>BASE]/Location?_has:HealthcareService:location:identifier<span class="o">=</span>UE1,UE2,UE3 <span class="c">#critère de recherche sur l’identifiant de l’offre. Utilisation _has (reverse chaining) car c’est HealthcareService qui fait référence à Location. </span>
 &amp;_revinclude<span class="o">=</span>HealthcareService:location <span class="c">#inclus les HealthcareService qui référencent les Location</span>
 </code></pre></div></div>
 <p><strong>Réponse “simplifiée”&nbsp;:</strong></p>
@@ -713,7 +711,7 @@ sur le modèle d'exposition 2.4 du ROR = UE1 ou UE2 ou UE3</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 17:55+0200">2023-04-12</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
