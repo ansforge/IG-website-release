@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Annuaire Santé</span>
             <br/>
-            <span style="display:inline-block;">1.0.0-ballot - STU1
+            <span style="display:inline-block;">1.0.0-ballot-2 - STU1
 
 
             </span>
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Annuaire de santé (v1.0.0-ballot: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Annuaire de santé (v1.0.0-ballot-2: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -172,19 +172,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#1">Comportement: Capability Statements</a>
       </li>
       <li>
-         <a href="#2">Structures: Resource Profiles</a>
+         <a href="#2">Comportement: Search Parameters</a>
       </li>
       <li>
-         <a href="#3">Structures: Data Type Profiles</a>
+         <a href="#3">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#4">Structures: Extension Definitions</a>
+         <a href="#4">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#5">Terminology: Value Sets</a>
+         <a href="#5">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#6">Terminology: Code Systems</a>
+         <a href="#6">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#7">Terminology: Code Systems</a>
       </li>
    </ul>
 </div>
@@ -211,6 +214,72 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="2"> </a>
+   <h3>Comportement: Search Parameters </h3>
+   <p>
+    <p>La ressource SearchParameter permet de définir de nouveaux paramètres de recherche pour les serveurs RESTful. Ces paramètres de recherche peuvent également être utilisés pour trier ou inclure des ressources reliées.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-data-information-system.html"
+                     title="SearchParameter/as-sp-data-information-system">as-sp-data-information-system</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer une ressource par système d’information de provenance des données.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-data-registration-authority.html"
+                     title="SearchParameter/as-sp-data-registration-authority">as-sp-data-registration-authority</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer une ressource par autorité d’enregistrement des données.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-mailbox-mss.html"
+                     title="SearchParameter/as-sp-mailbox-mss">as-sp-mailbox-mss</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer une organisation, un praticien ou une situation d’exercice par adresse MSSanté.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-number-smartcard.html"
+                     title="SearchParameter/as-sp-number-smartcard">as-sp-number-smartcard</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer les situations d’exercice d’un professionnel par son numéro de carte CPx.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-pharmacy-licence.html"
+                     title="SearchParameter/as-sp-pharmacy-licence">as-sp-pharmacy-licence</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer une pharmacie par son numéro de licence.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="SearchParameter-as-sp-type-smartcard.html"
+                     title="SearchParameter/as-sp-type-smartcard">as-sp-type-smartcard</a>
+               </td>
+               <td>
+<p>Paramètre de recherche pour récupérer les situations d’exercice d’un professionnel par type de carte CPx.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="3"> </a>
    <h3>Structures: Resource Profiles </h3>
    <p>
     <p>Ces structures définissent les contraintes sur les ressources FHIR par les systèmes conformes à cet Implementation Guide (IG).</p>
@@ -219,15 +288,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-as-practitioner.html"
-                     title="StructureDefinition/as-practitioner">AS Practitioner Profile</a>
-               </td>
-               <td>
-<p>Profil créé à partir de FrPractitioner dans le contexte de l’Annuaire Santé pour décrire les données d’identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social.</p>
-</td>
-            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-as-device.html"
@@ -383,6 +443,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="StructureDefinition-as-practitioner.html"
+                     title="StructureDefinition/as-practitioner">AS Practitioner Profile</a>
+               </td>
+               <td>
+<p>Profil créé à partir de FrPractitioner dans le contexte de l’Annuaire Santé pour décrire les données d’identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="StructureDefinition-as-practitionerrole.html"
                      title="StructureDefinition/as-practitionerrole">AS PractitionerRole Profile</a>
                </td>
@@ -400,7 +469,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="3"> </a>
+   <a name="4"> </a>
    <h3>Structures: Data Type Profiles </h3>
    <p>
     <p>Ces structures définissent les contraintes sur les types de données FHIR par les systèmes conformes à cet Implementation Guide (IG).</p>
@@ -439,7 +508,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Structures: Extension Definitions </h3>
    <p>
     <p>Ces structures définissent les contraintes sur les extensions FHIR par les systèmes conformes à cet Implementation Guide (IG).</p>
@@ -459,8 +528,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-as-data-trace.html"
-                     title="StructureDefinition/as-data-trace">AS DataTrace</a>
+                  <a href="StructureDefinition-as-ext-data-trace.html"
+                     title="StructureDefinition/as-ext-data-trace">AS Data Trace Extension</a>
                </td>
                <td>
 <p>Extension créée dans le cadre de l’Annuaire Santé pour tracer l’origine de la donnée (Autorité d’Enregistrement (AE) et Système d’Information (SI)). Des études complémentaires vont être initiées pour envisager l’usage de la ressource Provenance ou meta.source</p>
@@ -685,7 +754,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="5"> </a>
+   <a name="6"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>
     <p>Les ressources ValueSet définissent les ensembles de codes utilisés par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Jeu De Valeur (JDV).</p>
@@ -706,7 +775,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Terminology: Code Systems </h3>
    <p>
     <p>Les ressources CodeSystem définissent les ensembles de codes définis par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Terminologie de REference (TRE).</p>
@@ -773,7 +842,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 17:20+0200">2023-06-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot-2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 18, 2023 12:08+0000">2023-07-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

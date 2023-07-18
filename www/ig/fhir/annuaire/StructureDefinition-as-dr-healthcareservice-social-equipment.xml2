@@ -28,11 +28,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-healthcareservice-social-equipment"/>
-  <version value="1.0.0-ballot"/>
+  <version value="1.0.0-ballot-2"/>
   <name value="AsDrHealthcareServiceSocialEquipmentProfile"/>
   <title value="AS Donnée Restreinte HealthcareService Social Equipment Profile"/>
   <status value="active"/>
-  <date value="2023-06-02T17:20:16+02:00"/>
+  <date value="2023-07-18T12:08:09+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -83,14 +83,6 @@
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <constraint>
-        <key value="dom-3"/>
-        <severity value="error"/>
-        <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource"/>
-        <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
-        <xpath value="not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
-      </constraint>
-      <constraint>
         <key value="dom-4"/>
         <severity value="error"/>
         <human value="If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated"/>
@@ -99,11 +91,11 @@
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <constraint>
-        <key value="dom-5"/>
+        <key value="dom-3"/>
         <severity value="error"/>
-        <human value="If a resource is contained in another resource, it SHALL NOT have a security label"/>
-        <expression value="contained.meta.security.empty()"/>
-        <xpath value="not(exists(f:contained/*/f:meta/f:security))"/>
+        <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource"/>
+        <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
+        <xpath value="not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))"/>
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <constraint>
@@ -120,8 +112,14 @@
         <xpath value="exists(f:text/h:div)"/>
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <constraint>
+        <key value="dom-5"/>
+        <severity value="error"/>
+        <human value="If a resource is contained in another resource, it SHALL NOT have a security label"/>
+        <expression value="contained.meta.security.empty()"/>
+        <xpath value="not(exists(f:contained/*/f:meta/f:security))"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
+      </constraint>
       <mapping>
         <identity value="rim"/>
         <map value="Entity. Role, or Act"/>
@@ -149,10 +147,15 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <isModifier value="false"/>
       <isSummary value="true"/>
     </element>
     <element id="HealthcareService.meta">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta"/>
       <short value="Metadata about the resource"/>
       <definition value="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource."/>
@@ -166,6 +169,7 @@
       <type>
         <code value="Meta"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -174,8 +178,15 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.id">
       <path value="HealthcareService.meta.id"/>
@@ -195,14 +206,18 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="HealthcareService.meta.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.extension"/>
       <slicing>
         <discriminator>
@@ -227,6 +242,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -240,19 +256,21 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
-    <element id="HealthcareService.meta.extension:as-data-trace">
+    <element id="HealthcareService.meta.extension:as-ext-data-trace">
       <path value="HealthcareService.meta.extension"/>
-      <sliceName value="as-data-trace"/>
+      <sliceName value="as-ext-data-trace"/>
       <short value="DataTrace"/>
       <definition value="Informe sur l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)).."/>
       <min value="0"/>
@@ -264,8 +282,9 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-data-trace"/>
+        <profile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -279,14 +298,18 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
     </element>
     <element id="HealthcareService.meta.versionId">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.versionId"/>
       <short value="Version specific identifier"/>
       <definition value="The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted."/>
@@ -301,6 +324,7 @@
       <type>
         <code value="id"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -309,10 +333,19 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.lastUpdated">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.lastUpdated"/>
       <short value="When the resource version last changed"/>
       <definition value="When the resource last changed - e.g. when the version changed."/>
@@ -327,6 +360,7 @@
       <type>
         <code value="instant"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -335,10 +369,19 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.source">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.source"/>
       <short value="Identifies where the resource comes from"/>
       <definition value="A uri that identifies the source system of the resource. This provides a minimal amount of [Provenance](http://hl7.org/fhir/R4/provenance.html#) information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc."/>
@@ -353,6 +396,7 @@
       <type>
         <code value="uri"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -361,10 +405,19 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.profile">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.profile"/>
       <short value="Profiles this resource claims to conform to"/>
       <definition value="A list of profiles (references to [StructureDefinition](http://hl7.org/fhir/R4/structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](http://hl7.org/fhir/R4/structuredefinition-definitions.html#StructureDefinition.url)."/>
@@ -380,6 +433,7 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -388,10 +442,19 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.security">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.security"/>
       <short value="Security Labels applied to this resource"/>
       <definition value="Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure."/>
@@ -406,6 +469,7 @@
       <type>
         <code value="Coding"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -414,7 +478,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -427,8 +490,30 @@
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/security-labels"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
+      </mapping>
     </element>
     <element id="HealthcareService.meta.tag">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.meta.tag"/>
       <short value="Tags applied to this resource"/>
       <definition value="Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource."/>
@@ -443,6 +528,7 @@
       <type>
         <code value="Coding"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -451,7 +537,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -461,8 +546,30 @@
         <description value="Codes that represent various types of tags, commonly workflow-related; e.g. &quot;Needs review by Dr. Jones&quot;."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/common-tags"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CV"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:Coding rdfs:subClassOf dt:CDCoding"/>
+      </mapping>
     </element>
     <element id="HealthcareService.implicitRules">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.implicitRules"/>
       <short value="A set of rules under which this content was created"/>
       <definition value="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc."/>
@@ -477,6 +584,7 @@
       <type>
         <code value="uri"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -488,8 +596,18 @@
       <isModifier value="true"/>
       <isModifierReason value="This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.language">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.language"/>
       <short value="Language of the resource content"/>
       <definition value="The base language in which the resource is written."/>
@@ -504,6 +622,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -512,8 +631,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
           <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
@@ -528,8 +645,18 @@
         <description value="A human language."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.text"/>
       <short value="Text summary of the resource, for human interpretation"/>
       <definition value="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
@@ -548,6 +675,7 @@
       <type>
         <code value="Narrative"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -556,8 +684,14 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="Act.text?"/>
@@ -581,24 +715,36 @@
       <type>
         <code value="Resource"/>
       </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="Entity. Role, or Act"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
     </element>
     <element id="HealthcareService.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.extension"/>
       <slicing>
         <discriminator>
           <type value="value"/>
           <path value="url"/>
         </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
         <rules value="open"/>
       </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -609,6 +755,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -622,11 +769,17 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="HealthcareService.extension:as-ext-healthcareservice-authorization-date">
       <path value="HealthcareService.extension"/>
@@ -659,10 +812,9 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
     </element>
     <element id="HealthcareService.extension:as-ext-healthcareservice-implementation-period">
       <path value="HealthcareService.extension"/>
@@ -695,13 +847,26 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
     </element>
     <element id="HealthcareService.modifierExtension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.modifierExtension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Extensions that cannot be ignored"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -718,6 +883,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -731,12 +897,15 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -744,9 +913,8 @@
     </element>
     <element id="HealthcareService.identifier">
       <path value="HealthcareService.identifier"/>
-      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS."/>
+      <short value="Identifiant fonctionnel, numéro d'autorisation ARHGOS (Synonyme : numeroAutorisationARHGOS)."/>
       <definition value="External identifiers for this item."/>
-      <comment value="Synonyme : numeroAutorisationARHGOS"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -757,6 +925,7 @@
       <type>
         <code value="Identifier"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -766,8 +935,23 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CX / EI (occasionally, more often EI maps to a resource id or a URL)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT]"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="Identifier"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.identifier"/>
@@ -778,6 +962,12 @@
       </mapping>
     </element>
     <element id="HealthcareService.active">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.active"/>
       <short value="Whether this HealthcareService record is in active use"/>
       <definition value="This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this."/>
@@ -793,6 +983,7 @@
         <code value="boolean"/>
       </type>
       <meaningWhenMissing value="This resource is generally assumed to be active if no value is provided for the active element"/>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -805,6 +996,10 @@
       <isModifierReason value="This element is labelled as a modifier because it is a status element that can indicate that a record should not be treated as valid"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.status"/>
       </mapping>
@@ -815,9 +1010,9 @@
     </element>
     <element id="HealthcareService.providedBy">
       <path value="HealthcareService.providedBy"/>
-      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social."/>
+      <short value="Référence vers l'id de la structure FINESS ET à laquelle est rattaché cet équipement social (Synonyme : idNat_Struct, identifiantEJ, identifiantEG)."/>
       <definition value="The organization that provides this healthcare service."/>
-      <comment value="Synonyme : idNat_Struct, identifiantEJ, identifiantEG"/>
+      <comment value="This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -830,6 +1025,7 @@
         <targetProfile value="http://interopsante.org/fhir/StructureDefinition/FrOrganization"/>
         <targetProfile value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -838,8 +1034,23 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/TestScript"/>
+      </constraint>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".scopingRole.Organization"/>
@@ -847,9 +1058,9 @@
     </element>
     <element id="HealthcareService.category">
       <path value="HealthcareService.category"/>
-      <short value="La discipline déterminant la nature de l’activité."/>
+      <short value="La discipline déterminant la nature de l’activité (Synonyme : disciplineEquipementSociale)."/>
       <definition value="Identifies the broad category of service being performed or delivered."/>
-      <comment value="Synonyme : disciplineEquipementSociale"/>
+      <comment value="Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type."/>
       <alias value="service category"/>
       <min value="0"/>
       <max value="0"/>
@@ -861,6 +1072,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -870,7 +1082,6 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -880,6 +1091,22 @@
         <description value="A category of the service(s) that could be provided."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/service-category"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
@@ -893,6 +1120,7 @@
       <path value="HealthcareService.type"/>
       <short value="Type of service that may be delivered or performed"/>
       <definition value="The specific type of service that may be delivered or performed."/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <alias value="service type"/>
       <min value="0"/>
       <max value="*"/>
@@ -904,6 +1132,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -912,13 +1141,28 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <strength value="required"/>
         <description value="Liste des disciplines"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J136-DisciplineEquipementSocial-RASS/FHIR/JDV-J136-DisciplineEquipementSocial-RASS"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"/>
@@ -928,6 +1172,7 @@
       <path value="HealthcareService.specialty"/>
       <short value="Specialties handled by the HealthcareService"/>
       <definition value="Collection of specialties handled by the service site. This is more of a medical term."/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -938,6 +1183,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -946,7 +1192,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -958,6 +1203,22 @@
       </binding>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value=".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"/>
       </mapping>
     </element>
@@ -965,6 +1226,7 @@
       <path value="HealthcareService.location"/>
       <short value="Location(s) where service may be provided"/>
       <definition value="The location(s) where this healthcare service may be provided."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -976,6 +1238,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -984,8 +1247,23 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/TestScript"/>
+      </constraint>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.where[x]"/>
@@ -999,6 +1277,7 @@
       <path value="HealthcareService.name"/>
       <short value="Description of service as presented to a consumer while searching"/>
       <definition value="Further description of the service as it would be presented to a consumer while searching."/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1009,6 +1288,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1017,8 +1297,11 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".name"/>
@@ -1039,6 +1322,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1047,8 +1331,11 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".location.role[classCode=SDLOC].desc"/>
@@ -1058,6 +1345,7 @@
       <path value="HealthcareService.extraDetails"/>
       <short value="Extra details about the service that can't be placed in the other fields"/>
       <definition value="Extra details about the service that can't be placed in the other fields."/>
+      <comment value="Systems are not required to have markdown support, so the text should be readable without markdown processing. The markdown syntax is GFM - see https://github.github.com/gfm/"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1068,6 +1356,7 @@
       <type>
         <code value="markdown"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1076,8 +1365,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].text"/>
@@ -1087,6 +1378,7 @@
       <path value="HealthcareService.photo"/>
       <short value="Facilitates quick identification of the service"/>
       <definition value="If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list."/>
+      <comment value="When providing a summary view (for example with Observation.value[x]) Attachment should be represented with a brief display text such as &quot;Signed Procedure Consent&quot;."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1097,6 +1389,7 @@
       <type>
         <code value="Attachment"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1105,8 +1398,27 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
+      <constraint>
+        <key value="att-1"/>
+        <severity value="error"/>
+        <human value="If the Attachment has data, it SHALL have a contentType"/>
+        <expression value="data.empty() or contentType.exists()"/>
+        <xpath value="not(exists(f:data)) or exists(f:contentType)"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
+      </constraint>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="ED/RP"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ED"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=SBJ].observation.value"/>
@@ -1127,6 +1439,7 @@
       <type>
         <code value="ContactPoint"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1135,8 +1448,30 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <constraint>
+        <key value="cpt-2"/>
+        <severity value="error"/>
+        <human value="A system is required if a value is provided."/>
+        <expression value="value.empty() or system.exists()"/>
+        <xpath value="not(exists(f:value)) or exists(f:system)"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Subscription"/>
+      </constraint>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="XTN"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="TEL"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="ContactPoint"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".telecom"/>
@@ -1158,6 +1493,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1166,8 +1502,22 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/TestScript"/>
+      </constraint>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".location.role[classCode=SDLOC].subjectOf.A_SpatialCoordinate"/>
@@ -1188,6 +1538,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1196,8 +1547,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ServiceProvisionConditions"/>
@@ -1208,14 +1557,29 @@
       </binding>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value=".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]"/>
       </mapping>
     </element>
     <element id="HealthcareService.eligibility">
       <path value="HealthcareService.eligibility"/>
-      <short value="Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline."/>
+      <short value="Population prise en charge par l’établissement dans le cadre de l’activité associée à la discipline (Synonyme : clientele, public, patientèle)."/>
       <definition value="Does this service have specific eligibility requirements that need to be met in order to use the service?"/>
-      <comment value="Synonyme : clientele, public, patientèle"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1226,6 +1590,7 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1235,8 +1600,10 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
     </element>
     <element id="HealthcareService.eligibility.id">
       <path value="HealthcareService.eligibility.id"/>
@@ -1256,15 +1623,27 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="HealthcareService.eligibility.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.eligibility.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1280,6 +1659,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1293,17 +1673,25 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="HealthcareService.eligibility.modifierExtension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.eligibility.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
@@ -1322,6 +1710,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1335,12 +1724,16 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
       <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
@@ -1350,6 +1743,7 @@
       <path value="HealthcareService.eligibility.code"/>
       <short value="Coded value for the eligibility"/>
       <definition value="Coded value for the eligibility."/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1360,6 +1754,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1368,13 +1763,27 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <strength value="extensible"/>
         <description value="Liste des populations prises en charge"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J137-Clientele-RASS/FHIR/JDV-J137-Clientele-RASS"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT]"/>
@@ -1395,6 +1804,7 @@
       <type>
         <code value="markdown"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1403,8 +1813,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=PRCN].observation[moodCode=EVN.CRT].text"/>
@@ -1425,6 +1837,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1433,8 +1846,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Program"/>
@@ -1445,14 +1856,30 @@
       </binding>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value=".actrelationship[typeCode=PERT].observation"/>
       </mapping>
     </element>
     <element id="HealthcareService.characteristic">
       <path value="HealthcareService.characteristic"/>
-      <short value="Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline."/>
+      <short value="Le mode de fonctionnement précisant la modalité d’accueil, d’hébergement et/ou d’ouverture de l’activité associée à la discipline (Synonyme : modeFonctionnement, type d'activité)."/>
       <definition value="Collection of characteristics (attributes)."/>
-      <comment value="Synonyme : modeFonctionnement, type d'activité"/>
+      <comment value="These could be such things as is wheelchair accessible."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1463,6 +1890,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1472,13 +1900,27 @@
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <mustSupport value="true"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <strength value="extensible"/>
         <description value="Liste des modes de fonctionnement"/>
         <valueSet value="https://mos.esante.gouv.fr/NOS/JDV_J138-TypeActivite-RASS/FHIR/JDV-J138-TypeActivite-RASS"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=PERT].observation"/>
@@ -1499,6 +1941,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1507,8 +1950,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
           <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
@@ -1523,11 +1964,28 @@
         <description value="A human language."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
     </element>
     <element id="HealthcareService.referralMethod">
       <path value="HealthcareService.referralMethod"/>
       <short value="Ways that the service accepts referrals"/>
       <definition value="Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required."/>
+      <comment value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1538,6 +1996,7 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1546,8 +2005,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ReferralMethod"/>
@@ -1556,6 +2013,22 @@
         <description value="The methods of referral can be used when referring to a specific HealthCareService resource."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/service-referral-method"/>
       </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="CE/CNE/CWE"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="CD"/>
+      </mapping>
+      <mapping>
+        <identity value="orim"/>
+        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=PERT].observation"/>
@@ -1575,6 +2048,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1583,8 +2057,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".actrelationship[typeCode=PERT].observation"/>
@@ -1605,6 +2081,7 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1613,8 +2090,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
@@ -1638,15 +2117,27 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="HealthcareService.availableTime.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1662,6 +2153,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1675,17 +2167,25 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="HealthcareService.availableTime.modifierExtension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
@@ -1704,6 +2204,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1717,21 +2218,32 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
       <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
     </element>
     <element id="HealthcareService.availableTime.daysOfWeek">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.daysOfWeek"/>
       <short value="mon | tue | wed | thu | fri | sat | sun"/>
       <definition value="Indicates which days of the week are available between the start and end Times."/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1742,6 +2254,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1750,8 +2263,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="DaysOfWeek"/>
@@ -1762,10 +2273,20 @@
       </binding>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value=".effectiveTime"/>
       </mapping>
     </element>
     <element id="HealthcareService.availableTime.allDay">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.allDay"/>
       <short value="Always available? e.g. 24 hour service"/>
       <definition value="Is this always available? (hence times are irrelevant) e.g. 24 hour service."/>
@@ -1779,6 +2300,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1787,14 +2309,22 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
       </mapping>
     </element>
     <element id="HealthcareService.availableTime.availableStartTime">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.availableStartTime"/>
       <short value="Opening time of day (ignored if allDay = true)"/>
       <definition value="The opening time of day. Note: If the AllDay flag is set, then this time is ignored."/>
@@ -1809,6 +2339,7 @@
       <type>
         <code value="time"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1817,14 +2348,22 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
       </mapping>
     </element>
     <element id="HealthcareService.availableTime.availableEndTime">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.availableTime.availableEndTime"/>
       <short value="Closing time of day (ignored if allDay = true)"/>
       <definition value="The closing time of day. Note: If the AllDay flag is set, then this time is ignored."/>
@@ -1839,6 +2378,7 @@
       <type>
         <code value="time"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1847,8 +2387,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
@@ -1868,6 +2410,7 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1876,8 +2419,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
@@ -1901,15 +2446,27 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="HealthcareService.notAvailable.extension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.notAvailable.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
       <short value="Additional content defined by implementations"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
@@ -1925,6 +2482,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1938,17 +2496,25 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="HealthcareService.notAvailable.modifierExtension">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.notAvailable.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
       <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
@@ -1967,6 +2533,7 @@
       <type>
         <code value="Extension"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1980,21 +2547,32 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
       <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
     </element>
     <element id="HealthcareService.notAvailable.description">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.notAvailable.description"/>
       <short value="Reason presented to the user explaining why time not available"/>
       <definition value="The reason that can be presented to the user as to why this time is not available."/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2005,6 +2583,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2013,17 +2592,22 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
     <element id="HealthcareService.notAvailable.during">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0"/>
+      </extension>
       <path value="HealthcareService.notAvailable.during"/>
       <short value="Service not available from this date"/>
       <definition value="Service is not available (seasonally or for a public holiday) from this date."/>
+      <comment value="A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;).&#xA;&#xA;Period is not used for a duration (a measure of elapsed time). See [Duration](http://hl7.org/fhir/R4/datatypes.html#Duration)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2034,6 +2618,7 @@
       <type>
         <code value="Period"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2042,8 +2627,26 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <constraint>
+        <key value="per-1"/>
+        <severity value="error"/>
+        <human value="If present, start SHALL have a lower value than end"/>
+        <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
+        <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
+      </constraint>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="DR"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
@@ -2053,6 +2656,7 @@
       <path value="HealthcareService.availabilityExceptions"/>
       <short value="Description of availability exceptions"/>
       <definition value="A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times."/>
+      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size"/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -2063,6 +2667,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2071,8 +2676,10 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".effectiveTime"/>
@@ -2082,6 +2689,7 @@
       <path value="HealthcareService.endpoint"/>
       <short value="Technical endpoints providing access to electronic services operated for the healthcare service"/>
       <definition value="Technical endpoints providing access to services operated for the specific healthcare services defined at this resource."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -2093,6 +2701,7 @@
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Endpoint"/>
       </type>
+      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2101,11 +2710,21 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
+      <constraint>
+        <key value="ref-1"/>
+        <severity value="error"/>
+        <human value="SHALL have a contained resource if a local reference is provided"/>
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
+        <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/TestScript"/>
+      </constraint>
       <mapping>
         <identity value="rim"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
       </mapping>
     </element>
   </snapshot>
