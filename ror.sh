@@ -2,4 +2,4 @@ sudo java -jar /Library/WebServer/Documents/IG-website-release/publisher.jar -go
 
 
 
-java -jar /Library/WebServer/Documents/IG-website-release/publisher.jar -ig /Users/nicolasriss/Desktop/ANSFORGE_ans-ig/ROR/FIG_ans.fhir.fr.ror30
+java -jar /Library/WebServer/Documents/IG-website-release/publisher.jar -ig /Users/nicolasriss/Desktop/ANSFORGE_ans-ig/ROR/FIG_ans.fhir.fr.ror30git s

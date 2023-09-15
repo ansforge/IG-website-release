@@ -14,6 +14,85 @@
     </head>
 
     <body>
+        <!-- Button -->
+        <style>
+            main {
+                padding-top: 20px
+            }
+
+            .checkbox-wrapper-2 {
+              margin-left:10px;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC {
+              appearance: none;
+              background-color: #dfe1e4;
+              border-radius: 72px;
+              flex-shrink: 0;
+              height: 20px;
+              position: relative;
+              width: 30px;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC::before {
+              bottom: -6px;
+              content: "";
+              left: -6px;
+              position: absolute;
+              right: -6px;
+              top: -6px;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC,
+            .checkbox-wrapper-2 .ikxBAC::after {
+              transition: all 100ms ease-out;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC::after {
+              background-color: #fff;
+              border-radius: 50%;
+              content: "";
+              height: 14px;
+              left: 3px;
+              position: absolute;
+              top: 3px;
+              width: 14px;
+            }
+          
+            .checkbox-wrapper-2 input[type=checkbox] {
+              cursor: default;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC:hover {
+              background-color: #c9cbcd;
+              transition-duration: 0s;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC:checked {
+              background-color: #1d71b8;
+            }
+          
+            .checkbox-wrapper-2 .ikxBAC:checked::after {
+              background-color: #fff;
+              left: 13px;
+            }
+          
+            .checkbox-wrapper-2 :focus:not(.focus-visible) {
+              outline: 0;
+            }
+          
+            /* .checkbox-wrapper-2 .ikxBAC:checked:hover {
+              background-color: #535db3;
+            } */
+
+            .cbx {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px
+            }
+
+        </style>
+        
         <style>
             .sg .o-sg-block-title__subtitle {
                 font-size: 1.4rem;
@@ -98,9 +177,23 @@
 
 
             <main class="main" role="main" id="main" tabindex="-1">
+                  
+                <div class="cbx">
+                    <div class="checkbox-wrapper-2">
+                        <input class="sc-gJwTLC ikxBAC" type="checkbox" onclick="showMe(this, 'doc')" checked><label>Documentation</label>
+                    </div>
+                    <div class="checkbox-wrapper-2">
+                        <input class="sc-gJwTLC ikxBAC" type="checkbox" onclick="showMe(this, 'refer')" checked><label>Guides référentiels</label>
+                    </div>
+                    <div class="checkbox-wrapper-2">
+                        <input class="sc-gJwTLC ikxBAC" type="checkbox" onclick="showMe(this, 'projets')" checked><label>Guides projets</label>
+                    </div>
+                    <div class="checkbox-wrapper-2">
+                        <input class="sc-gJwTLC ikxBAC" type="checkbox" onclick="showMe(this, 'is')" checked><label>InteropSanté</label>
+                    </div>
+                </div>
 
-
-                <div class="container">
+                <div class="container" id="doc">
                     <h1 class="m-0 text-center">Documentation</h1><br/>
                     <!-- DOC -->
                     <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
@@ -119,28 +212,10 @@
                     </div>
                 </div>
 
-                <div class="container">
-                    <h1 class="m-0 text-center">Catalogue des guides</h1><br/>
+                <div class="container" id="refer">
+                    <h1 class="m-0 text-center">Catalogue des guides référentiels</h1><br/>
 
 
-                    <!-- Annuaire -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
-                        <div class="wp-block-group__inner-container">
-                            <div class="wp-block-image color-blue">
-                                <figure class="aligncenter size-large">
-
-                                    <h3 class="o-sg-block-title__subtitle">Annuaire santé (AnnuaireSante)</h3>
-                                    <p class="tag"><strong>FHIR</strong></p>
-                        
-                                    <p>Documentation de l'API annuaire santé de l'ANS</p>
-                                    <p>
-                                        <a style="margin-left:20px" href="/ig/fhir/annuaire/" class="btn btn--style1 btn--white">Guide d'implémentation (en concertation)</a>
-                                        <a style="margin-left:20px" href="/ig/fhir/annuaire/history.html" class="btn btn--style1 btn--white">Historique</a>
-                                        <a style="margin-left:20px" href="https://github.com/ansforge/IG-fhir-annuaire" class="btn btn--style1 btn--white">Source</a>
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- PDSm -->
                     <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
@@ -178,22 +253,6 @@
                         </div>
                     </div>
 
-                    <!-- ROR -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
-                        <div class="wp-block-group__inner-container">
-                            <div class="wp-block-image color-blue">
-                                <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Répertoire Offre Ressources en santé (ROR)</h3>
-                                    <p  class="tag"> <strong>FHIR</strong></p>
-                                    <p> Spécifications du Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</p>
-                                    <p>
-                                        <a style="margin-left:20px" href="/ig/fhir/ror" class="btn btn--style1 btn--white">Guide d'implémentation</a>
-                                        <a style="margin-left:20px" href="/ig/fhir/ror/history.html" class="btn btn--style1 btn--white">Historique</a>
-                                        <a style="margin-left:20px" href="https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante" class="btn btn--style1 btn--white">Source</a>
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
 
 
                     <!-- SDO -->
@@ -216,7 +275,67 @@
                 </div>
 
 
-                <div class="container">
+                <div class="container" id="projets">
+                    <h1 class="m-0 text-center">Catalogue des guides projet</h1><br/>
+
+                        <!-- Annuaire -->
+                        <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                            <div class="wp-block-group__inner-container">
+                                <div class="wp-block-image color-blue">
+                                    <figure class="aligncenter size-large">
+    
+                                        <h3 class="o-sg-block-title__subtitle">Annuaire santé (AnnuaireSante)</h3>
+                                        <p class="tag"><strong>FHIR</strong></p>
+                            
+                                        <p>Documentation de l'API annuaire santé de l'ANS. L'IG annuaire santé contient également les profils FHIR génériques des practitiens français.</p>
+                                        <p>
+                                            <a style="margin-left:20px" href="/ig/fhir/annuaire/" class="btn btn--style1 btn--white">Guide d'implémentation (en concertation)</a>
+                                            <a style="margin-left:20px" href="/ig/fhir/annuaire/history.html" class="btn btn--style1 btn--white">Historique</a>
+                                            <a style="margin-left:20px" href="https://github.com/ansforge/IG-fhir-annuaire" class="btn btn--style1 btn--white">Source</a>
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- ROR -->
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                        <div class="wp-block-group__inner-container">
+                            <div class="wp-block-image color-blue">
+                                <figure class="aligncenter size-large">
+                                    <h3 class="o-sg-block-title__subtitle">Répertoire Offre Ressources en santé (ROR)</h3>
+                                    <p  class="tag"> <strong>FHIR</strong></p>
+                                    <p> Spécifications du Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</p>
+                                    <p>
+                                        <a style="margin-left:20px" href="/ig/fhir/ror" class="btn btn--style1 btn--white">Guide d'implémentation</a>
+                                        <a style="margin-left:20px" href="/ig/fhir/ror/history.html" class="btn btn--style1 btn--white">Historique</a>
+                                        <a style="margin-left:20px" href="https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante" class="btn btn--style1 btn--white">Source</a>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ECLAIRE -->
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                        <div class="wp-block-group__inner-container">
+                            <div class="wp-block-image color-blue">
+                                <figure class="aligncenter size-large">
+                                    <h3 class="o-sg-block-title__subtitle">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème (ECLAIRE)</h3>
+                                    <p  class="tag"> <strong>FHIR</strong></p>
+                                    <p> La France, en tête des pays européens dans le domaine de la recherche clinique, doit néanmoins renforcer la visibilité des essais cliniques en cours et faciliter l’accès au recrutement. C’est dans ce contexte et dans le cadre du plan Innovation santé 2030 que s’inscrit le projet de création d’une plateforme nationale référençant les essais cliniques.</br>
+                                    L'objectif de cet IG est de spécifier l'API FHIR de diffusion des données caractérisant les essais cliniques référencés dans ECLAIRE.
+                                    </p>
+                                    <p>
+                                        <a style="margin-left:20px" href="/ig/fhir/eclaire" class="btn btn--style1 btn--white">Guide d'implémentation (TU)</a>
+                                        <a style="margin-left:20px" href="/ig/fhir/eclaire/history.html" class="btn btn--style1 btn--white">Historique</a>
+                                        <a style="margin-left:20px" href="https://github.com/ansforge/IG-essais-cliniques" class="btn btn--style1 btn--white">Source</a>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container" id="is">
                     <h1 class="m-0 text-center">Ressources Interop'Santé</h1><br/>
                     <!-- DOC -->
                     <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
@@ -339,7 +458,15 @@
                 $( "p.tag:contains('FHIR')" ).parent().parent().parent().parent().css("display", "none");
 
             }
+
+            function showMe (cbox, box) {
+                vis = cbox.checked ? "block" : "none";
+
+                document.getElementById(box).style.display = vis;
+            }
                 
-            </script>
+        </script>
+
+    
     </body>
 </html>
