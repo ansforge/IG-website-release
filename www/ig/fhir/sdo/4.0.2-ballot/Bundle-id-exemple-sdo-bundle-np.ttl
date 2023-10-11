@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-sdo-bundle-np> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "id-exemple-sdo-bundle-np"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-bundle-resultat-recherche-notification-esms>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "transaction"] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "https://example.com/base/Task/exemple1"^^xsd:anyURI ] ;
+     fhir:resource ( <https://example.com/base/Task/exemple1> )
+  ] [
+     fhir:fullUrl [ fhir:v "https://example.com/base/Task/exemple2"^^xsd:anyURI ] ;
+     fhir:resource ( <https://example.com/base/Task/exemple2> )
+  ] ) . # 
+
+<https://example.com/base/Task/exemple1> a fhir:Task ;
+  fhir:id [ fhir:v "exemple1"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-09-26T16:46:48.054+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Task</b><a name=\"exemple1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Task &quot;exemple1&quot; Updated &quot;2019-09-26 16:46:48+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sdo-task.html\">SDOTask</a></p></div></div>"
+  ] . # 
+
+<https://example.com/base/Task/exemple2> a fhir:Task ;
+  fhir:id [ fhir:v "exemple2"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-12-08T10:07:46.748+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Task</b><a name=\"exemple2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Task &quot;exemple2&quot; Updated &quot;2019-12-08 10:07:46+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-sdo-task.html\">SDOTask</a></p></div></div>"
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
