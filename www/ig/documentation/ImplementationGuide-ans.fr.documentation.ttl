@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Documentation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation</pre></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.3"] ; # 
+  fhir:version [ fhir:v "0.1.4"] ; # 
   fhir:name [ fhir:v "Documentation"] ; # 
   fhir:title [ fhir:v "Documentation des guides d'implémentation de l'ANS"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-26T10:23:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-11T10:10:42+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -40,7 +40,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.0.0" ]
+     fhir:version [ fhir:v "5.3.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -218,6 +218,15 @@
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "true" ]
@@ -454,6 +463,15 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "active-tables" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
@@ -579,6 +597,14 @@
          fhir:title [ fhir:v "Doc Implementer" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "demarrer_sur_fhir.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "demarrer_sur_fhir.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Quick start FHIR" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
            fhir:extension ( [
              fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [ fhir:v "bonnes_pratiques_implementer.html"^^xsd:anyURI ]
