@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ECLAIRE\Paramètres et modificateurs de requêtes FHIR - FHIR v4.0.1</title>
+    <title>Paramètres et modificateurs de requêtes FHIR - Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -32,10 +31,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -48,16 +47,20 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l&#39;Ecosystème</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - trial-use
+            <span style="display:inline-block;">0.2.0 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -94,6 +97,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="st_flux1.html">Extraction de données des essais cliniques</a>
+      </li>
+      <li>
+        <a href="st_flux2.html">Recherche des essais cliniques sur critères</a>
       </li>
     </ul>
   </li>
@@ -173,7 +179,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.1.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.2.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Paramètres et modificateurs de requêtes FHIR</h2>
   
 
@@ -215,6 +221,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:1"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;color:white">Description<o:p></o:p></span></b></p>
   </td>
  </tr>
+
  <tr style="mso-yfti-irow:0">
   <td width="100%" colspan="4" style="width:100.0%;border:solid #8EAADB 1.0pt;
   border-top:none;mso-border-top-alt:solid #8EAADB .5pt;mso-border-alt:solid #8EAADB .5pt;
@@ -224,29 +231,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   mso-color-alt:windowtext">Paramètres et modificateurs : inclusion</span></b><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></b></p>
   </td>
  </tr>
- <tr style="mso-yfti-irow:1">
-  <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
-  border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-left-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">_<span class="SpellE">revinclude</span><o:p></o:p></span></b></p>
-  </td>
-  <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><a href="https://www.hl7.org/fhir/search.html#revinclude"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/search.html#revinclude</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
-  </td>
-  <td width="47%" style="width:47.22%;border-top:none;border-left:none;
-  border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
-  padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Indique que les ressources
-  qui font référence à <span class="SpellE">ResearchStudy</span> doivent être
-  incluses dans la réponse<o:p></o:p></span></p>
-  </td>
- </tr>
+
  <tr style="mso-yfti-irow:2">
   <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
   border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
@@ -257,8 +242,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><a href="https://www.hl7.org/fhir/search.html#include"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/search.html#include</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> <o:p></o:p></span></p>
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><a href="https://www.hl7.org/fhir/R4/search.html#include"><span style="font-size:
+  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/R4/search.html#include</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> <o:p></o:p></span></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
@@ -270,74 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   doivent être incluses dans la réponse<o:p></o:p></span></p>
   </td>
  </tr>
- <tr style="mso-yfti-irow:3">
-  <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
-  border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-left-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><span class="GramE"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;
-  line-height:115%">:<span class="SpellE">iterate</span></span></b></span><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></b></p>
-  </td>
-  <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></p>
-  </td>
-  <td width="47%" style="width:47.22%;border-top:none;border-left:none;
-  border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
-  padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Le processus d’inclusion
-  peut être itératif si le modificateur<span class="GramE"> :<span class="SpellE">iterate</span></span>
-  est ajouté dans la requête.<o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:4">
-  <td width="52%" colspan="3" style="width:52.78%;border-top:none;border-left:
-  solid #8EAADB 1.0pt;border-bottom:solid #8EAADB 1.0pt;border-right:none;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-left-alt:solid #8EAADB .5pt;mso-border-bottom-alt:solid #8EAADB .5pt;
-  background:#DEEAF6;mso-background-themecolor:accent1;mso-background-themetint:
-  51;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:68"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;color:black;
-  mso-color-alt:windowtext">Paramètres et modificateurs : chainage inversé </span><o:p></o:p></b></p>
-  </td>
-  <td width="47%" style="width:47.22%;border-top:none;border-left:none;
-  border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
-  background:#DEEAF6;mso-background-themecolor:accent1;mso-background-themetint:
-  51;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></p>
-  </td>
- </tr>
- <tr style="mso-yfti-irow:5">
-  <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
-  border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-left-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">_has<o:p></o:p></span></b></p>
-  </td>
-  <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><a href="http://hl7.org/fhir/search.html#has"><span style="font-size:9.0pt;
-  mso-bidi-font-size:10.0pt;line-height:115%">http://hl7.org/fhir/search.html#has</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
-  </td>
-  <td width="47%" style="width:47.22%;border-top:none;border-left:none;
-  border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
-  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
-  mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
-  padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Permet d’utiliser les
-  paramètres de recherche des ressources faisant référence à la ressource
-  ResearchStudy<o:p></o:p></span></p>
-  </td>
- </tr>
+
  <tr style="mso-yfti-irow:6">
   <td width="100%" colspan="4" style="width:100.0%;border:solid #8EAADB 1.0pt;
   border-top:none;mso-border-top-alt:solid #8EAADB .5pt;mso-border-alt:solid #8EAADB .5pt;
@@ -347,6 +265,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   mso-color-alt:windowtext">Paramètres et modificateurs&nbsp;: réponses</span></b><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></b></p>
   </td>
  </tr>
+
  <tr style="mso-yfti-irow:7">
   <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
   border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
@@ -357,7 +276,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/search.html#count"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/search.html#count</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
+  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/R4/search.html#count"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/R4/search.html#count</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
@@ -366,13 +285,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   padding:0cm 5.4pt 0cm 5.4pt">
   <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
   9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Indique le nombre souhaité
-  par le consommateur de résultat par page. <o:p></o:p></span></p>
+  par le consommateur de résultat par page<o:p></o:p></span></p>
   <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;color:#4472C4;
   mso-themecolor:accent5"> Par défaut la recherche retourne n résultats
-  maximum par page. </span><span style="font-size:9.0pt;mso-bidi-font-size:
+  maximum par page</span><span style="font-size:9.0pt;mso-bidi-font-size:
   10.0pt;line-height:115%"><o:p></o:p></span></p>
   </td>
  </tr>
+
  <tr style="mso-yfti-irow:8">
   <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
   border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
@@ -383,8 +303,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" style="mso-yfti-cnfc:64"><a href="http://hl7.org/fhir/search.html#_sort"><span style="font-size:9.0pt;
-  mso-bidi-font-size:10.0pt;line-height:115%">http://hl7.org/fhir/search.html#_sort</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
+  <p class="MsoNormal" style="mso-yfti-cnfc:64"><a href="http://hl7.org/fhir/R4/search.html#_sort"><span style="font-size:9.0pt;
+  mso-bidi-font-size:10.0pt;line-height:115%">http://hl7.org/fhir/R4/search.html#_sort</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
@@ -395,28 +315,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   dans quel ordre renvoyer les résultats<o:p></o:p></span></p>
   </td>
  </tr>
- <tr style="mso-yfti-irow:9">
+
+
+
+ <tr style="mso-yfti-irow:6">
+  <td width="100%" colspan="4" style="width:100.0%;border:solid #8EAADB 1.0pt;
+  border-top:none;mso-border-top-alt:solid #8EAADB .5pt;mso-border-alt:solid #8EAADB .5pt;
+  background:#DEEAF6;mso-background-themecolor:accent1;mso-background-themetint:
+  51;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:68"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;color:black;
+  mso-color-alt:windowtext">Paramètres et modificateurs&nbsp;: texte</span></b><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+
+ <tr style="mso-yfti-irow:7">
   <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
   border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-left-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">_<span class="SpellE">elements</span><o:p></o:p></span></b></p>
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:4"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">_text<o:p></o:p></span></b></p>
   </td>
   <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/search.html#elements"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/search.html#elements</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> <o:p></o:p></span></p>
+  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/R4/search.html#text"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/R4/search.html#text</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
   padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal" align="left" style="text-align:left"><span style="font-size:
-  9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Permet au consommateur de
-  demander les éléments à retourner de la ressource recherchée.<o:p></o:p></span></p>
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Permet d'effectuer une recherche textuelle dans le texte de la ressource<o:p></o:p></span></p>
   </td>
  </tr>
+
+ <tr style="mso-yfti-irow:8">
+  <td width="13%" style="width:13.86%;border-top:none;border-left:solid #8EAADB 1.0pt;
+  border-bottom:solid #8EAADB 1.0pt;border-right:none;mso-border-top-alt:solid #8EAADB .5pt;
+  mso-border-top-alt:solid #8EAADB .5pt;mso-border-left-alt:solid #8EAADB .5pt;
+  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:68"><b><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">_content<o:p></o:p></span></b></p>
+  </td>
+  <td width="38%" colspan="2" style="width:38.92%;border:none;border-bottom:solid #8EAADB 1.0pt;
+  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
+  mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="mso-yfti-cnfc:64"><a href="http://hl7.org/fhir/R4/search.html#content"><span style="font-size:9.0pt;
+  mso-bidi-font-size:10.0pt;line-height:115%">http://hl7.org/fhir/R4/search.html#content</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
+  </td>
+  <td width="47%" style="width:47.22%;border-top:none;border-left:none;
+  border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
+  mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
+  mso-border-bottom-alt:solid #8EAADB .5pt;mso-border-right-alt:solid #8EAADB .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">Permet d'effectuer une recherche textuelle dans l'ensemble du contenu de la ressource<o:p></o:p></span></p>
+  </td>
+ </tr>
+
+
+
  <tr style="mso-yfti-irow:10">
   <td width="52%" colspan="3" style="width:52.78%;border-top:none;border-left:
   solid #8EAADB 1.0pt;border-bottom:solid #8EAADB 1.0pt;border-right:none;
@@ -426,7 +382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   51;padding:0cm 5.4pt 0cm 5.4pt">
   <p class="MsoNormal" style="mso-yfti-cnfc:68"><b><span style="font-size:9.0pt;
   mso-bidi-font-size:10.0pt;line-height:115%;color:black;mso-color-alt:windowtext">P</span></b><b><span style="font-size:9.0pt;mso-bidi-font-size:11.0pt;line-height:115%;color:black;
-  mso-color-alt:windowtext">réfixe de comparaison</span><o:p></o:p></b></p>
+  mso-color-alt:windowtext">réfixes de comparaison</span><o:p></o:p></b></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
@@ -437,6 +393,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p class="MsoNormal" align="left" style="text-align:left;mso-yfti-cnfc:64"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>
+
  <tr style="mso-yfti-irow:11;mso-yfti-lastrow:yes">
   <td width="19%" colspan="2" style="width:19.22%;border-top:none;border-left:
   solid #8EAADB 1.0pt;border-bottom:solid #8EAADB 1.0pt;border-right:none;
@@ -450,7 +407,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <td width="33%" style="width:33.56%;border:none;border-bottom:solid #8EAADB 1.0pt;
   mso-border-top-alt:solid #8EAADB .5pt;mso-border-top-alt:solid #8EAADB .5pt;
   mso-border-bottom-alt:solid #8EAADB .5pt;padding:0cm 5.4pt 0cm 5.4pt">
-  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/search.html#date"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/search.html#date</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
+  <p class="MsoNormal"><a href="https://www.hl7.org/fhir/R4/search.html#prefix"><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%">https://www.hl7.org/fhir/R4/search.html#prefix</span></a><span style="font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%"> </span></p>
   </td>
   <td width="47%" style="width:47.22%;border-top:none;border-left:none;
   border-bottom:solid #8EAADB 1.0pt;border-right:solid #8EAADB 1.0pt;
@@ -511,12 +468,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 28, 2023 16:03+0000">2023-07-28</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 12:15+0000">2023-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-essais-cliniques/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-essais-cliniques/issues/new/choose">New Issue</a>
                 
 
           </span>

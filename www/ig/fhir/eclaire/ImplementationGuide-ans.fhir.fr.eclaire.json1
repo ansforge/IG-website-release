@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ECLAIRE</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire</pre><div><p>Implementation Guide pour définir l'API FHIR pour ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "ECLAIRE",
   "title" : "Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème",
   "status" : "draft",
-  "date" : "2023-07-28T16:03:24+00:00",
+  "date" : "2023-10-20T12:15:34+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -20,6 +20,13 @@
     }]
   }],
   "description" : "Implementation Guide pour définir l'API FHIR pour ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "FRANCE"
+    }]
+  }],
   "packageId" : "ans.fhir.fr.eclaire",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
@@ -31,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.0.0"
+    "version" : "5.3.0"
   }],
   "definition" : {
     "extension" : [{
@@ -247,6 +254,17 @@
       "extension" : [{
         "url" : "code",
         "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
       },
       {
         "url" : "value",
@@ -536,6 +554,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "active-tables"
       },
       {
@@ -591,14 +620,62 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ResearchStudy"
+        "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ResearchStudy/2022-500520-30-00"
+        "reference" : "ValueSet/eclaire-study-population-vs"
       },
-      "name" : "2022-500520-30-00",
-      "description" : "Ceci est est un exemple de description d'un essai clinique",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-researchstudy"
+      "name" : "Caractérisation de la population Value Set",
+      "description" : "Caractérisation de la population Value Set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-regulation-code-code-system"
+      },
+      "name" : "Code de régulation de l'essai",
+      "description" : "Code de régulation de l'essai",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-regulation-code-vs"
+      },
+      "name" : "Code de régulation Value Set",
+      "description" : "Code de régulation Value Set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-study-population-code-system"
+      },
+      "name" : "Codes pour caractériser la population de l'étude",
+      "description" : "Codes pour caractériser la population ciblée par l'étude",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-study-phase-source-code-system"
+      },
+      "name" : "Définition des phase de l'essai utilisés dans la base de données ECLAIRE",
+      "description" : "Définition des phases de l'essai utilisées dans la base de données ECLAIRE",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -627,25 +704,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
+        "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/eclaire-consommateur"
+        "reference" : "CodeSystem/eclaire-study-title-type-code-system"
       },
-      "name" : "eclaire-consommateur",
-      "description" : "Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)",
+      "name" : "Définition des types de titre pour l'essai",
+      "description" : "Définition des types de titre pour l'essai (Code System inspiré de R5 : https://hl7.org/fhir/codesystem-title-type.html)",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
+        "valueString" : "CapabilityStatement"
       }],
       "reference" : {
-        "reference" : "ConceptMap/eclaire-study-status-concept-map"
+        "reference" : "CapabilityStatement/eclaire-consommateur"
       },
-      "name" : "eclaire-study-status-concept-map",
-      "description" : "Correspondance entre le statut défini dans la base Eclaire et le ValueSet http://hl7.org/fhir/R4/valueset-research-study-status.html (required)",
+      "name" : "Eclaire",
+      "description" : "Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)",
       "exampleBoolean" : false
     },
     {
@@ -654,10 +731,34 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/eclaire-condition-details"
+        "reference" : "StructureDefinition/eclaire-contact-address"
       },
-      "name" : "ECLAIREConditionDetails",
-      "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de précisions sur le sujet concerné par l'essai",
+      "name" : "ECLAIREContactAddress",
+      "description" : "Extension créée dans le cadre du projet ECLAIRE pour indiquer l'adresse du contact",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-contact-affiliation"
+      },
+      "name" : "ECLAIREContactAffiliation",
+      "description" : "Extension créée dans le cadre du projet ECLAIRE pour indiquer l'affiliation du contact",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-contact-name"
+      },
+      "name" : "ECLAIREContactName",
+      "description" : "Extension créée dans le cadre du projet ECLAIRE pour indiquer le nom de contact",
       "exampleBoolean" : false
     },
     {
@@ -670,6 +771,18 @@
       },
       "name" : "ECLAIREContactType",
       "description" : "Extension créée dans le cadre du projet ECLAIRE qui indique le type de Contact : Public ou Scientific",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-group"
+      },
+      "name" : "ECLAIREGroup",
+      "description" : "Profil de Group pour le projet ECLAIRE",
       "exampleBoolean" : false
     },
     {
@@ -771,6 +884,66 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ResearchStudy"
+      }],
+      "reference" : {
+        "reference" : "ResearchStudy/fake-study-example"
+      },
+      "name" : "Energetic Zebra",
+      "description" : "This is a fake research study",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-researchstudy"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/eclaire-study-phase-concept-map"
+      },
+      "name" : "FHIR/Eclaire ResearchStudy phase Use Mapping",
+      "description" : "Correspondance entre la phase définie dans la base Eclaire et le ValueSet https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet-eclaire-study-phase-vs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/eclaire-study-status-concept-map"
+      },
+      "name" : "FHIR/Eclaire ResearchStudy status Use Mapping",
+      "description" : "Correspondance entre le statut défini dans la base Eclaire et le ValueSet http://hl7.org/fhir/R4/valueset-research-study-status.html (required)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-reglementation-precision-code-system"
+      },
+      "name" : "Précision sur la réglementation concernant l'essai",
+      "description" : "Précision sur la réglementation concernant l'essai",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-reglementation-precision-vs"
+      },
+      "name" : "Précision sur la réglementation concernant l'essai Value Set",
+      "description" : "Précision sur la réglementation concernant l'essai Value Set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -798,10 +971,34 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/eclaire-study-title-type-vs"
+      },
+      "name" : "Type de titre Value Set",
+      "description" : "Type de titre pour les essais cliniques Value Set (inspiré du Value Set de R5 : https://hl7.org/fhir/valueset-title-type.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-study-phase-source-vs"
+      },
+      "name" : "Value Set de la phase de l'essai tel que définie dans la base ECLAIRE",
+      "description" : "Value Set de la phase de l'essai clinique tel qu'il est défini dans la base ECLAIRE",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/eclaire-study-status-vs"
       },
       "name" : "Value Set Statut Eclaire de l'essai",
-      "description" : "Value Set Statut Eclaire de l'essei clinique.",
+      "description" : "Value Set Statut Eclaire de l'essai clinique.",
       "exampleBoolean" : false
     },
     {
@@ -812,8 +1009,20 @@
       "reference" : {
         "reference" : "ValueSet/eclaire-study-phase-vs"
       },
-      "name" : "Value Set type de phase Eclaire de l'essai",
-      "description" : "Value Set type de phase Eclaire de l'essei clinique.",
+      "name" : "Value Set type de phase de l'essai clinique",
+      "description" : "Value Set type de phase Eclaire de l'essai clinique.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-category-vs"
+      },
+      "name" : "Value Set type pour spécifier la catégorie l'essai clinique",
+      "description" : "Value Set pour spécifier la catégorie de l'essai clinique et préciser la réglementation ou le code regulation renseigner dans les bases de registre comme CTIS et EUDAMED.",
       "exampleBoolean" : false
     }],
     "page" : {
@@ -848,6 +1057,15 @@
           }],
           "nameUrl" : "st_flux1.html",
           "title" : "Extraction de données des essais cliniques",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_flux2.html"
+          }],
+          "nameUrl" : "st_flux2.html",
+          "title" : "Recherche des essais cliniques sur critères",
           "generation" : "markdown"
         }]
       },

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ECLAIRE\Artifacts Summary - FHIR v4.0.1</title>
+    <title>Artifacts Summary - Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -32,10 +31,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -48,16 +47,20 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l&#39;Ecosystème</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - trial-use
+            <span style="display:inline-block;">0.2.0 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -94,6 +97,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="st_flux1.html">Extraction de données des essais cliniques</a>
+      </li>
+      <li>
+        <a href="st_flux2.html">Recherche des essais cliniques sur critères</a>
       </li>
     </ul>
   </li>
@@ -173,7 +179,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.1.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.2.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -185,7 +191,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Comportement: Capability Statements</a>
+         <a href="#1">Behavior: Capability Statements</a>
       </li>
       <li>
          <a href="#2">Structures: Resource Profiles</a>
@@ -212,9 +218,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      xmlns:f="http://hl7.org/fhir">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
-   <h3>Comportement: Capability Statements </h3>
+   <h3>Behavior: Capability Statements </h3>
    <p>
-    <p>La ressource CapabilityStatement permet de définir les capacités spécifiques que les systèmes doivent supporter pour être conforme à cet Implementation Guide (IG). Les systèmes conformes à cet IG doivent déclarer leur conformance à au moins une de ces ressources CapabilityStatement.</p>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
 </p>
    <p>
       <table class="grid">
@@ -223,7 +229,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
                <td style="column-width:30%">
                   <a href="CapabilityStatement-eclaire-consommateur.html"
-                     title="CapabilityStatement/eclaire-consommateur">eclaire-consommateur</a>
+                     title="CapabilityStatement/eclaire-consommateur">Eclaire</a>
                </td>
                <td>
 <p>Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l’Ecosystème)</p>
@@ -235,12 +241,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
    <p>
-    <p>Ces structures définissent les contraintes sur les ressources FHIR par les systèmes conformes à cet Implementation Guide (IG).</p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-eclaire-group.html"
+                     title="StructureDefinition/eclaire-group">ECLAIREGroup</a>
+               </td>
+               <td>
+<p>Profil de Group pour le projet ECLAIRE</p>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-eclaire-location.html"
@@ -265,7 +280,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="3"> </a>
    <h3>Structures: Extension Definitions </h3>
    <p>
-    <p>Ces structures définissent les contraintes sur les extensions FHIR par les systèmes conformes à cet Implementation Guide (IG).</p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -273,11 +288,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-eclaire-condition-details.html"
-                     title="StructureDefinition/eclaire-condition-details">ECLAIREConditionDetails</a>
+                  <a href="StructureDefinition-eclaire-contact-address.html"
+                     title="StructureDefinition/eclaire-contact-address">ECLAIREContactAddress</a>
                </td>
                <td>
-<p>Extension créée dans le cadre du projet API ECLAIRE afin de permettre l’ajout de précisions sur le sujet concerné par l’essai</p>
+<p>Extension créée dans le cadre du projet ECLAIRE pour indiquer l’adresse du contact</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-eclaire-contact-affiliation.html"
+                     title="StructureDefinition/eclaire-contact-affiliation">ECLAIREContactAffiliation</a>
+               </td>
+               <td>
+<p>Extension créée dans le cadre du projet ECLAIRE pour indiquer l’affiliation du contact</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-eclaire-contact-name.html"
+                     title="StructureDefinition/eclaire-contact-name">ECLAIREContactName</a>
+               </td>
+               <td>
+<p>Extension créée dans le cadre du projet ECLAIRE pour indiquer le nom de contact</p>
 </td>
             </tr>
             <tr>
@@ -349,12 +382,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="4"> </a>
    <h3>Terminology: Value Sets </h3>
    <p>
-    <p>Les ressources ValueSet définissent les ensembles de codes utilisés par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Jeu De Valeur (JDV).</p>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-study-population-vs.html"
+                     title="ValueSet/eclaire-study-population-vs">Caractérisation de la population Value Set</a>
+               </td>
+               <td>
+<p>Caractérisation de la population Value Set.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-regulation-code-vs.html"
+                     title="ValueSet/eclaire-regulation-code-vs">Code de régulation Value Set</a>
+               </td>
+               <td>
+<p>Code de régulation Value Set.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-reglementation-precision-vs.html"
+                     title="ValueSet/eclaire-reglementation-precision-vs">Précision sur la réglementation concernant l'essai Value Set</a>
+               </td>
+               <td>
+<p>Précision sur la réglementation concernant l’essai Value Set.</p>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="ValueSet-eclaire-type-contact-vs.html"
@@ -366,20 +426,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-study-title-type-vs.html"
+                     title="ValueSet/eclaire-study-title-type-vs">Type de titre Value Set</a>
+               </td>
+               <td>
+<p>Type de titre pour les essais cliniques Value Set (inspiré du Value Set de R5 : https://hl7.org/fhir/valueset-title-type.html)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="ValueSet-eclaire-study-status-vs.html"
                      title="ValueSet/eclaire-study-status-vs">Value Set Statut Eclaire de l'essai</a>
                </td>
                <td>
-<p>Value Set Statut Eclaire de l’essei clinique.</p>
+<p>Value Set Statut Eclaire de l’essai clinique.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-study-phase-source-vs.html"
+                     title="ValueSet/eclaire-study-phase-source-vs">Value Set de la phase de l'essai tel que définie dans la base ECLAIRE</a>
+               </td>
+               <td>
+<p>Value Set de la phase de l’essai clinique tel qu’il est défini dans la base ECLAIRE</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="ValueSet-eclaire-study-phase-vs.html"
-                     title="ValueSet/eclaire-study-phase-vs">Value Set type de phase Eclaire de l'essai</a>
+                     title="ValueSet/eclaire-study-phase-vs">Value Set type de phase de l'essai clinique</a>
                </td>
                <td>
-<p>Value Set type de phase Eclaire de l’essei clinique.</p>
+<p>Value Set type de phase Eclaire de l’essai clinique.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-eclaire-category-vs.html"
+                     title="ValueSet/eclaire-category-vs">Value Set type pour spécifier la catégorie l'essai clinique</a>
+               </td>
+               <td>
+<p>Value Set pour spécifier la catégorie de l’essai clinique et préciser la réglementation ou le code regulation renseigner dans les bases de registre comme CTIS et EUDAMED.</p>
 </td>
             </tr>
          </tbody>
@@ -388,12 +475,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="5"> </a>
    <h3>Terminology: Code Systems </h3>
    <p>
-    <p>Les ressources CodeSystem définissent les ensembles de codes définis par les systèmes conformes à cet Implementation Guide (IG). Equivalent NOS : Terminologie de REference (TRE).</p>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-eclaire-regulation-code-code-system.html"
+                     title="CodeSystem/eclaire-regulation-code-code-system">Code de régulation de l'essai</a>
+               </td>
+               <td>
+<p>Code de régulation de l’essai</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-eclaire-study-population-code-system.html"
+                     title="CodeSystem/eclaire-study-population-code-system">Codes pour caractériser la population de l'étude</a>
+               </td>
+               <td>
+<p>Codes pour caractériser la population ciblée par l’étude</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-eclaire-study-phase-source-code-system.html"
+                     title="CodeSystem/eclaire-study-phase-source-code-system">Définition des phase de l'essai utilisés dans la base de données ECLAIRE</a>
+               </td>
+               <td>
+<p>Définition des phases de l’essai utilisées dans la base de données ECLAIRE</p>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="CodeSystem-eclaire-study-status-code-system.html"
@@ -414,6 +528,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="CodeSystem-eclaire-study-title-type-code-system.html"
+                     title="CodeSystem/eclaire-study-title-type-code-system">Définition des types de titre pour l'essai</a>
+               </td>
+               <td>
+<p>Définition des types de titre pour l’essai (Code System inspiré de R5 : https://hl7.org/fhir/codesystem-title-type.html)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-eclaire-reglementation-precision-code-system.html"
+                     title="CodeSystem/eclaire-reglementation-precision-code-system">Précision sur la réglementation concernant l'essai</a>
+               </td>
+               <td>
+<p>Précision sur la réglementation concernant l’essai</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="CodeSystem-eclaire-type-contact-code-system.html"
                      title="CodeSystem/eclaire-type-contact-code-system">Type de contact</a>
                </td>
@@ -427,7 +559,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="6"> </a>
    <h3>Terminology: Concept Maps </h3>
    <p>
-    <p>Les ConceptMap définissent les transformations de conversion entre les CodeSystem conformes à cet Implementation Guide (IG). Equivalent NOS : tables d’ASSociation (ASS).</p>
+    <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -435,8 +567,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="ConceptMap-eclaire-study-phase-concept-map.html"
+                     title="ConceptMap/eclaire-study-phase-concept-map">FHIR/Eclaire ResearchStudy phase Use Mapping</a>
+               </td>
+               <td>
+<p>Correspondance entre la phase définie dans la base Eclaire et le ValueSet https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet-eclaire-study-phase-vs</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="ConceptMap-eclaire-study-status-concept-map.html"
-                     title="ConceptMap/eclaire-study-status-concept-map">eclaire-study-status-concept-map</a>
+                     title="ConceptMap/eclaire-study-status-concept-map">FHIR/Eclaire ResearchStudy status Use Mapping</a>
                </td>
                <td>
 <p>Correspondance entre le statut défini dans la base Eclaire et le ValueSet http://hl7.org/fhir/R4/valueset-research-study-status.html (required)</p>
@@ -448,7 +589,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <a name="7"> </a>
    <h3>Example: Example Instances </h3>
    <p>
-    <p>Ces exemples dévoilent à quoi doivent ressembler les données produites et consommées par les systèmes conformes à cet Implementation Guide (IG).</p>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 </p>
    <p>
       <table class="grid">
@@ -456,11 +597,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="ResearchStudy-2022-500520-30-00.html"
-                     title="ResearchStudy/2022-500520-30-00">2022-500520-30-00</a>
+                  <a href="ResearchStudy-fake-study-example.html"
+                     title="ResearchStudy/fake-study-example">Energetic Zebra</a>
                </td>
                <td>
-<p>Ceci est est un exemple de description d’un essai clinique</p>
+<p>This is a fake research study</p>
 </td>
             </tr>
          </tbody>
@@ -512,12 +653,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 28, 2023 16:03+0000">2023-07-28</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 12:15+0000">2023-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-essais-cliniques/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-essais-cliniques/issues/new/choose">New Issue</a>
                 
 
           </span>
@@ -662,6 +804,4 @@ anchors.add()</script>
   </footer>
   </body>
 </html>
-
-
 

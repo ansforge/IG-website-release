@@ -1,13 +1,28 @@
 {
   "package": "ans.fhir.fr.eclaire",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "fhirVersion": "4.0.1",
+  "jurisdiction": "FR",
   "extensions": [
     {
-      "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-condition-details",
-      "title": "ECLAIREConditionDetails",
+      "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-address",
+      "title": "ECLAIREContactAddress",
+      "types": [
+        "Address"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-affiliation",
+      "title": "ECLAIREContactAffiliation",
       "types": [
         "string"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-name",
+      "title": "ECLAIREContactName",
+      "types": [
+        "HumanName"
       ]
     },
     {
@@ -86,7 +101,7 @@
       "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-review-date",
       "title": "ECLAIREReviewDate",
       "types": [
-        "date"
+        "instant"
       ]
     },
     {
@@ -112,6 +127,12 @@
     }
   ],
   "profiles": {
+    "Group": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-group",
+        "title": "ECLAIREGroup"
+      }
+    ],
     "Location": [
       {
         "url": "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-location",
@@ -133,7 +154,6 @@
       "StructureDefinition.snapshot.element.constraint"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
-      "StructureDefinition.differential.element.binding",
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
@@ -142,17 +162,14 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version": [
-      "StructureDefinition.snapshot.element"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
@@ -171,8 +188,14 @@
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ],
-    "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-condition-details": [
-      "ResearchStudy"
+    "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-address": [
+      "ResearchStudy.contact"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-affiliation": [
+      "ResearchStudy.contact"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-name": [
+      "ResearchStudy.contact"
     ],
     "https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-contact-type": [
       "ResearchStudy.contact"

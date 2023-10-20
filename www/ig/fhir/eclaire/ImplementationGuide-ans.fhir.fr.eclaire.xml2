@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire"/>
-  <version value="0.1.0"/>
+  <version value="0.2.0"/>
   <name value="ECLAIRE"/>
   <title value="Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème"/>
   <status value="draft"/>
-  <date value="2023-07-28T16:03:24+00:00"/>
+  <date value="2023-10-20T12:15:34+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -21,6 +21,13 @@
     </telecom>
   </contact>
   <description value="Implementation Guide pour définir l'API FHIR pour ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="FR"/>
+      <display value="FRANCE"/>
+    </coding>
+  </jurisdiction>
   <packageId value="ans.fhir.fr.eclaire"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -30,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.0.0"/>
+    <version value="5.3.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -188,6 +195,14 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -398,6 +413,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="active-tables"/>
       </extension>
       <extension url="value">
@@ -438,14 +461,58 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ResearchStudy"/>
+        <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ResearchStudy/2022-500520-30-00"/>
+        <reference value="ValueSet/eclaire-study-population-vs"/>
       </reference>
-      <name value="2022-500520-30-00"/>
-      <description value="Ceci est est un exemple de description d'un essai clinique"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-researchstudy"/>
+      <name value="Caractérisation de la population Value Set"/>
+      <description value="Caractérisation de la population Value Set."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/eclaire-regulation-code-code-system"/>
+      </reference>
+      <name value="Code de régulation de l'essai"/>
+      <description value="Code de régulation de l'essai"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eclaire-regulation-code-vs"/>
+      </reference>
+      <name value="Code de régulation Value Set"/>
+      <description value="Code de régulation Value Set."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/eclaire-study-population-code-system"/>
+      </reference>
+      <name value="Codes pour caractériser la population de l'étude"/>
+      <description value="Codes pour caractériser la population ciblée par l'étude"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/eclaire-study-phase-source-code-system"/>
+      </reference>
+      <name value="Définition des phase de l'essai utilisés dans la base de données ECLAIRE"/>
+      <description value="Définition des phases de l'essai utilisées dans la base de données ECLAIRE"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -471,24 +538,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/eclaire-study-title-type-code-system"/>
+      </reference>
+      <name value="Définition des types de titre pour l'essai"/>
+      <description value="Définition des types de titre pour l'essai (Code System inspiré de R5 : https://hl7.org/fhir/codesystem-title-type.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
         <reference value="CapabilityStatement/eclaire-consommateur"/>
       </reference>
-      <name value="eclaire-consommateur"/>
+      <name value="Eclaire"/>
       <description value="Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ConceptMap"/>
-      </extension>
-      <reference>
-        <reference value="ConceptMap/eclaire-study-status-concept-map"/>
-      </reference>
-      <name value="eclaire-study-status-concept-map"/>
-      <description value="Correspondance entre le statut défini dans la base Eclaire et le ValueSet http://hl7.org/fhir/R4/valueset-research-study-status.html (required)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -496,10 +563,32 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/eclaire-condition-details"/>
+        <reference value="StructureDefinition/eclaire-contact-address"/>
       </reference>
-      <name value="ECLAIREConditionDetails"/>
-      <description value="Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de précisions sur le sujet concerné par l'essai"/>
+      <name value="ECLAIREContactAddress"/>
+      <description value="Extension créée dans le cadre du projet ECLAIRE pour indiquer l'adresse du contact"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eclaire-contact-affiliation"/>
+      </reference>
+      <name value="ECLAIREContactAffiliation"/>
+      <description value="Extension créée dans le cadre du projet ECLAIRE pour indiquer l'affiliation du contact"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eclaire-contact-name"/>
+      </reference>
+      <name value="ECLAIREContactName"/>
+      <description value="Extension créée dans le cadre du projet ECLAIRE pour indiquer le nom de contact"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -511,6 +600,17 @@
       </reference>
       <name value="ECLAIREContactType"/>
       <description value="Extension créée dans le cadre du projet ECLAIRE qui indique le type de Contact : Public ou Scientific"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eclaire-group"/>
+      </reference>
+      <name value="ECLAIREGroup"/>
+      <description value="Profil de Group pour le projet ECLAIRE"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -603,6 +703,61 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ResearchStudy"/>
+      </extension>
+      <reference>
+        <reference value="ResearchStudy/fake-study-example"/>
+      </reference>
+      <name value="Energetic Zebra"/>
+      <description value="This is a fake research study"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-researchstudy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/eclaire-study-phase-concept-map"/>
+      </reference>
+      <name value="FHIR/Eclaire ResearchStudy phase Use Mapping"/>
+      <description value="Correspondance entre la phase définie dans la base Eclaire et le ValueSet https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet-eclaire-study-phase-vs"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/eclaire-study-status-concept-map"/>
+      </reference>
+      <name value="FHIR/Eclaire ResearchStudy status Use Mapping"/>
+      <description value="Correspondance entre le statut défini dans la base Eclaire et le ValueSet http://hl7.org/fhir/R4/valueset-research-study-status.html (required)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/eclaire-reglementation-precision-code-system"/>
+      </reference>
+      <name value="Précision sur la réglementation concernant l'essai"/>
+      <description value="Précision sur la réglementation concernant l'essai"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eclaire-reglementation-precision-vs"/>
+      </reference>
+      <name value="Précision sur la réglementation concernant l'essai Value Set"/>
+      <description value="Précision sur la réglementation concernant l'essai Value Set."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -628,10 +783,32 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/eclaire-study-title-type-vs"/>
+      </reference>
+      <name value="Type de titre Value Set"/>
+      <description value="Type de titre pour les essais cliniques Value Set (inspiré du Value Set de R5 : https://hl7.org/fhir/valueset-title-type.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eclaire-study-phase-source-vs"/>
+      </reference>
+      <name value="Value Set de la phase de l'essai tel que définie dans la base ECLAIRE"/>
+      <description value="Value Set de la phase de l'essai clinique tel qu'il est défini dans la base ECLAIRE"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/eclaire-study-status-vs"/>
       </reference>
       <name value="Value Set Statut Eclaire de l'essai"/>
-      <description value="Value Set Statut Eclaire de l'essei clinique."/>
+      <description value="Value Set Statut Eclaire de l'essai clinique."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -641,8 +818,19 @@
       <reference>
         <reference value="ValueSet/eclaire-study-phase-vs"/>
       </reference>
-      <name value="Value Set type de phase Eclaire de l'essai"/>
-      <description value="Value Set type de phase Eclaire de l'essei clinique."/>
+      <name value="Value Set type de phase de l'essai clinique"/>
+      <description value="Value Set type de phase Eclaire de l'essai clinique."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eclaire-category-vs"/>
+      </reference>
+      <name value="Value Set type pour spécifier la catégorie l'essai clinique"/>
+      <description value="Value Set pour spécifier la catégorie de l'essai clinique et préciser la réglementation ou le code regulation renseigner dans les bases de registre comme CTIS et EUDAMED."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -673,6 +861,14 @@
           </extension>
           <nameUrl value="st_flux1.html"/>
           <title value="Extraction de données des essais cliniques"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_flux2.html"/>
+          </extension>
+          <nameUrl value="st_flux2.html"/>
+          <title value="Recherche des essais cliniques sur critères"/>
           <generation value="markdown"/>
         </page>
       </page>
