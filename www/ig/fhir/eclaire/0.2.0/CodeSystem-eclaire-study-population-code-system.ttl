@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-population-code-system> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "eclaire-study-population-code-system"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system <code>https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-population-code-system</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">incap-pop<a name=\"eclaire-study-population-code-system-incap-pop\"> </a></td><td>Incapacitated population (Population en situation de handicap)</td></tr><tr><td style=\"white-space:nowrap\">minors<a name=\"eclaire-study-population-code-system-minors\"> </a></td><td>Minors (Mineurs)</td></tr><tr><td style=\"white-space:nowrap\">nursing<a name=\"eclaire-study-population-code-system-nursing\"> </a></td><td>Nursing women (Femmes allaitant)</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"eclaire-study-population-code-system-other\"> </a></td><td>Other (Autres)</td></tr><tr><td style=\"white-space:nowrap\">pregnant<a name=\"eclaire-study-population-code-system-pregnant\"> </a></td><td>Pregnant women (Femmes enceintes)</td></tr><tr><td style=\"white-space:nowrap\">emergency-situation<a name=\"eclaire-study-population-code-system-emergency-situation\"> </a></td><td>Subjects in emergency situation (Sujets en situation d'urgence)</td></tr><tr><td style=\"white-space:nowrap\">incap-consent<a name=\"eclaire-study-population-code-system-incap-consent\"> </a></td><td>Subjects incapable of giving consent personally (Sujets incapables de donner leur consentement personnel)</td></tr><tr><td style=\"white-space:nowrap\">no-using-contraception<a name=\"eclaire-study-population-code-system-no-using-contraception\"> </a></td><td>Women of child bearing potential not using contraception (Femmes en âge de procréer n'utilisant pas de contraception)</td></tr><tr><td style=\"white-space:nowrap\">using-contraception<a name=\"eclaire-study-population-code-system-using-contraception\"> </a></td><td>Women of child bearing potential using contraception (Femmes en âge de procréer utilisant une méthode de contraception)</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-population-code-system"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:name [ fhir:v "EclaireStudyPopulationCS"] ; # 
+  fhir:title [ fhir:v "Codes pour caractériser la population de l'étude"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2023-10-24T08:16:05+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ANS" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes pour caractériser la population ciblée par l'étude"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "incap-pop" ] ;
+     fhir:display [ fhir:v "Incapacitated population (Population en situation de handicap)" ]
+  ] [
+     fhir:code [ fhir:v "minors" ] ;
+     fhir:display [ fhir:v "Minors (Mineurs)" ]
+  ] [
+     fhir:code [ fhir:v "nursing" ] ;
+     fhir:display [ fhir:v "Nursing women (Femmes allaitant)" ]
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other (Autres)" ]
+  ] [
+     fhir:code [ fhir:v "pregnant" ] ;
+     fhir:display [ fhir:v "Pregnant women (Femmes enceintes)" ]
+  ] [
+     fhir:code [ fhir:v "emergency-situation" ] ;
+     fhir:display [ fhir:v "Subjects in emergency situation (Sujets en situation d'urgence)" ]
+  ] [
+     fhir:code [ fhir:v "incap-consent" ] ;
+     fhir:display [ fhir:v "Subjects incapable of giving consent personally (Sujets incapables de donner leur consentement personnel)" ]
+  ] [
+     fhir:code [ fhir:v "no-using-contraception" ] ;
+     fhir:display [ fhir:v "Women of child bearing potential not using contraception (Femmes en âge de procréer n'utilisant pas de contraception)" ]
+  ] [
+     fhir:code [ fhir:v "using-contraception" ] ;
+     fhir:display [ fhir:v "Women of child bearing potential using contraception (Femmes en âge de procréer utilisant une méthode de contraception)" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
