@@ -1,0 +1,388 @@
+FHIR IG Publisher Version 1.3.7 (Git# 10a728fb7d5e). Built 2023-05-01T16:43:10.133Z (182 days old)
+Detected Java version: 17.0.7 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64 on amd64 (64bit). 1732MB available
+dir = /home/runner/work/IG-documentation/IG-documentation, path = /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64/bin:/home/runner/.dotnet:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -go-publish -source igRepo -web ./IG-website-release/www/ig -registry ./IG-website-release/ig-registry/fhir-ig-list.json -history ./IG-website-release/fhir-ig-history-template -templates ./IG-website-release/templates
+---------------
+Publication Run: publish igRepo to ./IG-website-release/www/ig
+Run Number: 6
+Web Layout using the script ans.fr.[code] & https://interop.esante.gouv.fr/ig/[code]
+Relative directory for IG is '/documentation'
+All checks passed. Do the publication build from /home/runner/work/IG-documentation/IG-documentation/igRepo and publish to /tmp/web-root/run-20231031/documentation
+Prepare Build space in /tmp/ans.fr.documentation#0.1.5
+Build IG at /home/runner/work/IG-documentation/IG-documentation/igRepo: final copy suitable for publication (in /tmp/ans.fr.documentation#0.1.5)
+FHIR IG Publisher Version 1.3.7 (Git# 10a728fb7d5e). Built 2023-05-01T16:43:10.133Z (182 days old)
+Detected Java version: 17.0.7 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64 on Linux/amd64 (64bit). 1732MB available
+dir = /home/runner/work/IG-documentation/IG-documentation, path = /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64/bin:/home/runner/.dotnet:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -ig /tmp/ans.fr.documentation#0.1.5 -resetTx -publish https://interop.esante.gouv.fr/ig/documentation/0.1.5 -no-exit
+Start Clock @ Tuesday, October 31, 2023 at 9:07:00 AM Coordinated Universal Time (2023-10-31T09:07:00Z)
+
+Build FHIR IG from /tmp/ans.fr.documentation#0.1.5                               (00:00.018)
+Build Formal Publication package, intended for https://interop.esante.gouv.fr/ig/documentation/0.1.5 (00:00.020)
+API keys loaded from /home/runner/.fhir/fhir-settings.json                       (00:00.021)
+Package Cache: /home/runner/.fhir/packages                                       (00:00.025)
+Unable to load IG as an r5 IG - try R4 (property code is a class com.google.gson.JsonPrimitive looking for an object) (00:00.571)
+Load Template from https://github.com/ansforge/IG-template                       (00:01.114)
+
+onLoad.findSpreadsheets:
+
+onLoad.updateIg:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onLoad-ig-working.xml to /tmp/ans.fr.documentation#0.1.5/template/onLoad-ig-updated.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onLoad.xslt
+
+onLoad.extend:
+
+onLoad:
+Root directory: /tmp/ans.fr.documentation#0.1.5                                  (00:04.735)
+Core Package hl7.fhir.r4.core#4.0.1
+.:Terminology Cache is at /tmp/ans.fr.documentation#0.1.5/input-cache/txcache. Clearing now (00:10.863)
+Connect to Terminology Server at http://tx.fhir.org                              (00:10.865)
+Load Package hl7.fhir.pubpack#0.1.4
+Load Package hl7.fhir.xver-extensions#0.0.12
+Load Package hl7.terminology.r4#5.3.0
+Version mismatch. This IG is version 4.0.1, while the IG 'igtools' is from version 5.0.0 (will try to run anyway) (00:13.924)
+Load Package hl7.fhir.uv.tools#1.0.0-candidate
+Initialization complete                                                          (00:14.468)
+Fetch https://interop.esante.gouv.fr/ig/documentation/package-list.json for version check (00:14.478)
+Load Content                                                                     (00:14.913)
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5/fsh-generated/includes] as /tmp/ans.fr.documentation#0.1.5/fsh-generated/includes
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5/input/data] as /tmp/ans.fr.documentation#0.1.5/input/data
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5/input/pagecontent] as /tmp/ans.fr.documentation#0.1.5/input/pagecontent
+Processing Conformance Resources                                                 (00:15.171)
+Generating Snapshots                                                             (00:15.225)
+Propagating status                                                               (00:15.236)
+Generating Narratives                                                            (00:15.238)
+Validating Conformance Resources                                                 (00:15.356)
+2023-10-31 09:07:17.877 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.4 from server: http://packages.fhir.org (Invalid HTTP response 404 from http://packages.fhir.org/ans.fr.documentation/0.1.4 (Not Found) (content in /tmp/http-log/fhir-http-2.log))
+2023-10-31 09:07:17.915 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.4 from server: https://packages2.fhir.org/packages (Invalid HTTP response 404 from https://packages2.fhir.org/packages/ans.fr.documentation/0.1.4 (Not found) (content in /tmp/http-log/fhir-http-3.log))
+Error fetching http://packages.fhir.org/ans.fr.documentation: Invalid HTTP response 404 from http://packages.fhir.org/ans.fr.documentation (Not Found) (content in /tmp/http-log/fhir-http-4.log)
+2023-10-31 09:07:18.032 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.x from server: http://packages.fhir.org (Package not found: ans.fr.documentation)
+2023-10-31 09:07:18.904 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.x from server: https://packages2.fhir.org/packages (Package not found: ans.fr.documentation)
+org.hl7.fhir.exceptions.FHIRException: Unable to resolve package id ans.fr.documentation#0.1.4
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.fetchTheOldWay(FilesystemPackageCacheManager.java:788)
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.loadFromPackageServer(FilesystemPackageCacheManager.java:257)
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.loadPackage(FilesystemPackageCacheManager.java:580)
+	at org.hl7.fhir.igtools.publisher.comparators.PreviousVersionComparator.startChecks(PreviousVersionComparator.java:194)
+	at org.hl7.fhir.igtools.publisher.Publisher.checkConformanceResources(Publisher.java:5388)
+	at org.hl7.fhir.igtools.publisher.Publisher.loadConformance(Publisher.java:5270)
+	at org.hl7.fhir.igtools.publisher.Publisher.createIg(Publisher.java:1099)
+	at org.hl7.fhir.igtools.publisher.Publisher.execute(Publisher.java:929)
+	at org.hl7.fhir.igtools.publisher.Publisher.main(Publisher.java:11284)
+	at org.hl7.fhir.igtools.web.PublicationProcess.runBuild(PublicationProcess.java:816)
+	at org.hl7.fhir.igtools.web.PublicationProcess.doPublish(PublicationProcess.java:416)
+	at org.hl7.fhir.igtools.web.PublicationProcess.publishInner(PublicationProcess.java:333)
+	at org.hl7.fhir.igtools.web.PublicationProcess.publish(PublicationProcess.java:125)
+	at org.hl7.fhir.igtools.publisher.Publisher.main(Publisher.java:11041)
+Validating Resources                                                             (00:18.654)
+Processing Provenance Records                                                    (00:18.656)
+Generating Outputs in /tmp/ans.fr.documentation#0.1.5/output                     (00:18.657)
+Run Template                                                                     (00:18.819)
+
+onGenerate.checkVersions:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5/template/versions.txt
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.getVersions.xslt
+
+onGenerate.r5-schemas:
+      [get] Getting: http://build.fhir.org/fhir-single.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R5/fhir-single.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/fhir-xhtml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R5/fhir-xhtml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/xml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R5/xml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/xmldsig-core-schema.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R5/xmldsig-core-schema.xsd
+      [get] Not modified - so not downloaded
+
+onGenerate.r4-schemas:
+      [get] Getting: http://hl7.org/fhir/R4/fhir-single.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R4/fhir-single.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/fhir-xhtml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R4/fhir-xhtml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/xml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R4/xml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/xmldsig-core-schema.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5/input-cache/schemas/R4/xmldsig-core-schema.xsd
+      [get] Not modified - so not downloaded
+
+onGenerate.r3-schemas:
+
+onGenerate.r2b-schemas:
+
+onGenerate.r2-schemas:
+
+onGenerate.schemas:
+
+onGenerate.data:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5/temp/pages/_data/artifacts.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.data.xslt
+
+onGenerate.setup:
+
+onGenerate.infoFile:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5/temp/pages/_data/info.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.genJson.xslt
+
+onGenerate.processIncludes:
+     [copy] Copying 17 files to /tmp/ans.fr.documentation#0.1.5/temp/pages/_includes
+
+onGenerate.processIg:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.1.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.group.xslt
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.1.xml to /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.2.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.groupSort.xslt
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-working.2.xml to /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-updated.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.final.xslt
+
+onGenerate.igQa:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-updated.xml to /tmp/ans.fr.documentation#0.1.5/template/ongenerate-validation-igqa.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/onGenerate.qa.xslt
+
+onGenerate.artifactList:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5/template/onGenerate-ig-updated.xml to /tmp/ans.fr.documentation#0.1.5/temp/pages/_includes/artifacts.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5/template/scripts/createArtifactSummary.xslt
+
+check-plantumlfiles:
+
+onGenerate.plantUml.ig:
+
+onGenerate.plantUml.template:
+
+onGenerate.plantUml:
+
+onGenerate.copyDataFiles:
+     [copy] Warning: /tmp/ans.fr.documentation#0.1.5/template/data does not exist.
+
+onGenerate.extend:
+
+onGenerate:
+Template Done                                                                    (00:20.820)
+Generating Summary Outputs                                                       (00:20.937)
+Sending Usage Stats to Server                                                    (02:33.785)
+## Memory (MB): Use = 515, Free = 399, Total = 915, Max =1732
+Reclaiming memory...
+## Memory (MB): Use = 180, Free = 426, Total = 607, Max =1732
+Run jekyll: jekyll build --destination "/tmp/ans.fr.documentation#0.1.5/output" (in folder /tmp/ans.fr.documentation#0.1.5/temp/pages) (02:33.956)
+Jekyll: Source: /tmp/ans.fr.documentation#0.1.5/temp/pages                       (02:34.401)
+Jekyll: Generating...                                                            (02:34.402)
+Jekyll: done in 0.588 seconds.                                                   (02:34.989)
+Installing ans.fr.documentation#0.1.5 to the package cache
+  Fetching:
+
+  Installing:  done.
+Checking Output HTML                                                             (02:35.831)
+found 531 files                                                                  (02:35.834)
+........................................
+........................................
+  ... 531 html files, 0 pages invalid xhtml (0%)                                 (02:36.806)
+  ... 919 links, 2 broken links (0%)                                             (02:36.808)
+Build final .zip                                                                 (02:36.808)
+Final .zip built                                                                 (02:37.549)
+Built. Times: loading: 00:00.255, generate: 02:24.089, narrative generation: 00:00.117, validation: 00:01.480, realm-rules: 00:00.000, previous-version: 00:01.808, jekyll: 00:01.045, template: 00:01.996 (#3) (02:39.261)
+Validation output in /tmp/ans.fr.documentation#0.1.5/output/qa.html
+Errors: 1, Warnings: 5, Info: 0, Broken Links: 2 (02:39.370)
+Finished                                                                         (02:39.372)
+Done                                                                             (02:39.373)
+Prepare Build space in /tmp/ans.fr.documentation#0.1.5-milestone
+Build IG at /home/runner/work/IG-documentation/IG-documentation/igRepo: final copy suitable for publication (in /tmp/ans.fr.documentation#0.1.5-milestone) (milestone build)
+FHIR IG Publisher Version 1.3.7 (Git# 10a728fb7d5e). Built 2023-05-01T16:43:10.133Z (182 days old)
+Detected Java version: 17.0.7 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64 on Linux/amd64 (64bit). 1732MB available
+dir = /home/runner/work/IG-documentation/IG-documentation, path = /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.7/x64/bin:/home/runner/.dotnet:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -ig /tmp/ans.fr.documentation#0.1.5-milestone -publish https://interop.esante.gouv.fr/ig/documentation/0.1.5 -milestone -no-exit
+Start Clock @ Tuesday, October 31, 2023 at 9:09:41 AM Coordinated Universal Time (2023-10-31T09:09:41Z)
+
+Build FHIR IG from /tmp/ans.fr.documentation#0.1.5-milestone                     (00:00.002)
+Build Formal Publication package, intended for https://interop.esante.gouv.fr/ig/documentation/0.1.5 (00:00.002)
+API keys loaded from /home/runner/.fhir/fhir-settings.json                       (00:00.003)
+Package Cache: /home/runner/.fhir/packages                                       (00:00.003)
+Unable to load IG as an r5 IG - try R4 (property code is a class com.google.gson.JsonPrimitive looking for an object) (00:00.008)
+Load Template from https://github.com/ansforge/IG-template                       (00:00.019)
+
+onLoad.findSpreadsheets:
+
+onLoad.updateIg:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onLoad-ig-working.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/onLoad-ig-updated.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onLoad.xslt
+
+onLoad.extend:
+
+onLoad:
+Root directory: /tmp/ans.fr.documentation#0.1.5-milestone                        (00:02.358)
+Core Package hl7.fhir.r4.core#4.0.1
+.:Terminology Cache is at /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/txcache. 4 files in cache (00:06.664)
+Connect to Terminology Server at http://tx.fhir.org                              (00:06.664)
+Load Package hl7.fhir.pubpack#0.1.4
+Load Package hl7.fhir.xver-extensions#0.0.12
+Load Package hl7.terminology.r4#5.3.0
+Version mismatch. This IG is version 4.0.1, while the IG 'igtools' is from version 5.0.0 (will try to run anyway) (00:09.229)
+Load Package hl7.fhir.uv.tools#1.0.0-candidate
+Initialization complete                                                          (00:09.469)
+Fetch https://interop.esante.gouv.fr/ig/documentation/package-list.json for version check (00:09.470)
+Load Content                                                                     (00:09.833)
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5-milestone/fsh-generated/includes] as /tmp/ans.fr.documentation#0.1.5-milestone/fsh-generated/includes
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5-milestone/input/data] as /tmp/ans.fr.documentation#0.1.5-milestone/input/data
+loadPrePages from FetchedFile[/tmp/ans.fr.documentation#0.1.5-milestone/input/pagecontent] as /tmp/ans.fr.documentation#0.1.5-milestone/input/pagecontent
+Processing Conformance Resources                                                 (00:09.893)
+Generating Snapshots                                                             (00:09.933)
+Propagating status                                                               (00:09.940)
+Generating Narratives                                                            (00:09.940)
+Validating Conformance Resources                                                 (00:09.971)
+2023-10-31 09:09:52.641 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.4 from server: http://packages.fhir.org (Invalid HTTP response 404 from http://packages.fhir.org/ans.fr.documentation/0.1.4 (Not Found) (content in /tmp/http-log/fhir-http-5.log))
+2023-10-31 09:09:52.676 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.4 from server: https://packages2.fhir.org/packages (Invalid HTTP response 404 from https://packages2.fhir.org/packages/ans.fr.documentation/0.1.4 (Not found) (content in /tmp/http-log/fhir-http-6.log))
+Error fetching http://packages.fhir.org/ans.fr.documentation: Invalid HTTP response 404 from http://packages.fhir.org/ans.fr.documentation (Not Found) (content in /tmp/http-log/fhir-http-7.log)
+2023-10-31 09:09:52.788 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.x from server: http://packages.fhir.org (Package not found: ans.fr.documentation)
+2023-10-31 09:09:53.672 [main] INFO  o.h.f.u.npm.BasePackageCacheManager [BasePackageCacheManager.java:84] Failed to resolve package ans.fr.documentation#0.1.x from server: https://packages2.fhir.org/packages (Package not found: ans.fr.documentation)
+org.hl7.fhir.exceptions.FHIRException: Unable to resolve package id ans.fr.documentation#0.1.4
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.fetchTheOldWay(FilesystemPackageCacheManager.java:788)
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.loadFromPackageServer(FilesystemPackageCacheManager.java:257)
+	at org.hl7.fhir.utilities.npm.FilesystemPackageCacheManager.loadPackage(FilesystemPackageCacheManager.java:580)
+	at org.hl7.fhir.igtools.publisher.comparators.PreviousVersionComparator.startChecks(PreviousVersionComparator.java:194)
+	at org.hl7.fhir.igtools.publisher.Publisher.checkConformanceResources(Publisher.java:5388)
+	at org.hl7.fhir.igtools.publisher.Publisher.loadConformance(Publisher.java:5270)
+	at org.hl7.fhir.igtools.publisher.Publisher.createIg(Publisher.java:1099)
+	at org.hl7.fhir.igtools.publisher.Publisher.execute(Publisher.java:929)
+	at org.hl7.fhir.igtools.publisher.Publisher.main(Publisher.java:11284)
+	at org.hl7.fhir.igtools.web.PublicationProcess.runBuild(PublicationProcess.java:816)
+	at org.hl7.fhir.igtools.web.PublicationProcess.doPublish(PublicationProcess.java:421)
+	at org.hl7.fhir.igtools.web.PublicationProcess.publishInner(PublicationProcess.java:333)
+	at org.hl7.fhir.igtools.web.PublicationProcess.publish(PublicationProcess.java:125)
+	at org.hl7.fhir.igtools.publisher.Publisher.main(Publisher.java:11041)
+Validating Resources                                                             (00:12.908)
+Processing Provenance Records                                                    (00:12.909)
+Generating Outputs in /tmp/ans.fr.documentation#0.1.5-milestone/output           (00:12.909)
+Run Template                                                                     (00:12.963)
+
+onGenerate.checkVersions:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/versions.txt
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.getVersions.xslt
+
+onGenerate.r5-schemas:
+      [get] Getting: http://build.fhir.org/fhir-single.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R5/fhir-single.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/fhir-xhtml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R5/fhir-xhtml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/xml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R5/xml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://build.fhir.org/xmldsig-core-schema.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R5/xmldsig-core-schema.xsd
+      [get] Not modified - so not downloaded
+
+onGenerate.r4-schemas:
+      [get] Getting: http://hl7.org/fhir/R4/fhir-single.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R4/fhir-single.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/fhir-xhtml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R4/fhir-xhtml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/xml.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R4/xml.xsd
+      [get] Not modified - so not downloaded
+      [get] Getting: http://hl7.org/fhir/R4/xmldsig-core-schema.xsd
+      [get] To: /tmp/ans.fr.documentation#0.1.5-milestone/input-cache/schemas/R4/xmldsig-core-schema.xsd
+      [get] Not modified - so not downloaded
+
+onGenerate.r3-schemas:
+
+onGenerate.r2b-schemas:
+
+onGenerate.r2-schemas:
+
+onGenerate.schemas:
+
+onGenerate.data:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages/_data/artifacts.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.data.xslt
+
+onGenerate.setup:
+
+onGenerate.infoFile:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages/_data/info.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.genJson.xslt
+
+onGenerate.processIncludes:
+     [copy] Copying 17 files to /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages/_includes
+
+onGenerate.processIg:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.1.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.group.xslt
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.1.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.2.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.groupSort.xslt
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-working.2.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-updated.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.final.xslt
+
+onGenerate.igQa:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-updated.xml to /tmp/ans.fr.documentation#0.1.5-milestone/template/ongenerate-validation-igqa.json
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/onGenerate.qa.xslt
+
+onGenerate.artifactList:
+     [xslt] Processing /tmp/ans.fr.documentation#0.1.5-milestone/template/onGenerate-ig-updated.xml to /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages/_includes/artifacts.xml
+     [xslt] Loading stylesheet /tmp/ans.fr.documentation#0.1.5-milestone/template/scripts/createArtifactSummary.xslt
+
+check-plantumlfiles:
+
+onGenerate.plantUml.ig:
+
+onGenerate.plantUml.template:
+
+onGenerate.plantUml:
+
+onGenerate.copyDataFiles:
+     [copy] Warning: /tmp/ans.fr.documentation#0.1.5-milestone/template/data does not exist.
+
+onGenerate.extend:
+
+onGenerate:
+Template Done                                                                    (00:14.809)
+Generating Summary Outputs                                                       (00:14.835)
+Sending Usage Stats to Server                                                    (00:17.582)
+## Memory (MB): Use = 329, Free = 623, Total = 953, Max =1732
+Reclaiming memory...
+## Memory (MB): Use = 181, Free = 428, Total = 610, Max =1732
+Run jekyll: jekyll build --destination "/tmp/ans.fr.documentation#0.1.5-milestone/output" (in folder /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages) (00:17.762)
+Jekyll: Source: /tmp/ans.fr.documentation#0.1.5-milestone/temp/pages             (00:18.150)
+Jekyll: Generating...                                                            (00:18.150)
+Jekyll: done in 0.595 seconds.                                                   (00:18.745)
+Installing ans.fr.documentation#0.1.5 to the package cache
+  Fetching:
+
+  Installing: Checking Output HTML                                                             (00:18.827)
+found 531 files                                                                  (00:18.829)
+........................................
+........................................
+  ... 531 html files, 0 pages invalid xhtml (0%)                                 (00:19.573)
+  ... 919 links, 2 broken links (0%)                                             (00:19.574)
+Build final .zip                                                                 (00:19.575)
+Final .zip built                                                                 (00:20.293)
+Built. Times: loading: 00:00.058, generate: 00:11.566, narrative generation: 00:00.029, validation: 00:01.312, realm-rules: 00:00.000, previous-version: 00:01.623, jekyll: 00:00.990, template: 00:01.844 (#3) (00:21.469)
+Validation output in /tmp/ans.fr.documentation#0.1.5-milestone/output/qa.html
+Errors: 1, Warnings: 5, Info: 0, Broken Links: 2 (00:21.527)
+Finished                                                                         (00:21.529)
+Done                                                                             (00:21.529)
+Keep a copy of the build directory at /tmp/web-root/run-20231031/ig-build-zips/ans.fr.documentation#0.1.5.zip
+
+ok. All checks passed. Publish v0.1.5 to /tmp/web-root/run-20231031/documentation/0.1.5
+Copy the IG to /tmp/web-root/run-20231031/documentation/0.1.5
+Update /tmp/web-root/run-20231031/documentation/package-list.json
+Publish Box Statement: This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.5: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a>
+  .. 17 files checked, 17 updated
+  .. 9 clones checked, 18 updated
+  .. 1 redirections (1 created/updated)
+This is a milestone release - publish v0.1.5 to /tmp/web-root/run-20231031/documentation
+Publish Box Statement: This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.5: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a>
+  .. 17 files checked, 17 updated
+  .. 9 clones checked, 18 updated
+  .. 1 redirections (1 created/updated)
+Check for Files to delete
+  ... 0 files
+Copy to new IG to /tmp/web-root/run-20231031/documentation
+Update history page at /tmp/web-root/run-20231031/documentation from /home/runner/work/IG-documentation/IG-documentation/./IG-website-release/fhir-ig-history-template and ./IG-website-release/templates
+Build is complete. Copy from /tmp/web-root/run-20231031
+ans.fr.documentation (https://interop.esante.gouv.fr/ig/documentation): Documentation des guides d'implémentation de l'ANS @ https://ansforge.github.io/IG-documentation/ig/main
+  release: release 0.1.5/4.0.1 @ https://interop.esante.gouv.fr/ig/documentation/0.1.5

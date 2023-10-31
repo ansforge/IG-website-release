@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Bonnes pratiques - Documentation des guides d'implémentation de l'ANS v0.1.4</title>
+    <title>Bonnes pratiques - Documentation des guides d'implémentation de l'ANS v0.1.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.1"}
-    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -56,7 +56,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Documentation des guides d&#39;implémentation de l&#39;ANS</span>
             <br/>
-            <span style="display:inline-block;">0.1.4 - release
+            <span style="display:inline-block;">0.1.5 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -92,16 +96,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="dev_nouvel_ig.html">Quick start IG</a>
+      </li>
+      <li>
         <a href="bonnes_pratiques_modeler.html">Bonnes pratiques</a>
-      </li>
-      <li>
-        <a href="install_dependencies.html">Installer les dépendances</a>
-      </li>
-      <li>
-        <a href="dev_nouvel_ig.html">Développement d&apos;un nouvel IG</a>
-      </li>
-      <li>
-        <a href="niveau_maturite.html">Les niveaux de maturité des IG</a>
       </li>
       <li>
         <a href="erreurs.html">Les erreurs courantes</a>
@@ -130,18 +128,11 @@
       </li>
     </ul>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Tests
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="presentations_tests.html">Présentation des tests</a>
-      </li>
-      <li>
-        <a href="type_cas_tests.html">Types de cas de tests</a>
-      </li>
-    </ul>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
+  <li>
+    <a href="collaborons.html">Collaborons</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -149,18 +140,15 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="collaborons.html">Collaborons</a>
-      </li>
-      <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
       <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
       </li>
+      <li>
+        <a href="about.html">A propos de ce guide</a>
+      </li>
     </ul>
-  </li>
-  <li>
-    <a href="about.html">A propos de ce guide</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -178,11 +166,11 @@
 
           <span style="float:right;">
 
-            <a href="doc_modeler.html">&lt;prev</a> | 
+            <a href="dev_nouvel_ig.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="install_dependencies.html">next&gt;</a>
+          | <a href="erreurs.html">next&gt;</a>
 
           </span>
 
@@ -204,7 +192,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.4: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.5: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Bonnes pratiques</h2>
   
 
@@ -222,27 +210,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#le-choix-de-la-version-fhir" id="markdown-toc-le-choix-de-la-version-fhir">Le choix de la version FHIR</a></li>
+  <li><a href="#critères-de-qualité" id="markdown-toc-critères-de-qualité">Critères de qualité</a></li>
+  <li><a href="#critères-de-maturité" id="markdown-toc-critères-de-maturité">Critères de maturité</a></li>
   <li><a href="#création-des-ressources-de-conformité" id="markdown-toc-création-des-ressources-de-conformité">Création des ressources de conformité</a></li>
   <li><a href="#règles-de-nommage-des-ressources-de-conformité" id="markdown-toc-règles-de-nommage-des-ressources-de-conformité">Règles de nommage des ressources de conformité</a></li>
   <li><a href="#les-packages-et-les-dépendances" id="markdown-toc-les-packages-et-les-dépendances">Les packages et les dépendances</a></li>
   <li><a href="#les-url-canoniques" id="markdown-toc-les-url-canoniques">Les URL canoniques</a></li>
   <li><a href="#fsh--sushi" id="markdown-toc-fsh--sushi">FSH / SUSHI</a></li>
   <li><a href="#exemples-de-guides-dimplémentation" id="markdown-toc-exemples-de-guides-dimplémentation">Exemples de guides d’implémentation</a></li>
+  <li><a href="#le-choix-de-la-version-fhir" id="markdown-toc-le-choix-de-la-version-fhir">Le choix de la version FHIR</a></li>
 </ul>
 
 </div>
-<h3 id="le-choix-de-la-version-fhir">Le choix de la version FHIR</h3>
+<h3 id="critères-de-qualité">Critères de qualité</h3>
 
-<p>Avant de commencer à développer un guide d’implémentation, il faut choisir la version FHIR sur laquelle se baser : R4, R4B, R5 ? L’objectif étant d’avoir un écosystème uniforme et simple qui hérite systématiquement de fr-core pour avoir des modélisations les plus cohérentes possibles.</p>
+<ul>
+  <li>Respect des bonnes pratiques nationales (règles de nommages indiquées ci-dessous)</li>
+  <li>Respect des <a href="https://build.fhir.org/ig/FHIR/ig-guidance/best-practice.html">bonnes pratiques internationales</a></li>
+  <li>Publication de l’IG sans erreurs (cf session Q/A)</li>
+</ul>
 
-<p>A l’heure actuelle, les spécifications des projets nationaux utilisent la R4 (fr-core, IG ANS, Annuaire, ROR…).  Or travailler sur R4 et R5 parallèlement engendre beaucoup de questions : travaux de maintenance doublés, nécessité de maintenir des mappings/connecteurs entre versions (R4 &lt;-&gt; R5, R4 &lt;-&gt; R6, R5 &lt;-&gt; R6, + FHIR/CDA ?), augmentation de la complexité de l’écosystème avec certains acteurs en R4, d’autres en R5…
-Les ressources étant limitées, il est préférable de se concentrer sur l’amélioration de nos profils nationaux en R4 et de faire monter l’écosystème en compétences.</p>
+<h3 id="critères-de-maturité">Critères de maturité</h3>
 
-<p>La release R5 reste cependant intéressante, notamment pour l’amélioration de sa documentation et de certaines ressources (Documentation FHIR Search, Ressources MedicinalProduct…). 
-Ce choix n’est pas tranché, c’est l’écosystème qui dictera quelle version utiliser. Si vous ressentez un besoin d’utiliser R5 (notamment pour des cas d’usages internationaux ou profiter de ressources non matures en R4), nous vous invitons à nous le signaler pour réévaluer le bénéfice/risque de travailler sur FHIR R5. A noter que FHIR R6, dont la première concertation est prévue mi-2024, apportera beaucoup de contenu normatif, et sera peut-être l’objectif de transition.</p>
+<p>Une réflexion sur les niveaux de maturité des guides d’implémentation se basant sur le FMM (FHIR Maturity Model) est en cours de réflexion. Il est important de respecter un maximum de ces crtères de qualité.</p>
 
-<p>En conclusion : privilégier R4 pour ne pas être “hors système” et être cohérent avec fr-core et les IGs de l’ANS. Utiliser R5 uniquement si l’écosystème l’exige (ex : héritage d’un IG international en R5, héritage de ressources retravaillées en R5…) et partager ce besoin en issue GitHub.</p>
+<ul>
+  <li>Ensemble des critères de qualité respectés</li>
+  <li>Nombre d’implémentation ? (Déclaratif : Convergence / DSI ?)</li>
+  <li>Nombre de tests réalisés lors de projectathon</li>
+  <li>Nombre d’issues et résolutions sur le repo GitHub</li>
+  <li>Nombre de commentaires lors des phases de concertation</li>
+  <li>Publication du package avec des dépendances : les ressources héritées ne sont pas dupliquées</li>
+  <li>Description complète pour l’ensemble des ressources de conformité</li>
+  <li>Publication de retours d’expérience sur l’implémentation des spécifications</li>
+</ul>
 
 <h3 id="création-des-ressources-de-conformité">Création des ressources de conformité</h3>
 
@@ -253,6 +254,7 @@ Ce choix n’est pas tranché, c’est l’écosystème qui dictera quelle versi
 <p>De la même manière, l’usage des extensions est à éviter au maximum. Si leur usage est nécessaire, il est préférable d’hériter d’extensions déjà créées.</p>
 
 <p>Où chercher les profils-extensions déjà créés ?</p>
+
 <ul>
   <li><a href="https://www.ihe.net/resources/profiles/">Profils IHE</a></li>
   <li><a href="https://registry.fhir.org/">FHIR Package Registry</a></li>
@@ -317,6 +319,7 @@ TODO : rajouter lien vers la procédure de création d'un VS
 </table>
 
 <p>Nom des slices:</p>
+
 <ul>
   <li>Prendre l’id de l’extension s’il s’agit d’une extension</li>
   <li>Sinon, lowerCamelCase</li>
@@ -328,7 +331,7 @@ TODO : rajouter lien vers la procédure de création d'un VS
 
 <p>L’id de package ne doit pas avoir de majuscule.</p>
 
-<p>Le package doit toujours dépendre de fr-core et/ou les projets de l’ANS pour assurer une cohérence globale à l’échelle française. Ces packages sont publiés sur le FHIR Package Registry et doivent être indiqués dans le fichier <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>. La duplication des fichiers ou la référence par URL est une très mauvaise pratique car on perd tout l’intérêt du versioning.</p>
+<p>Le package doit toujours dépendre de fr-core, de l’annuaire santé et/ou les projets de l’ANS pour assurer une cohérence globale à l’échelle française. Ces packages sont publiés sur le FHIR Package Registry et doivent être indiqués dans le fichier <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>. La duplication des fichiers ou la référence par URL est une très mauvaise pratique car on perd tout l’intérêt du versioning.</p>
 
 <h3 id="les-url-canoniques">Les URL canoniques</h3>
 
@@ -351,9 +354,10 @@ L’URL canonique des profils est construite au format : [base]/[ResourceType]/[
 <p>A noter le ResourceType doit respecter la même casse et le même nom que les ResourceName FHIR.</p>
 
 <p>Documentation :</p>
+
 <ul>
-  <li>https://confluence.hl7.org/pages/viewpage.action?pageId=35718627#IGPublisherDocumentation-CanonicalURL</li>
-  <li>https://confluence.hl7.org/pages/viewpage.action?pageId=81027536#MaintainingaFHIRIGPublication-CanonicalURLs</li>
+  <li>[https://confluence.hl7.org/pages/viewpage.action?pageId=35718627#IGPublisherDocumentation-CanonicalURL]</li>
+  <li>[https://confluence.hl7.org/pages/viewpage.action?pageId=81027536#MaintainingaFHIRIGPublication-CanonicalURLs]</li>
 </ul>
 
 <h3 id="fsh--sushi">FSH / SUSHI</h3>
@@ -363,15 +367,21 @@ L’URL canonique des profils est construite au format : [base]/[ResourceType]/[
 <p>Sushi et FSH permettent de factoriser beaucoup d’informations, et de les centraliser afin d’en faciliter l’accès et la gestion.
 Il est recommandé de faire bénéficier au maximum les projets de cette possibilité de centraliser les informations redondantes.</p>
 
-<h4 id="statut-et-version-des-profils">Statut et version des profils</h4>
+<h4 id="configuration-de-sushi-config--status-version-releaselabel">Configuration de sushi-config : status, version, releaseLabel</h4>
 
-<p>Dans le cas où les structures-definitions d’un projet sont au même niveau de statut ( Active, draft etc…) , il est recommandé de configurer le statut dans le fichier sushi-config.yaml et de supprimer le paramètre “status” renseigné dans les profils.<br />
-Idem pour la version du profil.<br />
-Le statut et la version des l’ensemble des profils seront renseignées exclusivement dans sushi-config.yaml:</p>
+<p>Le <strong>status</strong> devra être placé à draft lorsque celui-ci n’est pas officiellement publié. Il devra être placé à active lors de la première publication. Il est également possible de définir un status par profil si certaine partie de la spécification est en mode draft.</p>
+
+<p>Le numéro de <strong>version</strong> doit respecter le processus semver, soit majeur.mineur.patch. Son usage est précisément défini dans la <a href="https://semver.org/lang/fr/">documentation semver</a>.</p>
+
+<p>Le <strong>releaseLabel</strong> doit être systématiquement placé à trial-use pour l’instant. Des labels plus fins seront proposés dans le futur, établi en fonction de critères de maturité.
+Il est possible de préciser la maturité sous forme de release notes en début de page index en utilisant la balise &lt;blockquote class="stu-note"&gt;&lt;blockquote&gt;.</p>
+
+<p>Le statut, la version le releaseLabel sont à renseigner dans le fichier <a href="https://fshschool.org/docs/sushi/configuration/">sushi-config.yaml</a></p>
 
 <blockquote>
   <p>status: active<br />
-version: 0.1.3 (utiliser le semver)</p>
+version: 0.1.3
+releaseLabel: trial-use</p>
 </blockquote>
 
 <h4 id="extensions-et-valuesets">Extensions et ValueSets</h4>
@@ -394,9 +404,9 @@ Les structure-definitions des profils seront placés dans input\fsh.</p>
 
 <p>Exemple:</p>
 <blockquote>
-  <p>Alias: $PhdDevice = http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice <br />
-Alias: $UCUM = http://unitsofmeasure.org <br />
-Alias: $vitalsigns = http://hl7.org/fhir/StructureDefinition/vitalsigns <br />
+  <p>Alias: $PhdDevice = http://hl7.org/fhir/uv/phd/StructureDefinition/PhdDevice
+Alias: $UCUM = http://unitsofmeasure.org
+Alias: $vitalsigns = http://hl7.org/fhir/StructureDefinition/vitalsigns
 Alias: $FrObservationBp = http://interopsante.org/fhir/StructureDefinition/FrObservationBp<br />
 Alias: $fr-patient = http://interopsante.org/fhir/StructureDefinition/FrPatient</p>
 </blockquote>
@@ -404,6 +414,20 @@ Alias: $fr-patient = http://interopsante.org/fhir/StructureDefinition/FrPatient<
 <h3 id="exemples-de-guides-dimplémentation">Exemples de guides d’implémentation</h3>
 
 <p>Pour plus d’informations, consultez la <a href="https://interop.esante.gouv.fr/ig/fhir/">liste des guides d’implémentation</a> à titre d’exemple.</p>
+
+<h3 id="le-choix-de-la-version-fhir">Le choix de la version FHIR</h3>
+
+<p>Avant de commencer à développer un guide d’implémentation, il faut choisir la version FHIR sur laquelle se baser : R4, R4B, R5 ? L’objectif étant d’avoir un écosystème uniforme et simple qui hérite systématiquement de fr-core pour avoir des modélisations les plus cohérentes possibles.</p>
+
+<p>A l’heure actuelle, les spécifications des projets nationaux utilisent la R4 (fr-core, IG ANS, Annuaire, ROR…).  Or travailler sur R4 et R5 parallèlement engendre beaucoup de questions : travaux de maintenance doublés, nécessité de maintenir des mappings/connecteurs entre versions (R4 &lt;-&gt; R5, R4 &lt;-&gt; R6, R5 &lt;-&gt; R6, …), augmentation de la complexité de l’écosystème avec certains acteurs en R4, d’autres en R5…
+Les ressources étant limitées, il est préférable de se concentrer sur l’amélioration de nos profils nationaux en R4 et de faire monter l’écosystème en compétences.</p>
+
+<p>La release R5 reste cependant intéressante, notamment pour l’amélioration de sa documentation et de certaines ressources (Documentation FHIR Search, Ressources MedicinalProduct…).
+Ce choix n’est pas tranché, c’est l’écosystème qui dictera quelle version utiliser. Si vous ressentez un besoin d’utiliser R5 (notamment pour des cas d’usages internationaux ou profiter de ressources non matures en R4), nous vous invitons à nous le signaler pour réévaluer le bénéfice/risque de travailler sur FHIR R5. A noter que FHIR R6, dont la première concertation est prévue mi-2024, apportera beaucoup de contenu normatif, et sera peut-être l’objectif de transition.</p>
+
+<p>La conclusion actuelle (octobre 2023) est de privilégier R4 pour ne pas être “hors système” et être cohérent avec fr-core et les IGs de l’ANS tant qu’il n’y a pas de socle commun à l’utilisation de R5. Utiliser R5 uniquement si l’écosystème l’exige (ex : héritage d’un IG international en R5, héritage de ressources retravaillées en R5…) et partager ce besoin en issue GitHub.</p>
+
+<p>FHIR R6, dont la première concertation est prévue mi-2024, apportera beaucoup de contenu normatif, et sera peut-être l’objectif de transition.</p>
 
 
 
@@ -433,7 +457,7 @@ Alias: $fr-patient = http://interopsante.org/fhir/StructureDefinition/FrPatient<
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="doc_modeler.html">&lt;prev</a>
+                <a href="dev_nouvel_ig.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -441,7 +465,7 @@ Alias: $fr-patient = http://interopsante.org/fhir/StructureDefinition/FrPatient<
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="install_dependencies.html">next&gt;</a>
+                <a href="erreurs.html">next&gt;</a>
 
               </td>
             </tr>
@@ -451,13 +475,15 @@ Alias: $fr-patient = http://interopsante.org/fhir/StructureDefinition/FrPatient<
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 11, 2023 10:10+0000">2023-10-11</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 31, 2023 09:09+0000">2023-10-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Historique des versions </a>
                   | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-documentation">New Issue</a>
                 
+
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->

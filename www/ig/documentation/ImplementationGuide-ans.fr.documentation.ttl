@@ -13,17 +13,24 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Documentation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation</pre></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.4"] ; # 
+  fhir:version [ fhir:v "0.1.5"] ; # 
   fhir:name [ fhir:v "Documentation"] ; # 
   fhir:title [ fhir:v "Documentation des guides d'implémentation de l'ANS"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-11T10:10:42+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-31T09:09:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
      ] )
   ] ) ; # 
   fhir:packageId [ fhir:v "ans.fr.documentation"] ; # 
@@ -58,7 +65,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "release" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -295,7 +302,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "release" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -542,34 +549,18 @@
          fhir:page ( [
            fhir:extension ( [
              fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "dev_nouvel_ig.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "dev_nouvel_ig.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Quick start IG" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
              fhir:value [ fhir:v "bonnes_pratiques_modeler.html"^^xsd:anyURI ]
            ] ) ;
            fhir:name [ fhir:v "bonnes_pratiques_modeler.html"^^xsd:anyURI ] ;
            fhir:title [ fhir:v "Bonnes pratiques" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "install_dependencies.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "install_dependencies.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Installer les dépendances" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "dev_nouvel_ig.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "dev_nouvel_ig.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Développement d'un nouvel IG" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "niveau_maturite.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "niveau_maturite.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Les niveaux de maturité des IG" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] [
            fhir:extension ( [
@@ -636,24 +627,7 @@
          ] ) ;
          fhir:name [ fhir:v "tests.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Tests" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "presentations_tests.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "presentations_tests.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Présentation des tests" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "type_cas_tests.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "type_cas_tests.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Types de cas de tests" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] )
+         fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;

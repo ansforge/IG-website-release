@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Tests - Documentation des guides d'implémentation de l'ANS v0.1.4</title>
+    <title>Tests - Documentation des guides d'implémentation de l'ANS v0.1.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,7 +42,7 @@
 	  <script src="assets/js/prism.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"4"}
-    h3,h4,h5,h6{--heading-prefix:"4.0"}</style>
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -56,7 +56,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Documentation des guides d&#39;implémentation de l&#39;ANS</span>
             <br/>
-            <span style="display:inline-block;">0.1.4 - release
+            <span style="display:inline-block;">0.1.5 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -92,16 +96,10 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="dev_nouvel_ig.html">Quick start IG</a>
+      </li>
+      <li>
         <a href="bonnes_pratiques_modeler.html">Bonnes pratiques</a>
-      </li>
-      <li>
-        <a href="install_dependencies.html">Installer les dépendances</a>
-      </li>
-      <li>
-        <a href="dev_nouvel_ig.html">Développement d&apos;un nouvel IG</a>
-      </li>
-      <li>
-        <a href="niveau_maturite.html">Les niveaux de maturité des IG</a>
       </li>
       <li>
         <a href="erreurs.html">Les erreurs courantes</a>
@@ -130,18 +128,11 @@
       </li>
     </ul>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Tests
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="presentations_tests.html">Présentation des tests</a>
-      </li>
-      <li>
-        <a href="type_cas_tests.html">Types de cas de tests</a>
-      </li>
-    </ul>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
+  <li>
+    <a href="collaborons.html">Collaborons</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -149,18 +140,15 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="collaborons.html">Collaborons</a>
-      </li>
-      <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
       <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
       </li>
+      <li>
+        <a href="about.html">A propos de ce guide</a>
+      </li>
     </ul>
-  </li>
-  <li>
-    <a href="about.html">A propos de ce guide</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -182,7 +170,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="presentations_tests.html">next&gt;</a>
+          | <a href="collaborons.html">next&gt;</a>
 
           </span>
 
@@ -204,7 +192,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.4: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.5: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
   <h2>Tests</h2>
   
 
@@ -220,9 +208,103 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#outils-de-tests" id="markdown-toc-outils-de-tests">Outils de tests</a></li>
+  <li><a href="#projectathon" id="markdown-toc-projectathon">Projectathon</a></li>
+  <li><a href="#gazelle--les-niveaux-de-cas-de-tests" id="markdown-toc-gazelle--les-niveaux-de-cas-de-tests">Gazelle : les niveaux de cas de tests</a></li>
+  <li><a href="#types-détapes-de-cas-de-tests" id="markdown-toc-types-détapes-de-cas-de-tests">Types d’étapes de cas de tests</a></li>
+  <li><a href="#hapi-fhir" id="markdown-toc-hapi-fhir">HAPI FHIR</a></li>
+</ul>
+
 </div>
+<h3 id="outils-de-tests">Outils de tests</h3>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="421.875px" preserveAspectRatio="none" style="width:548px;height:421px;" version="1.1" viewBox="0 0 548 421" width="548.9583px" zoomAndPan="magnify"><defs /><g><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="66.6667" x="10.4167" y="187.4186" /><text fill="#EEEEEE" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" textLength="35.4167" x="26.0417" y="214.6464">Tests</text><rect fill="#343852" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="130.2083" x="129.1667" y="54.1504" /><a href="https://interop.esante.gouv.fr/" target="_top" title="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="98.9583" x="144.7917" y="81.3782">Espace de test</text></a><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="58.3333" x="311.4583" y="20.8333" /><a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="27.0833" x="327.0833" y="48.0611">CGU</text></a><path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="78.125" x="311.4583" y="87.4674" /><a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="46.875" x="327.0833" y="114.6952">Manuel</text></a><path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#D20050" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="92.7083" x="129.1667" y="120.7845" /><a href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="61.4583" x="144.7917" y="148.0123">HAPI FHIR</text></a><path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#EAB9BF" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="115.625" x="129.1667" y="187.4186" /><text fill="#EEEEEE" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" textLength="84.375" x="144.7917" y="214.6464">Projectathon</text><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="115.625" x="296.875" y="154.1016" /><a href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="84.375" x="312.5" y="181.3293">Pr&#233;sentation</text></a><path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="156.25" x="296.875" y="220.7357" /><a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="125" x="312.5" y="247.9635">Consulter les Tests</text></a><path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#383837" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="198.9583" x="129.1667" y="320.6868" /><text fill="#EEEEEE" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" textLength="167.7083" x="144.7917" y="347.9146">Verification de conformit&#233;</text><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="156.25" x="380.2083" y="287.3698" /><a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="125" x="395.8333" y="314.5976">Consulter les Tests</text></a><path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><rect fill="#999999" height="45.8008" rx="4.1667" ry="4.1667" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" width="148.9583" x="380.2083" y="354.0039" /><a href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:type="simple"><text fill="#FD7E14" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" text-decoration="underline" textLength="117.7083" x="395.8333" y="381.2317">Programme S&#233;gur</text></a><path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /><path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " fill="none" style="stroke:#446E9B;stroke-width:3.125;" /></g></svg></div>
+
+<h4 id="espace-de-test">Espace de test</h4>
+
+<p>L’espace de test est composé de deux outils :</p>
+
+<ul>
+  <li>EVSClient, qui permet de vérifier la conformité : des documents CDA, des archives IHE_XDM.ZIP utilisées pour les échanges, des ressources FHIR…</li>
+  <li>Gazelle Test Management, qui permet de tester des scénarios complets avec plusieurs interactions d’échanges de données.</li>
+</ul>
+
+<p>Ces outils sont accessibles en ligne sur le site <a href="https://interop.esante.gouv.fr/">https://interop.esante.gouv.fr/</a> et notamment utilisés lors des Projectathons organisés par l’ANS pour les éditeurs.</p>
+
+<h3 id="projectathon">Projectathon</h3>
+
+<p>L’ANS organise régulièrement des projectathons pour permettre à un industriel de vérifier la conformité de l’implémentation des spécifications d’interopérabilité et de réaliser des tests d’interopérabilité  avec d’autres éditeurs.</p>
+
+<p>Vous serez informés par l’ANS des prochains projectathons (date, lieu,…) pour pouvoir y participer.</p>
+
+<h3 id="gazelle--les-niveaux-de-cas-de-tests">Gazelle : les niveaux de cas de tests</h3>
+
+<p>Différents niveaux de tests sont proposés sur l’espace de test de l’ANS afin d’aider les éditeurs dans leur préparation aux évènements de type projectathon.</p>
+
+<p>Le niveau le plus bas permettra aux éditeurs de tester la conformité des messages unitaires qu’ils produisent. Le niveau intermédiaire permettra aux éditeurs de tester face à un autre système la conformité et l’interopérabilité des messages unitaires. Le niveau le plus élevé correspond aux scénarios proposés jusqu’à maintenant dans le cadre des projectathons et permettra aux éditeurs de tester des scénarios complexes face à un autre système.</p>
+
+<h4 id="niveau-1-n1">Niveau 1 (N1)</h4>
+
+<p>Les tests de niveau 1 sont des tests unitaires sans partenaire.
+Chaque cas de test de niveau 1 correspond à un flux de la spécification technique.
+L’objectif de ces cas de tests est de valider la ressource ou la requête produite par le système avec un validateur EVSClient indiqué dans le cas de test.</p>
+
+<h4 id="niveau-2-n2">Niveau 2 (N2)</h4>
+
+<p>Les tests de niveau 2 sont des tests unitaires avec partenaire.
+Pour être exécutés, il faut qu’au préalable les cas de test de niveau 1 indiqués en prérequis aient été exécutés par les 2 mêmes systèmes.
+L’objectif de ces cas de test est de valider la ressource ou la requête construite ainsi que la capacité des systèmes à créer / intégrer ou requêter / envoyer des ressources. Les cas de tests de type N2 correspondent généralement à un flux spécifique.</p>
+
+<h4 id="niveau-3-n3">Niveau 3 (N3)</h4>
+
+<p>Les tests de niveau 3 sont des tests avec partenaire basés sur l’enchaînement de différents tests unitaires avec partenaire (N2) en suivant un scénario complexe. Pour être exécutés, il faut qu’au préalable les cas de test de niveaux 1 et 2 indiqués en prérequis aient été exécutés entre les 2 mêmes systèmes.</p>
+
+<p>L’objectif de ces cas de test est de créer un scénario complexe faisant appel aux différents flux de la spécification technique et ainsi créer un exemple d’usage.</p>
+
+<h3 id="types-détapes-de-cas-de-tests">Types d’étapes de cas de tests</h3>
+
+<p>Les étapes de cas de tests pourront avoir plusieurs types.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type d’étapes</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[TRANSACTION]</td>
+      <td>Ce type d’étape concerne une transaction entre un serveur et un client</td>
+    </tr>
+    <tr>
+      <td>[PREUVE]</td>
+      <td>Ce type d’étape est une demande de preuve (screenshot, lien permanent…) à l’attention du moniteur</td>
+    </tr>
+    <tr>
+      <td>[INFORMATION]</td>
+      <td>Message informatif à l’attention de l’editeur concernant le fonctionnement du cas de test</td>
+    </tr>
+    <tr>
+      <td>[VALIDATION]</td>
+      <td>Ce type d’étape est une demande de validation d’une ressource sur EVSClient</td>
+    </tr>
+    <tr>
+      <td>[INSTRUCTION]</td>
+      <td>Ce type d’étape est une action demandée à l’éditeur sans preuve exigée</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="usage-du-proxy">Usage du proxy</h4>
+
+<p>Le proxy sert à intercepter les messages entre le client et le serveur, pour validation par le moniteur. Celui-ci devra être utilisé pour les cas de tests de niveaux N2 et N3.</p>
+
+<h3 id="hapi-fhir">HAPI FHIR</h3>
+
+<p>Ce serveur FHIR open source est particulièrement utile pour importer des profils et tester la validité des ressources générées contre les profils.</p>
 
 
 
@@ -261,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="presentations_tests.html">next&gt;</a>
+                <a href="collaborons.html">next&gt;</a>
 
               </td>
             </tr>
@@ -271,13 +353,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 11, 2023 10:10+0000">2023-10-11</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 31, 2023 09:09+0000">2023-10-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Historique des versions </a>
                   | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-documentation">New Issue</a>
                 
+
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
