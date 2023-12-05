@@ -3,10 +3,14 @@
         "style": "fhir.layout",
         "url": "https://interop.esante.gouv.fr/ig/fhir",
         "server": "apache",
-        "org": "ANS",
-        "layout": {
-            "id": "ans.fhir.fr.[code]",
-            "canonical": "https://interop.esante.gouv.fr/ig/fhir/[code]"
-        }
-    }
+        "org": "ANS"
+    },
+    "feeds" : {
+      "package" : "package-feed.xml"
+    },
+    "layout-rules" : [{
+      "npm" : "ans.fhir.fr.*",
+      "canonical" : "https://interop.esante.gouv.fr/ig/fhir/{3}",
+      "destination" : "/{3}"
+    }]
 }
