@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>AnnuaireSante</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
-  "version" : "1.0.0-ballot-2",
+  "version" : "1.0.0-ballot-3",
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "active",
-  "date" : "2023-07-18T12:08:09+00:00",
+  "date" : "2023-12-19T15:19:17+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -24,6 +24,13 @@
     }]
   }],
   "description" : "Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "FRANCE"
+    }]
+  }],
   "packageId" : "ans.fhir.fr.annuaire",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
@@ -35,12 +42,28 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.0.0"
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
     "uri" : "http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core",
     "packageId" : "hl7.fhir.fr.core",
+    "version" : "1.1.0"
+  },
+  {
+    "id" : "ans_fr_nos",
+    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
+    "packageId" : "ans.fr.nos",
     "version" : "1.1.0"
   }],
   "definition" : {
@@ -62,7 +85,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "STU1"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -267,6 +290,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueString" : "active-tables"
       },
       {
@@ -341,7 +375,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "STU1"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -546,6 +580,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "active-tables"
       },
       {
@@ -649,49 +694,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-device-authorization-date-device"
-      },
-      "name" : "AS Device Authorization Date Device Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de délivrance de l’autorisation d’un équipement matériel lourd.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-device-number-authorization-arhgos"
-      },
-      "name" : "AS Device Numbera Authorization ARHGOS Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de l'identifiant métier de l'autorisation ARHGOS d’un équipement matériel lourd.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-device-Period-implantation"
-      },
-      "name" : "AS Device Period Implantation Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte des dates de mise en oeuvre d’un équipement matériel lourd.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-device"
       },
       "name" : "AS Device Profile",
-      "description" : "Profil créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement.",
+      "description" : "Profil générique créé à partir de Device dans le contexte de l'Annuaire Santé pour décrire les équipements matériels lourds ('EML') mis en oeuvre au sein d'un établissement.",
       "exampleBoolean" : false
     },
     {
@@ -715,7 +724,7 @@
         "reference" : "StructureDefinition/as-dp-device"
       },
       "name" : "AS Donnée Publique Device Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -727,7 +736,7 @@
         "reference" : "StructureDefinition/as-dp-healthcareservice-healthcare-activity"
       },
       "name" : "AS Donnée Publique HealthcareService Healthcare Activity Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -739,7 +748,7 @@
         "reference" : "StructureDefinition/as-dp-healthcareservice-social-equipment"
       },
       "name" : "AS Donnée Publique HealthcareService Social Equipment Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -751,7 +760,7 @@
         "reference" : "StructureDefinition/as-dp-organization"
       },
       "name" : "AS Donnée Publique Organization Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -763,7 +772,7 @@
         "reference" : "StructureDefinition/as-dp-practitioner"
       },
       "name" : "AS Donnée Publique Practitioner Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -775,7 +784,7 @@
         "reference" : "StructureDefinition/as-dp-practitionerrole"
       },
       "name" : "AS Donnée Publique PractitionerRole Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé.",
+      "description" : "Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -787,7 +796,7 @@
         "reference" : "StructureDefinition/as-dr-device"
       },
       "name" : "AS Donnée Restreinte Device Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "description" : "Profil restreint applicatif créé à partir du profil générique as-device dans le contexte des données en accès restreint de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -799,7 +808,7 @@
         "reference" : "StructureDefinition/as-dr-healthcareservice-healthcare-activity"
       },
       "name" : "AS Donnée Restreinte HealthcareService Healthcare Activity Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé.",
+      "description" : "Profil restreint applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès restreint de l'Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -811,7 +820,7 @@
         "reference" : "StructureDefinition/as-dr-healthcareservice-social-equipment"
       },
       "name" : "AS Donnée Restreinte HealthcareService Social Equipment Profile",
-      "description" : "Profil applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé.",
+      "description" : "Profil restreint applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès restreint de l'Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -823,7 +832,7 @@
         "reference" : "StructureDefinition/as-dr-organization"
       },
       "name" : "AS Donnée Restreinte Organization Profile",
-      "description" : "Profil créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "description" : "Profil restreint créé à partir de as-organization  dans le contexte des données en accès restreint de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -835,7 +844,7 @@
         "reference" : "StructureDefinition/as-dr-practitioner"
       },
       "name" : "AS Donnée Restreinte Practitioner Profile",
-      "description" : "Profil créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "description" : "Profil restreint créé à partir de as-practitioner dans le contexte des données en accès restreint de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -847,7 +856,7 @@
         "reference" : "StructureDefinition/as-dr-practitionerrole"
       },
       "name" : "AS Donnée Restreinte PractitionerRole Profile",
-      "description" : "Profil créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "description" : "Profil restreint créé à partir de as-practitionerrole dans le contexte des données en accès restreint de l’Annuaire Santé.",
       "exampleBoolean" : false
     },
     {
@@ -856,10 +865,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-activity-type"
+        "reference" : "StructureDefinition/as-ext-education-level"
       },
-      "name" : "AS Healthcare Service Activity Type Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les types d’activités sanitaires des établissements FINESS.",
+      "name" : "AS Education Level Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire le niveau de formation acquis d'un étudiant.",
       "exampleBoolean" : false
     },
     {
@@ -868,46 +877,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-authorization-date"
+        "reference" : "StructureDefinition/as-ext-healthcareservice-authorization"
       },
-      "name" : "AS Healthcare Service Authorization Date Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  délivrance de l’autorisation de l’activité de soins.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-authorization-number-arhgos"
-      },
-      "name" : "AS HealthcareService Authorization Number ARHGOS Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du numéro d'autorisation ARHGOS.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-date-update-activity"
-      },
-      "name" : "AS HealthcareService Date Update Activity Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date  de mise à  jour des données de l'activité de soins.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-delete-autorization-implantation"
-      },
-      "name" : "AS HealthcareService Delete Autorization Implantation Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour en compte de l'indicateur de suppression de l'autorisation de l'activité de soins.",
+      "name" : "AS HealthcareService Autorization Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations  des activités sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels lourds autorisés.",
       "exampleBoolean" : false
     },
     {
@@ -919,19 +892,7 @@
         "reference" : "StructureDefinition/as-healthcareservice-healthcare-activity"
       },
       "name" : "AS HealthcareService HealthCare Activity Profile",
-      "description" : "Profil créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-healthcareservice-implementation-period"
-      },
-      "name" : "AS HealthcareService Implementation Period Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour en compte de la date d'échéance de l'autorisation de l'activité de soins.",
+      "description" : "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les activités sanitaires rattachées à un établissement FINESS.",
       "exampleBoolean" : false
     },
     {
@@ -943,7 +904,7 @@
         "reference" : "StructureDefinition/as-healthcareservice-social-equipment"
       },
       "name" : "AS HealthcareService Social Equipment Profile",
-      "description" : "Profil créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS.",
+      "description" : "Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS.",
       "exampleBoolean" : false
     },
     {
@@ -955,7 +916,7 @@
         "reference" : "StructureDefinition/as-location"
       },
       "name" : "AS Location Profile",
-      "description" : "Profil créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
+      "description" : "Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
       "exampleBoolean" : false
     },
     {
@@ -988,10 +949,58 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-authorization-deadline"
+      },
+      "name" : "AS Organization Authorization Deadline Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la caducité de l'autorisation sanitaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-budget-type"
+      },
+      "name" : "AS Organization Budget Type Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nature du budget alloué à la structure.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-closing-type"
+      },
+      "name" : "AS Organization Closing Type Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du type de fermeture de la structure.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/as-ext-organization-pharmacy-licence"
       },
       "name" : "AS Organization Pharmacy Licence Extension",
       "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la licence d’exploitation d’une officine.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-pricing-model"
+      },
+      "name" : "AS Organization Pricing Model Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du mode de tarification de la structure.",
       "exampleBoolean" : false
     },
     {
@@ -1003,7 +1012,67 @@
         "reference" : "StructureDefinition/as-organization"
       },
       "name" : "AS Organization Profile",
-      "description" : "Profil créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public.",
+      "description" : "Profil générique créé à partir de FrOrganization dans le contexte de l'Annuaire Santé pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le fichier national des établissements sanitaires et sociaux (FINESS) ou dans le Système Informatique pour le Répertoire des Entreprises et de leurs Établissements (SIRENE) dédié aux entreprises, associations et organismes du secteur public.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-patient-type"
+      },
+      "name" : "AS Patient Type Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire un ensemble de personnes qui répondent à des critères leur permettant de  bénéficier de la discipline décrite.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-person-birth-place"
+      },
+      "name" : "AS Person Birth Place Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel en tant que personne physique.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-person-deceased-date-time"
+      },
+      "name" : "AS Person Deceased Date Time Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the Person if applicable).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-person-nationality"
+      },
+      "name" : "AS Person Nationality Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionel (Person).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-person"
+      },
+      "name" : "AS Person Profile",
+      "description" : "Profil générique créé à partir de Person dans le contexte de l'Annuaire Santé pour décrire les différents concepts utilisés pour définir et caractériser un professionnel en tant que personne physique (données restreintes).",
       "exampleBoolean" : false
     },
     {
@@ -1021,49 +1090,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitioner-birth-place"
-      },
-      "name" : "AS Practitioner Birth Place Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte du lieu de naissance du professionnel (Practitioner).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitioner-deceased-date-time"
-      },
-      "name" : "AS Practitioner Deceased Date Time Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la date de décès du professionnel (Date of death of the practitioner if applicable).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitioner-nationality"
-      },
-      "name" : "AS Practitioner Nationality Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la nationalité du professionnel (Practitioner).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-practitioner"
       },
       "name" : "AS Practitioner Profile",
-      "description" : "Profil créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social.",
+      "description" : "Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social.",
       "exampleBoolean" : false
     },
     {
@@ -1076,18 +1109,6 @@
       },
       "name" : "AS PractitionerRole Contracted",
       "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire le secteur de conventionnement du professionnel libéral auquel il a adhéré auprès de l'Assurance Maladie.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitionerrole-education-level"
-      },
-      "name" : "AS PractitionerRole Education Level Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire le niveau de formation acquis d'un étudiant.",
       "exampleBoolean" : false
     },
     {
@@ -1117,49 +1138,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitionerrole-name"
-      },
-      "name" : "AS PractitionerRole Name Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour définir l'identité d’exercice d’un professionnel.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-practitionerrole"
       },
       "name" : "AS PractitionerRole Profile",
-      "description" : "Profil créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire l'exercice professionel et la situation d'exercice | contient les informations décrivant notamment la profession exercée, l'identité d'exercice d'un professionnel, le cadre de son exercice (civil, militaire, etc.) ainsi que les caractéristiques de l'exercice d’un professionnel pendant une période déterminée et dans une structure déterminée.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitionerrole-registration"
-      },
-      "name" : "AS PractitionerRole Registration Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\".",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitionerrole-smartcard"
-      },
-      "name" : "AS PractitionerRole Smart Card Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques.",
+      "description" : "Profil générique créé à partir de FrPractitionerRoleExercice dans le contexte de l'Annuaire Santé pour décrire la situation d'exercice du professionnel.",
       "exampleBoolean" : false
     },
     {
@@ -1172,6 +1157,42 @@
       },
       "name" : "AS PractitionerRole Vitale Accepted",
       "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire l’indicateur Carte Vitale acceptée (oui/non).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-registration"
+      },
+      "name" : "AS Registration Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si \"isFirst = true\".",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-smartcard"
+      },
+      "name" : "AS Smart Card Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire les informations de la carte CPx utilisée comme moyen d’identification des personnes physiques.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-supported-capacity"
+      },
+      "name" : "AS Supported Capacity Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour indiquer le nombre de personnes pouvant être accueillies en même temps et les capacités d'hébergement.",
       "exampleBoolean" : false
     },
     {
@@ -1240,6 +1261,18 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
+        "reference" : "SearchParameter/as-sp-practitionerrole-name"
+      },
+      "name" : "as-sp-practitionerrole-name",
+      "description" : "Paramètre de recherche permettant de chercher le nom d'un PractitionerRole. Permet de chercher n'importe quelle chaîne de caractère dans family, give, prefix, suffix, suffix, and/or text.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
         "reference" : "SearchParameter/as-sp-type-smartcard"
       },
       "name" : "as-sp-type-smartcard",
@@ -1255,6 +1288,30 @@
         "reference" : "CapabilityStatement/AsClientCapabilityStatement"
       },
       "name" : "AsClientCapabilityStatement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-intern-id-systems"
+      },
+      "name" : "Internal Id Systems",
+      "description" : "Systèmes des identifiants locaux",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/as-vs-intern-id-systems"
+      },
+      "name" : "Internal Id Systems VS",
+      "description" : "Systèmes des identifiants internes",
       "exampleBoolean" : false
     },
     {
@@ -1310,28 +1367,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "autres_ressources.html"
+          "valueUrl" : "mapping.html"
         }],
-        "nameUrl" : "autres_ressources.html",
-        "title" : "Autres Ressources",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "downloads.html"
-          }],
-          "nameUrl" : "downloads.html",
-          "title" : "Téléchargements et usages",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "about.html"
-        }],
-        "nameUrl" : "about.html",
-        "title" : "A propos de ce guide",
+        "nameUrl" : "mapping.html",
+        "title" : "Mappings MOS",
         "generation" : "markdown"
       }]
     },

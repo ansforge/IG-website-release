@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ANNUAIRE\AS Donnée Publique PractitionerRole Profile - Mappings - FHIR v4.0.1</title>
+    <title>AS Donnée Publique PractitionerRole Profile - Mappings - Annuaire Santé v1.0.0-ballot-3</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -24,7 +24,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -36,32 +35,36 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.14"}
-    h3,h4,h5,h6{--heading-prefix:"5.14"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.15"}
+    h3,h4,h5,h6{--heading-prefix:"4.15"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Annuaire Santé</span>
             <br/>
-            <span style="display:inline-block;">1.0.0-ballot-2 - STU1
+            <span style="display:inline-block;">1.0.0-ballot-3 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -95,29 +98,32 @@
     <a href="liste_profils.html">Liste des profils</a>
   </li>
   <li>
+    <a href="mapping.html">Mapping FHIR/MOS</a>
+  </li>
+  <li>
     <a href="artifacts.html">Ressources de conformité</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Documentations
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation des IGs</a>
       </li>
       <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+        <a href="https://ansforge.github.io/annuaire-sante-fhir-documentation/">Documentation de l&apos;API</a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
+        <a href="https://github.com/ansforge/annuaire-sante-fhir-serveur">Code source de l&apos;API</a>
       </li>
       <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+        <a href="https://github.com/ansforge/annuaire-sante-fhir-serveur/issues/new">Issue sur l&apos;API</a>
+      </li>
+      <li>
+        <a href="https://github.com/ansforge/annuaire-sante-fhir-documentation/issues/new">Issue sur l&apos;IG</a>
       </li>
     </ul>
-  </li>
-  <li>
-    <a href="about.html">A propos de ce guide</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -154,9 +160,8 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Annuaire de santé (v1.0.0-ballot-2: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Annuaire de santé (v1.0.0-ballot-3: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
-
 
 
 
@@ -192,6 +197,8 @@
 
 
 
+
+
   
     <li>
       <a href="StructureDefinition-as-dp-practitionerrole.profile.xml.html">XML</a>
@@ -218,6 +225,7 @@
 
 <a name="root"> </a>
 <h2 id="root">Resource Profile: AsDpPractitionerRoleProfile - Mappings</h2>
+
   <table class="colsi">
     <tr>
 
@@ -225,7 +233,7 @@
         
           Active
           
-            as of 2023-07-18
+            as of 2023-12-19
           
         
       </td>
@@ -241,7 +249,146 @@
 
 
 
-  <p>No Mappings</p>
+  <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsDpPractitionerRoleProfile</b></td></tr>
+ <tr><td>PractitionerRole</td><td>PRD (as one example)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;security</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag</td><td>CE/CNE/CWE subset one of the sets of component 1-3 or 4-6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL), PRD-7 (or XCN.1)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (idSituationExercice)</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL), PRD-7 (or XCN.1)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE, CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>DR, CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>STF-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (genreActivite)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (modeExercice)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (typeActiviteLiberale)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutProfessionnelSSA)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutHospitalier)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (fonction)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (metierPharmacien)</td><td>CE/CNE/CWE, PRD-1 / STF-18  / PRA-3  / PRT-4  / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>CE/CNE/CWE, PRA-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>XTN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom (mailbox-mss)</td><td>XTN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>XTN.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>XTN.1 (or XTN.12)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>XTN.2 - but often indicated by field</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>DR, N/A</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsDpPractitionerRoleProfile</b></td></tr>
+ <tr><td>PractitionerRole</td><td>Entity. Role, or Act, Role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;versionId</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastUpdated</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profile</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;security</td><td>n/a, CV</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag</td><td>n/a, CV</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;implicitRules</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;language</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>n/a, N/A, Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>Entity. Role, or Act, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (idSituationExercice)</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>n/a, Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>n/a, II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>n/a, II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>n/a, .statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .player</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;organization</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (genreActivite)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (modeExercice)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (typeActiviteLiberale)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutProfessionnelSSA)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutHospitalier)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (fonction)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (metierPharmacien)</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>n/a, CD, .player.HealthCareProvider[@classCode = 'PROV'].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>n/a, TEL, .telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom (mailbox-mss)</td><td>n/a, TEL</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (emailType)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (as-mailbox-mss-metadata)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (type)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (description)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (service)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (digitization)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (publication)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>n/a, ./scheme</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>n/a, ./url</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>n/a, unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], ./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
+</table>
+<a name="servd"> </a><h3>Mappings for ServD (<a href="http://www.omg.org/spec/ServD/1.0/">http://www.omg.org/spec/ServD/1.0/</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsDpPractitionerRoleProfile</b></td></tr>
+ <tr><td>PractitionerRole</td><td>ServiceSiteProvider</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Identifier, ./Identifiers</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (idSituationExercice)</td><td>Identifier, ./Identifiers</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./IdentifierType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./Value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./StartDate and ./EndDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>./IdentifierIssuingAuthority</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (genreActivite)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (modeExercice)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (typeActiviteLiberale)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutProfessionnelSSA)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (statutHospitalier)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (fonction)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code (metierPharmacien)</td><td>(ServD maps Practitioners and Organizations via another entity, so this concept is not available)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>./Specialty</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>ContactPoint</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom (mailbox-mss)</td><td>ContactPoint</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./ContactPointType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./Value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>./ContactPointPurpose</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./StartDate and ./EndDate</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>AsDpPractitionerRoleProfile</b></td></tr>
+ <tr><td>PractitionerRole</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (idSituationExercice)</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
+</table>
+
 
   <!-- insert notes if present -->
   
@@ -316,12 +463,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot-2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 18, 2023 12:08+0000">2023-07-18</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.annuaire#1.0.0-ballot-3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 19, 2023 15:19+0000">2023-12-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-annuaire/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/annuaire/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-annuaire/issues/new">Issue sur l'IG</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/annuaire-sante-fhir-serveur/issues/new">Issue sur l'API</a>
                 
 
           </span>
@@ -355,6 +503,11 @@ anchors.add()</script>
   
 <!-- feedback form - Google forms -->
 <!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
 
 
   
