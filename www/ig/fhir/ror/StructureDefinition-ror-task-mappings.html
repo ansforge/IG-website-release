@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ROR\RORTask - Mappings - FHIR v4.0.1</title>
+    <title>RORTask - Mappings - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -24,7 +24,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -36,32 +35,36 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"17.35"}
-    h3,h4,h5,h6{--heading-prefix:"17.35"}</style>
+    <style type="text/css">h2{--heading-prefix:"20.45"}
+    h3,h4,h5,h6{--heading-prefix:"20.45"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.1 - STU
+            <span style="display:inline-block;">0.2.0 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -112,13 +115,25 @@
         <a href="specifications_techniques_4.html">Recherche d&apos;offre avec données capacitaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_5.html">Signalement d’anomalie</a>
+        <a href="specifications_techniques_8.html">Recherche d&apos;offre sur la base d&apos;informations tarifaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_6.html">Mise à jour d’anomalie</a>
+        <a href="specifications_techniques_9.html">Recherche d&apos;offre via une technique « Full text »</a>
       </li>
       <li>
-        <a href="specifications_techniques_7.html">Consultation d’anomalie</a>
+        <a href="specifications_techniques_10.html">Création et Mise à jour du lieu de réalisation de l&apos;offre</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_5.html">Signalement d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_6.html">Mise à jour d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_7.html">Consultation d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_11.html">Consultation d&apos;indicateurs de pilotage</a>
       </li>
       <li>
         <a href="search_param.html">Critères de recherche</a>
@@ -138,23 +153,16 @@
     <a href="artifacts.html">Ressources de conformité</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Téléchargements et usage
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="downloads.html">Téléchargements</a>
-      </li>
-      <li>
-        <a href="securite.html">Sécurité</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
@@ -164,7 +172,7 @@
     </ul>
   </li>
   <li>
-    <a href="about.html">A propos de ce guide</a>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -201,9 +209,8 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
-
 
 
 
@@ -239,6 +246,8 @@
 
 
 
+
+
   
     <li>
       <a href="StructureDefinition-ror-task.profile.xml.html">XML</a>
@@ -265,6 +274,7 @@
 
 <a name="root"> </a>
 <h2 id="root">Resource Profile: RORTask - Mappings</h2>
+
   <table class="colsd">
     <tr>
 
@@ -272,7 +282,7 @@
         
           Draft
           
-            as of 2023-06-02
+            as of 2024-01-12
           
         
       </td>
@@ -318,109 +328,112 @@
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>RORTask</b></td></tr>
  <tr><td>Task</td><td>Entity. Role, or Act, ControlAct[moodCode=INT]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;instantiatesCanonical</td><td>.outboundRelationship[typeCode=DEFN].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;instantiatesUri</td><td>.outboundRelationship[typeCode=DEFN].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.outboundRelationship[typeCode=FLFS].target[moodCode=INT]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;groupIdentifier</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=INT].id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=INT]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN, code=&quot;status change&quot;].reasonCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;businessStatus</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;business status&quot;]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>.moodCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>.priorityCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>.text</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>.outboundRelationship[typeCode=SUBJ].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;for</td><td>.participation[typeCode=RCT].role</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>.inboundRelationship[typeCode=COMP].source[classCode=PCPR, moodCode=EVN]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;executionPeriod</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;implicitRules</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;language</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>n/a, N/A, Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>Entity. Role, or Act, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesCanonical</td><td>n/a, .outboundRelationship[typeCode=DEFN].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesUri</td><td>n/a, .outboundRelationship[typeCode=DEFN].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .outboundRelationship[typeCode=FLFS].target[moodCode=INT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;groupIdentifier</td><td>n/a, II - The Identifier class is a little looser than the v3 type II because it allows URIs as well as registered OIDs or GUIDs.  Also maps to Role[classCode=IDENT], .inboundRelationship[typeCode=COMP].source[moodCode=INT].id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .inboundRelationship[typeCode=COMP].source[moodCode=INT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>n/a, .statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>n/a, CD, .inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN, code=&quot;status change&quot;].reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;businessStatus</td><td>n/a, CD, .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;business status&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>n/a, .moodCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>n/a, .priorityCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>n/a, CD, .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>n/a, .text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .outboundRelationship[typeCode=SUBJ].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;for</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .participation[typeCode=RCT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .inboundRelationship[typeCode=COMP].source[classCode=PCPR, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;executionPeriod</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>./low</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>./high</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>.participation[typeCode=AUT].time</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;lastModified</td><td>.inboundRelationship[typeCode=SUBJ, ].source[classCode=CACT, moodCode=EVN].effectiveTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performerType</td><td>.participation[typeCode=PRF].role.code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;owner</td><td>.participation[typeCode=PRF].role</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.participation[typeCode=LOC].role</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>.outboundRelationship[typeCode=RSON].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>.outboundRelationship[typeCode=COVBY].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship[typeCode=SUBJ, ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value(string)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;restriction</td><td>Instead of pointing to request, would point to component of request, having these characteristics</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>n/a, ./low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>n/a, ./high</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>n/a, .participation[typeCode=AUT].time</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lastModified</td><td>n/a, .inboundRelationship[typeCode=SUBJ, ].source[classCode=CACT, moodCode=EVN].effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performerType</td><td>n/a, CD, .participation[typeCode=PRF].role.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;owner</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .participation[typeCode=PRF].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .participation[typeCode=LOC].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>n/a, CD, .reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .outboundRelationship[typeCode=RSON].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .outboundRelationship[typeCode=COVBY].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>n/a, Act, .inboundRelationship[typeCode=SUBJ, ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value(string)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;restriction</td><td>n/a, Instead of pointing to request, would point to component of request, having these characteristics</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repetitions</td><td>.repeatNumber</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>.effectiveTime(IVL&lt;TS&gt;)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recipient</td><td>.participation[typeCode=SBJ].role</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repetitions</td><td>n/a, .repeatNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>n/a, IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;], .effectiveTime(IVL&lt;TS&gt;)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recipient</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity), .participation[typeCode=SBJ].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (ruleErrorId)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (ruleErrorId)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (errorValue)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (errorValue)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (proposedValue)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (proposedValue)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (pathElementError)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (pathElementError)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (systemRequester)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (systemRequester)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;input (identifierRequester)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (identifierRequester)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;output</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;output (newValue)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output (newValue)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;output (identifierAnalyst)</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output (identifierAnalyst)</td><td>n/a, ???</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>???</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>n/a, CD, ???</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>n/a, ???</td> </tr>
 </table>
 <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>RORTask</b></td></tr>
@@ -445,11 +458,40 @@
 <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>RORTask</b></td></tr>
  <tr><td>Task</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;executionPeriod</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;groupIdentifier</td><td>CX / EI (occasionally, more often EI maps to a resource id or a URL)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;businessStatus</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;executionPeriod</td><td>DR</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>DR.1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>DR.2</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>EVN.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performerType</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>CE/CNE/CWE, EVN.7</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>IN1/IN2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;restriction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>DR</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (ruleErrorId)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (errorValue)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (proposedValue)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (pathElementError)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (systemRequester)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;input (identifierRequester)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output (newValue)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;output (identifierAnalyst)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CE/CNE/CWE</td> </tr>
 </table>
 
 
@@ -526,12 +568,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 12, 2024 08:51+0000">2024-01-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/ROR_ressource-conformance-3.0/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante/issues/new/choose">New Issue</a>
                 
 
           </span>

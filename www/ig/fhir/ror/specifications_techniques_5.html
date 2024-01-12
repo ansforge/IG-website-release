@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ROR\Signalement d’anomalie - FHIR v4.0.1</title>
+    <title>Signalement d&#39;anomalie - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -32,32 +31,36 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"7"}
-    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.1 - STU
+            <span style="display:inline-block;">0.2.0 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -108,13 +111,25 @@
         <a href="specifications_techniques_4.html">Recherche d&apos;offre avec données capacitaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_5.html">Signalement d’anomalie</a>
+        <a href="specifications_techniques_8.html">Recherche d&apos;offre sur la base d&apos;informations tarifaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_6.html">Mise à jour d’anomalie</a>
+        <a href="specifications_techniques_9.html">Recherche d&apos;offre via une technique « Full text »</a>
       </li>
       <li>
-        <a href="specifications_techniques_7.html">Consultation d’anomalie</a>
+        <a href="specifications_techniques_10.html">Création et Mise à jour du lieu de réalisation de l&apos;offre</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_5.html">Signalement d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_6.html">Mise à jour d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_7.html">Consultation d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_11.html">Consultation d&apos;indicateurs de pilotage</a>
       </li>
       <li>
         <a href="search_param.html">Critères de recherche</a>
@@ -134,23 +149,16 @@
     <a href="artifacts.html">Ressources de conformité</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Téléchargements et usage
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="downloads.html">Téléchargements</a>
-      </li>
-      <li>
-        <a href="securite.html">Sécurité</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
@@ -160,7 +168,7 @@
     </ul>
   </li>
   <li>
-    <a href="about.html">A propos de ce guide</a>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -174,11 +182,11 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Signalement d’anomalie</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Signalement d'anomalie</b></li>
 
           <span style="float:right;">
 
-            <a href="specifications_techniques_4.html">&lt;prev</a> | 
+            <a href="specifications_techniques_10.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -204,8 +212,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
-  <h2>Signalement d’anomalie</h2>
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Signalement d&#39;anomalie</h2>
   
 
 
@@ -222,73 +230,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#caractéristiques-de-lapi" id="markdown-toc-caractéristiques-de-lapi">Caractéristiques de l’API</a></li>
   <li><a href="#construction-de-la-requête-de-base" id="markdown-toc-construction-de-la-requête-de-base">Construction de la requête de base</a></li>
   <li><a href="#construction-de-la-réponse-de-base" id="markdown-toc-construction-de-la-réponse-de-base">Construction de la réponse de base</a></li>
   <li><a href="#exemple-de-requêtes" id="markdown-toc-exemple-de-requêtes">Exemple de requêtes</a></li>
 </ul>
 
 </div>
-<!-- ## Signalement d’anomalie -->
-
-<p style="background-color: #ffcccc; border:1px solid grey; padding: 5px; max-width: 790px;">
-Cette partie de la spécification est en cours de construction.
-</p>
-
-<h3 id="caractéristiques-de-lapi">Caractéristiques de l’API</h3>
-
-<table width="100%">
-<tbody>
-<tr>
-<td width="18%">
-<p><strong>Endpoint</strong></p>
-</td>
-<td width="81%">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="18%">
-<p><strong>Header</strong></p>
-</td>
-<td width="81%">
-<p>Content-type&nbsp;:=Json + FHIR</p>
-</td>
-</tr>
-<tr>
-<td width="18%">
-<p><strong>Encodage</strong></p>
-</td>
-<td width="81%">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="18%">
-<p><strong>Version FHIR</strong></p>
-</td>
-<td width="81%">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="18%">
-<p><strong>Version package</strong></p>
-</td>
-<td width="81%">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="18%">
-<p><strong>Publication</strong></p>
-</td>
-<td width="81%">
-<p>&nbsp;</p>
-</td>
-</tr>
-</tbody>
-</table>
+<!-- ## Signalement d’anomalie
+<code><span style="background-color: #58D68D;color:white;font-weight:bold;font-size: x-large;">ROR 2.3</span></code> -->
 
 <h3 id="construction-de-la-requête-de-base">Construction de la requête de base</h3>
 
@@ -329,7 +278,7 @@ Cette partie de la spécification est en cours de construction.
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p><a href="#_ftnref1" name="_ftn1">[1]</a> https://www.hl7.org/fhir/R4/http.html#create et <a href="https://www.hl7.org/fhir/R4/http.html#general">https://www.hl7.org/fhir/R4/http.html#general</a></p>
+<p><a href="#_ftnref1" name="_ftn1">[1]</a> <a href="https://www.hl7.org/fhir/R4/http.html#create">https://www.hl7.org/fhir/R4/http.html#create</a> et <a href="https://www.hl7.org/fhir/R4/http.html#general">https://www.hl7.org/fhir/R4/http.html#general</a></p>
 
 <h3 id="construction-de-la-réponse-de-base">Construction de la réponse de base</h3>
 
@@ -365,27 +314,31 @@ Plus de précision sur la spécification FHIR :
 
 <h4 id="scénario-1-un-responsable-qualité-souhaite-signaler-une-anomalie-sur-un-élément">Scénario 1 : Un responsable qualité souhaite signaler une anomalie sur un élément.</h4>
 
-<p><strong>Description du scénario :</strong> Un consommateur cherche les offres proposant une activité opérationnelle = XXX et disposant d'un lit disponible = 02 (TRE-R330-StatutCapacite) et disposant d’un nombre de lits supérieur à 0.</p>
+<p><strong>Description du scénario :</strong> Un responsable qualité souhaite signaler une anomalie sur un élément.</p>
 
 <p><strong>Requête :</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [BASE]/Task
-{	
-	"resourceType": "Task",
-	"businessStatus": [ { "system": "JDV XX", "value": "12345" } ],
-	"code": [ { "system": "JDV XXX", "value": "12345" } ],
-	"description": "description de notre ano",
-	"focus": "URL HealthcareService"
-}
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">POST</span><span class="w"> </span><span class="p">[</span><span class="err">BASE</span><span class="p">]</span><span class="err">/Task</span><span class="w">
+</span><span class="p">{</span><span class="w">	
+	</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"businessStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JDV XX"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+	</span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ajouter</span><span class="w"> </span><span class="err">les</span><span class="w"> </span><span class="err">autres</span><span class="w"> </span><span class="err">éléments</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">dans</span><span class="w"> </span><span class="err">le</span><span class="w"> </span><span class="err">body</span><span class="w">
+	</span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JDV XXX"</span><span class="p">,</span><span class="w"> </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+	</span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description de notre ano"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"focus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL HealthcareService"</span><span class="w">
+	</span><span class="err">...</span><span class="w"> </span><span class="err">//ajouter</span><span class="w"> </span><span class="err">les</span><span class="w"> </span><span class="err">autres</span><span class="w"> </span><span class="err">éléments</span><span class="w"> </span><span class="err">non</span><span class="w"> </span><span class="err">requis</span><span class="w"> </span><span class="err">que</span><span class="w"> </span><span class="err">vous</span><span class="w"> </span><span class="err">souhaitez</span><span class="w"> </span><span class="err">transmettre</span><span class="w"> </span><span class="err">dans</span><span class="w"> </span><span class="err">le</span><span class="w"> </span><span class="err">body</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-<h4 id="scénario-2-signalement-de-plusieurs-anomalies">Scénario 2 : Signalement de plusieurs anomalies</h4>
+<!-- suppression scenario à la demande du ROR cf issue https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante/issues/207 
+#### Scénario 2 : Signalement de plusieurs anomalies
 
-<p><strong>Description du scénario :</strong> Le moteur de règle crée automatiquement une ou plusieurs anomalies sur un ou plusieurs éléments.</p>
+**Description du scénario :** Le moteur de règle crée automatiquement une ou plusieurs anomalies sur un ou plusieurs éléments.
 
-<p><strong>Requête :</strong></p>
+**Requête :**
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST [BASE]/Bundle
+```json
+POST [BASE]/Bundle
 {
   "resourceType": "Bundle",
 	"type":"collection",
@@ -413,7 +366,8 @@ Plus de précision sur la spécification FHIR :
 				
 	]
 }
-</code></pre></div></div>
+```
+-->
 
 
 
@@ -443,7 +397,7 @@ Plus de précision sur la spécification FHIR :
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="specifications_techniques_4.html">&lt;prev</a>
+                <a href="specifications_techniques_10.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -461,12 +415,13 @@ Plus de précision sur la spécification FHIR :
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 12, 2024 08:51+0000">2024-01-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/ROR_ressource-conformance-3.0/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante/issues/new/choose">New Issue</a>
                 
 
           </span>

@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.ROR\ror-sp-equipment-type - JSON Representation - FHIR v4.0.1</title>
+    <title>ror-sp-equipment-type - JSON Representation - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -22,7 +22,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -34,32 +33,36 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"17.10"}
-    h3,h4,h5,h6{--heading-prefix:"17.10"}</style>
+    <style type="text/css">h2{--heading-prefix:"20.10"}
+    h3,h4,h5,h6{--heading-prefix:"20.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.1.1 - STU
+            <span style="display:inline-block;">0.2.0 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -110,13 +113,25 @@
         <a href="specifications_techniques_4.html">Recherche d&apos;offre avec données capacitaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_5.html">Signalement d’anomalie</a>
+        <a href="specifications_techniques_8.html">Recherche d&apos;offre sur la base d&apos;informations tarifaires</a>
       </li>
       <li>
-        <a href="specifications_techniques_6.html">Mise à jour d’anomalie</a>
+        <a href="specifications_techniques_9.html">Recherche d&apos;offre via une technique « Full text »</a>
       </li>
       <li>
-        <a href="specifications_techniques_7.html">Consultation d’anomalie</a>
+        <a href="specifications_techniques_10.html">Création et Mise à jour du lieu de réalisation de l&apos;offre</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_5.html">Signalement d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_6.html">Mise à jour d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_7.html">Consultation d&apos;anomalie</a>
+      </li>
+      <li>
+        <a href="specifications_techniques_11.html">Consultation d&apos;indicateurs de pilotage</a>
       </li>
       <li>
         <a href="search_param.html">Critères de recherche</a>
@@ -136,23 +151,16 @@
     <a href="artifacts.html">Ressources de conformité</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Téléchargements et usage
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="downloads.html">Téléchargements</a>
-      </li>
-      <li>
-        <a href="securite.html">Sécurité</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
@@ -162,7 +170,7 @@
     </ul>
   </li>
   <li>
-    <a href="about.html">A propos de ce guide</a>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -199,7 +207,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.1.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -214,6 +222,7 @@
   <li>
     <a href="SearchParameter-ror-sp-equipment-type.html">Narrative Content</a>
   </li>
+
 
 
   
@@ -245,6 +254,7 @@
 
 
 <h2 id="root">: ror-sp-equipment-type - JSON Representation</h2>
+
   <table class="colsi">
     <tr>
 
@@ -252,7 +262,7 @@
         
           Active
           
-            as of 2023-06-02
+            as of 2024-01-12
           
         
       </td>
@@ -268,19 +278,19 @@
 
 
 
-  <pre class="json" style="white-space: pre; overflow: hidden"><code class="language-json">
+  <pre class="json" style="white-space: pre; text-wrap: nowrap;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">
 {
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter">resourceType</a>" : "SearchParameter",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.id">id</a>" : "ror-sp-equipment-type",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;RORSPEquipmentType&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;equipment-type&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Paramètre de recherche pour récupérer le type d'un équipement.&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/location.html\&quot;&gt;Location&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment').extension(url='equipmentType').valueCodeableConcept&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;The parameter cannot repeat or have multiple values&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;RORSPEquipmentType&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;equipment-type&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Paramètre de recherche pour récupérer le type d'un équipement.&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/location.html\&quot;&gt;Location&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment').extension.where(url='equipmentType').value.as(CodeableConcept)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">url</a>" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-equipment-type",
-  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a>" : "0.1.1",
+  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a>" : "0.2.0",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">name</a>" : "RORSPEquipmentType",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a>" : "2023-06-02T12:02:38+02:00",
+  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a>" : "2024-01-12T08:51:34+00:00",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">publisher</a>" : "ANS",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">contact</a>" : [
     {
@@ -294,12 +304,23 @@
     }
   ],
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">description</a>" : "Paramètre de recherche pour récupérer le type d'un équipement.",
+  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "FR",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "FRANCE"
+        }
+      ]
+    }
+  ],
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.code">code</a>" : "equipment-type",
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">base</a>" : [
     "Location"
   ],
   "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">type</a>" : "token",
-  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">expression</a>" : "Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment').extension(url='equipmentType').valueCodeableConcept"
+  "<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">expression</a>" : "Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment').extension.where(url='equipmentType').value.as(CodeableConcept)"
 }</code></pre>
 
 
@@ -352,12 +373,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 2, 2023 12:02+0200">2023-06-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 12, 2024 08:51+0000">2024-01-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/ROR_ressource-conformance-3.0/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-repertoire-offre-ressources-sante/issues/new/choose">New Issue</a>
                 
 
           </span>
