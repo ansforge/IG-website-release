@@ -6,17 +6,24 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo",
-  "version" : "4.0.2-ballot",
+  "version" : "4.0.2-ballot-2",
   "name" : "SuiviDecisionsOrientation",
   "title" : "Médicosocial - Suivi Décisions Orientation",
   "status" : "active",
-  "date" : "2023-10-11T14:06:49+00:00",
+  "date" : "2024-02-06T15:24:40+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
     "telecom" : [{
       "system" : "url",
       "value" : "https://esante.gouv.fr"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "FRANCE"
     }]
   }],
   "packageId" : "ans.fhir.fr.sdo",
@@ -31,6 +38,22 @@
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
     "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
+  },
+  {
+    "id" : "ans_fr_nos",
+    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
+    "packageId" : "ans.fr.nos",
+    "version" : "1.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -51,7 +74,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "STU1"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -321,7 +344,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -341,7 +364,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "STU1"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -651,21 +674,10 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/id-exemple-bundle"
+        "reference" : "Bundle/id-exemple-bundle-resultat-recherche-decision-evaluation"
       },
-      "name" : "id-exemple-bundle",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/id-exemple-bundle-2"
-      },
-      "name" : "id-exemple-bundle-2",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"
+      "name" : "id-exemple-bundle-resultat-recherche-decision-evaluation",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -676,18 +688,7 @@
         "reference" : "Consent/id-exemple-consent"
       },
       "name" : "id-exemple-consent",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Consent"
-      }],
-      "reference" : {
-        "reference" : "Consent/id-exemple-consent-np"
-      },
-      "name" : "id-exemple-consent-np",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent"
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -698,18 +699,7 @@
         "reference" : "DocumentReference/id-exemple-esms-document-reference"
       },
       "name" : "id-exemple-esms-document-reference",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DocumentReference"
-      }],
-      "reference" : {
-        "reference" : "DocumentReference/id-exemple-esms-document-reference-np"
-      },
-      "name" : "id-exemple-esms-document-reference-np",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -717,21 +707,10 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/id-exemple-sdo-bundle"
+        "reference" : "Bundle/id-exemple-sdo-bundle-resultat-recherche-notifications-esms"
       },
-      "name" : "id-exemple-sdo-bundle",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/id-exemple-sdo-bundle-np"
-      },
-      "name" : "id-exemple-sdo-bundle-np",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"
+      "name" : "id-exemple-sdo-bundle-resultat-recherche-notifications-esms",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -742,18 +721,7 @@
         "reference" : "DocumentReference/id-exemple-sdo-document-reference"
       },
       "name" : "id-exemple-sdo-document-reference",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DocumentReference"
-      }],
-      "reference" : {
-        "reference" : "DocumentReference/id-exemple-sdo-document-reference-np"
-      },
-      "name" : "id-exemple-sdo-document-reference-np",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -761,21 +729,10 @@
         "valueString" : "Task"
       }],
       "reference" : {
-        "reference" : "Task/id-exemple-sdo-tak"
+        "reference" : "Task/id-exemple-sdo-task"
       },
-      "name" : "id-exemple-sdo-tak",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Task"
-      }],
-      "reference" : {
-        "reference" : "Task/id-exemple-sdo-task-np"
-      },
-      "name" : "id-exemple-sdo-task-np",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"
+      "name" : "id-exemple-sdo-task",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -890,7 +847,7 @@
           "valueUrl" : "st_flux3.html"
         }],
         "nameUrl" : "st_flux3.html",
-        "title" : "Flux 3 - Recherche et résultat évaluation",
+        "title" : "Flux 3 - Recherche et résultats d'évaluation",
         "generation" : "markdown"
       },
       {
@@ -908,7 +865,7 @@
           "valueUrl" : "st_flux5.html"
         }],
         "nameUrl" : "st_flux5.html",
-        "title" : "Flux 5 - Recherche et consultation de statut",
+        "title" : "Flux 5 - Recherche et résultats de statuts",
         "generation" : "markdown"
       },
       {
@@ -941,15 +898,6 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "tests.html"
-        }],
-        "nameUrl" : "tests.html",
-        "title" : "Tests",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "about.html"
         }],
         "nameUrl" : "about.html",
@@ -959,10 +907,46 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "autres_ressources.html"
+          "valueUrl" : "annexes_Glossaire.html"
         }],
-        "nameUrl" : "autres_ressources.html",
-        "title" : "Autres ressources associées à la spécification",
+        "nameUrl" : "annexes_Glossaire.html",
+        "title" : "Glossaire associé à la spécification",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "annexes_Nomenclature.html"
+        }],
+        "nameUrl" : "annexes_Nomenclature.html",
+        "title" : "Nomenclatures de référence associées aux spécifications",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "annexes_Nomenclatures_precision.html"
+        }],
+        "nameUrl" : "annexes_Nomenclatures_precision.html",
+        "title" : "Nomenclature précisions de l'orientation",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "annexes_OID_MDPH.html"
+        }],
+        "nameUrl" : "annexes_OID_MDPH.html",
+        "title" : "OID MDPH associés à la spécification",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "annexes_Diagramme.html"
+        }],
+        "nameUrl" : "annexes_Diagramme.html",
+        "title" : "Diagramme de Séquence SI-MDPH / SI-SDO / SI-ESMS",
         "generation" : "markdown"
       }]
     },

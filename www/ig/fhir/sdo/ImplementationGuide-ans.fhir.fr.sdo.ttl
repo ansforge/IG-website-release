@@ -13,17 +13,24 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "4.0.2-ballot"] ; # 
+  fhir:version [ fhir:v "4.0.2-ballot-2"] ; # 
   fhir:name [ fhir:v "SuiviDecisionsOrientation"] ; # 
   fhir:title [ fhir:v "Médicosocial - Suivi Décisions Orientation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-11T14:06:49+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-06T15:24:40+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
      ] )
   ] ) ; # 
   fhir:packageId [ fhir:v "ans.fhir.fr.sdo"] ; # 
@@ -41,6 +48,26 @@
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
      fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] [
+     fhir:id [ fhir:v "ans_fr_nos" ] ;
+     fhir:uri [
+       fhir:v "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos>
+     ] ;
+     fhir:packageId [ fhir:v "ans.fr.nos" ] ;
+     fhir:version [ fhir:v "1.1.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -58,7 +85,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "STU1" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -279,7 +306,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -295,7 +322,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "STU1" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -557,28 +584,11 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-bundle> ;
-         fhir:reference [ fhir:v "Bundle/id-exemple-bundle" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-bundle-resultat-recherche-decision-evaluation> ;
+         fhir:reference [ fhir:v "Bundle/id-exemple-bundle-resultat-recherche-decision-evaluation" ]
        ] ;
-       fhir:name [ fhir:v "id-exemple-bundle" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-bundle-2> ;
-         fhir:reference [ fhir:v "Bundle/id-exemple-bundle-2" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-bundle-2" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation>
-       ]
+       fhir:name [ fhir:v "id-exemple-bundle-resultat-recherche-decision-evaluation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -589,24 +599,7 @@
          fhir:reference [ fhir:v "Consent/id-exemple-consent" ]
        ] ;
        fhir:name [ fhir:v "id-exemple-consent" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Consent" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Consent/id-exemple-consent-np> ;
-         fhir:reference [ fhir:v "Consent/id-exemple-consent-np" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-consent-np" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent>
-       ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -617,52 +610,18 @@
          fhir:reference [ fhir:v "DocumentReference/id-exemple-esms-document-reference" ]
        ] ;
        fhir:name [ fhir:v "id-exemple-esms-document-reference" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "DocumentReference" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/DocumentReference/id-exemple-esms-document-reference-np> ;
-         fhir:reference [ fhir:v "DocumentReference/id-exemple-esms-document-reference-np" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-esms-document-reference-np" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference>
-       ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-sdo-bundle> ;
-         fhir:reference [ fhir:v "Bundle/id-exemple-sdo-bundle" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-sdo-bundle-resultat-recherche-notifications-esms> ;
+         fhir:reference [ fhir:v "Bundle/id-exemple-sdo-bundle-resultat-recherche-notifications-esms" ]
        ] ;
-       fhir:name [ fhir:v "id-exemple-sdo-bundle" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/id-exemple-sdo-bundle-np> ;
-         fhir:reference [ fhir:v "Bundle/id-exemple-sdo-bundle-np" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-sdo-bundle-np" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
-       ]
+       fhir:name [ fhir:v "id-exemple-sdo-bundle-resultat-recherche-notifications-esms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -673,52 +632,18 @@
          fhir:reference [ fhir:v "DocumentReference/id-exemple-sdo-document-reference" ]
        ] ;
        fhir:name [ fhir:v "id-exemple-sdo-document-reference" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "DocumentReference" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/DocumentReference/id-exemple-sdo-document-reference-np> ;
-         fhir:reference [ fhir:v "DocumentReference/id-exemple-sdo-document-reference-np" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-sdo-document-reference-np" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference>
-       ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Task" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Task/id-exemple-sdo-tak> ;
-         fhir:reference [ fhir:v "Task/id-exemple-sdo-tak" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Task/id-exemple-sdo-task> ;
+         fhir:reference [ fhir:v "Task/id-exemple-sdo-task" ]
        ] ;
-       fhir:name [ fhir:v "id-exemple-sdo-tak" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Task" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/Task/id-exemple-sdo-task-np> ;
-         fhir:reference [ fhir:v "Task/id-exemple-sdo-task-np" ]
-       ] ;
-       fhir:name [ fhir:v "id-exemple-sdo-task-np" ] ;
-       fhir:example [
-         fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"^^xsd:anyURI ;
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task>
-       ]
+       fhir:name [ fhir:v "id-exemple-sdo-task" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -826,7 +751,7 @@
            fhir:value [ fhir:v "st_flux3.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "st_flux3.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Flux 3 - Recherche et résultat évaluation" ] ;
+         fhir:title [ fhir:v "Flux 3 - Recherche et résultats d'évaluation" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -842,7 +767,7 @@
            fhir:value [ fhir:v "st_flux5.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "st_flux5.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Flux 5 - Recherche et consultation de statut" ] ;
+         fhir:title [ fhir:v "Flux 5 - Recherche et résultats de statuts" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -871,14 +796,6 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "tests.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "tests.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Tests" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "about.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "about.html"^^xsd:anyURI ] ;
@@ -887,10 +804,42 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "autres_ressources.html"^^xsd:anyURI ]
+           fhir:value [ fhir:v "annexes_Glossaire.html"^^xsd:anyURI ]
          ] ) ;
-         fhir:name [ fhir:v "autres_ressources.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Autres ressources associées à la spécification" ] ;
+         fhir:name [ fhir:v "annexes_Glossaire.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Glossaire associé à la spécification" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "annexes_Nomenclature.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "annexes_Nomenclature.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Nomenclatures de référence associées aux spécifications" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "annexes_Nomenclatures_precision.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "annexes_Nomenclatures_precision.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Nomenclature précisions de l'orientation" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "annexes_OID_MDPH.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "annexes_OID_MDPH.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "OID MDPH associés à la spécification" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "annexes_Diagramme.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "annexes_Diagramme.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Diagramme de Séquence SI-MDPH / SI-SDO / SI-ESMS" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

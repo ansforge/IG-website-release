@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Synthèse des flux - Médicosocial - Suivi Décisions Orientation v4.0.2-ballot</title>
+    <title>Synthèse des flux - Médicosocial - Suivi Décisions Orientation v4.0.2-ballot-2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -56,7 +56,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Suivi Décisions Orientation</span>
             <br/>
-            <span style="display:inline-block;">4.0.2-ballot - STU1
+            <span style="display:inline-block;">4.0.2-ballot-2 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -107,13 +111,13 @@
         <a href="st_flux2.html">Flux 2 - Accord</a>
       </li>
       <li>
-        <a href="st_flux3.html">Flux 3 - Recherche et résultat évaluation</a>
+        <a href="st_flux3.html">Flux 3 - Recherche et résultats d&apos;évaluation</a>
       </li>
       <li>
         <a href="st_flux4.html">Flux 4 - StatutPersonneOrientee</a>
       </li>
       <li>
-        <a href="st_flux5.html">Flux 5 - Recherche et consultation de statut</a>
+        <a href="st_flux5.html">Flux 5 - Recherche et résultats de statut</a>
       </li>
     </ul>
   </li>
@@ -130,8 +134,27 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="tests.html">Tests</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="annexes_Glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="annexes_Nomenclature.html">Nomenclatures de référence</a>
+      </li>
+      <li>
+        <a href="annexes_Nomenclatures_precision.html">Nomenclature précision de l&apos;orientation</a>
+      </li>
+      <li>
+        <a href="annexes_OID_MDPH.html">OID MDPH</a>
+      </li>
+      <li>
+        <a href="annexes_Diagramme.html">Diagramme de séquence SI-MDPH/SI-SDO/-SI-ESMS</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -143,9 +166,6 @@
       </li>
       <li>
         <a href="downloads.html">Téléchargements et usage</a>
-      </li>
-      <li>
-        <a href="autres_ressources.html">Annexes</a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
@@ -200,7 +220,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.2-ballot: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.2-ballot-2: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Synthèse des flux</h2>
   
 
@@ -297,9 +317,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </tr>
         <tr>
             <td style="width:70.9pt;border:solid gray 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;">
-                <p style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;text-align:left;line-height:115%;font-size:13px;font-family:&quot;Arial&quot;,sans-serif;"><span style="font-size:12px;line-height:115%;color:black;">Flux 5 &ndash; StatutEntreeESMS</span></p>
+                <p style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;text-align:left;line-height:115%;font-size:13px;font-family:&quot;Arial&quot;,sans-serif;"><span style="font-size:12px;line-height:115%;color:black;">Flux 5 &ndash; StatutVersESMS</span></p>
                 <p style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;text-align:left;line-height:115%;font-size:13px;font-family:&quot;Arial&quot;,sans-serif;"><span style="font-size:12px;line-height:115%;color:black;">&nbsp;</span></p>
-                <p style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;text-align:left;line-height:115%;font-size:13px;font-family:&quot;Arial&quot;,sans-serif;"><span style="font-size:12px;line-height:115%;color:black;">Flux 6 - StatutAdmissionImpossibleEnterinee</span></p>
             </td>
             <td style="width:489.05pt;border-top:none;border-left:none;border-bottom:solid gray 1.0pt;border-right:solid gray 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
                     <ul>
@@ -307,12 +326,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                                 <ul>
                                     <li>Op&eacute;ration &laquo;&nbsp;search&nbsp;&raquo; de l&rsquo;API FHIR assur&eacute;e par une requ&ecirc;te HTTPS GET adressant la ressource Task.</li>
                                 </ul>
-                        <li>Flux 5.3 &ndash; ConsultationStatut / Flux 5.4 &ndash; ResultatConsultationStatut</li>
-                                <ul>
-                                    <li>Op&eacute;ration &laquo;&nbsp;read&nbsp;&raquo; de l&rsquo;API FHIR assur&eacute;e par une requ&ecirc;te HTTPS GET.</li>
-                                </ul> 
                     </ul>
-                    <div style="text-align:center;"> <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="298px" preserveAspectRatio="none" style="width:886px;height:298px;background:#FFFFFF;" version="1.1" viewBox="0 0 886 298" width="886px" zoomAndPan="magnify"><defs /><g><rect fill="#4169E1" height="235.3281" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="292" y="46.2969" /><rect fill="#4169E1" height="235.3281" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="810" y="46.2969" /><rect fill="none" height="126.7969" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;" width="870" x="10" y="147.8281" /><line style="stroke:#4169E1;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="297" x2="297" y1="36.2969" y2="291.625" /><line style="stroke:#4169E1;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="815" x2="815" y1="36.2969" y2="291.625" /><rect fill="#FFFFFF" height="30.2969" rx="10" ry="10" style="stroke:#4169E1;stroke-width:0.5;" width="62" x="266" y="5" /><text fill="#000000" font-family="arial" font-size="14" lengthAdjust="spacing" textLength="48" x="273" y="24.9951">SI-SDO</text><rect fill="#FFFFFF" height="30.2969" rx="10" ry="10" style="stroke:#4169E1;stroke-width:0.5;" width="70" x="780" y="5" /><text fill="#000000" font-family="arial" font-size="14" lengthAdjust="spacing" textLength="56" x="787" y="24.9951">SI-ESMS</text><rect fill="#4169E1" height="235.3281" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="292" y="46.2969" /><rect fill="#4169E1" height="235.3281" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="810" y="46.2969" /><polygon fill="#000000" points="313,78.5625,303,82.5625,313,86.5625,309,82.5625" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;" x1="307" x2="809" y1="82.5625" y2="82.5625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="319" y="62.3638">Flux 5.1</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="122" x="372" y="62.3638">RechercheStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="494" y="62.3638">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="319" y="77.4966">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="480" x="323" y="77.4966">GET [base]/Task?_lastUpdated=gt[dateDerni&#232;reRecherche]&amp;_elements=id</text><polygon fill="#000000" points="798,125.8281,808,129.8281,798,133.8281,802,129.8281" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="302" x2="804" y1="129.8281" y2="129.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="309" y="109.6294">Flux 5.2</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="106" x="362" y="109.6294">ResultatStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="468" y="109.6294">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="309" y="124.7622">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="313" y="124.7622">OK 200 (+ ressource "Bundle")</text><path d="M30,105.5625 L30,125.5625 A10,10 0 0 0 40,135.5625 L277,135.5625 A10,10 0 0 0 287,125.5625 L287,105.5625 L277,95.5625 L40,95.5625 A10,10 0 0 0 30,105.5625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M277,95.5625 L277,100.5625 A5,5 0 0 0 282,105.5625 L287,105.5625 L277,95.5625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="232" x="36" y="112.6294">Liste des identifiants des ressources</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="36" y="127.7622">Task r&#233;pondant &#224; la recherche.</text><path d="M20,147.8281 L87,147.8281 L87,154.9609 L77,164.9609 L10,164.9609 L10,157.8281 A10,10 0 0 1 20,147.8281 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="126.7969" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;" width="870" x="10" y="147.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="32" x="25" y="160.895">loop</text><polygon fill="#000000" points="313,197.2266,303,201.2266,313,205.2266,309,201.2266" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;" x1="307" x2="809" y1="201.2266" y2="201.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="319" y="181.0278">Flux 5.3</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="137" x="372" y="181.0278">ConsultationStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="509" y="181.0278">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="319" y="196.1606">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="323" y="196.1606">GET [base]/Task/id</text><polygon fill="#000000" points="798,252.0586,808,256.0586,798,260.0586,802,256.0586" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="302" x2="804" y1="256.0586" y2="256.0586" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="309" y="235.8599">Flux 5.4</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="198" x="362" y="235.8599">ResultatConsultationStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="560" y="235.8599">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="309" y="250.9927">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="313" y="250.9927">OK 200 (+ ressource "Task")</text><path d="M20,224.2266 L20,259.2266 A10,10 0 0 0 30,269.2266 L277,269.2266 A10,10 0 0 0 287,259.2266 L287,224.2266 L277,214.2266 L30,214.2266 A10,10 0 0 0 20,224.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M277,214.2266 L277,219.2266 A5,5 0 0 0 282,224.2266 L287,224.2266 L277,214.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="246" x="26" y="231.2935">La ressource Task v&#233;hiculant un statut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="26" y="246.4263">"Usager prise en charge" ou</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="26" y="261.5591">"Admission impossible ent&#233;rin&#233;e".</text></g></svg> </div>
+                    <div style="text-align:center;"> <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="157px" preserveAspectRatio="none" style="width:733px;height:157px;background:#FFFFFF;" version="1.1" viewBox="0 0 733 157" width="733px" zoomAndPan="magnify"><defs /><g><rect fill="#4169E1" height="83.5313" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="269" y="46.2969" /><rect fill="#4169E1" height="83.5313" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="687" y="46.2969" /><line style="stroke:#4169E1;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="274" x2="274" y1="36.2969" y2="150.8281" /><line style="stroke:#4169E1;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="692" x2="692" y1="36.2969" y2="150.8281" /><rect fill="#FFFFFF" height="30.2969" rx="10" ry="10" style="stroke:#4169E1;stroke-width:0.5;" width="62" x="243" y="5" /><text fill="#000000" font-family="arial" font-size="14" lengthAdjust="spacing" textLength="48" x="250" y="24.9951">SI-SDO</text><rect fill="#FFFFFF" height="30.2969" rx="10" ry="10" style="stroke:#4169E1;stroke-width:0.5;" width="70" x="657" y="5" /><text fill="#000000" font-family="arial" font-size="14" lengthAdjust="spacing" textLength="56" x="664" y="24.9951">SI-ESMS</text><rect fill="#4169E1" height="83.5313" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="269" y="46.2969" /><rect fill="#4169E1" height="83.5313" style="stroke:#4169E1;stroke-width:1.0;" width="10" x="687" y="46.2969" /><polygon fill="#000000" points="290,78.5625,280,82.5625,290,86.5625,286,82.5625" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;" x1="284" x2="686" y1="82.5625" y2="82.5625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="296" y="62.3638">Flux 5.1</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="122" x="349" y="62.3638">RechercheStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="471" y="62.3638">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="296" y="77.4966">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="380" x="300" y="77.4966">GET [base]/Task?_lastUpdated=gt[dateDerni&#232;reRecherche]</text><polygon fill="#000000" points="680,125.8281,690,129.8281,680,133.8281,684,129.8281" style="stroke:#000000;stroke-width:1.0;" /><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="274" x2="686" y1="129.8281" y2="129.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="281" y="109.6294">Flux 5.2</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="106" x="334" y="109.6294">ResultatStatut</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="440" y="109.6294">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="281" y="124.7622">&#160;</text><text fill="#B22222" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="285" y="124.7622">OK 200 (+ ressource "Bundle")</text><path d="M5,105.5625 L5,125.5625 A10,10 0 0 0 15,135.5625 L254,135.5625 A10,10 0 0 0 264,125.5625 L264,105.5625 L254,95.5625 L15,95.5625 A10,10 0 0 0 5,105.5625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M254,95.5625 L254,100.5625 A5,5 0 0 0 259,105.5625 L264,105.5625 L254,95.5625 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="234" x="11" y="112.6294">Liste des ressources Task r&#233;pondant</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="11" y="127.7622">&#224; la recherche.</text></g></svg> </div>
             </td>
         </tr>
     </tbody>
@@ -364,13 +379,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.2-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 11, 2023 14:06+0000">2023-10-11</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.2-ballot-2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 6, 2024 15:24+0000">2024-02-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Historique des versions </a>
                   | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/new">New Issue</a>
                 
+
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
