@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Modélisation du contenu du DUI - Médicosocial - Transfert de données DUI v1.0.1-ballot</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2.4"}
+    h3,h4,h5,h6{--heading-prefix:"2.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Transfert de données DUI</span>
+            <br/>
+            <span style="display:inline-block;">1.0.1-ballot - STU1
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="sfe_cadre_juridique.html">Cadre juridique et orientations organisationnelles</a>
+      </li>
+      <li>
+        <a href="sfe_organisation_contexte_metier.html">Organisation du contexte métier</a>
+      </li>
+      <li>
+        <a href="sfe_definition_processus.html">Définition des processus collaboratifs</a>
+      </li>
+      <li>
+        <a href="sfe_modelisation_contenu.html">Modélisation du contenu du DUI</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contenu_dossier_contexte.html">Contexte</a>
+      </li>
+      <li>
+        <a href="contenu_dossier_structure_cda.html">Structure générale du document CDA</a>
+      </li>
+      <li>
+        <a href="contenu_dossier_entete_cda.html">Entête du document CDA</a>
+      </li>
+      <li>
+        <a href="contenu_dossier_corps_cda.html">Corps du document CDA</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="description_flux_synthese.html">Synthèse des flux</a>
+      </li>
+      <li>
+        <a href="description_flux_1_ajout_doc.html">Flux 1 - Ajout d&apos;un document</a>
+      </li>
+      <li>
+        <a href="description_flux_2_ajout_lot_doc.html">Flux 2 - Ajout d&apos;un lot de documents</a>
+      </li>
+      <li>
+        <a href="description_flux_3_maj_doc.html">Flux 3 - Mise à jour d&apos;un document</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Ressources de conformité
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ressources_cda.html">Ressources CDA</a>
+      </li>
+      <li>
+        <a href="artifacts.html">Ressources FHIR</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="acronymes.html">Acronymes</a>
+      </li>
+      <li>
+        <a href="documents_reference.html">Documents de référence</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='sfe.html'><b>Spécifications fonctionnelles</b></a></li><li><b>Modélisation du contenu du DUI</b></li>
+
+          <span style="float:right;">
+
+            <a href="sfe_definition_processus.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="contenu_dossier.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.0.1-ballot: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Modélisation du contenu du DUI</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#représentation-globale-du-dui" id="markdown-toc-représentation-globale-du-dui">Représentation globale du DUI</a></li>
+  <li><a href="#données-administratives" id="markdown-toc-données-administratives">Données administratives</a></li>
+  <li><a href="#partie-accompagnement" id="markdown-toc-partie-accompagnement">Partie Accompagnement</a></li>
+</ul>
+
+</div>
+<h3 id="représentation-globale-du-dui">Représentation globale du DUI</h3>
+
+<!-- object data="representation_globale.svg"  style="width:100%" type="image/svg+xml"></object -->
+<div class="figure" style="width:100%; display: flex; align-items: center; justify-content: center;">
+<!-- Note : le svg est déformé car impossible de modifier le style du svg -->
+  <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="657px" preserveAspectRatio="none" style="width:1450px;height:657px;background:#FFFFFF;" version="1.1" viewBox="0 0 1450 657" width="1450px" zoomAndPan="magnify"><defs /><g><!--cluster Admin--><g id="cluster_Admin"><path d="M8.5,67 L106.5,67 A3.75,3.75 0 0 1 109,69.5 L116,89.4883 L275.5,89.4883 A2.5,2.5 0 0 1 278,91.9883 L278,551.5 A2.5,2.5 0 0 1 275.5,554 L8.5,554 A2.5,2.5 0 0 1 6,551.5 L6,69.5 A2.5,2.5 0 0 1 8.5,67 " fill="#FFB6C1" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="116" y1="89.4883" y2="89.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="10" y="82.5352">Administratif</text></g><!--cluster Coord--><g id="cluster_Coord"><path d="M320.5,67 L502.5,67 A3.75,3.75 0 0 1 505,69.5 L512,89.4883 L566.5,89.4883 A2.5,2.5 0 0 1 569,91.9883 L569,455.5 A2.5,2.5 0 0 1 566.5,458 L320.5,458 A2.5,2.5 0 0 1 318,455.5 L318,69.5 A2.5,2.5 0 0 1 320.5,67 " fill="#98FB98" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="318" x2="512" y1="89.4883" y2="89.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="181" x="322" y="82.5352">Coordination des acteurs</text></g><!--cluster Acc--><g id="cluster_Acc"><path d="M611.5,67 L739.5,67 A3.75,3.75 0 0 1 742,69.5 L749,89.4883 L808.5,89.4883 A2.5,2.5 0 0 1 811,91.9883 L811,455.5 A2.5,2.5 0 0 1 808.5,458 L611.5,458 A2.5,2.5 0 0 1 609,455.5 L609,69.5 A2.5,2.5 0 0 1 611.5,67 " fill="#FFFFE0" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="609" x2="749" y1="89.4883" y2="89.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="127" x="613" y="82.5352">Accompagnement</text></g><!--cluster Soin--><g id="cluster_Soin"><path d="M853.5,67 L893.5,67 A3.75,3.75 0 0 1 896,69.5 L903,89.4883 L1440.5,89.4883 A2.5,2.5 0 0 1 1443,91.9883 L1443,647.5 A2.5,2.5 0 0 1 1440.5,650 L853.5,650 A2.5,2.5 0 0 1 851,647.5 L851,69.5 A2.5,2.5 0 0 1 853.5,67 " fill="#D8BFD8" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="851" x2="903" y1="89.4883" y2="89.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="39" x="855" y="82.5352">Soins</text></g><g id="elem_droit"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="184" x="54" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="61" y="125.5352">Droit sociaux et de sant&#233;</text><line style="stroke:#181818;stroke-width:0.5;" x1="55" x2="237" y1="130.4883" y2="130.4883" /></g><g id="elem_autorisation"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="214" x="39" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="46" y="221.5352">Autorisations administratives</text><line style="stroke:#181818;stroke-width:0.5;" x1="40" x2="252" y1="226.4883" y2="226.4883" /></g><g id="elem_id"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="215" x="38.5" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="45.5" y="317.5352">Identification et coordonn&#233;es</text><line style="stroke:#181818;stroke-width:0.5;" x1="39.5" x2="252.5" y1="322.4883" y2="322.4883" /></g><g id="elem_env"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="213" x="39.5" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="46.5" y="413.5352">Environnement et ressources</text><line style="stroke:#181818;stroke-width:0.5;" x1="40.5" x2="251.5" y1="418.4883" y2="418.4883" /></g><g id="elem_sejour"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="58" x="117" y="494" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="124" y="509.5352">S&#233;jour</text><line style="stroke:#181818;stroke-width:0.5;" x1="118" x2="174" y1="514.4883" y2="514.4883" /></g><g id="elem_traca"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="183" x="361.5" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="368.5" y="125.5352">Tra&#231;abilit&#233; des &#233;changes</text><line style="stroke:#181818;stroke-width:0.5;" x1="362.5" x2="543.5" y1="130.4883" y2="130.4883" /></g><g id="elem_agenda"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="67" x="419.5" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="426.5" y="221.5352">Agenda</text><line style="stroke:#181818;stroke-width:0.5;" x1="420.5" x2="485.5" y1="226.4883" y2="226.4883" /></g><g id="elem_pres"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="148" x="379" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="386" y="317.5352">Pr&#233;sence / Absence</text><line style="stroke:#181818;stroke-width:0.5;" x1="380" x2="526" y1="322.4883" y2="322.4883" /></g><g id="elem_ged"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="42" x="432" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="439" y="413.5352">GED</text><line style="stroke:#181818;stroke-width:0.5;" x1="433" x2="473" y1="418.4883" y2="418.4883" /></g><g id="elem_cahier"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="129" x="652.5" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="659.5" y="125.5352">Cahier de liaison</text><line style="stroke:#181818;stroke-width:0.5;" x1="653.5" x2="780.5" y1="130.4883" y2="130.4883" /></g><g id="elem_eval"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="85" x="673.5" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="680.5" y="221.5352">Evaluation</text><line style="stroke:#181818;stroke-width:0.5;" x1="674.5" x2="757.5" y1="226.4883" y2="226.4883" /></g><g id="elem_parc"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="74" x="678" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="685" y="317.5352">Parcours</text><line style="stroke:#181818;stroke-width:0.5;" x1="679" x2="751" y1="322.4883" y2="322.4883" /></g><g id="elem_projP"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="146" x="641" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="648" y="413.5352">Projet personnalis&#233;</text><line style="stroke:#181818;stroke-width:0.5;" x1="642" x2="786" y1="418.4883" y2="418.4883" /></g><g id="elem_mal"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="197" x="1211.5" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="1218.5" y="413.5352">Maladies et sujets de sant&#233;</text><line style="stroke:#181818;stroke-width:0.5;" x1="1212.5" x2="1407.5" y1="418.4883" y2="418.4883" /></g><g id="elem_autonomie"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="159" x="883.5" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="890.5" y="221.5352">Autonomie/invalidit&#233;</text><line style="stroke:#181818;stroke-width:0.5;" x1="884.5" x2="1041.5" y1="226.4883" y2="226.4883" /></g><g id="elem_antG"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="192" x="1214" y="494" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="1221" y="509.5352">Ant&#233;cedents de grossesse</text><line style="stroke:#181818;stroke-width:0.5;" x1="1215" x2="1405" y1="514.4883" y2="514.4883" /></g><g id="elem_trait"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="89" x="1077.5" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1084.5" y="221.5352">Traitement</text><line style="stroke:#181818;stroke-width:0.5;" x1="1078.5" x2="1165.5" y1="226.4883" y2="226.4883" /></g><g id="elem_hospi"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="206" x="1211" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="1218" y="125.5352">Hospitalisation et chirurgies</text><line style="stroke:#181818;stroke-width:0.5;" x1="1212" x2="1416" y1="130.4883" y2="130.4883" /></g><g id="elem_antF"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="167" x="1226.5" y="590" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1233.5" y="605.5352">Ant&#233;c&#233;dents familiaux</text><line style="stroke:#181818;stroke-width:0.5;" x1="1227.5" x2="1392.5" y1="610.4883" y2="610.4883" /></g><g id="elem_vac"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="93" x="1082.5" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="1089.5" y="125.5352">Vaccination</text><line style="stroke:#181818;stroke-width:0.5;" x1="1083.5" x2="1174.5" y1="130.4883" y2="130.4883" /></g><g id="elem_mes"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="71" x="1086.5" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="1093.5" y="413.5352">Mesures</text><line style="stroke:#181818;stroke-width:0.5;" x1="1087.5" x2="1156.5" y1="418.4883" y2="418.4883" /></g><g id="elem_hab"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="127" x="899.5" y="494" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="906.5" y="509.5352">Habitudes de vie</text><line style="stroke:#181818;stroke-width:0.5;" x1="900.5" x2="1025.5" y1="514.4883" y2="514.4883" /></g><g id="elem_vol"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="142" x="892" y="398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="899" y="413.5352">Derni&#232;res volont&#233;s</text><line style="stroke:#181818;stroke-width:0.5;" x1="893" x2="1033" y1="418.4883" y2="418.4883" /></g><g id="elem_histo"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="153" x="894.5" y="110" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="901.5" y="125.5352">Historique des soins</text><line style="stroke:#181818;stroke-width:0.5;" x1="895.5" x2="1046.5" y1="130.4883" y2="130.4883" /></g><g id="elem_ord"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="217" x="1201.5" y="206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="1208.5" y="221.5352">Ordonnances et prescriptions</text><line style="stroke:#181818;stroke-width:0.5;" x1="1202.5" x2="1417.5" y1="226.4883" y2="226.4883" /></g><g id="elem_projS"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="207" x="1206.5" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="1213.5" y="317.5352">Projet de soins personnalis&#233;</text><line style="stroke:#181818;stroke-width:0.5;" x1="1207.5" x2="1412.5" y1="322.4883" y2="322.4883" /></g><g id="elem_plan"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="97" x="914.5" y="590" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="921.5" y="605.5352">Plan de soin</text><line style="stroke:#181818;stroke-width:0.5;" x1="915.5" x2="1010.5" y1="610.4883" y2="610.4883" /></g><g id="elem_alerte"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="62" x="1091" y="494" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1098" y="509.5352">Alertes</text><line style="stroke:#181818;stroke-width:0.5;" x1="1092" x2="1152" y1="514.4883" y2="514.4883" /></g><g id="elem_allergie"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="74" x="1085" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="1092" y="317.5352">Allergies</text><line style="stroke:#181818;stroke-width:0.5;" x1="1086" x2="1158" y1="322.4883" y2="322.4883" /></g><g id="elem_obs"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="144" x="891" y="302" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="898" y="317.5352">Observations soins</text><line style="stroke:#181818;stroke-width:0.5;" x1="892" x2="1034" y1="322.4883" y2="322.4883" /></g><g id="elem_Usager"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="62" x="440" y="7" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="447" y="22.5352">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="441" x2="501" y1="27.4883" y2="27.4883" /></g><!--link droit to autorisation--><!--link autorisation to id--><!--link id to env--><!--link env to sejour--><!--link traca to agenda--><!--link agenda to pres--><!--link pres to ged--><!--link cahier to eval--><!--link eval to parc--><!--link parc to projP--><!--link hospi to ord--><!--link ord to projS--><!--link projS to mal--><!--link mal to antG--><!--link antG to antF--><!--link histo to autonomie--><!--link autonomie to obs--><!--link obs to vol--><!--link vol to hab--><!--link hab to plan--><!--link vac to trait--><!--link trait to allergie--><!--link allergie to mes--><!--link mes to alerte--><!--link Usager to Admin--><g id="link_Usager_Admin"><path codeLine="81" d="M439.93,26.64 C340.72,28.81 37.13,36.6 22,51 C19.0213,53.8363 16.6466,57.1 14.7733,60.6461 C13.8367,62.4192 13.0254,64.2629 12.3267,66.159 C12.2394,66.396 12.1538,66.6338 12.0699,66.8724 " fill="none" id="Usager-Admin" style="stroke:#181818;stroke-width:1.0;" /></g><!--link Usager to Coord--><g id="link_Usager_Coord"><path codeLine="82" d="M439.9,28.39 C407.11,31.55 358.37,38.28 345,51 C341.9462,53.9075 339.3534,57.2253 337.1547,60.8114 C336.0553,62.6045 335.0545,64.4646 334.1438,66.3741 C334.0869,66.4934 334.0303,66.6129 333.9741,66.7327 " fill="none" id="Usager-Coord" style="stroke:#181818;stroke-width:1.0;" /></g><!--link Usager to Acc--><g id="link_Usager_Acc"><path codeLine="83" d="M502.33,29.51 C520.7,32.78 543.64,39.04 561,51 C577.735,62.53 591.3975,80.7225 601.0375,96.4175 C603.4475,100.3412 605.6061,104.1089 607.4984,107.5773 C607.9715,108.4445 608.428,109.2929 608.8675,110.1203 " fill="none" id="Usager-Acc" style="stroke:#181818;stroke-width:1.0;" /></g><!--link Usager to Soin--><g id="link_Usager_Soin"><path codeLine="84" d="M502.19,26.87 C579.78,29.25 777.08,36.66 803,51 C820.78,60.84 834.475,78.9775 843.87,95.0662 C846.2187,99.0884 848.2987,102.9826 850.1066,106.587 C850.3326,107.0376 850.5544,107.4836 850.7718,107.9248 C850.8262,108.0351 850.8803,108.1451 850.9341,108.2548 " fill="none" id="Usager-Soin" style="stroke:#181818;stroke-width:1.0;" /></g></g></svg>
+</div>
+
+<h3 id="données-administratives">Données administratives</h3>
+
+<!-- object data="donnees_admin.svg" style="width:100%" type="image/svg+xml"></object -->
+<div class="figure" style="width:100%; display: flex; align-items: center; justify-content: center;">
+  <?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="620px" preserveAspectRatio="none" style="width:1204px;height:620px;background:#FFFFFF;" version="1.1" viewBox="0 0 1204 620" width="1204px" zoomAndPan="magnify"><defs /><g><!--cluster id--><g id="cluster_id"><path d="M247.5,109.5 L460.5,109.5 A3.75,3.75 0 0 1 463,112 L470,131.9883 L671.5,131.9883 A2.5,2.5 0 0 1 674,134.4883 L674,210 A2.5,2.5 0 0 1 671.5,212.5 L247.5,212.5 A2.5,2.5 0 0 1 245,210 L245,112 A2.5,2.5 0 0 1 247.5,109.5 " fill="#98FB98" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="245" x2="470" y1="131.9883" y2="131.9883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="212" x="249" y="125.0352">Identification et coordonn&#233;es</text></g><!--cluster Auto--><g id="cluster_Auto"><path d="M708.5,93 L822.5,93 A3.75,3.75 0 0 1 825,95.5 L832,131.9766 L847.5,131.9766 A2.5,2.5 0 0 1 850,134.4766 L850,210.5 A2.5,2.5 0 0 1 847.5,213 L708.5,213 A2.5,2.5 0 0 1 706,210.5 L706,95.5 A2.5,2.5 0 0 1 708.5,93 " fill="#FFDAB9" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="706" x2="832" y1="131.9766" y2="131.9766" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="98" x="717.5" y="108.5352">Autorisations</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="113" x="710" y="125.0234">administratives</text></g><!--cluster Droit--><g id="cluster_Droit"><path d="M625.5,396 L815.5,396 A3.75,3.75 0 0 1 818,398.5 L825,418.4883 L1194.5,418.4883 A2.5,2.5 0 0 1 1197,420.9883 L1197,610.5 A2.5,2.5 0 0 1 1194.5,613 L625.5,613 A2.5,2.5 0 0 1 623,610.5 L623,398.5 A2.5,2.5 0 0 1 625.5,396 " fill="#FFFFE0" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="623" x2="825" y1="418.4883" y2="418.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="189" x="627" y="411.5352">Droits sociaux et de sant&#233;</text></g><!--cluster S?jours--><g id="cluster_S&#233;jours"><path d="M876.5,6 L930.5,6 A3.75,3.75 0 0 1 933,8.5 L940,28.4883 L1179.5,28.4883 A2.5,2.5 0 0 1 1182,30.9883 L1182,369.5 A2.5,2.5 0 0 1 1179.5,372 L876.5,372 A2.5,2.5 0 0 1 874,369.5 L874,8.5 A2.5,2.5 0 0 1 876.5,6 " fill="#D8BFD8" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="874" x2="940" y1="28.4883" y2="28.4883" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="878" y="21.5352">S&#233;jours</text></g><!--cluster Env--><g id="cluster_Env"><path d="M8.5,252.5 L117.5,252.5 A3.75,3.75 0 0 1 120,255 L127,291.4766 L588.5,291.4766 A2.5,2.5 0 0 1 591,293.9766 L591,497 A2.5,2.5 0 0 1 588.5,499.5 L8.5,499.5 A2.5,2.5 0 0 1 6,497 L6,255 A2.5,2.5 0 0 1 8.5,252.5 " fill="#ADD8E6" style="stroke:#000000;stroke-width:1.5;" /><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="127" y1="291.4766" y2="291.4766" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="108" x="10" y="268.0352">Environnement</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="96" x="16" y="284.5234">et ressources</text></g><g id="elem_Courrier"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="72" x="473" y="152.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="480" y="168.0352">Courrier</text><line style="stroke:#181818;stroke-width:0.5;" x1="474" x2="544" y1="172.9883" y2="172.9883" /></g><g id="elem_Adresse"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="69" x="580.5" y="152.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="587.5" y="168.0352">Adresse</text><line style="stroke:#181818;stroke-width:0.5;" x1="581.5" x2="648.5" y1="172.9883" y2="172.9883" /></g><g id="elem_T&#233;l&#233;communication"><rect fill="#98FB98" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="149" x="288.5" y="152.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="295.5" y="168.0352">T&#233;l&#233;communication</text><line style="stroke:#181818;stroke-width:0.5;" x1="289.5" x2="436.5" y1="172.9883" y2="172.9883" /></g><g id="elem_auto"><rect fill="#FFDAB9" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="111" x="722.5" y="144" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="735.5" y="159.5352">Autorisation</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="729.5" y="176.0234">administrative</text><line style="stroke:#181818;stroke-width:0.5;" x1="723.5" x2="832.5" y1="180.9766" y2="180.9766" /></g><g id="elem_assC"><rect fill="#FFFFE0" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="143" x="639.5" y="544" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="646.5" y="559.5352">Assurance maladie</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="655.5" y="576.0234">compl&#233;mentaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="640.5" x2="781.5" y1="580.9766" y2="580.9766" /></g><g id="elem_assO"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="222" x="686" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="693" y="455.0352">Assurance maladie obligatoire</text><line style="stroke:#181818;stroke-width:0.5;" x1="687" x2="907" y1="459.9883" y2="459.9883" /></g><g id="elem_D&#233;cision"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="72" x="943" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="950" y="455.0352">D&#233;cision</text><line style="stroke:#181818;stroke-width:0.5;" x1="944" x2="1014" y1="459.9883" y2="459.9883" /></g><g id="elem_presta"><rect fill="#FFFFE0" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="84" x="1050" y="431" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="1075" y="446.5352">Droit</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1057" y="463.0234">prestation</text><line style="stroke:#181818;stroke-width:0.5;" x1="1051" x2="1133" y1="467.9766" y2="467.9766" /></g><g id="elem_detail"><rect fill="#FFFFE0" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="84" x="1097" y="544" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="1119.5" y="559.5352">D&#233;tail</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1104" y="576.0234">prestation</text><line style="stroke:#181818;stroke-width:0.5;" x1="1098" x2="1180" y1="580.9766" y2="580.9766" /></g><g id="elem_pc"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="98" x="964" y="552.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="971" y="568.0352">Prise charge</text><line style="stroke:#181818;stroke-width:0.5;" x1="965" x2="1061" y1="572.9883" y2="572.9883" /></g><g id="elem_Quantification"><rect fill="#FFFFE0" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="111" x="817.5" y="552.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="824.5" y="568.0352">Quantification</text><line style="stroke:#181818;stroke-width:0.5;" x1="818.5" x2="927.5" y1="572.9883" y2="572.9883" /></g><g id="elem_S&#233;jour"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="58" x="984" y="152.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="991" y="168.0352">S&#233;jour</text><line style="stroke:#181818;stroke-width:0.5;" x1="985" x2="1041" y1="172.9883" y2="172.9883" /></g><g id="elem_Solde"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="52" x="897" y="152.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="904" y="168.0352">Solde</text><line style="stroke:#181818;stroke-width:0.5;" x1="898" x2="948" y1="172.9883" y2="172.9883" /></g><g id="elem_R&#233;servation"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="94" x="945" y="320" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="952" y="335.5352">R&#233;servation</text><line style="stroke:#181818;stroke-width:0.5;" x1="946" x2="1038" y1="340.4883" y2="340.4883" /></g><g id="elem_Inventaire"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="82" x="1084" y="41" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1091" y="56.5352">Inventaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="1085" x2="1165" y1="61.4883" y2="61.4883" /></g><g id="elem_ESSMS"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="58" x="991" y="41" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="998" y="56.5352">ESSMS</text><line style="stroke:#181818;stroke-width:0.5;" x1="992" x2="1048" y1="61.4883" y2="61.4883" /></g><g id="elem_Contrat"><rect fill="#D8BFD8" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="66" x="890" y="41" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="897" y="56.5352">Contrat</text><line style="stroke:#181818;stroke-width:0.5;" x1="891" x2="955" y1="61.4883" y2="61.4883" /></g><g id="elem_contactM"><rect fill="#ADD8E6" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="136" x="431" y="311.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="438" y="327.0352">Contact personne</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="475" y="343.5234">morale</text><line style="stroke:#181818;stroke-width:0.5;" x1="432" x2="566" y1="348.4766" y2="348.4766" /></g><g id="elem_contactP"><rect fill="#ADD8E6" height="52.9766" style="stroke:#181818;stroke-width:0.5;" width="136" x="260" y="311.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="267" y="327.0352">Contact personne</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="297" y="343.5234">physique</text><line style="stroke:#181818;stroke-width:0.5;" x1="261" x2="395" y1="348.4766" y2="348.4766" /></g><g id="elem_permis"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="125" x="38.5" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="45.5" y="455.0352">Permis conduire</text><line style="stroke:#181818;stroke-width:0.5;" x1="39.5" x2="162.5" y1="459.9883" y2="459.9883" /></g><g id="elem_Transport"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="82" x="199" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="206" y="455.0352">Transport</text><line style="stroke:#181818;stroke-width:0.5;" x1="200" x2="280" y1="459.9883" y2="459.9883" /></g><g id="elem_cb"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="131" x="435.5" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="442.5" y="455.0352">Compte bancaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="436.5" x2="565.5" y1="459.9883" y2="459.9883" /></g><g id="elem_Ressource"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="84" x="316" y="439.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="323" y="455.0352">Ressource</text><line style="stroke:#181818;stroke-width:0.5;" x1="317" x2="399" y1="459.9883" y2="459.9883" /></g><g id="elem_mp"><rect fill="#ADD8E6" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="139" x="85.5" y="320" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="92.5" y="335.5352">Mesure protection</text><line style="stroke:#181818;stroke-width:0.5;" x1="86.5" x2="223.5" y1="340.4883" y2="340.4883" /></g><g id="elem_Usager"><rect fill="#FFB6C1" height="36.4883" style="stroke:#181818;stroke-width:0.5;" width="62" x="615" y="320" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="622" y="335.5352">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="616" x2="676" y1="340.4883" y2="340.4883" /></g><!--link T?l?communication to Usager--><g id="link_T&#233;l&#233;communication_Usager"><path codeLine="11" d="M383.8,188.59 C401.54,202.08 428.33,220 455,228.5 C482.15,237.15 558.51,221.93 583,236.5 C614.5,255.24 632.65,296.51 640.79,319.91 " fill="none" id="T&#233;l&#233;communication-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="383.6963" y="209.6056">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="611.3043" y="309.2932">1</text></g><!--link Adresse to Usager--><g id="link_Adresse_Usager"><path codeLine="12" d="M618.2,188.59 C624.14,220.3 636.81,287.93 642.77,319.76 " fill="none" id="Adresse-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="612.2663" y="209.6056">*</text></g><!--link Courrier to Usager--><g id="link_Courrier_Usager"><path codeLine="13" d="M521.85,188.61 C531.91,201.05 546.87,217.55 563,228.5 C570.92,233.88 575.65,230.36 583,236.5 C610.5,259.46 629.72,297.64 639.22,319.74 " fill="none" id="Courrier-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="519.1128" y="209.6322">*</text></g><!--link auto to Usager--><g id="link_auto_Usager"><path codeLine="20" d="M757.38,197.36 C730.11,231.54 682.83,290.83 659.63,319.91 " fill="none" id="auto-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="732.4631" y="217.4811">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="654.6996" y="309.2932">1</text></g><!--link Usager to assC--><g id="link_Usager_assC"><path codeLine="35" d="M645.13,356.33 C644.13,388.89 645.01,460.85 668,515.5 C672.28,525.66 679.03,535.5 685.93,543.92 " fill="none" id="Usager-assC" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="635.5777" y="377.1033">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="663.6254" y="533.2221">*</text></g><!--link Usager to assO--><g id="link_Usager_assO"><path codeLine="36" d="M667.96,356.09 C696.59,378.36 746.38,417.11 775.02,439.39 " fill="none" id="Usager-assO" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="665.9093" y="377.1056">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="740.1889" y="428.7668">0..1</text></g><!--link Usager to D?cision--><g id="link_Usager_D&#233;cision"><path codeLine="37" d="M677.3,344.89 C721.21,353.09 803.59,368.25 874,380 C897.06,383.85 905.85,376.13 926,388 C946.47,400.06 961.86,423.33 970.64,439.37 " fill="none" id="Usager-D&#233;cision" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="685.0219" y="342.3055">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="951.1065" y="428.7405">*</text></g><!--link D?cision to presta--><g id="link_D&#233;cision_presta"><path codeLine="38" d="M1015.2,457.5 C1026.8,457.5 1038.4,457.5 1050,457.5 " fill="none" id="D&#233;cision-presta" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1023.1144" y="453.5743">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1017.8669" y="471.4867">0..1</text></g><!--link presta to detail--><g id="link_presta_detail"><path codeLine="39" d="M1102.9,484.24 C1110.49,502.18 1120.58,525.99 1128.16,543.89 " fill="none" id="presta-detail" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1096.4094" y="504.3349">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1085.1303" y="533.1848">0..1</text></g><!--link pc to detail--><g id="link_pc_detail"><path codeLine="40" d="M1062.22,570.5 C1073.72,570.5 1085.21,570.5 1096.71,570.5 " fill="none" id="pc-detail" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="1069.8898" y="566.9537">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1081.0432" y="566.8538">1</text></g><!--link Quantification to pc--><g id="link_Quantification_pc"><path codeLine="41" d="M928.51,570.5 C940.28,570.5 952.05,570.5 963.82,570.5 " fill="none" id="Quantification-pc" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="936.3158" y="567.1909">0..1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="948.0603" y="584.1105">1</text></g><!--link assO to assC--><!--link Usager to S?jour--><g id="link_Usager_S&#233;jour"><path codeLine="54" d="M676.18,319.81 C718.77,296.49 799.61,255.53 874,236.5 C894.1,231.36 948.69,238.24 967,228.5 C983.62,219.66 996.39,201.99 1004.22,188.66 " fill="none" id="Usager-S&#233;jour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="676.5249" y="309.1613">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="983.6679" y="209.6988">*</text></g><!--link Solde to S?jour--><g id="link_Solde_S&#233;jour"><path codeLine="55" d="M949.02,170.5 C960.51,170.5 972.01,170.5 983.51,170.5 " fill="none" id="Solde-S&#233;jour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="956.8191" y="166.0289">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="968.1841" y="166.4083">1</text></g><!--link Inventaire to S?jour--><g id="link_Inventaire_S&#233;jour"><path codeLine="56" d="M1107.5,77.11 C1086.58,97.56 1051.77,131.59 1030.75,152.15 " fill="none" id="Inventaire-S&#233;jour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1059.7406" y="98.1322">0..1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1026.9609" y="141.7746">1</text></g><!--link ESSMS to S?jour--><g id="link_ESSMS_S&#233;jour"><path codeLine="57" d="M1018.91,77.11 C1017.6,97.56 1015.42,131.59 1014.11,152.15 " fill="none" id="ESSMS-S&#233;jour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1009.2239" y="98.1322">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="1007.5312" y="141.7746">*</text></g><!--link Contrat to S?jour--><g id="link_Contrat_S&#233;jour"><path codeLine="58" d="M956.19,76.11 C960.08,78.77 963.8,81.74 967,85 C986.19,104.54 999.67,133.73 1006.88,152.18 " fill="none" id="Contrat-S&#233;jour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="961.6999" y="98.027">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="986.5558" y="141.8138">1</text></g><!--link R?servation to Usager--><g id="link_R&#233;servation_Usager"><path codeLine="59" d="M944.95,338 C855.66,338 766.37,338 677.09,338 " fill="none" id="R&#233;servation-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="930.9733" y="334.3589">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="685.2046" y="352.2822">1</text></g><!--link R?servation to presta--><g id="link_R&#233;servation_presta"><path codeLine="60" d="M1006.54,356.09 C1023.23,375.69 1050.76,408.05 1070.06,430.72 " fill="none" id="R&#233;servation-presta" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="1004.3626" y="377.1056">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1042.6739" y="420.3997">1</text></g><!--link S?jour to presta--><g id="link_S&#233;jour_presta"><path codeLine="61" d="M1027.6,188.51 C1037.49,200.98 1049.99,218.76 1057,236.5 C1083.37,303.22 1089.9,388.76 1091.5,430.82 " fill="none" id="S&#233;jour-presta" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="1025.4425" y="209.4991">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1077.9156" y="420.0977">1</text></g><!--link S?jour to R?servation--><!--link Usager to contactM--><g id="link_Usager_contactM"><path codeLine="76" d="M614.85,338 C598.91,338 582.98,338 567.04,338 " fill="none" id="Usager-contactM" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="599.1609" y="333.9083">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="574.81" y="334.7663">*</text></g><!--link Usager to contactP--><g id="link_Usager_contactP"><path codeLine="77" d="M639.79,319.88 C630.92,296.82 612.37,257.47 583,236.5 C569.2,226.65 447.34,230.6 430.5,232.5 C422.57,233.39 419.81,232.34 413,236.5 C382.81,254.98 358.18,287.95 343.35,311.3 " fill="none" id="Usager-contactP" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="339.8972" y="285.3342">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="340.8972" y="300.6447">&#160;</text></g><!--link Usager to permis--><g id="link_Usager_permis"><path codeLine="78" d="M626.2,356.03 C614.47,365 598.84,375.13 583,380 C540.3,393.13 222.75,372.09 181,388 C153.66,398.42 129.25,422.57 114.78,439.22 " fill="none" id="Usager-permis" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="112.0814" y="428.866">*</text></g><!--link Usager to Transport--><g id="link_Usager_Transport"><path codeLine="79" d="M625.9,356.19 C614.2,365.09 598.7,375.1 583,380 C552.76,389.44 326.55,374.27 298,388 C275.53,398.8 258.49,422.86 248.87,439.38 " fill="none" id="Usager-Transport" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="244.7411" y="428.7537">*</text></g><!--link Usager to cb--><g id="link_Usager_cb"><path codeLine="80" d="M624.92,356.09 C597.42,378.36 549.61,417.11 522.11,439.39 " fill="none" id="Usager-cb" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="608.6122" y="377.1056">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="521.2451" y="428.7668">*</text></g><!--link Usager to Ressource--><g id="link_Usager_Ressource"><path codeLine="81" d="M625.87,356.07 C614.15,364.93 598.65,374.94 583,380 C548.07,391.29 451.06,372.03 418,388 C395.22,399 377.48,423.01 367.38,439.47 " fill="none" id="Usager-Ressource" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="363.4136" y="428.8723">*</text></g><!--link Usager to mp--><g id="link_Usager_mp"><path codeLine="82" d="M639.79,319.88 C630.92,296.82 612.37,257.47 583,236.5 C576.51,231.86 573.43,233.39 565.5,232.5 C531.71,228.69 293.29,228.69 259.5,232.5 C251.57,233.39 248.83,232.37 242,236.5 C207.43,257.38 179.66,296.77 165.42,319.86 " fill="none" id="Usager-mp" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="161.7851" y="309.2273">*</text></g><!--link contactP to Ressource--><!--link contactM to cb--><!--link mp to Transport--><!--link mp to permis--><!--link id to Env--></g></svg>
+</div>
+
+<h4 id="identification-et-coordonnées">Identification et coordonnées</h4>
+
+<!-- object data="bloc_identification_coordonnees.svg" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="582px" preserveAspectRatio="none" style="width:875px;height:582px;background:#FFFFFF;" version="1.1" viewBox="0 0 875 582" width="875px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="402.7422" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="256" x="363.5" y="7" /><ellipse cx="463.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M465.7231,29.1431 Q465.1421,29.4419 464.5029,29.5913 Q463.8638,29.7407 463.1582,29.7407 Q460.6514,29.7407 459.3315,28.0889 Q458.0117,26.437 458.0117,23.3159 Q458.0117,20.1865 459.3315,18.5347 Q460.6514,16.8828 463.1582,16.8828 Q463.8638,16.8828 464.5112,17.0322 Q465.1587,17.1816 465.7231,17.4805 L465.7231,20.2031 Q465.0923,19.6221 464.4988,19.3523 Q463.9053,19.0825 463.2744,19.0825 Q461.9297,19.0825 461.2449,20.1492 Q460.5601,21.2158 460.5601,23.3159 Q460.5601,25.4077 461.2449,26.4744 Q461.9297,27.541 463.2744,27.541 Q463.9053,27.541 464.4988,27.2712 Q465.0923,27.0015 465.7231,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="483.75" y="28.291">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="364.5" x2="618.5" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="369.5" y="56.5352">numeroIndividu : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="369.5" y="73.0234">INS : INS [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="369.5" y="89.5117">nomNaissance : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="369.5" y="106">nomUsage : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="369.5" y="122.4883">prenom : Texte [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="369.5" y="138.9766">sexe : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="369.5" y="155.4648">civilite : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="369.5" y="171.9531">situationFamiliale : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="369.5" y="188.4414">paysNationalite : Code [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="369.5" y="204.9297">langueParlee : Code [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="369.5" y="221.418">dateNaissance : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="369.5" y="237.9063">rangTotal : Numerique [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="369.5" y="254.3945">communeNaissance : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244" x="369.5" y="270.8828">departementNaissance : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="369.5" y="287.3711">paysNaissance : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="369.5" y="303.8594">dateDeces : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="369.5" y="320.3477">causeMortalite : Code [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="369.5" y="336.8359">communeDeces : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="369.5" y="353.3242">departementDeces : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="369.5" y="369.8125">paysDeces : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="369.5" y="386.3008">photo : ObjetBinaire [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="369.5" y="402.7891">commentaire : Texte [0..1]</text></g><!--class Adresse--><g id="elem_Adresse"><rect codeLine="29" fill="#98FB98" height="204.8828" id="Adresse" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="321" x="7" y="106" /><ellipse cx="135.75" cy="122" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M138.2231,128.1431 Q137.6421,128.4419 137.0029,128.5913 Q136.3638,128.7407 135.6582,128.7407 Q133.1514,128.7407 131.8315,127.0889 Q130.5117,125.437 130.5117,122.3159 Q130.5117,119.1865 131.8315,117.5347 Q133.1514,115.8828 135.6582,115.8828 Q136.3638,115.8828 137.0112,116.0322 Q137.6587,116.1816 138.2231,116.4805 L138.2231,119.2031 Q137.5923,118.6221 136.9988,118.3523 Q136.4053,118.0825 135.7744,118.0825 Q134.4297,118.0825 133.7449,119.1492 Q133.0601,120.2158 133.0601,122.3159 Q133.0601,124.4077 133.7449,125.4744 Q134.4297,126.541 135.7744,126.541 Q136.4053,126.541 136.9988,126.2712 Q137.5923,126.0015 138.2231,125.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="156.25" y="127.291">Adresse</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="327" y1="138" y2="138" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="13" y="155.5352">idAdresse : Identifiant [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="13" y="172.0234">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="13" y="188.5117">numeroVoie : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="13" y="205">libelleVoie : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="309" x="13" y="221.4883">complementPointGeographique : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="13" y="237.9766">mentionDistribution : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="13" y="254.4648">codePostal : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="13" y="270.9531">localite : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="13" y="287.4414">pays : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="13" y="303.9297">commentaire : Texte [0..1]</text></g><!--class Telecommunication--><g id="elem_Telecommunication"><rect codeLine="42" fill="#98FB98" height="89.4648" id="Telecommunication" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="214" x="654.5" y="164" /><ellipse cx="690.65" cy="180" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M693.1231,186.1431 Q692.5421,186.4419 691.9029,186.5913 Q691.2638,186.7407 690.5582,186.7407 Q688.0514,186.7407 686.7315,185.0889 Q685.4117,183.437 685.4117,180.3159 Q685.4117,177.1865 686.7315,175.5347 Q688.0514,173.8828 690.5582,173.8828 Q691.2638,173.8828 691.9112,174.0322 Q692.5587,174.1816 693.1231,174.4805 L693.1231,177.2031 Q692.4923,176.6221 691.8988,176.3523 Q691.3053,176.0825 690.6744,176.0825 Q689.3297,176.0825 688.6449,177.1492 Q687.9601,178.2158 687.9601,180.3159 Q687.9601,182.4077 688.6449,183.4744 Q689.3297,184.541 690.6744,184.541 Q691.3053,184.541 691.8988,184.2712 Q692.4923,184.0015 693.1231,183.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="709.35" y="185.291">Telecommunication</text><line style="stroke:#181818;stroke-width:0.5;" x1="655.5" x2="867.5" y1="196" y2="196" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="660.5" y="213.5352">canal : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="660.5" y="230.0234">adresseTelecom : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="660.5" y="246.5117">utilisation : Texte [0..1]</text></g><!--class Courrier--><g id="elem_Courrier"><rect codeLine="48" fill="#98FB98" height="105.9531" id="Courrier" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="266" x="358.5" y="470" /><ellipse cx="458.25" cy="486" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M460.7231,492.1431 Q460.1421,492.4419 459.5029,492.5913 Q458.8638,492.7407 458.1582,492.7407 Q455.6514,492.7407 454.3315,491.0889 Q453.0117,489.437 453.0117,486.3159 Q453.0117,483.1865 454.3315,481.5347 Q455.6514,479.8828 458.1582,479.8828 Q458.8638,479.8828 459.5112,480.0322 Q460.1587,480.1816 460.7231,480.4805 L460.7231,483.2031 Q460.0923,482.6221 459.4988,482.3523 Q458.9053,482.0825 458.2744,482.0825 Q456.9297,482.0825 456.2449,483.1492 Q455.5601,484.2158 455.5601,486.3159 Q455.5601,488.4077 456.2449,489.4744 Q456.9297,490.541 458.2744,490.541 Q458.9053,490.541 459.4988,490.2712 Q460.0923,490.0015 460.7231,489.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="478.75" y="491.291">Courrier</text><line style="stroke:#181818;stroke-width:0.5;" x1="359.5" x2="623.5" y1="502" y2="502" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="364.5" y="519.5352">typeCourrier : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="364.5" y="536.0234">idAdresse : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="364.5" y="552.5117">libelleDestinataire : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254" x="364.5" y="569">organismeDomiciliation : Texte [0..1]</text></g><!--link Adresse to Usager--><g id="link_Adresse_Usager"><path codeLine="55" d="M328.23,208.5 C339.93,208.5 351.62,208.5 363.31,208.5 " fill="none" id="Adresse-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="336.1607" y="205.7154">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="347.6678" y="205.6512">1</text></g><!--link Usager to Telecommunication--><g id="link_Usager_Telecommunication"><path codeLine="56" d="M619.64,208.5 C631.19,208.5 642.73,208.5 654.28,208.5 " fill="none" id="Usager-Telecommunication" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="627.6923" y="205.6286">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="640.5302" y="205.5356">*</text></g><!--link Usager to Courrier--><g id="link_Usager_Courrier"><path codeLine="57" d="M491.5,410.06 C491.5,431.93 491.5,452.54 491.5,469.97 " fill="none" id="Usager-Courrier" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="483.3563" y="430.1517">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="485.0969" y="459.4287">*</text></g></g></svg></div>
+
+<h5 id="classe-usager">Classe Usager</h5>
+
+<p>Un usager est une personne physique bénéficiaire d’un service public.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>numeroIndividu : [0..1] Identifiant</td>
+    <td>Numéro de l’individu attribué par la MDPH ayant créé le dossier Individu (= MDPH initiale).</td>
+  </tr>
+  <tr>
+    <td>INS : [0..1] INS</td>
+    <td>L'INS référence les données de santé et se compose des éléments suivants :
+    <ul>
+    <li> Un matricule INS : le numéro d’inscription au répertoire national d’identification des personnes physiques (NIR) ou le numéro identifiant d’attente (NIA) pour les personnes en instance d’attribution d’un NIR (Art. R. 1111-8-1.-I du CSP)</li>
+    <li> Des traits d'identité de l'état civil : nom de famille (nom de naissance), prénom (liste des prénoms de naissance), date de naissance, sexe et lieu de naissance</li>
+    <li> Des traits complémentaires provenant du Référentiel National d'IdentitoVigilance (RNIV) : premier prénom de l'acte de naissance, prénom utilisé et nom utilisé.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>nomNaissance : [0..1] Texte</td>
+    <td>Toute personne possède un nom de famille (appelé auparavant nom patronymique). Ce nom figure sur l'acte de naissance. Il peut s'agir par exemple du nom du père.</td>
+  </tr>
+  <tr>
+    <td>nomUsage : [0..1] Texte</td>
+    <td>Un nom d'usage de la personne.<br />
+    Rappel : Toute personne possède un nom de famille (appelé auparavant nom patronymique). Ce nom figure sur l'acte de naissance. Il peut s'agir par exemple du nom du père.<br />
+    Il est néanmoins possible d'utiliser, dans la vie quotidienne, un autre nom (par exemple le nom marital) appelé nom d'usage.<br />
+    Ce nom d'usage ne remplace en aucun cas le nom de famille qui reste le seul nom mentionné sur les actes d'état civil (acte de naissance ou de mariage, livret de famille, etc.).</td>
+  </tr>
+  <tr>
+    <td>prenom : [0..*] Texte</td>
+    <td>Tous les prénoms de l'usager.</td>
+  </tr>
+  <tr>
+    <td>sexe : [0..1] Code</td>
+    <td>Sexe de la personne physique.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R249-Sexe/TRE_R249-Sexe.pdf">TRE_R249-Sexe</a></td>
+  </tr>
+  <tr>
+    <td>civilite : [0..1] Code</td>
+    <td>Civilité de l’usager.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R81-Civilite/TRE_R81-Civilite.pdf">TRE_R81-Civilite</a></td>
+  </tr>
+  <tr>
+    <td>situationFamiliale : [0..1] Code</td>
+    <td>Situation familiale de l’usager.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>compositionFoyer : [0..1] Code</td>
+    <td>Désigne avec qui vit l’usager dans son logement.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>paysNationalite : [0..*] Code</td>
+    <td>Pays de nationalité actuelle ou rattachement de la nationalité à un espace de pays conventionné.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R89-RegroupementPays/TRE_R89-RegroupementPays.pdf">TRE_R89-RegroupementPays</a></td>
+  </tr>
+  <tr>
+    <td>langueParlee : [0..*] Code</td>
+    <td>Langue parlée par l’usager. <br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_G00-Langue/TRE_G00-Langue.pdf">TRE_G00-Langue</a></td>
+  </tr>
+  <tr>
+    <td>dateNaissance : [0..1] Date</td>
+    <td>Date de naissance de l’usager.</td>
+  </tr>
+  <tr>
+    <td>ordreNaissance : [0..1] Numerique </td>
+    <td>Ordre d’enregistrement de la naissance dans le registre d’état civil de la commune de naissance pour le mois de la naissance. Il compose les <a href="https://www.ameli.fr/llle-et-vilaine/assure/droits-demarches/principes/numero-securite-sociale">3 derniers chiffres du NIR avant </a> avant la clé de sécurité et permet de distinguer les personnes nées au même lieu et à la même période.</td>
+  </tr>
+  <tr>
+    <td>communeNaissance : [0..1] Code</td>
+    <td>Commune de naissance de l’usager. Code officiel géographique (COG) de la commune.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/TRE_R13-CommuneOM.pdf">TRE_R13-CommuneOM</a></td>
+  </tr>
+  <tr>
+    <td>departementNaissance : [0..1] Code</td>
+    <td>Département de naissance de la personne. Code officiel géographique (COG) du département.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_G09-DepartementOM/TRE_G09-DepartementOM.pdf">TRE_G09-DepartementOM</a></td>
+  </tr>
+  <tr>
+    <td>paysNaissance : [0..1] Code</td>
+    <td>Pays de naissance de la personne. Code officiel géographique (COG) du pays.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/TRE_R20-Pays.pdf">TRE_R20-Pays</a></td>
+  </tr>
+    <tr>
+    <td>dateDeces : [0..1] Date</td>
+    <td>Date de décès de l’usager.</td>
+  </tr>
+  <tr>
+    <td>causeMortalite : [0..*] Code</td>
+    <td>Une ou plusieurs causes ayant entraîné la mort de l’usager. <br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>communeDeces : [0..1] Code</td>
+    <td>Commune de décès de l’usager. Code officiel géographique (COG) de la commune.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/TRE_R13-CommuneOM.pdf">TRE_R13-CommuneOM</a></td>
+  </tr>
+  <tr>
+    <td>departementDeces : [0..1] Code</td>
+    <td>Département de décès de l’usager. Code officiel géographique (COG) du département.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_G09-DepartementOM/TRE_G09-DepartementOM.pdf">TRE_G09-DepartementOM</a></td>
+  </tr>
+  <tr>
+    <td>paysDeces : [0..1] Code</td>
+    <td>Pays de décès de l’usager. Code officiel géographique (COG) du pays.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/TRE_R20-Pays.pdf">TRE_R20-Pays</a></td>
+  </tr>
+  <tr>
+    <td>photo : [0..*] ObjetBinaire </td>
+    <td>Photo de l’usager.</td>
+  </tr>
+    <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif à l’identité de l’usager.</td>
+  </tr>
+</table>
+
+<h5 id="classe-adresse">Classe Adresse</h5>
+
+<p>Adresse géopostale. Un emplacement auquel l’usager peut être trouvée, d’après la norme NF Z 10-011.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idAdresse : [0..1] Identifiant </td>
+    <td>Identifiant fonctionnel de l’adresse.</td>
+  </tr>
+  <tr>
+    <td>type : [0..1] Code</td>
+    <td>Indique le ou les types d'adresse tel que "Adresse du domicile", "Adresse du domicile de secours", etc. </td>
+  </tr>
+  <tr>
+    <td>numeroVoie : [0..1] Texte</td>
+    <td>Un numéro dans la voie ; dans les cas de numérotation sans extension, il est composé de 0 à 4 caractères numériques au maximum.</td>
+  </tr>
+  <tr>
+    <td>libelleVoie : [0..1] Texte</td>
+    <td>Appellation qui est donnée à la voie par les municipalités. Ce libellé figure in extenso ou en abrégé sur les plaques aux différents angles de chaque rue.</td>
+  </tr>
+  <tr>
+    <td>complementPointGeographique : [0..1] Texte</td>
+    <td>Un complément de l'adresse au point géographique constitué des éléments suivants :
+    <ul>
+    <li>Bâtiment : les bâtiments sont désignés par leur type (bâtiment, immeuble, tour,...), éventuellement des mentions d'orientation (est, ouest,...), une dénomination littérale ou une numérotation ; exemple: Tour DELTA</li>
+    <li>Accès au bâtiment : l'accès au bâtiment est identifié par un numéro, une lettre, une combinaison alphanumérique. Ces éléments identifient une entrée, porte, etc. ; exemple: Entrée A</li>
+    <li>Ensemble immobilier : ensemble d'habitations reliées à la voie publique par un ou plusieurs points d'accès (résidence, zone industrielle,...) ; exemple : Résidence des Fleurs.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>mentionDistribution : [0..1] Texte</td>
+    <td>Mentions particulières de distribution. Il s'agit de mentions identifiant le service proposé par La Poste au destinataire. Ces mentions sont formées d'un libellé et d'un numéro de séparation (exemple : BP 42534).</td>
+  </tr>
+  <tr>
+    <td>codePostal : [0..1] Code</td>
+    <td>Code Postal : Code Postal ou code postal spécifique CEDEX 
+    <ul>
+    <li>Code postal : Un code à 5 chiffres servant à l'acheminement et/ou à la distribution des envois. Il identifie un bureau distributeur dans la chaîne de traitement du courrier.</li>
+    <li>Code CEDEX (Courrier d'Entreprise à Distribution Exceptionnelle ); le CEDEX est une modalité d'acheminement du courrier associée à des services particuliers de distribution offerts aux entreprises caractérisées par un adressage spécifique; le code postal spécifique CEDEX est un code attribué aux organismes, entreprises, services publics recevant un fort trafic. Il identifie un client ou un ensemble de clients. Il est positionné aux lieu et place du code postal général dans le cas des adresses CEDEX. Ainsi, un code peut être associé à un client (code individuel) ou partagé entre plusieurs clients (code collectif).</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>localite : [0..1] Texte</td>
+    <td>Localité ou Libellé du bureau distributeur CEDEX
+    <ul>
+    <li>Localité: Zone d'habitation, en général la commune d'implantation du destinataire. Elle est identifiée par son libellé INSEE sauf dans quelques cas où le libellé postal diffère du libellé INSEE, généralement pour lever des ambiguïtés.</li>
+    <li>Libellé du bureau distributeur CEDEX.<br />
+    Libellé du bureau distributeur c'est-à-dire (dans la très grande majorité des cas) le libellé de la commune siège du bureau CEDEX ; la mention CEDEX doit obligatoirement suivre le libellé du bureau CEDEX ; dans le cas où il existe plusieurs bureaux CEDEX pour une même entité ou commune, chaque bureau CEDEX sera identifié par un numéro (exemple : ROUBAIX CEDEX 2) ; ce numéro correspond au numéro d'arrondissement dans le cas des villes à arrondissements, à un numéro d'ordre dans les autres cas.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>pays : [0..1] Code</td>
+    <td>Nom du pays pour les adresses internationales.</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif à l’adresse.</td>
+  </tr>
+</table>
+
+<h5 id="classe-telecommunication">Classe Telecommunication</h5>
+
+<p>Adresse de télécommunication à laquelle l’usager peut être contactée (téléphone, fax, e-mail, URL, etc.).</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>canal : [0..1] Code</td>
+    <td>Code spécifiant le canal ou la manière dont s'établit la communication (téléphone, e-mail, URL, etc.).<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R200-CanalCommunication/TRE_R200-CanalCommunication.pdf">TRE_R200-CanalCommunication</a></td>
+  </tr>
+  <tr>
+    <td>adresseTelecom : [0..1] Texte</td>
+    <td>Valeur de l'adresse de télécommunication dans le format induit par le canal de communication, par exemple un numéro de téléphone, une adresse de courrier électronique, une adresse URL, etc.</td>
+  </tr>
+    <tr>
+    <td>utilisation : [0..1] Texte</td>
+    <td>Précise l'utilisation du canal de communication (par exemple à des fins professionnelles, privées, etc.).</td>
+  </tr>
+</table>
+
+<h5 id="classe-courrier">Classe Courrier</h5>
+
+<p>Adresse de courrier de l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>typeCourrier : [0..1] Code</td>
+    <td>Type de courrier.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>idAdresse : [0..1] Identifiant</td>
+    <td>Adresse à utiliser pour l’envoi du type de courrier.</td>
+  </tr>
+  <tr>
+    <td>libelleDestinataire : [0..1] Texte</td>
+    <td>Libellé du destinataire du courrier.<br />
+    Par exemple nom et prénom dans le cas d’une personne physique.
+    </td>
+  </tr>
+  <tr>
+    <td>organismeDomiciliation : [0..1] Texte</td>
+    <td>Nom et/ou service de l’organisme de domiciliation.</td>
+  </tr>
+</table>
+
+<h4 id="autorisations-administratives">Autorisations administratives</h4>
+
+<!-- object data="bloc_autorisations_administratives.svg" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="169px" preserveAspectRatio="none" style="width:361px;height:169px;background:#FFFFFF;" version="1.1" viewBox="0 0 361 169" width="361px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="40" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="7" y="64.5" /><ellipse cx="22" cy="80.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M24.4731,86.6431 Q23.8921,86.9419 23.2529,87.0913 Q22.6138,87.2407 21.9082,87.2407 Q19.4014,87.2407 18.0815,85.5889 Q16.7617,83.937 16.7617,80.8159 Q16.7617,77.6865 18.0815,76.0347 Q19.4014,74.3828 21.9082,74.3828 Q22.6138,74.3828 23.2612,74.5322 Q23.9087,74.6816 24.4731,74.9805 L24.4731,77.7031 Q23.8423,77.1221 23.2488,76.8523 Q22.6553,76.5825 22.0244,76.5825 Q20.6797,76.5825 19.9949,77.6492 Q19.3101,78.7158 19.3101,80.8159 Q19.3101,82.9077 19.9949,83.9744 Q20.6797,85.041 22.0244,85.041 Q22.6553,85.041 23.2488,84.7712 Q23.8423,84.5015 24.4731,83.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="36" y="85.791">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="86" y1="96.5" y2="96.5" /></g><!--class AutorisationAdministrative--><g id="elem_AutorisationAdministrative"><rect codeLine="6" fill="#FFDAB9" height="155.418" id="AutorisationAdministrative" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="232" x="122" y="7" /><ellipse cx="144.2" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M146.6731,29.1431 Q146.0921,29.4419 145.4529,29.5913 Q144.8138,29.7407 144.1082,29.7407 Q141.6014,29.7407 140.2815,28.0889 Q138.9617,26.437 138.9617,23.3159 Q138.9617,20.1865 140.2815,18.5347 Q141.6014,16.8828 144.1082,16.8828 Q144.8138,16.8828 145.4612,17.0322 Q146.1087,17.1816 146.6731,17.4805 L146.6731,20.2031 Q146.0423,19.6221 145.4488,19.3523 Q144.8553,19.0825 144.2244,19.0825 Q142.8797,19.0825 142.1949,20.1492 Q141.5101,21.2158 141.5101,23.3159 Q141.5101,25.4077 142.1949,26.4744 Q142.8797,27.541 144.2244,27.541 Q144.8553,27.541 145.4488,27.2712 Q146.0423,27.0015 146.6731,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="159.8" y="28.291">AutorisationAdministrative</text><line style="stroke:#181818;stroke-width:0.5;" x1="123" x2="353" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="128" y="56.5352">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="128" y="73.0234">auteur : PersonnePhysique [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="128" y="89.5117">dateSignature : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="128" y="106">dateDebut : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="128" y="122.4883">dateDebut : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="128" y="138.9766">pieceJointe : ObjetBinaire [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="128" y="155.4648">commentaire : Texte [0..1]</text></g><!--link Usager to AutorisationAdministrative--><g id="link_Usager_AutorisationAdministrative"><path codeLine="16" d="M87.29,84.5 C98.77,84.5 110.25,84.5 121.73,84.5 " fill="none" id="Usager-AutorisationAdministrative" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="94.9023" y="80.806">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="108.0893" y="81.5844">*</text></g></g></svg></div>
+
+<h5 id="classe-autorisationadministrative">Classe AutorisationAdministrative</h5>
+
+<p>Autorisation administrative de l’usager.<br />
+Droit temporel et exceptionnel conféré à une personne ou une organisation.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type : [0..1] Code</td>
+    <td>Type d’autorisation administrative.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>auteur : [0..*] PersonnePhysique</td>
+    <td>Signataire de l’autorisation administrative.</td>
+  </tr>
+  <tr>
+    <td>dateSignature : date [0..1]</td>
+    <td>Date de signature de l’autorisation administrative.</td>
+  </tr>
+  <tr>
+    <td>dateDebut : [0..1] Date</td>
+    <td>Date de début de l’autorisation administrative.</td>
+  </tr>
+  <tr>
+    <td>dateFin : [0..1] Date</td>
+    <td>Date de fin de l’autorisation administrative. </td>
+  </tr>
+  <tr>
+    <td>pieceJointe : [0..*] ObjetBinaire</td>
+    <td>Pièce jointe relative à l’autorisation administrative.</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif à l’autorisation administrative.</td>
+  </tr>
+</table>
+
+<h4 id="droits-sociaux-et-de-santé">Droits sociaux et de santé</h4>
+
+<!-- object data="bloc_droits_sociaux_sante.svg" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="914px" preserveAspectRatio="none" style="width:834px;height:914px;background:#FFFFFF;" version="1.1" viewBox="0 0 834 914" width="834px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="40" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="412.5" y="395.5" /><ellipse cx="427.5" cy="411.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M429.9731,417.6431 Q429.3921,417.9419 428.7529,418.0913 Q428.1138,418.2407 427.4082,418.2407 Q424.9014,418.2407 423.5815,416.5889 Q422.2617,414.937 422.2617,411.8159 Q422.2617,408.6865 423.5815,407.0347 Q424.9014,405.3828 427.4082,405.3828 Q428.1138,405.3828 428.7612,405.5322 Q429.4087,405.6816 429.9731,405.9805 L429.9731,408.7031 Q429.3423,408.1221 428.7488,407.8523 Q428.1553,407.5825 427.5244,407.5825 Q426.1797,407.5825 425.4949,408.6492 Q424.8101,409.7158 424.8101,411.8159 Q424.8101,413.9077 425.4949,414.9744 Q426.1797,416.041 427.5244,416.041 Q428.1553,416.041 428.7488,415.7712 Q429.3423,415.5015 429.9731,414.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="441.5" y="416.791">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="413.5" x2="491.5" y1="427.5" y2="427.5" /></g><!--class AssuranceMaladieComplementaire--><g id="elem_AssuranceMaladieComplementaire"><rect codeLine="6" fill="#FFFFE0" height="171.9063" id="AssuranceMaladieComplementaire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="314" x="295.5" y="586" /><ellipse cx="330.3" cy="602" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M332.7731,608.1431 Q332.1921,608.4419 331.5529,608.5913 Q330.9138,608.7407 330.2082,608.7407 Q327.7014,608.7407 326.3815,607.0889 Q325.0617,605.437 325.0617,602.3159 Q325.0617,599.1865 326.3815,597.5347 Q327.7014,595.8828 330.2082,595.8828 Q330.9138,595.8828 331.5612,596.0322 Q332.2087,596.1816 332.7731,596.4805 L332.7731,599.2031 Q332.1423,598.6221 331.5488,598.3523 Q330.9553,598.0825 330.3244,598.0825 Q328.9797,598.0825 328.2949,599.1492 Q327.6101,600.2158 327.6101,602.3159 Q327.6101,604.4077 328.2949,605.4744 Q328.9797,606.541 330.3244,606.541 Q330.9553,606.541 331.5488,606.2712 Q332.1423,606.0015 332.7731,605.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="348.7" y="607.291">AssuranceMaladieComplementaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="296.5" x2="608.5" y1="618" y2="618" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="301.5" y="635.5352">numeroContrat : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="301.5" y="652.0234">ouvrantDroit : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="301.5" y="668.5117">nomOrganisme : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="301.5" y="685">libelleOrganisme : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188" x="301.5" y="701.4883">dateDebutDroit : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="301.5" y="717.9766">dateFinDroit : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302" x="301.5" y="734.4648">aideComplementaireSante : Indicateur [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="301.5" y="750.9531">typeFinDroit : Code [0..1]</text></g><!--class AssuranceMaladieObligatoire--><g id="elem_AssuranceMaladieObligatoire"><rect codeLine="18" fill="#FFFFE0" height="221.3711" id="AssuranceMaladieObligatoire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="299" x="528" y="305" /><ellipse cx="572.75" cy="321" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M575.2231,327.1431 Q574.6421,327.4419 574.0029,327.5913 Q573.3638,327.7407 572.6582,327.7407 Q570.1514,327.7407 568.8315,326.0889 Q567.5117,324.437 567.5117,321.3159 Q567.5117,318.1865 568.8315,316.5347 Q570.1514,314.8828 572.6582,314.8828 Q573.3638,314.8828 574.0112,315.0322 Q574.6587,315.1816 575.2231,315.4805 L575.2231,318.2031 Q574.5923,317.6221 573.9988,317.3523 Q573.4053,317.0825 572.7744,317.0825 Q571.4297,317.0825 570.7449,318.1492 Q570.0601,319.2158 570.0601,321.3159 Q570.0601,323.4077 570.7449,324.4744 Q571.4297,325.541 572.7744,325.541 Q573.4053,325.541 573.9988,325.2712 Q574.5923,325.0015 575.2231,324.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="593.25" y="326.291">AssuranceMaladieObligatoire</text><line style="stroke:#181818;stroke-width:0.5;" x1="529" x2="826" y1="337" y2="337" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="534" y="354.5352">ouvrantDroit : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="534" y="371.0234">nomOrganisme : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="534" y="387.5117">numeroCodeOrganisme : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="235" x="534" y="404">adresseOrganisme : Adresse [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="534" y="420.4883">codeRisque : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188" x="534" y="436.9766">dateDebutDroit : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="534" y="453.4648">dateFinDroit : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="534" y="469.9531">ticketModerateur : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="230" x="534" y="486.4414">dateFinCentPourCent : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="534" y="502.9297">dateFinDroitPUMa : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="534" y="519.418">droitPUMa : Indicateur [0..1]</text></g><!--class Decision--><g id="elem_Decision"><rect codeLine="32" fill="#FFFFE0" height="171.9063" id="Decision" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="293" x="306" y="40" /><ellipse cx="419.25" cy="56" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M421.7231,62.1431 Q421.1421,62.4419 420.5029,62.5913 Q419.8638,62.7407 419.1582,62.7407 Q416.6514,62.7407 415.3315,61.0889 Q414.0117,59.437 414.0117,56.3159 Q414.0117,53.1865 415.3315,51.5347 Q416.6514,49.8828 419.1582,49.8828 Q419.8638,49.8828 420.5112,50.0322 Q421.1587,50.1816 421.7231,50.4805 L421.7231,53.2031 Q421.0923,52.6221 420.4988,52.3523 Q419.9053,52.0825 419.2744,52.0825 Q417.9297,52.0825 417.2449,53.1492 Q416.5601,54.2158 416.5601,56.3159 Q416.5601,58.4077 417.2449,59.4744 Q417.9297,60.541 419.2744,60.541 Q419.9053,60.541 420.4988,60.2712 Q421.0923,60.0015 421.7231,59.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="439.75" y="61.291">Decision</text><line style="stroke:#181818;stroke-width:0.5;" x1="307" x2="598" y1="72" y2="72" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="312" y="89.5352">idDecision : Identifiant [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="281" x="312" y="106.0234">numeroEnregistrement : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="312" y="122.5117">idDecisionMAJ : Identifiant [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="221" x="312" y="139">idNat_Decision : Identifiant [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="312" y="155.4883">dateDecision : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="312" y="171.9766">typeDecision : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="312" y="188.4648">motivation : Code [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="312" y="204.9531">commentaire : Texte [0..1]</text></g><!--class DroitPrestation--><g id="elem_DroitPrestation"><rect codeLine="43" fill="#FFFFE0" height="237.8594" id="DroitPrestation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="261" x="10" y="7" /><ellipse cx="84.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M87.2231,29.1431 Q86.6421,29.4419 86.0029,29.5913 Q85.3638,29.7407 84.6582,29.7407 Q82.1514,29.7407 80.8315,28.0889 Q79.5117,26.437 79.5117,23.3159 Q79.5117,20.1865 80.8315,18.5347 Q82.1514,16.8828 84.6582,16.8828 Q85.3638,16.8828 86.0112,17.0322 Q86.6587,17.1816 87.2231,17.4805 L87.2231,20.2031 Q86.5923,19.6221 85.9988,19.3523 Q85.4053,19.0825 84.7744,19.0825 Q83.4297,19.0825 82.7449,20.1492 Q82.0601,21.2158 82.0601,23.3159 Q82.0601,25.4077 82.7449,26.4744 Q83.4297,27.541 84.7744,27.541 Q85.4053,27.541 85.9988,27.2712 Q86.5923,27.0015 87.2231,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="105.25" y="28.291">DroitPrestation</text><line style="stroke:#181818;stroke-width:0.5;" x1="11" x2="270" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="16" y="56.5352">idDroitPrestation : Identifiant [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="16" y="73.0234">contactOrganisme : Contact [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249" x="16" y="89.5117">numeroAllocataire : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="16" y="106">typeDroitPrestation : Code [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="16" y="122.4883">natureDroit : Code [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="16" y="138.9766">dateOuverture : Date [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="16" y="155.4648">dateEcheance : Date [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="16" y="171.9531">existencePAG : Indicateur [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="16" y="188.4414">creton : Indicateur [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="16" y="204.9297">taux : Mesure [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="16" y="221.418">typeCompensation : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="16" y="237.9063">commentaire : Texte [0..1]</text></g><!--class DetailPrestation--><g id="elem_DetailPrestation"><rect codeLine="58" fill="#FFFFE0" height="122.4414" id="DetailPrestation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="241" x="20" y="354.5" /><ellipse cx="82.25" cy="370.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M84.7231,376.6431 Q84.1421,376.9419 83.5029,377.0913 Q82.8638,377.2407 82.1582,377.2407 Q79.6514,377.2407 78.3315,375.5889 Q77.0117,373.937 77.0117,370.8159 Q77.0117,367.6865 78.3315,366.0347 Q79.6514,364.3828 82.1582,364.3828 Q82.8638,364.3828 83.5112,364.5322 Q84.1587,364.6816 84.7231,364.9805 L84.7231,367.7031 Q84.0923,367.1221 83.4988,366.8523 Q82.9053,366.5825 82.2744,366.5825 Q80.9297,366.5825 80.2449,367.6492 Q79.5601,368.7158 79.5601,370.8159 Q79.5601,372.9077 80.2449,373.9744 Q80.9297,375.041 82.2744,375.041 Q82.9053,375.041 83.4988,374.7712 Q84.0923,374.5015 84.7231,373.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="102.75" y="375.791">DetailPrestation</text><line style="stroke:#181818;stroke-width:0.5;" x1="21" x2="260" y1="386.5" y2="386.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="26" y="404.0352">montantAttribue : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="26" y="420.5234">frequence : Mesure [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="26" y="437.0117">temporaliteAccueil : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="26" y="453.5">qualification : Code [1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="26" y="469.9883">precisionOrientation : Code [0..1]</text></g><!--class PriseCharge--><g id="elem_PriseCharge"><rect codeLine="66" fill="#FFFFE0" height="56.4883" id="PriseCharge" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="222" x="29.5" y="644" /><ellipse cx="94.75" cy="660" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M97.2231,666.1431 Q96.6421,666.4419 96.0029,666.5913 Q95.3638,666.7407 94.6582,666.7407 Q92.1514,666.7407 90.8315,665.0889 Q89.5117,663.437 89.5117,660.3159 Q89.5117,657.1865 90.8315,655.5347 Q92.1514,653.8828 94.6582,653.8828 Q95.3638,653.8828 96.0112,654.0322 Q96.6587,654.1816 97.2231,654.4805 L97.2231,657.2031 Q96.5923,656.6221 95.9988,656.3523 Q95.4053,656.0825 94.7744,656.0825 Q93.4297,656.0825 92.7449,657.1492 Q92.0601,658.2158 92.0601,660.3159 Q92.0601,662.4077 92.7449,663.4744 Q93.4297,664.541 94.7744,664.541 Q95.4053,664.541 95.9988,664.2712 Q96.5923,664.0015 97.2231,663.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="115.25" y="665.291">PriseCharge</text><line style="stroke:#181818;stroke-width:0.5;" x1="30.5" x2="250.5" y1="676" y2="676" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="35.5" y="693.5352">modePriseCharge : Code [0..1]</text></g><!--class Quantification--><g id="elem_Quantification"><rect codeLine="70" fill="#FFFFE0" height="89.4648" id="Quantification" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="267" x="7" y="818" /><ellipse cx="87.75" cy="834" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M90.2231,840.1431 Q89.6421,840.4419 89.0029,840.5913 Q88.3638,840.7407 87.6582,840.7407 Q85.1514,840.7407 83.8315,839.0889 Q82.5117,837.437 82.5117,834.3159 Q82.5117,831.1865 83.8315,829.5347 Q85.1514,827.8828 87.6582,827.8828 Q88.3638,827.8828 89.0112,828.0322 Q89.6587,828.1816 90.2231,828.4805 L90.2231,831.2031 Q89.5923,830.6221 88.9988,830.3523 Q88.4053,830.0825 87.7744,830.0825 Q86.4297,830.0825 85.7449,831.1492 Q85.0601,832.2158 85.0601,834.3159 Q85.0601,836.4077 85.7449,837.4744 Q86.4297,838.541 87.7744,838.541 Q88.4053,838.541 88.9988,838.2712 Q89.5923,838.0015 90.2231,837.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="108.25" y="839.291">Quantification</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="273" y1="850" y2="850" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="13" y="867.5352">quantificationNombre : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="13" y="884.0234">quantificationUnite : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="255" x="13" y="900.5117">quantificationPeriodicite : Code [0..1]</text></g><!--link Usager to AssuranceMaladieComplementaire--><g id="link_Usager_AssuranceMaladieComplementaire"><path codeLine="76" d="M452.5,435.63 C452.5,467.25 452.5,532.25 452.5,585.94 " fill="none" id="Usager-AssuranceMaladieComplementaire" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="443.375" y="456.013">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="446.2328" y="575.1937">*</text></g><!--link Usager to AssuranceMaladieObligatoire--><g id="link_Usager_AssuranceMaladieObligatoire"><path codeLine="77" d="M492.93,415.5 C504.59,415.5 516.24,415.5 527.9,415.5 " fill="none" id="Usager-AssuranceMaladieObligatoire" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="500.5664" y="411.806">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="511.98" y="412.6801">1</text></g><!--link Decision to Usager--><g id="link_Decision_Usager"><path codeLine="78" d="M452.5,212.09 C452.5,276.01 452.5,358.59 452.5,395.37 " fill="none" id="Decision-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="446.2516" y="232.4255">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="443.325" y="384.8677">1</text></g><!--link DroitPrestation to Decision--><g id="link_DroitPrestation_Decision"><path codeLine="79" d="M271.21,126 C282.78,126 294.34,126 305.91,126 " fill="none" id="DroitPrestation-Decision" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="279.0145" y="123.1705">0..1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="290.1452" y="123.1921">1</text></g><!--link DroitPrestation to DetailPrestation--><g id="link_DroitPrestation_DetailPrestation"><path codeLine="80" d="M140.5,245.18 C140.5,282.66 140.5,322.54 140.5,354.17 " fill="none" id="DroitPrestation-DetailPrestation" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="132.2563" y="265.4817">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="115.1125" y="343.7723">0..1</text></g><!--link DetailPrestation to PriseCharge--><g id="link_DetailPrestation_PriseCharge"><path codeLine="81" d="M140.5,476.81 C140.5,529.73 140.5,604.24 140.5,643.81 " fill="none" id="DetailPrestation-PriseCharge" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="132.0375" y="497.327">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="133.8063" y="633.1045">*</text></g><!--link PriseCharge to Quantification--><g id="link_PriseCharge_Quantification"><path codeLine="82" d="M140.5,700.01 C140.5,730.75 140.5,781.41 140.5,817.8 " fill="none" id="PriseCharge-Quantification" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="131.525" y="721.2123">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="114.6625" y="807.3634">0..1</text></g></g></svg></div>
+
+<h5 id="classe-assurancemaladieobligatoire">Classe AssuranceMaladieObligatoire</h5>
+
+<p>Assurance maladie obligatoire de l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>ouvrantDroit : [0..1] Identifiant</td>
+    <td>Identifiant de l’ouvrant droit si ce n’est pas l’usager</td>
+  </tr>
+  <tr>
+    <td>nomOrganisme : [0..1] Texte</td>
+    <td>Nom de l’organisme d’assurance maladie obligatoire.</td>
+  </tr>
+  <tr>
+    <td>numeroCodeOrganisme : [0..1] Identifiant</td>
+    <td>Numéro de code de l’organisme d’assurance maladie obligatoire.</td>
+  </tr>
+  <tr>
+    <td>adresseOrganisme : [0..1] Adresse</td>
+    <td>Adresse de l’organisme d’assurance maladie obligatoire.</td>
+  </tr>
+  <tr>
+    <td>codeRisque : [0..1] Code</td>
+    <td>Code risque.</td>
+  </tr>
+  <tr>
+    <td>dateDebutDroit : [0..1] Date</td>
+    <td>Date de début des droits à l’assurance maladie obligatoire.</td>
+  </tr>
+  <tr>
+    <td>dateFinDroit : [0..1] Date</td>
+    <td>Date de fin des droits à l’assurance maladie obligatoire.</td>
+  </tr>
+  <tr>
+    <td>ticketModerateur : [0..1] Mesure</td>
+    <td>Partie des dépenses de santé qui reste à la charge de l’usager une fois que l'Assurance Maladie a remboursé sa part (pourcentage).</td>
+  </tr>
+  <tr>
+    <td>dateFinCentPourCent : [0..1] Date</td>
+    <td>Date de fin de la prise en charge 100%.</td>
+  </tr>
+  <tr>
+    <td>droitPUMa : [0 ..1] Indicateur</td>
+    <td>Droit à la Protection Universelle Maladie (PUMa).<br />
+    0 = non ; 1 = oui.
+    </td>
+  </tr>
+  <tr>
+    <td>dateFinDroitPUMa : [0..1] Date</td>
+    <td>Date de fin des droits à la Protection Universelle Maladie (PUMa).</td>
+  </tr>
+</table>
+
+<h5 id="classe-assurancemaladiecomplementaire">Classe AssuranceMaladieComplementaire</h5>
+
+<p>Assurance maladie complémentaire de l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>numeroContrat : [0..1] Identifiant</td>
+    <td>Numéro de contrat.</td>
+  </tr>
+  <tr>
+    <td>ouvrantDroit : [0..1]  idContactPersonnePhysique</td>
+    <td>Identifiant de l’ouvrant droit si ce n’est pas l’usager</td>
+  </tr>
+  <tr>
+    <td>nomOrganisme : [0..1] Texte</td>
+    <td>Nom de l’organisme d’assurance maladie complémentaire.</td>
+  </tr>
+  <tr>
+    <td>libelleOrganisme : [0..1] Texte</td>
+    <td>Libellé de l’organisme d’assurance maladie complémentaire.</td>
+  </tr>
+  <tr>
+    <td>adresseOrganisme : [0..1] Adresse</td>
+    <td>Adresse de l’organisme d’assurance maladie complémentaire.</td>
+  </tr>
+  <tr>
+    <td>dateDebutDroit : [0..1] Date</td>
+    <td>Date de début des droits à l’assurance maladie complémentaire.</td>
+  </tr>
+  <tr>
+    <td>dateFinDroit : [0..1] Date</td>
+    <td>Date de fin des droits à l’assurance maladie complémentaire.</td>
+  </tr>
+  <tr>
+    <td>aideComplementaireSante : [0..1] Indicateur</td>
+    <td>Alerte « aide à la complémentaire santé ».<br />
+    0 = non ; 1 = oui.
+    </td>
+  </tr>
+  <tr>
+    <td>typeFinDroit : [0..1] Code</td>
+    <td>Raison de la fin des droits à l’assurance maladie complémentaire.<br />
+    Nomenclature(s) associée(s) : à définir
+    </td>
+  </tr>
+</table>
+
+<h5 id="classe-decision">Classe Decision</h5>
+
+<p>La décision est une réponse à une demande de l’individu ou de son représentant légal. Elle est prise par la CDAPH.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idDecision : [1..1] Identifiant </td>
+    <td>Numéro de la décision prise par la MDPH.</td>
+  </tr>
+  <tr>
+    <td>numeroEnregistrement : [0..1] Identifiant</td>
+    <td>Numéro d’enregistrement au conseil général si différent du numéro d’identification MDPH.</td>
+  </tr>
+  <tr>
+    <td>idDecisionMAJ : [0..*] Identifiant</td>
+    <td>Identifiants de la ou des décisions révisées ou renouvelées à l'origine du droit ou identifiant de la décision clôturée (concerne une seule décision) en cas de clôture de droit.</td>
+  </tr>
+  <tr>
+    <td>idNat_Decision : [0..1] Identifiant</td>
+    <td>Identifiant unique de la décision généré par ViaTrajectoire. Cet identifiant unique est créé par ViaTrajectoire lorsque la décision est enregistrée dans le SI-SdO.</td>
+  </tr>
+  <tr>
+    <td>dateDecision : [0..1] Date</td>
+    <td>Date à laquelle se réunit la CDAPH pour prendre la décision.</td>
+  </tr>
+  <tr>
+    <td>typeDecision : [0..1] Code</td>
+    <td>Type de décision.<br />
+    Nomenclature(s) associée(s) : à définir
+    </td>
+  </tr>
+  <tr>
+    <td>motivation : [0..*] Code</td>
+    <td>Considération(s) de droit ou de fait qui constituent le fondement de la décision.<br />
+    Nomenclature(s) associée(s) : à définir
+    </td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif à la décision.</td>
+  </tr>
+</table>
+
+<h5 id="classe-droitprestation">Classe DroitPrestation</h5>
+
+<p>Ensemble des droits et prestations prévus par le Code de l’Action Sociale et des Familles, le Code de l’Education, le Code de la Sécurité Sociale et le Code de la Route auxquels la décision de la CDAPH donne accès.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idDroitPrestation : [1..1] Identifiant</td>
+    <td>Identifiant du droit ou de la prestation.</td>
+  </tr>
+  <tr>
+    <td>contactOrganisme : [0..1] ContactPersonneMorale</td>
+    <td>Contact de l’organisme responsable du droit ou de la prestation.</td>
+  </tr>
+  <tr>
+    <td>numeroAllocataire : [0..1] Identifiant</td>
+    <td>Numéro d’allocataire pour le droit ou la prestation.</td>
+  </tr>
+  <tr>
+    <td>typeDroitPrestation : [0..1] Code</td>
+    <td>Type de droit et prestation caractérisant la décision d'orientation.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>natureDroit : [0..1] Code</td>
+    <td>Nature du droit s’appliquant à tous les droits ou prestations ouverts par la CDAPH. Elle permet de gérer, le cas échéant, le lien entre la date d’ouverture du droit et la date de fin d’un droit précédent. Elle est déterminée par l’équipe pluridisciplinaire ou par la CDAPH.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>dateOuverture : [0..1] Date</td>
+    <td>La date d'ouverture de droit est la date à laquelle le droit devient effectif.<br />
+    Sauf disposition spécifique, la date d’ouverture des droits est la date de la décision de la CDAPH sur le fondement du principe de non-rétroactivité des décisions.
+    </td>
+  </tr>
+  <tr>
+    <td>dateEcheance : [0..1] Date</td>
+    <td>La date d'échéance de droit est la date à laquelle le droit ou la prestation ouvert prend fin. L'équipe pluridisciplinaire peut moduler les dates selon les besoins de la personne, tout en restant dans le minimum et dans le maximum prévu par la loi pour chacune des prestations.</td>
+  </tr>
+  <tr>
+    <td>existencePAG : [0..1] Indicateur</td>
+    <td>Indicateur de l'existence d'un Plan d’Accompagnement Global (PAG).<br />
+    1 = si la décision est associée à un PAG au statut "élaboré" ou "validé" ;<br />
+    0 = pour tous les autres cas (la décision n'est pas associée à un PAG ou est associée à un PAG ayant un statut différent de "élaboré" ou "validé").
+    </td>
+  </tr>
+  <tr>
+    <td>creton : [0..1] Indicateur</td>
+    <td>Amendement Creton. Il s’agit d’un dispositif législatif permettant le maintien temporaire de jeunes adultes de plus de 20 ans en établissement pour enfants dans l’attente d’une place dans un établissement pour adultes.<br />
+    Obligatoire pour les décisions orientations ESSMS enfant, non prévu pour les autres orientations.<br />
+    0 = l'usager ne bénéficie pas de l'amendement Creton ;<br />
+    1 = l'usager bénéficie de l'amendement Creton.
+    </td>
+  </tr>
+  <tr>
+    <td>taux : [0..1] Mesure</td>
+    <td>Taux dans le cas d’une aide sociale.</td>
+  </tr>
+  <tr>
+    <td>typeCompensation : [0..1] Code</td>
+    <td>Type de compensation dans le cas d’une aide sociale.<br />
+    Nomenclature(s) associée(s) : à définir
+    </td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif au droit ou à la prestation.</td>
+  </tr>
+</table>
+
+<h5 id="classe-detailprestation">Classe DetailPrestation</h5>
+
+<p>Détails de la prestation.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>temporaliteAccueil : [0..1] Code</td>
+    <td>Fréquence d'accueil lors d'une prise en charge en ESSMS.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R240-TemporaliteAccueil/TRE_R240-TemporaliteAccueil.pdf">TRE_R240-TemporaliteAccueil</a></td>
+  </tr>
+  <tr>
+    <td>precisionOrientation : [0..1] Code</td>
+    <td>Précision de l'orientation à renseigner en fonction du type de droit.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>frequence : [0..1] Mesure</td>
+    <td>Fréquence de versement dans le cas d’une aide sociale.</td>
+  </tr>
+  <tr>
+    <td>qualification : [0..1] Code</td>
+    <td>Il existe deux types d’orientation :
+    <ul>
+    <li>Orientation cible (appelée aussi orientation hors contrainte de l’offre, théorique ou idéale) : qualification d'une décision basée uniquement sur les attentes et les besoins évalués de la personne et considérée par l'équipe pluridisciplinaire ou la CDAPH comme la réponse la plus adaptée à ces attentes et besoins sans prendre en compte la réalité de l'offre disponible.</li>
+    <li> Orientation alternative (appelée aussi orientation par défaut) : qualification d'une décision, partiellement adaptée au regard des attentes et des besoins évalués de la personne pour prendre en compte la réalité de l'offre disponible, afin d'augmenter la possibilité de réalisation effective de cette orientation.<br />
+    Nomenclature(s) associée(s) : à définir</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>montantAttribue : [0..1] Montant</td>
+    <td>Montant attribué dans le cas d’une aide sociale.</td>
+  </tr>
+</table>
+
+<h5 id="classe-prisecharge">Classe PriseCharge</h5>
+
+<p>Description des modalités d’accueil.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>modePriseCharge : [0..1] Code</td>
+    <td>Mode de prise en charge.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+</table>
+
+<h5 id="classe-quantification">Classe Quantification</h5>
+
+<p>Quantification de la prise en charge.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>quantificationNombre : [0..1] Numerique</td>
+    <td>Valeur de la quantification.</td>
+  </tr>
+  <tr>
+    <td>quantificationUnite : [0..1] Code</td>
+    <td>Unité de la quantification (journée ou demi-journée).<br />
+    Nomenclature(s) associée(s) : à définir
+    </td>
+  </tr>
+  <tr>
+    <td>quantificationPeriodicite : [0..1] Code</td>
+    <td>Périodicité de la quantification (quotidienne, hebdomadaire, mensuelle, annuelle).<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+</table>
+
+<h4 id="environnement-et-ressources">Environnement et ressources</h4>
+
+<!-- object data="bloc_environnement_ressources.svg" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="781px" preserveAspectRatio="none" style="width:953px;height:781px;background:#FFFFFF;" version="1.1" viewBox="0 0 953 781" width="953px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="40" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="455" y="387" /><ellipse cx="470" cy="403" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M472.4731,409.1431 Q471.8921,409.4419 471.2529,409.5913 Q470.6138,409.7407 469.9082,409.7407 Q467.4014,409.7407 466.0815,408.0889 Q464.7617,406.437 464.7617,403.3159 Q464.7617,400.1865 466.0815,398.5347 Q467.4014,396.8828 469.9082,396.8828 Q470.6138,396.8828 471.2612,397.0322 Q471.9087,397.1816 472.4731,397.4805 L472.4731,400.2031 Q471.8423,399.6221 471.2488,399.3523 Q470.6553,399.0825 470.0244,399.0825 Q468.6797,399.0825 467.9949,400.1492 Q467.3101,401.2158 467.3101,403.3159 Q467.3101,405.4077 467.9949,406.4744 Q468.6797,407.541 470.0244,407.541 Q470.6553,407.541 471.2488,407.2712 Q471.8423,407.0015 472.4731,406.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="484" y="408.291">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="456" x2="534" y1="419" y2="419" /></g><!--class ContactPersonnePhysique--><g id="elem_ContactPersonnePhysique"><rect codeLine="6" fill="#ADD8E6" height="287.3242" id="ContactPersonnePhysique" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="328" x="150" y="7" /><ellipse cx="220.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M223.2231,29.1431 Q222.6421,29.4419 222.0029,29.5913 Q221.3638,29.7407 220.6582,29.7407 Q218.1514,29.7407 216.8315,28.0889 Q215.5117,26.437 215.5117,23.3159 Q215.5117,20.1865 216.8315,18.5347 Q218.1514,16.8828 220.6582,16.8828 Q221.3638,16.8828 222.0112,17.0322 Q222.6587,17.1816 223.2231,17.4805 L223.2231,20.2031 Q222.5923,19.6221 221.9988,19.3523 Q221.4053,19.0825 220.7744,19.0825 Q219.4297,19.0825 218.7449,20.1492 Q218.0601,21.2158 218.0601,23.3159 Q218.0601,25.4077 218.7449,26.4744 Q219.4297,27.541 220.7744,27.541 Q221.4053,27.541 221.9988,27.2712 Q222.5923,27.0015 223.2231,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="241.25" y="28.291">ContactPersonnePhysique</text><line style="stroke:#181818;stroke-width:0.5;" x1="151" x2="477" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="261" x="156" y="56.5352">identifiantContactPP : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="156" y="73.0234">nom : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="156" y="89.5117">prenom : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="156" y="106">civilite : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="156" y="122.4883">paysNationalite : Code [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="156" y="138.9766">profession : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="156" y="155.4648">situationFamiliale : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="156" y="171.9531">dateNaissance : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="156" y="188.4414">adresse : Adresse [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="156" y="204.9297">telecommunication : Telecommunication [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="156" y="221.418">role : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="156" y="237.9063">relation : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="156" y="254.3945">fonction : Texte[0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="156" y="270.8828">ordreAppel : Numerique [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="156" y="287.3711">commentaire : Texte [0..1]</text></g><!--class ContactPersonneMorale--><g id="elem_ContactPersonneMorale"><rect codeLine="24" fill="#ADD8E6" height="188.3945" id="ContactPersonneMorale" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="328" x="513" y="56.5" /><ellipse cx="590.75" cy="72.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M593.2231,78.6431 Q592.6421,78.9419 592.0029,79.0913 Q591.3638,79.2407 590.6582,79.2407 Q588.1514,79.2407 586.8315,77.5889 Q585.5117,75.937 585.5117,72.8159 Q585.5117,69.6865 586.8315,68.0347 Q588.1514,66.3828 590.6582,66.3828 Q591.3638,66.3828 592.0112,66.5322 Q592.6587,66.6816 593.2231,66.9805 L593.2231,69.7031 Q592.5923,69.1221 591.9988,68.8523 Q591.4053,68.5825 590.7744,68.5825 Q589.4297,68.5825 588.7449,69.6492 Q588.0601,70.7158 588.0601,72.8159 Q588.0601,74.9077 588.7449,75.9744 Q589.4297,77.041 590.7744,77.041 Q591.4053,77.041 591.9988,76.7712 Q592.5923,76.5015 593.2231,75.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="611.25" y="77.791">ContactPersonneMorale</text><line style="stroke:#181818;stroke-width:0.5;" x1="514" x2="840" y1="88.5" y2="88.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="265" x="519" y="106.0352">identifiantContactPM : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="519" y="122.5234">libelle : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="519" y="139.0117">raisonSociale : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="519" y="155.5">typeOrganisme : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="519" y="171.9883">adresse : Adresse [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="519" y="188.4766">telecommunication : Telecommunication [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="519" y="204.9648">role : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="519" y="221.4531">ordreAppel : Numerique [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="519" y="237.9414">commentaire : Texte [0..1]</text></g><!--class MesureProtection--><g id="elem_MesureProtection"><rect codeLine="36" fill="#ADD8E6" height="155.418" id="MesureProtection" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="328" x="7" y="569.5" /><ellipse cx="106.75" cy="585.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M109.2231,591.6431 Q108.6421,591.9419 108.0029,592.0913 Q107.3638,592.2407 106.6582,592.2407 Q104.1514,592.2407 102.8315,590.5889 Q101.5117,588.937 101.5117,585.8159 Q101.5117,582.6865 102.8315,581.0347 Q104.1514,579.3828 106.6582,579.3828 Q107.3638,579.3828 108.0112,579.5322 Q108.6587,579.6816 109.2231,579.9805 L109.2231,582.7031 Q108.5923,582.1221 107.9988,581.8523 Q107.4053,581.5825 106.7744,581.5825 Q105.4297,581.5825 104.7449,582.6492 Q104.0601,583.7158 104.0601,585.8159 Q104.0601,587.9077 104.7449,588.9744 Q105.4297,590.041 106.7744,590.041 Q107.4053,590.041 107.9988,589.7712 Q108.5923,589.5015 109.2231,588.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="127.25" y="590.791">MesureProtection</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="334" y1="601.5" y2="601.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237" x="13" y="619.0352">typeMesureProtection : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="13" y="635.5234">nom : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="13" y="652.0117">prenom : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="13" y="668.5">dateFin : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="13" y="684.9883">adresse : Adresse [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="13" y="701.4766">telecommunication : Telecommunication [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="13" y="717.9648">commentaire : Texte [0..1]</text></g><!--class Transport--><g id="elem_Transport"><rect codeLine="46" fill="#ADD8E6" height="72.9766" id="Transport" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="284" x="570" y="370.5" /><ellipse cx="673.75" cy="386.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M676.2231,392.6431 Q675.6421,392.9419 675.0029,393.0913 Q674.3638,393.2407 673.6582,393.2407 Q671.1514,393.2407 669.8315,391.5889 Q668.5117,389.937 668.5117,386.8159 Q668.5117,383.6865 669.8315,382.0347 Q671.1514,380.3828 673.6582,380.3828 Q674.3638,380.3828 675.0112,380.5322 Q675.6587,380.6816 676.2231,380.9805 L676.2231,383.7031 Q675.5923,383.1221 674.9988,382.8523 Q674.4053,382.5825 673.7744,382.5825 Q672.4297,382.5825 671.7449,383.6492 Q671.0601,384.7158 671.0601,386.8159 Q671.0601,388.9077 671.7449,389.9744 Q672.4297,391.041 673.7744,391.041 Q674.4053,391.041 674.9988,390.7712 Q675.5923,390.5015 676.2231,389.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="694.25" y="391.791">Transport</text><line style="stroke:#181818;stroke-width:0.5;" x1="571" x2="853" y1="402.5" y2="402.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="576" y="420.0352">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="272" x="576" y="436.5234">observationAmenagement : Texte [0..1]</text></g><!--class PermisConduire--><g id="elem_PermisConduire"><rect codeLine="51" fill="#ADD8E6" height="105.9531" id="PermisConduire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="194" x="226" y="354" /><ellipse cx="264.4" cy="370" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M266.8731,376.1431 Q266.2921,376.4419 265.6529,376.5913 Q265.0138,376.7407 264.3082,376.7407 Q261.8014,376.7407 260.4815,375.0889 Q259.1617,373.437 259.1617,370.3159 Q259.1617,367.1865 260.4815,365.5347 Q261.8014,363.8828 264.3082,363.8828 Q265.0138,363.8828 265.6612,364.0322 Q266.3087,364.1816 266.8731,364.4805 L266.8731,367.2031 Q266.2423,366.6221 265.6488,366.3523 Q265.0553,366.0825 264.4244,366.0825 Q263.0797,366.0825 262.3949,367.1492 Q261.7101,368.2158 261.7101,370.3159 Q261.7101,372.4077 262.3949,373.4744 Q263.0797,374.541 264.4244,374.541 Q265.0553,374.541 265.6488,374.2712 Q266.2423,374.0015 266.8731,373.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="283.6" y="375.291">PermisConduire</text><line style="stroke:#181818;stroke-width:0.5;" x1="227" x2="419" y1="386" y2="386" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="232" y="403.5352">categorie : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="232" y="420.0234">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="232" y="436.5117">dateObtention : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="232" y="453">dateValidite : Date [0..1]</text></g><!--class Ressource--><g id="elem_Ressource"><rect codeLine="58" fill="#ADD8E6" height="171.9063" id="Ressource" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="250" x="370" y="561" /><ellipse cx="455.75" cy="577" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M458.2231,583.1431 Q457.6421,583.4419 457.0029,583.5913 Q456.3638,583.7407 455.6582,583.7407 Q453.1514,583.7407 451.8315,582.0889 Q450.5117,580.437 450.5117,577.3159 Q450.5117,574.1865 451.8315,572.5347 Q453.1514,570.8828 455.6582,570.8828 Q456.3638,570.8828 457.0112,571.0322 Q457.6587,571.1816 458.2231,571.4805 L458.2231,574.2031 Q457.5923,573.6221 456.9988,573.3523 Q456.4053,573.0825 455.7744,573.0825 Q454.4297,573.0825 453.7449,574.1492 Q453.0601,575.2158 453.0601,577.3159 Q453.0601,579.4077 453.7449,580.4744 Q454.4297,581.541 455.7744,581.541 Q456.4053,581.541 456.9988,581.2712 Q457.5923,581.0015 458.2231,580.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="476.25" y="582.291">Ressource</text><line style="stroke:#181818;stroke-width:0.5;" x1="371" x2="619" y1="593" y2="593" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="376" y="610.5352">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="376" y="627.0234">contactOrganisme :  Contact  [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="376" y="643.5117">montant : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="376" y="660">frequence : Mesure [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="376" y="676.4883">dateDebut : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="376" y="692.9766">dateFin : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="376" y="709.4648">pieceJointe : ObjetBinaire [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="376" y="725.9531">idDroitPrestation : Identifiant [0..1]</text></g><!--class CompteBancaire--><g id="elem_CompteBancaire"><rect codeLine="69" fill="#ADD8E6" height="254.3477" id="CompteBancaire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="291" x="655.5" y="520" /><ellipse cx="740.75" cy="536" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M743.2231,542.1431 Q742.6421,542.4419 742.0029,542.5913 Q741.3638,542.7407 740.6582,542.7407 Q738.1514,542.7407 736.8315,541.0889 Q735.5117,539.437 735.5117,536.3159 Q735.5117,533.1865 736.8315,531.5347 Q738.1514,529.8828 740.6582,529.8828 Q741.3638,529.8828 742.0112,530.0322 Q742.6587,530.1816 743.2231,530.4805 L743.2231,533.2031 Q742.5923,532.6221 741.9988,532.3523 Q741.4053,532.0825 740.7744,532.0825 Q739.4297,532.0825 738.7449,533.1492 Q738.0601,534.2158 738.0601,536.3159 Q738.0601,538.4077 738.7449,539.4744 Q739.4297,540.541 740.7744,540.541 Q741.4053,540.541 741.9988,540.2712 Q742.5923,540.0015 743.2231,539.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="761.25" y="541.291">CompteBancaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="656.5" x2="945.5" y1="552" y2="552" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="661.5" y="569.5352">adresseBanque :  Adresse [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243" x="661.5" y="586.0234">identifiantBanque : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="279" x="661.5" y="602.5117">identifiantGestionnaire : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="661.5" y="619">dateSouscription : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="661.5" y="635.4883">dureeSouscription : Mesure [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="661.5" y="651.9766">dateOuverture : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="661.5" y="668.4648">dateEcheance : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="661.5" y="684.9531">dateFinPropagation : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="661.5" y="701.4414">dateCloture : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="661.5" y="717.9297">domiciliationBancaire : Indicateur [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="661.5" y="734.418">echeanceRevenus : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="661.5" y="750.9063">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="661.5" y="767.3945">RIB : RIB [0..1]</text></g><!--link ContactPersonnePhysique to Usager--><g id="link_ContactPersonnePhysique_Usager"><path codeLine="85" d="M415.35,294 C441.52,330.8 466.47,365.88 481.26,386.67 " fill="none" id="ContactPersonnePhysique-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="414.7285" y="314.8258">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="468.0489" y="376.1089">1</text></g><!--link ContactPersonneMorale to Usager--><g id="link_ContactPersonneMorale_Usager"><path codeLine="86" d="M610.26,244.82 C573.13,296.74 530.19,356.8 508.71,386.82 " fill="none" id="ContactPersonneMorale-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="598.7026" y="265.4988">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="503.5623" y="376.303">1</text></g><!--link PermisConduire to Usager--><g id="link_PermisConduire_Usager"><path codeLine="87" d="M420.09,407 C431.69,407 443.3,407 454.91,407 " fill="none" id="PermisConduire-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="428.0659" y="403.9849">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="439.0565" y="403.2601">1</text></g><!--link Usager to Transport--><g id="link_Usager_Transport"><path codeLine="88" d="M535.26,407 C546.77,407 558.28,407 569.78,407 " fill="none" id="Usager-Transport" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="542.8672" y="403.306">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="555.8383" y="404.1673">*</text></g><!--link Usager to MesureProtection--><g id="link_Usager_MesureProtection"><path codeLine="89" d="M474.85,427.15 C463.93,437.25 450.03,449.66 437,460 C433.1,463.09 352.53,519.4 281.07,569.25 " fill="none" id="Usager-MesureProtection" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="460.0578" y="447.5386">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="285.2751" y="558.6878">*</text></g><!--link Usager to CompteBancaire--><g id="link_Usager_CompteBancaire"><path codeLine="90" d="M515.16,427.13 C526.09,437.22 539.99,449.63 553,460 C589.16,488.82 600.81,492.52 638,520 C643.75,524.25 649.6,528.61 655.5,533.03 " fill="none" id="Usager-CompteBancaire" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="511.705" y="447.513">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="641.3789" y="523.9545">*</text></g><!--link Usager to Ressource--><g id="link_Usager_Ressource"><path codeLine="91" d="M495,427.07 C495,455.92 495,512.41 495,560.78 " fill="none" id="Usager-Ressource" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="485.875" y="447.4361">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="488.7422" y="550.3117">*</text></g></g></svg></div>
+
+<h5 id="classe-contactpersonnephysique">Classe ContactPersonnePhysique</h5>
+
+<p>Personne physique qui agit comme point de contact auprès d’une autre personne ou d’un autre service.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>identifiantContactPP : [0..1] Identifiant</td>
+    <td>Identifiant du contact</td>
+  </tr>
+  <tr>
+    <td>nom : [0..1] Texte</td>
+    <td>Nom de la personne contact.</td>
+  </tr>
+  <tr>
+    <td>prenom : [0..1] Texte</td>
+    <td>Prénom de la personne contact.</td>
+  </tr>
+  <tr>
+    <td>civilite : [0..1] Code</td>
+    <td>Civilité du contact.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R81-Civilite/TRE_R81-Civilite.pdf">TRE_R81-Civilite</a></td>
+  </tr>
+  <tr>
+    <td>paysNationalite : [0..*] Code</td>
+    <td>Pays de nationalité de la personne contact, actuelle ou rattachement de la nationalité à un espace de pays conventionné<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R20-Pays/TRE_R20-Pays.pdf">TRE_R20-Pays</a></td>
+  </tr>
+  <tr>
+    <td>profession : [0..1] Texte</td>
+    <td>Profession de la personne contact.</td>
+  </tr>
+  <tr>
+    <td>situationFamiliale : [0..1] Code</td>
+    <td>Situation familiale de la personne contact (célibataire, divorcée, etc.).<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>dateNaissance : [0..1] Date</td>
+    <td>Date de naissance de la personne contact.</td>
+  </tr>
+  <tr>
+    <td>telecommunication : [0..*] Telecommunication</td>
+    <td>Adresse(s) de télécommunication du contact (numéro de téléphone, adresse email, URL, etc.).</td>
+  </tr>
+  <tr>
+    <td>adresse : [0..1] Adresse</td>
+    <td>Adresse géopostale du point de contact.</td>
+  </tr>
+  <tr>
+    <td>role : [0..1] Code</td>
+    <td>Rôle de la personne point de contact auprès d'une autre personne. Exemple dans le cas d'un patient, ce rôle indique si le point de contact est la personne à prévenir en cas d'urgence, la personne de confiance, etc.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R260-HL7RoleClass/TRE_R260-HL7RoleClass.pdf">TRE_R260-HL7RoleClass</a></td>
+  </tr>
+  <tr>
+    <td>relation : [0..1] Code</td>
+    <td>Lien de la personne point de contact auprès d'une autre personne. Exemple dans le cas d'un patient, ce lien indique si le point de contact est son enfant, son frère, etc.<br />
+    Nomenclature(s) associée(s) : <br />
+    <a href="https://mos.esante.gouv.fr/NOS/TRE_R216-HL7RoleCode/TRE_R216-HL7RoleCode.pdf">TRE_R216-HL7RoleCode</a><br />
+    <a href="https://mos.esante.gouv.fr/NOS/TRE_R217-ProtectionJuridique/TRE_R217-ProtectionJuridique.pdf">TRE_R217-ProtectionJuridique</a></td>
+  </tr>
+  <tr>
+    <td>fonction : [0..1] Texte</td>
+    <td>Un titre, une position ou une fonction de la personne assurant le contact au sein de son organisation (directeur, secrétaire, etc.).</td>
+  </tr>
+  <tr>
+    <td>ordreAppel : [0..1] Numérique</td>
+    <td>Ordre de priorité d’appel du contact (1 = priorité maximale).</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif au contact.</td>
+  </tr>
+</table>
+
+<h5 id="classe--contactpersonnemorale">Classe  ContactPersonneMorale</h5>
+
+<p>Personne morale qui agit comme point de contact auprès d’une autre personne ou d’un autre service.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>identifiantContactPP : [0..1] Identifiant</td>
+    <td>Identifiant du contact</td>
+  </tr>
+  <tr>
+    <td>libelle : [0..1] Texte</td>
+    <td>Libellé du contact.</td>
+  </tr>
+  <tr>
+    <td>raisonSociale : [0..1] Texte</td>
+    <td>Raison sociale du contact.</td>
+  </tr>
+  <tr>
+    <td>typeOrgansime : [0..1] Code</td>
+    <td>Type d’organisme du contact.</td>
+  </tr>
+  <tr>
+    <td>telecommunication : [0..*] Telecommunication</td>
+    <td>Adresse(s) de télécommunication du contact (numéro de téléphone, adresse email, URL, etc.).</td>
+  </tr>
+  <tr>
+    <td>adresse : [0..1] Adresse</td>
+    <td>Adresse géopostale du point de contact.</td>
+  </tr>
+  <tr>
+    <td>role : [0..1] Code</td>
+    <td>Rôle de la personne point de contact auprès d'une autre personne. Exemple dans le cas d'un patient, ce rôle indique si le point de contact est la personne à prévenir en cas d'urgence, la personne de confiance, etc.<br />
+    Nomenclature(s) associée(s) : <a href="https://mos.esante.gouv.fr/NOS/TRE_R260-HL7RoleClass/TRE_R260-HL7RoleClass.pdf">TRE_R260-HL7RoleClass</a></td>
+  </tr>
+  <tr>
+    <td>ordreAppel : [0..1] Numérique</td>
+    <td>Ordre de priorité d’appel du contact (1 = priorité maximale).</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif au contact.</td>
+  </tr>
+</table>
+
+<h5 id="classe-ressource">Classe Ressource</h5>
+
+<p>Ressource perçue par l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type : [0..*] Code</td>
+    <td>Type de ressource.</td>
+  </tr>
+  <tr>
+    <td>contactOrgansime : [0..1] ContactPersonneMorale</td>
+    <td>Contact de l’organisme responsable de la ressource.</td>
+  </tr>
+  <tr>
+    <td>montant : [0..1] Montant</td>
+    <td>Montant de la ressource.</td>
+  </tr>
+  <tr>
+    <td>frequence : [0..1] Mesure</td>
+    <td>Fréquence de la ressource.</td>
+  </tr>
+  <tr>
+    <td>dateDebut : [0..1] Date</td>
+    <td>Date de début de la ressource.</td>
+  </tr>
+  <tr>
+    <td>dateFin : [0..1] Date</td>
+    <td>Date de fin de la ressource.</td>
+  </tr>
+  <tr>
+    <td>pieceJointe : [0..*] ObjetBinaire</td>
+    <td>Pièce jointe relative à la ressource.</td>
+  </tr>
+  <tr>
+    <td>idDroitPrestation : [0..1] Identifiant</td>
+    <td>Identifiant du droit ou de la prestation liée à la ressource.</td>
+  </tr>
+</table>
+
+<h5 id="classe-comptebancaire">Classe CompteBancaire</h5>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>adresseBanque : [0..1] Adresse</td>
+    <td>Adresse de la banque à laquelle est rattaché le compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>identifantBanque : [0..1] Identifiant</td>
+    <td>Identifiant de la banque à laquelle est rattaché le compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>identifantGestionnaire : [0..1] Identifiant</td>
+    <td>Identifiant du gestionnaire du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dateSouscription : [0..1] Date</td>
+    <td>Date de souscription du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dureeSouscription : [0..1] Mesure</td>
+    <td>Durée de souscription du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dateOuverture : [0..1] Date</td>
+    <td>Date d’ouverture du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dateEcheance : [0..1] Date</td>
+    <td>Date d’échéance du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dateFinPropagation : [0..1] Date</td>
+    <td>Date de fin de propagation du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>dateCloture : [0..1] Date</td>
+    <td>Date de clotûre du compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>domiciliationBancaire : [0..1] Indicateur</td>
+    <td>Domiciliation bancaire des revenus sur ce compte.<br />
+    0 = non ; 1 = oui.
+</td>
+  </tr>
+  <tr>
+    <td>echeanceRevenus : [0..1] Date</td>
+    <td>Date d’échéance des revenus sur le compte bancaire.</td>
+  </tr>
+  <tr>
+    <td>typeCompteBancaire : [0..1] Code</td>
+    <td>Type de compte bancaire.</td>
+  </tr>
+</table>
+
+<h5 id="classe-rib">Classe RIB</h5>
+
+<p>Relevé d’Identité Bancaire.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>IBAN : [0..1] Identifiant</td>
+    <td>International Bank Account Number.</td>
+  </tr>
+  <tr>
+    <td>BIC : [0..1] Identifiant</td>
+    <td>Bank Identifer Code.</td>
+  </tr>
+</table>
+
+<h5 id="classe-transport">Classe Transport</h5>
+
+<p>Moyen de transport utilisé par l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type : [0..1] Code</td>
+    <td>Type de moyen de transport.</td>
+  </tr>
+  <tr>
+    <td>observationAmenagement : [0..1] Texte</td>
+    <td>Observation sur l’aménagement du moyen de transport.</td>
+  </tr>
+</table>
+
+<h5 id="classe-permisconduire">Classe PermisConduire</h5>
+
+<p>Permis de conduire de l’usager.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>categorie : [0..1] Code</td>
+    <td>Catégorie du permis de conduire.</td>
+  </tr>
+  <tr>
+    <td>type : [0..1] Code</td>
+    <td>Type du permis de conduire.</td>
+  </tr>
+  <tr>
+    <td>dateObtention : [0..1] Date</td>
+    <td>Date d’obtention du permis de conduire.</td>
+  </tr>
+  <tr>
+    <td>dateValidite : [0..1] Date</td>
+    <td>Date limite de validité du permis de conduire.</td>
+  </tr>
+</table>
+
+<h5 id="classe-mesureproctection">Classe MesureProctection</h5>
+
+<p>Décision du juge des tutelles de désigner une personne morale ou physique en vue de lui confier des responsabilités normalement exercées par la personne majeure pour protéger ses biens.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>typeMesureProtection : [0..1] Code</td>
+    <td>Type de mesure de protection (tuteur, curateur, ...).<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>nom : [0..1] Texte</td>
+    <td>Nom de la personne ou de l'organisme.</td>
+  </tr>
+  <tr>
+    <td>prenom : [0..1] Texte</td>
+    <td>Prénom de la personne.</td>
+  </tr>
+  <tr>
+    <td>destinataireCourrier : [0..*] Contact</td>
+    <td>Destinataire du courrier relatif la mesure de protection.</td>
+  </tr>
+  <tr>
+    <td>adresse : [0..1] Adresse </td>
+    <td>Adresse géopostale de la mesure de protection</td>
+  </tr>
+  <tr>
+    <td>telecommunication : [0..1] Telecommunication</td>
+    <td>Adresse(s) disponible(s) de télécommunication de la mesure de protection (possibilité de renseigner deux numéros de téléphone et une adresse email).</td>
+  </tr>
+  <tr>
+    <td>dateFin : Date [0..1]</td>
+    <td>Date de fin de la mesure de protection (18 ans de l’usager ou échéance du placement).</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif à la mesure de protection.</td>
+  </tr>
+</table>
+
+<h4 id="sejours">Sejours</h4>
+
+<!-- object data="bloc_sejours" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="701px" preserveAspectRatio="none" style="width:801px;height:701px;background:#FFFFFF;" version="1.1" viewBox="0 0 801 701" width="801px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="40" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="404.5" y="40" /><ellipse cx="419.5" cy="56" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M421.9731,62.1431 Q421.3921,62.4419 420.7529,62.5913 Q420.1138,62.7407 419.4082,62.7407 Q416.9014,62.7407 415.5815,61.0889 Q414.2617,59.437 414.2617,56.3159 Q414.2617,53.1865 415.5815,51.5347 Q416.9014,49.8828 419.4082,49.8828 Q420.1138,49.8828 420.7612,50.0322 Q421.4087,50.1816 421.9731,50.4805 L421.9731,53.2031 Q421.3423,52.6221 420.7488,52.3523 Q420.1553,52.0825 419.5244,52.0825 Q418.1797,52.0825 417.4949,53.1492 Q416.8101,54.2158 416.8101,56.3159 Q416.8101,58.4077 417.4949,59.4744 Q418.1797,60.541 419.5244,60.541 Q420.1553,60.541 420.7488,60.2712 Q421.3423,60.0015 421.9731,59.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="433.5" y="61.291">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="405.5" x2="483.5" y1="72" y2="72" /></g><!--class Decision--><g id="elem_Decision"><rect codeLine="6" fill="#FFFFE0" height="40" id="Decision" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="90" x="301.5" y="173" /><ellipse cx="316.5" cy="189" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M318.9731,195.1431 Q318.3921,195.4419 317.7529,195.5913 Q317.1138,195.7407 316.4082,195.7407 Q313.9014,195.7407 312.5815,194.0889 Q311.2617,192.437 311.2617,189.3159 Q311.2617,186.1865 312.5815,184.5347 Q313.9014,182.8828 316.4082,182.8828 Q317.1138,182.8828 317.7612,183.0322 Q318.4087,183.1816 318.9731,183.4805 L318.9731,186.2031 Q318.3423,185.6221 317.7488,185.3523 Q317.1553,185.0825 316.5244,185.0825 Q315.1797,185.0825 314.4949,186.1492 Q313.8101,187.2158 313.8101,189.3159 Q313.8101,191.4077 314.4949,192.4744 Q315.1797,193.541 316.5244,193.541 Q317.1553,193.541 317.7488,193.2712 Q318.3423,193.0015 318.9731,192.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="330.5" y="194.291">Decision</text><line style="stroke:#181818;stroke-width:0.5;" x1="302.5" x2="390.5" y1="205" y2="205" /></g><!--class DroitPrestation--><g id="elem_DroitPrestation"><rect codeLine="8" fill="#FFFFE0" height="40" id="DroitPrestation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="135" x="256" y="273" /><ellipse cx="271" cy="289" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M273.4731,295.1431 Q272.8921,295.4419 272.2529,295.5913 Q271.6138,295.7407 270.9082,295.7407 Q268.4014,295.7407 267.0815,294.0889 Q265.7617,292.437 265.7617,289.3159 Q265.7617,286.1865 267.0815,284.5347 Q268.4014,282.8828 270.9082,282.8828 Q271.6138,282.8828 272.2612,283.0322 Q272.9087,283.1816 273.4731,283.4805 L273.4731,286.2031 Q272.8423,285.6221 272.2488,285.3523 Q271.6553,285.0825 271.0244,285.0825 Q269.6797,285.0825 268.9949,286.1492 Q268.3101,287.2158 268.3101,289.3159 Q268.3101,291.4077 268.9949,292.4744 Q269.6797,293.541 271.0244,293.541 Q271.6553,293.541 272.2488,293.2712 Q272.8423,293.0015 273.4731,292.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="285" y="294.291">DroitPrestation</text><line style="stroke:#181818;stroke-width:0.5;" x1="257" x2="390" y1="305" y2="305" /></g><!--class Reservation--><g id="elem_Reservation"><rect codeLine="10" fill="#D8BFD8" height="105.9531" id="Reservation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="243" x="126" y="7" /><ellipse cx="203.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M205.7231,29.1431 Q205.1421,29.4419 204.5029,29.5913 Q203.8638,29.7407 203.1582,29.7407 Q200.6514,29.7407 199.3315,28.0889 Q198.0117,26.437 198.0117,23.3159 Q198.0117,20.1865 199.3315,18.5347 Q200.6514,16.8828 203.1582,16.8828 Q203.8638,16.8828 204.5112,17.0322 Q205.1587,17.1816 205.7231,17.4805 L205.7231,20.2031 Q205.0923,19.6221 204.4988,19.3523 Q203.9053,19.0825 203.2744,19.0825 Q201.9297,19.0825 201.2449,20.1492 Q200.5601,21.2158 200.5601,23.3159 Q200.5601,25.4077 201.2449,26.4744 Q201.9297,27.541 203.2744,27.541 Q203.9053,27.541 204.4988,27.2712 Q205.0923,27.0015 205.7231,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="223.75" y="28.291">Reservation</text><line style="stroke:#181818;stroke-width:0.5;" x1="127" x2="368" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="132" y="56.5352">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="132" y="73.0234">dateDepot : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="132" y="89.5117">dateAdmissionPrevue : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="132" y="106">etablissementSouhaite : [0..*]</text></g><!--class Sejour--><g id="elem_Sejour"><rect codeLine="17" fill="#D8BFD8" height="138.9297" id="Sejour" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="250" x="259.5" y="373" /><ellipse cx="358.25" cy="389" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M360.7231,395.1431 Q360.1421,395.4419 359.5029,395.5913 Q358.8638,395.7407 358.1582,395.7407 Q355.6514,395.7407 354.3315,394.0889 Q353.0117,392.437 353.0117,389.3159 Q353.0117,386.1865 354.3315,384.5347 Q355.6514,382.8828 358.1582,382.8828 Q358.8638,382.8828 359.5112,383.0322 Q360.1587,383.1816 360.7231,383.4805 L360.7231,386.2031 Q360.0923,385.6221 359.4988,385.3523 Q358.9053,385.0825 358.2744,385.0825 Q356.9297,385.0825 356.2449,386.1492 Q355.5601,387.2158 355.5601,389.3159 Q355.5601,391.4077 356.2449,392.4744 Q356.9297,393.541 358.2744,393.541 Q358.9053,393.541 359.4988,393.2712 Q360.0923,393.0015 360.7231,392.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="378.75" y="394.291">Sejour</text><line style="stroke:#181818;stroke-width:0.5;" x1="260.5" x2="508.5" y1="405" y2="405" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="265.5" y="422.5352">dateSoldeFinal : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="265.5" y="439.0234">soldeFinalDepense : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="265.5" y="455.5117">soldeFinalDepense : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="265.5" y="472">dateSoldeJour : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="265.5" y="488.4883">soldeFinalRecette : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="265.5" y="504.9766">soldeFinalRecette : Montant [0..1]</text></g><!--class ESSMS--><g id="elem_ESSMS"><rect codeLine="26" fill="#D8BFD8" height="56.4883" id="ESSMS" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="217" x="7" y="414.5" /><ellipse cx="89.25" cy="430.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M91.7231,436.6431 Q91.1421,436.9419 90.5029,437.0913 Q89.8638,437.2407 89.1582,437.2407 Q86.6514,437.2407 85.3315,435.5889 Q84.0117,433.937 84.0117,430.8159 Q84.0117,427.6865 85.3315,426.0347 Q86.6514,424.3828 89.1582,424.3828 Q89.8638,424.3828 90.5112,424.5322 Q91.1587,424.6816 91.7231,424.9805 L91.7231,427.7031 Q91.0923,427.1221 90.4988,426.8523 Q89.9053,426.5825 89.2744,426.5825 Q87.9297,426.5825 87.2449,427.6492 Q86.5601,428.7158 86.5601,430.8159 Q86.5601,432.9077 87.2449,433.9744 Q87.9297,435.041 89.2744,435.041 Q89.9053,435.041 90.4988,434.7712 Q91.0923,434.5015 91.7231,433.9204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="109.75" y="435.791">ESSMS</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="223" y1="446.5" y2="446.5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="13" y="464.0352">idNat_Struct : Identifiant [1..1]</text></g><!--class Inventaire--><g id="elem_Inventaire"><rect codeLine="30" fill="#D8BFD8" height="56.4883" id="Inventaire" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="167" x="182" y="605" /><ellipse cx="227.25" cy="621" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M229.7231,627.1431 Q229.1421,627.4419 228.5029,627.5913 Q227.8638,627.7407 227.1582,627.7407 Q224.6514,627.7407 223.3315,626.0889 Q222.0117,624.437 222.0117,621.3159 Q222.0117,618.1865 223.3315,616.5347 Q224.6514,614.8828 227.1582,614.8828 Q227.8638,614.8828 228.5112,615.0322 Q229.1587,615.1816 229.7231,615.4805 L229.7231,618.2031 Q229.0923,617.6221 228.4988,617.3523 Q227.9053,617.0825 227.2744,617.0825 Q225.9297,617.0825 225.2449,618.1492 Q224.5601,619.2158 224.5601,621.3159 Q224.5601,623.4077 225.2449,624.4744 Q225.9297,625.541 227.2744,625.541 Q227.9053,625.541 228.4988,625.2712 Q229.0923,625.0015 229.7231,624.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="247.75" y="626.291">Inventaire</text><line style="stroke:#181818;stroke-width:0.5;" x1="183" x2="348" y1="637" y2="637" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="188" y="654.5352">trousseau : texte [0..1]</text></g><!--class Solde--><g id="elem_Solde"><rect codeLine="34" fill="#D8BFD8" height="138.9297" id="Solde" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="250" x="544.5" y="373" /><ellipse cx="646.25" cy="389" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M648.7231,395.1431 Q648.1421,395.4419 647.5029,395.5913 Q646.8638,395.7407 646.1582,395.7407 Q643.6514,395.7407 642.3315,394.0889 Q641.0117,392.437 641.0117,389.3159 Q641.0117,386.1865 642.3315,384.5347 Q643.6514,382.8828 646.1582,382.8828 Q646.8638,382.8828 647.5112,383.0322 Q648.1587,383.1816 648.7231,383.4805 L648.7231,386.2031 Q648.0923,385.6221 647.4988,385.3523 Q646.9053,385.0825 646.2744,385.0825 Q644.9297,385.0825 644.2449,386.1492 Q643.5601,387.2158 643.5601,389.3159 Q643.5601,391.4077 644.2449,392.4744 Q644.9297,393.541 646.2744,393.541 Q646.9053,393.541 647.4988,393.2712 Q648.0923,393.0015 648.7231,392.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="666.75" y="394.291">Solde</text><line style="stroke:#181818;stroke-width:0.5;" x1="545.5" x2="793.5" y1="405" y2="405" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="550.5" y="422.5352">dateSoldeFinal : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="550.5" y="439.0234">soldeFinalDepense : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="550.5" y="455.5117">soldeFinalDepense : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="550.5" y="472">dateSoldeJour : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="550.5" y="488.4883">soldeFinalRecette : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="550.5" y="504.9766">soldeFinalRecette : Montant [0..1]</text></g><!--class Contrat--><g id="elem_Contrat"><rect codeLine="43" fill="#D8BFD8" height="122.4414" id="Contrat" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="240" x="384.5" y="572" /><ellipse cx="474.25" cy="588" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M476.7231,594.1431 Q476.1421,594.4419 475.5029,594.5913 Q474.8638,594.7407 474.1582,594.7407 Q471.6514,594.7407 470.3315,593.0889 Q469.0117,591.437 469.0117,588.3159 Q469.0117,585.1865 470.3315,583.5347 Q471.6514,581.8828 474.1582,581.8828 Q474.8638,581.8828 475.5112,582.0322 Q476.1587,582.1816 476.7231,582.4805 L476.7231,585.2031 Q476.0923,584.6221 475.4988,584.3523 Q474.9053,584.0825 474.2744,584.0825 Q472.9297,584.0825 472.2449,585.1492 Q471.5601,586.2158 471.5601,588.3159 Q471.5601,590.4077 472.2449,591.4744 Q472.9297,592.541 474.2744,592.541 Q474.9053,592.541 475.4988,592.2712 Q476.0923,592.0015 476.7231,591.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="494.75" y="593.291">Contrat</text><line style="stroke:#181818;stroke-width:0.5;" x1="385.5" x2="623.5" y1="604" y2="604" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="390.5" y="621.5352">libellePrestation : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="390.5" y="638.0234">prixUnitaire : Montant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="390.5" y="654.5117">tauxTVA : Mesure [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="390.5" y="671">dateEffet : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="390.5" y="687.4883">termePaiement : Indicateur  [0..1]</text></g><!--link Usager to Decision--><g id="link_Usager_Decision"><path codeLine="51" d="M430.25,80.05 C411.67,104.89 379.36,148.08 360.77,172.93 " fill="none" id="Usager-Decision" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="417.1172" y="100.4105">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="358.2214" y="162.1026">*</text></g><!--link Decision to DroitPrestation--><g id="link_Decision_DroitPrestation"><path codeLine="52" d="M341.96,213.36 C337.92,230.54 332.06,255.51 328.03,272.68 " fill="none" id="Decision-DroitPrestation" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="331.6649" y="233.4575">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="332.8857" y="262.1218">0..1</text></g><!--link Reservation to DroitPrestation--><g id="link_Reservation_DroitPrestation"><path codeLine="53" d="M256.7,113.25 C262.72,142.99 271.67,180.65 283.5,213 C291.26,234.22 303.3,257.12 312.14,272.77 " fill="none" id="Reservation-DroitPrestation" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="251.4944" y="133.6249">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="299.628" y="262.2383">1</text></g><!--link Reservation to Usager--><g id="link_Reservation_Usager"><path codeLine="54" d="M369.09,60 C380.87,60 392.65,60 404.44,60 " fill="none" id="Reservation-Usager" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="377.1356" y="57.0993">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="390.5008" y="56.2142">*</text></g><!--link DroitPrestation to Sejour--><g id="link_DroitPrestation_Sejour"><path codeLine="55" d="M331.47,313.28 C337.8,328.59 347.06,350.97 356.07,372.76 " fill="none" id="DroitPrestation-Sejour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="324.5866" y="333.7052">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="346.8288" y="362.3826">*</text></g><!--link ESSMS to Sejour--><g id="link_ESSMS_Sejour"><path codeLine="56" d="M224.26,442.5 C235.94,442.5 247.62,442.5 259.31,442.5 " fill="none" id="ESSMS-Sejour" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="231.8361" y="439.5585">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="245.4984" y="439.6229">*</text></g><!--link Sejour to Inventaire--><g id="link_Sejour_Inventaire"><path codeLine="57" d="M341.2,512.09 C321,544.09 298.1,580.36 282.83,604.55 " fill="none" id="Sejour-Inventaire" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="328.3222" y="532.6279">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="259.9959" y="594.2349">0..1</text></g><!--link Sejour to Solde--><g id="link_Sejour_Solde"><path codeLine="58" d="M509.74,442.5 C521.29,442.5 532.83,442.5 544.38,442.5 " fill="none" id="Sejour-Solde" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="517.6156" y="439.6229">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="530.5727" y="439.6229">*</text></g><!--link Sejour to Contrat--><g id="link_Sejour_Contrat"><path codeLine="59" d="M428.16,512.09 C440.63,531.67 454.11,552.85 466.23,571.88 " fill="none" id="Sejour-Contrat" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="426.3531" y="532.6279">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="455.2002" y="561.0773">*</text></g><!--link Usager to Sejour--><g id="link_Usager_Sejour"><path codeLine="60" d="M442.07,80.01 C436.62,122.08 422.8,226.22 408.5,313 C405.29,332.48 401.49,353.56 397.87,372.91 " fill="none" id="Usager-Sejour" style="stroke:#181818;stroke-width:1.0;" /></g></g></svg></div>
+
+<h5 id="classe-sejour">Classe Sejour</h5>
+
+<p>Séjour d’un usager dans un ESSMS.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>dateAdmission : [0..1] Date</td>
+    <td>Date d’admission du séjour.</td>
+  </tr>
+  <tr>
+    <td>dateEntree : [0..1] Date</td>
+    <td>Date d’entrée du séjour.</td>
+  </tr>
+  <tr>
+    <td>libelleModeEntree : [0..1] Texte</td>
+    <td>Libellé du mode d’entée du séjour.</td>
+  </tr>
+  <tr>
+    <td>dateSortiePrevisionnelle : [0..1] Date</td>
+    <td>Date de sortie prévisionnelle du séjour.</td>
+  </tr>
+  <tr>
+    <td>dateSortie : [0..1] Date</td>
+    <td>Date de sortie du séjour.</td>
+  </tr>
+  <tr>
+    <td>libelleModeSortie : [0..1] Texte</td>
+    <td>Libellé du mode de sortie du séjour.</td>
+  </tr>
+  <tr>
+    <td>numeroDossier : [0..1] Identifiant</td>
+    <td>Numéro de dossier administratif du séjour.</td>
+  </tr>
+  <tr>
+    <td>commentaire : [0..1] Texte</td>
+    <td>Commentaire relatif au séjour.</td>
+  </tr>
+</table>
+
+<h5 id="classe-contrat">Classe Contrat</h5>
+
+<p>Contrant définissant une prestation proposée par l’ESSMS dont l’usager a bénéficié durant son séjour.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>libellePrestation : [0..1] Texte</td>
+    <td>Libellé de la prestation.</td>
+  </tr>
+  <tr>
+    <td>prixUnitaire : [0..1] Montant</td>
+    <td>Prix unitaire de la prestation.</td>
+  </tr>
+  <tr>
+    <td>tauxTVA : [0..1] Mesure</td>
+    <td>Taux de TVA de la prestation.</td>
+  </tr>
+  <tr>
+    <td>dateEffet : [0..1] Date</td>
+    <td>Date d’effet du paiement de la prestation.</td>
+  </tr>
+  <tr>
+    <td>termePaiement : [0..1] Indicateur</td>
+    <td>Paiement de la prestation.<br />
+    0 = à échoir ; 1 = échu.
+    </td>
+  </tr>
+</table>
+
+<h5 id="classe-inventaire">Classe Inventaire</h5>
+
+<p>Inventaire des biens d’un usager à son arrivé dans l’ESSMS.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>trousseau : [0..1] Texte</td>
+    <td>Liste des objets avec lesquels l’usager est pris en charge qui sont mis au coffre ou liste des objets qui sont transmis à l’arrivée.</td>
+  </tr>
+</table>
+
+<h5 id="classe-solde">Classe Solde</h5>
+
+<p>Solde utilisé pour la gestion de l’argent de l’usager durant son séjour.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>dateSoldeFinal : [0..1] Date</td>
+    <td>Date du solde final.</td>
+  </tr>
+    <tr>
+    <td>soldeFinalRecette : [0..1] Montant</td>
+    <td>Recette du solde final.</td>
+  </tr>
+    <tr>
+    <td>soldeFinalDepense : [0..1] Montant</td>
+    <td>Dépense du solde final.</td>
+  </tr>
+    <tr>
+    <td>dateSoldeJour : [0..1] Date</td>
+    <td>Date du solde du jour.</td>
+  </tr>
+    <tr>
+    <td>soldeJourRecette : [0..1] Montant</td>
+    <td>Recette du solde du jour.</td>
+  </tr>
+    <tr>
+    <td>soldeJourDepense : [0..1] Montant</td>
+    <td>Dépense du solde jour.</td>
+  </tr>
+</table>
+
+<h5 id="classe-reservation">Classe Reservation</h5>
+
+<p>Amission prévisionnelle d’un usager dans un ESSMS.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>type : [0..1] Code</td>
+    <td>Type de réservation.<br />
+    Nomenclature(s) associée(s) : à définir</td>
+  </tr>
+  <tr>
+    <td>dateDepot : [0..1] Date</td>
+    <td>Date de dépôt de la réservation.</td>
+  </tr>
+  <tr>
+    <td>dateAdmissionPrevue : [0..1] Date</td>
+    <td>Date d’admission prévue dans l’ESSMS.</td>
+  </tr>
+  <tr>
+    <td>etablissementSouhaite : [0..*] Identifiant</td>
+    <td>Identifiant de l’ESSMS souhaité.</td>
+  </tr>
+</table>
+
+<h5 id="classe-essms">Classe ESSMS</h5>
+
+<p>Établissement ou service social ou médico-social<br />
+Les établissements et services sociaux et médico-sociaux sont structurés et spécialisés en plusieurs catégories pour s’adapter aux besoins des adultes et des enfants en situation de handicap.<br />
+Ils peuvent être catégorisés en 3 grands types de structures :</p>
+<ul>
+  <li>Les structures de prévention, dépistage et accompagnement précoce ;</li>
+  <li>Les structures permettant un accompagnement en milieu ordinaire de vie ;</li>
+  <li>Les structures d’accompagnement en institution.</li>
+</ul>
+
+<p>Ces établissements sont soumis au code de l’action sociale et des familles (CASF).</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idNat_Struct : [0..*] Identifiant</td>
+    <td>Identifiant du ou des ESSMS désignés par la CDAPH comme étant susceptible d'accueillir l'individu en situation de handicap.<br />
+    Cet identifiant est obtenu par la concaténation du type d'identifiant national de structure (provenant de la nomenclature TRE_G07-TypeIdentifiantStructure) et de l'identifiant de la structure :
+    <ul>
+    <li>1 + N° FINESS (entité juridique et entité géographique indéterminées) ;</li>
+    <li>3 + N° SIRET.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<h3 id="partie-accompagnement">Partie Accompagnement</h3>
+
+<h4 id="evaluation">Evaluation</h4>
+
+<!-- object data="bloc_evaluation.svg" type="image/svg+xml"></object -->
+<div style="text-align:center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="136px" preserveAspectRatio="none" style="width:732px;height:136px;background:#FFFFFF;" version="1.1" viewBox="0 0 732 136" width="732px" zoomAndPan="magnify"><defs /><g><!--class Usager--><g id="elem_Usager"><rect codeLine="4" fill="#FFB6C1" height="40" id="Usager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="7" y="48" /><ellipse cx="22" cy="64" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M24.4731,70.1431 Q23.8921,70.4419 23.2529,70.5913 Q22.6138,70.7407 21.9082,70.7407 Q19.4014,70.7407 18.0815,69.0889 Q16.7617,67.437 16.7617,64.3159 Q16.7617,61.1865 18.0815,59.5347 Q19.4014,57.8828 21.9082,57.8828 Q22.6138,57.8828 23.2612,58.0322 Q23.9087,58.1816 24.4731,58.4805 L24.4731,61.2031 Q23.8423,60.6221 23.2488,60.3523 Q22.6553,60.0825 22.0244,60.0825 Q20.6797,60.0825 19.9949,61.1492 Q19.3101,62.2158 19.3101,64.3159 Q19.3101,66.4077 19.9949,67.4744 Q20.6797,68.541 22.0244,68.541 Q22.6553,68.541 23.2488,68.2712 Q23.8423,68.0015 24.4731,67.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="36" y="69.291">Usager</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="86" y1="80" y2="80" /></g><!--class Evaluation--><g id="elem_Evaluation"><rect codeLine="6" fill="#D3D3D3" height="105.9531" id="Evaluation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="314" x="122" y="15" /><ellipse cx="239.25" cy="31" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M241.7231,37.1431 Q241.1421,37.4419 240.5029,37.5913 Q239.8638,37.7407 239.1582,37.7407 Q236.6514,37.7407 235.3315,36.0889 Q234.0117,34.437 234.0117,31.3159 Q234.0117,28.1865 235.3315,26.5347 Q236.6514,24.8828 239.1582,24.8828 Q239.8638,24.8828 240.5112,25.0322 Q241.1587,25.1816 241.7231,25.4805 L241.7231,28.2031 Q241.0923,27.6221 240.4988,27.3523 Q239.9053,27.0825 239.2744,27.0825 Q237.9297,27.0825 237.2449,28.1492 Q236.5601,29.2158 236.5601,31.3159 Q236.5601,33.4077 237.2449,34.4744 Q237.9297,35.541 239.2744,35.541 Q239.9053,35.541 240.4988,35.2712 Q241.0923,35.0015 241.7231,34.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="259.75" y="36.291">Evaluation</text><line style="stroke:#181818;stroke-width:0.5;" x1="123" x2="435" y1="47" y2="47" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="128" y="64.5352">idEvaluation : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="128" y="81.0234">dateEvaluation : Date [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302" x="128" y="97.5117">evaluateur : ContactPersonnePhysique [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="128" y="114">resultatEvaluation : Texte [0..1]</text></g><!--class GrilleEvaluation--><g id="elem_GrilleEvaluation"><rect codeLine="13" fill="#D3D3D3" height="122.4414" id="GrilleEvaluation" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="254" x="471" y="7" /><ellipse cx="540.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;" /><path d="M542.7231,29.1431 Q542.1421,29.4419 541.5029,29.5913 Q540.8638,29.7407 540.1582,29.7407 Q537.6514,29.7407 536.3315,28.0889 Q535.0117,26.437 535.0117,23.3159 Q535.0117,20.1865 536.3315,18.5347 Q537.6514,16.8828 540.1582,16.8828 Q540.8638,16.8828 541.5112,17.0322 Q542.1587,17.1816 542.7231,17.4805 L542.7231,20.2031 Q542.0923,19.6221 541.4988,19.3523 Q540.9053,19.0825 540.2744,19.0825 Q538.9297,19.0825 538.2449,20.1492 Q537.5601,21.2158 537.5601,23.3159 Q537.5601,25.4077 538.2449,26.4744 Q538.9297,27.541 540.2744,27.541 Q540.9053,27.541 541.4988,27.2712 Q542.0923,27.0015 542.7231,26.4204 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="560.75" y="28.291">GrilleEvaluation</text><line style="stroke:#181818;stroke-width:0.5;" x1="472" x2="724" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="477" y="56.5352">idGrilleEvaluation : Identifiant [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="477" y="73.0234">type : Code [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="477" y="89.5117">contenu : Texte [0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="477" y="106">pieceJointe : ObjectBinaire [0..*]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="477" y="122.4883">version : Texte [0..1]</text></g><!--link Usager to Evaluation--><g id="link_Usager_Evaluation"><path codeLine="21" d="M87.33,68 C98.81,68 110.29,68 121.77,68 " fill="none" id="Usager-Evaluation" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="94.9492" y="64.306">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="108.0089" y="65.2137">*</text></g><!--link Evaluation to GrilleEvaluation--><g id="link_Evaluation_GrilleEvaluation"><path codeLine="22" d="M436.01,68 C447.61,68 459.21,68 470.81,68 " fill="none" id="Evaluation-GrilleEvaluation" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="443.8089" y="65.2137">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="454.8156" y="65.1073">1</text></g></g></svg></div>
+
+<h5 id="classe-evaluation">Classe Evaluation</h5>
+
+<p>Evaluation de la situation de l’usager dans un domaine défini.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idEvaluation : Identifiant [0..1]</td>
+    <td>Identifiant de l’évaluation.</td>
+  </tr>
+    <tr>
+    <td>dateEvaluation : [0..1] Code</td>
+    <td>Date de l’évaluation.</td>
+  </tr>
+    <tr>
+    <td>evaluateur : [0..1] ContactPersonnePhysique </td>
+    <td>Personne qui réalise l’évaluation.</td>
+  </tr>
+    <tr>
+    <td>resultat : [0..1] Texte</td>
+    <td>Résultat de l’évaluation. </td>
+  </tr>
+</table>
+
+<h5 id="classe-grilleevaluation">Classe GrilleEvaluation</h5>
+
+<p>Grille permettant d’évaluer la situation de l’usager dans un domaine défini.</p>
+
+<table style="width:100%">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>idGrilleEvaluation : Identifiant [0..1]</td>
+    <td>Identifiant de la grille d’évaluation.</td>
+  </tr>
+    <tr>
+    <td>type : [0..1] Code</td>
+    <td>Type de grille d’évaluation.</td>
+  </tr>
+    <tr>
+    <td>contenu : [0..1] Texte</td>
+    <td>Contenu de la grille d’évaluation.</td>
+  </tr>
+  <tr>
+    <td>pieceJointe : [0..*] ObjetBinaire</td>
+    <td>Pièce jointe relative à l’évaluation.</td>
+  </tr>
+  <tr>
+    <td>version : [0..1] Texte</td>
+    <td>Version de la grille d’évaluation.</td>
+  </tr>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="sfe_definition_processus.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="contenu_dossier.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.0.1-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 19, 2024 13:49+0100">2024-02-19</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+
