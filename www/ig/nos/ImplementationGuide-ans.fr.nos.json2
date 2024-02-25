@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>NOS</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos</pre><div><p>Les nomenclatures des objets de Sante</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
-  "version" : "1.1.0",
+  "version" : "1.2.0",
   "name" : "NOS",
   "title" : "Nomenclatures des objets de santé (NOS)",
   "status" : "active",
-  "date" : "2023-03",
+  "date" : "2024-02",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -321,7 +321,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -877,16 +877,6 @@
         "reference" : "ValueSet/JDV-J119-TypeActiviteLiberale-ENREG"
       },
       "description" : "Type d'activité libérale pour ENREG"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/JDV-J12-CiviliteTitre-CISIS"
-      },
-      "description" : "Titre civilité - CI-SIS"
     },
     {
       "extension" : [{
@@ -2104,6 +2094,16 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/JDV-J238-TypeOffre-ROR"
+      },
+      "description" : "Prestations que peut réaliser une structure et qui permettent de répondre au besoin de santé d'une personne"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/JDV-J239-SpecialitesSNP-SAS"
       },
       "description" : "Professions de santé participant au Service d'Accès aux Soins"
@@ -2237,6 +2237,56 @@
         "reference" : "ValueSet/JDV-J253-StatutPersonnePriseChargeUnite"
       },
       "description" : "Statut de la personne prise en charge au sein d'une unité"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J254-CategorieEtablissementESSMSPH"
+      },
+      "description" : "Liste les catégories d’établissements ESSMS (Etablissement ou Service Social ou Médico-Social) pour les personnes porteurs d’handicap"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J255-SurspecialiteTransversale-RPPS"
+      },
+      "description" : "Surspécialité (compétence) acquise par l'interne à l'issue d'une Formation Spécialisée Transversale (FST)"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J256-Pays"
+      },
+      "description" : "Tous les codes actifs de la nomenclature du COG INSEE pays auquel on ajoute le code applicatif \"non renseigné\""
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J257-Region"
+      },
+      "description" : "Tous les codes actifs des régions et collectivités d'outre-mer actives + Monaco du COG INSEE"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J258-Departement"
+      },
+      "description" : "Tous les codes actifs des départements et collectivités d'outre-mer actives + Monaco du COG INSEE"
     },
     {
       "extension" : [{
@@ -3156,7 +3206,7 @@
       "reference" : {
         "reference" : "CodeSystem/TRE-G09-DepartementOM"
       },
-      "description" : "Département (outre-mer et Monaco inclus)"
+      "description" : "Référentiel des codes départements et collectivités d’outre-mer provenant du COG INSEE + Monaco"
     },
     {
       "extension" : [{
@@ -4416,7 +4466,7 @@
       "reference" : {
         "reference" : "CodeSystem/TRE-R30-RegionOM"
       },
-      "description" : "Région (outre-mer et Monaco inclus)"
+      "description" : "Référentiel des codes régions et collectivités d'outre-mer provenant du COG INSEE + Monaco"
     },
     {
       "extension" : [{
@@ -4557,16 +4607,6 @@
         "reference" : "CodeSystem/TRE-R312-LPP"
       },
       "description" : "Liste des produits et prestations remboursables par l'Assurance Maladie"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/TRE-R313-CISP2"
-      },
-      "description" : "International Classification of Primary Care (ICPC), second edition Classification internationale des soins primaires version 2"
     },
     {
       "extension" : [{
