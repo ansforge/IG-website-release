@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ECLAIRE</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire</pre><div><p>Implementation Guide pour définir l'API FHIR pour ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
   fhir:name [ fhir:v "ECLAIRE"] ; # 
   fhir:title [ fhir:v "Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-10-24T08:19:05+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-26T13:35:44+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -49,6 +49,18 @@
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
      fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -287,7 +299,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -577,11 +589,47 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-group-characteristic-kind-code-system> ;
+         fhir:reference [ fhir:v "CodeSystem/eclaire-group-characteristic-kind-code-system" ]
+       ] ;
+       fhir:name [ fhir:v "Codes pour le type de caractéristique du groupe" ] ;
+       fhir:description [ fhir:v "Codes pour le type de caractéristique du groupe de l'étude" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-party-organization-type-code-system> ;
+         fhir:reference [ fhir:v "CodeSystem/eclaire-study-party-organization-type-code-system" ]
+       ] ;
+       fhir:name [ fhir:v "Définition des différents types d'organisation des parties prenantes inspiré de http://hl7.org/fhir/research-study-party-organization-type" ] ;
+       fhir:description [ fhir:v "Différents rôles des parties impliquées dans l'essai" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-phase-source-code-system> ;
          fhir:reference [ fhir:v "CodeSystem/eclaire-study-phase-source-code-system" ]
        ] ;
        fhir:name [ fhir:v "Définition des phase de l'essai utilisés dans la base de données ECLAIRE" ] ;
        fhir:description [ fhir:v "Définition des phases de l'essai utilisées dans la base de données ECLAIRE" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-study-party-role-code-system> ;
+         fhir:reference [ fhir:v "CodeSystem/eclaire-study-party-role-code-system" ]
+       ] ;
+       fhir:name [ fhir:v "Définition des rôles des parties prenantes inspiré de http://hl7.org/fhir/research-study-party-role" ] ;
+       fhir:description [ fhir:v "Différents rôles des parties impliqué dans l'essai" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -630,6 +678,42 @@
        ] ;
        fhir:name [ fhir:v "Eclaire" ] ;
        fhir:description [ fhir:v "Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-approval-date> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-approval-date" ]
+       ] ;
+       fhir:name [ fhir:v "ECLAIREApprovalDate" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout la date d'approbation du comité éthique" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-arm-intervention> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-arm-intervention" ]
+       ] ;
+       fhir:name [ fhir:v "ECLAIREArmIntervention" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet ECLAIRE pour indiquer les 'Interventions' dans les cohortes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-associated-party-r5> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-associated-party-r5" ]
+       ] ;
+       fhir:name [ fhir:v "ECLAIREassociatedPartyR5" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE, afin de permettre l'ajout des Sponsors, collaborateurs et autres parties concernés par l'essai. Cette extension implemente l’élément associatedParty de R5 http://hl7.org/fhir/R5/researchstudy-definitions.html#ResearchStudy.associatedParty" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -697,11 +781,11 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-label> ;
-         fhir:reference [ fhir:v "StructureDefinition/eclaire-label" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-label-r5> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-label-r5" ]
        ] ;
-       fhir:name [ fhir:v "ECLAIRELabel" ] ;
-       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de plusieurs titres pour l'essai" ] ;
+       fhir:name [ fhir:v "ECLAIRELabelR5" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de plusieurs titres pour l'essai. Cette extension implemente l'élément label de R5 https://hl7.org/fhir/researchstudy-definitions.html#ResearchStudy.label ." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -721,11 +805,35 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-outcome-measure-r5> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-outcome-measure-r5" ]
+       ] ;
+       fhir:name [ fhir:v "ECLAIREoutcomeMeasureR5" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE, afin de permettre l'ajout des conséquences principales et secondaires de l'essai. Cette extension implemente l’élément outcomeMeasure de R5 http://hl7.org/fhir/R5/researchstudy-definitions.html#ResearchStudy.outcomeMeasure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-recruitment-period> ;
          fhir:reference [ fhir:v "StructureDefinition/eclaire-recruitment-period" ]
        ] ;
        fhir:name [ fhir:v "ECLAIRERecruitmentPeriod" ] ;
        fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de la période prévisionnelle de recrutement l'essai" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-recruitment-status> ;
+         fhir:reference [ fhir:v "StructureDefinition/eclaire-recruitment-status" ]
+       ] ;
+       fhir:name [ fhir:v "ECLAIRERecruitmentStatus" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du projet ECLAIRE pour indiquer le statut du recrutement" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -750,18 +858,6 @@
        ] ;
        fhir:name [ fhir:v "ECLAIREReviewDate" ] ;
        fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout d'une date de révision fonctionnelle lorque que l'on souhaite indiquer la date de la dernière modification substancielle" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/StructureDefinition/eclaire-secondary-sponsor> ;
-         fhir:reference [ fhir:v "StructureDefinition/eclaire-secondary-sponsor" ]
-       ] ;
-       fhir:name [ fhir:v "ECLAIRESecondarySponsor" ] ;
-       fhir:description [ fhir:v "Extension créée dans le cadre du projet API ECLAIRE afin de pouvoir renseigner le(s) promoteur(s) secondaire(s)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -853,6 +949,30 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/CodeSystem/eclaire-status-recruitment-code-system> ;
+         fhir:reference [ fhir:v "CodeSystem/eclaire-status-recruitment-code-system" ]
+       ] ;
+       fhir:name [ fhir:v "Statut de recrutement" ] ;
+       fhir:description [ fhir:v "Les différents statuts de recrutement pour les essais cliniques" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet/eclaire-status-recruitment-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eclaire-status-recruitment-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Statut de recrutement Value Set" ] ;
+       fhir:description [ fhir:v "Les différents statuts de recrutement pour les essais cliniques Value Set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -861,6 +981,30 @@
        ] ;
        fhir:name [ fhir:v "Type Contact Value Set" ] ;
        fhir:description [ fhir:v "Type de contact pour les essais cliniques Value Set." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet/eclaire-group-characteristic-kind-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eclaire-group-characteristic-kind-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Type de caractéristique Value Set" ] ;
+       fhir:description [ fhir:v "Value Set du type de caractéristique pour le groupe de la population." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet/eclaire-study-outcome-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eclaire-study-outcome-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Type de conséquence Value Set" ] ;
+       fhir:description [ fhir:v "Type de conséquence Value Set" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -897,6 +1041,30 @@
        ] ;
        fhir:name [ fhir:v "Value Set de la phase de l'essai tel que définie dans la base ECLAIRE" ] ;
        fhir:description [ fhir:v "Value Set de la phase de l'essai clinique tel qu'il est défini dans la base ECLAIRE" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet/eclaire-study-party-role-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eclaire-study-party-role-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Value Set Eclaire pour les différents rôles des parties impliquées dans l'essai" ] ;
+       fhir:description [ fhir:v "Value Set Eclaire pour les différents rôles des parties impliquées dans l'essai cliniques (sponsor, collaborateur, etc)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/eclaire/ValueSet/eclaire-study-party-organization-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eclaire-study-party-organization-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Value Set Eclaire pour les types de parties" ] ;
+       fhir:description [ fhir:v "Value Set Eclaire pour les types de parties impliquées dans l'essai." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

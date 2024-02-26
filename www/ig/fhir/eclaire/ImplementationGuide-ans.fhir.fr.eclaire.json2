@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ECLAIRE</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire</pre><div><p>Implementation Guide pour définir l'API FHIR pour ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire",
-  "version" : "0.2.0",
+  "version" : "0.3.0",
   "name" : "ECLAIRE",
   "title" : "Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème",
   "status" : "draft",
-  "date" : "2023-10-24T08:19:05+00:00",
+  "date" : "2024-02-26T13:35:44+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -39,6 +39,16 @@
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
     "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
   }],
   "definition" : {
     "extension" : [{
@@ -329,7 +339,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -671,10 +681,46 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/eclaire-group-characteristic-kind-code-system"
+      },
+      "name" : "Codes pour le type de caractéristique du groupe",
+      "description" : "Codes pour le type de caractéristique du groupe de l'étude",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-study-party-organization-type-code-system"
+      },
+      "name" : "Définition des différents types d'organisation des parties prenantes inspiré de http://hl7.org/fhir/research-study-party-organization-type",
+      "description" : "Différents rôles des parties impliquées dans l'essai",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/eclaire-study-phase-source-code-system"
       },
       "name" : "Définition des phase de l'essai utilisés dans la base de données ECLAIRE",
       "description" : "Définition des phases de l'essai utilisées dans la base de données ECLAIRE",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-study-party-role-code-system"
+      },
+      "name" : "Définition des rôles des parties prenantes inspiré de http://hl7.org/fhir/research-study-party-role",
+      "description" : "Différents rôles des parties impliqué dans l'essai",
       "exampleBoolean" : false
     },
     {
@@ -723,6 +769,42 @@
       },
       "name" : "Eclaire",
       "description" : "Système ECLAIRE (Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-approval-date"
+      },
+      "name" : "ECLAIREApprovalDate",
+      "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout la date d'approbation du comité éthique",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-arm-intervention"
+      },
+      "name" : "ECLAIREArmIntervention",
+      "description" : "Extension créée dans le cadre du projet ECLAIRE pour indiquer les 'Interventions' dans les cohortes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-associated-party-r5"
+      },
+      "name" : "ECLAIREassociatedPartyR5",
+      "description" : "Extension créée dans le cadre du projet API ECLAIRE, afin de permettre l'ajout des Sponsors, collaborateurs et autres parties concernés par l'essai. Cette extension implemente l’élément associatedParty de R5 http://hl7.org/fhir/R5/researchstudy-definitions.html#ResearchStudy.associatedParty",
       "exampleBoolean" : false
     },
     {
@@ -791,10 +873,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/eclaire-label"
+        "reference" : "StructureDefinition/eclaire-label-r5"
       },
-      "name" : "ECLAIRELabel",
-      "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de plusieurs titres pour l'essai",
+      "name" : "ECLAIRELabelR5",
+      "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de plusieurs titres pour l'essai. Cette extension implemente l'élément label de R5 https://hl7.org/fhir/researchstudy-definitions.html#ResearchStudy.label .",
       "exampleBoolean" : false
     },
     {
@@ -815,10 +897,34 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/eclaire-outcome-measure-r5"
+      },
+      "name" : "ECLAIREoutcomeMeasureR5",
+      "description" : "Extension créée dans le cadre du projet API ECLAIRE, afin de permettre l'ajout des conséquences principales et secondaires de l'essai. Cette extension implemente l’élément outcomeMeasure de R5 http://hl7.org/fhir/R5/researchstudy-definitions.html#ResearchStudy.outcomeMeasure",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/eclaire-recruitment-period"
       },
       "name" : "ECLAIRERecruitmentPeriod",
       "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout de la période prévisionnelle de recrutement l'essai",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eclaire-recruitment-status"
+      },
+      "name" : "ECLAIRERecruitmentStatus",
+      "description" : "Extension créée dans le cadre du projet ECLAIRE pour indiquer le statut du recrutement",
       "exampleBoolean" : false
     },
     {
@@ -843,18 +949,6 @@
       },
       "name" : "ECLAIREReviewDate",
       "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de permettre l'ajout d'une date de révision fonctionnelle lorque que l'on souhaite indiquer la date de la dernière modification substancielle",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/eclaire-secondary-sponsor"
-      },
-      "name" : "ECLAIRESecondarySponsor",
-      "description" : "Extension créée dans le cadre du projet API ECLAIRE afin de pouvoir renseigner le(s) promoteur(s) secondaire(s)",
       "exampleBoolean" : false
     },
     {
@@ -944,6 +1038,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eclaire-status-recruitment-code-system"
+      },
+      "name" : "Statut de recrutement",
+      "description" : "Les différents statuts de recrutement pour les essais cliniques",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-status-recruitment-vs"
+      },
+      "name" : "Statut de recrutement Value Set",
+      "description" : "Les différents statuts de recrutement pour les essais cliniques Value Set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -951,6 +1069,30 @@
       },
       "name" : "Type Contact Value Set",
       "description" : "Type de contact pour les essais cliniques Value Set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-group-characteristic-kind-vs"
+      },
+      "name" : "Type de caractéristique Value Set",
+      "description" : "Value Set du type de caractéristique pour le groupe de la population.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-study-outcome-type-vs"
+      },
+      "name" : "Type de conséquence Value Set",
+      "description" : "Type de conséquence Value Set",
       "exampleBoolean" : false
     },
     {
@@ -987,6 +1129,30 @@
       },
       "name" : "Value Set de la phase de l'essai tel que définie dans la base ECLAIRE",
       "description" : "Value Set de la phase de l'essai clinique tel qu'il est défini dans la base ECLAIRE",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-study-party-role-vs"
+      },
+      "name" : "Value Set Eclaire pour les différents rôles des parties impliquées dans l'essai",
+      "description" : "Value Set Eclaire pour les différents rôles des parties impliquées dans l'essai cliniques (sponsor, collaborateur, etc).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eclaire-study-party-organization-type-vs"
+      },
+      "name" : "Value Set Eclaire pour les types de parties",
+      "description" : "Value Set Eclaire pour les types de parties impliquées dans l'essai.",
       "exampleBoolean" : false
     },
     {

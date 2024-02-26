@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Accueil - Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème v0.2.0</title>
+    <title>Accueil - Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème v0.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -56,7 +56,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - trial-use
+            <span style="display:inline-block;">0.3.0 - trial-use
 
 
 
@@ -179,7 +179,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.2.0: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Implementation Guide FHIR pour le projet ECLAIRE, base de données qui recense les essais cliniques en France (v0.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/eclaire/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Accueil</h2>
   
 
@@ -194,7 +194,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire<button data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire" title="Click to copy URL" class="btn-copy"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.0<button data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire|0.2.0" title="Click to copy versioned URL" class="btn-copy"/></span>
+      <span class="copy-text">0.3.0<button data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/eclaire/ImplementationGuide/ans.fhir.fr.eclaire|0.3.0" title="Click to copy versioned URL" class="btn-copy"/></span>
       </td>
     </tr>
 
@@ -210,7 +210,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2023-10-24
+            as of 2024-02-26
           
         
       </td>
@@ -240,10 +240,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#flux" id="markdown-toc-flux">Flux</a></li>
   <li><a href="#ressources-fhir" id="markdown-toc-ressources-fhir">Ressources FHIR</a></li>
   <li><a href="#swagger-api-fhir-eclaire" id="markdown-toc-swagger-api-fhir-eclaire">Swagger API FHIR ECLAIRE</a></li>
+  <li><a href="#dépendances" id="markdown-toc-dépendances">Dépendances</a></li>
 </ul>
 
 </div>
-<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; max-width: 790px">
+<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
 <b>Brief description of this Implementation Guide</b><br/>
 As part of the "Innovation santé 2030" plan, a new information system is going to be created to list clinical trials in France. The aim is to provide the general public with access to all authorized clinical trials, whether ongoing or planned, in order to help recruitment and promote awareness of clinical trials. For more information, click <a href="https://esante.gouv.fr/espace-presse/mise-en-oeuvre-dune-base-nationale-des-essais-cliniques">here</a>. The aim of this implementation guide is to define the specifications of the REST API (FHIR), enabling to query the database listing clinical trials.
 </p>
@@ -272,7 +273,7 @@ Elle doit permettre, à terme, de :</p>
 <p>Pour plus d’information consultez : <a href="https://esante.gouv.fr/espace-presse/mise-en-oeuvre-dune-base-nationale-des-essais-cliniques">le communiqué de presse “Mise en œuvre d’une base nationale des essais clinique”</a>.</p>
 
 <h3 id="flux">Flux</h3>
-<p><a name="l448">​</a>Un flux est un échange entre deux systèmes. Des flux ont été identifiés lors d’études métiers et définis, avec partage de ressources FHIR. Pour en savoir davantage, rendez-vous sur la page  <a href="construction_des_flux.html">construction des flux</a>.</p>
+<p><a name="l452">​</a>Un flux est un échange entre deux systèmes. Des flux ont été identifiés lors d’études métiers et définis, avec partage de ressources FHIR. Pour en savoir davantage, rendez-vous sur la page  <a href="construction_des_flux.html">construction des flux</a>.</p>
 
 <table>
   <thead>
@@ -305,14 +306,23 @@ Elle doit permettre, à terme, de :</p>
   <li>Les informations sur l’effectif à recruter et les critères d’inclusion et d’exclusion grâce à la ressource <a href="https://hl7.org/fhir/R4/group.html">Group</a></li>
 </ul>
 
-<p style="text-align:center">
-<object data="vueGlobale.svg" type="image/svg+xml"></object>
-</p>
+<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 364 213" zoomAndPan="magnify" preserveAspectRatio="none" width="364px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:364px;height:213px;background:#FFFFFF;" version="1.1" height="213px"><defs/><g>  <!-- cluster EssaiClinique --><g id="cluster_EssaiClinique"><rect rx="2.5" ry="2.5" width="351" x="7" y="7" style="stroke:#181818;stroke-width:1.0;" fill="none" height="200"/><text font-weight="bold" lengthAdjust="spacing" x="131" font-size="14" textLength="103" y="21.9951" font-family="sans-serif" fill="#000000">EssaiClinique</text></g>  <!-- entity ResearchStudy --><g id="elem_ResearchStudy"><rect rx="2.5" ry="2.5" width="125" x="141.5" y="42" style="stroke:#0000FF;stroke-width:2.0;" fill="#87CEFA" height="36.2969"/><text lengthAdjust="spacing" x="151.5" font-size="14" textLength="105" y="64.9951" font-family="sans-serif" fill="#000000">ResearchStudy</text></g>  <!-- entity Organization --><g id="elem_Organization"><rect rx="2.5" ry="2.5" width="107" x="22.5" y="155" style="stroke:#FFD700;stroke-width:0.5;" fill="#FFD700" height="36.2969"/><text lengthAdjust="spacing" x="32.5" font-size="14" textLength="87" y="177.9951" font-family="sans-serif" fill="#000000">Organization</text></g>  <!-- entity Location --><g id="elem_Location"><rect rx="2.5" ry="2.5" width="78" x="165" y="155" style="stroke:#EE82EE;stroke-width:0.5;" fill="#EE82EE" height="36.2969"/><text lengthAdjust="spacing" x="175" font-size="14" textLength="58" y="177.9951" font-family="sans-serif" fill="#000000">Location</text></g>  <!-- entity Group --><g id="elem_Group"><rect rx="2.5" ry="2.5" width="63" x="278.5" y="155" style="stroke:#FFFFFF;stroke-width:0.5;" fill="#90EE90" height="36.2969"/><text lengthAdjust="spacing" x="288.5" font-size="14" textLength="43" y="177.9951" font-family="sans-serif" fill="#000000">Group</text></g>  <!-- link ResearchStudy to Group --><g id="link_ResearchStudy_Group"><path d="M220.56,78.34 C239.31,97.98 269.85,129.95 289.93,150.98 " style="stroke:#90EE90;stroke-width:4.0;stroke-dasharray:7.0,7.0;" id="ResearchStudy-to-Group" fill="none"/><polygon style="stroke:#90EE90;stroke-width:4.0;" fill="#90EE90" points="293.55,154.78,290.2378,145.5048,290.101,151.16,284.4458,151.0232,293.55,154.78"/><text lengthAdjust="spacing" x="264" font-size="13" textLength="69" y="121.0669" font-family="sans-serif" fill="#000000">enrollment</text></g>  <!-- link ResearchStudy to Location --><g id="link_ResearchStudy_Location"><path d="M203.08,78.4 C202.66,87.26 202.21,98.2 202,108 C201.7,121.91 202.18,137.51 202.73,149.83 " style="stroke:#EE82EE;stroke-width:4.0;stroke-dasharray:7.0,7.0;" id="ResearchStudy-to-Location" fill="none"/><polygon style="stroke:#EE82EE;stroke-width:4.0;" fill="#EE82EE" points="202.98,154.89,206.5387,145.7065,202.7374,149.8959,198.5481,146.0947,202.98,154.89"/><text lengthAdjust="spacing" x="203" font-size="13" textLength="23" y="121.0669" font-family="sans-serif" fill="#000000">site</text></g>  <!-- link ResearchStudy to Organization --><g id="link_ResearchStudy_Organization"><path d="M179.02,78.01 C166.9,86.59 152.34,97.4 140,108 C124.23,121.54 107.66,138.18 95.34,151.1 " style="stroke:#FFD700;stroke-width:4.0;stroke-dasharray:7.0,7.0;" id="ResearchStudy-to-Organization" fill="none"/><polygon style="stroke:#FFD700;stroke-width:4.0;" fill="#FFD700" points="91.65,154.98,100.7464,151.2044,95.0915,151.3529,94.943,145.698,91.65,154.98"/><text lengthAdjust="spacing" x="141" font-size="13" textLength="51" y="121.0669" font-family="sans-serif" fill="#000000">sponsor</text></g></g></svg></div>
 
 <h3 id="swagger-api-fhir-eclaire">Swagger API FHIR ECLAIRE</h3>
 
 <p>Le Swagger de l’API FHIR ECLAIRE est accesible ici:
 <a href="https://eclaire-api.osc-fr1.scalingo.io/api">Swagger API FHIR</a></p>
+
+<h3 id="dépendances">Dépendances</h3>
+
+<div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Implementation Guide Reference">IG</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Explains why this dependency exists">Comment</span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.eclaire#0.3.0-milestone/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> <span title="Canonical: https://interop.esante.gouv.fr/ig/fhir/eclaire">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/ans.fhir.fr.eclaire/0.3.0">ans.fhir.fr.eclaire#0.3.0</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.eclaire#0.3.0-milestone/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> <a href="http://terminology.hl7.org/5.3.0" title="Canonical: http://terminology.hl7.org">HL7 Terminology (THO)</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/hl7.terminology.r4/5.3.0">hl7.terminology.r4#5.3.0</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Automatically added as a dependency - all IGs depend on HL7 Terminology</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.eclaire#0.3.0-milestone/temp/pagesdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> <a href="http://hl7.org/fhir/extensions/1.0.0" title="Canonical: http://hl7.org/fhir/extensions">FHIR Extensions Pack</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/1.0.0">hl7.fhir.uv.extensions.r4#1.0.0</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Automatically added as a dependency - all IGs depend on the HL7 Extension Pack</td></tr>
+</table></div>
+<table class="grid"><tr><td><p><b>Package hl7.fhir.uv.extensions.r4#1.0.0</b></p>
+<p>This IG defines the global extensions - the ones defined for everyone. These extensions are always in scope wherever FHIR is being used (built Sun, Mar 26, 2023 08:46+1100+11:00)</p>
+</td></tr></table>
+  <!-- $$3$$ -->
 
 
 
@@ -361,7 +371,7 @@ Elle doit permettre, à terme, de :</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 24, 2023 08:19+0000">2023-10-24</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.eclaire#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 13:35+0000">2024-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
