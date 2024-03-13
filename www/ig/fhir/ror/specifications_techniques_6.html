@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mise à jour d&#39;anomalie - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.2.0</title>
+    <title>Mise à jour d&#39;anomalie - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -56,7 +56,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - trial-use
+            <span style="display:inline-block;">0.3.0 - trial-use
 
 
 
@@ -137,9 +137,6 @@
       <li>
         <a href="modifiers.html">Paramètres et modificateurs de requêtes FHIR</a>
       </li>
-      <li>
-        <a href="annexes.html">Annexes</a>
-      </li>
     </ul>
   </li>
   <li>
@@ -212,7 +209,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mise à jour d&#39;anomalie</h2>
   
 
@@ -307,101 +304,94 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="exemple-de-requêtes">Exemple de requêtes</h3>
 
-<h4 id="scénario-1-mise-à-jour-du-statut-de-plusieurs-anomalies-draft">Scénario 1 : Mise à jour du statut de plusieurs anomalies <code><span style="color: #ff0000;">draft</span></code></h4>
+<h4 id="scénario-1-mise-à-jour-du-statut-dune-anomalie">Scénario 1 : Mise à jour du statut d’une anomalie</h4>
 
-<p><strong>Description du scénario :</strong> le responsable de la donnée en anomalie corrige des anomalies, le responsable qualité ou le moteur de règle met à jour les statuts métier des anomalies en précisant les identifiants techniques.
-Anomalie XX au statut statutXX</p>
+<p><strong>Description du scénario :</strong> Le responsable de la donnée en anomalie corrige l’anomalie, le responsable qualité ou un système numérique met à jour le statut de l’anomalie.</p>
+
+<p><strong>Exemple :</strong> Le responsable de la donnée souhaite corriger une anomalie relevée précédemment, dont l’identifiant technique est 1309.</p>
 
 <p><strong>Requête :</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Content-Type:</span><span class="w"> </span><span class="err">application/fhir+json</span><span class="w">
-</span><span class="err">POST</span><span class="w"> </span><span class="p">[</span><span class="err">BASE</span><span class="p">]</span><span class="w">
 
+</span><span class="err">Requête</span><span class="w"> </span><span class="err">Postman</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">PATCH</span><span class="w"> </span><span class="err">https://rortest.esante.gouv.fr/anomalies/Task/</span><span class="mi">1309</span><span class="w">
+
+</span><span class="err">Body</span><span class="w"> </span><span class="err">:</span><span class="w"> 
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"transaction"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"entry"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-	    </span><span class="p">{</span><span class="w">	
-	        </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">" https://hapi.fhir.org/baseR4/Task/242612"</span><span class="p">,</span><span class="w"> </span><span class="err">#facultatif</span><span class="w">
-	        </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> 
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-			        </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-			        </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
-                        </span><span class="p">{</span><span class="w">
-				            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">,</span><span class="w">
-				            </span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
-                                </span><span class="p">{</span><span class="w">
-                                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-                                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replace"</span><span class="w">
-                                </span><span class="p">},</span><span class="w"> 
-                                </span><span class="p">{</span><span class="w">
-                                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
-                                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task.businessStatus"</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="p">{</span><span class="w">
-                                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
-                                    </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> 
-                                        </span><span class="p">{</span><span class="w">
-                                            </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                                </span><span class="p">{</span><span class="w">
-                                                    </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://zzz"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"260385009"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ND"</span><span class="w">
-                                                </span><span class="p">}</span><span class="w">
-                                            </span><span class="p">]</span><span class="w">
-                                        </span><span class="p">}</span><span class="w">
-                                </span><span class="p">}</span><span class="w">
-						    </span><span class="p">]</span><span class="w">
-				        </span><span class="p">}</span><span class="w">		
-					</span><span class="p">]</span><span class="w">
-			    </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> 
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replace"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATCH"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">" https://hapi.fhir.org/baseR4/Task/242612"</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task.businessStatus"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mos.esante.gouv.fr/NOS/TRE_R352-StatutMetierAnomalie/FHIR/TRE-R352-StatutMetierAnomalie"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corrigé"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
-		</span><span class="p">}</span><span class="w">				
-	</span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div></div>
 
 <h4 id="scénario-2-inactivation-dune-anomalie">Scénario 2 : Inactivation d’une anomalie</h4>
 
-<p><strong>Description du scénario :</strong> un responsable qualité décide d’inactiver une anomalie dont l’identifiant technique = XXX (elle a été saisie par erreur par exemple) en mettant à jour son statut métier à YYY.</p>
+<p><strong>Description du scénario :</strong> Un responsable qualité ou un système numérique décide d’inactiver une anomalie (elle a été saisie par erreur par exemple).</p>
+
+<p><strong>Exemple :</strong> Le déclarant de l’anomalie souhaite annuler l’anomalie en question dont l’identifiant technique est 1310.</p>
 
 <p><strong>Requête :</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Content-Type:</span><span class="w"> </span><span class="err">application/fhir+json</span><span class="w">
-</span><span class="err">PATCH</span><span class="w"> </span><span class="p">[</span><span class="err">BASE</span><span class="p">]</span><span class="err">/Task/XXX</span><span class="w">
-</span><span class="p">{</span><span class="w">
-</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-	</span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
-	</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">,</span><span class="w">
-	</span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replace"</span><span class="w">
-	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task.businessStatus"</span><span class="w">
-	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> 
-		</span><span class="p">{</span><span class="w">
-			</span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-			</span><span class="p">{</span><span class="w">
-				</span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://zzz"</span><span class="p">,</span><span class="w">
-				</span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"260385009"</span><span class="p">,</span><span class="w">
-				</span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ND"</span><span class="w">
-				</span><span class="p">}</span><span class="w">	</span><span class="p">],</span><span class="w">
-				</span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tetet"</span><span class="w">
-		</span><span class="p">}</span><span class="w">
-		</span><span class="p">}</span><span class="w">
-			</span><span class="p">]</span><span class="w">
-				</span><span class="p">}</span><span class="w">
-				</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
 
+</span><span class="err">PRequête</span><span class="w"> </span><span class="err">Postman</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">PATCH</span><span class="w"> </span><span class="err">https://rortest.esante.gouv.fr/anomalies/Task/</span><span class="mi">1310</span><span class="w">
+
+</span><span class="err">Body</span><span class="w"> </span><span class="err">:</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"replace"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task.businessStatus"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mos.esante.gouv.fr/NOS/TRE_R352-StatutMetierAnomalie/FHIR/TRE-R352-StatutMetierAnomalie"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corrigé"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 
@@ -450,7 +440,7 @@ Anomalie XX au statut statutXX</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 12, 2024 08:51+0000">2024-01-12</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 13, 2024 09:14+0000">2024-03-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

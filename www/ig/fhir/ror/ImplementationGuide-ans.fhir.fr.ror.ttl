@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ROR</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.0"] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
   fhir:name [ fhir:v "ROR"] ; # 
   fhir:title [ fhir:v "Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-01-12T08:51:34+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-13T09:14:58+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -582,14 +582,26 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/as-ext-lieu-dit> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-ext-lieu-dit" ]
+       ] ;
+       fhir:name [ fhir:v "AsLieuDit" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre du ROR pour indiquer le lieu dit" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/CodeSystem/ror-include-associated-data-code-system> ;
          fhir:reference [ fhir:v "CodeSystem/ror-include-associated-data-code-system" ]
        ] ;
-       fhir:name [ fhir:v "Définition des type de phase de l'essai cliniques incluant https://hl7.org/fhir/R4/valueset-research-study-phase.html" ] ;
-       fhir:description [ fhir:v "type de phase de l'essai clinique" ] ;
+       fhir:name [ fhir:v "Code System (CS) utilisé pour étendre le CS original avec le query parameter includeAssociatedData" ] ;
+       fhir:description [ fhir:v "Code system pour étendre https://hl7.org/fhir/uv/bulkdata/CodeSystem-include-associated-data.html pour ajouter l'opération export pour le ROR" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -636,7 +648,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/ror-consommateur" ]
        ] ;
        fhir:name [ fhir:v "ROR-Consommateur" ] ;
-       fhir:description [ fhir:v "Système qui est autorisé à consommer les données du ROR." ] ;
+       fhir:description [ fhir:v "Capability Statement pour les systèmes qui sont autorisés à consommer les données du ROR. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -648,7 +660,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/ror-serveur" ]
        ] ;
        fhir:name [ fhir:v "ROR-Serveur" ] ;
-       fhir:description [ fhir:v "Système ROR National : Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national." ] ;
+       fhir:description [ fhir:v "Capability Statement pour le Système ROR National. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1715,7 +1727,7 @@
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/ror-include-associated-data-vs> ;
          fhir:reference [ fhir:v "ValueSet/ror-include-associated-data-vs" ]
        ] ;
-       fhir:name [ fhir:v "Value Set pou étendre le Value Set pour query parameter includeAssociatedData" ] ;
+       fhir:name [ fhir:v "Value Set afin d'étendre le Value Set pour query parameter includeAssociatedData" ] ;
        fhir:description [ fhir:v "Value Set pour étendre http://hl7.org/fhir/uv/bulkdata/ValueSet/include-associated-data et utiliser _[custom value] pour utiliser le query parameter includeAssociatedData" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -1858,14 +1870,6 @@
          ] ) ;
          fhir:name [ fhir:v "modifiers.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Paramètres et modificateurs de requêtes FHIR" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "annexes.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "annexes.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Annexes" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

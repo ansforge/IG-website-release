@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"/>
-  <version value="0.2.0"/>
+  <version value="0.3.0"/>
   <name value="ROR"/>
   <title value="Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social"/>
   <status value="active"/>
-  <date value="2024-01-12T08:51:34+00:00"/>
+  <date value="2024-03-13T09:14:58+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -500,13 +500,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-lieu-dit"/>
+      </reference>
+      <name value="AsLieuDit"/>
+      <description value="Extension créée dans le cadre du ROR pour indiquer le lieu dit"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
         <reference value="CodeSystem/ror-include-associated-data-code-system"/>
       </reference>
-      <name value="Définition des type de phase de l'essai cliniques incluant https://hl7.org/fhir/R4/valueset-research-study-phase.html"/>
-      <description value="type de phase de l'essai clinique"/>
+      <name value="Code System (CS) utilisé pour étendre le CS original avec le query parameter includeAssociatedData"/>
+      <description value="Code system pour étendre https://hl7.org/fhir/uv/bulkdata/CodeSystem-include-associated-data.html pour ajouter l'opération export pour le ROR"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -549,7 +560,7 @@
         <reference value="CapabilityStatement/ror-consommateur"/>
       </reference>
       <name value="ROR-Consommateur"/>
-      <description value="Système qui est autorisé à consommer les données du ROR."/>
+      <description value="Capability Statement pour les systèmes qui sont autorisés à consommer les données du ROR. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -560,7 +571,7 @@
         <reference value="CapabilityStatement/ror-serveur"/>
       </reference>
       <name value="ROR-Serveur"/>
-      <description value="Système ROR National : Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national."/>
+      <description value="Capability Statement pour le Système ROR National. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1538,7 +1549,7 @@
       <reference>
         <reference value="ValueSet/ror-include-associated-data-vs"/>
       </reference>
-      <name value="Value Set pou étendre le Value Set pour query parameter includeAssociatedData"/>
+      <name value="Value Set afin d'étendre le Value Set pour query parameter includeAssociatedData"/>
       <description value="Value Set pour étendre http://hl7.org/fhir/uv/bulkdata/ValueSet/include-associated-data et utiliser _[custom value] pour utiliser le query parameter includeAssociatedData"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1678,14 +1689,6 @@
         </extension>
         <nameUrl value="modifiers.html"/>
         <title value="Paramètres et modificateurs de requêtes FHIR"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="annexes.html"/>
-        </extension>
-        <nameUrl value="annexes.html"/>
-        <title value="Annexes"/>
         <generation value="markdown"/>
       </page>
       <page>
