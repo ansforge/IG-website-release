@@ -6,14 +6,14 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>AnnuaireSante</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
-  "version" : "1.0.0-ballot-3",
+  "version" : "1.0.0-ballot-4",
   "name" : "AnnuaireSante",
   "title" : "Annuaire Santé",
   "status" : "active",
-  "date" : "2023-12-19T15:19:17+00:00",
-  "publisher" : "ANS",
+  "date" : "2024-04-02T14:41:29+00:00",
+  "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
-    "name" : "ANS",
+    "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
     "telecom" : [{
       "system" : "url",
       "value" : "https://esante.gouv.fr"
@@ -64,7 +64,7 @@
     "id" : "ans_fr_nos",
     "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
     "packageId" : "ans.fr.nos",
-    "version" : "1.1.0"
+    "version" : "1.2.0"
   }],
   "definition" : {
     "extension" : [{
@@ -355,7 +355,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -682,6 +682,42 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-intern-id-systems"
+      },
+      "name" : "AS CodeSystem Internal Identifier Systems",
+      "description" : "CodeSystem contenant les identifiants locaux",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-organization-types"
+      },
+      "name" : "AS CodeSystem OrganizationTypes",
+      "description" : "CodeSystem définissant les types d'organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/as-cs-type-systeme-information"
+      },
+      "name" : "AS CodeSystem type de système d'information",
+      "description" : "CodeSystem définissant les types de systèmes d'information pouvant alimenter l'annuaire santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -841,6 +877,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/as-dr-person"
+      },
+      "name" : "AS Donnée Restreinte Person Profile",
+      "description" : "Profil restreint créé à partir de as-person dans le contexte des données en accès restreint de l’Annuaire Santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/as-dr-practitioner"
       },
       "name" : "AS Donnée Restreinte Practitioner Profile",
@@ -910,13 +958,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/as-ext-lieu-dit"
+      },
+      "name" : "AS Lieu Dit Extension",
+      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour indiquer le lieu dit",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/as-location"
       },
       "name" : "AS Location Profile",
-      "description" : "Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
+      "description" : "Profil générique créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile.",
       "exampleBoolean" : false
     },
     {
@@ -1021,6 +1081,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/as-ext-organization-types"
+      },
+      "name" : "AS Organization Types",
+      "description" : "Extension pour discriminer les organization types.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/as-ext-patient-type"
       },
       "name" : "AS Patient Type Extension",
@@ -1117,18 +1189,6 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/as-ext-practitionerrole-end-cause"
-      },
-      "name" : "AS PractitionerRole End Cause Extension",
-      "description" : "Extension créée dans le cadre de l'Annuaire Santé pour décrire le motif de fin d'activité du professionnel (décès, retraite libérale, changement de profession par exemple.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/as-ext-practitionerrole-hascas"
       },
       "name" : "AS PractitionerRole Has CAS",
@@ -1198,6 +1258,42 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/as-vs-intern-id-systems"
+      },
+      "name" : "AS ValueSet Internal Identifier Systems",
+      "description" : "ValueSet contenant les identifiants internes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/as-vs-organization-types"
+      },
+      "name" : "AS ValueSet OrganizationTypes",
+      "description" : "ValueSet définissant les types d'organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/as-vs-type-systeme-information"
+      },
+      "name" : "AS ValueSet type de système d'information",
+      "description" : "ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
       }],
       "reference" : {
@@ -1217,6 +1313,18 @@
       },
       "name" : "as-sp-data-registration-authority",
       "description" : "Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/as-sp-insee-code"
+      },
+      "name" : "as-sp-insee-code",
+      "description" : "Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html",
       "exampleBoolean" : false
     },
     {
@@ -1261,18 +1369,6 @@
         "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "SearchParameter/as-sp-practitionerrole-name"
-      },
-      "name" : "as-sp-practitionerrole-name",
-      "description" : "Paramètre de recherche permettant de chercher le nom d'un PractitionerRole. Permet de chercher n'importe quelle chaîne de caractère dans family, give, prefix, suffix, suffix, and/or text.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
         "reference" : "SearchParameter/as-sp-type-smartcard"
       },
       "name" : "as-sp-type-smartcard",
@@ -1285,21 +1381,9 @@
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/AsClientCapabilityStatement"
+        "reference" : "CapabilityStatement/AsServerCapabilityStatement"
       },
-      "name" : "AsClientCapabilityStatement",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/as-cs-intern-id-systems"
-      },
-      "name" : "Internal Id Systems",
-      "description" : "Systèmes des identifiants locaux",
+      "name" : "AsServerCapabilityStatement",
       "exampleBoolean" : false
     },
     {
@@ -1308,10 +1392,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/as-vs-intern-id-systems"
+        "reference" : "ValueSet/VS-TRE-R286-TypeFermeture"
       },
-      "name" : "Internal Id Systems VS",
-      "description" : "Systèmes des identifiants internes",
+      "name" : "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture",
+      "description" : "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture",
       "exampleBoolean" : false
     },
     {
@@ -1320,22 +1404,22 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/type-systeme-information-vs"
+        "reference" : "ValueSet/VS-TRE-R301-SourceInformationInstallation"
       },
-      "name" : "Type de système d'information",
-      "description" : "Type de système d'information pouvant alimenter l'annuaire santé.",
+      "name" : "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation",
+      "description" : "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
+        "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "CodeSystem/type-systeme-information-cs"
+        "reference" : "ValueSet/VS-TRE-R74-ModeFixationTarifaire"
       },
-      "name" : "Type de système d'information",
-      "description" : "Type de système d'information pouvant alimenter l'annuaire santé.",
+      "name" : "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire",
+      "description" : "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire",
       "exampleBoolean" : false
     }],
     "page" : {
@@ -1367,10 +1451,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "mapping.html"
+          "valueUrl" : "downloads.html"
         }],
-        "nameUrl" : "mapping.html",
-        "title" : "Mappings MOS",
+        "nameUrl" : "downloads.html",
+        "title" : "Téléchargement du guide",
         "generation" : "markdown"
       }]
     },

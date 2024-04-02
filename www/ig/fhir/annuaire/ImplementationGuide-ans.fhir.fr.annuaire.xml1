@@ -7,14 +7,14 @@
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/>
-  <version value="1.0.0-ballot-3"/>
+  <version value="1.0.0-ballot-4"/>
   <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
   <status value="active"/>
-  <date value="2023-12-19T15:19:17+00:00"/>
-  <publisher value="ANS"/>
+  <date value="2024-04-02T14:41:29+00:00"/>
+  <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
-    <name value="ANS"/>
+    <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
     <telecom>
       <system value="url"/>
       <value value="https://esante.gouv.fr"/>
@@ -59,7 +59,7 @@
   <dependsOn id="ans_fr_nos">
     <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
     <packageId value="ans.fr.nos"/>
-    <version value="1.1.0"/>
+    <version value="1.2.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -271,7 +271,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#current"/>
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -516,6 +516,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/as-cs-intern-id-systems"/>
+      </reference>
+      <name value="AS CodeSystem Internal Identifier Systems"/>
+      <description value="CodeSystem contenant les identifiants locaux"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/as-cs-organization-types"/>
+      </reference>
+      <name value="AS CodeSystem OrganizationTypes"/>
+      <description value="CodeSystem définissant les types d'organisation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/as-cs-type-systeme-information"/>
+      </reference>
+      <name value="AS CodeSystem type de système d'information"/>
+      <description value="CodeSystem définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -662,6 +695,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/as-dr-person"/>
+      </reference>
+      <name value="AS Donnée Restreinte Person Profile"/>
+      <description value="Profil restreint créé à partir de as-person dans le contexte des données en accès restreint de l’Annuaire Santé."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/as-dr-practitioner"/>
       </reference>
       <name value="AS Donnée Restreinte Practitioner Profile"/>
@@ -725,13 +769,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-lieu-dit"/>
+      </reference>
+      <name value="AS Lieu Dit Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour indiquer le lieu dit"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/as-location"/>
       </reference>
       <name value="AS Location Profile"/>
-      <description value="Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile."/>
+      <description value="Profil générique créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -827,6 +882,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/as-ext-organization-types"/>
+      </reference>
+      <name value="AS Organization Types"/>
+      <description value="Extension pour discriminer les organization types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/as-ext-patient-type"/>
       </reference>
       <name value="AS Patient Type Extension"/>
@@ -915,17 +981,6 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/as-ext-practitionerrole-end-cause"/>
-      </reference>
-      <name value="AS PractitionerRole End Cause Extension"/>
-      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire le motif de fin d'activité du professionnel (décès, retraite libérale, changement de profession par exemple."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/as-ext-practitionerrole-hascas"/>
       </reference>
       <name value="AS PractitionerRole Has CAS"/>
@@ -989,6 +1044,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/as-vs-intern-id-systems"/>
+      </reference>
+      <name value="AS ValueSet Internal Identifier Systems"/>
+      <description value="ValueSet contenant les identifiants internes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/as-vs-organization-types"/>
+      </reference>
+      <name value="AS ValueSet OrganizationTypes"/>
+      <description value="ValueSet définissant les types d'organisation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/as-vs-type-systeme-information"/>
+      </reference>
+      <name value="AS ValueSet type de système d'information"/>
+      <description value="ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
@@ -1007,6 +1095,17 @@
       </reference>
       <name value="as-sp-data-registration-authority"/>
       <description value="Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/as-sp-insee-code"/>
+      </reference>
+      <name value="as-sp-insee-code"/>
+      <description value="Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1047,17 +1146,6 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
-        <reference value="SearchParameter/as-sp-practitionerrole-name"/>
-      </reference>
-      <name value="as-sp-practitionerrole-name"/>
-      <description value="Paramètre de recherche permettant de chercher le nom d'un PractitionerRole. Permet de chercher n'importe quelle chaîne de caractère dans family, give, prefix, suffix, suffix, and/or text."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
         <reference value="SearchParameter/as-sp-type-smartcard"/>
       </reference>
       <name value="as-sp-type-smartcard"/>
@@ -1069,20 +1157,9 @@
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
-        <reference value="CapabilityStatement/AsClientCapabilityStatement"/>
+        <reference value="CapabilityStatement/AsServerCapabilityStatement"/>
       </reference>
-      <name value="AsClientCapabilityStatement"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/as-cs-intern-id-systems"/>
-      </reference>
-      <name value="Internal Id Systems"/>
-      <description value="Systèmes des identifiants locaux"/>
+      <name value="AsServerCapabilityStatement"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1090,10 +1167,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/as-vs-intern-id-systems"/>
+        <reference value="ValueSet/VS-TRE-R286-TypeFermeture"/>
       </reference>
-      <name value="Internal Id Systems VS"/>
-      <description value="Systèmes des identifiants internes"/>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1101,21 +1178,21 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/type-systeme-information-vs"/>
+        <reference value="ValueSet/VS-TRE-R301-SourceInformationInstallation"/>
       </reference>
-      <name value="Type de système d'information"/>
-      <description value="Type de système d'information pouvant alimenter l'annuaire santé."/>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/type-systeme-information-cs"/>
+        <reference value="ValueSet/VS-TRE-R74-ModeFixationTarifaire"/>
       </reference>
-      <name value="Type de système d'information"/>
-      <description value="Type de système d'information pouvant alimenter l'annuaire santé."/>
+      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
+      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -1143,10 +1220,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="mapping.html"/>
+          <valueUrl value="downloads.html"/>
         </extension>
-        <nameUrl value="mapping.html"/>
-        <title value="Mappings MOS"/>
+        <nameUrl value="downloads.html"/>
+        <title value="Téléchargement du guide"/>
         <generation value="markdown"/>
       </page>
     </page>

@@ -13,14 +13,14 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>AnnuaireSante</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "1.0.0-ballot-3"] ; # 
+  fhir:version [ fhir:v "1.0.0-ballot-4"] ; # 
   fhir:name [ fhir:v "AnnuaireSante"] ; # 
   fhir:title [ fhir:v "Annuaire Santé"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-12-19T15:19:17+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "ANS"] ; # 
+  fhir:date [ fhir:v "2024-04-02T14:41:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "ANS" ] ;
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "https://esante.gouv.fr" ]
@@ -79,7 +79,7 @@
        fhir:link <https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos>
      ] ;
      fhir:packageId [ fhir:v "ans.fr.nos" ] ;
-     fhir:version [ fhir:v "1.1.0" ]
+     fhir:version [ fhir:v "1.2.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -318,7 +318,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -593,6 +593,42 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems> ;
+         fhir:reference [ fhir:v "CodeSystem/as-cs-intern-id-systems" ]
+       ] ;
+       fhir:name [ fhir:v "AS CodeSystem Internal Identifier Systems" ] ;
+       fhir:description [ fhir:v "CodeSystem contenant les identifiants locaux" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-organization-types> ;
+         fhir:reference [ fhir:v "CodeSystem/as-cs-organization-types" ]
+       ] ;
+       fhir:name [ fhir:v "AS CodeSystem OrganizationTypes" ] ;
+       fhir:description [ fhir:v "CodeSystem définissant les types d'organisation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-type-systeme-information> ;
+         fhir:reference [ fhir:v "CodeSystem/as-cs-type-systeme-information" ]
+       ] ;
+       fhir:name [ fhir:v "AS CodeSystem type de système d'information" ] ;
+       fhir:description [ fhir:v "CodeSystem définissant les types de systèmes d'information pouvant alimenter l'annuaire santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -752,6 +788,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-dr-person" ]
+       ] ;
+       fhir:name [ fhir:v "AS Donnée Restreinte Person Profile" ] ;
+       fhir:description [ fhir:v "Profil restreint créé à partir de as-person dans le contexte des données en accès restreint de l’Annuaire Santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner> ;
          fhir:reference [ fhir:v "StructureDefinition/as-dr-practitioner" ]
        ] ;
@@ -821,6 +869,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-lieu-dit> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-ext-lieu-dit" ]
+       ] ;
+       fhir:name [ fhir:v "AS Lieu Dit Extension" ] ;
+       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour indiquer le lieu dit" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -828,7 +888,7 @@
          fhir:reference [ fhir:v "StructureDefinition/as-location" ]
        ] ;
        fhir:name [ fhir:v "AS Location Profile" ] ;
-       fhir:description [ fhir:v "Profil cgénérique réé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile." ] ;
+       fhir:description [ fhir:v "Profil générique créé à partir de Location dans le contexte de l'Annuaire Santé pour prise en compte de l'adresse du professionnel au niveau du profil AsPractitionerRoleProfile." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -932,6 +992,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-types> ;
+         fhir:reference [ fhir:v "StructureDefinition/as-ext-organization-types" ]
+       ] ;
+       fhir:name [ fhir:v "AS Organization Types" ] ;
+       fhir:description [ fhir:v "Extension pour discriminer les organization types." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type> ;
          fhir:reference [ fhir:v "StructureDefinition/as-ext-patient-type" ]
        ] ;
@@ -1028,18 +1100,6 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-end-cause> ;
-         fhir:reference [ fhir:v "StructureDefinition/as-ext-practitionerrole-end-cause" ]
-       ] ;
-       fhir:name [ fhir:v "AS PractitionerRole End Cause Extension" ] ;
-       fhir:description [ fhir:v "Extension créée dans le cadre de l'Annuaire Santé pour décrire le motif de fin d'activité du professionnel (décès, retraite libérale, changement de profession par exemple." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-practitionerrole-hascas> ;
          fhir:reference [ fhir:v "StructureDefinition/as-ext-practitionerrole-hascas" ]
        ] ;
@@ -1109,6 +1169,42 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-intern-id-systems> ;
+         fhir:reference [ fhir:v "ValueSet/as-vs-intern-id-systems" ]
+       ] ;
+       fhir:name [ fhir:v "AS ValueSet Internal Identifier Systems" ] ;
+       fhir:description [ fhir:v "ValueSet contenant les identifiants internes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-organization-types> ;
+         fhir:reference [ fhir:v "ValueSet/as-vs-organization-types" ]
+       ] ;
+       fhir:name [ fhir:v "AS ValueSet OrganizationTypes" ] ;
+       fhir:description [ fhir:v "ValueSet définissant les types d'organisation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-type-systeme-information> ;
+         fhir:reference [ fhir:v "ValueSet/as-vs-type-systeme-information" ]
+       ] ;
+       fhir:name [ fhir:v "AS ValueSet type de système d'information" ] ;
+       fhir:description [ fhir:v "ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "SearchParameter" ]
        ] ) ;
        fhir:reference [
@@ -1129,6 +1225,18 @@
        ] ;
        fhir:name [ fhir:v "as-sp-data-registration-authority" ] ;
        fhir:description [ fhir:v "Paramètre de recherche pour récupérer une ressource par autorité d'enregistrement des données." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-insee-code> ;
+         fhir:reference [ fhir:v "SearchParameter/as-sp-insee-code" ]
+       ] ;
+       fhir:name [ fhir:v "as-sp-insee-code" ] ;
+       fhir:description [ fhir:v "Paramètre de recherche pour récupérer une organisation, par code Insee. Cf http://www.sirius-upvm.net/doc/usuels/codes_postaux.html" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1172,18 +1280,6 @@
          fhir:value [ fhir:v "SearchParameter" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-practitionerrole-name> ;
-         fhir:reference [ fhir:v "SearchParameter/as-sp-practitionerrole-name" ]
-       ] ;
-       fhir:name [ fhir:v "as-sp-practitionerrole-name" ] ;
-       fhir:description [ fhir:v "Paramètre de recherche permettant de chercher le nom d'un PractitionerRole. Permet de chercher n'importe quelle chaîne de caractère dans family, give, prefix, suffix, suffix, and/or text." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "SearchParameter" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/SearchParameter/as-sp-type-smartcard> ;
          fhir:reference [ fhir:v "SearchParameter/as-sp-type-smartcard" ]
        ] ;
@@ -1196,22 +1292,10 @@
          fhir:value [ fhir:v "CapabilityStatement" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsClientCapabilityStatement> ;
-         fhir:reference [ fhir:v "CapabilityStatement/AsClientCapabilityStatement" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerCapabilityStatement> ;
+         fhir:reference [ fhir:v "CapabilityStatement/AsServerCapabilityStatement" ]
        ] ;
-       fhir:name [ fhir:v "AsClientCapabilityStatement" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/as-cs-intern-id-systems> ;
-         fhir:reference [ fhir:v "CodeSystem/as-cs-intern-id-systems" ]
-       ] ;
-       fhir:name [ fhir:v "Internal Id Systems" ] ;
-       fhir:description [ fhir:v "Systèmes des identifiants locaux" ] ;
+       fhir:name [ fhir:v "AsServerCapabilityStatement" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1219,11 +1303,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/as-vs-intern-id-systems> ;
-         fhir:reference [ fhir:v "ValueSet/as-vs-intern-id-systems" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R286-TypeFermeture> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R286-TypeFermeture" ]
        ] ;
-       fhir:name [ fhir:v "Internal Id Systems VS" ] ;
-       fhir:description [ fhir:v "Systèmes des identifiants internes" ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1231,23 +1315,23 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/type-systeme-information-vs> ;
-         fhir:reference [ fhir:v "ValueSet/type-systeme-information-vs" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R301-SourceInformationInstallation> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R301-SourceInformationInstallation" ]
        ] ;
-       fhir:name [ fhir:v "Type de système d'information" ] ;
-       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/CodeSystem/type-systeme-information-cs> ;
-         fhir:reference [ fhir:v "CodeSystem/type-systeme-information-cs" ]
+         fhir:link <https://interop.esante.gouv.fr/ig/fhir/annuaire/ValueSet/VS-TRE-R74-ModeFixationTarifaire> ;
+         fhir:reference [ fhir:v "ValueSet/VS-TRE-R74-ModeFixationTarifaire" ]
        ] ;
-       fhir:name [ fhir:v "Type de système d'information" ] ;
-       fhir:description [ fhir:v "Type de système d'information pouvant alimenter l'annuaire santé." ] ;
+       fhir:name [ fhir:v "ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire" ] ;
+       fhir:description [ fhir:v "JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
@@ -1277,10 +1361,10 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "mapping.html"^^xsd:anyURI ]
+           fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
          ] ) ;
-         fhir:name [ fhir:v "mapping.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Mappings MOS" ] ;
+         fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Téléchargement du guide" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;
