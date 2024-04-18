@@ -6,11 +6,11 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"/>
-  <version value="4.0.2-ballot-2"/>
+  <version value="4.0.2-ballot-3"/>
   <name value="SuiviDecisionsOrientation"/>
   <title value="Médicosocial - Suivi Décisions Orientation"/>
-  <status value="active"/>
-  <date value="2024-02-06T15:24:40+00:00"/>
+  <status value="draft"/>
+  <date value="2024-04-18T09:33:23+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -472,13 +472,24 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/type-document-reference-esms-valueset"/>
+      </reference>
+      <name value="DocumentReferenceTypeESMSValueSet"/>
+      <description value="Code System pour la définition des éléments spécifiques de input dans ressource SDOTask"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"/>
       </reference>
       <name value="ESMSBundleResultatRechercheDecisionEvaluation"/>
-      <description value="Profil pour la définition du Bundle de réponse à la recherche d'une décision d'évaluation"/>
+      <description value="Profil pour la définition du Bundle de réponse à la recherche d'une décision d'orientation ou d'une évaluation"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -508,59 +519,87 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/id-exemple-bundle-resultat-recherche-decision-evaluation"/>
+        <reference value="Bundle/exemple-bundle-resultat-recherche-decision-evaluation"/>
       </reference>
-      <name value="id-exemple-bundle-resultat-recherche-decision-evaluation"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Consent"/>
-      </extension>
-      <reference>
-        <reference value="Consent/id-exemple-consent"/>
-      </reference>
-      <name value="id-exemple-consent"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="DocumentReference"/>
-      </extension>
-      <reference>
-        <reference value="DocumentReference/id-exemple-esms-document-reference"/>
-      </reference>
-      <name value="id-exemple-esms-document-reference"/>
-      <exampleBoolean value="false"/>
+      <name value="exemple-bundle-resultat-recherche-decision-evaluation"/>
+      <description value="Exemple de ressource Bundle suivant le profil ESMSBundleResultatRechercheDecisionEvaluation"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/id-exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
+        <reference value="Bundle/exemple-bundle-resultat-recherche-decision-evaluation-elements"/>
       </reference>
-      <name value="id-exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
-      <exampleBoolean value="false"/>
+      <name value="exemple-bundle-resultat-recherche-decision-evaluation-elements"/>
+      <description value="Exemple de ressource Bundle suivant le profil ESMSBundleResultatRechercheDecisionEvaluation et modifié par une requête utilisant le paramètre _elements"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/exemple-consent"/>
+      </reference>
+      <name value="exemple-consent"/>
+      <description value="Exemple de ressource Consent suivant le profil ESMSConsent"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-consent"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
-        <reference value="DocumentReference/id-exemple-sdo-document-reference"/>
+        <reference value="DocumentReference/exemple-esms-document-reference"/>
       </reference>
-      <name value="id-exemple-sdo-document-reference"/>
-      <exampleBoolean value="false"/>
+      <name value="exemple-esms-document-reference"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil ESMSDocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
+      </reference>
+      <name value="exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/exemple-sdo-document-reference"/>
+      </reference>
+      <name value="exemple-sdo-document-reference"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Task"/>
       </extension>
       <reference>
-        <reference value="Task/id-exemple-sdo-task"/>
+        <reference value="Task/exemple-sdo-task"/>
       </reference>
-      <name value="id-exemple-sdo-task"/>
+      <name value="exemple-sdo-task"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/input-task-sdo-codesystem"/>
+      </reference>
+      <name value="InputTaskSDOCodeSystem"/>
+      <description value="Code System pour la définition des éléments spécifiques de input dans ressource SDOTask"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -594,6 +633,39 @@
       </reference>
       <name value="SDOTask"/>
       <description value="Profil utilisé pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ESMSConsommateur"/>
+      </reference>
+      <name value="SI-ESMS-Consommateur"/>
+      <description value="Le rôle du consommateur est de recueillir le dossier d'une personne orientée pour l'examiner, ainsi que son évaluation par la CDAPH. &#xA;   Le consommateur suit également les entrées des personnes orientées dans d'autres structures ainsi que la prise en compte d'une admission impossible par la MDPH.&#xA;   Il correspond au SI-ESMS."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ESMSProducteur"/>
+      </reference>
+      <name value="SI-ESMS-Producteur"/>
+      <description value="Le rôle du producteur est de créer et transmettre l'accord de la personne en situation de handicap pour pouvoir accéder à son évaluation. Le producteur transmets également les statuts de la personne orientée en fonction de son avancée dans le processus d’orientations. &#xA;   Il correspond au SI-ESMS."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/gestionnaire-sdo"/>
+      </reference>
+      <name value="SI-SdO-Gestionnaire"/>
+      <description value="Le rôle de gestionnaire est de gérer la liste des dossiers des personnes orientées et leurs statuts.&#xA;   Il correspond au SI-SDO."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -753,6 +825,14 @@
         </extension>
         <nameUrl value="annexes_Diagramme.html"/>
         <title value="Diagramme de Séquence SI-MDPH / SI-SDO / SI-ESMS"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="tests.html"/>
+        </extension>
+        <nameUrl value="tests.html"/>
+        <title value="Solutions de tests"/>
         <generation value="markdown"/>
       </page>
     </page>

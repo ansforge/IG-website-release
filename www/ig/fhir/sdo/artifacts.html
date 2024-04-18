@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Médicosocial - Suivi Décisions Orientation v4.0.2-ballot-2</title>
+    <title>Artifacts Summary - Médicosocial - Suivi Décisions Orientation v4.0.2-ballot-3</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"20"}
-    h3,h4,h5,h6{--heading-prefix:"20.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"21"}
+    h3,h4,h5,h6{--heading-prefix:"21.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -56,7 +56,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Suivi Décisions Orientation</span>
             <br/>
-            <span style="display:inline-block;">4.0.2-ballot-2 - trial-use
+            <span style="display:inline-block;">4.0.2-ballot-3 - trial-use
 
 
 
@@ -134,6 +134,9 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
       <b class="caret"></b>
@@ -173,10 +176,10 @@
       <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
       </li>
+      <li>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+      </li>
     </ul>
-  </li>
-  <li>
-    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -194,11 +197,11 @@
 
           <span style="float:right;">
 
-            <a href="annexes_Diagramme.html">&lt;prev</a> | 
+            <a href="tests.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="StructureDefinition-esms-bundle-resultat-recherche-decision-evaluation.html">next&gt;</a>
+          | <a href="CapabilityStatement-ESMSConsommateur.html">next&gt;</a>
 
           </span>
 
@@ -220,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.2-ballot-2: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.2-ballot-3: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -232,10 +235,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Structures: Resource Profiles</a>
+         <a href="#1">Behavior: Capability Statements</a>
       </li>
       <li>
-         <a href="#2">Other</a>
+         <a href="#2">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#5">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -244,6 +256,49 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      xmlns:f="http://hl7.org/fhir">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
+   <h3>Behavior: Capability Statements </h3>
+   <p>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CapabilityStatement-ESMSConsommateur.html"
+                     title="CapabilityStatement/ESMSConsommateur">SI-ESMS-Consommateur</a>
+               </td>
+               <td>
+<p>Le rôle du consommateur est de recueillir le dossier d’une personne orientée pour l’examiner, ainsi que son évaluation par la CDAPH. 
+   Le consommateur suit également les entrées des personnes orientées dans d’autres structures ainsi que la prise en compte d’une admission impossible par la MDPH.
+   Il correspond au SI-ESMS.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CapabilityStatement-ESMSProducteur.html"
+                     title="CapabilityStatement/ESMSProducteur">SI-ESMS-Producteur</a>
+               </td>
+               <td>
+<p>Le rôle du producteur est de créer et transmettre l’accord de la personne en situation de handicap pour pouvoir accéder à son évaluation. Le producteur transmets également les statuts de la personne orientée en fonction de son avancée dans le processus d’orientations. 
+   Il correspond au SI-ESMS.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CapabilityStatement-gestionnaire-sdo.html"
+                     title="CapabilityStatement/gestionnaire-sdo">SI-SdO-Gestionnaire</a>
+               </td>
+               <td>
+<p>Le rôle de gestionnaire est de gérer la liste des dossiers des personnes orientées et leurs statuts.
+   Il correspond au SI-SDO.</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
    <p>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
@@ -258,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation">ESMSBundleResultatRechercheDecisionEvaluation</a>
                </td>
                <td>
-<p>Profil pour la définition du Bundle de réponse à la recherche d’une décision d’évaluation</p>
+<p>Profil pour la définition du Bundle de réponse à la recherche d’une décision d’orientation ou d’une évaluation</p>
 </td>
             </tr>
             <tr>
@@ -309,10 +364,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="2"> </a>
-   <h3>Other </h3>
+   <a name="3"> </a>
+   <h3>Terminology: Value Sets </h3>
    <p>
-    <p>These are resources that are used within this implementation guide that do not fit into one of the other categories.</p>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 </p>
    <p>
       <table class="grid">
@@ -320,38 +375,106 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-id-exemple-bundle-resultat-recherche-decision-evaluation.html"
-                     title="Bundle/id-exemple-bundle-resultat-recherche-decision-evaluation">id-exemple-bundle-resultat-recherche-decision-evaluation</a>
+                  <a href="ValueSet-type-document-reference-esms-valueset.html"
+                     title="ValueSet/type-document-reference-esms-valueset">DocumentReferenceTypeESMSValueSet</a>
                </td>
+               <td>
+<p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="4"> </a>
+   <h3>Terminology: Code Systems </h3>
+   <p>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-input-task-sdo-codesystem.html"
+                     title="CodeSystem/input-task-sdo-codesystem">InputTaskSDOCodeSystem</a>
+               </td>
+               <td>
+<p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="5"> </a>
+   <h3>Example: Example Instances </h3>
+   <p>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html"
+                     title="Bundle/exemple-bundle-resultat-recherche-decision-evaluation">exemple-bundle-resultat-recherche-decision-evaluation</a>
+               </td>
+               <td>
+<p>Exemple de ressource Bundle suivant le profil ESMSBundleResultatRechercheDecisionEvaluation</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Consent-id-exemple-consent.html"
-                     title="Consent/id-exemple-consent">id-exemple-consent</a>
+                  <a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html"
+                     title="Bundle/exemple-bundle-resultat-recherche-decision-evaluation-elements">exemple-bundle-resultat-recherche-decision-evaluation-elements</a>
                </td>
+               <td>
+<p>Exemple de ressource Bundle suivant le profil ESMSBundleResultatRechercheDecisionEvaluation et modifié par une requête utilisant le paramètre _elements</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DocumentReference-id-exemple-esms-document-reference.html"
-                     title="DocumentReference/id-exemple-esms-document-reference">id-exemple-esms-document-reference</a>
+                  <a href="Consent-exemple-consent.html" title="Consent/exemple-consent">exemple-consent</a>
                </td>
+               <td>
+<p>Exemple de ressource Consent suivant le profil ESMSConsent</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-id-exemple-sdo-bundle-resultat-recherche-notifications-esms.html"
-                     title="Bundle/id-exemple-sdo-bundle-resultat-recherche-notifications-esms">id-exemple-sdo-bundle-resultat-recherche-notifications-esms</a>
+                  <a href="DocumentReference-exemple-esms-document-reference.html"
+                     title="DocumentReference/exemple-esms-document-reference">exemple-esms-document-reference</a>
                </td>
+               <td>
+<p>Exemple de ressource DocumentReference suivant le profil ESMSDocumentReference</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DocumentReference-id-exemple-sdo-document-reference.html"
-                     title="DocumentReference/id-exemple-sdo-document-reference">id-exemple-sdo-document-reference</a>
+                  <a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html"
+                     title="Bundle/exemple-sdo-bundle-resultat-recherche-notifications-esms">exemple-sdo-bundle-resultat-recherche-notifications-esms</a>
                </td>
+               <td>
+<p>Exemple de ressource DocumentReference suivant le profil SDODocumentReference</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Task-id-exemple-sdo-task.html" title="Task/id-exemple-sdo-task">id-exemple-sdo-task</a>
+                  <a href="DocumentReference-exemple-sdo-document-reference.html"
+                     title="DocumentReference/exemple-sdo-document-reference">exemple-sdo-document-reference</a>
                </td>
+               <td>
+<p>Exemple de ressource DocumentReference suivant le profil SDODocumentReference</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Task-exemple-sdo-task.html" title="Task/exemple-sdo-task">exemple-sdo-task</a>
+               </td>
+               <td>
+<p>Exemple de ressource DocumentReference suivant le profil SDODocumentReference</p>
+</td>
             </tr>
          </tbody>
       </table>
@@ -384,7 +507,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="annexes_Diagramme.html">&lt;prev</a>
+                <a href="tests.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -392,7 +515,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="StructureDefinition-esms-bundle-resultat-recherche-decision-evaluation.html">next&gt;</a>
+                <a href="CapabilityStatement-ESMSConsommateur.html">next&gt;</a>
 
               </td>
             </tr>
@@ -402,7 +525,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.2-ballot-2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 6, 2024 15:24+0000">2024-02-06</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.2-ballot-3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 18, 2024 09:33+0000">2024-04-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
