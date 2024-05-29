@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm",
-  "version" : "3.0.1",
+  "version" : "3.1.0",
   "name" : "PDSm",
   "title" : "Partage de Documents de Santé en mobilité (PDSm)",
-  "status" : "draft",
-  "date" : "2023-03-20T12:21:07+01:00",
+  "status" : "active",
+  "date" : "2024-05-29T10:02:34+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -30,7 +30,17 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.0.0"
+    "version" : "5.5.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.1.0"
   },
   {
     "id" : "ihe_iti_mhd",
@@ -39,16 +49,22 @@
     "version" : "4.2.0"
   },
   {
-    "id" : "ans_annuaire_fhir_r4",
-    "uri" : "http://fhir.org/packages/ans.annuaire.fhir.r4/ImplementationGuide/ans.annuaire.fhir.r4",
-    "packageId" : "ans.annuaire.fhir.r4",
-    "version" : "0.2.0"
+    "id" : "ans_fhir_fr_annuaire",
+    "uri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
+    "packageId" : "ans.fhir.fr.annuaire",
+    "version" : "1.0.1"
   },
   {
     "id" : "hl7_fhir_fr_core",
-    "uri" : "http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core",
+    "uri" : "https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core",
     "packageId" : "hl7.fhir.fr.core",
-    "version" : "1.1.0"
+    "version" : "2.0.1"
+  },
+  {
+    "id" : "ans_fr_nos",
+    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
+    "packageId" : "ans.fr.nos",
+    "version" : "1.2.0"
   }],
   "definition" : {
     "extension" : [{
@@ -69,7 +85,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "Trial-Implementation"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -274,6 +290,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueString" : "active-tables"
       },
       {
@@ -327,9 +354,13 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
     {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+    },
+    {
       "extension" : [{
         "url" : "code",
-        "valueString" : "copyrightyear"
+        "valueCode" : "copyrightyear"
       },
       {
         "url" : "value",
@@ -340,29 +371,18 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "releaselabel"
+        "valueCode" : "releaselabel"
       },
       {
         "url" : "value",
-        "valueString" : "Trial-Implementation"
+        "valueString" : "trial-use"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "shownav"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "autoload-resources"
+        "valueCode" : "shownav"
       },
       {
         "url" : "value",
@@ -373,7 +393,18 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid"
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -384,7 +415,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-liquid"
+        "valueCode" : "path-liquid"
       },
       {
         "url" : "value",
@@ -395,7 +426,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-qa"
+        "valueCode" : "path-qa"
       },
       {
         "url" : "value",
@@ -406,7 +437,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-temp"
+        "valueCode" : "path-temp"
       },
       {
         "url" : "value",
@@ -417,7 +448,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-output"
+        "valueCode" : "path-output"
       },
       {
         "url" : "value",
@@ -428,7 +459,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-suppressed-warnings"
+        "valueCode" : "path-suppressed-warnings"
       },
       {
         "url" : "value",
@@ -439,7 +470,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-history"
+        "valueCode" : "path-history"
       },
       {
         "url" : "value",
@@ -450,7 +481,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "template-html"
+        "valueCode" : "template-html"
       },
       {
         "url" : "value",
@@ -461,7 +492,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "template-md"
+        "valueCode" : "template-md"
       },
       {
         "url" : "value",
@@ -472,7 +503,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-contact"
+        "valueCode" : "apply-contact"
       },
       {
         "url" : "value",
@@ -483,7 +514,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-context"
+        "valueCode" : "apply-context"
       },
       {
         "url" : "value",
@@ -494,7 +525,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-copyright"
+        "valueCode" : "apply-copyright"
       },
       {
         "url" : "value",
@@ -505,7 +536,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-jurisdiction"
+        "valueCode" : "apply-jurisdiction"
       },
       {
         "url" : "value",
@@ -516,7 +547,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-license"
+        "valueCode" : "apply-license"
       },
       {
         "url" : "value",
@@ -527,7 +558,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-publisher"
+        "valueCode" : "apply-publisher"
       },
       {
         "url" : "value",
@@ -538,7 +569,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "apply-version"
+        "valueCode" : "apply-version"
       },
       {
         "url" : "value",
@@ -549,7 +580,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "active-tables"
+        "valueCode" : "apply-wg"
       },
       {
         "url" : "value",
@@ -560,7 +591,18 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "fmm-definition"
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
       },
       {
         "url" : "value",
@@ -571,7 +613,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "propagate-status"
+        "valueCode" : "propagate-status"
       },
       {
         "url" : "value",
@@ -582,7 +624,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "excludelogbinaryformat"
+        "valueCode" : "excludelogbinaryformat"
       },
       {
         "url" : "value",
@@ -593,7 +635,7 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "tabbed-snapshots"
+        "valueCode" : "tabbed-snapshots"
       },
       {
         "url" : "value",
@@ -602,6 +644,53 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/PDSm-ConsommateurDeDocuments"
+      },
+      "name" : "CI-SIS Partage-De-Documents-De-Sante - ConsommateurDeDocuments",
+      "description" : "Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/PDSm-GestionnaireDePartageDeDocuments"
+      },
+      "name" : "CI-SIS Partage-De-Documents-De-Sante - GestionnaireDePartageDeDocuments",
+      "description" : "Il s’agit d’un système d’information ou d’un composant d'un système d’information qui stocke, classe et archive les documents d’un dossier patient.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/PDSm-ProducteurDeDocuments"
+      },
+      "name" : "CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments",
+      "description" : "Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/a9c10f8a-882d-4000-a280-7150e0aeb478"
+      },
+      "name" : "Exemple de bundle de type transaction-response du flux 2",
+      "exampleBoolean" : true
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
@@ -633,8 +722,8 @@
       "reference" : {
         "reference" : "StructureDefinition/pdsm-find-documentreferences-comprehensive-response"
       },
-      "name" : "PDSm_FindDocumentReferencesComprehensiveResponse",
-      "description" : "Réponse de la transaction IHE \"Find Document References [ITI-67]\" basée sur le bundle MHD http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage et profilé pour le volet PDSm",
+      "name" : "PDSm Find DocumentReferences Comprehensive Response",
+      "description" : "Profil de réponse de la transaction IHE \"Find Document References [ITI-67]\" basée sur le bundle MHD FindDocumentReferencesComprehensiveResponseMessage et profilé pour le volet PDSm",
       "exampleBoolean" : false
     },
     {
@@ -646,7 +735,7 @@
         "reference" : "StructureDefinition/pdsm-find-lists-response"
       },
       "name" : "PDSm Find Lists Response",
-      "description" : "Réponse de la transaction IHE \"Find Document Lists [ITI-66]\" basée sur le bundle MHD http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentListsResponseMessage et profilé pour le volet PDSm",
+      "description" : "Profil de réponse de la transaction IHE \"Find Document Lists [ITI-66]\" basée sur le bundle MHD FindDocumentListsResponseMessage et profilé pour le volet PDSm",
       "exampleBoolean" : false
     },
     {
@@ -658,7 +747,7 @@
         "reference" : "StructureDefinition/pdsm-folder-comprehensive"
       },
       "name" : "PDSm Folder Comprehensive",
-      "description" : "Profil spécifique dérivé du profil IHE MHD v4.0.1 « Comprehensive Folder  » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le classeur.",
+      "description" : "Profil spécifique dérivé du profil IHE MHD « Comprehensive Folder » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le classeur.",
       "exampleBoolean" : false
     },
     {
@@ -669,8 +758,8 @@
       "reference" : {
         "reference" : "StructureDefinition/pdsm-simplified-publish"
       },
-      "name" : "PDSm Simplified Publish",
-      "description" : "Ce profil a été créé en s'inspirant du profil MHD Simplified. \nContrairement au profil PDSm_ComprehensiveDocumentReference, le document est directement inclus dans DocumentReference.attachment.data et non dans une ressource « Binary » externe.\n\nCe profil est utilisé dans le cadre du flux 9. Le flux et le profil sont inspirés d’IHE MHD, version build au 03.10.22  : transaction ITI-105  et du profil SimplifiedPublish.DocumentReference.\n\nLa publication simplifiée est un simple POST d'une ressource DocumentReference conforme à ce profil.",
+      "name" : "PDSm Simplified Publish Document Reference",
+      "description" : "Profil utilisé dans le cadre du flux 9 d'ajout simplifié de document. Le flux et le profil sont inspirés d’IHE MHD, transaction ITI-105.\n\nContrairement au profil PDSm_ComprehensiveDocumentReference, le document est directement inclus dans DocumentReference.attachment.data et non dans une ressource « Binary » externe.\n\nLa publication simplifiée est une simple requête HTTP POST d'une ressource DocumentReference conforme à ce profil.",
       "exampleBoolean" : false
     },
     {
@@ -682,67 +771,7 @@
         "reference" : "StructureDefinition/pdsm-submissionset-comprehensive"
       },
       "name" : "PDSm SubmissionSet Comprehensive",
-      "description" : "Profil spécifique dérivé du profil IHE MHD v4.0.1 « ComprehensiveSubmissionSet  » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le lot de soumission.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/pdsm-is-archived"
-      },
-      "name" : "PDSm_isArchived",
-      "description" : "Extension définie par le volet ANS \"Volet Partage de documents de santé en mobilité\" sur les ressources List et DocumentReference pour distinguer les lots de soumission et les fiches archivés des actives.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/PDSmintendedrecipient"
-      },
-      "name" : "PDSm_intendedRecipient",
-      "description" : "Représente le destinataire du lot de soumission",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/PDSm-ConsommateurDeDocuments"
-      },
-      "name" : "PDSm-ConsommateurDeDocuments",
-      "description" : "Il s’agit d’un système d’information ou d’un composant de système d’information qui recherche des documents selon certains critères, et qui peut consulter les documents qui l’intéressent.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/PDSm-DocumentReference-PatientAsSubject"
-      },
-      "name" : "PDSm-DocumentReference-PatientAsSubject",
-      "description" : "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément patient.identifier",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/PDSm-DocumentReference-PractitionerRoleAsAuthor"
-      },
-      "name" : "PDSm-DocumentReference-PractitionerRoleAsAuthor",
-      "description" : "Paramètre de recherche chaîné créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément author:PractitionerRole.practitioner:Practitioner.identifier, author:PractitionerRole.practitioner:Practitioner.given et author:PractitionerRole.practitioner:Practitioner.family",
+      "description" : "Profil spécifique dérivé du profil IHE MHD « ComprehensiveSubmissionSet » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le lot de soumission.",
       "exampleBoolean" : false
     },
     {
@@ -772,13 +801,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
+        "valueString" : "SearchParameter"
       }],
       "reference" : {
-        "reference" : "CapabilityStatement/PDSm-GestionnaireDePartageDeDocuments"
+        "reference" : "SearchParameter/PDSm-isArchived"
       },
-      "name" : "PDSm-GestionnaireDePartageDeDocuments",
-      "description" : "Il s’agit d’un système d’information ou d’un composant d'un système d’information qui stocke, classe et archive les documents d’un dossier patient.",
+      "name" : "PDSm-isArchived",
+      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère derecherche l'élément isArchived qui permet distinguer les lots de soumission et les fiches archivés des actives.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/PDSm-List-authorOrg"
+      },
+      "name" : "PDSm-List-authorOrg",
+      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément sourceId",
       "exampleBoolean" : false
     },
     {
@@ -820,85 +861,26 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "SearchParameter/PDSm-List-authorOrg"
+        "reference" : "StructureDefinition/pdsm-ext-intended-recipient"
       },
-      "name" : "PDSm-List-authorOrg",
-      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'élément sourceId",
+      "name" : "PDSm_intendedRecipient",
+      "description" : "Représente le destinataire du lot de soumission",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "SearchParameter/PDSm-PractitionerRole-family-ex"
+        "reference" : "StructureDefinition/pdsm-ext-is-archived"
       },
-      "name" : "PDSm-PractitionerRole-family-ex",
-      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'extension PractitionerRoleName qui permet de préciser le nom d'exercice d'un professionnel (family)",
+      "name" : "PDSm_isArchived",
+      "description" : "Extension définie par le volet ANS \"Volet Partage de documents de santé en mobilité\" sur les ressources List et DocumentReference pour distinguer les lots de soumission et les fiches archivés des actives.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/PDSm-PractitionerRole-given-ex"
-      },
-      "name" : "PDSm-PractitionerRole-given-ex",
-      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'extension PractitionerRoleName qui permet de préciser le nom d'exercice d'un professionnel (given)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/PDSm-PractitionerRole-partOf"
-      },
-      "name" : "PDSm-PractitionerRole-partOf",
-      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'extension partof qui permet de faire référence à l'exercice professionnel depuis la situation d'exercice",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CapabilityStatement"
-      }],
-      "reference" : {
-        "reference" : "CapabilityStatement/PDSm-ProducteurDeDocuments"
-      },
-      "name" : "PDSm-ProducteurDeDocuments",
-      "description" : "Il s’agit d’un système d’information ou d’un composant de système d’information qui envoie au gestionnaire de partage de documents une  demande d’ajout de nouveaux documents et/ou des nouvelles versions de documents. Ce système fournit également les modifications des  métadonnées du document.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/PDSm-isArchived"
-      },
-      "name" : "PDSm-isArchived",
-      "description" : "Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère derecherche l'élément isArchived qui permet distinguer les lots de soumission et les fiches archivés des actives.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/a9c10f8a-882d-4000-a280-7150e0aeb478"
-      },
-      "name" : "Exemple de bundle de type transaction-response du flux 2",
-      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
@@ -992,6 +974,51 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "specifications_fonctionnelles.html"
+        }],
+        "nameUrl" : "specifications_fonctionnelles.html",
+        "title" : "Specifications Fonctionnelles",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "sf_ajout.html"
+          }],
+          "nameUrl" : "sf_ajout.html",
+          "title" : "Ajout d'un lot de documents",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "sf_maj.html"
+          }],
+          "nameUrl" : "sf_maj.html",
+          "title" : "Mise à jour de documents",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "sf_recherche.html"
+          }],
+          "nameUrl" : "sf_recherche.html",
+          "title" : "Recherche de documents",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "sf_consultation.html"
+          }],
+          "nameUrl" : "sf_consultation.html",
+          "title" : "Consultation de documents",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "autres_ressources.html"
         }],
         "nameUrl" : "autres_ressources.html",
@@ -1024,15 +1051,6 @@
           "title" : "Téléchargements et usages",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "about.html"
-        }],
-        "nameUrl" : "about.html",
-        "title" : "A propos de ce guide",
-        "generation" : "markdown"
       }]
     },
     "parameter" : [{
