@@ -15,23 +15,32 @@
     <fullUrl value="https://&lt;base_URl&gt;/Slot/ExampleSlotCPTS"/>
     <resource>
       <Slot>
-        <id value="ExampleSlotCPTS"/>
+        <id value="ExampleSlotCPTS1"/>
         <meta>
           <profile value="https://interop.esante.gouv.fr/ig/fhir/sas/StructureDefinition/sas-cpts-slot-aggregator"/>
+          <security>
+            <system value="https://mos.esante.gouv.fr/NOS/TRE_R314-TypeCreneau/FHIR/TRE-R314-TypeCreneau"/>
+            <code value="PUBLIC"/>
+          </security>
+          <security>
+            <system value="https://mos.esante.gouv.fr/NOS/TRE_R314-TypeCreneau/FHIR/TRE-R314-TypeCreneau"/>
+            <code value="CPTS"/>
+          </security>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Slot_ExampleSlotCPTS"> </a><p class="res-header-id"><b>Generated Narrative: Slot ExampleSlotCPTS</b></p><a name="ExampleSlotCPTS"> </a><a name="hcExampleSlotCPTS"> </a><a name="hcExampleSlotCPTS-fr-FR"> </a><p><b>serviceType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}">ambulatory</span>, <span title="Codes:{https://mos.esante.gouv.fr/NOS/TRE_R66-CategorieEtablissement/TRE_R66-CategorieEtablissement 604}">604</span></p><p><b>schedule</b>: <a href="Schedule-ExampleSchedule.html">Schedule</a></p><p><b>status</b>: Free</p><p><b>start</b>: 2024-06-12 16:40:00+0200</p><p><b>end</b>: 2024-06-12 17:00:00+0200</p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Slot_ExampleSlotCPTS1"> </a><p class="res-header-id"><b>Generated Narrative: Slot ExampleSlotCPTS1</b></p><a name="ExampleSlotCPTS1"> </a><a name="hcExampleSlotCPTS1"> </a><a name="ExampleSlotCPTS1-fr-FR"> </a><p><b>serviceType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}">Visite de contrôle</span>, <span title="Codes:{https://mos.esante.gouv.fr/NOS/TRE_R66-CategorieEtablissement/TRE_R66-CategorieEtablissement 604}">604</span></p><p><b>specialty</b>: <span title="Codes:{https://mos.esante.gouv.fr/NOS/TRE_R38-SpecialiteOrdinale/FHIR/TRE-R38-SpecialiteOrdinale SM54}">Médecine générale (SM)</span></p><p><b>appointmentType</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v2-0276 ROUTINE}">Routine appointment - default if not valued</span></p><p><b>schedule</b>: <a href="Schedule-ExampleSchedule.html">Schedule</a></p><p><b>status</b>: Free</p><p><b>start</b>: 2024-06-12 16:40:00+0200</p><p><b>end</b>: 2024-06-12 17:00:00+0200</p><p><b>comment</b>: https://exemple.com/rdv/com/</p></div>
         </text>
         <serviceType>
           <coding>
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
             <code value="AMB"/>
           </coding>
+          <text value="Visite de contrôle"/>
         </serviceType>
         <serviceType>
           <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-Slot.serviceType">
             <valueReference>
-              <reference value="HealthcareService/ExampleHealthcareServiceCPTS"/>
+              <reference value="HealthcareService/ExampleHealthcareServiceCPTS1"/>
             </valueReference>
           </extension>
           <coding>
@@ -39,12 +48,25 @@
             <code value="604"/>
           </coding>
         </serviceType>
+        <specialty>
+          <coding>
+            <system value="https://mos.esante.gouv.fr/NOS/TRE_R38-SpecialiteOrdinale/FHIR/TRE-R38-SpecialiteOrdinale"/>
+            <code value="SM54"/>
+          </coding>
+        </specialty>
+        <appointmentType>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0276"/>
+            <code value="ROUTINE"/>
+          </coding>
+        </appointmentType>
         <schedule>
           <reference value="Schedule/ExampleSchedule"/>
         </schedule>
         <status value="free"/>
         <start value="2024-06-12T16:40:00.000+02:00"/>
         <end value="2024-06-12T17:00:00.000+02:00"/>
+        <comment value="https://exemple.com/rdv/com/"/>
       </Slot>
     </resource>
   </entry>
@@ -57,7 +79,7 @@
           <profile value="http://sas.fr/fhir/StructureDefinition/FrScheduleAgregateur"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Schedule_ExampleSchedule"> </a><p class="res-header-id"><b>Generated Narrative: Schedule ExampleSchedule</b></p><a name="ExampleSchedule"> </a><a name="hcExampleSchedule"> </a><a name="hcExampleSchedule-fr-FR"> </a><p><b>actor</b>: </p><ul><li><a href="Practitioner-ExamplePractitioner.html">Practitioner Pierre Foret </a></li><li><a href="PractitionerRole-ExamplePractitionerRoleAgregateur.html">PractitionerRole: telecom = ph: +33561855977</a></li></ul></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Schedule_ExampleSchedule"> </a><p class="res-header-id"><b>Generated Narrative: Schedule ExampleSchedule</b></p><a name="ExampleSchedule"> </a><a name="hcExampleSchedule"> </a><a name="ExampleSchedule-fr-FR"> </a><p><b>actor</b>: </p><ul><li><a href="Practitioner-ExamplePractitioner.html">Practitioner Pierre Foret </a></li><li><a href="PractitionerRole-ExamplePractitionerRoleAgregateur.html">PractitionerRole: telecom = ph: +33561855977</a></li></ul></div>
         </text>
         <actor>
           <reference value="Practitioner/ExamplePractitioner"/>
@@ -77,7 +99,7 @@
           <profile value="http://sas.fr/fhir/StructureDefinition/FrPractitionerAgregateur"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_ExamplePractitioner"> </a><p class="res-header-id"><b>Generated Narrative: Practitioner ExamplePractitioner</b></p><a name="ExamplePractitioner"> </a><a name="hcExamplePractitioner"> </a><a name="hcExamplePractitioner-fr-FR"> </a><p><b>identifier</b>: Identifiant National de Professionnel de Santé/810002909371</p><p><b>name</b>: Pierre Foret </p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_ExamplePractitioner"> </a><p class="res-header-id"><b>Generated Narrative: Practitioner ExamplePractitioner</b></p><a name="ExamplePractitioner"> </a><a name="hcExamplePractitioner"> </a><a name="ExamplePractitioner-fr-FR"> </a><p><b>identifier</b>: Identifiant National de Professionnel de Santé/810002909371</p><p><b>name</b>: Pierre Foret </p></div>
         </text>
         <identifier>
           <type>
@@ -105,7 +127,7 @@
           <profile value="http://sas.fr/fhir/StructureDefinition/FrPractitionerRoleExerciceAgregateur"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="PractitionerRole_ExamplePractitionerRoleAgregateur"> </a><p class="res-header-id"><b>Generated Narrative: PractitionerRole ExamplePractitionerRoleAgregateur</b></p><a name="ExamplePractitionerRoleAgregateur"> </a><a name="hcExamplePractitionerRoleAgregateur"> </a><a name="hcExamplePractitionerRoleAgregateur-fr-FR"> </a><p><b>practitioner</b>: <a href="Practitioner-ExamplePractitioner.html">Practitioner Pierre Foret </a></p><p><b>organization</b>: Identifier: 412345678912345</p><p><b>location</b>: <a href="#hcExamplePractitionerRoleAgregateur/ExampleLocation">Location: identifier = INTRN</a></p><p><b>telecom</b>: <a href="tel:+33561855977">+33561855977</a></p><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: Location  #ExampleLocation</b></p><a name="ExamplePractitionerRoleAgregateur/ExampleLocation"> </a><a name="hcExamplePractitionerRoleAgregateur/ExampleLocation"> </a><a name="hcExamplePractitionerRoleAgregateur/ExampleLocation-fr-FR"> </a><p><b>identifier</b>: INTRN/123456789</p><p><b>address</b>: 25 CHEMIN DE MOUNESTIE Aussonne 31840 </p></blockquote></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="PractitionerRole_ExamplePractitionerRoleAgregateur"> </a><p class="res-header-id"><b>Generated Narrative: PractitionerRole ExamplePractitionerRoleAgregateur</b></p><a name="ExamplePractitionerRoleAgregateur"> </a><a name="hcExamplePractitionerRoleAgregateur"> </a><a name="ExamplePractitionerRoleAgregateur-fr-FR"> </a><p><b>practitioner</b>: <a href="Practitioner-ExamplePractitioner.html">Practitioner Pierre Foret </a></p><p><b>organization</b>: Identifier: 412345678912345</p><p><b>location</b>: <a href="#hcExamplePractitionerRoleAgregateur/ExampleLocation">Location: identifier = Identifiant interne</a></p><p><b>telecom</b>: <a href="tel:+33561855977">+33561855977</a></p><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: Location  #ExampleLocation</b></p><a name="ExamplePractitionerRoleAgregateur/ExampleLocation"> </a><a name="hcExamplePractitionerRoleAgregateur/ExampleLocation"> </a><a name="ExamplePractitionerRoleAgregateur/ExampleLocation-fr-FR"> </a><p><b>identifier</b>: Identifiant interne/123456789</p><p><b>address</b>: 25 CHEMIN DE MOUNESTIE Aussonne 31840 </p></blockquote></div>
         </text>
         <contained>
           <Location>
@@ -116,7 +138,7 @@
             <identifier>
               <type>
                 <coding>
-                  <system value="http://www.interopsante.org/fhir/valuesets/fr-location-identifier-type"/>
+                  <system value="http://interopsante.org/fhir/CodeSystem/fr-location-identifier-type"/>
                   <code value="INTRN"/>
                 </coding>
               </type>
@@ -152,15 +174,15 @@
     <fullUrl value="https://&lt;base_URl&gt;/HealthcareService/ExampleHealthcareServiceCPTS"/>
     <resource>
       <HealthcareService>
-        <id value="ExampleHealthcareServiceCPTS"/>
+        <id value="ExampleHealthcareServiceCPTS1"/>
         <meta>
           <profile value="https://interop.esante.gouv.fr/ig/fhir/sas/StructureDefinition/sas-cpts-healthcareservice-aggregator"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="HealthcareService_ExampleHealthcareServiceCPTS"> </a><p class="res-header-id"><b>Generated Narrative: HealthcareService ExampleHealthcareServiceCPTS</b></p><a name="ExampleHealthcareServiceCPTS"> </a><a name="hcExampleHealthcareServiceCPTS"> </a><a name="hcExampleHealthcareServiceCPTS-fr-FR"> </a><p><b>providedBy</b>: <a href="Organization-ExampleOrgaCPTS.html">Organization CPTS AXE MAJEUR</a></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="HealthcareService_ExampleHealthcareServiceCPTS1"> </a><p class="res-header-id"><b>Generated Narrative: HealthcareService ExampleHealthcareServiceCPTS1</b></p><a name="ExampleHealthcareServiceCPTS1"> </a><a name="hcExampleHealthcareServiceCPTS1"> </a><a name="ExampleHealthcareServiceCPTS1-fr-FR"> </a><p><b>providedBy</b>: <a href="Organization-ExampleOrgaCPTS1.html">Organization CPTS AXE MAJEUR</a></p></div>
         </text>
         <providedBy>
-          <reference value="Organization/ExampleOrgaCPTS"/>
+          <reference value="Organization/ExampleOrgaCPTS1"/>
         </providedBy>
       </HealthcareService>
     </resource>
@@ -169,12 +191,12 @@
     <fullUrl value="https://&lt;base_URl&gt;/Organization/ExampleOrgaCPTS"/>
     <resource>
       <Organization>
-        <id value="ExampleOrgaCPTS"/>
+        <id value="ExampleOrgaCPTS1"/>
         <meta>
           <profile value="https://interop.esante.gouv.fr/ig/fhir/sas/StructureDefinition/sas-cpts-organization-aggregator"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_ExampleOrgaCPTS"> </a><p class="res-header-id"><b>Generated Narrative: Organization ExampleOrgaCPTS</b></p><a name="ExampleOrgaCPTS"> </a><a name="hcExampleOrgaCPTS"> </a><a name="hcExampleOrgaCPTS-fr-FR"> </a><p><b>identifier</b>: Identification nationale de structure définie par l’ASIP-SANTE dans le CI_SIS/1950047225</p><p><b>name</b>: CPTS AXE MAJEUR</p><p><b>telecom</b>: <a href="tel:+33102030405">+33102030405</a></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_ExampleOrgaCPTS1"> </a><p class="res-header-id"><b>Generated Narrative: Organization ExampleOrgaCPTS1</b></p><a name="ExampleOrgaCPTS1"> </a><a name="hcExampleOrgaCPTS1"> </a><a name="ExampleOrgaCPTS1-fr-FR"> </a><p><b>identifier</b>: Identification nationale de structure définie par l’ASIP-SANTE dans le CI_SIS/1950047225</p><p><b>name</b>: CPTS AXE MAJEUR</p><p><b>telecom</b>: <a href="tel:+33102030405">+33102030405</a></p></div>
         </text>
         <identifier>
           <type>
