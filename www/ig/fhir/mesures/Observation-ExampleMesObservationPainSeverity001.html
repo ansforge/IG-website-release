@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FHIR.FR.MESURES\ExampleMesObservationPainSeverity001 - FHIR v4.0.1</title>
+    <title>ExampleMesObservationPainSeverity001 - Guide d'implémentation FHIR - Mesures de santé v3.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -32,32 +31,36 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"13.26"}
-    h3,h4,h5,h6{--heading-prefix:"13.26"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.33"}
+    h3,h4,h5,h6{--heading-prefix:"7.33"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
     <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
-  <div id="ans-nav">
+  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
     <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
   </div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Guide d&#39;implémentation FHIR - Mesures de santé</span>
             <br/>
-            <span style="display:inline-block;">3.0.1 - STU1
+            <span style="display:inline-block;">3.1.0 - final-text
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -93,49 +96,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="Les-profils-utilises-pour-les-mesures-de-sante.page.html">Les profils utilisés pour les mesures de santé</a>
+        <a href="Le-flux-d-alimentation-des-mesures.html">Flux d&apos;alimentation des mesures</a>
       </li>
       <li>
-        <a href="Les-profils-utilises-pour-les-dispositifs-connectes.page.html">Les profils utilisés pour les dispositifs connectés</a>
+        <a href="Les-profils-utilises-pour-les-mesures-de-sante.html">Les profils utilisés pour les mesures de santé</a>
       </li>
       <li>
-        <a href="Liste-des-profils.page.html">Liste des profils MES</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-body-weight.html">MesFrObservationBodyWeight - Poids</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-bodyheight.html">MesFrObservationBodyHeight - Taille</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-body-temperature.html">MesFrObservationBodyTemperature - Temperature</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-bp.html">MesFrObservationBp - Pression-arterielle</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-observation-glucose.html">MesObservationGlucose - Glycemie</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-bmi.html">MesFrObservationBmi - Indice-de-masse-corporelle</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-observation-waist-circumference.html">MesObservationWaistCircumference - Tour-de-taille</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-observation-steps-by-day.html">MesObservationStepsByDay - Nombre-de-pas-quotidien</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-observation-pain-severity.html">MesObservationPainSeverity - Niveau-de-douleur</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-observation-head-circumference.html">MesObservationHeadCircumference - Perimetre-cranien</a>
-      </li>
-      <li>
-        <a href="StructureDefinition-mesures-fr-observation-heartrate.html">MesObservationHeartrate - Frequence-cardiaque</a>
-      </li>
-      <li>
-        <a href="Le-profil-FHIR-des-objets-connectes.page.html">Le profil FHIR des objets connectés</a>
+        <a href="Le-profil-FHIR-des-objets-connectes.html">Le profil FHIR des objets connectés</a>
       </li>
     </ul>
   </li>
@@ -158,43 +125,30 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="artifacts.html">Ressources de conformité</a>
+  </li>
+  <li>
+    <a href="Terminologies.html">Terminologies</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminologies et jeux de valeurs
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="Terminologies.page.html">Terminologies</a>
+        <a href="downloads.html">Téléchargements et usages</a>
       </li>
       <li>
-        <a href="Jeux-de-valeurs.page.html">Jeux de valeurs</a>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR </a>
       </li>
       <li>
-        <a href="Liste-des-codes-des-observations.page.html">Liste des codes des observations</a>
+        <a target="_blank" href="https://esante.gouv.fr">Site de l&apos;ANS </a>
       </li>
     </ul>
   </li>
   <li>
-    <a href="Le-flux-d-alimentation-des-mesures.html">Flux d&apos;alimentation des mesures</a>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="Contexte-metier.page.html">Contexte Métier</a>
-      </li>
-      <li>
-        <a href="Standards.html">Standards-utilises</a>
-      </li>
-      <li>
-        <a href="about.html">A propos de ce guide</a>
-      </li>
-      <li>
-        <a href="artifacts.html">Ressources de conformité</a>
-      </li>
-    </ul>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -231,7 +185,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Mesures de santé (v3.0.1: Release) based on <a href="http://hl7.org/fhir/R4">FHIR R4</a>. This is the current published version.  For a full list of available versions, see the <a href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Directory of published versions <img src="external.png" style="text-align: baseline"></a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Mesures de santé (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -247,6 +201,7 @@
   <li class="active">
     <a href="#">Narrative Content</a>
   </li>
+
 
 
   
@@ -279,18 +234,6 @@
 
   <h2 id="root">Example Observation: ExampleMesObservationPainSeverity001</h2>
 
-  <table class="colsi">
-    <tr>
-
-      <td colspan="2">
-        
-          
-          
-        
-      </td>
-
-    </tr>
-  </table>
 
 
 
@@ -299,7 +242,7 @@
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="ExampleMesObservationPainSeverity001"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;ExampleMesObservationPainSeverity001&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mesures-observation-pain-severity.html">MesObservationPainSeverity</a></p></div><p><b>MesReasonForMeasurement</b>: Malaise du patient</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Pain severity - 0-10 verbal numeric rating [Score] - Reported <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#72514-3)</span></p><p><b>subject</b>: <a href="Patient-ExamplefrPatient001.html">Patient/ExamplefrPatient001: Pierre Durand</a> &quot; DURAND&quot;</p><p><b>effective</b>: 2022-11-06</p><p><b>value</b>: 5 Level<span style="background: LightGoldenRodYellow"> (Details: UCUM code 1 = '1')</span></p></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation ExampleMesObservationPainSeverity001</b></p><a name="ExampleMesObservationPainSeverity001"> </a><a name="hcExampleMesObservationPainSeverity001"> </a><a name="ExampleMesObservationPainSeverity001-fr-FR"> </a><p><b>Raison de la mesure</b>: Malaise du patient</p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 72514-3}">Pain severity - 0-10 verbal numeric rating [Score] - Reported</span></p><p><b>subject</b>: <a href="Patient-ExamplefrPatient001.html">Pierre Durand</a></p><p><b>effective</b>: 2022-11-06</p><p><b>value</b>: 5 Level<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></div>
 
   
 
@@ -317,13 +260,7 @@
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -352,13 +289,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.mesures#3.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 26, 2023 16:40+0200">2023-04-26</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.mesures#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 2, 2024 08:41+0000">2024-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-mesures/issues/new">New Issue</a>
-                
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-mesures/issues/new">New Issue</a>
 
           </span>
         </p>
@@ -386,20 +323,8 @@
   <script src="assets/js/vendor.js" type="text/javascript"> </script>
   <!-- Fin ajout ANS -->
 
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
 
   <!-- Analytics Below
   ================================================== -->

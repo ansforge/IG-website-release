@@ -1,118 +1,116 @@
-<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2>
-<hr/><a name="l1"> </a>
-<p>#1</p>
-<pre>
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-User-Agent: hapi-fhir-tooling-client
-Accept-Charset: UTF-8
-Accept: application/fhir+json
-Content-Type: application/fhir+json;charset=UTF-8
+<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
 
-{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;coding&quot;,&quot;valueCoding&quot;:{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;8302-2&quot;}},{&quot;name&quot;:&quot;displayLanguage&quot;,&quot;valueString&quot;:&quot;en-US&quot;},{&quot;name&quot;:&quot;default-to-latest-version&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;profile&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;x-system-cache-id&quot;,&quot;valueString&quot;:&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;}]}}]}
-</pre>
+</pre><hr/>
+<a name="l1"> </a><h3>1</h3>
 <pre>
+Request: 
+
+GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.0): 
+
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:282
+content-length:1521
 content-type:application/fhir+json
-date:Wed, 26 Apr 2023 14:40:48 GMT
-last-modified:Wed, 26 Apr 2023 14:40:48 GMT
+date:Wed, 02 Oct 2024 08:41:51 GMT
 pragma:no-cache
 server:nginx
-x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-x-request-id:9-615599
+x-request-id:160-954074
 
-{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;display&quot;,&quot;valueString&quot; : &quot;Body height&quot;},{&quot;name&quot; : &quot;system&quot;,&quot;valueString&quot; : &quot;http://loinc.org&quot;},{&quot;name&quot; : &quot;code&quot;,&quot;valueString&quot; : &quot;8302-2&quot;},{&quot;name&quot; : &quot;version&quot;,&quot;valueString&quot; : &quot;2.73&quot;},{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : true}]}
-</pre>
-<hr/><a name="l2"> </a>
-<p>#2</p>
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/metadata","version" : "4.0.1-3.4.18","name" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-10-02T08:41:51.881Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.18","releaseDate" : "2024-09-26T08:48:58.943Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+
+</pre><hr/>
+<a name="l2"> </a><h3>2</h3>
 <pre>
+Request: 
+
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-User-Agent: hapi-fhir-tooling-client
-Accept-Charset: UTF-8
-Accept: application/fhir+json
-Content-Type: application/fhir+json;charset=UTF-8
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
 
-{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;coding&quot;,&quot;valueCoding&quot;:{&quot;system&quot;:&quot;https://mos.esante.gouv.fr/NOS/TRE_R306-CLADIMED/FHIR/TRE-R306-CLADIMED&quot;,&quot;code&quot;:&quot;K50BI02&quot;}},{&quot;name&quot;:&quot;displayLanguage&quot;,&quot;valueString&quot;:&quot;en-US&quot;},{&quot;name&quot;:&quot;default-to-latest-version&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;profile&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;x-system-cache-id&quot;,&quot;valueString&quot;:&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;}]}}]}
-</pre>
-<pre>
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih","code":"E11.x0"}},{"name":"displayLanguage","valueString":"en, en-US, fr-FR"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"a3a9333d-ec64-4ba7-a4a7-329c326abe28"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.0): 
+
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:485
+content-length:1674
 content-type:application/fhir+json
-date:Wed, 26 Apr 2023 14:40:48 GMT
-last-modified:Wed, 26 Apr 2023 14:40:48 GMT
+date:Wed, 02 Oct 2024 08:41:59 GMT
+last-modified:Wed, 02 Oct 2024 08:41:59 GMT
 pragma:no-cache
 server:nginx
-x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-x-request-id:9-615600
+x-request-id:160-954078
 
-{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : false},{&quot;name&quot; : &quot;message&quot;,&quot;valueString&quot; : &quot;The code system 'https://mos.esante.gouv.fr/NOS/TRE_R306-CLADIMED/FHIR/TRE-R306-CLADIMED' is not known (encountered paired with code = 'K50BI02'); The code provided (https://mos.esante.gouv.fr/NOS/TRE_R306-CLADIMED/FHIR/TRE-R306-CLADIMED#K50BI02) is not valid in the value set 'All codes known to the system'&quot;},{&quot;name&quot; : &quot;cause&quot;,&quot;valueString&quot; : &quot;not-found&quot;}]}
-</pre>
-<hr/><a name="l3"> </a>
-<p>#3</p>
-<pre>
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-User-Agent: hapi-fhir-tooling-client
-Accept-Charset: UTF-8
-Accept: application/fhir+json
-Content-Type: application/fhir+json;charset=UTF-8
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih"},{"name" : "code","valueCode" : "E11.x0"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "<1 sec http://hl7.org/fhir/ValueSet/@all: Analysing\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, fr-FR, default-to-latest\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Validate \"[https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih#E11.x0 (\"\")]\"\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Check \"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih#E11.x0\"\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih\"\r\n"}]}
 
-{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;coding&quot;,&quot;valueCoding&quot;:{&quot;system&quot;:&quot;https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih&quot;,&quot;code&quot;:&quot;E11.x0&quot;}},{&quot;name&quot;:&quot;displayLanguage&quot;,&quot;valueString&quot;:&quot;en-US&quot;},{&quot;name&quot;:&quot;default-to-latest-version&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;profile&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;x-system-cache-id&quot;,&quot;valueString&quot;:&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;}]}}]}
-</pre>
-<pre>
+--- 1 -----------------
+Request: 
+
+GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.0): 
+
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:487
+content-length:1521
 content-type:application/fhir+json
-date:Wed, 26 Apr 2023 14:40:53 GMT
-last-modified:Wed, 26 Apr 2023 14:40:53 GMT
+date:Wed, 02 Oct 2024 08:41:51 GMT
 pragma:no-cache
 server:nginx
-x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-x-request-id:9-615603
+x-request-id:160-954074
 
-{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : false},{&quot;name&quot; : &quot;message&quot;,&quot;valueString&quot; : &quot;The code system 'https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih' is not known (encountered paired with code = 'E11.x0'); The code provided (https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih#E11.x0) is not valid in the value set 'All codes known to the system'&quot;},{&quot;name&quot; : &quot;cause&quot;,&quot;valueString&quot; : &quot;not-found&quot;}]}
-</pre>
-<hr/><a name="l4"> </a>
-<p>#4</p>
-<pre>
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/metadata","version" : "4.0.1-3.4.18","name" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-10-02T08:41:51.881Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.18","releaseDate" : "2024-09-26T08:48:58.943Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+
+--- 2 -----------------
+Request: 
+
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-User-Agent: hapi-fhir-tooling-client
-Accept-Charset: UTF-8
-Accept: application/fhir+json
-Content-Type: application/fhir+json;charset=UTF-8
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
 
-{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;coding&quot;,&quot;valueCoding&quot;:{&quot;system&quot;:&quot;https://mos.esante.gouv.fr/NOS/TRE_A04-Loinc/FHIR/TRE-A04-Loinc&quot;,&quot;code&quot;:&quot;4548-4&quot;}},{&quot;name&quot;:&quot;displayLanguage&quot;,&quot;valueString&quot;:&quot;en-US&quot;},{&quot;name&quot;:&quot;default-to-latest-version&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;profile&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;x-system-cache-id&quot;,&quot;valueString&quot;:&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;}]}}]}
-</pre>
-<pre>
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih","code":"E11.x0"}},{"name":"displayLanguage","valueString":"en, en-US, fr-FR"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"a3a9333d-ec64-4ba7-a4a7-329c326abe28"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.0): 
+
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
 access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:467
+content-length:1674
 content-type:application/fhir+json
-date:Wed, 26 Apr 2023 14:40:53 GMT
-last-modified:Wed, 26 Apr 2023 14:40:53 GMT
+date:Wed, 02 Oct 2024 08:41:59 GMT
+last-modified:Wed, 02 Oct 2024 08:41:59 GMT
 pragma:no-cache
 server:nginx
-x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-x-request-id:9-615604
+x-request-id:160-954078
 
-{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : false},{&quot;name&quot; : &quot;message&quot;,&quot;valueString&quot; : &quot;The code system 'https://mos.esante.gouv.fr/NOS/TRE_A04-Loinc/FHIR/TRE-A04-Loinc' is not known (encountered paired with code = '4548-4'); The code provided (https://mos.esante.gouv.fr/NOS/TRE_A04-Loinc/FHIR/TRE-A04-Loinc#4548-4) is not valid in the value set 'All codes known to the system'&quot;},{&quot;name&quot; : &quot;cause&quot;,&quot;valueString&quot; : &quot;not-found&quot;}]}
-</pre>
-</head></html>
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih"},{"name" : "code","valueCode" : "E11.x0"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "<1 sec http://hl7.org/fhir/ValueSet/@all: Analysing\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, fr-FR, default-to-latest\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Validate \"[https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih#E11.x0 (\"\")]\"\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Check \"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih#E11.x0\"\r\n<1 sec http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://mos.esante.gouv.fr/NOS/TRE_R311-CIM10Atih/FHIR/TRE-R311-CIM10Atih\"\r\n"}]}
+</pre></head></html>
