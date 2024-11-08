@@ -3,11 +3,11 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fr.nos"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fr.nos</b></p><a name="ans.fr.nos"> </a><a name="hcans.fr.nos"> </a><a name="ans.fr.nos-en-US"> </a><h2>NOS</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos</pre><div><p>Les nomenclatures des objets de Sante</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>NOS</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos</pre><div><p>Les nomenclatures des objets de Sante</p>
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
-  <version value="1.3.0"/>
+  <version value="1.4.0"/>
   <name value="NOS"/>
   <title value="Nomenclatures des objets de santé (NOS)"/>
   <status value="active"/>
@@ -67,6 +67,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="/tmp"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueString value="autoload-resources"/>
       </extension>
       <extension url="value">
@@ -95,14 +103,6 @@
       </extension>
       <extension url="value">
         <valueString value="temp/qa"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueString value="path-temp"/>
-      </extension>
-      <extension url="value">
-        <valueString value="temp/pages"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -242,7 +242,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.2.0"/>
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -266,6 +266,14 @@
       </extension>
       <extension url="value">
         <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="/tmp"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -298,14 +306,6 @@
       </extension>
       <extension url="value">
         <valueString value="temp/qa"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueCode value="path-temp"/>
-      </extension>
-      <extension url="value">
-        <valueString value="temp/pages"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -2256,7 +2256,7 @@
         <reference value="ValueSet/JDV-J254-CategorieEtablissementESSMSPH"/>
       </reference>
       <name value="JDV_J254-CategorieEtablissementESSMSPH"/>
-      <description value="Liste les catégories d’établissements ESSMS (Etablissement ou Service Social ou Médico-Social) pour les personnes porteurs d’handicap"/>
+      <description value="Liste les catégories d'établissements ESSMS (Etablissement ou Service Social ou Médico-Social) pour les personnes porteurs d'handicap"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2396,10 +2396,131 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/JDV-J275-EMDN-UPNOS"/>
+      </reference>
+      <name value="JDV_J275-EMDN-UPNOS"/>
+      <description value="Termes EMDN utilisés"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J276-SNOMED-UPNOS"/>
+      </reference>
+      <name value="JDV_J276-SNOMED-UPNOS"/>
+      <description value="Termes SNOMED-CT utilisés"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J277-NCIT-CISIS"/>
+      </reference>
+      <name value="JDV_J277-NCIT-CISIS"/>
+      <description value="Termes NCIT utilisés"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J278-UcumUniteMesure-UPNOS"/>
+      </reference>
+      <name value="JDV_J278-UcumUniteMesure-UPNOS"/>
+      <description value="Termes UCUM utilisés"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J279-Loinc-UPNOS"/>
+      </reference>
+      <name value="JDV_J279-Loinc-UPNOS"/>
+      <description value="Termes LOINC utilisés"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/JDV-J28-OuvertureAnnuelle-ROR"/>
       </reference>
       <name value="JDV_J28-OuvertureAnnuelle-ROR"/>
       <description value="Ouverture annuelle - ROR"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J281-StatutsRessourcesMS"/>
+      </reference>
+      <name value="JDV_J281-StatutsRessourcesMS"/>
+      <description value="Statut de l'évaluation et des événements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J282-TransportsLiesAuProjetIndividuel-SERAFIN"/>
+      </reference>
+      <name value="JDV_J282-TransportsLiesAuProjetIndividuel_SERAFIN"/>
+      <description value="Liste les natures des transports liés au projet individuel provenant de la terminologie SERAFIN"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J283-PrestationsIndirects-SERAFIN"/>
+      </reference>
+      <name value="JDV_J283-PrestationsIndirects_SERAFIN"/>
+      <description value="Liste des prestations indirects provenant de la terminologie SERAFIN"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J284-PrestationsDirects-SERAFIN"/>
+      </reference>
+      <name value="JDV_J284-PrestationsDirects_SERAFIN"/>
+      <description value="Liste des prestations directs provenant de la terminologie SERAFIN"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J285-Besoins-SERAFIN"/>
+      </reference>
+      <name value="JDV_J285-Besoins_SERAFIN"/>
+      <description value="Liste des besoins provenant de la terminologie SERAFIN"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/JDV-J286-ProfilUtilisateurReferentielNational-ROR"/>
+      </reference>
+      <name value="JDV_J286_ProfilUtilisateurReferentielNational_ROR"/>
+      <description value="Profils utilisateurs du ROR National"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2586,7 +2707,7 @@
         <reference value="ValueSet/JDV-J49-UcumUniteLongueur"/>
       </reference>
       <name value="JDV_J49-UcumUniteLongueur"/>
-      <description value="JDV contenant les unités de longueurs référencées dans la TRE _R247"/>
+      <description value="Unités de longueurs utilisées et référencées dans UCUM"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3148,17 +3269,6 @@
       </reference>
       <name value="TRE_A03-ClasseDocument"/>
       <description value="Classe de document"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/TRE-A04-Loinc"/>
-      </reference>
-      <name value="TRE_A04-Loinc"/>
-      <description value="Termes LOINC utilisés"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4156,17 +4266,6 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/TRE-R247-UcumUniteMesure"/>
-      </reference>
-      <name value="TRE_R247-UcumUniteMesure"/>
-      <description value="UCUM - Unité de mesure"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
         <reference value="CodeSystem/TRE-R248-ModeAcces"/>
       </reference>
       <name value="TRE_R248_ModeAcces"/>
@@ -4816,43 +4915,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/TRE-R306-CLADIMED"/>
-      </reference>
-      <name value="TRE_R306-CLADIMED"/>
-      <description value="Classification française des Dispositifs Médicaux"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/TRE-R307-NCIT"/>
-      </reference>
-      <name value="TRE_R307-NCIT"/>
-      <description value="National Cancer Institute (NCI) Thesaurus"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
         <reference value="CodeSystem/TRE-R308-TAASIP"/>
       </reference>
       <name value="TRE_R308-TAASIP"/>
       <description value="TA_ASIP"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/TRE-R309-FMA"/>
-      </reference>
-      <name value="TRE_R309-FMA"/>
-      <description value="Foundational Model of Anatomy (FMA) ontology"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4886,17 +4952,6 @@
       </reference>
       <name value="TRE_R311-RegroupementSurCIM10ATIH"/>
       <description value="CIM-10 FR à usage PMSI"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/TRE-R312-LPP"/>
-      </reference>
-      <name value="TRE_R312-LPP"/>
-      <description value="Liste des produits et prestations remboursables par l'Assurance Maladie"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5392,6 +5447,28 @@
       </reference>
       <name value="TRE_R36-AutreDiplomeObtenu"/>
       <description value="Autre diplôme obtenu"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/TRE-R368-StatutRessource"/>
+      </reference>
+      <name value="TRE_R368-StatutRessource"/>
+      <description value="Caractérise le statut du processus d'évaluation de l'autonomie de l'usager par un professionnel de santé ou par lui-même lors d'une auto évaluation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/TRE-R369-ProfilUtilisateurReferentielNational"/>
+      </reference>
+      <name value="TRE_R369_ProfilUtilisateurReferentielNational"/>
+      <description value="Profils utilisateur d'un référentiel national"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

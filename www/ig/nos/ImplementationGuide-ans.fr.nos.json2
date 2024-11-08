@@ -2,11 +2,11 @@
   "resourceType" : "ImplementationGuide",
   "id" : "ans.fr.nos",
   "text" : {
-    "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fr.nos</b></p><a name=\"ans.fr.nos\"> </a><a name=\"hcans.fr.nos\"> </a><a name=\"ans.fr.nos-en-US\"> </a><h2>NOS</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos</pre><div><p>Les nomenclatures des objets de Sante</p>\n</div></div>"
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>NOS</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos</pre><div><p>Les nomenclatures des objets de Sante</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
-  "version" : "1.3.0",
+  "version" : "1.4.0",
   "name" : "NOS",
   "title" : "Nomenclatures des objets de santé (NOS)",
   "status" : "active",
@@ -80,6 +80,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "/tmp"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueString" : "autoload-resources"
       },
       {
@@ -118,17 +129,6 @@
       {
         "url" : "value",
         "valueString" : "temp/qa"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-temp"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/pages"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -321,7 +321,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#0.2.0"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -353,6 +353,17 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "/tmp"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -397,17 +408,6 @@
       {
         "url" : "value",
         "valueString" : "temp/qa"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueCode" : "path-temp"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/pages"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2575,7 +2575,7 @@
         "reference" : "ValueSet/JDV-J254-CategorieEtablissementESSMSPH"
       },
       "name" : "JDV_J254-CategorieEtablissementESSMSPH",
-      "description" : "Liste les catégories d’établissements ESSMS (Etablissement ou Service Social ou Médico-Social) pour les personnes porteurs d’handicap",
+      "description" : "Liste les catégories d'établissements ESSMS (Etablissement ou Service Social ou Médico-Social) pour les personnes porteurs d'handicap",
       "exampleBoolean" : false
     },
     {
@@ -2728,10 +2728,142 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/JDV-J275-EMDN-UPNOS"
+      },
+      "name" : "JDV_J275-EMDN-UPNOS",
+      "description" : "Termes EMDN utilisés",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J276-SNOMED-UPNOS"
+      },
+      "name" : "JDV_J276-SNOMED-UPNOS",
+      "description" : "Termes SNOMED-CT utilisés",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J277-NCIT-CISIS"
+      },
+      "name" : "JDV_J277-NCIT-CISIS",
+      "description" : "Termes NCIT utilisés",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J278-UcumUniteMesure-UPNOS"
+      },
+      "name" : "JDV_J278-UcumUniteMesure-UPNOS",
+      "description" : "Termes UCUM utilisés",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J279-Loinc-UPNOS"
+      },
+      "name" : "JDV_J279-Loinc-UPNOS",
+      "description" : "Termes LOINC utilisés",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/JDV-J28-OuvertureAnnuelle-ROR"
       },
       "name" : "JDV_J28-OuvertureAnnuelle-ROR",
       "description" : "Ouverture annuelle - ROR",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J281-StatutsRessourcesMS"
+      },
+      "name" : "JDV_J281-StatutsRessourcesMS",
+      "description" : "Statut de l'évaluation et des événements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J282-TransportsLiesAuProjetIndividuel-SERAFIN"
+      },
+      "name" : "JDV_J282-TransportsLiesAuProjetIndividuel_SERAFIN",
+      "description" : "Liste les natures des transports liés au projet individuel provenant de la terminologie SERAFIN",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J283-PrestationsIndirects-SERAFIN"
+      },
+      "name" : "JDV_J283-PrestationsIndirects_SERAFIN",
+      "description" : "Liste des prestations indirects provenant de la terminologie SERAFIN",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J284-PrestationsDirects-SERAFIN"
+      },
+      "name" : "JDV_J284-PrestationsDirects_SERAFIN",
+      "description" : "Liste des prestations directs provenant de la terminologie SERAFIN",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J285-Besoins-SERAFIN"
+      },
+      "name" : "JDV_J285-Besoins_SERAFIN",
+      "description" : "Liste des besoins provenant de la terminologie SERAFIN",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/JDV-J286-ProfilUtilisateurReferentielNational-ROR"
+      },
+      "name" : "JDV_J286_ProfilUtilisateurReferentielNational_ROR",
+      "description" : "Profils utilisateurs du ROR National",
       "exampleBoolean" : false
     },
     {
@@ -2935,7 +3067,7 @@
         "reference" : "ValueSet/JDV-J49-UcumUniteLongueur"
       },
       "name" : "JDV_J49-UcumUniteLongueur",
-      "description" : "JDV contenant les unités de longueurs référencées dans la TRE _R247",
+      "description" : "Unités de longueurs utilisées et référencées dans UCUM",
       "exampleBoolean" : false
     },
     {
@@ -3548,18 +3680,6 @@
       },
       "name" : "TRE_A03-ClasseDocument",
       "description" : "Classe de document",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/TRE-A04-Loinc"
-      },
-      "name" : "TRE_A04-Loinc",
-      "description" : "Termes LOINC utilisés",
       "exampleBoolean" : false
     },
     {
@@ -4648,18 +4768,6 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/TRE-R247-UcumUniteMesure"
-      },
-      "name" : "TRE_R247-UcumUniteMesure",
-      "description" : "UCUM - Unité de mesure",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
         "reference" : "CodeSystem/TRE-R248-ModeAcces"
       },
       "name" : "TRE_R248_ModeAcces",
@@ -5368,46 +5476,10 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/TRE-R306-CLADIMED"
-      },
-      "name" : "TRE_R306-CLADIMED",
-      "description" : "Classification française des Dispositifs Médicaux",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/TRE-R307-NCIT"
-      },
-      "name" : "TRE_R307-NCIT",
-      "description" : "National Cancer Institute (NCI) Thesaurus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
         "reference" : "CodeSystem/TRE-R308-TAASIP"
       },
       "name" : "TRE_R308-TAASIP",
       "description" : "TA_ASIP",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/TRE-R309-FMA"
-      },
-      "name" : "TRE_R309-FMA",
-      "description" : "Foundational Model of Anatomy (FMA) ontology",
       "exampleBoolean" : false
     },
     {
@@ -5444,18 +5516,6 @@
       },
       "name" : "TRE_R311-RegroupementSurCIM10ATIH",
       "description" : "CIM-10 FR à usage PMSI",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/TRE-R312-LPP"
-      },
-      "name" : "TRE_R312-LPP",
-      "description" : "Liste des produits et prestations remboursables par l'Assurance Maladie",
       "exampleBoolean" : false
     },
     {
@@ -5996,6 +6056,30 @@
       },
       "name" : "TRE_R36-AutreDiplomeObtenu",
       "description" : "Autre diplôme obtenu",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/TRE-R368-StatutRessource"
+      },
+      "name" : "TRE_R368-StatutRessource",
+      "description" : "Caractérise le statut du processus d'évaluation de l'autonomie de l'usager par un professionnel de santé ou par lui-même lors d'une auto évaluation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/TRE-R369-ProfilUtilisateurReferentielNational"
+      },
+      "name" : "TRE_R369_ProfilUtilisateurReferentielNational",
+      "description" : "Profils utilisateur d'un référentiel national",
       "exampleBoolean" : false
     },
     {
