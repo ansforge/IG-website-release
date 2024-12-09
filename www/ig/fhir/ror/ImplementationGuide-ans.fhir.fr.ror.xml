@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.ror"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ROR</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.ror</b></p><a name="ans.fhir.fr.ror"> </a><a name="hcans.fhir.fr.ror"> </a><a name="ans.fhir.fr.ror-fr-FR"> </a><h2>ROR</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"/>
-  <version value="0.3.0"/>
+  <version value="0.4.0"/>
   <name value="ROR"/>
   <title value="Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social"/>
-  <status value="active"/>
-  <date value="2024-03-13T09:14:58+00:00"/>
+  <status value="draft"/>
+  <date value="2024-12-09T14:32:19+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -37,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.3.0"/>
+    <version value="6.1.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -45,7 +45,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="1.0.0"/>
+    <version value="5.1.0"/>
   </dependsOn>
   <dependsOn id="ans_annuaire_fhir_r4">
     <uri value="http://fhir.org/packages/ans.annuaire.fhir.r4/ImplementationGuide/ans.annuaire.fhir.r4"/>
@@ -62,11 +62,6 @@
     <packageId value="hl7.fhir.uv.bulkdata"/>
     <version value="2.0.0"/>
   </dependsOn>
-  <dependsOn id="ans_fr_securisation_transport">
-    <uri value="https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport"/>
-    <packageId value="ans.fr.securisation-transport"/>
-    <version value="1.2.0"/>
-  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -81,7 +76,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="trial-implementation"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -277,7 +272,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -292,7 +287,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="trial-implementation"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -522,6 +517,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/ror-questionnaire-offre-de-ville"/>
+      </reference>
+      <name value="Consignes fiche de saisie Cabinet de ville de médecine générale"/>
+      <description value="Exemple 'fake' pour RORQuestionnaire n'ayant pas forcément de cohérence fonctionnelle."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-questionnaire"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -562,6 +568,17 @@
       <name value="ROR-Consommateur"/>
       <description value="Capability Statement pour les systèmes qui sont autorisés à consommer les données du ROR. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/ror-location-exemple"/>
+      </reference>
+      <name value="ror-location-exemple"/>
+      <description value="Exemple 'fake' pour RORLocation n'ayant pas forcément de cohérence fonctionnelle."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -715,6 +732,17 @@
       </reference>
       <name value="ror-sp-healthcareservice-intervention-zone"/>
       <description value="Paramètre de recherche décrivant la zone d'intervention"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ror-sp-healthcareservice-notavailable-closing-reopeningdate"/>
+      </reference>
+      <name value="ror-sp-healthcareservice-notavailable-closing-reopeningdate"/>
+      <description value="Paramètre de recherche pour rechercher la date dans la période de fermeture (during.start) et de réouverture prévisionnelle (during.end)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -958,6 +986,17 @@
       <name value="ror-sp-temporary-assignement"/>
       <description value="Paramètre de recherche pour récupérer les affectations temporaires"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ror-task-exemple"/>
+      </reference>
+      <name value="ror-task-exemple"/>
+      <description value="Exemple 'fake' pour RORTask n'ayant pas forcément de cohérence fonctionnelle"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-task"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1228,17 +1267,6 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/ror-location-status"/>
-      </reference>
-      <name value="RORLocationStatus"/>
-      <description value="Extension créée dans le cadre du ROR pour indiquer si le lieu est opérationnel, fermé temporairement ou fermé définitivement."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/ror-location-supported-capacity"/>
       </reference>
       <name value="RORLocationSupportedCapacity"/>
@@ -1470,7 +1498,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/RORPractitionerRoleName"/>
+        <reference value="StructureDefinition/ror-practitionerrole-name"/>
       </reference>
       <name value="RORPractitionerRoleName"/>
       <description value="Extension créée dans le cadre du ROR pour définir l'identité d’exercice d’un professionnel"/>
@@ -1485,6 +1513,17 @@
       </reference>
       <name value="RORPractitionerRoleUnitExerciseMode"/>
       <description value="Extension créée dans le cadre du ROR qui correspond au statut du professionnel lorsqu'il exerce dans le cadre de l'offre décrite."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ror-questionnaire"/>
+      </reference>
+      <name value="RORQuestionnaire"/>
+      <description value="Fiche de saisie de l'offre de soins"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1551,6 +1590,17 @@
       </reference>
       <name value="Value Set afin d'étendre le Value Set pour query parameter includeAssociatedData"/>
       <description value="Value Set pour étendre http://hl7.org/fhir/uv/bulkdata/ValueSet/include-associated-data et utiliser _[custom value] pour utiliser le query parameter includeAssociatedData"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ror-usage-context-type-vs"/>
+      </reference>
+      <name value="Value Set type pour le contexte d'usage de la fiche de saisie"/>
+      <description value="Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d'usage de la fiche de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1645,6 +1695,30 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="consignes_fiche_saisie_offre.html"/>
+        </extension>
+        <nameUrl value="consignes_fiche_saisie_offre.html"/>
+        <title value="Consignes fiche de saisie de l'offre"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="saisie_offre.html"/>
+        </extension>
+        <nameUrl value="saisie_offre.html"/>
+        <title value="Saisie de l'offre"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="miseAjour_offre.html"/>
+        </extension>
+        <nameUrl value="miseAjour_offre.html"/>
+        <title value="Mise à jour de l'offre"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="specifications_techniques_5.html"/>
         </extension>
         <nameUrl value="specifications_techniques_5.html"/>
@@ -1701,10 +1775,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="downloads.html"/>
+          <valueUrl value="autres_ressources.html"/>
         </extension>
-        <nameUrl value="downloads.html"/>
-        <title value="Téléchargements et usages"/>
+        <nameUrl value="autres_ressources.html"/>
+        <title value="Autres Ressources"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -1714,14 +1788,14 @@
           <title value="Sécurité"/>
           <generation value="markdown"/>
         </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="autres_ressources.html"/>
-        </extension>
-        <nameUrl value="autres_ressources.html"/>
-        <title value="Autres Ressources"/>
-        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="downloads.html"/>
+          </extension>
+          <nameUrl value="downloads.html"/>
+          <title value="Téléchargements et usages"/>
+          <generation value="markdown"/>
+        </page>
       </page>
     </page>
     <parameter>

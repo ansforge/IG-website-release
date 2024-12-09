@@ -11,7 +11,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Terminology Server Report for ROR</h1>
- <p>Generated Wed Mar 13 09:16:10 UTC 2024, FHIR version 4.0.1 for ans.fhir.fr.ror#0.3.0 (canonical = <a href="https://interop.esante.gouv.fr/ig/fhir/ror">https://interop.esante.gouv.fr/ig/fhir/ror</a> (<a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">history</a>))</p>
+ <p>Generated Mon Dec 09 14:33:47 UTC 2024, FHIR version 4.0.1 for ans.fhir.fr.ror#0.4.0 (canonical = <a href="https://interop.esante.gouv.fr/ig/fhir/ror">https://interop.esante.gouv.fr/ig/fhir/ror</a> (<a href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">history</a>))</p>
 <p>This page provides a report on which terminology servers were used while publishing this IG. Note that terminology caching reduces the server hit count - this page only reports content that wasn't cached</p>
 <h2>Terminology Parameters</h2>
 <ul>
@@ -21,12 +21,91 @@
   </li>
 </ul>
 <h2>Tx Manager report for 'http://tx.fhir.org/tx-reg'</h2>
-<ul>
-  <li>Request for system [https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure] not handled by any servers. Using master @ 'http://tx.fhir.org/r4'</li>
-  <li>Request for system [https://mos.esante.gouv.fr/NOS/TRE_R345-TypeIdentifiantAutre/FHIR/TRE-R345-TypeIdentifiantAutre] not handled by any servers. Using master @ 'http://tx.fhir.org/r4'</li>
-</ul>
+<table class="grid">
+  <tr>
+    <td>
+      <b>Message</b>
+    </td>
+    <td>
+      <b>Server</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Systems</b>
+    </td>
+    <td>
+      <b>Choices</b>
+    </td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://hl7.org/fhir/fhir-types</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://hl7.org/fhir/fhir-types</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R345-TypeIdentifiantAutre/FHIR/TRE_R345-TypeIdentifiantAutre</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R345-TypeIdentifiantAutre/FHIR/TRE_R345-TypeIdentifiantAutre</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/ror-usage-context-type-vs|0.4.0</td>
+    <td>[http://terminology.hl7.org/CodeSystem/usage-context-type, https://mos.esante.gouv.fr/NOS/TRE_R04-TypeSavoirFaire/FHIR/TRE-R04-TypeSavoirFaire, https://mos.esante.gouv.fr/NOS/TRE_R288-TypeProfession/FHIR/TRE-R288-TypeProfession, https://mos.esante.gouv.fr/NOS/TRE_R67-TypeStructure-EJ-EG/FHIR/TRE-R67-TypeStructure-EJ-EG]</td>
+    <td>[auth = http://tx.fhir.org/r4, candidates=https://tx.ontoserver.csiro.au/fhir, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=]</td>
+  </tr>
+  <tr>
+    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/ror-usage-context-type-vs|0.4.0</td>
+    <td>[http://terminology.hl7.org/CodeSystem/usage-context-type, https://mos.esante.gouv.fr/NOS/TRE_R04-TypeSavoirFaire/FHIR/TRE-R04-TypeSavoirFaire, https://mos.esante.gouv.fr/NOS/TRE_R288-TypeProfession/FHIR/TRE-R288-TypeProfession, https://mos.esante.gouv.fr/NOS/TRE_R67-TypeStructure-EJ-EG/FHIR/TRE-R67-TypeStructure-EJ-EG]</td>
+    <td>[auth = http://tx.fhir.org/r4, candidates=https://tx.ontoserver.csiro.au/fhir, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=]</td>
+  </tr>
+  <tr>
+    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/ror-usage-context-type-vs|0.4.0</td>
+    <td>[http://terminology.hl7.org/CodeSystem/usage-context-type, https://mos.esante.gouv.fr/NOS/TRE_R04-TypeSavoirFaire/FHIR/TRE-R04-TypeSavoirFaire, https://mos.esante.gouv.fr/NOS/TRE_R288-TypeProfession/FHIR/TRE-R288-TypeProfession, https://mos.esante.gouv.fr/NOS/TRE_R67-TypeStructure-EJ-EG/FHIR/TRE-R67-TypeStructure-EJ-EG]</td>
+    <td>[auth = http://tx.fhir.org/r4, candidates=https://tx.ontoserver.csiro.au/fhir, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=, auth = https://smt.esante.gouv.fr/fhir, candidates=]</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM</td>
+    <td>auth = , candidates=</td>
+  </tr>
+</table>
 <h2>Primary Server: http://tx.fhir.org/r4</h2>
-<p>Use Count: 2. Code Systems used: </p>
+<a href="http://tx.fhir.org/r4"></a>
+<p>Use Count: 6. Code Systems used: </p>
 <table class="grid">
   <tr>
     <th>
@@ -43,15 +122,47 @@
     </th>
   </tr>
   <tr>
-    <td>https://mos.esante.gouv.fr/NOS/TRE_G07-TypeIdentifiantStructure/FHIR/TRE-G07-TypeIdentifiantStructure</td>
+    <td>http://hl7.org/fhir/fhir-types</td>
     <td>0</td>
     <td>1</td>
     <td></td>
   </tr>
   <tr>
-    <td>https://mos.esante.gouv.fr/NOS/TRE_R345-TypeIdentifiantAutre/FHIR/TRE-R345-TypeIdentifiantAutre</td>
+    <td>http://terminology.hl7.org/CodeSystem/usage-context-type</td>
+    <td>0</td>
+    <td>3</td>
+    <td>
+      <a href="http://terminology.hl7.org/6.1.0/CodeSystem-usage-context-type.html">UsageContextType</a>
+    </td>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R04-TypeSavoirFaire/FHIR/TRE-R04-TypeSavoirFaire</td>
+    <td>0</td>
+    <td>3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM</td>
     <td>0</td>
     <td>1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R288-TypeProfession/FHIR/TRE-R288-TypeProfession</td>
+    <td>0</td>
+    <td>3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R345-TypeIdentifiantAutre/FHIR/TRE_R345-TypeIdentifiantAutre</td>
+    <td>0</td>
+    <td>1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R67-TypeStructure-EJ-EG/FHIR/TRE-R67-TypeStructure-EJ-EG</td>
+    <td>0</td>
+    <td>3</td>
     <td></td>
   </tr>
 </table>
