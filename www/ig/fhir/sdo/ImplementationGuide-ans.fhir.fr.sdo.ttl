@@ -10,14 +10,14 @@
   fhir:id [ fhir:v "ans.fhir.fr.sdo"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo-fr-FR\"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><a name=\"ans.fhir.fr.sdo-fr-FR\"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "4.0.2"] ; # 
+  fhir:version [ fhir:v "4.0.3-ballot"] ; # 
   fhir:name [ fhir:v "SuiviDecisionsOrientation"] ; # 
   fhir:title [ fhir:v "Médicosocial - Suivi Décisions Orientation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-07-03T07:41:49+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-19T14:39:02+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -47,7 +47,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.5.0" ]
+     fhir:version [ fhir:v "6.1.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -67,7 +67,7 @@
        fhir:link <https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos>
      ] ;
      fhir:packageId [ fhir:v "ans.fr.nos" ] ;
-     fhir:version [ fhir:v "1.2.0" ]
+     fhir:version [ fhir:v "1.4.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -306,7 +306,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools.r4#0.3.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -564,7 +564,7 @@
          fhir:reference [ fhir:v "StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation" ]
        ] ;
        fhir:name [ fhir:v "ESMSBundleResultatRechercheDecisionEvaluation" ] ;
-       fhir:description [ fhir:v "Profil pour la définition du Bundle de réponse à la recherche d'une décision d'orientation ou d'une évaluation" ] ;
+       fhir:description [ fhir:v "Profil ESMS créé dans le contexte du suivi des orientations pour transporter les documents répondant à une recherche de decision ou d’évaluation." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -576,7 +576,7 @@
          fhir:reference [ fhir:v "StructureDefinition/esms-consent" ]
        ] ;
        fhir:name [ fhir:v "ESMSConsent" ] ;
-       fhir:description [ fhir:v "Profil pour la définition de l'accord" ] ;
+       fhir:description [ fhir:v "Profil ESMS créé dans le contexte du suivi des orientations pour transporter la définition de l’accord." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -588,7 +588,7 @@
          fhir:reference [ fhir:v "StructureDefinition/esms-document-reference" ]
        ] ;
        fhir:name [ fhir:v "ESMSDocumentReference" ] ;
-       fhir:description [ fhir:v "Profil pour définir le dossier ESMS" ] ;
+       fhir:description [ fhir:v "Profil ESMS héritant du profil SDODocumentReference. Profil utilisé pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -717,7 +717,7 @@
          fhir:reference [ fhir:v "StructureDefinition/sdo-bundle-resultat-recherche-notification-esms" ]
        ] ;
        fhir:name [ fhir:v "SDOBundleResultatRechercheNotificationESMS" ] ;
-       fhir:description [ fhir:v "Profil pour la définition du Bundle de réponse à la recherche d'une notification" ] ;
+       fhir:description [ fhir:v "Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -729,7 +729,7 @@
          fhir:reference [ fhir:v "StructureDefinition/sdo-document-reference" ]
        ] ;
        fhir:name [ fhir:v "SDODocumentReference" ] ;
-       fhir:description [ fhir:v "Profil pour définir le dossier SDO" ] ;
+       fhir:description [ fhir:v "Profil SDO utilisé pour véhiculer les données de l’individu, la décision et l’évaluation contenus dans le document CDA" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -741,7 +741,7 @@
          fhir:reference [ fhir:v "StructureDefinition/sdo-task" ]
        ] ;
        fhir:name [ fhir:v "SDOTask" ] ;
-       fhir:description [ fhir:v "Profil utilisé pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation" ] ;
+       fhir:description [ fhir:v "Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -753,7 +753,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/ESMSConsommateur" ]
        ] ;
        fhir:name [ fhir:v "SI-ESMS-Consommateur" ] ;
-       fhir:description [ fhir:v "Le rôle du consommateur est de recueillir le dossier d'une personne orientée pour l'examiner, ainsi que son évaluation par la CDAPH. \n   Le consommateur suit également les entrées des personnes orientées dans d'autres structures ainsi que la prise en compte d'une admission impossible par la MDPH.\n   Il correspond au SI-ESMS." ] ;
+       fhir:description [ fhir:v "CapabilityStatement du consommateur ESMS" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -765,7 +765,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/ESMSProducteur" ]
        ] ;
        fhir:name [ fhir:v "SI-ESMS-Producteur" ] ;
-       fhir:description [ fhir:v "Le rôle du producteur est de créer et transmettre l'accord de la personne en situation de handicap pour pouvoir accéder à son évaluation. Le producteur transmets également les statuts de la personne orientée en fonction de son avancée dans le processus d’orientations. \n   Il correspond au SI-ESMS." ] ;
+       fhir:description [ fhir:v "CapabilityStatement du producteur ESMS" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -777,7 +777,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/gestionnaire-sdo" ]
        ] ;
        fhir:name [ fhir:v "SI-SdO-Gestionnaire" ] ;
-       fhir:description [ fhir:v "Le rôle de gestionnaire est de gérer la liste des dossiers des personnes orientées et leurs statuts.\n   Il correspond au SI-SDO." ] ;
+       fhir:description [ fhir:v "CapabilityStatement du gestionnaire SDO" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
@@ -799,10 +799,10 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "liste_profils.html"^^xsd:anyURI ]
+           fhir:value [ fhir:v "ressource_fhir.html"^^xsd:anyURI ]
          ] ) ;
-         fhir:name [ fhir:v "liste_profils.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Liste des profils" ] ;
+         fhir:name [ fhir:v "ressource_fhir.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Ressources FHIR" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

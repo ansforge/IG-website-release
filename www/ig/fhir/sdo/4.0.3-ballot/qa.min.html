@@ -1,0 +1,545 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- broken links = 27, errors = 0, warn = 19, info = 14-->
+<head>
+  <title>SuiviDecisionsOrientation : Validation Results</title>
+  <link href="fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+    span.toggle  { background-color: #e6f2ff; color: black; border: solid 1px #0056b3; padding: 2px; font-size: 10px }
+    span.toggle  { font-size: 10px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+    function toggle(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Validation Information') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Validation Information';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Validation Information';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results for SuiviDecisionsOrientation</h1>
+ <p>Generated Thu Dec 19 14:38:44 UTC 2024, FHIR version 4.0.1 for ans.fhir.fr.sdo#4.0.3-ballot (canonical = <a href="https://interop.esante.gouv.fr/ig/fhir/sdo">https://interop.esante.gouv.fr/ig/fhir/sdo</a> (<a href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">history</a>)). See <a href="qa.html">Full QA Report</a></p>
+<table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.8.3</span></td></tr>
+ <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = ans.fhir.fr.sdo, Canonical = https://interop.esante.gouv.fr/ig/fhir/sdo</td></tr>
+ <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
+ <tr><td>Language Info:</td><td>This IG has no language information</td></tr>
+ <tr><td>Publication Request:</td><td><table class="grid">
+ <tr><td>package-id</d><td>ans.fhir.fr.sdo</td></tr>
+ <tr><td>version</d><td>4.0.3-ballot</td></tr>
+ <tr><td>path</d><td>https://interop.esante.gouv.fr/ig/fhir/sdo/4.0.3-ballot</td></tr>
+ <tr><td>Pub-Mode</d><td>milestone</td></tr>
+ <tr><td>status</d><td>release</td></tr>
+ <tr><td>Release-Label</d><td>trial-use</td></tr>
+ <tr><td>Sequence (Group)</d><td>trial-use (current: 'trial-use', others = 'STU1','Trial Implementation')</td></tr>
+ <tr><td>desc</d><td>Ce document présente les spécifications techniques du volet « SI-ESMS » (ST SI-ESMS). Ces dernières spécifient les échanges d’information entre le Système d’Information de Suivi des Orientations (SI-SdO) et le Système d'Information des Etablissements et Services Médico-Sociaux (SI-ESMS) suite à une notification de décision d’orientation prise par la Commission des Droits et de l’Autonomie des Personnes Handicapées (CDAPH).</td></tr>
+ <tr><td>descmd</d><td><p><strong>Release 4.0.3-ballot de l'Implementation Guide du volet &quot;SI-ESMS&quot;.</strong></p>
+<p><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/milestone/9?closed=1">Modifications apportées dans cette release</a> :</p>
+<ul>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/296">SFE mise en cohérence avec l'Annexe INS #296</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/297">SFE V 2.8 : mise en conformité de la description de l'attribut INS #297</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/266">https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/266</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/281">Contenu - Ajout de l'OID du NIR numéro de sécurité social #281</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/242">Contenu - Mise à jour des contraintes INS #242</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/291">ANS-006-140 - MAJ de l'identité du patient (contraintes INS) #291</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/265">RC - Task - Supprimer le typeDroitPrestation #265</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/287">ANS-006-140 - RC Task - suppression du typedroitprestation #287</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/278">RC - ESMSConsent - missing status constraint #278</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/286">ANS-006-140 - Consent.Status fixé à Active #286</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/263">FHIR - Requête - Imposer échappement du &quot;+&quot; en requête instant #263</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/268">ANS-006-133 - flux - MAJ description paramètre _lastUpdated #268</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/160">Contenu dossier - Lier les deux documents CDA avec l'idNat_Decision #160</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/251">Update CISIS-SPECIFICATIONS_FONCTIONNELLES_SI-ESMS_v2.7.pdf #251</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/246">ANS-006-133 - MAJ diagramme plantUML flux 3.1 - Suppression _elements=id #246</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/pull/231">ANS-006-133 - Evolution format parametre last_Updated flux 1.1 et 5.1 #231</a></li>
+<li><a href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/217">ST - FHIR - Corriger l'URL du JDV_J264 #217</a></li>
+</ul>
+</td></tr>
+</table>
+<ul><li>This release is labelled as a milestone, so should not have a patch version (4.0.3-ballot) <img src="icon-warning.png" height="16px" width="16px"/></li>
+<li>descmd cannot contain a ' <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>descmd cannot contain a " <img src="icon-error.gif" height="16px" width="16px"/></li>
+<li>Publication request ci-build found (not allowed after first publication) <img src="icon-error.gif" height="16px" width="16px"/></li>
+</ul>
+</td></tr>
+ <tr><td>Supressed Messages:</td><td><a href="#suppressed">19 Suppressed Issues</a>
+</td></tr>
+ <tr><td>Dependency Checks:</td><td><div><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The NPM Package Id">Package</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of the package">Version</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="The version of FHIR that the package is based on">FHIR</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Canonical URL">Canonical</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Web Reference Base">Web Base</span></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span title="Comments about this entry">Comment</span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> ans.fhir.fr.sdo</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">4.0.3-ballot</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">https://interop.esante.gouv.fr/ig/fhir/sdo</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">6.1.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/6.1.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALUlEQVR4Xu3IoREAIAwEwfT6/ddA0GBAxO3NrLlKUj9263wAAAAvrgEAADClAVWFQIBRHMicAAAAAElFTkSuQmCC)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.extensions.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.1.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions/5.1.0</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> ans.fr.nos</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1.4.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">https://interop.esante.gouv.fr/ig/nos</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">https://interop.esante.gouv.fr/ig/nos/1.4.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAALElEQVR4Xu3IsQ0AIAwEsez6+89AqKGGJj7JzVWS+mm3zgcAAMxwDQAAgFcaYAVAgNGLTjgAAAAASUVORK5CYII=)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: white; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.terminology.r4</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">6.0.2 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Outdated Release">O</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://terminology.hl7.org/6.0.2</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Latest Release is 6.1.0</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(/tmp/ans.fhir.fr.sdo#4.0.3-ballot/outputdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAACCAYAAACg/LjIAAAAJUlEQVR4Xu3IIQEAAAgDsHd9/w4EQIOamFnaBgAA4MMKAACAKwNp30CqZFfFmwAAAABJRU5ErkJggg==)" class="hierarchy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzME+lXFigAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+3OsRUAIAjEUOL+O8cJABttJM11/x1qZAGqRBEVcNIqdWj1efDqQbb3HwwwwEfABmQUHSPM9dtDAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYZCik0qECmbAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABtUlEQVQoz2P8//8/Ayb4///v8xfM4iIMzKxoMkwMOMC3DVv/vXmEKY5Dw///Pw8c+Xn2CLEa/r55+/P07t/nrxKl4f/PX6+8g1mlP/44c4eAhn8fP33bsOV1dBoT51V2+z/MohIfeyYy/P2LXcPfFy8/NLb9efTs//utgjUfft35xRUY8Hnm/N/Xb2LT8P//h5ZOnvjoj+11giXcTH//MTLp/v/x9c/z279uXsOi4e/LRwzsbz6vmMyTLM6m9fnXE3Y2l+yv+yez2nL9eX0Wi4afF5eyW4r/+3qYP1Xjz/N3P17ZsRsKMrJd4rL9wcTxDIsGZqEvLEKv2VT/Mgl+/XGbXSB72s/zxXyBYmwqLCxSLFg0sKkHsAg+YJX7xfBTmt204s/NXE4dQTZtT2beH6yqFv9ebkDXwMhnxixrySb68f9fcWYRTSbGA6ya2QwMsixCvxk/djByiWIJVkbBBGaNOoafO5nYWVlkPRjYtP5/388s+JdJkI+R1xquDMl9zOqMQioM7BIMjJ8Z2IUYWOQZeT0Y/u5mEF+G7AdGLMn7712GnycY/v1g+HOZga+WgUkYWRIAe6ip9OnE1GoAAAAASUVORK5CYII=" alt="." style="background-color: #F7F7F7; background-color: inherit" title="NPM Package" class="hierarchy"/> hl7.fhir.uv.extensions.r4</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">5.1.0 <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: green" title="Latest Milestone Release">M</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4">R4</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">http://hl7.org/fhir/extensions/5.1.0</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">see above</td></tr>
+</table><para>Templates: ans.fr.template#0.1.0 -&gt; fhir.base.template#current. Tools: 0.3.0</para></div></td></tr>
+ <tr><td>Dependent IGs:</td><td><a href="qa-dep.html">no references</a></td></tr>
+ <tr><td>Global Profiles:</td><td>(none declared)</td></tr>
+ <tr><td>Terminology Server(s):</td><td><a href="http://tx.fhir.org/r4">http://tx.fhir.org/r4</a> (<a href="qa-txservers.html">details</a>)</td></tr>
+ <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
+ <tr><td>R5 Dependencies:</td><td><span style="color: grey">(none)</span></td></tr>
+ <tr><td>Draft Dependencies:</td><td><ul>
+  <li>
+hl7.fhir.r4.core#4.0.1:     <a href="http://hl7.org/fhir/R4/codesystem-guide-parameter-code.html">GuideParameterCode</a>
+ (15 uses),     <a href="http://hl7.org/fhir/R4/shareablecodesystem.html">Shareable CodeSystem</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-languages.html">CommonLanguages</a>
+ (8 uses),     <a href="http://hl7.org/fhir/R4/consent.html">Consent</a>
+ (8 uses),     <a href="http://hl7.org/fhir/R4/valueset-common-tags.html">CommonTags</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-scope.html">ConsentScopeCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-category.html">ConsentCategoryCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/appointment.html">Appointment</a>
+ (50 uses),     <a href="http://hl7.org/fhir/R4/organization.html">Organization</a>
+ (17 uses),     <a href="http://hl7.org/fhir/R4/practitioner.html">Practitioner</a>
+ (11 uses),     <a href="http://hl7.org/fhir/R4/relatedperson.html">RelatedPerson</a>
+ (8 uses),     <a href="http://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a>
+ (9 uses),     <a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a>
+ (6 uses),     <a href="http://hl7.org/fhir/R4/contract.html">Contract</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-policy.html">ConsentPolicyRuleCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-provision-type.html">ConsentProvisionType</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-security-role-type.html">SecurityRoleType</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/device.html">Device</a>
+ (7 uses),     <a href="http://hl7.org/fhir/R4/group.html">Group</a>
+ (4 uses),     <a href="http://hl7.org/fhir/R4/careteam.html">CareTeam</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-action.html">ConsentActionCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-content-class.html">ConsentContentClass</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-content-code.html">ConsentContentCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-consent-data-meaning.html">ConsentDataMeaning</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-document-reference-status.html">DocumentReferenceStatus</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/valueset-composition-status.html">CompositionStatus</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/valueset-document-relationship-type.html">DocumentRelationshipType</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/substancenucleicacid.html">SubstanceNucleicAcid</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a>
+ (3 uses),     <a href="http://hl7.org/fhir/R4/episodeofcare.html">EpisodeOfCare</a>
+ (2 uses),     <a href="http://hl7.org/fhir/R4/task.html">Task</a>
+ (3 uses),     <a href="http://hl7.org/fhir/R4/activitydefinition.html">ActivityDefinition</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-task-status.html">TaskStatus</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-task-intent.html">TaskIntent</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-request-priority.html">RequestPriority</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/valueset-performer-role.html">ProcedurePerformerRoleCodes</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/healthcareservice.html">HealthcareService</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/location.html">Location</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/claimresponse.html">ClaimResponse</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a>
+ (1 uses),     <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a>
+ (1 uses)
+  </li>
+  <li>
+hl7.fhir.uv.tools.r4#0.3.0:     <a href="http://hl7.org/fhir/tools/0.3.0/StructureDefinition-resource-sort.html">ResourceSortExt</a>
+ (18 uses)
+  </li>
+</ul>
+</td></tr>
+ <tr><td>Modifier Extensions:</td><td><span style="color: grey">(none)</span></td></tr>
+ <tr><td>Previous Version Comparison:</td><td> <a href="comparison-v4.0.2/index.html">Comparison with version 4.0.2</a></td></tr>
+ <tr><td>IPA Comparison:</td><td> n/a</td></tr>
+ <tr><td>IPS Comparison:</td><td> n/a</td></tr>
+ <tr><td>Validation Flags:</td><td> On: autoLoad; Off: hintAboutNonMustSupport, anyExtensionsAllowed, checkAggregation, showReferenceMessages, noExperimentalContent, displayWarnings</td></tr>
+ <tr><td>Summary:</td><td> errors = 0, warn = 19, info = 14, broken links = 27</td></tr>
+</table>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>27</b></td><td><b>4</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-bundle-resultat-recherche-decision-evaluation"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements</b></a></td><td><b>0</b></td><td><b>6</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms</b></a></td><td><b>0</b></td><td><b>2</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_DocumentReference-exemple-esms-document-reference"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/DocumentReference-exemple-esms-document-reference</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_DocumentReference-exemple-sdo-document-reference"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/DocumentReference-exemple-sdo-document-reference</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_StructureDefinition-esms-consent"><b>/tmp/ans.fhir.fr.sdo#4.0.3-ballot/fsh-generated/resources/StructureDefinition-esms-consent</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>4</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="internal"> </a>
+<h2><a href="">n/a</a> <span id="sv" class="toggle" onclick="toggle('v')">Show Validation Information</span> <span class="vcount" onclick="toggle('v')"></span></h2>
+ <div style="border: 1px grey solid; display: none" id="v"></div>
+ <table class="grid">
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l468">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/a at Line 271, column 50</a></b></td><td><b>error</b></td><td><b>The link 'CISIS-TEC_SPECIFICATIONS_FONCTIONNELLES_SI-ESMS_v2.5.pdf' for &quot;SFE SI-ESMS&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1055">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 532, column 218</a></b></td><td><b>error</b></td><td><b>The link '#_RecordTarget' for &quot;recordTarget&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1080">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 541, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_RecordTarget_1' for &quot;2.1.2.3 RecordTarget&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1123">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 558, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_Author' for &quot;2.1.2.1 Author&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1165">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 575, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_Informant' for &quot;2.1.2.4 Informant&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1206">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 592, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_Custodian' for &quot;2.1.2.2 Custodian&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1247">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 609, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_RelatedDocument' for &quot;2.1.2.5 RelatedDocument&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1315">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 638, column 219</a></b></td><td><b>error</b></td><td><b>The link '#_Component' for &quot;structuredBody&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1362">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 658, column 333</a></b></td><td><b>error</b></td><td><b>The link '#_Section_repr%C3%A9sentant_l%E2%80%99organisme' for &quot;2.1.3.1 Section représentant les informations sur le décès de l'individu&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1403">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 675, column 353</a></b></td><td><b>error</b></td><td><b>The link '#_Extension_repr%C3%A9sentant_les_1' for &quot;2.1.3.2. Extension représentant les informations sur la décision de l’individu&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l1979">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 928, column 218</a></b></td><td><b>error</b></td><td><b>The link '#_RecordTarget' for &quot;recordTarget&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2004">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 937, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_RecordTarget_1' for &quot;2.1.2.3 RecordTarget&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2047">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 954, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_Author' for &quot;2.1.2.1 Author&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2088">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 971, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_Custodian' for &quot;2.1.2.2 Custodian&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2129">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 988, column 332</a></b></td><td><b>error</b></td><td><b>The link '#_RelatedDocument' for &quot;2.1.2.5 RelatedDocument&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2197">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 1017, column 219</a></b></td><td><b>error</b></td><td><b>The link '#_Component' for &quot;structuredBody&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l2244">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 1037, column 333</a></b></td><td><b>error</b></td><td><b>The link '#_Section_repr%C3%A9sentant_l%E2%80%99organisme' for &quot;2.1.3.3 Section représentant l'évaluation de l'individu&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l6577">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/span&#8203;/a at Line 2936, column 357</a></b></td><td><b>error</b></td><td><b>The link '#Annexe1' for &quot;Annexe &quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l6767">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/div&#8203;/div&#8203;/ul&#8203;/li&#8203;/span&#8203;/a at Line 3016, column 299</a></b></td><td><b>error</b></td><td><b>The link '#Annexe1' for &quot;Annexe 1&quot; cannot be resolved (valid targets: 50 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l10592">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 4614, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#Pathologie' for &quot;Pathologie secondaire&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l10866">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 4728, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#MaladieRare' for &quot;Maladie rare&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l11138">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 4842, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#HandicapRare' for &quot;Handicap rare&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l11412">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 4956, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#D%C3%A9ficience' for &quot;Déficience principale&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l11686">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 5070, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#D%C3%A9ficience' for &quot;Déficience secondaire&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l15236">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 6562, column 234</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#BesoinIdentifi%C3%A9' for &quot;Besoins de compensation identifiés&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="contenu_dossier.html#l15463">output&#8203;/contenu_dossier&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 6657, column 255</a></b></td><td><b>error</b></td><td><b>The link 'file:///C%3A/Users/mlr/Documents/CNSA/TDD/ST/Entrants/CNSA_SI-MDPH_RF_Dictionnaires%20de%20Donn%C3%A9es_v2.1.3.xlsm#BesoinIdentifi%C3%A9' for &quot;besoins de compensation identifiés&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>output&#8203;/searchform&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/a&#8203;/img&#8203;/div&#8203;/a&#8203;/img&#8203;/div&#8203;/p&#8203;/img&#8203;/footer&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/a&#8203;/img&#8203;/div&#8203;/a&#8203;/img&#8203;/script at Line 255, column 7</b></td><td><b>warning</b></td><td title=""><b>The &lt;script&gt; containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 cibuild - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 cibuild</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="st_flux1.html#l690">output&#8203;/st_flux1&#8203;.html&#8203;#&#8203;/html&#8203;/body&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/div&#8203;/table&#8203;/tbody&#8203;/tr&#8203;/td&#8203;/p&#8203;/span&#8203;/a at Line 324, column 291</a></b></td><td><b>error</b></td><td><b>The link '#_ftn1' for &quot;&quot; cannot be resolved (valid targets: 47 targets)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>1</b></td><td><b>warning</b></td><td title=""><b>The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>2</b></td><td><b>warning</b></td><td title=""><b>An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>4</b></td><td><b>warning</b></td><td title=""><b>The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-bundle-resultat-recherche-decision-evaluation"> </a>
+<h2><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation.json</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(3)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi1"><ul style="font-size: 7px"><li>Bundle: Validated against <i>this.</i><a href="StructureDefinition-esms-bundle-resultat-recherche-decision-evaluation.html">ESMSBundleResultatRechercheDecisionEvaluation</a></li><li>Bundle.entry[0].resource: Validated against <i>this.</i><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></li><li>Bundle.entry[1].resource: Validated against <i>this.</i><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[0]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-1-in-bundle*&#8203;/&#8203;.content[0]&#8203;.attachment&#8203;.language (l46&#8203;/c31)</b></td><td><b>warning</b></td><td title="TERMINOLOGY_TX_WARNING"><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[1]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-2-in-bundle*&#8203;/&#8203;.content[0]&#8203;.attachment&#8203;.language (l89&#8203;/c31)</b></td><td><b>warning</b></td><td title="TERMINOLOGY_TX_WARNING"><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NOSELF"><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NO_MODE"><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements"> </a>
+<h2><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(3)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>Bundle: Validated against <i>this.</i><a href="StructureDefinition-esms-bundle-resultat-recherche-decision-evaluation.html">ESMSBundleResultatRechercheDecisionEvaluation</a></li><li>Bundle.entry[0].resource: Validated against <i>this.</i><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></li><li>Bundle.entry[1].resource: Validated against <i>this.</i><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[0]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-1-in-bundle-elements*&#8203;/&#8203;.content[0]&#8203;.attachment (l44&#8203;/c14)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_ATT_NO_CONTENT"><b>Attachments have data and/or url, or else SHOULD have either contentType and/or language</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[0]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-1-in-bundle-elements*&#8203;/ (l13&#8203;/c8)</b></td><td><b>warning</b></td><td title=""><b>Constraint failed: regle-Contenu: 'Le transport des données devient obligatoire lorsque la ressource complète est transportée, le champs data doit alors être rempli' (defined in https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[1]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-2-in-bundle-elements*&#8203;/&#8203;.content[0]&#8203;.attachment (l84&#8203;/c14)</b></td><td><b>warning</b></td><td title="TYPE_SPECIFIC_CHECKS_DT_ATT_NO_CONTENT"><b>Attachments have data and/or url, or else SHOULD have either contentType and/or language</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle&#8203;.entry[1]&#8203;.resource&#8203;/*DocumentReference&#8203;/exemple-esms-documentreference-2-in-bundle-elements*&#8203;/ (l53&#8203;/c8)</b></td><td><b>warning</b></td><td title=""><b>Constraint failed: regle-Contenu: 'Le transport des données devient obligatoire lorsque la ressource complète est transportée, le champs data doit alors être rempli' (defined in https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NOSELF"><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NO_MODE"><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms"> </a>
+<h2><a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html">fsh-generated/resources/Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.json</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(3)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi3"><ul style="font-size: 7px"><li>Bundle: Validated against <i>this.</i><a href="StructureDefinition-sdo-bundle-resultat-recherche-notification-esms.html">SDOBundleResultatRechercheNotificationESMS</a></li><li>Bundle.entry[0].resource: Validated against <i>this.</i><a href="StructureDefinition-sdo-task.html">SDOTask</a></li><li>Bundle.entry[1].resource: Validated against <i>this.</i><a href="StructureDefinition-sdo-task.html">SDOTask</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NOSELF"><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle (l1/c2)</b></td><td><b>warning</b></td><td title="BUNDLE_SEARCH_NO_MODE"><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_DocumentReference-exemple-esms-document-reference"> </a>
+<h2><a href="DocumentReference-exemple-esms-document-reference.html">fsh-generated/resources/DocumentReference-exemple-esms-document-reference.json</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi4"><ul style="font-size: 7px"><li>DocumentReference: Validated against <i>this.</i><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>DocumentReference&#8203;.content[0]&#8203;.attachment&#8203;.language (l33&#8203;/c25)</b></td><td><b>warning</b></td><td title="TERMINOLOGY_TX_WARNING"><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_DocumentReference-exemple-sdo-document-reference"> </a>
+<h2><a href="DocumentReference-exemple-sdo-document-reference.html">fsh-generated/resources/DocumentReference-exemple-sdo-document-reference.json</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>DocumentReference: Validated against <i>this.</i><a href="StructureDefinition-sdo-document-reference.html">SDODocumentReference</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>DocumentReference&#8203;.content[0]&#8203;.attachment&#8203;.language (l20&#8203;/c25)</b></td><td><b>warning</b></td><td title="TERMINOLOGY_TX_WARNING"><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_tmp_ans.fhir.fr.sdo_4.0.3-ballot_fsh-generated_resources_StructureDefinition-esms-consent"> </a>
+<h2><a href="StructureDefinition-esms-consent.html">fsh-generated/resources/StructureDefinition-esms-consent.json</a> <span id="svi6" class="toggle" onclick="toggle('vi6')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi6')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi6"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[45]&#8203;.mapping[2]&#8203;.map (l1&#8203;/c109751)</b></td><td><b>information</b></td><td title="SECURITY_STRING_CONTENT_WARNING"><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[57]&#8203;.mapping[2]&#8203;.map (l1&#8203;/c127733)</b></td><td><b>information</b></td><td title="SECURITY_STRING_CONTENT_WARNING"><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[75]&#8203;.mapping[2]&#8203;.map (l1&#8203;/c156776)</b></td><td><b>information</b></td><td title="SECURITY_STRING_CONTENT_WARNING"><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[20]&#8203;.pattern&#8203;.ofType(CodeableConcept)</b></td><td><b>information</b></td><td title=""><b>The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition&#8203;.snapshot&#8203;.element[56]&#8203;.binding</b></td><td><b>warning</b></td><td title=""><b>The definition for the element 'Consent.provision.code' binds to the value set 'http://hl7.org/fhir/ValueSet/consent-content-code' which is experimental, but this structure is not labeled as experimental</b></td>
+   </tr>
+</table>
+<a name="suppressed"> </a>
+<p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
+<p><b>Have verified that these examples are being checked against the expected profiles/resources.</b></p><ul>
+ <li>INFORMATION: Binary/example: Binary: Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/Binary <span style="color: maroon">(0 uses)<span></li>
+ <li>INFORMATION: Bundle/h1: Bundle.entry[0].resource.ofType(Provenance): Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/Provenance <span style="color: maroon">(0 uses)<span></li>
+ <li>INFORMATION: Bundle/h1: Bundle: Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/Bundle <span style="color: maroon">(0 uses)<span></li>
+ <li>INFORMATION: Patient/example: Patient: Validate resource against profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>If this was a real IG, there should be examples for these profiles too.  But it's not, and I'm lazy...</b></p><ul>
+ <li>WARNING: StructureDefinition.where(url = 'http://somewhere.org/fhir/uv/myig/StructureDefinition/myObservation'): The Implementation Guide contains no examples for this profile <span style="color: maroon">(0 uses)<span></li>
+ <li>WARNING: StructureDefinition.where(url = 'http://somewhere.org/fhir/uv/myig/StructureDefinition/mypractitioner'): The Implementation Guide contains no examples for this profile <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>The objective is to show a reference to an unknown code system, so these warnings are expected</b></p><ul>
+ <li>WARNING: ValueSet.where(id = 'valueset-no-codesystem'): Error from server: Unable to provide support for code system http://not-a-known-code-system <span style="color: maroon">(0 uses)<span></li>
+ <li>WARNING: ValueSet/valueset-no-codesystem: ValueSet.compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>These examples are fake code systems - they're not expected to be checked</b></p><ul>
+ <li>Code System URI 'http://example.org/some-id-type-system' is unknown so the code cannot be validated <span style="color: maroon">(0 uses)<span></li>
+ <li>Code System URI 'http://example.org/some-system' is unknown so the code cannot be validated <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>This is inherited from the base resource</b></p><ul>
+ <li>WARNING: StructureDefinition/myObservation: StructureDefinition.snapshot.element[15].mapping[3].map: value should not start or finish with whitespace <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>We don't want a code for the change reason (and this binding shouldn't be extensible anyhow)</b></p><ul>
+ <li>WARNING: Bundle/h1: Bundle.entry[0].resource.ofType(Provenance).reason[0]: No code provided, and a code should be provided from the value set 'PurposeOfUse' (http://terminology.hl7.org/ValueSet/v3-PurposeOfUse) <span style="color: maroon">(0 uses)<span></li>
+ <li>WARNING: Bundle/h1: Bundle.entry[0].resource.ofType(Provenance).reason[0]: No code provided, and a code should be provided from the value set 'PurposeOfUse' (http://terminology.hl7.org/ValueSet/v3-PurposeOfUse) <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>We expect that all of the 'structural' resources will only be validated against their respective 'core' resource definitions</b></p><ul>
+ <li>Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/ImplementationGuide <span style="color: maroon">(0 uses)<span></li>
+ <li>Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/Library <span style="color: maroon">(0 uses)<span></li>
+ <li>Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/StructureDefinition <span style="color: maroon">(0 uses)<span></li>
+ <li>Validate resource against profile https://hl7.org/fhir/R4/StructureDefinition/ValueSet <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<p><b>We're expecting these to not match the slice - we're showing how you can use slicing to define the one repetition you want even when many repetitions might be present</b></p><ul>
+ <li>INFORMATION: Patient/example: Patient.name[0]: This element does not match any known slice defined in the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient <span style="color: maroon">(0 uses)<span></li>
+ <li>INFORMATION: Patient/example: Patient.name[1]: This element does not match any known slice defined in the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient <span style="color: maroon">(0 uses)<span></li>
+</ul>
+<a name="sorted"> </a>
+<p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="BUNDLE_SEARCH_NOSELF"> </a>
+<h2>BUNDLE_SEARCH_NOSELF</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation.json</a></td><td><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.json</a></td><td><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html">fsh-generated/resources/Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.json</a></td><td><b>SearchSet Bundles should have a self link that specifies what the search was</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="BUNDLE_SEARCH_NO_MODE"> </a>
+<h2>BUNDLE_SEARCH_NO_MODE</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation.json</a></td><td><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.json</a></td><td><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html">fsh-generated/resources/Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.json</a></td><td><b>SearchSet bundles should have search modes on the entries</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="SD_PATH_SLICING_DEPRECATED"> </a>
+<h2>SD_PATH_SLICING_DEPRECATED</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-task.html">fsh-generated/resources/StructureDefinition-sdo-task.json</a></td><td><b>The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-task.html">fsh-generated/resources/StructureDefinition-sdo-task.json</a></td><td><b>The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="SECURITY_STRING_CONTENT_WARNING"> </a>
+<h2>SECURITY_STRING_CONTENT_WARNING</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-consent.html">fsh-generated/resources/StructureDefinition-esms-consent.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-consent.html">fsh-generated/resources/StructureDefinition-esms-consent.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-consent.html">fsh-generated/resources/StructureDefinition-esms-consent.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-document-reference.html">fsh-generated/resources/StructureDefinition-esms-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-document-reference.html">fsh-generated/resources/StructureDefinition-esms-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-esms-document-reference.html">fsh-generated/resources/StructureDefinition-esms-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-document-reference.html">fsh-generated/resources/StructureDefinition-sdo-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-document-reference.html">fsh-generated/resources/StructureDefinition-sdo-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-document-reference.html">fsh-generated/resources/StructureDefinition-sdo-document-reference.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-task.html">fsh-generated/resources/StructureDefinition-sdo-task.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="StructureDefinition-sdo-task.html">fsh-generated/resources/StructureDefinition-sdo-task.json</a></td><td><b>The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="TERMINOLOGY_TX_WARNING"> </a>
+<h2>TERMINOLOGY_TX_WARNING</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation.json</a></td><td><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation.json</a></td><td><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="DocumentReference-exemple-esms-document-reference.html">fsh-generated/resources/DocumentReference-exemple-esms-document-reference.json</a></td><td><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="DocumentReference-exemple-sdo-document-reference.html">fsh-generated/resources/DocumentReference-exemple-sdo-document-reference.json</a></td><td><b>Resolved system urn:ietf:bcp:47, but the definition is not complete, so assuming value set include is correct</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="TYPE_SPECIFIC_CHECKS_DT_ATT_NO_CONTENT"> </a>
+<h2>TYPE_SPECIFIC_CHECKS_DT_ATT_NO_CONTENT</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.json</a></td><td><b>Attachments have data and/or url, or else SHOULD have either contentType and/or language</b></td>
+   </tr>
+   <tr style="background-color: #fff4ee">
+     <td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">fsh-generated/resources/Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.json</a></td><td><b>Attachments have data and/or url, or else SHOULD have either contentType and/or language</b></td>
+   </tr>
+</table>
+</body>
+</html>

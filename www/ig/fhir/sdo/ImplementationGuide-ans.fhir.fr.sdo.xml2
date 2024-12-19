@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.sdo"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name="ans.fhir.fr.sdo"> </a><a name="hcans.fhir.fr.sdo"> </a><a name="hcans.fhir.fr.sdo-fr-FR"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name="ans.fhir.fr.sdo"> </a><a name="hcans.fhir.fr.sdo"> </a><a name="ans.fhir.fr.sdo-fr-FR"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"/>
-  <version value="4.0.2"/>
+  <version value="4.0.3-ballot"/>
   <name value="SuiviDecisionsOrientation"/>
   <title value="Médicosocial - Suivi Décisions Orientation"/>
   <status value="active"/>
-  <date value="2024-07-03T07:41:49+00:00"/>
+  <date value="2024-12-19T14:39:02+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,7 +35,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.5.0"/>
+    <version value="6.1.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -48,7 +48,7 @@
   <dependsOn id="ans_fr_nos">
     <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
     <packageId value="ans.fr.nos"/>
-    <version value="1.2.0"/>
+    <version value="1.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -260,7 +260,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -489,7 +489,7 @@
         <reference value="StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"/>
       </reference>
       <name value="ESMSBundleResultatRechercheDecisionEvaluation"/>
-      <description value="Profil pour la définition du Bundle de réponse à la recherche d'une décision d'orientation ou d'une évaluation"/>
+      <description value="Profil ESMS créé dans le contexte du suivi des orientations pour transporter les documents répondant à une recherche de decision ou d’évaluation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -500,7 +500,7 @@
         <reference value="StructureDefinition/esms-consent"/>
       </reference>
       <name value="ESMSConsent"/>
-      <description value="Profil pour la définition de l'accord"/>
+      <description value="Profil ESMS créé dans le contexte du suivi des orientations pour transporter la définition de l’accord."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -511,7 +511,7 @@
         <reference value="StructureDefinition/esms-document-reference"/>
       </reference>
       <name value="ESMSDocumentReference"/>
-      <description value="Profil pour définir le dossier ESMS"/>
+      <description value="Profil ESMS héritant du profil SDODocumentReference. Profil utilisé pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -610,7 +610,7 @@
         <reference value="StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"/>
       </reference>
       <name value="SDOBundleResultatRechercheNotificationESMS"/>
-      <description value="Profil pour la définition du Bundle de réponse à la recherche d'une notification"/>
+      <description value="Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -621,7 +621,7 @@
         <reference value="StructureDefinition/sdo-document-reference"/>
       </reference>
       <name value="SDODocumentReference"/>
-      <description value="Profil pour définir le dossier SDO"/>
+      <description value="Profil SDO utilisé pour véhiculer les données de l’individu, la décision et l’évaluation contenus dans le document CDA"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -632,7 +632,7 @@
         <reference value="StructureDefinition/sdo-task"/>
       </reference>
       <name value="SDOTask"/>
-      <description value="Profil utilisé pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation"/>
+      <description value="Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -643,7 +643,7 @@
         <reference value="CapabilityStatement/ESMSConsommateur"/>
       </reference>
       <name value="SI-ESMS-Consommateur"/>
-      <description value="Le rôle du consommateur est de recueillir le dossier d'une personne orientée pour l'examiner, ainsi que son évaluation par la CDAPH. &#xA;   Le consommateur suit également les entrées des personnes orientées dans d'autres structures ainsi que la prise en compte d'une admission impossible par la MDPH.&#xA;   Il correspond au SI-ESMS."/>
+      <description value="CapabilityStatement du consommateur ESMS"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -654,7 +654,7 @@
         <reference value="CapabilityStatement/ESMSProducteur"/>
       </reference>
       <name value="SI-ESMS-Producteur"/>
-      <description value="Le rôle du producteur est de créer et transmettre l'accord de la personne en situation de handicap pour pouvoir accéder à son évaluation. Le producteur transmets également les statuts de la personne orientée en fonction de son avancée dans le processus d’orientations. &#xA;   Il correspond au SI-ESMS."/>
+      <description value="CapabilityStatement du producteur ESMS"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -665,7 +665,7 @@
         <reference value="CapabilityStatement/gestionnaire-sdo"/>
       </reference>
       <name value="SI-SdO-Gestionnaire"/>
-      <description value="Le rôle de gestionnaire est de gérer la liste des dossiers des personnes orientées et leurs statuts.&#xA;   Il correspond au SI-SDO."/>
+      <description value="CapabilityStatement du gestionnaire SDO"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -685,10 +685,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="liste_profils.html"/>
+          <valueUrl value="ressource_fhir.html"/>
         </extension>
-        <nameUrl value="liste_profils.html"/>
-        <title value="Liste des profils"/>
+        <nameUrl value="ressource_fhir.html"/>
+        <title value="Ressources FHIR"/>
         <generation value="markdown"/>
       </page>
       <page>

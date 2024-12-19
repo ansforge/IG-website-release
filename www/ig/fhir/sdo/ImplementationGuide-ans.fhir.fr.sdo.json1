@@ -3,14 +3,14 @@
   "id" : "ans.fhir.fr.sdo",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo-fr-FR\"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><a name=\"ans.fhir.fr.sdo-fr-FR\"> </a><h2>SuiviDecisionsOrientation</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo",
-  "version" : "4.0.2",
+  "version" : "4.0.3-ballot",
   "name" : "SuiviDecisionsOrientation",
   "title" : "Médicosocial - Suivi Décisions Orientation",
   "status" : "active",
-  "date" : "2024-07-03T07:41:49+00:00",
+  "date" : "2024-12-19T14:39:02+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -37,7 +37,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.5.0"
+    "version" : "6.1.0"
   },
   {
     "id" : "hl7ext",
@@ -53,7 +53,7 @@
     "id" : "ans_fr_nos",
     "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
     "packageId" : "ans.fr.nos",
-    "version" : "1.2.0"
+    "version" : "1.4.0"
   }],
   "definition" : {
     "extension" : [{
@@ -344,7 +344,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.3.0"
     },
     {
       "extension" : [{
@@ -653,7 +653,7 @@
         "reference" : "StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation"
       },
       "name" : "ESMSBundleResultatRechercheDecisionEvaluation",
-      "description" : "Profil pour la définition du Bundle de réponse à la recherche d'une décision d'orientation ou d'une évaluation",
+      "description" : "Profil ESMS créé dans le contexte du suivi des orientations pour transporter les documents répondant à une recherche de decision ou d’évaluation.",
       "exampleBoolean" : false
     },
     {
@@ -665,7 +665,7 @@
         "reference" : "StructureDefinition/esms-consent"
       },
       "name" : "ESMSConsent",
-      "description" : "Profil pour la définition de l'accord",
+      "description" : "Profil ESMS créé dans le contexte du suivi des orientations pour transporter la définition de l’accord.",
       "exampleBoolean" : false
     },
     {
@@ -677,7 +677,7 @@
         "reference" : "StructureDefinition/esms-document-reference"
       },
       "name" : "ESMSDocumentReference",
-      "description" : "Profil pour définir le dossier ESMS",
+      "description" : "Profil ESMS héritant du profil SDODocumentReference. Profil utilisé pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA",
       "exampleBoolean" : false
     },
     {
@@ -785,7 +785,7 @@
         "reference" : "StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"
       },
       "name" : "SDOBundleResultatRechercheNotificationESMS",
-      "description" : "Profil pour la définition du Bundle de réponse à la recherche d'une notification",
+      "description" : "Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification.",
       "exampleBoolean" : false
     },
     {
@@ -797,7 +797,7 @@
         "reference" : "StructureDefinition/sdo-document-reference"
       },
       "name" : "SDODocumentReference",
-      "description" : "Profil pour définir le dossier SDO",
+      "description" : "Profil SDO utilisé pour véhiculer les données de l’individu, la décision et l’évaluation contenus dans le document CDA",
       "exampleBoolean" : false
     },
     {
@@ -809,7 +809,7 @@
         "reference" : "StructureDefinition/sdo-task"
       },
       "name" : "SDOTask",
-      "description" : "Profil utilisé pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation",
+      "description" : "Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation.",
       "exampleBoolean" : false
     },
     {
@@ -821,7 +821,7 @@
         "reference" : "CapabilityStatement/ESMSConsommateur"
       },
       "name" : "SI-ESMS-Consommateur",
-      "description" : "Le rôle du consommateur est de recueillir le dossier d'une personne orientée pour l'examiner, ainsi que son évaluation par la CDAPH. \n   Le consommateur suit également les entrées des personnes orientées dans d'autres structures ainsi que la prise en compte d'une admission impossible par la MDPH.\n   Il correspond au SI-ESMS.",
+      "description" : "CapabilityStatement du consommateur ESMS",
       "exampleBoolean" : false
     },
     {
@@ -833,7 +833,7 @@
         "reference" : "CapabilityStatement/ESMSProducteur"
       },
       "name" : "SI-ESMS-Producteur",
-      "description" : "Le rôle du producteur est de créer et transmettre l'accord de la personne en situation de handicap pour pouvoir accéder à son évaluation. Le producteur transmets également les statuts de la personne orientée en fonction de son avancée dans le processus d’orientations. \n   Il correspond au SI-ESMS.",
+      "description" : "CapabilityStatement du producteur ESMS",
       "exampleBoolean" : false
     },
     {
@@ -845,7 +845,7 @@
         "reference" : "CapabilityStatement/gestionnaire-sdo"
       },
       "name" : "SI-SdO-Gestionnaire",
-      "description" : "Le rôle de gestionnaire est de gérer la liste des dossiers des personnes orientées et leurs statuts.\n   Il correspond au SI-SDO.",
+      "description" : "CapabilityStatement du gestionnaire SDO",
       "exampleBoolean" : false
     }],
     "page" : {
@@ -868,10 +868,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "liste_profils.html"
+          "valueUrl" : "ressource_fhir.html"
         }],
-        "nameUrl" : "liste_profils.html",
-        "title" : "Liste des profils",
+        "nameUrl" : "ressource_fhir.html",
+        "title" : "Ressources FHIR",
         "generation" : "markdown"
       },
       {
