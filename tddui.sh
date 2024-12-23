@@ -1,2 +1,0 @@
-java -jar input-cache/publisher.jar -go-publish  -source /Users/nicolasriss/Desktop/ANSFORGE_ans-ig/IG-fhir-medicosocial-transfert-donnees-dui -web  /Library/WebServer/Documents/IG-website-release/www/ig/fhir -registry /Library/WebServer/Documents/IG-website-release/ig-registry/fhir-ig-list.json -history /Library/WebServer/Documents/IG-website-release/fhir-ig-history-template -templates /Library/WebServer/Documents/IG-website-release/templates 
-        
