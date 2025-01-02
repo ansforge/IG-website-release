@@ -1,3 +1,3 @@
 # IG-website-release
 
-Contenu du site https://interop.esante.gouv.fr/ig/fhir
+Contenu du site https://interop.esante.gouv.fr/terminologies
