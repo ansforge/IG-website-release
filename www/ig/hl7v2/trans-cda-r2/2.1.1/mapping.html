@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mapping VIHF et XDS - Volet de transmission d'un document CDA-R2 en HL7v2 v2.1.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+    <img height="50" alt="HL7 v2" src="assets/images/hl7v2-logo.png"/>
+  </div>
+  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+  </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Volet de transmission d&#39;un document CDA-R2 en HL7v2</span>
+            <br/>
+            <span style="display:inline-block;">2.1.1 - trial-implementation
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="volume1.html#cas-dusage">Cas d&apos;usage</a>
+      </li>
+      <li>
+        <a href="volume1.html#organisation-du-contexte-métier">Organisation du contexte métier</a>
+      </li>
+      <li>
+        <a href="volume1.html#acteurs-et-transactions">Acteurs et transactions</a>
+      </li>
+      <li>
+        <a href="volume1.html#définition-des-processus-collaboratifs">Définition des processus collaboratifs</a>
+      </li>
+      <li>
+        <a href="volume1.html#identification-des-flux">identification des flux</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 – Détail des Transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="volume2.html#introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="volume2.html#périmetre-de-la-transaction">Périmètre de la transaction</a>
+      </li>
+      <li>
+        <a href="volume2.html#rôle-des-acteurs-pour-cette-transaction">Rôle des acteurs pour cette transaction</a>
+      </li>
+      <li>
+        <a href="volume2.html#choix-des-standards">Choix des standards</a>
+      </li>
+      <li>
+        <a href="volume2.html#evènements-déclenchants">Evènements déclenchants</a>
+      </li>
+      <li>
+        <a href="volume2.html#interactions-entre-les-acteurs">Interactions entre les Acteurs</a>
+      </li>
+      <li>
+        <a href="volume2.html#profils-de-messages">Profils de messages</a>
+      </li>
+      <li>
+        <a href="volume2.html#règles-de-gestion-mssante">Règles de gestion MSSANTE</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3 - Annexes
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lien-entete-cda-meta-xds.html">Lien entre l&apos;en-tête CDA et les métadonnées XDS</a>
+      </li>
+      <li>
+        <a href="meta-dmp-mss.html">Table MetaDMP/MSS</a>
+      </li>
+      <li>
+        <a href="struct-msg-mdn.html">Structure du MDN (MSSanté)</a>
+      </li>
+      <li>
+        <a href="ack-metier-zam.html">Table AckMetierZAM</a>
+      </li>
+      <li>
+        <a href="mapping.html">Mapping VIHF et XDS</a>
+      </li>
+      <li>
+        <a href="mapping.html#mapping-message-mss">Mapping message MSS</a>
+      </li>
+      <li>
+        <a href="exemples.html">Exemples de messages</a>
+      </li>
+      <li>
+        <a href="error-codes.html">Error Codes</a>
+      </li>
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="doc-ref.html">Documents de référence</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="testplan.html">Test</a>
+  </li>
+  <li>
+    <a href="change-log.html">Historique des versions</a>
+  </li>
+  <li>
+    <a href="download.html">Téléchargements</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mapping VIHF et XDS</b></li>
+
+          <span style="float:right;">
+
+            <a href="ack-metier-zam.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="mapping-mss.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the [CI-SIS]Volet de transmission d'un document CDA-R2 en HL7v2 (v2.1.1: Publications) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Mapping VIHF et XDS</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#mapping-vihf-pour-le-dmp" id="markdown-toc-mapping-vihf-pour-le-dmp">Mapping VIHF pour le DMP</a></li>
+  <li><a href="#mapping-xds" id="markdown-toc-mapping-xds">Mapping XDS</a></li>
+  <li><a href="#exemple-dun--vihf-avec-automate" id="markdown-toc-exemple-dun--vihf-avec-automate">Exemple d’un  VIHF avec automate</a></li>
+  <li><a href="#mapping-message-mss" id="markdown-toc-mapping-message-mss">Mapping message MSS</a></li>
+</ul>
+
+</div>
+<p>Ce mapping permet d’indiquer comment construire le VIHF à partir du message HL7 V2 et du CDA.</p>
+
+<h3 id="mapping-vihf-pour-le-dmp">Mapping VIHF pour le DMP</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="text-align: left">Champs du VIHF</th>
+      <th style="text-align: left">Commentaire</th>
+      <th>Provenance de la donnée</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">//Assertion/ds:Signature</td>
+      <td style="text-align: left">Signature XML-DSIG avec le certificat de cachet de la structure de soins</td>
+      <td>Certificat</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Issuer</td>
+      <td style="text-align: left">DN du certificat de cachet utilisé pour signer l’assertion de la structure de soins</td>
+      <td>Certificat</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Issuer/@Format</td>
+      <td style="text-align: left">Constante :”urn:oasis:names:tc:SAML:1.1:nameidformat:X509SubjectName”</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Identifiant_Structure</td>
+      <td style="text-align: left">Struct_IdNat de la structure de soins</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> : PRT-8.10 (PRT-4 = ‘SB^Send by^participation’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Secteur_Activite</td>
+      <td style="text-align: left">Fourni par le LPS <br /> valeur de  <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J61-HealthcareFacilityTypeCode-DMP.html">JDV_J61-HealthcareFacilityTypeCode-DMP</a></td>
+      <td> Provenance de la donnée : 
+          <br />- Paramétrage dans  la PFI
+          <br />- Interrogation du DPI
+          <br />- Interrogation de l'annuaire à partir du FINESS 
+<pre class="highlight language-plaintext" style="white-space: normal;">Récupération du FINESS <br /><b>HL7V2</b> : PRT-8.10 (PRT-4 = ‘SB^Send by^participation’)</pre>
+   </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Subject/NameID</td>
+      <td style="text-align: left">Fourni par le LPS <br />Pour un utilisateur humain : Identifiant du professionnel <br /> Pour les traitements automatisés : Identifiant de la personne responsable du traitement</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> :PRT-5.1  (PRT-4 = ‘SB^Send by^participation’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xspa:1.0:subject:subject-id</td>
+      <td style="text-align: left">Pour un utilisateur humain : Nom, Prénom  de l’utilisateur <br /> Pour les traitements automatisés : Nom du logiciel, Nom du modèle </td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> :PRT-5.2  et PRT-5.3   (PRT-4 = ‘SB^Send by^participation’) </pre> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xacml:2.0:subject:role</td>
+      <td style="text-align: left">1re occurrence obligatoire
+      <br />
+        <b>Pour les professionnels de santé :</b>
+<br />- Prendre la valeur de code la plus appropriée parmi les codes du jeu de valeurs <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J65-SubjectRole-DMP.html">JDV_J65_SubjectRole_DMP</a> avec un codeSystem provenant de : <br /> -  TRE TRE_G15-ProfessionSante <br /> - TRE_G16_ProfessionFormation (Professions en formation (carte CPF))
+ <br /> <b>Pour les autres : </b>
+ <br />- Prendre la valeur de code la plus appropriée parmi les codes du jeu de valeurs <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J65-SubjectRole-DMP.html">JDV_J65_SubjectRole_DMP</a> avec un codeSystem provenant de : <br /> - TRE_A00_ProducteurDocNonPS <br /> -  TRE_R95_UsagerTitre <br /> - TRE_R94_ProfessionSocial <br /> -  TRE_R291_AutreProfession
+      </td>
+      <td>Provenance de la donnée : 
+         <br />- Interrogation du DPI à partir de l'identifiant du PS
+         <br />- Interogation de l'annuaire (pour les identifiants nationaux) 
+        <br /> - Valeur "AUTOMATE" quand les autres cas ne sont pas possibles
+        <br />  <pre class="highlight language-plaintext" style="white-space: normal;">Récupération de l'identifiant <br /><b>HL7V2</b> :PRT-5.1  (PRT-4 = ‘SB^Send by^participation’)</pre>
+ </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xacml:2.0:subject:role</td>
+      <td style="text-align: left">2e occurrence uniquement et obligatoirement pour les médecins  et pharmaciens
+     <br />   <b>Pour les médecins :</b>
+<br />- Prendre la valeur de code la plus appropriée parmi les codes du jeu de valeurs <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J65-SubjectRole-DMP.html">JDV_J65_SubjectRole_DMP</a> avec un codeSystem provenant de TRE_R01_EnsembleSavoirFaire_CISIS
+ <br /> <b>Pour les pharmacines  ; </b> 
+ <br />- Prendre la valeur de code la plus appropriée parmi les codes du jeu de valeurs <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J65-SubjectRole-DMP.html">JDV_J65_SubjectRole_DMP</a> avec un codeSystem provenant de  TRE_G05_SousSectionTableauCNOP     
+      </td>
+      <td><br /> 
+Provenance de la donnée : 
+         <br />- Interogation du DPI à partir de l'identifiant du PS
+         <br />- Interogation de l'annuaire (pour les identifiants nationaux) 
+  <br />  <pre class="highlight language-plaintext" style="white-space: normal;">Récupération de l'identifiant <br /><b>HL7V2</b> :PRT-5.1  (PRT-4 = ‘SB^Send by^participation’)</pre>
+      
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xacml:2.0:subject:role</td>
+      <td style="text-align: left">Rôle - 2e occurrence obligatoire pour les professionnels caractérisés par leur rôle. Non requise pour les autres professionnels.
+      <br />
+      Prendre la valeur de code la plus appropriée parmi les codes du jeu de valeurs <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J65-SubjectRole-DMP.html">JDV_J65_SubjectRole_DMP</a> avec un codeSystem provenant de   TRE_R85_RolePriseCharge
+      </td>
+      <td><br />Provenance de la donnée : 
+Provenance de la donnée : 
+         <br />- Interogation du DPI à partir de l'identifiant du PS
+  <br />  <pre class="highlight language-plaintext" style="white-space: normal;">Récupération de l'identifiant <br /><b>HL7V2</b> :PRT-5.1  (PRT-4 = ‘SB^Send by^participation’)</pre>
+      
+       </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: left">//Assertion/AuthnStatement/AuthnContext/AuthnContextClassRef</td>
+      <td style="text-align: left">Prendre la valeur la plus appropriée parmi les valeurs possibles indiquées dans le document http://docs.oasis-open.org/security/saml/v2.0/samlauthn-context-2.0-os.pdf <br />La valeur utilisée doit être cohérente avec le mode d’authentification locale de l’utilisateur dans le LPS</td>
+      <td>Paramétrage dans la PFI en fonction du flux qui alimente</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/@xmnls</td>
+      <td style="text-align: left">Constante :”urn:oasis:names:tc:SAML:2.0:assertion”</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/@ID</td>
+      <td style="text-align: left">identifiant unique de l’assertion</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/@IssueInstant</td>
+      <td style="text-align: left">Date et heure d’émission de l’assertion SAML</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/AuthnStatement/@AuthnInstant</td>
+      <td style="text-align: left">Date/Heure de connexion de l’utilisateur dans le système source</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Conditions/AudienceRestriction</td>
+      <td style="text-align: left">Ne pas renseigner</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Conditions/@NotBefore</td>
+      <td style="text-align: left">Facultatif</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">//Assertion/Conditions/@NotAfter</td>
+      <td style="text-align: left">Facultatif</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">VIHF_Version</td>
+      <td style="text-align: left">Constante : “4.0”</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Authentification_Mode</td>
+      <td style="text-align: left">Constante : “INDIRECTE”</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xacml:2.0:resource:resource-id</td>
+      <td style="text-align: left">Matricule INS-NIR du patient</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> : Exploitation du PID-3</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Ressource_URN</td>
+      <td style="text-align: left">Constante : “urn:dmp”</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xspa:1.0:subject:purposeofuse</td>
+      <td style="text-align: left">code=”normal” : pour un accès normal</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">urn:oasis:names:tc:xspa:1.0:resource:patient:hl7:confidentiality-code</td>
+      <td style="text-align: left">Obligatoire si la fonctionnalité est activée19 et si demande de connexion secrète au DMP.</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LPS_ID</td>
+      <td style="text-align: left">Facultatif</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LPS_Nom</td>
+      <td style="text-align: left">Nom du LPS qui génère le jeton VIHF</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LPS_Version</td>
+      <td style="text-align: left">N° de version du LPS qui génère le jeton VIHF</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LPS_ID_HOMOLOGATION_DMP</td>
+      <td style="text-align: left">N° d’homologation du LPS.</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mapping-xds">Mapping XDS</h3>
+
+<h4 id="lot-de-soumission">Lot de soumission</h4>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="text-align: left">Metadonnée</th>
+      <th style="text-align: left">Commentaire</th>
+      <th>Contrainte</th>
+      <th>Provenance de la donnée</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">authorInstitution</td>
+      <td style="text-align: left">Cette métadonnée représente la structure émettrice du lot de soumission.</td>
+      <td>requis si connu</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> : Exploitation du PRT-8 (PRT-4 = ‘SB^Send by^participation’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorPerson</td>
+      <td style="text-align: left">Cette métadonnée représente la personne physique ou le système émetteur du lot de soumission.</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> :PRT-5 (PRT-4 = ‘SB^Send by^participation’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorRole</td>
+      <td style="text-align: left">Cette métadonnée représente le rôle joué par l’auteur vis-à-vis du patient lors de la constitution du lot de soumission</td>
+      <td>requis si connu</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorSpecialty</td>
+      <td style="text-align: left">Cette métadonnée représente la profession éventuellement associée au savoir-faire de l’auteur du lot de soumission pour un auteur professionnel caractérisé par sa profession ou la profession associée au genre d’activité de l’auteur du lot de soumission pour un auteur professionnel caractérisé par son rôle</td>
+      <td>requis si connu</td>
+      <td> </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: left">contentTypeCode</td>
+      <td style="text-align: left">Cette métadonnée contient le code correspondant au type d’activité associé à l’événement clinique ayant abouti à la constitution du lot de soumission.<br /> Valeur de <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J59-ContentTypeCode-DMP.html">JDV_J59-ContentTypeCode-DMP</a></td>
+      <td>requis</td>
+      <td><br />
+      <pre><b>HL7V2</b> :Proposition de  mapping sur le PV1-2 : 
+        <br /> I =&gt; 03; 
+        <br /> O =&gt; 07; 
+        <br /> R =&gt; 19; 
+        <br /> N =&gt; 97; 
+        <br /> E =&gt; 07 
+      </pre>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">patientId</td>
+      <td style="text-align: left">Cette métadonnée représente l’identifiant du patient, en l’occurrence, le matricule INS(NIR) du patient tel que défini dans le cadre juridique.</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>HL7V2</b> : Exploitation du PID-3</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">sourceId</td>
+      <td style="text-align: left">Cette métadonnée représente l’identifiant unique global du système émetteur du lot de soumission.</td>
+      <td>requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">submissionTime</td>
+      <td style="text-align: left">Cette métadonnée représente la date et heure de soumission.</td>
+      <td>requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">title</td>
+      <td style="text-align: left">Cette métadonnée représente le titre du lot de soumission.</td>
+      <td>Optionnel</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">uniqueId</td>
+      <td style="text-align: left">Identifiant unique global affecté à ce lot de soumission par son créateur.</td>
+      <td>requis</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="fiche">Fiche</h4>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="text-align: left">Metadonnée</th>
+      <th style="text-align: left">Commentaire</th>
+      <th>Contrainte</th>
+      <th>Provenance de la donnée</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">authorInstitution</td>
+      <td style="text-align: left">Cet attribut représente la structure de l’auteur.</td>
+      <td>requis si connu</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA </b> : author/assignedAuthor/representedOrganization </pre>
+     </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorPerson</td>
+      <td style="text-align: left">Cet attribut représente l’auteur (humain ou système) ayant contribué au document</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : author/assignedAuthor</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorRole</td>
+      <td style="text-align: left">Cet attribut représente le rôle fonctionnel joué par l’auteur vis-à-vis du patient lors de la création du document</td>
+      <td>requis si connu</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : authorfunctionCode@displayName</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">authorSpecialty</td>
+      <td style="text-align: left">Cet attribut représente la profession éventuellement associée au savoir-faire de l’auteur professionnel caractérisé par sa profession ou la profession associée au genre d’activité pour l’auteur professionnel caractérisé par son rôle</td>
+      <td>requis si connu</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : author/assignedAuthor/code</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">availabilityStatus</td>
+      <td style="text-align: left">Cette métadonnée représente la pertinence de la version de la fiche d’un document JDV_J52-AvailabilityStatus-CISIS</td>
+      <td>requis si connu</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">classCode</td>
+      <td style="text-align: left">Cet attribut représente le code de la classe du document   JDV_J57-ClassCode-DMP</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b>: classCode est déduit du CDA (champ code) selon la table de correspondance <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ConceptMap-ASS-X04-CorrespondanceType-Classe-CISIS.html">ASS_X04-CorrespondanceType-Classe</a></pre> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">confidentialityCode</td>
+      <td style="text-align: left">&nbsp;</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> ;  Premiere occurence du CDA confidentialityCode <br /> 
+       <b>HL7V2</b> :  les autres occurences du message HL7 V2 OBX-5  avec OBX-3.3=”MetaDMPMSS”</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">creationTime</td>
+      <td style="text-align: left">Cette métadonnée représente la date et l’heure de la création du document.</td>
+      <td>requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : effectiveTime@value</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">entryUUID</td>
+      <td style="text-align: left">Identifiant unique affecté à la version de la fiche référençant le document</td>
+      <td>requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">eventCodeList</td>
+      <td style="text-align: left">Cet attribut contient le code représentant : <br />un évènement documenté ou une pathologie <br />une modalité d’acquisition<br /> une région anatomique.</td>
+      <td>Optionnel</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">formatCode</td>
+      <td style="text-align: left">Cet attribut représente le code du format du document <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-JDV-J60-FormatCode-DMP.html">JDV_J60-FormatCode-DMP</a></td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : 
+      <br /> - CDA N1 =&gt;  “urn:ihe:iti:xds-sd:pdf:2008”  
+      <br /> - CDA N3 =&gt;  Utilisation de l’association <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ConceptMap-ASS-A11-CorresModeleCDA-XdsFormatCode-CISIS.html">ASS-A11-CorresModeleCDA-XdsFormatCode-CISIS</a></pre>  </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">hash</td>
+      <td style="text-align: left">Cette métadonnée contient le résultat du hachage du document déposé</td>
+      <td>Requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">healthcareFacilityTypeCode</td>
+      <td style="text-align: left">Secteur d’activité lié à la prise en charge de la personne, en lien avec le document produit J DV_J61-HealthcareFacilityTypeCode-DMP</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : componentOf/encompassingEncounter/location/healthCareFacility/code@code</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">languageCode</td>
+      <td style="text-align: left">Cette métadonnée représente le code de la langue dans laquelle le document est rédigé.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : languageCode@Code</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">legalAuthenticator</td>
+      <td style="text-align: left">Cette métadonnée représente l’acteur validant le document et prenant la responsabilité du contenu médical de celui-ci.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : legalAuthenticator/assignedEntity</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">logicalID</td>
+      <td style="text-align: left">&nbsp;</td>
+      <td>Requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">mimeType</td>
+      <td style="text-align: left">Cette métadonnée représente le type de contenu du document, défini par le standard MIME.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : 
+      <br /> - "text/xml” pour un document CDA 
+      <br /> - “application/xslt+xml” pour un document CDA auto-présentable</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">patientId</td>
+      <td style="text-align: left">identifiant du patient, en l’occurrence, le matricule INS (NIR) du patient tel que défini dans le cadre juridique</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : recordTarget/patientRole/id</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">practiceSettingCode</td>
+      <td style="text-align: left">Code du contexte de l’acte qui a engendré la création du document</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : documentationOf/serviceEvent/performer/assignedEntity/representedOrganization/standardIndustryClassCode@code</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">referenceIdList</td>
+      <td style="text-align: left">&nbsp;</td>
+      <td>Optionnel</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">serviceStartTime</td>
+      <td style="text-align: left">Cette métadonnée représente la date de début de l’acte de référence.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : documentationOf/serviceEvent/effectiveTime/low@value</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">serviceStopTime</td>
+      <td style="text-align: left">Cette métadonnée correspond à la date de fin de l’acte de référence, si connue.</td>
+      <td>Requis si connu</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : documentationOf/serviceEvent/effectiveTime/high@value</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">size</td>
+      <td style="text-align: left">Cette métadonnée correspond à la taille du document déposé.</td>
+      <td>Requis</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">sourcePatientId</td>
+      <td style="text-align: left">Cette métadonnée contient l’identifiant secondaire du patient dans le système d’information du producteur (IPP) ou l’INS, s’il n’y a pas d’identifiant secondaire.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : recordTarget/patientRole/id</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">sourcePatientInfo</td>
+      <td style="text-align: left">Cette métadonnée contient les traits d’identité du patient concerné par le document, connus par le producteur du document</td>
+      <td>Optionnel</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> :  recordTarget/patientRole/patient</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">title</td>
+      <td style="text-align: left">Cette métadonnée représente le titre du document.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : title</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">typeCode</td>
+      <td style="text-align: left">Cet attribut représente le code spécifiant le type du document.</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;">
+        <b>CDA</b> : code@code
+      </pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">uniqueId</td>
+      <td style="text-align: left">Identifiant unique affecté au document par son créateur</td>
+      <td>Requis</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"><b>CDA</b> : id@root
+      </pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">version</td>
+      <td style="text-align: left">&nbsp;</td>
+      <td>R (Requis), si la transaction de mise à jour des métadonnées (Update document set ITI-57) est utilisée</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="exemple-dun--vihf-avec-automate">Exemple d’un  VIHF avec automate</h3>
+
+<p>Pour anonymiser  cet exemple , certaines valeurs ont été remplacés par des X.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;Security</span> <span class="na">xmlns=</span><span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;Assertion</span> <span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:assertion"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">ID=</span><span class="s">"_09cd372d-da9e-4d8c-a225-b7304defd6fb"</span> <span class="na">IssueInstant=</span><span class="s">"2024-09-02T13:22:25.789Z"</span> <span class="na">Version=</span><span class="s">"2.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Issuer</span> <span class="na">Format=</span><span class="s">"urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"</span><span class="nt">&gt;</span>C=FR, ST=Paris (75), O=XXXXXX, OU=XXXXXXXX, CN=DMP SIGN<span class="nt">&lt;/Issuer&gt;</span>
+        <span class="nt">&lt;Signature</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/09/xmldsig#"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;SignedInfo&gt;</span>
+            <span class="nt">&lt;CanonicalizationMethod</span> <span class="na">Algorithm=</span><span class="s">"http://www.w3.org/2001/10/xml-exc-c14n#"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;SignatureMethod</span> <span class="na">Algorithm=</span><span class="s">"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;Reference</span> <span class="na">URI=</span><span class="s">"#_09cd372d-da9e-4d8c-a225-b7304defd6fb"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;Transforms&gt;</span>
+                <span class="nt">&lt;Transform</span> <span class="na">Algorithm=</span><span class="s">"http://www.w3.org/2000/09/xmldsig#enveloped-signature"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;Transform</span> <span class="na">Algorithm=</span><span class="s">"http://www.w3.org/2001/10/xml-exc-c14n#"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;InclusiveNamespaces</span> <span class="na">PrefixList=</span><span class="s">"ds saml #default xsi"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2001/10/xml-exc-c14n#"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/Transform&gt;</span>
+              <span class="nt">&lt;/Transforms&gt;</span>
+              <span class="nt">&lt;DigestMethod</span> <span class="na">Algorithm=</span><span class="s">"http://www.w3.org/2001/04/xmlenc#sha256"</span> <span class="nt">/&gt;</span>
+              <span class="nt">&lt;DigestValue&gt;</span>uJdsyFXkRfDf+fXb8G4hrj1t3v4fsxY0Bpz1nkn+dPE=<span class="nt">&lt;/DigestValue&gt;</span>
+            <span class="nt">&lt;/Reference&gt;</span>
+          <span class="nt">&lt;/SignedInfo&gt;</span>
+          <span class="nt">&lt;SignatureValue&gt;</span>XXXXXXX<span class="nt">&lt;/SignatureValue&gt;</span>
+          <span class="nt">&lt;KeyInfo&gt;</span>
+            <span class="nt">&lt;X509Data&gt;</span>
+              <span class="nt">&lt;X509Certificate&gt;</span>WWWW<span class="nt">&lt;/X509Certificate&gt;</span>
+            <span class="nt">&lt;/X509Data&gt;</span>
+          <span class="nt">&lt;/KeyInfo&gt;</span>
+        <span class="nt">&lt;/Signature&gt;</span>
+        <span class="nt">&lt;Subject&gt;</span>
+          <span class="c">&lt;!--Pour les traitements automatisés : Identifiant de la personne responsable du traitement--&gt;</span>
+          <span class="nt">&lt;NameID&gt;</span>XXXXX/XXXXXX<span class="nt">&lt;/NameID&gt;</span>
+        <span class="nt">&lt;/Subject&gt;</span>
+        <span class="nt">&lt;AuthnStatement</span> <span class="na">AuthnInstant=</span><span class="s">"2024-09-02T13:22:25.789Z"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;AuthnContext&gt;</span>
+            <span class="c">&lt;!--valeur : unspecified--&gt;</span>
+            <span class="nt">&lt;AuthnContextClassRef&gt;</span>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified<span class="nt">&lt;/AuthnContextClassRef&gt;</span>
+          <span class="nt">&lt;/AuthnContext&gt;</span>
+        <span class="nt">&lt;/AuthnStatement&gt;</span>
+        <span class="nt">&lt;AttributeStatement&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"VIHF_Version"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>3.0<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"Authentification_Mode"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>INDIRECTE<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"Secteur_Activite"</span><span class="nt">&gt;</span>
+             <span class="c">&lt;!--Secteur d'activité paramétré dans la PFI--&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>SA41^1.2.250.1.71.4.2.4<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"urn:oasis:names:tc:xacml:2.0:resource:resource-id"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>XXXXXXX^^^<span class="ni">&amp;amp;</span>1.2.250.1.213.1.4.10<span class="ni">&amp;amp;</span>ISO^NH<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"Ressource_URN"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>urn:dmp<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"urn:oasis:names:tc:xspa:1.0:subject:subject-id"</span><span class="nt">&gt;</span>
+              <span class="c">&lt;!--Pour les traitements automatisés : Nom du logiciel, Nom du modèle et Service.--&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>XX,XX, XX<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"Identifiant_Structure"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>xxxxxxx<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"LPS_Version"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>1.2.0<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"LPS_ID"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>1.2.250.1.259.1.1.1234567890<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"LPS_Nom"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>EVOSIPS<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"LPS_ID_HOMOLOGATION_DMP"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>XXXXXX<span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"urn:oasis:names:tc:xspa:1.0:subject:purposeofuse"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>
+              <span class="nt">&lt;PurposeOfUse</span> <span class="na">code=</span><span class="s">"normal"</span> <span class="na">codeSystem=</span><span class="s">"1.2.250.1.213.1.1.4.248"</span> <span class="na">codeSystemName=</span><span class="s">"mode acces VIHF 1.0"</span> <span class="na">displayName=</span><span class="s">"Accès normal"</span> <span class="na">xsi:type=</span><span class="s">"CE"</span> <span class="na">xmlns=</span><span class="s">"urn:hl7-org:v3"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+          <span class="nt">&lt;Attribute</span> <span class="na">Name=</span><span class="s">"urn:oasis:names:tc:xacml:2.0:subject:role"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;AttributeValue&gt;</span>
+              <span class="nt">&lt;Role</span> <span class="na">code=</span><span class="s">"AUTOMATE"</span> <span class="na">codeSystem=</span><span class="s">"1.2.250.1.213.1.1.4.6"</span> <span class="na">displayName=</span><span class="s">"AUTOMATE"</span> <span class="na">xsi:type=</span><span class="s">"CE"</span> <span class="na">xmlns=</span><span class="s">"urn:hl7-org:v3"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/AttributeValue&gt;</span>
+          <span class="nt">&lt;/Attribute&gt;</span>
+        <span class="nt">&lt;/AttributeStatement&gt;</span>
+      <span class="nt">&lt;/Assertion&gt;</span>
+    <span class="nt">&lt;/Security&gt;</span>
+</code></pre></div></div>
+
+<h3 id="mapping-message-mss">Mapping message MSS</h3>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="text-align: left">Champs message MSS</th>
+      <th style="text-align: left">Commentaire</th>
+      <th>Provenance de la donnée</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td style="text-align: left">FROM</td>
+      <td style="text-align: left">Obligatoire, permet de préciser le courriel de la BAL Applicative</td>
+      <td>courriel de la BAL Applicative qui transmet le message</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SENDER</td>
+      <td style="text-align: left">Optionnel, permet de préciser le courriel de l'émetteur initial du message</td>
+      <td>Non transmis</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">REPLY TO</td>
+      <td style="text-align: left">Optionnel, permet de préciser le courriel pour répondre au message</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;">Segment optionnel qui permet d'indiquer l'adresse mail sur laquelle le destinataire peut répondre. <br /><b>HL7V2</b> : PRT-15.4 (PRT-4 = ‘REPLY^Reply To^participation’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TO</td>
+      <td style="text-align: left">Requis, permet de préciser l'adresse MSSanté d'un destinataire</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;">Segment répétable et requis si le document est échangé via MSSanté. Il contient l'adresse MSSanté d'un destinataire. <br /><b>HL7V2</b> : PRT-15.4 (PRT-4 = ‘RCT^Result Copies To^participation’)</pre></td>
+    </tr>
+    <tr>
+  <td style="text-align: left">SMTP "X-MSS-MES"</td>
+  <td style="text-align: left">Le système DOIT pouvoir positionner un entête SMTP "X-MSS-MES", dans les messages envoyés vers un usager (Mon espace santé), avec la valeur "FIN" (3 caractères en majuscules), lorsque le
+professionnel émetteur ne souhaite pas que l’usager puisse lui répondre en retour</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;"> HL7V2 : NTE-4 (OBX-3.1 = ‘DESTMSSANTEPAT’)</pre></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Body</td>
+      <td style="text-align: left">Texte à intégrer dans le corps du mail à destination des professionnels de santé et/ou du patient via MSSanté. Cette métadonnée est optionnelle</td>
+      <td><pre class="highlight language-plaintext" style="white-space: normal;">Segment pour indiquer le texte à intégrer dans le corps du mail. <br /><b>HL7V2</b> : OBX-5(OBX-3.1 = 'CORPSMAIL_PS' ou OBX-3.1='CORPSMAIL_PATIENT')</pre></td>
+    </tr>
+   </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="ack-metier-zam.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="mapping-mss.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.trans-cda-r2#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 6, 2025 10:33+0000">2025-01-06</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/history.html">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-hl7v2-volet-transmission-document-cda-r2/issues/new/choose">New Issue</a>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+
