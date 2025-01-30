@@ -1,0 +1,48 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/DocumentReference/exemple-esms-document-reference> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "exemple-esms-document-reference"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference exemple-esms-document-reference</b></p><a name=\"exemple-esms-document-reference\"> </a><a name=\"hcexemple-esms-document-reference\"> </a><a name=\"exemple-esms-document-reference-fr-FR\"> </a><p><b>identifier</b>: idDecision (use: usual, ), idNat_Decision (use: official, )</p><p><b>status</b>: Current</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 51848-0}\">Evaluation note</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Language</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>French</td><td><code>SGVsbG8gd29ybGQ=</code></td><td>Document évaluation</td></tr></table></blockquote></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:value [ fhir:v "idDecision" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "idNat_Decision" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:51848-0 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "51848-0" ] ;
+       fhir:display [ fhir:v "Evaluation note" ]
+     ] )
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:language [ fhir:v "fr" ] ;
+       fhir:data [ fhir:v "SGVsbG8gd29ybGQ="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "Document évaluation" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
