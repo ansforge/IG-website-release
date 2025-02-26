@@ -2,15 +2,15 @@
   "resourceType" : "ImplementationGuide",
   "id" : "ans.fhir.fr.tddui",
   "text" : {
-    "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>TDDUI</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>"
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.tddui</b></p><a name=\"ans.fhir.fr.tddui\"> </a><a name=\"hcans.fhir.fr.tddui\"> </a><a name=\"ans.fhir.fr.tddui-fr-FR\"> </a><h2>TDDUI</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui",
-  "version" : "1.0.1",
+  "version" : "1.1.0",
   "name" : "TDDUI",
   "title" : "Médicosocial - Transfert de données DUI",
   "status" : "active",
-  "date" : "2024-04-02T14:15:09+00:00",
+  "date" : "2025-02-26T10:26:44+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -37,7 +37,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.3.0"
+    "version" : "6.2.0"
   },
   {
     "id" : "hl7ext",
@@ -47,13 +47,19 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "1.0.0"
+    "version" : "5.2.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
-    "uri" : "http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core",
+    "uri" : "https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core",
     "packageId" : "hl7.fhir.fr.core",
-    "version" : "1.1.0"
+    "version" : "2.1.0"
+  },
+  {
+    "id" : "ans_fr_nos",
+    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
+    "packageId" : "ans.fr.nos",
+    "version" : "1.4.0"
   }],
   "definition" : {
     "extension" : [{
@@ -344,7 +350,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.3.0"
     },
     {
       "extension" : [{
@@ -659,12 +665,37 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/TDDUIConsommateur"
+      },
+      "name" : "TDDUI-Consommateur",
+      "description" : "Le rôle du consommateur est de recueillir les données du Dossier Usager Informatisé. Il peut recevoir un unique dossier ou un ensemble de dossiers, ainsi que des mises à jour de dossiers. Il correspond à un logiciel DUI ou un SI tiers.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/TDDUIProducteur"
+      },
+      "name" : "TDDUI-Producteur",
+      "description" : "Le rôle du producteur est de créer et transmettre un document ou lots de Documents portant les informations du Dossier Usager Informatisé. Il correspond à un logiciel DUI.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       }],
       "reference" : {
         "reference" : "Bundle/TDDUIBundleExample"
       },
       "name" : "TDDUIBundleExample",
+      "description" : "Exemple de ressource Bundle suivant le profil TDDUIBundle",
       "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-bundle"
     },
     {
@@ -676,6 +707,7 @@
         "reference" : "DocumentReference/TDDUIDocumentReferenceExample"
       },
       "name" : "TDDUIDocumentReferenceExample",
+      "description" : "Exemple de ressource DocumentReference suivant le profil TDDUIDocumentReference",
       "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-documentreference"
     }],
     "page" : {
@@ -746,7 +778,7 @@
           "valueUrl" : "contenu_dossier.html"
         }],
         "nameUrl" : "contenu_dossier.html",
-        "title" : "Contenu du dossier",
+        "title" : "Contenu du dossier CDA",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -755,6 +787,15 @@
           }],
           "nameUrl" : "contenu_dossier_contexte.html",
           "title" : "Contexte",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "mapping_fonctionnelle_technique.html"
+          }],
+          "nameUrl" : "mapping_fonctionnelle_technique.html",
+          "title" : "Mapping CDA du modèle de contenu DUI",
           "generation" : "markdown"
         },
         {
@@ -783,6 +824,69 @@
           "nameUrl" : "contenu_dossier_corps_cda.html",
           "title" : "Corps du document CDA",
           "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "terminology_cda.html"
+          }],
+          "nameUrl" : "terminology_cda.html",
+          "title" : "Jeux de Valeurs CDA",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_sejour.html"
+          }],
+          "nameUrl" : "contenu_sejour.html",
+          "title" : "Sejour",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_evenement.html"
+          }],
+          "nameUrl" : "contenu_evenement.html",
+          "title" : "Evénement",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_couvertures.html"
+          }],
+          "nameUrl" : "contenu_couvertures.html",
+          "title" : "Couvertures sociales",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_evaluation.html"
+          }],
+          "nameUrl" : "contenu_evaluation.html",
+          "title" : "Evaluation",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_documents_ajoutes.html"
+          }],
+          "nameUrl" : "contenu_documents_ajoutes.html",
+          "title" : "Documents ajoutés",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contenu_elements_transversaux.html"
+          }],
+          "nameUrl" : "contenu_elements_transversaux.html",
+          "title" : "Eléments transversaux",
+          "generation" : "markdown"
         }]
       },
       {
@@ -791,7 +895,7 @@
           "valueUrl" : "description_flux.html"
         }],
         "nameUrl" : "description_flux.html",
-        "title" : "Description des flux",
+        "title" : "Description des flux FHIR",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -860,6 +964,15 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "tests.html"
+        }],
+        "nameUrl" : "tests.html",
+        "title" : "Solutions de tests",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "annexes.html"
         }],
         "nameUrl" : "annexes.html",
@@ -868,21 +981,102 @@
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "acronymes.html"
+            "valueUrl" : "annexes_documents_reference.html"
           }],
-          "nameUrl" : "acronymes.html",
-          "title" : "Acronymes",
+          "nameUrl" : "annexes_documents_reference.html",
+          "title" : "Documents de référence",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "documents_reference.html"
+            "valueUrl" : "annexes_nomenclatures.html"
           }],
-          "nameUrl" : "documents_reference.html",
-          "title" : "Documents de référence",
+          "nameUrl" : "annexes_nomenclatures.html",
+          "title" : "Nomenclatures de référence",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "annexes_acronymes.html"
+          }],
+          "nameUrl" : "annexes_acronymes.html",
+          "title" : "Acronymes",
           "generation" : "markdown"
         }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "autres_ressources.html"
+        }],
+        "nameUrl" : "autres_ressources.html",
+        "title" : "Autres ressources",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "securite.html"
+          }],
+          "nameUrl" : "securite.html",
+          "title" : "Sécurité",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "downloads.html"
+          }],
+          "nameUrl" : "downloads.html",
+          "title" : "Téléchargements et usages",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "specs_fhir.html"
+          }],
+          "nameUrl" : "specs_fhir.html",
+          "title" : "Spécifications FHIR",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "specs_cda.html"
+          }],
+          "nameUrl" : "specs_cda.html",
+          "title" : "Spécifications CDA",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "site_ans.html"
+          }],
+          "nameUrl" : "site_ans.html",
+          "title" : "Site de l'ANS",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "documentation.html"
+          }],
+          "nameUrl" : "documentation.html",
+          "title" : "Documentation",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "changes.html"
+        }],
+        "nameUrl" : "changes.html",
+        "title" : "Historique des changements",
+        "generation" : "markdown"
       }]
     },
     "parameter" : [{

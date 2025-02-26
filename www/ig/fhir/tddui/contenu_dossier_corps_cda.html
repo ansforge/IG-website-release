@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Corps du document CDA - Médicosocial - Transfert de données DUI v1.0.1</title>
+    <title>Corps du document CDA - Médicosocial - Transfert de données DUI v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,23 +40,29 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"3.4"}
-    h3,h4,h5,h6{--heading-prefix:"3.4"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.5"}
+    h3,h4,h5,h6{--heading-prefix:"3.5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-</div>
-<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-</div>
+    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+  </div>
+  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+  </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Transfert de données DUI</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - trial-use
+            <span style="display:inline-block;">1.1.0 - trial-use
 
 
 
@@ -110,12 +116,15 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier CDA
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
         <a href="contenu_dossier_contexte.html">Contexte</a>
+      </li>
+      <li>
+        <a href="mapping_fonctionnelle_technique.html">Mapping CDA du modèle de contenu DUI</a>
       </li>
       <li>
         <a href="contenu_dossier_structure_cda.html">Structure générale du document CDA</a>
@@ -126,10 +135,13 @@
       <li>
         <a href="contenu_dossier_corps_cda.html">Corps du document CDA</a>
       </li>
+      <li>
+        <a href="terminology_cda.html">Jeux de valeurs CDA</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux FHIR
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -160,27 +172,52 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="acronymes.html">Acronymes</a>
+        <a href="annexes_documents_reference.html">Documents de référence</a>
       </li>
       <li>
-        <a href="documents_reference.html">Documents de référence</a>
+        <a href="annexes_nomenclatures.html">Nomenclatures de référence</a>
+      </li>
+      <li>
+        <a href="annexes_acronymes.html">Acronymes</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR</a>
       </li>
       <li>
+        <a target="_blank" href="https://hl7.org/cda/stds/core/">Spécifications CDA</a>
+      </li>
+      <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
       </li>
     </ul>
   </li>
   <li>
-    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -194,7 +231,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='contenu_dossier.html'><b>Contenu du dossier</b></a></li><li><b>Corps du document CDA</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='contenu_dossier.html'><b>Contenu du dossier CDA</b></a></li><li><b>Corps du document CDA</b></li>
 
           <span style="float:right;">
 
@@ -202,7 +239,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="description_flux.html">next&gt;</a>
+          | <a href="terminology_cda.html">next&gt;</a>
 
           </span>
 
@@ -224,7 +261,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.0.1: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Corps du document CDA</h2>
   
 
@@ -242,1141 +279,980 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#section-fr-evaluation-du-statut-fonctionnel" id="markdown-toc-section-fr-evaluation-du-statut-fonctionnel">Section FR-Evaluation-du-statut-fonctionnel</a></li>
+  <li><a href="#section-fr-sejours" id="markdown-toc-section-fr-sejours">Section FR-Sejours</a></li>
+  <li><a href="#section-fr-evenements" id="markdown-toc-section-fr-evenements">Section FR-Evenements</a></li>
+  <li><a href="#section-fr-couvertures-sociales" id="markdown-toc-section-fr-couvertures-sociales">Section FR-Couvertures-sociales</a></li>
+  <li><a href="#section-fr-statut-fonctionnel" id="markdown-toc-section-fr-statut-fonctionnel">Section FR-Statut-fonctionnel</a></li>
   <li><a href="#section-fr-documents-ajoutes" id="markdown-toc-section-fr-documents-ajoutes">Section FR-Documents-ajoutes</a></li>
-  <li><a href="#annexes" id="markdown-toc-annexes">Annexes</a></li>
+  <li><a href="#eléments-transversaux" id="markdown-toc-eléments-transversaux">Eléments transversaux</a></li>
 </ul>
 
 </div>
-<p>Les éléments apparaissant en <strong><span style="color: #3498db">gras de couleur bleu</span></strong> correspondent à des extensions définies dans le cadre de cette spécification technique afin de couvrir le besoin.</p>
+<h3 id="section-fr-sejours">Section FR-Sejours</h3>
 
-<p>Les éléments apparaissant en <span style="color: #e74c3c">rouge</span> correspondent aux règles spécifiques à mettre en place.</p>
+<p>Cette section contient les informations relatives au(x) séjour(s) d'un usager dans une structure ESSMS.</p>
 
-<p>Les éléments en <i><u>italique soulignés</u></i> correspondent aux cardinalités de base de CDA contraintes pour ce volet.</p>
+<p>La structure de la section se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
 
-<h3 id="section-fr-evaluation-du-statut-fonctionnel">Section FR-Evaluation-du-statut-fonctionnel</h3>
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.2.249-DYNAMIC.html" height="400" id="FR-Sejours" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.2.249-DYNAMIC.html" target="_blank">FR-Sejours</a></p>
 
-<p>La section FR-Evaluation-du-statut-fonctionnel décrit les informations sur l’évaluation de l’usager. Il s’agit dans le cadre du volet « Transfert de données DUI » des données de la spécification fonctionnelle de contenu v0.4 sur la Classe Evaluation, et notamment de la Grille d’évaluation.</p>
+<p><br /></p>
 
-<style>
+<h4 id="entrée-fr-sejour">Entrée FR-Sejour</h4>
 
-    <!-- Propriétés de style générales (taille, couleurs et police de texte, bordures) -->
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border: none
-    }
+<p>Cette entrée est un élément de type organizer permettant de décrire le séjour d’un usager.</p>
 
-    th, td {
-        border: solid windowtext 0.5pt !important;
-        font-family: "Arial", sans-serif;
-        font-size: 12px;
-        color: black
-    }
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
 
-    red { 
-		color: #c00000
-	}
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.219-DYNAMIC.html" height="400" id="FR-Sejour" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.219-DYNAMIC.html" target="_blank">FR-Sejour</a></p>
 
-	<!-- Propriétés spécifiques à des lignes ou des colonnes (fond de couleur, centrage) -->
-	#cda td:nth-child(2),
-	#cda td:nth-child(3),
-	#cda td:nth-child(4),
-    #cda th:nth-child(5),
-	#cda td:nth-child(5) {
-		width: auto
-	}
+<p><br /></p>
 
-	#cda th:nth-child(4),
-	#cda td:nth-child(4),
-	#cda th:nth-child(5),
-	#cda td:nth-child(5) {
-		text-align: center
-	}
+<h5 id="entrée-fr-sejour-admission">Entrée FR-Sejour-Admission</h5>
 
-    #component td {
-        background: #2F75B5
-    }
+<p>Cette entrée permet de décrire les données relatives à l'admission de l'usager au sein d'une structure.</p>
 
-    #section td {
-        background: #9BC2E6
-    }
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
 
-    #entrylvl1 td {
-        background: #A9D08E
-    }
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.218-DYNAMIC.html" height="400" id="FR-Sejour-Admission" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.218-DYNAMIC.html" target="_blank">FR-Sejour-Admission</a></p>
 
-    #entrylvl2 td{
-        background: #E2EFDA
-    }
+<p><strong>Contraintes spécifiques à l'entrée FR-Sejour-Admission :</strong></p>
 
-	#elementlvl0 td {
-		background: #FFE699
-	}
-
-	#elementlvl1 td {
-		background: #F4B084
-	}
-
-	#elementlvl2 td {
-		background: #FCE4D6
-	}
-
-</style>
-
-<table id="cda">
+<table id="sejourAdmission">
     <thead>
         <tr>
-            <th>Niv.</th>
             <th>Elément XML</th>
-            <th>Type</th>
             <th>Card.</th>
-            <th>Elément de la SFC</th>
             <th>Contenu de l'élément CDA</th>
         </tr>
     </thead>
     <tbody>
-        <tr id="component">
-            <td>0</td>
-            <td>Component</td>
-            <td></td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Informations sur l'évaluation de l'usager</strong></td>
-        </tr>
-        <tr id="section">
-            <td>1</td>
-            <td>section</td>
-            <td></td>
-            <td>[1..1]</td>
-            <td>Classe Evaluation</td>
-            <td><strong>Section FR-Evaluation-du-statut-fonctionnel</strong></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité IHE</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.3.17</p></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité CDD</strong></p>
-            <p>@root = 2.16.840.1.113883.10.20.1.5</p></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité IHE Coded Functional Status Assessment Section</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.1.12.2.1</p></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité FR-Evaluation-du-statut-fonctionnel (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.2.111</p></td>
-        </tr>
-        <tr>
-            <td>2</td>
+        <tr id="id">
             <td>id</td>
-            <td>II</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant unique du séjour</strong><br />L'identifiant se forme en concaténant : 3+FINESS/identifiantLocalUsagerESSMS-SEJOUR-numeroDossier</td>
+        </tr>
+        <tr id="code">
+            <td>code</td>
+            <td>[1..1]</td>
+            <td>Valeur fixée à : <br />@code = GEN-351 <br />@codeSystem = 1.2.250.1.213.1.1.4.322 <br />@displayName = Établissement ou service social ou médico-social (ESSMS) (optionnel)</td>
+        </tr>
+        <tr id="participantId">
+            <td>participant[@classCode=RESP]/participantRole/scopingEntity/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'entité juridique responsable du séjour</strong>
+            <br />L'identifiant de la structure est requis.</td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<h5 id="entrée-fr-modalite-entree">Entrée FR-Modalite-entree</h5>
+
+<p>Cette entrée permet d'indiquer la modalité d'entrée d'un usager dans un établissement.</p>
+
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.48.6-DYNAMIC.html" height="400" id="FR-Modalite-entree" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.48.6-DYNAMIC.html" target="_blank">FR-Modalite-entree</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Modalite-entree :</strong></p>
+
+<table id="modaliteE">
+    <thead>
+        <tr>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="text">
+            <td>text/reference</td>
             <td>[0..1]</td>
-            <td></td>
-            <td><strong>Identifiant de la section</strong></td>
+            <td>Référence le texte décrivant le libellé du mode d'entrée du séjour.</td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>code</td>
-            <td>CE</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Code de la section</strong></p>
-            <p>@code = « 47420-5 »
-            <br />@displayName = « Evaluation du statut fonctionnel »
-            <br />@codeSystem = 2.16.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>title</td>
-            <td>ST</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Titre de la section</strong></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>text</td>
-            <td>SD.TEXT</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Bloc narratif</strong></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>component</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr id="section">
-            <td>3</td>
-            <td>section</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><strong>Sous-section FR-Fonctions-physiques</strong></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité IHE</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.1.12.2.5</p></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité FR-Fonctions-physiques (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.2.115</p></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>id</td>
-            <td>II</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Identifiant de la section</strong></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>code</td>
-            <td>CE</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Code de la section</strong></p>
-            <p>@code = « 46006-3 »
-             <br />@displayName = « Problèmes physiques fonctionnels et structurels »
-            <br />@codeSystem = 2.16.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>text</td>
-            <td>SD.TEXT</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Bloc narratif</strong></td>
-        </tr>
-        <tr id="entrylvl1">
-            <td>4</td>
-            <td>entry</td>
-            <td></td>
-            <td><red><i><u>[1..*]</u></i></red></td>
-            <td></td>
-            <td><strong>Entrée relative à l'évaluation de l'usager</strong></td>
-        </tr>
-        <tr id="entrylvl2">
-            <td>5</td>
-            <td>observation</td>
-            <td></td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Observation FR-Evaluation</strong></p>
-            <p>@classCode = "OBS"
-            <br />@moodCode = "EVN"</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Simple Observation CCD</strong></p>
-            <p>@root = 2.16.840.1.113883.10.20.1.31</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Simple Observation (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.4.13</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Survey Observation (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.1.12.3.6</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité FR-Evaluation (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.25</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>id</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td>Evaluation.idEvaluation</td>
-            <td><strong>Identifiant de l'évaluation</strong></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>code</td>
-            <td>CD</td>
-            <td>[1..1]</td>
-            <td>Evaluation.Grille
-            <br />Evaluation.type</td>
-            <td><p><strong>Type d'évaluation</strong></p>
-            <p><red>S'il s'agit d'une grille d'évaluation GIR :</red></p>
-            <p>@code = « MED-1270 »
-            <br />@displayName = « Grille d'évaliation GIR »
-            <br />@codeSystem = 1.2.250.1.213.1.1.4.322
-            <br />@codeSystemName = "TA_ASIP"</p>
-            <p><red>Sinon :</red>
-            <br />À définir</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>text</td>
-            <td>ED</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Bloc narratif</strong></td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>reference</td>
-            <td>TEL</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Référence à la partie narrative de la section</strong></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>statusCode</td>
-            <td>CS</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Statut de l'observation</strong></p>
-            <p>@code = « completed »</p></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>effectiveTime</td>
-            <td>IVL_TS</td>
-            <td>[1..1]</td>
-            <td>Evaluation.dateEvaluation</td>
-            <td><strong>Date de l'évaluation</strong></td>
-        </tr>
-        <tr>
-            <td>6</td>
+        <tr id="value">
             <td>value</td>
-            <td>ANY</td>
             <td>[1..1]</td>
-            <td>Evaluation.resultatEvaluation</td>
-            <td><p><strong>Résultat (score) de l'évaluation</strong></p>
-            <p><red>S'il s'agit d'une grille d'évaluation GIR :</red>
-            <br />Valeur provenant du <a href="https://esante.gouv.fr/annexe-vocabulaire-et-jeux-de-valeurs">JDV_GIR-CISIS</a><strong> (1.2.250.1.213.1.1.5.53)</strong></p>
-            <p><red>Sinon :</red>
-            <br />À définir</p></td>
+            <td>nullFlavor='NA'</td>
         </tr>
-        <tr id="elementlvl0">
-            <td>6</td>
-            <td>performer</td>
-            <td></td>
-            <td>[0..*]</td>
-            <td>Evaluation.evaluateur</td>
-            <td><p><strong>Informations sur l'évaluateur</strong></p>
-            <p>@typeCode = "PRF"</p></td>
-        </tr>
-        <tr id="elementlvl1">
-            <td>7</td>
-            <td>assignedEntity</td>
-            <td>ANY</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Exécutant</strong></td>
-        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<h5 id="entrée-fr-modalite-sortie">Entrée FR-Modalite-sortie</h5>
+
+<p>Cette entrée permet d'indiquer la modalité de sortie d'un usager dans un établissement.</p>
+
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.48.7-DYNAMIC.html" height="400" id="FR-Modalite-sortie" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.48.7-DYNAMIC.html" target="_blank">FR-Modalite-sortie</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Modalite-sortie :</strong></p>
+
+<table id="modaliteS">
+    <thead>
         <tr>
-            <td>8</td>
-            <td>id</td>
-            <td></td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Identifiant</strong></p>
-            <p>@root = 
-            <br />• « 1.2.250.1.71.4.2.1 » pour les professionnels et les systèmes (ex: dispositifs, automates…)
-            <br />• Valeur prise dans la liste des OID des autorités d'affectation des INS dans <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/asip_referentiel_identifiant_national_sante-liste-des-oid-des-autorites-d-affectation-des-ins_v0.1.pdf">[1]</a> pour le patient/usager</p>
-            <p>@extension = Valeur de l'identifiant
-            <br />• Pour un professionnel de santé, valeur de PS_IdNat (voir <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">[2]</a>)
-            <br />• Pour un système (ex. dispositifs, automates…), concaténation de : 
-            <br /><span style="padding:0 0 0 20px">- Identifiant de la structure</span>
-            <br /><span style="padding:0 0 0 20px">- Caractère "/"</span>
-            <br /><span style="padding:0 0 0 20px">- Identifiant interne du dispositif dans la structure</span>
-            <br />• Pour le patient/usager, valeur du matricule de l'INS (NIR ou NIA) du patient tel que défini dans le cadre juridique</p></td>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
         </tr>
-        <tr>
-            <td>8</td>
-            <td>code</td>
-            <td>CD</td>
+    </thead>
+    <tbody>
+        <tr id="text">
+            <td>text/reference</td>
             <td>[0..1]</td>
-            <td></td>
-            <td><strong>Profession / Spécialité</strong>
-            <br />• Pour les PS : profession/spécialité issues du <a href="https://mos.esante.gouv.fr/NOS/JDV_J01-XdsAuthorSpecialty-CISIS/JDV_J01-XdsAuthorSpecialty-CISIS.pdf">JDV_J01-XdsAuthorSpecialty-CISIS</a>
-            <br />• Pour les non PS : profession issue du <a href="https://mos.esante.gouv.fr/NOS/JDV_J48-ProfessionNonPS-CISIS/JDV_J48-ProfessionNonPS-CISIS.pdf">JDV_J48-ProfessionNonPS-CISIS</a>
-            </td>
+            <td>Référence le texte décrivant le libellé du mode de sortie du séjour.</td>
         </tr>
-        <tr>
-            <td>8</td>
-            <td>telecom</td>
-            <td>TEL</td>
-            <td>[0..*]</td>
-            <td></td>
-            <td>Voir <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">CI-SIS – Volet Structuration Minimale de Documents de Santé</a>
-            </td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>addr</td>
-            <td>AD</td>
-            <td>[0..*]</td>
-            <td></td>
-            <td>Voir <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">CI-SIS – Volet Structuration Minimale de Documents de Santé</a>
-            </td>
-        </tr>
-        <tr id="elementlvl2">
-            <td>8</td>
-            <td>assignedPerson</td>
-            <td></td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Informations relatives à l'exécutant</strong></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>name</td>
-            <td>EN</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Nom, prénom, civilité et titre</strong></td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>family</td>
-            <td>ENXP</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Nom</strong>
-            <br />Pour les PS : PS_Nom (voir <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">[2]</a>)</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>given</td>
-            <td>ENXP</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Prénom</strong>
-            <br />Pour les PS : PS_Prénom (voir <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">[2]</a>)</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>prefix</td>
-            <td>ENXP</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Civilité</strong>
-            <br />Valeur issue du <a href="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/JDV_J245-Civilite-CISIS.pdf">JDV_J245-CiviliteCISIS</a>
-            <br /><strong>(1.2.250.1.213.1.1.5.718)</strong></td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>suffix</td>
-            <td>ENXP</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Titre</strong>
-            <br />Valeur issue du <a href="https://mos.esante.gouv.fr/NOS/JDV_J246-Titre-CISIS/JDV_J246-Titre-CISIS.pdf">JDV_J246-Titre-CISIS</a>
-            <br /><strong>(1.2.250.1.213.1.1.5.719)</strong></td>
-        </tr>
-        <tr id="entrylvl2">
-            <td>8</td>
-            <td>representedOrganization</td>
-            <td></td>
-            <td>[0..1]</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>id</td>
-            <td>II</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Identifiant de l'organisation</strong>
-            <br />Struct_idNat (voir <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">[2]</a>)</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>name</td>
-            <td>ON</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><strong>Nom de l'organisation</strong>
-            <br />Struct_Nom (voir <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">[2]</a>)</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>telecom</td>
-            <td>TEL</td>
-            <td>[0..*]</td>
-            <td></td>
-            <td>Voir <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">CI-SIS – Volet Structuration Minimale de Documents de Santé</a>
-            </td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>addr</td>
-            <td>AD</td>
-            <td>[0..*]</td>
-            <td></td>
-            <td>Voir <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">CI-SIS – Volet Structuration Minimale de Documents de Santé</a>
-            </td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>standardIndustryClassCode</td>
-            <td>CD</td>
-            <td>[0..1]</td>
-            <td></td>
-            <td><p><strong>Cadre d'exercice du professionnel ou Démarche d'expression personnelle du patient/usager</strong></p>
-            <p>@code = 
-            <br /><span style="padding:0 0 0 20px">- Pour un document professionnel : Cadre d'exercice du professionnel. Valeur issue d'une des tables de référence suivantes :</span>
-            <br /><span style="padding:0 0 0 40px">• <a href="https://mos.esante.gouv.fr/NOS/TRE_A00-ProducteurDocNonPS/TRE_A00-ProducteurDocNonPS.pdf">TRE_A00-ProducteurDocNonPS</a><strong> (1.2.250.1.213.1.1.4.6)</strong></span>
-            <br /><span style="padding:0 0 0 40px">• <a href="https://mos.esante.gouv.fr/NOS/TRE_A01-CadreExercice/TRE_A01-CadreExercice.pdf">TRE_A01-CadreExercice</a><strong> (1.2.250.1.213.1.1.4.9)</strong></span>
-            <br /><span style="padding:0 0 0 20px">- Pour un document d'expression personnelle du patient/usager :</span>
-            <br /><span style="padding:0 0 0 40px">• Code : "EXP_PATIENT" contenu dans la <a href="https://mos.esante.gouv.fr/NOS/TRE_A00-ProducteurDocNonPS/TRE_A00-ProducteurDocNonPS.pdf">TRE_A00-ProducteurDocNonPS</a><strong> (1.2.250.1.213.1.1.4.6)</strong></span></p>
-            <p>Il est possible d'utiliser le <a href="https://mos.esante.gouv.fr/NOS/JDV_J04-XdsPracticeSettingCode-CISIS/JDV_J04-XdsPracticeSettingCode-CISIS.pdf">JDV_J04- XdsPracticeSettingCode-CISIS</a><strong> (1.2.250.1.213.1.1.5.467)</strong> qui regroupe les valeurs:
-            <br /><red>@code = « ETABLISSEMENT »
-            <br />@displayName = « Etablissement de santé »
-            <br />@codeSystem = 1.2.250.1.213.1.1.4.9</red></p></td>
-        </tr>
-        <tr id="entrylvl1">
-            <td>6</td>
-            <td>entryrelationship</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><p><strong>Commentaire permettant de véhiculer le contenu de l'évaluation</strong></p>
-            <p>@typeCode = "SPRT"
-            <br />@inversionInd = "true"</p></td>
-        </tr>
-        <tr id="entrylvl2">
-            <td>7</td>
-            <td>act</td>
-            <td></td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Entrée FR-Commentaire-ER</strong></p>
-            <p>@classCode = "ACT"
-            <br />@moodCode = "EVN"</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Comment (CCD)</strong></p>
-            <p>@root = 2.16.840.1.113883.10.20.1.40</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Comment Entry (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.4.2</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Fr-Commentaire (CI-SIS )</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.32</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>code</td>
-            <td>CD</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Code de l'entrée</strong></p>
-            <p>@code = « 48767-8 »
-            <br />@displayName = « Commentaire »
-            <br />@codeSystem = 2.16.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>text</td>
-            <td>ED</td>
-            <td>[1..1]</td>
-            <td>Evaluation.Grille
-            <br />Evaluation.contenu</td>
-            <td><strong>Texte correspondant au contenu de l'évaluation</strong></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>reference</td>
-            <td>TEL</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Référence du contenu de l'évaluation</strong></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>statusCode</td>
-            <td>CS</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Statut de l'entrée</strong></p>
-            <p>@code = « completed »</p></td>
-        </tr>
-        <tr id="entrylvl1">
-            <td>6</td>
-            <td>entryrelationship</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><p><strong>Référence interne permettant de véhiculer une pièce jointe liée à l'évaluation</strong></p>
-            <p>@typeCode = "REFR"
-            <br />@inversionInd = "false"</p></td>
-        </tr>
-        <tr id="entrylvl2">
-            <td>7</td>
-            <td>act</td>
-            <td></td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Entrée FR-Reference-Interne</strong></p>
-            <p>@classCode = "ACT"
-            <br />@moodCode = "EVN"</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité International References (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.4.4.1</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité FR-Reference-interne (CI-SIS)</strong></p>
-            <p>root=1.2.250.1.213.1.1.3.36</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>id</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td>Evaluation.Grille
-            <br />Evaluation.pieceJointe</td>
-            <td><strong>Identifiant de l'entrée référencée véhiculant la pièce jointe</strong></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>code</td>
-            <td>CD</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Code obligatoire</strong>
-            <br />Si n'est pas référencée alors : <red>valeur nullFlavor autorisée</red></td>
-        </tr>
-        <tr id="entrylvl1">
-            <td>6</td>
-            <td>entryrelationship</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><p><strong>SimpleObservation permettant de véhiculer la version de l'évaluation</strong></p>
-            <p>@typeCode = "COMP"
-            <br />@inversionInd = "false"</p></td>
-        </tr>
-        <tr id="entrylvl2">
-            <td>7</td>
-            <td>observation</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><p><strong>Entrée FR-Simple-Observation</strong></p>
-            <p>@classCode = "OBS"
-            <br />@moodCode = "EVN"</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité Simple Observation (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.4.13</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>templateId</td>
-            <td>II</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td></td>
-            <td><p><strong>Déclaration de conformité FR-Simple-Observation (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.48</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>id</td>
-            <td>II</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Identifiant de l'observation</strong></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>code</td>
-            <td>CD</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Code de l'observation</strong></p>
-            <p>@code = <red>« MED-1271 »</red>
-            <br />@displayName = <red>« Version de la grille d'évaluation »</red>
-            <br />@codeSystem = 1.2.250.1.213.1.1.4.322 
-            <br />@codeSystemName = "TA_ASIP"</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>text</td>
-            <td>ED</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Bloc narratif</strong></td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>reference</td>
-            <td>TEL</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><strong>Référence de la description narrative</strong></td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>statusCode</td>
-            <td>CS</td>
-            <td>[1..1]</td>
-            <td></td>
-            <td><p><strong>Statut de l'observation</strong></p>
-            <p>@code = « completed »</p></td>
-        </tr>
-        <tr>
-            <td>8</td>
+        <tr id="value">
             <td>value</td>
-            <td>ANY</td>
-            <td><red><i><u>[1..1]</u></i></red></td>
-            <td>Evaluation.Grille
-            <br />Evaluation.version</td>
-            <td><strong>Valeur de la version de l'évaluation</strong></td>
+            <td>[1..1]</td>
+            <td>nullFlavor='NA'</td>
         </tr>
     </tbody>
 </table>
 
-<h3 id="section-fr-documents-ajoutes">Section FR-Documents-ajoutes</h3>
+<p><br /></p>
 
-<p>La section FR-Documents-ajoutes permet d’ajouter les documents ou pièce jointes qui sont spécifiques au volet.
-Dans le cadre de notre volet, il permet de véhiculer les pièces jointes associées à l’évaluation de l’usager.</p>
+<h3 id="section-fr-evenements">Section FR-Evenements</h3>
 
-<table id="cda">
-	<thead>
+<p>Cette section contient l'ensemble des évènements (passés ou à venir) d'un usager.</p>
+
+<p>La structure de la section se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.2.248-DYNAMIC.html" height="400" id="FR-Evenements" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.2.248-DYNAMIC.html" target="_blank">FR-Evenements</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-evenement">Entrée FR-Evenement</h4>
+
+<p>Cette entrée permet de décrire un évènement de l'usager passé ou à venir.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.215-DYNAMIC.html" height="400" id="FR-Evenement" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.215-DYNAMIC.html" target="_blank">FR-Evenement</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Evenement :</strong></p>
+
+<table id="Evenement">
+    <thead>
 		<tr>
-			<th>Niv.</th>
 			<th>Elément XML</th>
-			<th>Type</th>
 			<th>Card.</th>
-			<th>Elément de la SFC</th>
 			<th>Contenu de l'élément CDA</th>
 		</tr>
     </thead>
     <tbody>
-		<tr id="component">
-			<td>0</td>
-			<td>Component</td>
-			<td></td>
-			<td>[0..1]</td>
-			<td></td>
-			<td><strong>Informations sur les pièces jointes associées à l'évaluation</strong></td>
-		</tr>
-		<tr id="section">
-			<td>1</td>
-			<td>section</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td>Classe Evaluation</td>
-			<td><strong>Section FR-Documents-ajoutes</strong></td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>templateID</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Déclaration de conformité FR-Documents-ajoutes (CI-SIS)</strong></td>
-		</tr>
-		<tr>
-			<td>2</td>
+        <tr id="id">
 			<td>id</td>
-			<td>II</td>
-			<td>[0..1]</td>
-			<td></td>
-			<td><strong>Identifiant de la section</strong></td>
+            <td>[1..1]</td>
+			<td><strong>Identifiant unique de l'évènement</strong><br />L'identifiant se forme en concaténant : 3+FINESS/identifiantLocalUsagerESSMS-EVN-numEvenement</td>
 		</tr>
-		<tr>
-			<td>2</td>
+        <tr id="code">
 			<td>code</td>
-			<td>CE</td>
-			<td><red><i><u>[1..1]</u></i></red></td>
-			<td></td>
-			<td><p><strong>Code de la section</strong></p>
-            <p>@code = « 55107-7 »
-            <br />@displayName = « Documents ajoutés »
-            <br />@codeSystem = 2.16.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
+            <td>[1..1]</td>
+			<td>Valeur fixée à : <br />@code = "GEN-367" <br />@codeSystem = "1.2.250.1.213.1.1.4.322" <br />@displayName = "Agenda de l'usager"</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>title</td>
-			<td>ST</td>
-			<td>[0..1]</td>
-			<td></td>
-			<td><strong>Titre de la section</strong></td>
-		</tr>
-		<tr>
-			<td>2</td>
+        <tr id="typeEvnName">
+            <td>code/qualifier/name</td>
+            <td>[0..1]</td>
+            <td><strong>Type évènement SSIAD</strong><br />S'il s'agit d'un évènement SSIAD, la valeur de l'élément name est fixée à : <br />@code = "GEN-364" <br />@codeSystem = "1.2.250.1.213.1.1.4.322" <br />@displayName = "Réforme SSIAD"<br /><br /><strong>Type évènement SERAFIN</strong><br />S'il s'agit d'un évènement SERAFIN, la valeur de l'élément name est fixée à : <br />@code = "GEN-363" <br />@codeSystem = "1.2.250.1.213.1.1.4.322" <br />@displayName = "Réforme SERAFIN"</td>
+        </tr>
+        <tr id="typeEvnValue">
+            <td>code/qualifier/value</td>
+            <td>[1..1]</td>
+            <td><strong>Type évènement SSIAD</strong><br />Valeur issue du JDV_TypeEvenementSSIAD_CISIS<br /><br /><strong>Type évènement SERAFIN</strong><br />Valeur issue du JDV_J283-PrestationsIndirects_SERAFIN ou du JDV_J284-PrestationsDirects_SERAFIN</td>
+        </tr>
+        <tr id="typeEvnTexte">
+            <td>code/originalText</td>
+            <td>[0..1]</td>
+            <td><strong>Type évènement non structuré</strong><br />Référence le texte décrivant les types d'évènements au format texte.</td>
+        </tr>
+        <tr id="text">
 			<td>text</td>
-			<td>SD.TEXT</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Bloc narratif</strong></td>
+            <td>[0..1]</td>
+			<td>Référence le texte décrivant le libellé et/ou le motif de l'évènement</td>
 		</tr>
-		<tr id="entrylvl1">
-			<td>2</td>
-			<td>entry</td>
-			<td>ANY</td>
-			<td>[1..*]</td>
-			<td></td>
-			<td><strong>Entrée relative aux pièces jointes associées à l'évaluation</strong></td>
-		</tr>
-		<tr id="entrylvl2">
-			<td>3</td>
-			<td>organizer</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Entrée FR-Document-attache</strong></p>
-            <p>@moodCode = "EVN"
-            <br />@classCode = "CLUSTER"</p></td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>templateId</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Déclaration de conformité FR-Document-attache</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.18</p></td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>id</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Identifiant de l'organizer</strong>
-            <br />Sous la forme UID (UUID ou OID)
-            <br />Attribué par le LPS avec si possible les attributs @root et @extension.
-            <br />Sinon, un identifiant unique de type UUID est affecté à l'attribut root et l'attribut extension est omis.</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>code</td>
-			<td>CD</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Code de l'entrée</strong></p>
-            <p>@code = « 55107-7 »
-            <br />@displayName = « Document attaché »
-            <br />@codeSystem = 2.162.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>statusCode</td>
-			<td>CS</td>
-			<td><red><i><u>[1..1]</u></i></red></td>
-			<td></td>
-			<td><p><strong>Statut de l'observation</strong></p>
-            <p>@code = « completed »</p></td>
-		</tr>
-		<tr id="component">
-			<td>4</td>
-			<td>component</td>
-			<td></td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Type de document attaché</strong></p>
-            <p>@typeCode = "COMP"</p></td>
-		</tr>
-		<tr id="entrylvl2">
-			<td>5</td>
-			<td>observation</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Entrée Fr-Type-Document-attache</strong></p>
-            <p>@classCode = "OBS"
-            <br />@moodCode = "EVN"</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>templateId</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Déclaration de conformité Simple Observation (IHE PCC)</strong></p>
-            <p>@root = 1.3.6.1.4.1.19376.1.5.3.1.4.13</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>templateId</td>
-			<td>II</td>
-			<td><red><i><u>[1..1]</u></i></red></td>
-			<td></td>
-			<td><p><strong>Déclaration de conformité FR-Simple-Observation (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.48</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>templateId</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Déclaration de conformité FR-Type-document-attache (CI-SIS)</strong></p>
-            <p>@root = 1.2.250.1.213.1.1.3.48.18</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>id</td>
-			<td>II</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Identifiant de l'observation</strong>
-            <br />Sous la forme UID (UUID ou OID)
-            <br />Attribué par le LPS avec si possible les attributs @root et @extension.
-            <br />Sinon, un identifiant unique de type UUID est affecté à l'attribut root et l'attribut extension est omis.</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>code</td>
-			<td>CD</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Code de l'entrée</strong></p>
-            <p><red>@code = « 69764-9 »
-            <br />@displayName = « Type de document »</red>
-            <br />@codeSystem = 2.162.840.1.113883.6.1
-            <br />@codeSystemName = LOINC</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>text</td>
-			<td>ED</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Bloc narratif</strong></td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>reference</td>
-			<td>TEL</td>
-			<td><red><i><u>[1..1]</u></i></red></td>
-			<td></td>
-			<td><strong>Référence de la description narrative dans la section</strong></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>statusCode</td>
-			<td>CS</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Statut de l'observation</strong></p>
-             <p>@code = « completed »</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
+        <tr id="effectiveTime">
 			<td>effectiveTime</td>
-			<td>IVL_TS</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Date de l'observation</strong></td>
+            <td>[1..1]</td>
+			<td>L'attribut nullFlavor est interdit.</td>
 		</tr>
-		<tr>
-			<td>6</td>
-			<td>value</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Nature du document</strong></td>
+        <tr id="effectiveTimeLow">
+			<td>effectiveTime/low</td>
+            <td>[1..1]</td>
+			<td>L'attribut nullFlavor est interdit.</td>
 		</tr>
-		<tr>
-			<td>7</td>
-			<td>originalText</td>
-			<td>ED</td>
-			<td>[0..1]</td>
-			<td></td>
-			<td><strong>Référence à la nature du document</strong></td>
+        <tr id="effectiveTimeHigh">
+			<td>effectiveTime/high</td>
+            <td>[1..1]</td>
+			<td>L'attribut nullFlavor est interdit.</td>
 		</tr>
-		<tr>
-			<td>8</td>
-			<td>reference</td>
-			<td>TEL</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Référence à l'élément narratif de la section</strong>
-            <br />S'il est présent, cet élément permet de pointer vers un élément textuel de la partie narrative de la section.
-            <br />L'élément textuel pointé contient les commentaires éventuels faits sur les documents attachés/</td>
+        <tr id="participant2">
+            <td>participant</td>
+            <td>[0..2]</td>
+			<td>L'évènement peut être attaché à deux participants : le lieu d'exécution et l'entité juridique responsable de l'évènement.</td>
+        </tr>
+        <tr id="participant">
+            <td>participant[@typeCode="RESP"]/participantRole/scopingEntity</td>
+            <td>[0..1]</td>
+			<td><strong>Entité juridique responsable de l'évènement</strong><br />Si aucun séjour est renseigné, l'entité juridique responsable de l'évènement est requise.</td>
+        </tr>
+        <tr id="participantId">
+            <td>participant[@typeCode="RESP"]/participantRole/scopingEntity/id</td>
+            <td>[1..1]</td>
+			<td><strong>Identifiant de l'entité juridique responsable de l'évènement</strong><br />Si l'entité juridique responsable de l'évènement est renseignée, son identifiant est requis.</td>
+        </tr>
+        <tr id="performer">
+            <td>performer/assignedEntity/id</td>
+            <td>[1..1]</td>
+			<td>Si le professionnel est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="entryCode">
+			<td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/code </td>
+            <td>[1..1]</td>
+			<td><strong>Caractéristique de l'évènement</strong><br />Dans l'entrée FR-Evenement, l'élément code de l'entrée FR-Simple-Observation doit prendre l'une des valeurs suivantes :
+            <ul>
+                <li>@code = "GEN-347" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Evènement hors prestation"</li>
+                <li>@code = "GEN-349" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Type de ressource utilisée"</li>
+                <li>@code = "GEN-350" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Repas inclus"</li>
+                <li>@code = "38887-6" @codeSystem = "2.16.840.1.113883.6.1" @displayName = "Personne présente au moment de l'évènement"</li>
+                <li>@code = "106177-9" @codeSystem = "2.16.840.1.113883.6.1" @displayName = "Date de dernière mise à jour"</li>
+            </ul>
+            </td>
 		</tr>
-		<tr id="component">
-			<td>4</td>
-			<td>component</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><strong>Document attaché</strong></td>
+        <tr id="entryValue">
+			<td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/value</td>
+            <td>[1..1]</td>
+			<td><strong>Caractéristique de l'évènement</strong><br />Le type de l'élément value de l'entrée FR-Simple-Observation est détaillé ci-dessous.</td>
 		</tr>
-		<tr id="entrylvl2">
-			<td>5</td>
-			<td>observationMedia</td>
-			<td>ANY</td>
-			<td>[1..1]</td>
-			<td></td>
-			<td><p><strong>Pièce jointe attachée à l'évaluation</strong></p>
-            <p>@classCode = "OBS"
-            <br />@moodCode = "EVN"
-            <br />@id = Cet identifiant est utilisé dans la partie narrative par l'élément renderMultiMedia/referenceObject pour afficher le document à partir d'un navigateur Internet (lorsque cela est souhaitable)</p></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>id</td>
-			<td>II</td>
-			<td>[0..1]</td>
-			<td></td>
-			<td><strong>Identifiant de l'observationMedia</strong></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>value</td>
-			<td>ED</td>
-			<td>[1..1]</td>
-			<td>Evaluation.Grille
-            <br />Evaluation.pieceJointe</td>
-			<td><p><strong>Document attaché encodée en Base64</strong>
-            <br />Le charset utilisé par défaut est iso-8859-1</p>
-            <p>Les attributs de cet élément prennant les valeurs suivantes :
-            <br />• @mediaType = « * »
-            <br />• @representation = « B64 »</p>
-            <p>* Valeurs les plus utilisées : "image/gif" ou "image/jpeg" ou "image/png" ou "image/bm" ou "image/tiff" ou "text/rtf" ou "text/plain" ou "application/pdf" ou "application/xml".</p></td>
-		</tr>
-	</tbody>
+    </tbody>
 </table>
 
-<h3 id="annexes">Annexes</h3>
+<p>Dans les entrées FR-Simple-Observation, le type de l'élément value dépend de la valeur de l'élément code :</p>
 
-<h4 id="nomenclatures">Nomenclatures</h4>
+<table id="EvenementSimpleObs">
+    <thead>
+		<tr>
+			<th>Valeur de l'attribut code/@code</th>
+			<th>Contenu de l'élément value</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr id="1">
+			<td>GEN-347 (Evènement hors prestation)</td>
+            <td>BL</td>
+		</tr>
+        <tr id="2">
+        <td>GEN-349 (Type de ressource utilisée)</td>
+            <td>CD<br />Valeur issue du JDV_RessourceUtilisee_CISIS
+                <ul>
+                    <li>Si l'élément value/@code = "ORG-206" (Matériel spécialisé) alors la valeur de l'élément value/qualifier est issue du JDV_DetailMaterielSpecialise_CISIS.</li>
+                    <li>Si l'élément value/@code = "ORG-207" (Ressource immobilière) alors la valeur de l'élément value/qualifier est issue du JDV_DetailRessourceImmobiliereUtilisee_CISIS.</li>
+                </ul>
+            </td>
+		</tr>
+        <tr id="3">
+			<td>GEN-350 (Repas inclus)</td>
+            <td>BL</td>
+		</tr>
+        <tr id="4">
+			<td>38887-6 (Personne présente au moment de l'évènement)</td>
+            <td>BL</td>
+		</tr>
+        <tr id="5">
+			<td>106177-9 (Date de dernière mise à jour)</td>
+            <td>TS</td>
+		</tr>
+    </tbody>
+</table>
 
-<table style="width:100%">
+<p><br /></p>
+
+<h5 id="entrée-fr-transport-du-patient">Entrée FR-Transport-du-patient</h5>
+
+<p>Cette entrée permet de décrire le transport de l'usager lors de l'évènement.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.24-DYNAMIC.html" height="400" id="FR-Transport-du-patient" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.24-DYNAMIC.html" target="_blank">FR-Transport-du-patient</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Transport-du-patient :</strong></p>
+
+<table id="transportPatient">
     <thead>
         <tr>
-            <th>Type de nomenclature</th>
-            <th>Format</th>
-            <th>Accès</th>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Nomenclatures des Objets de Santé (NOS)</td>
-            <td>TRE_R* 
-            <br />JDV_J*</td>
-            <td><a href="https://mos.esante.gouv.fr/NOS/">https://mos.esante.gouv.fr/NOS/</a></td>
+        <tr id="moodCode">
+            <td>@moodCode</td>
+            <td>[1..1]</td>
+            <td>Valeur fixée à EVN</td>
         </tr>
-        <tr>
-            <td>Nomenclature ANS</td>
-            <td>TA_ASIP</td>
-            <td><a href="https://esante.gouv.fr/annexe-vocabulaire-et-jeux-de-valeurs">https://esante.gouv.fr/annexe-vocabulaire-et-jeux-de-valeurs</a></td>
+        <tr id="id">
+            <td>id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant unique du transport</strong><br />L'identifiant se forme en concaténant : 3+FINESS/identifiantLocalUsagerESSMS-TPPat-idTransport</td>
+        </tr>
+        <tr id="code">
+            <td>code</td>
+            <td>[1..1]</td>
+            <td> Le code issu du JDV_ModeDeTransport_CISIS est restreint aux valeurs suivantes :
+            <ul>
+                <li>@code = "ORG-202" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Véhicule individuel"</li>
+                <li>@code = "ORG-203" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Véhicule collectif"</li>
+                <li>@code = "ORG-204" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Transport en commun" </li>
+                <li>@code = "ORG-205" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Modes doux" </li>
+                <li>@code = "GEN-092.06.08" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Autre mode de transport" </li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="codeQualifier">
+            <td>code/qualifier[name/@code="GEN-346"]</td>
+            <td>[1..1]</td>
+            <td><strong>Type de motorisation</strong><br />L'élément qualifier permettant de véhiculer le type de motorisation (l'attribut @code de l'élément name prend la valeur "GEN-346") ne doit pas être renseigné lorsque l'élément code de l'entrée FR-Transport-du-patient prend l'une des valeurs suivantes :
+            <ul>
+                <li>code/@code = "ORG-204" (Transport en commun)</li>
+                <li>code/@code = "ORG-205" (Modes doux)</li>
+                <li>code/@code = "GEN-092.06.08" (Autre mode de transport)</li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="codeQualifierNature">
+            <td>code/qualifier[name/@code="GEN-345"]/value</td>
+            <td>[1..1]</td>
+            <td><strong>Nature du transport</strong><br />Valeur issue du JDV_J282-TransportsLiesAuProjetIndividuel_SERAFIN</td>
+        </tr>
+        <tr id="effectiveTimeLow">
+            <td>effectiveTime/low</td>
+            <td>[1..1]</td>
+            <td>L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="effectiveTimeHigh">
+            <td>effectiveTime/high</td>
+            <td>[1..1]</td>
+            <td>L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="performerId">
+            <td>performer/assignedEntity/representedOrganization/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant du transporteur</strong><br />Si le transporteur est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="entryCode">
+            <td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/code</td>
+            <td>[1..1]</td>
+            <td><strong>Précision sur le trajet ou le transport du patient</strong><br />Dans l'entrée FR-Transport-du-patient, l'élément code de l'entrée FR-Simple-Observation doit prendre l'une des valeurs suivantes :
+            <ul>
+                <li>@code = "MED-1124" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Patient nécessitant un accompagnement par un tiers"</li>
+                <li>@code = "ORG-200" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Budget réel"</li>
+                <li>@code = "ORG-201" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Budget prévisionnel"</li>
+                <li>@code = "GEN-353" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Durée de transport théorique"</li>
+                <li>@code = "275827007" @codeSystem = "2.16.840.1.113883.6.96" @displayName = "maintien de l'asepsie"</li>
+                <li>@code = "103208-5" @codeSystem = "2.16.840.1.113883.6.1" @displayName = "Distance parcourue"</li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="entryValue">
+            <td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/value</td>
+            <td>[1..1]</td>
+            <td><strong>Précision sur le trajet ou le transport du patient</strong><br />Le type de l'élément value de l'entrée FR-Simple-Observation est détaillé ci-dessous.</td>
         </tr>
     </tbody>
 </table>
 
-<h4 id="documents-de-référence">Documents de référence</h4>
+<p>Dans les entrées FR-Simple-Observation, le type de l'élément value dépend de la valeur de l'élément code :</p>
 
-<table style="width:100%">
+<table id="TransportPatObs">
     <thead>
         <tr>
-            <th>Documents de référence</th>
+            <th>Valeur de l'attribut code/@code</th>
+            <th>Contenu de l'élément value</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>[1] <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/asip_referentiel_identifiant_national_sante-liste-des-oid-des-autorites-d-affectation-des-ins_v0.1.pdf">ANS : INS – Liste des OID des autorités d’affectation des INS</a></td>
+        <tr id="1">
+            <td>MED-1124 (Patient nécessitant un accompagnement par un tiers)</td>
+            <td>BL</td>
         </tr>
-        <tr>
-            <td>[2] <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">ANS : CI-SIS – Annexe – Source des données métier pour les professionnels de santé</a></td>
+        <tr id="2">
+            <td>ORG-200 (Budget réel)</td>
+            <td>MO</td>
+        </tr>
+        <tr id="3">
+            <td>ORG-201 (Budget prévisionnel)</td>
+            <td>MO</td>
+        </tr>
+        <tr id="4">
+            <td>GEN-353 (Durée de transport théorique)</td>
+            <td>IVL_TS</td>
+        </tr>
+        <tr id="5">
+            <td>275827007 (Maintien de l'asepsie)</td>
+            <td>BL</td>
+        </tr>
+        <tr id="6">
+            <td>103208-5 (Distance parcourue)</td>
+            <td>PQ</td>
         </tr>
     </tbody>
 </table>
+
+<p><br /></p>
+
+<h5 id="entrée-fr-transport-du-professionnel">Entrée FR-Transport-du-professionnel</h5>
+
+<p>Cette entrée permet de décrire le transport d'un professionnel lors de l'évènement.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.216-DYNAMIC.html" height="400" id="FR-Transport-du-professionnel" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.216-DYNAMIC.html" target="_blank">FR-Transport-du-professionnel</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Transport-du-professionnel :</strong></p>
+
+<table id="transportPro">
+    <thead>
+        <tr>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="moodCode">
+            <td>@moodCode</td>
+            <td>[1..1]</td>
+            <td>Valeur fixée à EVN</td>
+        </tr>
+        <tr id="id">
+            <td>id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant unique du transport</strong><br />L'identifiant se forme en concaténant : 3+FINESS/identifiantLocalUsagerESSMS-TPPro-idTransport</td>
+        </tr>
+        <tr id="code">
+            <td>code</td>
+            <td>[1..1]</td>
+            <td> Le code issu du JDV_ModeDeTransport_CISIS est restreint aux valeurs suivantes :
+            <ul>
+                <li>@code = "ORG-202" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Véhicule individuel"</li>
+                <li>@code = "ORG-203" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Véhicule collectif"</li>
+                <li>@code = "ORG-204" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Transport en commun" </li>
+                <li>@code = "ORG-205" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Modes doux" </li>
+                <li>@code = "GEN-092.06.08" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Autre mode de transport" </li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="codeQualifier">
+            <td>code/qualifier</td>
+            <td>[0..1]</td>
+            <td><strong>Type de motorisation</strong><br />L'élément qualifier ne doit pas être renseigné lorsque l'élément code de l'entrée FR-Transport-du-professionnel prend l'une des valeurs suivantes : 
+            <ul>
+                <li>@code = "ORG-204" (Transport en commun)</li>
+                <li>@code = "ORG-205" (Modes doux)</li>
+                <li>@code = "GEN-092.06.08" (Autre mode de transport)</li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="effectiveTimeLow">
+            <td>effectiveTime/low</td>
+            <td>[1..1]</td>
+            <td>L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="effectiveTimeHigh">
+            <td>effectiveTime/high</td>
+            <td>[1..1]</td>
+            <td>L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="participantId">
+            <td>participant[@typeCode="RCV"]/participantRole/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant du professionnel</strong><br />L'identifiant du professionnel est requis.</td>
+        </tr>
+        <tr id="participantEJId">
+            <td>participant[@typeCode="RCV"]/participantRole/scopingEntity/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'établissement de rattachement du professionnel</strong><br />Si l'établissement de rattachement du professionnel est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="performerId">
+            <td>performer/assignedEntity/representedOrganization/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant du transporteur</strong><br />Si le transporteur est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="entryCode">
+            <td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/code</td>
+            <td>[1..1]</td>
+            <td><strong>Précision sur le trajet ou le transport du professionnel</strong><br />Dans l'entrée FR-Transport-du-professionnel, l'élément code de l'entrée FR-Simple-Observation doit prendre l'une des valeurs suivantes :
+            <ul>
+                <li>@code = "ORG-200" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Budget réel"</li>
+                <li>@code = "ORG-201" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Budget prévisionnel"</li>
+                <li>@code = "GEN-353" @codeSystem = "1.2.250.1.213.1.1.4.322" @displayName = "Durée de transport théorique"</li>
+                <li>@code = "103208-5" @codeSystem = "2.16.840.1.113883.6.1" @displayName = "Distance parcourue"</li>
+            </ul>
+            </td>
+        </tr>
+        <tr id="entryValue">
+            <td>entryRelationship/observation[templateId/@root="1.2.250.1.213.1.1.3.48"]/value</td>
+            <td>[1..1]</td>
+            <td><strong>Précision sur le trajet ou le transport du professionnel</strong><br />Le type de l'élément value de l'entrée FR-Simple-Observation est détaillé ci-dessous.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Dans les entrées FR-Simple-Observation, le type de l'élément value dépend de la valeur de l'élément code :</p>
+
+<table id="TransportProObs">
+    <thead>
+        <tr>
+            <th>Valeur de l'attribut code/@code</th>
+            <th>Contenu de l'élément value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="1">
+            <td>ORG-200 (Budget réel)</td>
+            <td>MO</td>
+        </tr>
+        <tr id="2">
+            <td>ORG-201 (Budget prévisionnel)</td>
+            <td>MO</td>
+        </tr>
+        <tr id="3">
+            <td>GEN-353 (Durée de transport théorique)</td>
+            <td>IVL_TS</td>
+        </tr>
+        <tr id="4">
+            <td>103208-5 (Distance parcourue)</td>
+            <td>PQ</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="section-fr-couvertures-sociales">Section FR-Couvertures-sociales</h3>
+
+<p>Cette section contient les informations relatives à la couverture sociale du patient.</p>
+
+<p>La structure de la section se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.2.79-DYNAMIC.html" height="400" id="FR-Couvertures-sociales" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.2.79-DYNAMIC.html" target="_blank">FR-Couvertures-sociales</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-couverture-sociale">Entrée FR-Couverture-sociale</h4>
+
+<p>Cette entrée de type act permet de lister les organismes d’assurance maladie du patient.</p>
+
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.61-DYNAMIC.html" height="400" id="FR-Couverture-sociale" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.61-DYNAMIC.html" target="_blank">FR-Couverture-sociale</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-organisme-assurance-maladie">Entrée FR-Organisme-assurance-maladie</h4>
+
+<p>Cette entrée de type act permet de décrire un organisme d’assurance maladie.</p>
+
+<p>La structure de l’entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.94-DYNAMIC.html" height="400" id="FR-Organisme-assurance-maladie" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.94-DYNAMIC.html" target="_blank">FR-Organisme-assurance-maladie</a></p>
+
+<p><br /></p>
+
+<h3 id="section-fr-statut-fonctionnel">Section FR-Statut-fonctionnel</h3>
+
+<p>La section FR-Statut-fonctionnel permet de fournir les résultats d’évaluation de l’usager (AGGIR, évaluation de la situation SSIAD, SERAFIN…).</p>
+
+<p>La structure de la section se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.2.246-DYNAMIC.html" height="400" id="FR-Statut-fonctionnel" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.2.246-DYNAMIC.html" target="_blank">FR-Statut-fonctionnel</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-groupe-de-questionnaires-d-evaluation">Entrée FR-Groupe-de-questionnaires-d-evaluation</h4>
+
+<p>L'entrée FR-Groupe-de-questionnaires-d-evaluation permet de regrouper les évaluations par type.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.95-DYNAMIC.html" height="400" id="FR-Groupe-de-questionnaires-d-evaluation" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.95-DYNAMIC.html" target="_blank">FR-Groupe-de-questionnaires-d-evaluation</a></p>
+
+<p><strong>Contrainte spécifique à l'entrée FR-Groupe-de-questionnaires-d-evaluation :</strong></p>
+
+<p>Une entrée FR-Groupe-de-questionnaires-d-evaluation doit être créée par type d'évaluation véhiculé.</p>
+
+<table id="organizer">
+    <thead>
+        <tr>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="code">
+            <td>code</td>
+            <td>[1..1]</td>
+            <td>Valeur issue du JDV_TypeEvaluation_CISIS</td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<h5 id="entrée-fr-evaluation">Entrée FR-Evaluation</h5>
+
+<p>L'entrée FR-Evaluation permet de véhiculer le résultat d'une évaluation de l'usager. Le détail de l'évaluation peut être transmis à travers des sous-entrées FR-Evaluation-Composant et FR-Evaluation-Composant-N2.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.25-DYNAMIC.html" height="400" id="FR-Evaluation" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.25-DYNAMIC.html" target="_blank">FR-Evaluation</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Evaluation :</strong></p>
+
+<table id="evaluation">
+    <thead>
+        <tr>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="id">
+            <td>id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant unique de l'évaluation</strong><br />L'identifiant se forme en concaténant : 3+FINESS/identifiantLocalUsagerESSMS-EVAL-numEvaluation</td>
+        </tr>
+        <tr id="code">
+            <td>code</td>
+            <td>[1..1]</td>
+            <td><strong>Type d'évaluation</strong><br />Valeur issue du JDV_TypeEvaluation_CISIS</td>
+        </tr>
+        <tr id="performerId">
+            <td>performer/assignedEntity/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'évaluateur</strong><br />Si l'évaluateur est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="performerEJid">
+            <td>performer/assignedEntity/representedOrganization/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'établissement de rattachement de l'évaluateur</strong><br />Si l'établissement de rattachement de l'évaluateur est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="auteurId">
+            <td>author/assignedAuthor/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'auteur de l'évaluation</strong><br />Si l'auteur de l'évaluation est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="auteurEJid">
+            <td>author/assignedAuthor/representedOrganization/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'établissement de rattachement de l'auteur de l'évaluation</strong><br />Si l'établissement de rattachement de l'auteur de l'évaluation est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="participantId">
+            <td>participant[@typeCode=RESP]/participantRole/scopingEntity/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant du responsable de l'évaluation</strong><br />Si le responsable de l'évaluation est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="participantEJid">
+            <td>participant[@typeCode=RESP]/participantRole/scopingEntity/id</td>
+            <td>[1..1]</td>
+            <td><strong>Identifiant de l'établissement de rattachement du responsable de l'évaluation</strong><br />Si l'établissement de rattachement du responsable de l'évaluation est renseigné, son identifiant est requis.</td>
+        </tr>
+        <tr id="entryRelationship">
+            <td>entryRelationship[observation/templateId/@root="1.2.250.1.213.1.1.3.214"]</td>
+            <td>[0..*]</td>
+            <td><strong>Champ évalué</strong><br />Dans le cadre d'une évaluation de type "Evaluation AGGIR PH SSIAD"/"Evaluation AGGIR PA SSIAD", l'ensemble des composants des jeux de valeurs respectifs JDV_EvaluationAGGIRPH_CISIS/JDV_EvaluationAGGIRPA_CISIS doivent être évalués. Le nombre d'entrées FR-Evaluation-Composant est ainsi équivalent au nombre de composants présents dans les jeux de valeurs.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Dans l'entrée FR-Evaluation, le résultat de l'évaluation (value) dépend du type de l'évaluation (code). Le type de l'évaluation doit quant à lui être identique au type du groupe d'évaluation (code) de l'entrée FR-Groupe-de-questionnaires-d-evaluation :</p>
+
+<table id="valeurEvaluation">
+    <thead>
+        <tr>
+            <th>Code du groupe d'évaluation <br />(FR-Groupe-de-questionnaires-d-evaluation élément code)</th>
+            <th>Type d'évaluation <br />(FR-Evaluation élément code)</th>
+            <th>Résultat de l'évaluation <br />(FR-Evaluation élément value)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="code">
+            <td>Evaluation AGGIR PH SSIAD</td>
+            <td>Evaluation AGGIR PH SSIAD</td>
+            <td>Valeur issue du JDV_GIR_CISIS<br />L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation AGGIR PA SSIAD</td>
+            <td>Evaluation AGGIR PA SSIAD</td>
+            <td>Valeur issue du JDV_GIR_CISIS<br />L'attribut nullFlavor est interdit.</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation de la situation SSIAD</td>
+            <td>Evaluation de la situation SSIAD</td>
+            <td>nullFlavor='NA'</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation SERAFIN</td>
+            <td>Evaluation SERAFIN</td>
+            <td>nullFlavor='NA'</td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<h5 id="entrée-fr-evaluation-composant">Entrée FR-Evaluation-Composant</h5>
+
+<p>L'entrée FR-Evaluation-Composant permet de porter le résultat d'un champ évalué. Le détail de l’évaluation de ce champ peut être transmis à travers des sous-entrées FR-Evaluation-Composant-N2.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.214-DYNAMIC.html" height="400" id="FR-Evaluation-Composant" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.214-DYNAMIC.html" target="_blank">FR-Evaluation-Composant</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Evaluation-Composant :</strong></p>
+
+<p>Le champ évalué (code), le type de résultat de ce champ évalué (value) ainsi que le détail du champ évalué (FR-Evaluation-Composant-N2) dépendent du type d'évaluation (code) véhiculé dans l'entrée FR-Evaluation :</p>
+
+<table id="valeurEvaluation">
+    <thead>
+        <tr>
+            <th>Type d'évaluation <br />(FR-Evaluation élément code)</th>
+            <th>Champs évalué <br />(FR-Evaluation-Composant élément code)</th>
+            <th>Type de résultat du champs évalué <br />(FR-Evaluation-Composant élément value)</th>
+            <th>Cardinalité de l'entrée FR-Evaluation-Composant-N2<br />(FR-Evaluation-Composant élément entryRelationship[observation/@root="1.2.250.1.213.1.1.3.220"])</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="code">
+            <td>Evaluation AGGIR PH SSIAD</td>
+            <td>Valeur issue du JDV_EvaluationAGGIRPH_CISIS<br />L'attribut nullFlavor est interdit</td>
+            <td>CD<br />Valeur issue du JDV_ResultatEvaluation_CISIS<br />L’attribut nullFlavor est autorisé</td>
+            <td>Chaque champ évalué doit être détaillé selon 4 critères : [4..4]</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation AGGIR PA SSIAD</td>
+            <td>Valeur issue du JDV_EvaluationAGGIRPA_CISIS<br />L'attribut nullFlavor est interdit</td>
+            <td>CD<br />Valeur issue du JDV_ResultatEvaluation_CISIS<br />L’attribut nullFlavor est autorisé</td>
+            <td>Chaque champ évalué doit être détaillé selon 4 critères : [4..4]</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation de la situation SSIAD</td>
+            <td>Valeur issue du JDV_EvaluationSSIAD_CISIS<br />L'attribut nullFlavor est interdit.</td>
+            <td>BL</td>
+            <td>[0..0]</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation SERAFIN</td>
+            <td>Valeur issue du JDV_J285-Besoins_SERAFIN<br />L'attribut nullFlavor est interdit.</td>
+            <td>INT</td>
+            <td>[0..0]</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br /></p>
+
+<h5 id="entrée-fr-evaluation-composant-n2">Entrée FR-Evaluation-Composant-N2</h5>
+
+<p>L'entrée FR-Evaluation-Composant-N2 permet d’associer à un champ évalué le résultat détaillé de l’évaluation.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.220-DYNAMIC.html" height="400" id="FR-Evaluation-Composant-N2" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.220-DYNAMIC.html" target="_blank">FR-Evaluation-Composant-N2</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Evaluation-Composant-N2 :</strong></p>
+
+<p>Le critère évalué (code) et le type de résultat de ce critère évalué (value) dépendent du type d’évaluation (code) véhiculé dans l’entrée FR-Evaluation :</p>
+
+<table id="evaluationN2">
+    <thead>
+        <tr>
+            <th>Type d'évaluation <br />(FR-Evaluation élément code)</th>
+            <th>Critère évalué <br />(FR-Evaluation-Composant-N2 élément code)</th>
+            <th>Type de résultat du critère évalué <br />(FR-Evaluation-Composant-N2 élément value)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="code">
+            <td>Evaluation AGGIR PH SSIAD</td>
+            <td>Valeur issue du JDV_ResultatQuestionEvaluation_CISIS<br />L'attribut nullFlavor est interdit.</td>
+            <td>BL</td>
+        </tr>
+        <tr id="value">
+            <td>Evaluation AGGIR PA SSIAD</td>
+            <td>Valeur issue du JDV_ResultatQuestionEvaluation_CISIS<br />L'attribut nullFlavor est interdit.</td>
+            <td>BL</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="section-fr-documents-ajoutes">Section FR-Documents-ajoutes</h3>
+
+<p>La section FR-Documents-ajoutes permet d’ajouter les documents ou pièces jointes qui sont spécifiques à ce volet.</p>
+
+<p>La structure de la section se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.2.37-DYNAMIC.html" height="400" id="FR-Documents-ajoutes" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.2.37-DYNAMIC.html" target="_blank">FR-Documents-ajoutes</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-document-attache">Entrée FR-Document-attache</h4>
+
+<p>L'entrée FR-Document-attache permet de regrouper dans une même entrée un élément qui porte le document attaché ainsi qu'une entrée définissant la nature du document attaché.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.18-DYNAMIC.html" height="400" id="FR-Document-attache" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.18-DYNAMIC.html" target="_blank">FR-Document-attache</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-type-document-attache">Entrée FR-Type-document-attache</h4>
+
+<p>L'entrée FR-Type-document-attache définit le type de document attaché.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.48.18-DYNAMIC.html" height="400" id="FR-Type-document-attache" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.48.18-DYNAMIC.html" target="_blank">FR-Type-document-attache</a></p>
+
+<p><br /></p>
+
+<h3 id="eléments-transversaux">Eléments transversaux</h3>
+
+<h4 id="entrée-fr-statut">Entrée FR-Statut</h4>
+
+<p>L’entrée FR-Statut permet de décrire et de suivre le statut métier d'un objet.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.217-DYNAMIC.html" height="400" id="FR-Statut" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.217-DYNAMIC.html" target="_blank">FR-Statut</a></p>
+
+<p><strong>Contraintes spécifiques à l'entrée FR-Statut :</strong></p>
+
+<table id="statut">
+    <thead>
+        <tr>
+            <th>Elément XML</th>
+            <th>Card.</th>
+            <th>Contenu de l'élément CDA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="value">
+            <td>value</td>
+            <td>[1..1]</td>
+            <td><strong>Statut métier</strong><br />Valeur issue du JDV_J281-StatutsRessourcesMS</td>
+        </tr>
+        <tr id="value">
+            <td>value[@code="ANNULE"]/qualifier/value</td>
+            <td>[1..1]</td>
+            <td><strong>Motif associé au statut de non-réalisation de l’évènement</strong><br />Lorsque le statut est à "Annulé", le motif est issu du JDV_MotifNonRealisationEvenement_CISIS.</td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
+<h4 id="entrée-fr-simple-observation">Entrée FR-Simple-Observation</h4>
+
+<p>L’entrée FR-Simple-Observation est un élément générique permettant de décrire les caractéristiques d'un objet.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.48-DYNAMIC.html" height="400" id="FR-Simple-Observation" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.48-DYNAMIC.html" target="_blank">FR-Simple-Observation</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-commentaire-er">Entrée FR-Commentaire-ER</h4>
+
+<p>L’entrée FR-Commentaire-ER est un élément qui permet de joindre un commentaire à une entrée ou à une section.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.32-DYNAMIC.html" height="400" id="FR-Commentaire-ER" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.32-DYNAMIC.html" target="_blank">FR-Commentaire-ER</a></p>
+
+<p><br /></p>
+
+<h4 id="entrée-fr-reference-interne">Entrée FR-Reference-interne</h4>
+
+<p>L’entrée FR-Reference-interne permet de relier un élément à un autre élément du même document par l’intermédiaire son identifiant.</p>
+
+<p>La structure de l'entrée se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.36-DYNAMIC.html" height="400" id="FR-Reference-interne" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.36-DYNAMIC.html" target="_blank">FR-Reference-interne</a></p>
+
+<p><br /></p>
+
+<h4 id="elément-fr-participant">Elément FR-Participant</h4>
+
+<p>L'élément FR-Participant permet de décrire un participant dans une section ou une entrée.</p>
+
+<p>La structure de l'élément se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.3.109-DYNAMIC.html" height="400" id="FR-Participant" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.3.109-DYNAMIC.html" target="_blank">FR-Participant</a></p>
+
+<p><br /></p>
+
+<h4 id="elément-fr-performer">Elément FR-Performer</h4>
+
+<p>L'élément FR-Performer permet de décrire une personne ayant exécuté un acte.</p>
+
+<p>La structure de l'élément se conforme aux contraintes et définitions présentées dans les <strong>Modèles de contenus CDA</strong> :</p>
+
+<iframe src="./cda/tmp-1.2.250.1.213.1.1.1.99.99.10.85-DYNAMIC.html" height="400" id="FR-Performer" style="border: 1px solid black" sandbox="allow-same-origin allow-scripts"></iframe>
+<p>Lien vers le template : <a href="./cda/tmp-1.2.250.1.213.1.1.1.99.99.10.85-DYNAMIC.html" target="_blank">FR-Performer</a></p>
+
+<p><strong>Contrainte spécifique à l'élément FR-Performer :</strong></p>
+
+<p>Certains rôles du professionnel sont à véhiculer en utilisant conjointement les éléments sdtc:functionCode et assignedEntity/code :</p>
+
+<table id="performer">
+    <thead>
+        <tr>
+            <th>Rôle fonctionnel</th>
+            <th>Valeur sdtc:functionCode</th>
+            <th>Valeur assignedEntity/code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="value">
+            <td>Infirmier coordinateur (IDEC)</td>
+            <td>@code = "330"<br />@displayName = "Coordonnateur de parcours"<br />@codeSystem = "1.2.250.1.213.1.6.1.107"</td>
+            <td>@code = "G15_60"<br />@displayName = "Infirmier"<br />@codeSystem = "1.2.250.1.213.1.1.4.5"</td>
+        </tr>
+    </tbody>
+</table>
+<p><br /></p>
+
 
 
 
@@ -1389,13 +1265,7 @@ Dans le cadre de notre volet, il permet de véhiculer les pièces jointes associ
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -1414,7 +1284,7 @@ Dans le cadre de notre volet, il permet de véhiculer les pièces jointes associ
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="description_flux.html">next&gt;</a>
+                <a href="terminology_cda.html">next&gt;</a>
 
               </td>
             </tr>
@@ -1424,14 +1294,13 @@ Dans le cadre de notre volet, il permet de véhiculer les pièces jointes associ
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 2, 2024 14:15+0000">2024-04-02</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 26, 2025 10:26+0000">2025-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
-                
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
 
           </span>
         </p>
@@ -1459,20 +1328,8 @@ Dans le cadre de notre volet, il permet de véhiculer les pièces jointes associ
   <script src="assets/js/vendor.js" type="text/javascript"> </script>
   <!-- Fin ajout ANS -->
 
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
 
   <!-- Analytics Below
   ================================================== -->

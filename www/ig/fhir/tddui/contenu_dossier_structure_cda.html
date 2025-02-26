@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Structure générale du document CDA - Médicosocial - Transfert de données DUI v1.0.1</title>
+    <title>Structure générale du document CDA - Médicosocial - Transfert de données DUI v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,23 +40,29 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"3.2"}
-    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.3"}
+    h3,h4,h5,h6{--heading-prefix:"3.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-</div>
-<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-</div>
+    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+  </div>
+  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+  </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Transfert de données DUI</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - trial-use
+            <span style="display:inline-block;">1.1.0 - trial-use
 
 
 
@@ -110,12 +116,15 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier CDA
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
         <a href="contenu_dossier_contexte.html">Contexte</a>
+      </li>
+      <li>
+        <a href="mapping_fonctionnelle_technique.html">Mapping CDA du modèle de contenu DUI</a>
       </li>
       <li>
         <a href="contenu_dossier_structure_cda.html">Structure générale du document CDA</a>
@@ -126,10 +135,13 @@
       <li>
         <a href="contenu_dossier_corps_cda.html">Corps du document CDA</a>
       </li>
+      <li>
+        <a href="terminology_cda.html">Jeux de valeurs CDA</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux FHIR
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -160,27 +172,52 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="acronymes.html">Acronymes</a>
+        <a href="annexes_documents_reference.html">Documents de référence</a>
       </li>
       <li>
-        <a href="documents_reference.html">Documents de référence</a>
+        <a href="annexes_nomenclatures.html">Nomenclatures de référence</a>
+      </li>
+      <li>
+        <a href="annexes_acronymes.html">Acronymes</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR</a>
       </li>
       <li>
+        <a target="_blank" href="https://hl7.org/cda/stds/core/">Spécifications CDA</a>
+      </li>
+      <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
       </li>
     </ul>
   </li>
   <li>
-    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -194,11 +231,11 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='contenu_dossier.html'><b>Contenu du dossier</b></a></li><li><b>Structure générale du document CDA</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='contenu_dossier.html'><b>Contenu du dossier CDA</b></a></li><li><b>Structure générale du document CDA</b></li>
 
           <span style="float:right;">
 
-            <a href="contenu_dossier_contexte.html">&lt;prev</a> | 
+            <a href="mapping_fonctionnelle_technique.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -224,7 +261,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.0.1: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Structure générale du document CDA</h2>
   
 
@@ -243,19 +280,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Cette section présente la structure générale des données de l’usager organisées en entête et corps.</p>
-
-<p>Les éléments apparaissant en <strong><span style="color: #3498db">gras de couleur bleu</span></strong> correspondent à des extensions définies dans le cadre de cette spécification technique afin de couvrir le besoin.</p>
-
-<p>Les éléments apparaissant en <span style="color: #C00000">rouge</span> correspondent aux règles spécifiques à mettre en place.</p>
-
-<p>Les éléments en <i><u>italique soulignés</u></i> correspondent aux cardinalités de base de CDA contraintes pour ce volet.</p>
-
-<p>Les éléments imposés par CDA sont indiqués par « <strong>X</strong> » dans la colonne « <strong>Elément de la spécification Fonctionnelle de Contenu</strong> (SFC) ».</p>
-
 <style>
 
-	<!-- Propriétés de style générales (taille, couleurs et police de texte, bordures) -->
+	<!-- Propriétés de style générales (taille, couleurs et police de texte, bordures) du tableau -->
 	table {
 		width: 101%;
 		border-collapse: collapse;
@@ -269,11 +296,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 		color: black
 	}
 
-	red { 
-		color: #c00000
+	blue { 
+		color: #007FFF
 	}
 
-	<!-- Propriétés spécifiques à des lignes ou des colonnes (fond de couleur, centrage) -->
+	<!-- Propriétés spécifiques à des lignes ou des colonnes de tableau (fond de couleur, centrage) -->
 	#cda td:nth-child(2),
 	#cda td:nth-child(3),
 	#cda td:nth-child(4),
@@ -283,9 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 	}
 
 	#cda th:nth-child(4),
-	#cda td:nth-child(4)
-	#cda th:nth-child(5),
-	#cda td:nth-child(5) {
+	#cda td:nth-child(4) {
 		text-align: center;
 	}
 
@@ -303,6 +328,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </style>
 
+<p>Cette section présente la structure générale du document CDA transporté dans le cadre du volet Transfert de données DUI.</p>
+
+<p>La structure de ce document se conforme aux contraintes et définitions présentées dans :</p>
+<ul>
+  <li>le <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">Volet Structuration minimale des documents de santé</a> pour l'entête du document ;</li>
+  <li>les <a href="https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda">Modèles de contenus CDA</a> pour le corps du document</li>
+</ul>
+
+<p>Les éléments apparaissant en <blue>bleu</blue> correspondent aux règles spécifiques à ce volet.</p>
+
 <table id="cda">
 	<thead>
 		<tr>
@@ -310,7 +345,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<th>Elément XML</th>
 			<th>Type</th>
 			<th>Card.</th>
-			<th>Elément de la SFC</th>
 			<th>Contenu de l'élément CDA</th>
 		</tr>
 	</thead>
@@ -318,7 +352,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 		<tr id="line1">
 			<td>0</td>
 			<td>clinicalDocument</td>
-			<td></td>
 			<td></td>
 			<td></td>
 			<td><p><strong>Document CDA</strong></p>
@@ -330,7 +363,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>realmCode</td>
 			<td>CS</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Périmètre d'utilisation : France</strong></p>
 			<p>@code = "FR"</p></td>
 		</tr>
@@ -339,7 +371,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>typeID</td>
 			<td>II</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Référence au standard CDA R2</strong></p>
 			<p>@root = 2.16.840.1.113883.1.3
 			<br />@extension = « POCD_HD000040 »</p></td>
@@ -349,7 +380,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>templateID</td>
 			<td>II</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Déclaration de conformité du document aux spécifications HL7 France</strong></p>
 			<p>@root = 2.16.840.1.113883.2.8.2.1</p></td>
 		</tr>
@@ -358,7 +388,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>templateID</td>
 			<td>II</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Déclaration de conformité du document aux spécifications CI-SIS</strong></p>
 			<p>@root = 1.2.250.1.213.1.1.1.1</p></td>
 		</tr>
@@ -367,46 +396,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>templateID</td>
 			<td>II</td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><p><strong>Déclaration de conformité du document au modèle de document structuré MS-TD-DUI (Transfert de données DUI)</strong></p>
-			<p><red>@root = 1.2.250.1.213.1.1.1.4.11</red></p></td>
+			<td><p><strong><blue>Déclaration de conformité du document au modèle de document structuré EXPORT_DUI (Export de données d'un logiciel DUI)</blue></strong></p>
+			<p><blue>@root = 1.2.250.1.213.1.1.1.58</blue>
+			<br />@extension (facultatif) = version du guide d'implémentation utilisé</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>id</td>
 			<td>II</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Identifiant unique du document</strong></p>
-			<p>@root = identifiant du document</p>
-			<p>Il est recommandé de générer une racine d'OID pour chaque ESMS, à partir du générateur <a style="color:#C00000" href="https://www.uuidgenerator.net/version1">https://www.uuidgenerator.net/version1</a><red>. Cet OID devra ensuite être décliné pour identifier de façon unique chaque instance et version des documents de l'émetteur</red></p></td>
+			<p>@root (obligatoire) = valeur d'un OID propre à l'émetteur, formé d'un OID complet identifiant l'instance du document.
+			</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>code</td>
 			<td>CE</td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><p><strong>Type de document</strong></p>
-			<p><red>@code = Code issu du <a href="https://mos.esante.gouv.fr/NOS/JDV_J07-XdsTypeCode-CISIS/JDV_J07-XdsTypeCode-CISIS.pdf">JDV_J07-XdsTypeCode-CISIS</a> fixé à « EXPPAT_2 »
-			<br />@displayName = « Autre document du patient »
-			<br />@codeSystem = 1.2.250.1.213.1.1.4.12</red></p></td>
-		</tr>https://mos.esante.gouv.fr/NOS/JDV_J07-XdsTypeCode-CISIS/
+			<td><p><strong>Type de document</strong></p>			
+			<p><blue>@code = « EXPORT_DUI »
+			<br />@displayName = « Export du Dossier Usager Informatisé »</blue>
+			<br />@codeSystem = 1.2.250.1.213.1.1.4.12
+			<br />@codeSystemName = JDV_J07-XdsTypeCode-CISIS</p></td>
+		</tr>
 		<tr>
 			<td>1</td>
 			<td>title</td>
 			<td>ST</td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><strong>Titre du document</strong>
-			<br /><red>Le titre provient soit de la saisie directe par le PS ou du patient/usager, soit d'une valeur par défaut générée par le LPS à partir d'autres éléments (comme le type et la date du document par exemple) et modifiable par le PS ou le patient/usager.</red></td>
+			<td><p><strong>Titre du document</strong></p>
+			<p>Le titre provient soit de la saisie directe par le PS, soit d'une valeur par défaut générée par le logiciel à partir d'autres éléments (comme le type et la date du document par exemple) et modifiable par le PS.</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>effectiveTime</td>
 			<td>TS</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Date et heure de création du document (précisée à la seconde)</strong></p>
 			<p>@value = Horodatage généré automatiquement par le logiciel lors de la création du document.</p></td>
 		</tr>
@@ -415,37 +441,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>confidentialityCode</td>
 			<td>CE</td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><p><strong>Niveau de confidentialité du document.</strong>
-			<br />Code issu du <a href="https://o3sis.esante.gouv.fr/art-decor/decor-valuesets--CI-SIS-JDV-?id=2.16.840.1.113883.1.11.10228&amp;effectiveDate=2021-03-15T00:00:00&amp;language=fr-FR">JDV_HL7_Confidentiality-CISIS</a></p>
-			<p><red>@code = Valeur fixée à : « N »
-			<br />@codeSystem = 2.16.840.1.113883.5.25 
-			<br />@displayName = « Normal »</red></p></td>
+			<td><p><strong>Niveau de confidentialité du document.</strong></p>
+			<p>Ni le standard CDA, ni le CI-SIS ne précisent la manière dont chaque niveau doit être interprété. Ces règles d'usage sont à préciser par le système d'information qui donne les accès aux documents.
+			Le niveau de confidentialité peut-être sélectionné par le LPS ou choisi par l'auteur ou encore configuré par défaut à la valeur "N" (normal).</p>
+			<p>@code = à définir
+			<br />@codeSystem = 2.16.840.1.113883.5.25
+			<br />@displayName = à définir
+			<br />@codeSystemName = Confidentiality</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>languageCode</td>
 			<td>CS</td>
 			<td>[1..1]</td>
-			<td>X</td>
 			<td><p><strong>Langue principale du document</strong></p>
-			<p>@code = « fr-FR » (respect de la casse)</p></td>
+			<p>"fr-FR" pour français métropolitain (la casse des caractères doit être respectée)
+			<br />@code = « fr-FR »</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>setID</td>
 			<td>II</td>
-			<td>[0..1]</td>
-			<td></td>
+			<td>[1..1]</td>
 			<td><p><strong>Identification du lot de versions du même document</strong></p>
-			<p>@root = valeur de l'OID du lot de document propre à l'émetteur</p></td>
+			<p>@root = valeur d'un OID propre à l'émetteur, formée d'un OID identifiant le lot de versions du document</p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>versionNumber</td>
 			<td>INT</td>
-			<td>[0..1]</td>
-			<td></td>
+			<td>[1..1]</td>
 			<td><p><strong>Numéro de version d'un document permettant de suivre son évolution</strong></p>
 			<p>@value = entier incrémenté à partir de 1 par pas de 1 à chaque nouvelle version du document</p></td>
 		</tr>
@@ -454,61 +479,62 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td>recordTarget</td>
 			<td></td>
 			<td>[1..1]</td>
-			<td>X<br />classe usager</td>
-			<td><strong>Information sur l'identité de l'usager concerné par le document</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#recordtarget">recordTarget</a></td>
+			<td><p><strong>Information sur l'identité de l'usager concerné par le document</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#recordtarget">recordTarget</a></p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>author</td>
 			<td></td>
 			<td>[1..*]</td>
-			<td>X</td>
-			<td><strong>Auteur du document</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#author">author</a></td>
+			<td><p><strong>Auteur du document</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#author">author</a></p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>custodian</td>
 			<td></td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><strong>Structure conservant le document et garantissant son cycle de vie</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#custodian">custodian</a></td>
+			<td><p><strong>Structure conservant le document et garantissant son cycle de vie</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#custodian">custodian</a></p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>legalAuthenticator</td>
 			<td></td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><strong>Professionnel ou patient/usager ou système responsable du document</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#legalauthentificator">legalAuthenticator</a></td>
+			<td><p><strong>Responsable légal du document</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#legalauthentificator">legalAuthenticator</a></p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>documentationOf</td>
 			<td></td>
 			<td>[1..*]</td>
-			<td>X</td>
-			<td><strong>Evènement documenté</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#documentationof">documentationOf</a></td>
+			<td><p><strong>Evènement documenté</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#documentationof">documentationOf</a></p></td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>relatedDocument</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Document de référence à remplacer, transformer</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#relateddocument">relatedDocument</a></p></td>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>componentOf</td>
 			<td></td>
 			<td>[1..1]</td>
-			<td>X</td>
-			<td><strong>Association du document à une prise en charge</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#componentof">componentOf</a></td>
+			<td><p><strong>Association du document à un transfert de données DUI</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_entete_cda.html#componentof">componentOf</a></p></td>
 		</tr>
 		<tr id="lvl1">
 			<td>1</td>
 			<td>component</td>
 			<td></td>
 			<td>[1..1]</td>
-			<td></td>
 			<td>Représente le corps du document CDA</td>
 		</tr>
 		<tr>
@@ -517,88 +543,85 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 			<td></td>
 			<td>[1..1]</td>
 			<td></td>
-			<td></td>
 		</tr>
 		<tr id="lvl2">
 			<td>3</td>
 			<td>component</td>
 			<td></td>
-			<td>[0..*]</td>
+			<td>[0..1]</td>
 			<td></td>
-			<td><strong>Informations sur les données relatives à l'évaluation de l'usager et à ses grilles d'évaluation</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-evaluation-du-statut-fonctionnel">Section FR-Evaluation-du-statut-fonctionnel</a></td>
 		</tr>
 		<tr>
 			<td>4</td>
-			<td>section FR-Evaluation-du-statut-fonctionnel</td>
+			<td>section FR-Couvertures-sociales</td>
 			<td></td>
-			<td>[1..1]</td>
-			<td></td>
-			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Description de la couverture sociale du patient.</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-couvertures-sociales">Section FR-Evaluation-du-statut-fonctionnel</a></p></td>
 		</tr>
 		<tr id="lvl2">
 			<td>3</td>
 			<td>component</td>
 			<td></td>
-			<td>[0..*]</td>
+			<td>[0..1]</td>
 			<td></td>
-			<td><strong>Informations sur les pièces jointes ajoutées au document</strong>
-			<br />Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-documents-ajoutes">FR-Documents-ajoutes</a></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>section FR-Sejours</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Cette section contient les informations relatives au séjour d’un usager au sein d’une structure.</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-sejours">Section FR-Sejours</a></p></td>
+		</tr>
+		<tr id="lvl2">
+			<td>3</td>
+			<td>component</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>section FR-Evenements</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Liste les évènements liés à la prise en charge du patient dans un domaine défini.</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-evenements">Section FR-Evenements</a></p></td>
+		</tr>
+		<tr id="lvl2">
+			<td>3</td>
+			<td>component</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>section FR-Statut-fonctionnel</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Cette section permet de décrire des résultats d'évaluation du statut fonctionnel du patient.</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-statut-fonctionnel">Section FR-Statut-fonctionnel</a></p></td>
+		</tr>		
+		<tr id="lvl2">
+			<td>3</td>
+			<td>component</td>
+			<td></td>
+			<td>[0..1]</td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>4</td>
 			<td>section FR-Documents-ajoutes</td>
 			<td></td>
-			<td>[1..1]</td>
-			<td></td>
-			<td></td>
+			<td>[0..1]</td>
+			<td><p><strong>Informations sur les pièces jointes ajoutées au document</strong></p>
+			<p>Le contenu de l'élément est décrit dans la rubrique <a href="contenu_dossier_corps_cda.html#section-fr-documents-ajoutes">FR-Documents-ajoutes</a></p></td>
 		</tr>
 	</tbody>
 </table>
 
-<h3 id="annexes">Annexes</h3>
-
-<h4 id="nomenclatures">Nomenclatures</h4>
-
-<table style="width:100%">
-	<thead>
-		<tr>
-    		<th>Type de nomenclature</th>
-    		<th>Format</th>
-    		<th>Accès</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-    		<td>Nomenclatures des Objets de Santé (NOS)</td>
-    		<td>TRE_R* <br /> JDV_J*</td>
-    		<td><a href="https://mos.esante.gouv.fr/NOS/">https://mos.esante.gouv.fr/NOS/</a></td>
-  		</tr>
-  		<tr>
-    		<td>Nomenclature ANS</td>
-    		<td>TA_ASIP</td>
-    		<td><a href="https://esante.gouv.fr/annexe-vocabulaire-et-jeux-de-valeurs">https://esante.gouv.fr/annexe-vocabulaire-et-jeux-de-valeurs</a></td>
-  		</tr>
-	</tbody>
-</table>
-
-<h4 id="documents-de-référence">Documents de référence</h4>
-
-<table style="width:100%">
-	<thead>
-  		<tr>
-    		<th>Documents de référence</th>
-  		</tr>
-	</thead>
-	<tbody>
-  		<tr>
-    		<td>[1] <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/asip_referentiel_identifiant_national_sante-liste-des-oid-des-autorites-d-affectation-des-ins_v0.1.pdf">ANS : INS – Liste des OID des autorités d’affectation des INS</a></td>
-  		</tr>
-  		<tr>
-    		<td>[2] <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">ANS : CI-SIS – Annexe – Source des données métier pour les professionnels de santé</a></td>
-  		</tr>
-	</tbody>
-</table>
 
 
 
@@ -611,13 +634,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -628,7 +645,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="contenu_dossier_contexte.html">&lt;prev</a>
+                <a href="mapping_fonctionnelle_technique.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -646,14 +663,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 2, 2024 14:15+0000">2024-04-02</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 26, 2025 10:26+0000">2025-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
-                
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
 
           </span>
         </p>
@@ -681,20 +697,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script src="assets/js/vendor.js" type="text/javascript"> </script>
   <!-- Fin ajout ANS -->
 
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
 
   <!-- Analytics Below
   ================================================== -->

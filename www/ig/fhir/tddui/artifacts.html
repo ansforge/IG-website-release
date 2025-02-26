@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Ressources FHIR - Médicosocial - Transfert de données DUI v1.0.1</title>
+    <title>Ressources FHIR - Médicosocial - Transfert de données DUI v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,23 +40,29 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"5.2"}
     h3,h4,h5,h6{--heading-prefix:"5.2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-</div>
-<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-</div>
+    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+  </div>
+  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+  </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Transfert de données DUI</span>
             <br/>
-            <span style="display:inline-block;">1.0.1 - trial-use
+            <span style="display:inline-block;">1.1.0 - trial-use
 
 
 
@@ -110,12 +116,15 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Contenu du dossier CDA
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
         <a href="contenu_dossier_contexte.html">Contexte</a>
+      </li>
+      <li>
+        <a href="mapping_fonctionnelle_technique.html">Mapping CDA du modèle de contenu DUI</a>
       </li>
       <li>
         <a href="contenu_dossier_structure_cda.html">Structure générale du document CDA</a>
@@ -126,10 +135,13 @@
       <li>
         <a href="contenu_dossier_corps_cda.html">Corps du document CDA</a>
       </li>
+      <li>
+        <a href="terminology_cda.html">Jeux de valeurs CDA</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux FHIR
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -160,27 +172,52 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="tests.html">Tests</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="acronymes.html">Acronymes</a>
+        <a href="annexes_documents_reference.html">Documents de référence</a>
       </li>
       <li>
-        <a href="documents_reference.html">Documents de référence</a>
+        <a href="annexes_nomenclatures.html">Nomenclatures de référence</a>
+      </li>
+      <li>
+        <a href="annexes_acronymes.html">Acronymes</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
       </li>
       <li>
         <a target="_blank" href="http://hl7.org/fhir/R4/index.html">Spécifications FHIR</a>
       </li>
       <li>
+        <a target="_blank" href="https://hl7.org/cda/stds/core/">Spécifications CDA</a>
+      </li>
+      <li>
         <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
       </li>
     </ul>
   </li>
   <li>
-    <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -202,7 +239,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="StructureDefinition-tddui-bundle.html">next&gt;</a>
+          | <a href="CapabilityStatement-TDDUIConsommateur.html">next&gt;</a>
 
           </span>
 
@@ -224,82 +261,109 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.0.1: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v1.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Ressources FHIR</h2>
   
   
   
-  <!--DO NOT EDIT THIS FILE - It is generated and any changes made will be overwritten--><div xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns="http://www.w3.org/1999/xhtml"
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
      xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
      class="markdown-toc">
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Structures: Resource Profiles</a>
+         <a href="#1">Behavior: Capability Statements</a>
       </li>
       <li>
-         <a href="#2">Example: Example Instances</a>
+         <a href="#2">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#3">Example: Example Instances</a>
       </li>
    </ul>
 </div>
-<div xmlns:html="http://www.w3.org/1999/xhtml"
-     xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:f="http://hl7.org/fhir">
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
+   <h3>Behavior: Capability Statements </h3>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-TDDUIConsommateur.html"
+                  title="CapabilityStatement/TDDUIConsommateur">TDDUI-Consommateur</a>
+            </td>
+            <td>
+<p>Le rôle du consommateur est de recueillir les données du Dossier Usager Informatisé. Il peut recevoir un unique dossier ou un ensemble de dossiers, ainsi que des mises à jour de dossiers. Il correspond à un logiciel DUI ou un SI tiers.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-TDDUIProducteur.html"
+                  title="CapabilityStatement/TDDUIProducteur">TDDUI-Producteur</a>
+            </td>
+            <td>
+<p>Le rôle du producteur est de créer et transmettre un document ou lots de Documents portant les informations du Dossier Usager Informatisé. Il correspond à un logiciel DUI.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
-   <p>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-tddui-bundle.html"
-                     title="StructureDefinition/tddui-bundle">TDDUI Bundle</a>
-               </td>
-               <td>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-tddui-bundle.html"
+                  title="StructureDefinition/tddui-bundle">TDDUI Bundle</a>
+            </td>
+            <td>
 <p>Profil générique créé dans le contexte du transfert de données DUI pour véhiculer un lot de documents au format CDA.</p>
 </td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-tddui-documentreference.html"
-                     title="StructureDefinition/tddui-documentreference">TDDUI Document Reference</a>
-               </td>
-               <td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-tddui-documentreference.html"
+                  title="StructureDefinition/tddui-documentreference">TDDUI Document Reference</a>
+            </td>
+            <td>
 <p>Profil générique créé dans le contexte du transfert de données DUI pour véhiculer un document au format CDA, inclus dans DocumentReference.attachment.data.</p>
 </td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="2"> </a>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
    <h3>Example: Example Instances </h3>
-   <p>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
-</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Bundle-TDDUIBundleExample.html" title="Bundle/TDDUIBundleExample">TDDUIBundleExample</a>
-               </td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-TDDUIDocumentReferenceExample.html"
-                     title="DocumentReference/TDDUIDocumentReferenceExample">TDDUIDocumentReferenceExample</a>
-               </td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-TDDUIBundleExample.html" title="Bundle/TDDUIBundleExample">TDDUIBundleExample</a>
+            </td>
+            <td>
+<p>Exemple de ressource Bundle suivant le profil TDDUIBundle</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-TDDUIDocumentReferenceExample.html"
+                  title="DocumentReference/TDDUIDocumentReferenceExample">TDDUIDocumentReferenceExample</a>
+            </td>
+            <td>
+<p>Exemple de ressource DocumentReference suivant le profil TDDUIDocumentReference</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
 </div>
 
 </div>
@@ -311,13 +375,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -336,7 +394,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="StructureDefinition-tddui-bundle.html">next&gt;</a>
+                <a href="CapabilityStatement-TDDUIConsommateur.html">next&gt;</a>
 
               </td>
             </tr>
@@ -346,14 +404,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 2, 2024 14:15+0000">2024-04-02</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 26, 2025 10:26+0000">2025-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
-                
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
 
           </span>
         </p>
@@ -381,20 +438,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script src="assets/js/vendor.js" type="text/javascript"> </script>
   <!-- Fin ajout ANS -->
 
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
 
   <!-- Analytics Below
   ================================================== -->

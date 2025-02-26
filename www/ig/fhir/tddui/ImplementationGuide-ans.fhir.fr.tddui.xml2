@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.tddui"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>TDDUI</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.tddui</b></p><a name="ans.fhir.fr.tddui"> </a><a name="hcans.fhir.fr.tddui"> </a><a name="ans.fhir.fr.tddui-fr-FR"> </a><h2>TDDUI</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui"/>
-  <version value="1.0.1"/>
+  <version value="1.1.0"/>
   <name value="TDDUI"/>
   <title value="Médicosocial - Transfert de données DUI"/>
   <status value="active"/>
-  <date value="2024-04-02T14:15:09+00:00"/>
+  <date value="2025-02-26T10:26:44+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,7 +35,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.3.0"/>
+    <version value="6.2.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -43,12 +43,17 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="1.0.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
-    <uri value="http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core"/>
+    <uri value="https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"/>
     <packageId value="hl7.fhir.fr.core"/>
-    <version value="1.1.0"/>
+    <version value="2.1.0"/>
+  </dependsOn>
+  <dependsOn id="ans_fr_nos">
+    <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
+    <packageId value="ans.fr.nos"/>
+    <version value="1.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -260,7 +265,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -494,12 +499,35 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/TDDUIConsommateur"/>
+      </reference>
+      <name value="TDDUI-Consommateur"/>
+      <description value="Le rôle du consommateur est de recueillir les données du Dossier Usager Informatisé. Il peut recevoir un unique dossier ou un ensemble de dossiers, ainsi que des mises à jour de dossiers. Il correspond à un logiciel DUI ou un SI tiers."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/TDDUIProducteur"/>
+      </reference>
+      <name value="TDDUI-Producteur"/>
+      <description value="Le rôle du producteur est de créer et transmettre un document ou lots de Documents portant les informations du Dossier Usager Informatisé. Il correspond à un logiciel DUI."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
         <reference value="Bundle/TDDUIBundleExample"/>
       </reference>
       <name value="TDDUIBundleExample"/>
+      <description value="Exemple de ressource Bundle suivant le profil TDDUIBundle"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-bundle"/>
     </resource>
     <resource>
@@ -510,6 +538,7 @@
         <reference value="DocumentReference/TDDUIDocumentReferenceExample"/>
       </reference>
       <name value="TDDUIDocumentReferenceExample"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil TDDUIDocumentReference"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-documentreference"/>
     </resource>
     <page>
@@ -572,7 +601,7 @@
           <valueUrl value="contenu_dossier.html"/>
         </extension>
         <nameUrl value="contenu_dossier.html"/>
-        <title value="Contenu du dossier"/>
+        <title value="Contenu du dossier CDA"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -580,6 +609,14 @@
           </extension>
           <nameUrl value="contenu_dossier_contexte.html"/>
           <title value="Contexte"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="mapping_fonctionnelle_technique.html"/>
+          </extension>
+          <nameUrl value="mapping_fonctionnelle_technique.html"/>
+          <title value="Mapping CDA du modèle de contenu DUI"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -606,13 +643,69 @@
           <title value="Corps du document CDA"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="terminology_cda.html"/>
+          </extension>
+          <nameUrl value="terminology_cda.html"/>
+          <title value="Jeux de Valeurs CDA"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_sejour.html"/>
+          </extension>
+          <nameUrl value="contenu_sejour.html"/>
+          <title value="Sejour"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_evenement.html"/>
+          </extension>
+          <nameUrl value="contenu_evenement.html"/>
+          <title value="Evénement"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_couvertures.html"/>
+          </extension>
+          <nameUrl value="contenu_couvertures.html"/>
+          <title value="Couvertures sociales"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_evaluation.html"/>
+          </extension>
+          <nameUrl value="contenu_evaluation.html"/>
+          <title value="Evaluation"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_documents_ajoutes.html"/>
+          </extension>
+          <nameUrl value="contenu_documents_ajoutes.html"/>
+          <title value="Documents ajoutés"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contenu_elements_transversaux.html"/>
+          </extension>
+          <nameUrl value="contenu_elements_transversaux.html"/>
+          <title value="Eléments transversaux"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="description_flux.html"/>
         </extension>
         <nameUrl value="description_flux.html"/>
-        <title value="Description des flux"/>
+        <title value="Description des flux FHIR"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -673,6 +766,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="tests.html"/>
+        </extension>
+        <nameUrl value="tests.html"/>
+        <title value="Solutions de tests"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="annexes.html"/>
         </extension>
         <nameUrl value="annexes.html"/>
@@ -680,20 +781,92 @@
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="acronymes.html"/>
+            <valueUrl value="annexes_documents_reference.html"/>
           </extension>
-          <nameUrl value="acronymes.html"/>
-          <title value="Acronymes"/>
+          <nameUrl value="annexes_documents_reference.html"/>
+          <title value="Documents de référence"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="documents_reference.html"/>
+            <valueUrl value="annexes_nomenclatures.html"/>
           </extension>
-          <nameUrl value="documents_reference.html"/>
-          <title value="Documents de référence"/>
+          <nameUrl value="annexes_nomenclatures.html"/>
+          <title value="Nomenclatures de référence"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="annexes_acronymes.html"/>
+          </extension>
+          <nameUrl value="annexes_acronymes.html"/>
+          <title value="Acronymes"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="autres_ressources.html"/>
+        </extension>
+        <nameUrl value="autres_ressources.html"/>
+        <title value="Autres ressources"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="securite.html"/>
+          </extension>
+          <nameUrl value="securite.html"/>
+          <title value="Sécurité"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="downloads.html"/>
+          </extension>
+          <nameUrl value="downloads.html"/>
+          <title value="Téléchargements et usages"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="specs_fhir.html"/>
+          </extension>
+          <nameUrl value="specs_fhir.html"/>
+          <title value="Spécifications FHIR"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="specs_cda.html"/>
+          </extension>
+          <nameUrl value="specs_cda.html"/>
+          <title value="Spécifications CDA"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="site_ans.html"/>
+          </extension>
+          <nameUrl value="site_ans.html"/>
+          <title value="Site de l'ANS"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="documentation.html"/>
+          </extension>
+          <nameUrl value="documentation.html"/>
+          <title value="Documentation"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Historique des changements"/>
+        <generation value="markdown"/>
       </page>
     </page>
     <parameter>
