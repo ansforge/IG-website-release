@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Structure du MDN (MSSanté) - Volet Transmission au LPS de documents CDA provenant d'un courriel MSSanté v1.1.1</title>
+    <title>Structure du MDN (MSSanté) - Volet Transmission au LPS de documents CDA provenant d'un courriel MSSanté v1.1.2</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -51,12 +51,17 @@
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
     <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Volet Transmission au LPS de documents CDA provenant d&#39;un courriel MSSanté</span>
             <br/>
-            <span style="display:inline-block;">1.1.1 - trial-implementation
+            <span style="display:inline-block;">1.1.2 - trial-implementation
 
 
 
@@ -161,6 +166,9 @@
         <a href="struct-msg-mdn.html">Structure du MDN (MSS)</a>
       </li>
       <li>
+        <a href="struct-email-standard.html">Structure d&apos;un message de notification format courriel standard</a>
+      </li>
+      <li>
         <a href="glossaire.html">Glossaire</a>
       </li>
       <li>
@@ -197,7 +205,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="glossaire.html">next&gt;</a>
+          | <a href="struct-email-standard.html">next&gt;</a>
 
           </span>
 
@@ -219,7 +227,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the [CI-SIS]Volet transmission au LPS d'un document CDA provenant d'un courriel MSSanté (v1.1.1: Publications) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-mss/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the [CI-SIS]Volet transmission au LPS d'un document CDA provenant d'un courriel MSSanté (v1.1.2: Publications) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-mss/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Structure du MDN (MSSanté)</h2>
   
 
@@ -238,12 +246,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>La RFC 8098 définit le type de contenu
+<p>La <a href="https://datatracker.ietf.org/doc/html/rfc8098">RFC 8098</a> définit le type de contenu
 « message/disposition-notification » propre au MDN (Message
 Disposition Notification). Ce MDN est utilisé pour notifier
 l’émetteur d’un courriel de tout traitement qui survient après la
-livraison de ce courriel au niveau du récepteur. Conformément à la RFC
-8098, ce MDN doit :</p>
+livraison de ce courriel au niveau du récepteur. Conformément à la <a href="https://datatracker.ietf.org/doc/html/rfc8098">RFC
+8098</a>, ce MDN doit :</p>
 
 <ul>
   <li>
@@ -256,7 +264,7 @@ initialement envoyé et à l’adresse du récepteur initial au nom
 duquel le MDN a été produit,</p>
   </li>
   <li>
-    <p>Être structuré conformément à la RFC 2822 et la RFC 8098,</p>
+    <p>Être structuré conformément à la <a href="https://datatracker.ietf.org/doc/html/rfc2822">RFC 2822</a> et la <a href="https://datatracker.ietf.org/doc/html/rfc8098">RFC 8098</a>,</p>
   </li>
 </ul>
 
@@ -266,7 +274,7 @@ niveau du courriel expédié. D’autres informations peuvent également être
 fournies en utilisant les entêtes Original-Recipient et
 Disposition-Notification-Options.</p>
 
-<p>La RFC 8098 précise qu’un MDN ne devrait pas être renvoyé
+<p>La R<a href="https://datatracker.ietf.org/doc/html/rfc8098">FC 8098</a> précise qu’un MDN ne devrait pas être renvoyé
 automatiquement par le récepteur du courriel dans le cas où l’entête
 Disposition-Notification-To diffère de l’adresse précisée dans l’entête
 returm-Path du courriel envoyé, ceci afin d’éviter une transmission de
@@ -274,7 +282,7 @@ messages en boucle. Dans ce cas l’envoi du MDN nécessite une
 confirmation de l’utilisateur.</p>
 
 <p>Dans le cas d’un MDN en erreur, l’objet du MDN doit être précisé
-de la façon suivante : <code class="language-plaintext highlighter-rouge">[KO Intégration système ! ] XDM/1.0/DDM+&lt;libellé&gt; &lt;NOM&gt; &lt;prénom&gt; &lt;date de naissance&gt;</code>.</p>
+de la façon suivante : <code class="language-plaintext highlighter-rouge">[KO Intégration système !][code erreur] XDM/1.0/DDM+&lt;libellé&gt; &lt;NOM&gt; &lt;prénom&gt; &lt;date de naissance&gt;</code>.</p>
 
 <p>Dans le cas contraire, l’objet du MDN est précisé par <code class="language-plaintext highlighter-rouge">XDM/1.0/DDM+&lt;libellé&gt; &lt;NOM&gt; &lt;prénom&gt; &lt;date de naissance&gt;</code>.</p>
 
@@ -397,7 +405,7 @@ CONSOMMATEUR.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date: Wed, 20 Feb 2024 00:19:00 (EDT) -0400
 From: serviceY_auto@chb.mssante.fr
 Message-Id: &lt;199509200019.12345&gt;
-Subject: [Erreur d’intégration !] XDM/1.0/DDM+ECHOGRAPHIE ABDOMINOPELVIENNE CORSE FIGATELLIX 12/10/1988
+Subject: [KO Intégration système !][902] XDM/1.0/DDM+ECHOGRAPHIE ABDOMINOPELVIENNE CORSE FIGATELLIX 12/10/1988
 To: serviceY@chb.mssante.fr
 MIME-Version: 1.0
 Content-Type: multipart/report; report-type=disposition-notification; boundary="RAA14128.773615765"
@@ -459,7 +467,7 @@ Ici apparaît le fichier 20220531_CR d'imagerie médicale_CORSE_FIGATELLIX.pdf e
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="glossaire.html">next&gt;</a>
+                <a href="struct-email-standard.html">next&gt;</a>
 
               </td>
             </tr>
@@ -469,7 +477,7 @@ Ici apparaît le fichier 20220531_CR d'imagerie médicale_CORSE_FIGATELLIX.pdf e
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.trans-cda-mss#1.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 6, 2025 12:36+0000">2025-01-06</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.trans-cda-mss#1.1.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 4, 2025 11:28+0000">2025-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
