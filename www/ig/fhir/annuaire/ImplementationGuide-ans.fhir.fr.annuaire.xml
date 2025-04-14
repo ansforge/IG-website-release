@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.annuaire"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>AnnuaireSante</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.annuaire</b></p><a name="ans.fhir.fr.annuaire"> </a><a name="hcans.fhir.fr.annuaire"> </a><a name="ans.fhir.fr.annuaire-fr-FR"> </a><h2>AnnuaireSante</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire</pre><div><p>Ressources de conformité basées sur le modèle d'exposition de l'Annuaire Santé.</p>
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/>
-  <version value="1.0.1"/>
+  <version value="1.1.0"/>
   <name value="AnnuaireSante"/>
   <title value="Annuaire Santé"/>
   <status value="active"/>
-  <date value="2024-04-25T11:46:45+00:00"/>
+  <date value="2025-04-14T13:07:04+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -35,31 +35,28 @@
   <packageId value="ans.fhir.fr.annuaire"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn id="hl7tx">
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
-      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
-    </extension>
-    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
-    <packageId value="hl7.terminology.r4"/>
-    <version value="5.5.0"/>
-  </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
       <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="1.0.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"/>
     <packageId value="hl7.fhir.fr.core"/>
-    <version value="2.0.1"/>
+    <version value="2.1.0"/>
   </dependsOn>
   <dependsOn id="ans_fr_nos">
     <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
     <packageId value="ans.fr.nos"/>
-    <version value="1.2.0"/>
+    <version value="1.5.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_terminology_r4">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="5.5.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -75,7 +72,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="final-text"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -271,7 +268,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.4.1"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -286,7 +283,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="final-text"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -494,6 +491,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-authorization"/>
+      </reference>
+      <name value="AS Authorization Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations des activités (HealthcareService) sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels (Device) lourds autorisés."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -512,17 +520,6 @@
       </reference>
       <name value="AS CodeableConceptTimed Metadata"/>
       <description value="Extension contenant les métadonnées du CodeableConceptTimed."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/as-cs-intern-id-systems"/>
-      </reference>
-      <name value="AS CodeSystem Internal Identifier Systems"/>
-      <description value="CodeSystem contenant les identifiants locaux"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -549,13 +546,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/as-cs-type-etablissement"/>
+      </reference>
+      <name value="AS CodeSystem Type Etablissement"/>
+      <description value="CodeSystem définissant les types d'établissement."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/as-ext-data-trace"/>
       </reference>
       <name value="AS Data Trace Extension"/>
-      <description value="Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour tracer l'origine de la donnée (Autorité d'Enregistrement (AE) et Système d'Information (SI)). Des études complémentaires vont être initiées pour envisager l'usage de la ressource Provenance ou meta.source."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -588,7 +596,7 @@
         <reference value="StructureDefinition/as-dp-device"/>
       </reference>
       <name value="AS Donnée Publique Device Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-device dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -599,7 +607,7 @@
         <reference value="StructureDefinition/as-dp-healthcareservice-healthcare-activity"/>
       </reference>
       <name value="AS Donnée Publique HealthcareService Healthcare Activity Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-healthcareservice-healthcare-activity dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -610,7 +618,7 @@
         <reference value="StructureDefinition/as-dp-healthcareservice-social-equipment"/>
       </reference>
       <name value="AS Donnée Publique HealthcareService Social Equipment Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-healthcareservice-social-equipment dans le contexte des données en accès libre de l'Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -621,7 +629,7 @@
         <reference value="StructureDefinition/as-dp-organization"/>
       </reference>
       <name value="AS Donnée Publique Organization Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-organization  dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -632,7 +640,7 @@
         <reference value="StructureDefinition/as-dp-practitioner"/>
       </reference>
       <name value="AS Donnée Publique Practitioner Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-practitioner dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -643,7 +651,7 @@
         <reference value="StructureDefinition/as-dp-practitionerrole"/>
       </reference>
       <name value="AS Donnée Publique PractitionerRole Profile"/>
-      <description value="Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé."/>
+      <description value="Profil public applicatif créé à partir du profil générique as-practitionerrole dans le contexte des données en libre accès de l’Annuaire Santé. Pour connaître les paramètres de recherches associés à ce profil, il suffit de consulter le CapabilityStatement AsServerCapabilityStatement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -736,17 +744,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/as-ext-healthcareservice-authorization"/>
-      </reference>
-      <name value="AS HealthcareService Autorization Extension"/>
-      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les autorisations  des activités sanitaires, sociales, médico-sociales et d'enseignement et des équipements matériels lourds autorisés."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -764,7 +761,18 @@
         <reference value="StructureDefinition/as-healthcareservice-social-equipment"/>
       </reference>
       <name value="AS HealthcareService Social Equipment Profile"/>
-      <description value="Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS."/>
+      <description value="Profil générique créé à partir de HealthcareService dans le contexte de l'Annuaire Santé pour décrire les équipements sociaux représentant les activités des établissements du domaine social et médico-social enregistrés dans FINESS (ex : Hébergement de personnes handicapées, hébergement de personnes âgées, services médico-sociaux à domicile, ...)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/as-ext-installation"/>
+      </reference>
+      <name value="AS Installation Extension"/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour décrire les dates d'installation des équipements (HealthcareService) sanitaires, sociaux, médico-sociaux et d'enseignements"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -962,7 +970,7 @@
         <reference value="StructureDefinition/as-practitioner"/>
       </reference>
       <name value="AS Practitioner Profile"/>
-      <description value="Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS ou ADELI), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."/>
+      <description value="Profil générique créé à partir de FrPractitioner dans le contexte de l'Annuaire Santé pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel (professionnel enregistré dans RPPS), personnel autorisé ou personnel d’établissement, dans les domaines sanitaire, médico-social et social."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1017,7 +1025,7 @@
         <reference value="StructureDefinition/as-ext-registration"/>
       </reference>
       <name value="AS Registration Extension"/>
-      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;."/>
+      <description value="Extension créée dans le cadre de l'Annuaire Santé pour prise en compte de la première inscription si &quot;isFirst = true&quot;. Ces données sont uniquement accessibles en accès restreint."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1047,17 +1055,6 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/as-vs-intern-id-systems"/>
-      </reference>
-      <name value="AS ValueSet Internal Identifier Systems"/>
-      <description value="ValueSet contenant les identifiants internes"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/as-vs-organization-types"/>
       </reference>
       <name value="AS ValueSet OrganizationTypes"/>
@@ -1073,6 +1070,17 @@
       </reference>
       <name value="AS ValueSet type de système d'information"/>
       <description value="ValueSet définissant les types de systèmes d'information pouvant alimenter l'annuaire santé."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/as-vs-type-etablissement"/>
+      </reference>
+      <name value="AS ValueSet type Etablissement"/>
+      <description value="ValueSet définissant les types d'établissement."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1146,6 +1154,17 @@
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
+        <reference value="SearchParameter/as-sp-qualification-code"/>
+      </reference>
+      <name value="as-sp-qualification-code"/>
+      <description value="Paramètre de recherche pour rechercher par code de qualification."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
         <reference value="SearchParameter/as-sp-type-smartcard"/>
       </reference>
       <name value="as-sp-type-smartcard"/>
@@ -1164,36 +1183,203 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VS-TRE-R286-TypeFermeture"/>
+        <reference value="Organization/example-organization-fictive"/>
       </reference>
-      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
-      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R286-TypeFermeture/FHIR/TRE-R286-TypeFermeture"/>
-      <exampleBoolean value="false"/>
+      <name value="example-organization-fictive"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VS-TRE-R301-SourceInformationInstallation"/>
+        <reference value="Organization/example-organization-nancy"/>
       </reference>
-      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
-      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R301-SourceInformationInstallation/FHIR/TRE-R301-SourceInformationInstallation"/>
-      <exampleBoolean value="false"/>
+      <name value="example-organization-nancy"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-organization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VS-TRE-R74-ModeFixationTarifaire"/>
+        <reference value="Organization/481677DP"/>
       </reference>
-      <name value="ValueSet pour l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
-      <description value="JDV des NOS contenant l'ensemble des codes concepts de la TRE avec l'url : https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"/>
-      <exampleBoolean value="false"/>
+      <name value="pp16dp-organization"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/3719500DP"/>
+      </reference>
+      <name value="pp16dp-practitioner"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/5015602DP"/>
+      </reference>
+      <name value="pp16dp-practitioner-role"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/481677"/>
+      </reference>
+      <name value="pp16dr-organization"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Person"/>
+      </extension>
+      <reference>
+        <reference value="Person/pp16dr-person"/>
+      </reference>
+      <name value="pp16dr-person"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/3719500"/>
+      </reference>
+      <name value="pp16dr-practitioner"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/5015602"/>
+      </reference>
+      <name value="pp16dr-practitioner-role"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/158480DP"/>
+      </reference>
+      <name value="pp19dp-organization-eg-cab"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/548812DP"/>
+      </reference>
+      <name value="pp19dp-organization-ej-cab"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/334081DP"/>
+      </reference>
+      <name value="pp19dp-practitioner"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/1738459DP"/>
+      </reference>
+      <name value="pp19dp-practitioner-role-lib"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/1578230DP"/>
+      </reference>
+      <name value="pp19dp-practitioner-role-sal"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/158480"/>
+      </reference>
+      <name value="pp19dr-organization-eg-cab"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/548812"/>
+      </reference>
+      <name value="pp19dr-organization-ej-cab"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Person"/>
+      </extension>
+      <reference>
+        <reference value="Person/pp19dr-person"/>
+      </reference>
+      <name value="pp19dr-person"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-person"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/334081"/>
+      </reference>
+      <name value="pp19dr-practitioner"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/1738459"/>
+      </reference>
+      <name value="pp19dr-practitioner-role-lib"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/1578230"/>
+      </reference>
+      <name value="pp19dr-practitioner-role-sal"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dr-practitionerrole"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -1224,6 +1410,14 @@
         </extension>
         <nameUrl value="downloads.html"/>
         <title value="Téléchargement du guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Historique des changements"/>
         <generation value="markdown"/>
       </page>
     </page>
