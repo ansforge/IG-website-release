@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Ressources FHIR - Médicosocial - Suivi Décisions Orientation v4.0.3</title>
+    <title>Ressources FHIR - Médicosocial - Suivi Décisions Orientation v4.0.4</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,7 +40,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -61,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Suivi Décisions Orientation</span>
             <br/>
-            <span style="display:inline-block;">4.0.3 - trial-use
+            <span style="display:inline-block;">4.0.4 - trial-use
 
 
 
@@ -228,7 +229,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.3: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.4: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Ressources FHIR</h2>
   
 
@@ -257,7 +258,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="profils">Profils</h3>
 
-<p>Liste des profils définissant les contraintes appliquées sur les ressources FHIR par les systèmes conformes à ce guide d’implémentation. Ces profils sont créés dans le cadre des volets de suivi des orientations (SDO et ESMS).</p>
+<p>Liste des profils définissant les contraintes appliquées sur les ressources FHIR par les systèmes conformes à ce guide d'implémentation. Ces profils sont créés dans le cadre des volets de suivi des orientations (SDO et ESMS).</p>
 
 <h4 id="profils-utilisés-pour-le-volet-si-esms">Profils utilisés pour le volet SI-ESMS</h4>
 
@@ -277,7 +278,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="capabilitystatement">CapabilityStatement</h3>
 
-<p>Liste des CapabilityStatement définis dans le volet SI-ESMS de ce guide d’implémentation :</p>
+<p>Liste des CapabilityStatement définis dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
 <table class="lines"><tr><td style="background-color: #eeeeee">Titre du CapabilityStatement</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="CapabilityStatement-ESMSConsommateur.html">SI-ESMS-Consommateur</a></td><td><div><p>Le rôle du consommateur est de recueillir le dossier d'une personne orientée pour l'examiner, ainsi que son évaluation par la CDAPH.
 Le consommateur suit également les entrées des personnes orientées dans d'autres structures ainsi que la prise en compte d'une admission impossible par la MDPH.
@@ -290,21 +291,21 @@ Il correspond au SI-SDO.</p>
 
 <h3 id="codesystem">CodeSystem</h3>
 
-<p>Liste des CodeSystem définis dans le volet SI-ESMS de ce guide d’implémentation :</p>
+<p>Liste des CodeSystem définis dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
 <table class="lines"><tr><td style="background-color: #eeeeee">Titre du CodeSystem</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="CodeSystem-input-task-sdo-codesystem.html">InputTaskSDOCodeSystem</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
 </div></td></tr></table>
 
 <h3 id="valueset">ValueSet</h3>
 
-<p>Liste des ValueSet définis dans le volet SI-ESMS de ce guide d’implémentation :</p>
+<p>Liste des ValueSet définis dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
 <table class="lines"><tr><td style="background-color: #eeeeee">Titre du ValueSet</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="ValueSet-type-document-reference-esms-valueset.html">DocumentReferenceTypeESMSValueSet</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
 </div></td></tr></table>
 
 <h3 id="instances">Instances</h3>
 
-<p>Liste des instances de ressources définies dans le volet SI-ESMS de ce guide d’implémentation :</p>
+<p>Liste des instances de ressources définies dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
 <table class="lines"><tr><td style="background-color: #eeeeee">Id de l'instance</td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">exemple-bundle-resultat-recherche-decision-evaluation-elements</a></td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">exemple-bundle-resultat-recherche-decision-evaluation</a></td></tr><tr><td><a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html">exemple-sdo-bundle-resultat-recherche-notifications-esms</a></td></tr><tr><td><a href="Consent-exemple-consent.html">exemple-consent</a></td></tr><tr><td><a href="DocumentReference-exemple-esms-document-reference.html">exemple-esms-document-reference</a></td></tr><tr><td><a href="DocumentReference-exemple-sdo-document-reference.html">exemple-sdo-document-reference</a></td></tr><tr><td><a href="Task-exemple-sdo-task.html">exemple-sdo-task</a></td></tr></table>
 
@@ -348,12 +349,13 @@ Il correspond au SI-SDO.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 30, 2025 17:28+0000">2025-01-30</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 19, 2025 08:13+0000">2025-06-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-medicosocial-suivi-decisions-orientation/issues/new">New Issue</a>
 
           </span>
