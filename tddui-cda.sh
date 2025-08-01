@@ -1,0 +1,2 @@
+java -jar input-cache/publisher.jar -go-publish  -source /Users/nicolasriss/Desktop/ANSFORGE_ans-ig/IG-contenu-cda-medicosocial-transfert-donnees-dui -web  /Library/WebServer/Documents/ANS/IG-website-release/www/ig/cda -registry /Library/WebServer/Documents/ANS/IG-website-release/ig-registry/fhir-ig-list.json -history /Library/WebServer/Documents/ANS/IG-website-release/fhir-ig-history-template -templates /Library/WebServer/Documents/ANS/IG-website-release/templates 
+        
