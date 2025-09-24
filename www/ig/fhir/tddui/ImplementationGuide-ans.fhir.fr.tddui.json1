@@ -3,14 +3,14 @@
   "id" : "ans.fhir.fr.tddui",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.tddui</b></p><a name=\"ans.fhir.fr.tddui\"> </a><a name=\"hcans.fhir.fr.tddui\"> </a><a name=\"ans.fhir.fr.tddui-fr-FR\"> </a><h2>TDDUI</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.tddui</b></p><a name=\"ans.fhir.fr.tddui\"> </a><a name=\"hcans.fhir.fr.tddui\"> </a><a name=\"ans.fhir.fr.tddui-fr-FR\"> </a><h2>TDDUI</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui",
-  "version" : "1.1.0",
+  "version" : "2.0.0",
   "name" : "TDDUI",
   "title" : "Médicosocial - Transfert de données DUI",
   "status" : "active",
-  "date" : "2025-02-26T10:26:44+00:00",
+  "date" : "2025-09-24T14:57:40+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -37,17 +37,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "6.2.0"
-  },
-  {
-    "id" : "hl7ext",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-    }],
-    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-    "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "6.5.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
@@ -56,10 +46,16 @@
     "version" : "2.1.0"
   },
   {
-    "id" : "ans_fr_nos",
-    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
-    "packageId" : "ans.fr.nos",
-    "version" : "1.4.0"
+    "id" : "ans_fr_terminologies",
+    "uri" : "https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies",
+    "packageId" : "ans.fr.terminologies",
+    "version" : "1.2.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_extensions",
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions",
+    "version" : "5.2.0"
   }],
   "definition" : {
     "extension" : [{
@@ -80,7 +76,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "trial-use"
+        "valueString" : "trial-implementation"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -350,7 +346,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.3.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.4.1"
     },
     {
       "extension" : [{
@@ -370,7 +366,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "trial-use"
+        "valueString" : "trial-implementation"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -641,13 +637,61 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tddui-bundle"
+        "reference" : "StructureDefinition/tddui-comment"
       },
-      "name" : "TDDUI Bundle",
-      "description" : "Profil générique créé dans le contexte du transfert de données DUI pour véhiculer un lot de documents au format CDA.",
+      "name" : "Commentaire",
+      "description" : "Commentaire relatif au séjour.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-admission-date"
+      },
+      "name" : "Date d’admission",
+      "description" : "Date d’admission dans la structure ESSMS.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-entry-mode-label"
+      },
+      "name" : "Libellé mode d'entrée",
+      "description" : "Libellé du mode d’entée du séjour.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-exit-mode-label"
+      },
+      "name" : "Libellé mode de sortie",
+      "description" : "Libellé du mode de sortie du séjour.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-birth-order"
+      },
+      "name" : "Ordre de naissance dans le registre d'état civil",
+      "description" : "Ordre d’enregistrement de la naissance dans le registre d’état civil de la commune de naissance pour le mois de la naissance. Il compose les 3 derniers chiffres du NIR de l'usager avant la clé de sécurité et permet de distinguer les personnes nées au même lieu et à la même période. Il est obligatoire si le NIR n'est pas transmis.",
       "exampleBoolean" : false
     },
     {
@@ -656,10 +700,94 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/tddui-documentreference"
+        "reference" : "StructureDefinition/tddui-bundle"
       },
-      "name" : "TDDUI Document Reference",
-      "description" : "Profil générique créé dans le contexte du transfert de données DUI pour véhiculer un document au format CDA, inclus dans DocumentReference.attachment.data.",
+      "name" : "TDDUI Bundle",
+      "description" : "Profil générique créé pour transmettre des données d'un logiciel DUI.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tddui-encounter-identifier"
+      },
+      "name" : "TDDUI Encounter FR Core CodeSystem v2-0203",
+      "description" : "TDDUI Encounter's identifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-encounter-sejour"
+      },
+      "name" : "TDDUI Encounter Sejour",
+      "description" : "Profil de la ressource Encounter permettant de regrouper les informations relatives au séjour d'un usager dans une structure ESSMS",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tddui-identifier"
+      },
+      "name" : "TDDUI FR Core CodeSystem v2-0203",
+      "description" : "TDDUI Patient's identifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-human-name"
+      },
+      "name" : "TDDUI Human Name DataType",
+      "description" : "French profile of datatype HumanName with constraints on prefix and suffix | Profilage du type de données HumanName pour prise en compte de la civilté au niveau de l'élément prefix et du titre au niveau de l'élément suffix",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-organization"
+      },
+      "name" : "TDDUI Organization",
+      "description" : "Profil de la ressource FRCoreOrganizationProfile permettant de représenter les entités juridiques.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-patient"
+      },
+      "name" : "TDDUI Patient",
+      "description" : "Profil de la ressource FrCorePatientProfile permettant de représenter un usager lorsque l'INS n'est pas transmis.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-patient-ins"
+      },
+      "name" : "TDDUI Patient INS",
+      "description" : "Profil de la ressource FRCorePatientINSProfile permettant de représenter un usager lorsque l'INS est transmis.",
       "exampleBoolean" : false
     },
     {
@@ -671,8 +799,56 @@
         "reference" : "CapabilityStatement/TDDUIConsommateur"
       },
       "name" : "TDDUI-Consommateur",
-      "description" : "Le rôle du consommateur est de recueillir les données du Dossier Usager Informatisé. Il peut recevoir un unique dossier ou un ensemble de dossiers, ainsi que des mises à jour de dossiers. Il correspond à un logiciel DUI ou un SI tiers.",
+      "description" : "Le rôle du Consommateur est de recueillir les données d'un logiciel DUI. Il correspond à un SI tiers.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/tddui-encounter-sejour-example"
+      },
+      "name" : "tddui-encounter-sejour-example",
+      "description" : "Exemple d'un séjour en ESSMS",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-encounter-sejour"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/tddui-organization-example"
+      },
+      "name" : "tddui-organization-example",
+      "description" : "ESSMS - Les Chênes Verts",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/tddui-patient-example"
+      },
+      "name" : "tddui-patient-example",
+      "description" : "Exemple de la ressource TDDUIPatient",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/tddui-patient-ins-example"
+      },
+      "name" : "tddui-patient-ins-example",
+      "description" : "Exemple de la ressource TDDUIPatientINS",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient-ins"
     },
     {
       "extension" : [{
@@ -683,7 +859,7 @@
         "reference" : "CapabilityStatement/TDDUIProducteur"
       },
       "name" : "TDDUI-Producteur",
-      "description" : "Le rôle du producteur est de créer et transmettre un document ou lots de Documents portant les informations du Dossier Usager Informatisé. Il correspond à un logiciel DUI.",
+      "description" : "Le rôle de Producteur est de transmettre des données de son logiciel DUI. Il correspond à un logiciel DUI.",
       "exampleBoolean" : false
     },
     {
@@ -692,23 +868,11 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/TDDUIBundleExample"
+        "reference" : "Bundle/ExampleTDDUIBundle"
       },
       "name" : "TDDUIBundleExample",
-      "description" : "Exemple de ressource Bundle suivant le profil TDDUIBundle",
+      "description" : "Exemple de bundle conforme au profil TDDUIBundle",
       "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-bundle"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "DocumentReference"
-      }],
-      "reference" : {
-        "reference" : "DocumentReference/TDDUIDocumentReferenceExample"
-      },
-      "name" : "TDDUIDocumentReferenceExample",
-      "description" : "Exemple de ressource DocumentReference suivant le profil TDDUIDocumentReference",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-documentreference"
     }],
     "page" : {
       "extension" : [{
@@ -733,15 +897,15 @@
           "valueUrl" : "sfe.html"
         }],
         "nameUrl" : "sfe.html",
-        "title" : "Spécifications fonctionnelles",
+        "title" : "Volume 1 - Etude fonctionnelle",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "sfe_cadre_juridique.html"
+            "valueUrl" : "sfe_cas_usage.html"
           }],
-          "nameUrl" : "sfe_cadre_juridique.html",
-          "title" : "Cadre juridique et orientations organisationnelles",
+          "nameUrl" : "sfe_cas_usage.html",
+          "title" : "Cas d'usage",
           "generation" : "markdown"
         },
         {
@@ -756,10 +920,10 @@
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "sfe_definition_processus.html"
+            "valueUrl" : "sfe_transfert_des_donnees_a_un_tiers.html"
           }],
-          "nameUrl" : "sfe_definition_processus.html",
-          "title" : "Définition des processus collaboratifs",
+          "nameUrl" : "sfe_transfert_des_donnees_a_un_tiers.html",
+          "title" : "Transfert des données à un tiers",
           "generation" : "markdown"
         },
         {
@@ -775,127 +939,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "contenu_dossier.html"
-        }],
-        "nameUrl" : "contenu_dossier.html",
-        "title" : "Contenu du dossier CDA",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_dossier_contexte.html"
-          }],
-          "nameUrl" : "contenu_dossier_contexte.html",
-          "title" : "Contexte",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "mapping_fonctionnelle_technique.html"
-          }],
-          "nameUrl" : "mapping_fonctionnelle_technique.html",
-          "title" : "Mapping CDA du modèle de contenu DUI",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_dossier_structure_cda.html"
-          }],
-          "nameUrl" : "contenu_dossier_structure_cda.html",
-          "title" : "Structure générale du document CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_dossier_entete_cda.html"
-          }],
-          "nameUrl" : "contenu_dossier_entete_cda.html",
-          "title" : "Entête du document CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_dossier_corps_cda.html"
-          }],
-          "nameUrl" : "contenu_dossier_corps_cda.html",
-          "title" : "Corps du document CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "terminology_cda.html"
-          }],
-          "nameUrl" : "terminology_cda.html",
-          "title" : "Jeux de Valeurs CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_sejour.html"
-          }],
-          "nameUrl" : "contenu_sejour.html",
-          "title" : "Sejour",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_evenement.html"
-          }],
-          "nameUrl" : "contenu_evenement.html",
-          "title" : "Evénement",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_couvertures.html"
-          }],
-          "nameUrl" : "contenu_couvertures.html",
-          "title" : "Couvertures sociales",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_evaluation.html"
-          }],
-          "nameUrl" : "contenu_evaluation.html",
-          "title" : "Evaluation",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_documents_ajoutes.html"
-          }],
-          "nameUrl" : "contenu_documents_ajoutes.html",
-          "title" : "Documents ajoutés",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "contenu_elements_transversaux.html"
-          }],
-          "nameUrl" : "contenu_elements_transversaux.html",
-          "title" : "Eléments transversaux",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "description_flux.html"
         }],
         "nameUrl" : "description_flux.html",
-        "title" : "Description des flux FHIR",
+        "title" : "Volume 2 - Détail des transactions",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -909,56 +956,11 @@
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "description_flux_1_ajout_doc.html"
+            "valueUrl" : "description_flux_1_transmission_donnees_dui.html"
           }],
-          "nameUrl" : "description_flux_1_ajout_doc.html",
-          "title" : "Flux 1 - Ajout d'un document",
+          "nameUrl" : "description_flux_1_transmission_donnees_dui.html",
+          "title" : "Flux 1 - Transmission de données DUI",
           "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "description_flux_2_ajout_lot_doc.html"
-          }],
-          "nameUrl" : "description_flux_2_ajout_lot_doc.html",
-          "title" : "Flux 2 - Ajout d'un lot de documents",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "description_flux_3_maj_doc.html"
-          }],
-          "nameUrl" : "description_flux_3_maj_doc.html",
-          "title" : "Flux 3 - Mise à jour d'un document",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "ressources_conformite.html"
-        }],
-        "nameUrl" : "ressources_conformite.html",
-        "title" : "Ressources de conformité",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "ressources_cda.html"
-          }],
-          "nameUrl" : "ressources_cda.html",
-          "title" : "Ressources CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "artifacts.html"
-          }],
-          "nameUrl" : "artifacts.html",
-          "title" : "Ressources FHIR",
-          "generation" : "html"
         }]
       },
       {
@@ -981,19 +983,19 @@
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "annexes_documents_reference.html"
+            "valueUrl" : "mapping_fonctionnel_FHIR.html"
           }],
-          "nameUrl" : "annexes_documents_reference.html",
-          "title" : "Documents de référence",
+          "nameUrl" : "mapping_fonctionnel_FHIR.html",
+          "title" : "Mapping FHIR du modèle de contenu DUI",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "annexes_nomenclatures.html"
+            "valueUrl" : "annexes_documents_reference.html"
           }],
-          "nameUrl" : "annexes_nomenclatures.html",
-          "title" : "Nomenclatures de référence",
+          "nameUrl" : "annexes_documents_reference.html",
+          "title" : "Documents de référence",
           "generation" : "markdown"
         },
         {
@@ -1004,17 +1006,17 @@
           "nameUrl" : "annexes_acronymes.html",
           "title" : "Acronymes",
           "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "autres_ressources.html"
-        }],
-        "nameUrl" : "autres_ressources.html",
-        "title" : "Autres ressources",
-        "generation" : "markdown",
-        "page" : [{
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "annexes_codes_professions_roles_modes_exercices.html"
+          }],
+          "nameUrl" : "annexes_codes_professions_roles_modes_exercices.html",
+          "title" : "Professions du médico-social",
+          "generation" : "markdown"
+        },
+        {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "securite.html"
@@ -1030,42 +1032,6 @@
           }],
           "nameUrl" : "downloads.html",
           "title" : "Téléchargements et usages",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "specs_fhir.html"
-          }],
-          "nameUrl" : "specs_fhir.html",
-          "title" : "Spécifications FHIR",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "specs_cda.html"
-          }],
-          "nameUrl" : "specs_cda.html",
-          "title" : "Spécifications CDA",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "site_ans.html"
-          }],
-          "nameUrl" : "site_ans.html",
-          "title" : "Site de l'ANS",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "documentation.html"
-          }],
-          "nameUrl" : "documentation.html",
-          "title" : "Documentation",
           "generation" : "markdown"
         }]
       },
