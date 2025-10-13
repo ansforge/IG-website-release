@@ -11,14 +11,14 @@
   fhir:id [ fhir:v "ans.fhir.fr.sdo"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><h2>SuiviDecisionsOrientation</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name=\"ans.fhir.fr.sdo\"> </a><a name=\"hcans.fhir.fr.sdo\"> </a><a name=\"ans.fhir.fr.sdo-fr-FR\"> </a><h2>SuiviDecisionsOrientation</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "4.0.4"] ; # 
+  fhir:version [ fhir:v "4.0.5"] ; # 
   fhir:name [ fhir:v "SuiviDecisionsOrientation"] ; # 
   fhir:title [ fhir:v "Médicosocial - Suivi Décisions Orientation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-06-19T08:13:37+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-13T14:57:20+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -51,30 +51,23 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "6.4.0" ]
+     fhir:version [ fhir:v "6.5.0" ]
   ] [
-     fhir:id [ fhir:v "hl7ext" ] ;
-     fhir:extension ( [
-       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [
-         a fhir:markdown ;
-         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-       ]
-     ] ) ;
+     fhir:id [ fhir:v "ans_fr_terminologies" ] ;
+     fhir:uri [
+       fhir:v "https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies"^^xsd:anyURI ;
+       fhir:link <https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies>
+     ] ;
+     fhir:packageId [ fhir:v "ans.fr.terminologies" ] ;
+     fhir:version [ fhir:v "1.2.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7_fhir_uv_extensions_r4" ] ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
        fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
      fhir:version [ fhir:v "5.2.0" ]
-  ] [
-     fhir:id [ fhir:v "ans_fr_nos" ] ;
-     fhir:uri [
-       fhir:v "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"^^xsd:anyURI ;
-       fhir:link <https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos>
-     ] ;
-     fhir:packageId [ fhir:v "ans.fr.nos" ] ;
-     fhir:version [ fhir:v "1.5.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -471,7 +464,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
        fhir:value [
          a fhir:code ;
-         fhir:v "hl7.fhir.uv.tools.r4#0.5.0"
+         fhir:v "hl7.fhir.uv.tools.r4#0.4.1"
        ]
      ] [
        fhir:extension ( [
@@ -1461,6 +1454,20 @@
            fhir:v "annexes_Diagramme.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Diagramme de Séquence SI-MDPH / SI-SDO / SI-ESMS" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "changes.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "changes.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Historique des changements" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
