@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>CPTS - Gestion des comptes régulateurs - Service d'Accès aux Soins v1.1.0</title>
+    <title>CPTS - Gestion des comptes régulateurs - Service d'Accès aux Soins v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,18 +40,19 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"7"}
     h3,h4,h5,h6{--heading-prefix:"7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
 
   <div id="ig-search">
@@ -61,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Service d&#39;Accès aux Soins</span>
             <br/>
-            <span style="display:inline-block;">1.1.0 - trial-implementation
+            <span style="display:inline-block;">1.2.0 - trial-implementation
 
 
 
@@ -139,6 +140,12 @@
       <li>
         <a href="specifications_techniques-sos-gestion_rdv.html">SOS Médecins - Gestion de rendez-vous</a>
       </li>
+      <li>
+        ________ Fluidification parcours régulateur ________
+      </li>
+      <li>
+        <a href="specifications_techniques-transmission-info-RDV-LRM.html">Transmission des informations de rendez-vous aux LRM</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -157,6 +164,9 @@
       </li>
       <li>
         <a href="faq.html">FAQ</a>
+      </li>
+      <li>
+        <a href="acronymes.html">Acronymes</a>
       </li>
       <li>
         <a href="annexes.html">Annexes</a>
@@ -217,7 +227,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Service d'Accès aux Soins (v1.1.0: trial-use - Mixed <a no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sas/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Service d'Accès aux Soins (v1.2.0: trial-use - Mixed <a data-no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Normative Standard">Normative</a> and <a data-no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sas/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>CPTS - Gestion des comptes régulateurs</h2>
   
 
@@ -235,17 +245,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#caractéristiques-de-lapi" id="markdown-toc-caractéristiques-de-lapi">Caractéristiques de l’API</a></li>
+  <li><a href="#caractéristiques-de-lapi" id="markdown-toc-caractéristiques-de-lapi">Caractéristiques de l'API</a></li>
   <li><a href="#création-de-compte-régulateur" id="markdown-toc-création-de-compte-régulateur">Création de compte régulateur</a></li>
-  <li><a href="#mise-à-jour-dun-compte-régulateur" id="markdown-toc-mise-à-jour-dun-compte-régulateur">Mise à jour d’un compte régulateur</a></li>
-  <li><a href="#suppression-dun-compte-régulateur" id="markdown-toc-suppression-dun-compte-régulateur">Suppression d’un compte régulateur</a></li>
+  <li><a href="#mise-à-jour-dun-compte-régulateur" id="markdown-toc-mise-à-jour-dun-compte-régulateur">Mise à jour d'un compte régulateur</a></li>
+  <li><a href="#suppression-dun-compte-régulateur" id="markdown-toc-suppression-dun-compte-régulateur">Suppression d'un compte régulateur</a></li>
   <li><a href="#règles-de-gestion" id="markdown-toc-règles-de-gestion">Règles de gestion</a></li>
 </ul>
 
 </div>
 <!-- Gestion régulateurs -->
 
-<h3 id="caractéristiques-de-lapi">Caractéristiques de l’API</h3>
+<h3 id="caractéristiques-de-lapi">Caractéristiques de l'API</h3>
 
 <table>
 <tbody>
@@ -306,13 +316,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="réponse-de-base--succès">Réponse de base – Succès</h5>
 
-<p>Lien vers la spécification FHIR : <a href="https://www.hl7.org/fhir/bundle.html">https://www.hl7.org/fhir/bundle.html</a></p>
+<p>Lien vers la spécification FHIR : <a href="https://www.hl7.org/fhir/practitioner.html">https://www.hl7.org/fhir/practitioner.html</a></p>
 
 <p>Si la création est un succès, le serveur répond :</p>
 
 <ul>
   <li>Un header avec un code 201 Created HTTP</li>
-  <li>Un header Location incluant l’ID de la ressource créée par le serveur <code class="language-plaintext highlighter-rouge">Location: [base]/Practitioner/12345</code></li>
+  <li>Un header Location incluant l'ID de la ressource créée par le serveur <code class="language-plaintext highlighter-rouge">Location: [base]/Practitioner/12345</code></li>
 </ul>
 
 <p>Plus de précision sur la spécification FHIR :
@@ -328,13 +338,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>Un header avec un code erreur HTTP 4XX ou 5XX</li>
   <li>Un body contenant une ressource OperationOutcome qui donne les
-détails sur la raison de l’échec</li>
+détails sur la raison de l'échec</li>
 </ul>
 
-<p>À titre d’information, les codes erreurs classiques sont les suivants :</p>
+<p>À titre d'information, les codes erreurs classiques sont les suivants :</p>
 <ul>
   <li>400 (Bad request) – Le format de la requête FHIR transmise est incorrect</li>
-  <li>422 (Unprocessable Entity) – L’action demandée ne peut pas être réalisée à cause d’une règle interne à l’application.</li>
+  <li>422 (Unprocessable Entity) – L'action demandée ne peut pas être réalisée à cause d’une règle interne à l’application.</li>
 </ul>
 
 <p>Plus de précision sur la spécification FHIR :
@@ -350,14 +360,18 @@ détails sur la raison de l’échec</li>
 
 <p>La requête ci-dessous correspond à la création ou mise à jour du compte de Sébastien LORIDON, dont l’identifiant national est <code class="language-plaintext highlighter-rouge">3456780581/11242343</code> et le mail <code class="language-plaintext highlighter-rouge">sebastien.loridon@test.com</code>.</p>
 
-<pre class="json" style="white-space: pre; text-wrap: nowrap;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">
-{
+<pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">resourceType</a>" : "Practitioner",
   "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a>" : "ExamplePractitionerRegul1",
   "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.source">source</a>" : "urn:oid:1.2.250.1.213.3.6",
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
       <a href="StructureDefinition-FrPractitionerRegul.html" style="color: Maroon">&#x1F517;</a> "https://interop.esante.gouv.fr/ig/fhir/sas/StructureDefinition/FrPractitionerRegul"
     ]
+  },
+  "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Narratif généré : Praticien ExamplePractitionerRegul1&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ExamplePractitionerRegul1\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcExamplePractitionerRegul1\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Information Source: &lt;a href=\&quot;https://simplifier.net/resolve?scope=hl7.fhir.fr.core@1.1.0&amp;amp;canonical=urn:oid:1.2.250.1.213.3.6\&quot;&gt;urn:oid:1.2.250.1.213.3.6&lt;/a&gt;&lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profil: &lt;a href=\&quot;StructureDefinition-FrPractitionerRegul.html\&quot;&gt;FrPractitionerRegul&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Identifiant National de Professionnel de Santé/3456780581/11242343&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Sébastien Loridon &lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: &lt;a href=\&quot;mailto:sebastien.loridon@test.com\&quot;&gt;sebastien.loridon@test.com&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>" : [
     {
@@ -369,7 +383,7 @@ détails sur la raison de l’échec</li>
           }
         ]
       },
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.250.1.71.4.2.2",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.250.1.71.4.2.1",
       "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "3456780581/11242343"
     }
   ],
@@ -390,7 +404,7 @@ détails sur la raison de l’échec</li>
   ]
 }</code></pre>
 
-<h3 id="mise-à-jour-dun-compte-régulateur">Mise à jour d’un compte régulateur</h3>
+<h3 id="mise-à-jour-dun-compte-régulateur">Mise à jour d'un compte régulateur</h3>
 
 <h4 id="construction-de-la-requête-de-base-1">Construction de la requête de base</h4>
 
@@ -416,7 +430,7 @@ détails sur la raison de l’échec</li>
 </table>
 <p><a href="#_ftnref2" name="_ftn2">[2]</a> <a href="https://www.hl7.org/fhir/http.html#cond-update">https://www.hl7.org/fhir/http.html#cond-update</a> et <a href="https://www.hl7.org/fhir/http.html#general">https://www.hl7.org/fhir/http.html#general</a></p>
 
-<p>Cette requête de modification est donc de type <code class="language-plaintext highlighter-rouge">interaction conditional update</code>. Elle permet de mettre à jour une ressource sur la base d’un critère autre que l’<code class="language-plaintext highlighter-rouge">id</code> de la ressource</p>
+<p>Cette requête de modification est donc de type <code class="language-plaintext highlighter-rouge">interaction conditional update</code>. Elle permet de mettre à jour une ressource sur la base d’un critère autre que l'<code class="language-plaintext highlighter-rouge">id</code> de la ressource</p>
 
 <p>En l’occurrence, les requêtes effectuées par le SAS se baseront sur l’élément « identifier » de la ressource à modifier. [ID] représente l’identifiant national ou technique de cette ressource.</p>
 <ul>
@@ -437,7 +451,7 @@ détails sur la raison de l’échec</li>
 
 <ul>
   <li>Un header avec un code 200 OK HTTP</li>
-  <li>Un header Location incluant l’ID de la ressource mise à jour par le serveur <code class="language-plaintext highlighter-rouge">Location: [base]/Practitioner/12345</code></li>
+  <li>Un header Location incluant l'ID de la ressource mise à jour par le serveur <code class="language-plaintext highlighter-rouge">Location: [base]/Practitioner/12345</code></li>
 </ul>
 
 <p>Plus de précision sur la spécification FHIR :
@@ -453,16 +467,16 @@ détails sur la raison de l’échec</li>
 <ul>
   <li>Un header avec un code erreur HTTP 4XX ou 5XX</li>
   <li>Un body contenant une ressource OperationOutcome qui donne les
-détails sur la raison de l’échec</li>
+détails sur la raison de l'échec</li>
 </ul>
 
-<p>À titre d’information, les codes erreurs classiques sont les suivants :</p>
+<p>À titre d'information, les codes erreurs classiques sont les suivants :</p>
 <ul>
   <li>400 (Bad request) – Le format de la requête FHIR transmise est incorrect</li>
-  <li>422 (Unprocessable Entity) – L’action demandée ne peut pas être réalisée à cause d’une règle interne à l’application.</li>
+  <li>422 (Unprocessable Entity) – L'action demandée ne peut pas être réalisée à cause d’une règle interne à l’application.</li>
 </ul>
 
-<h3 id="suppression-dun-compte-régulateur">Suppression d’un compte régulateur</h3>
+<h3 id="suppression-dun-compte-régulateur">Suppression d'un compte régulateur</h3>
 
 <p>Il n’y aura pas de requête spécifique pour la suppression de compte. Une suppression de compte côté plateforme numérique SAS est modélisée par une requête de type « mise à jour de compte » où l’on retire l’habilitation associée au compte.</p>
 
@@ -470,27 +484,27 @@ détails sur la raison de l’échec</li>
 
 <p>Cette section détaille les règles de gestion à utiliser au niveau des éléments retournés par la requête.</p>
 <ul>
-  <li><strong>ID : 1 – Identifiant national du régulateur :</strong>
+  <li><strong>Identifiant national du régulateur :</strong>
     <ul>
       <li>Le régulateur n’a potentiellement pas d’identifiant national à date ou n’a pas rattaché son identifiant national à son compte SAS. Par défaut il aura un ID technique SAS. Lorsque l’ajout ou le rattachement de l’identifiant national sera effectué, l’information sera transmise dans une requête de mise à jour.</li>
     </ul>
   </li>
-  <li><strong>ID : 2 – Autorité d’affectation :</strong>
+  <li><strong>Autorité d'affectation :</strong>
     <ul>
       <li>Lorsque l’identifiant transmis est un ID national, le champ est valorisé à <code class="language-plaintext highlighter-rouge">urn:oid:1.2.250.1.71.4.2.1</code>. Lorsque l’identifiant transmis est un ID technique SAS, il est valorisé à <code class="language-plaintext highlighter-rouge">urn:oid:1.2.250.1.213.3.6</code>.</li>
     </ul>
   </li>
-  <li><strong>ID : 3 – Type d’identifiant :</strong>
+  <li><strong>ID : 3 – Type d'identifiant :</strong>
     <ul>
       <li>Lorsque l’identifiant transmis est un ID national, le champ type.coding.code est valorisé à <code class="language-plaintext highlighter-rouge">IDNPS</code>. Lorsque l’identifiant transmis est un ID technique SAS, il est valorisé à <code class="language-plaintext highlighter-rouge">INTRN</code>.</li>
     </ul>
   </li>
-  <li><strong>ID : 4 – Habilitation (active ou non) :</strong>
+  <li><strong>Habilitation (active ou non) :</strong>
     <ul>
       <li>Si le champ est valorisé à <code class="language-plaintext highlighter-rouge">true</code> le compte doit être habilité et actif, si le champ est valorisé à <code class="language-plaintext highlighter-rouge">false</code> le compte doit être déshabilité ou désactivé.</li>
     </ul>
   </li>
-  <li><strong>ID : 5 – Source de la requête :</strong>
+  <li><strong>Source de la requête :</strong>
     <ul>
       <li>La requête venant de la plateforme numérique SAS, le champ meta.source sera toujours valorisé à : <code class="language-plaintext highlighter-rouge">urn:oid:1.2.250.1.213.3.6</code>.</li>
     </ul>
@@ -538,12 +552,13 @@ détails sur la raison de l’échec</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sas#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 10, 2024 11:32+0000">2024-12-10</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sas#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Nov 24, 2025 14:17+0000">2025-11-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/sas/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/sas/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-fhir-service-acces-aux-soins/issues/new">New Issue</a>
 
           </span>
