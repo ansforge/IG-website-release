@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>TDDUI Human Name DataType - Médicosocial - Transfert de données DUI v2.0.0</title>
+    <title>TDDUI Human Name DataType - Médicosocial - Transfert de données DUI v2.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -22,6 +22,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -46,10 +47,11 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7.8"}
-    h3,h4,h5,h6{--heading-prefix:"7.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.20"}
+    h3,h4,h5,h6{--heading-prefix:"7.20"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
     <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
@@ -66,11 +68,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Transfert de données DUI</span>
             <br/>
-            <span style="display:inline-block;">2.0.0 - trial-implementation
+            <span style="display:inline-block;">2.1.0 - trial-implementation
 
 
 
-  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+  <span title="">FR</span>
 
 
             </span>
@@ -182,7 +184,7 @@
 
           <span style="float:right;">
 
-            <a href="StructureDefinition-tddui-patient-ins.profile.ttl.html">&lt;prev</a> | 
+            <a href="StructureDefinition-tddui-task-transport-usager.profile.ttl.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -199,9 +201,8 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v2.0.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Transfert de données DUI (v2.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -281,7 +282,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-human-name<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-human-name"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">2.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-human-name|2.0.0"/></span>
+      <span class="copy-text">2.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-human-name|2.1.0"/></span>
       </td>
     </tr>
 
@@ -293,16 +294,20 @@
 
 
 
-      <td colspan="4">
+      <td colspan="3">
         
           Active
           
-            as of 2025-09-24
+            as of 2025-12-08
           
         
       </td>
 
 
+
+      <td>
+        <i>Realm:</i> <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+      </td>
 
       <td><i>Computable Name</i>: <span style="font-family: monospace;">tddui-humanname</span></td>
     </tr>
@@ -333,7 +338,7 @@
 
 <p><b>Usage:</b></p>
 <ul>
- <li>Use this DataType Constraint: <a href="StructureDefinition-tddui-patient-ins.html">TDDUI Patient INS</a> and <a href="StructureDefinition-tddui-patient.html">TDDUI Patient</a></li>
+ <li>Use this DataType Constraint: <a href="StructureDefinition-tddui-patient-ins.html">TDDUI Patient INS</a>, <a href="StructureDefinition-tddui-patient.html">TDDUI Patient</a> and <a href="StructureDefinition-tddui-practitioner.html">TDDUI Practitioner</a></li>
 </ul>
 
 
@@ -409,7 +414,7 @@
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/><span style="font-weight:bold">ele-1: </span>All FHIR elements must have a @value or children<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/><span style="font-weight:bold">ele-1: </span>All FHIR elements must have a @value or children<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
           <!--Terminology Bindings heading in the fragment -->
@@ -417,7 +422,7 @@
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
 <tr><td>HumanName.use</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-name-use.html">NameUse</a><div><code>http://hl7.org/fhir/ValueSet/name-use</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/name-use"></button></div><div>from the FHIR Standard</div></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
 </table>
 
         
@@ -454,7 +459,7 @@
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Parts that come before the name</span><br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Parts that come before the name</span><br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)</td></tr>
 
 <tr fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
           <a name="tx"> </a>
@@ -462,7 +467,7 @@
           <h4>Terminology Bindings (Differential)</h4>
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
 </table>
 
         
@@ -529,13 +534,13 @@
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ah"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Type de donnée primitif" class="hierarchy"/> <a no-external="true" href="StructureDefinition-tddui-human-name-definitions.html#HumanName.suffix" title="Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.">suffix</a><a name="HumanName.suffix"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">jeu de valeurs pour spécifier le titre de la personne<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS">JDV_J79_CiviliteExercice_RASS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead.">extensible</a>): Civilités d'exercice d'un professionnel du RASS<br/><br/><br/>This repeating element order: Suffixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">jeu de valeurs pour spécifier le titre de la personne<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS">JDV_J79_CiviliteExercice_RASS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead.">extensible</a>): Civilités d'exercice d'un professionnel du RASS<br/><br/><br/>This repeating element order: Suffixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ai"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Type de donnée" class="hierarchy"/> <a no-external="true" href="StructureDefinition-tddui-human-name-definitions.html#HumanName.period" title="Indicates the period of time when this name was valid for the named person.">period</a><a name="HumanName.period"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
@@ -549,8 +554,8 @@
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
 <tr><td>HumanName.use</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-name-use.html">NameUse</a><div><code>http://hl7.org/fhir/ValueSet/name-use</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/name-use"></button></div><div>from the FHIR Standard</div></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
-<tr><td>HumanName.suffix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Civilités d'exercice d'un professionnel du RASS"><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html">JDV_J79_CiviliteExercice_RASS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.suffix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Civilités d'exercice d'un professionnel du RASS"><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html">JDV_J79_CiviliteExercice_RASS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS"></button></div></td></tr>
 </table>
 
         
@@ -670,7 +675,7 @@ Résumé
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/><span style="font-weight:bold">ele-1: </span>All FHIR elements must have a @value or children<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/><span style="font-weight:bold">ele-1: </span>All FHIR elements must have a @value or children<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
           <!--Terminology Bindings heading in the fragment -->
@@ -678,7 +683,7 @@ Résumé
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
 <tr><td>HumanName.use</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-name-use.html">NameUse</a><div><code>http://hl7.org/fhir/ValueSet/name-use</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/name-use"></button></div><div>from the FHIR Standard</div></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
 </table>
 
         
@@ -715,14 +720,14 @@ Résumé
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Parts that come before the name</span><br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Parts that come before the name</span><br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)</td></tr>
 
 <tr fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings (Differential)</h4>
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
 </table>
 
         
@@ -789,13 +794,13 @@ Résumé
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Parts that come before the name<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS">JDV_J245_Civilite_CISIS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">required</a>)<br/>This repeating element order: Prefixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ah"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Type de donnée primitif" class="hierarchy"/> <a no-external="true" href="StructureDefinition-tddui-human-name-definitions.html#HumanName.suffix" title="Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.">suffix</a><a name="sa-HumanName.suffix"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">jeu de valeurs pour spécifier le titre de la personne<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS">JDV_J79_CiviliteExercice_RASS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead.">extensible</a>): Civilités d'exercice d'un professionnel du RASS<br/><br/><br/>This repeating element order: Suffixes appear in the correct order for presenting the name</td></tr>
+<td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">jeu de valeurs pour spécifier le titre de la personne<br/><span style="font-weight:bold">Binding: </span><a href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html" title="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS">JDV_J79_CiviliteExercice_RASS</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead.">extensible</a>): Civilités d'exercice d'un professionnel du RASS<br/><br/><br/>This repeating element order: Suffixes appear in the correct order for presenting the name</td></tr>
 
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ai"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Type de donnée" class="hierarchy"/> <a no-external="true" href="StructureDefinition-tddui-human-name-definitions.html#HumanName.period" title="Indicates the period of time when this name was valid for the named person.">period</a><a name="sa-HumanName.period"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
@@ -809,8 +814,8 @@ Résumé
 <table class="list">
 <tr><td><b>Path</b></td><td><b>Conformité</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
 <tr><td>HumanName.use</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-name-use.html">NameUse</a><div><code>http://hl7.org/fhir/ValueSet/name-use</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/name-use"></button></div><div>from the FHIR Standard</div></td></tr>
-<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
-<tr><td>HumanName.suffix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Civilités d'exercice d'un professionnel du RASS"><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.2.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html">JDV_J79_CiviliteExercice_RASS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS"></button></div></td></tr>
+<tr><td>HumanName.prefix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J245-Civilite-CISIS.html">JDV_J245_Civilite_CISIS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS"></button></div></td></tr>
+<tr><td>HumanName.suffix</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Civilités d'exercice d'un professionnel du RASS"><a style="opacity: 1.0" href="https://interop.esante.gouv.fr/terminologies/1.4.0/ValueSet-JDV-J79-CiviliteExercice-RASS.html">JDV_J79_CiviliteExercice_RASS</a><div><code>https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://mos.esante.gouv.fr/NOS/JDV_J79-CiviliteExercice-RASS/FHIR/JDV-J79-CiviliteExercice-RASS"></button></div></td></tr>
 </table>
 
         
@@ -926,7 +931,7 @@ Résumé
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="StructureDefinition-tddui-patient-ins.profile.ttl.html">&lt;prev</a>
+                <a href="StructureDefinition-tddui-task-transport-usager.profile.ttl.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -944,7 +949,7 @@ Résumé
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#2.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 24, 2025 14:58+0000">2025-09-24</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.tddui#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 8, 2025 14:37+0000">2025-12-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
