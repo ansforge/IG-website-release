@@ -6,11 +6,11 @@
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.sdo</b></p><a name="ans.fhir.fr.sdo"> </a><a name="hcans.fhir.fr.sdo"> </a><a name="ans.fhir.fr.sdo-fr-FR"> </a><h2>SuiviDecisionsOrientation</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/sdo/ImplementationGuide/ans.fhir.fr.sdo"/>
-  <version value="4.0.5"/>
+  <version value="4.0.6"/>
   <name value="SuiviDecisionsOrientation"/>
   <title value="Médicosocial - Suivi Décisions Orientation"/>
   <status value="active"/>
-  <date value="2025-10-13T14:57:20+00:00"/>
+  <date value="2025-12-15T14:22:03+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,12 +35,12 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.5.0"/>
+    <version value="7.0.1"/>
   </dependsOn>
   <dependsOn id="ans_fr_terminologies">
     <uri value="https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies"/>
     <packageId value="ans.fr.terminologies"/>
-    <version value="1.2.0"/>
+    <version value="1.4.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_uv_extensions_r4">
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
@@ -61,7 +61,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="trial-implementation"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -272,7 +272,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="trial-use"/>
+        <valueString value="trial-implementation"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -475,7 +475,7 @@
         <reference value="ValueSet/type-document-reference-esms-valueset"/>
       </reference>
       <name value="DocumentReferenceTypeESMSValueSet"/>
-      <description value="Code System pour la définition des éléments spécifiques de input dans ressource SDOTask"/>
+      <description value="Code System pour la définition des éléments spécifiques de input dans ressource ESMSTask"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -487,6 +487,17 @@
       </reference>
       <name value="ESMSBundleResultatRechercheDecisionEvaluation"/>
       <description value="Profil ESMS créé dans le contexte du suivi des orientations pour transporter les documents répondant à une recherche de decision ou d’évaluation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/esms-bundle-resultat-recherche-notification-esms"/>
+      </reference>
+      <name value="ESMSBundleResultatRechercheNotificationESMS"/>
+      <description value="Profil ESMS créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -508,7 +519,18 @@
         <reference value="StructureDefinition/esms-document-reference"/>
       </reference>
       <name value="ESMSDocumentReference"/>
-      <description value="Profil ESMS héritant du profil SDODocumentReference. Profil utilisé pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA"/>
+      <description value="Profil ESMS créé dans le contexte du suivi des orientations pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/esms-task"/>
+      </reference>
+      <name value="ESMSTask"/>
+      <description value="Profil ESMS créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -546,6 +568,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/exemple-esms-bundle-resultat-recherche-notifications-esms"/>
+      </reference>
+      <name value="exemple-esms-bundle-resultat-recherche-notifications-esms"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil ESMSDocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-notification-esms"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
@@ -557,36 +590,14 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
-      </reference>
-      <name value="exemple-sdo-bundle-resultat-recherche-notifications-esms"/>
-      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="DocumentReference"/>
-      </extension>
-      <reference>
-        <reference value="DocumentReference/exemple-sdo-document-reference"/>
-      </reference>
-      <name value="exemple-sdo-document-reference"/>
-      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-document-reference"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Task"/>
       </extension>
       <reference>
-        <reference value="Task/exemple-sdo-task"/>
+        <reference value="Task/exemple-esms-task"/>
       </reference>
-      <name value="exemple-sdo-task"/>
-      <description value="Exemple de ressource DocumentReference suivant le profil SDODocumentReference"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/sdo-task"/>
+      <name value="exemple-esms-task"/>
+      <description value="Exemple de ressource DocumentReference suivant le profil ESMSDocumentReference"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-task"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -596,40 +607,7 @@
         <reference value="CodeSystem/input-task-sdo-codesystem"/>
       </reference>
       <name value="InputTaskSDOCodeSystem"/>
-      <description value="Code System pour la définition des éléments spécifiques de input dans ressource SDOTask"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/sdo-bundle-resultat-recherche-notification-esms"/>
-      </reference>
-      <name value="SDOBundleResultatRechercheNotificationESMS"/>
-      <description value="Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/sdo-document-reference"/>
-      </reference>
-      <name value="SDODocumentReference"/>
-      <description value="Profil SDO utilisé pour véhiculer les données de l’individu, la décision et l’évaluation contenus dans le document CDA"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/sdo-task"/>
-      </reference>
-      <name value="SDOTask"/>
-      <description value="Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation."/>
+      <description value="Code System pour la définition des éléments spécifiques de input dans ressource ESMSTask"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

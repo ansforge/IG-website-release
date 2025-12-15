@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Ressources FHIR - Médicosocial - Suivi Décisions Orientation v4.0.5</title>
+    <title>Ressources FHIR - Médicosocial - Suivi Décisions Orientation v4.0.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -46,6 +47,7 @@
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
     <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
@@ -62,11 +64,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Médicosocial - Suivi Décisions Orientation</span>
             <br/>
-            <span style="display:inline-block;">4.0.5 - trial-use
+            <span style="display:inline-block;">4.0.6 - trial-implementation
 
 
 
-  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+  <span title="">FR</span>
 
 
             </span>
@@ -223,7 +225,6 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -232,7 +233,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.5: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Médicosocial - Suivi Décisions Orientation (v4.0.6: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/sdo/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Ressources FHIR</h2>
   
 
@@ -261,22 +262,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="profils">Profils</h3>
 
-<p>Liste des profils définissant les contraintes appliquées sur les ressources FHIR par les systèmes conformes à ce guide d'implémentation. Ces profils sont créés dans le cadre des volets de suivi des orientations (SDO et ESMS).</p>
-
-<h4 id="profils-utilisés-pour-le-volet-si-esms">Profils utilisés pour le volet SI-ESMS</h4>
+<p>Liste des profils définissant les contraintes appliquées sur les ressources FHIR par les systèmes conformes à ce guide d'implémentation.</p>
 
 <table class="lines"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-esms-bundle-resultat-recherche-decision-evaluation.html">ESMSBundleResultatRechercheDecisionEvaluation</a></td><td><div><p>Profil ESMS créé dans le contexte du suivi des orientations pour transporter les documents répondant à une recherche de decision ou d’évaluation.</p>
+</div></td></tr><tr><td><a href="StructureDefinition-esms-bundle-resultat-recherche-notification-esms.html">ESMSBundleResultatRechercheNotificationESMS</a></td><td><div><p>Profil ESMS créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification.</p>
 </div></td></tr><tr><td><a href="StructureDefinition-esms-consent.html">ESMSConsent</a></td><td><div><p>Profil ESMS créé dans le contexte du suivi des orientations pour transporter la définition de l’accord.</p>
-</div></td></tr><tr><td><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></td><td><div><p>Profil ESMS héritant du profil SDODocumentReference. Profil utilisé pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA</p>
-</div></td></tr><tr><td><a href="StructureDefinition-sdo-bundle-resultat-recherche-notification-esms.html">SDOBundleResultatRechercheNotificationESMS</a></td><td><div><p>Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification.</p>
-</div></td></tr><tr><td><a href="StructureDefinition-sdo-task.html">SDOTask</a></td><td><div><p>Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation.</p>
-</div></td></tr></table>
-
-<h4 id="profils-utilisés-pour-le-volet-si-sdo">Profils utilisés pour le volet SI-SDO</h4>
-
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du profil</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="StructureDefinition-sdo-bundle-resultat-recherche-notification-esms.html">SDOBundleResultatRechercheNotificationESMS</a></td><td><div><p>Profil ESMS-SDO créé dans le contexte du suivi des orientations pour transporter les résultats d’une recherche de notification.</p>
-</div></td></tr><tr><td><a href="StructureDefinition-sdo-document-reference.html">SDODocumentReference</a></td><td><div><p>Profil SDO utilisé pour véhiculer les données de l’individu, la décision et l’évaluation contenus dans le document CDA</p>
-</div></td></tr><tr><td><a href="StructureDefinition-sdo-task.html">SDOTask</a></td><td><div><p>Profil ESMS-SDO créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation.</p>
+</div></td></tr><tr><td><a href="StructureDefinition-esms-document-reference.html">ESMSDocumentReference</a></td><td><div><p>Profil ESMS créé dans le contexte du suivi des orientations pour véhiculer les données de l'individu et de la décision, ou les données de l'évaluation dans un document CDA</p>
+</div></td></tr><tr><td><a href="StructureDefinition-esms-task.html">ESMSTask</a></td><td><div><p>Profil ESMS créé dans le contexte du suivi des orientations pour véhiculer les informations sur la position des ESMS et des unités opérationnelles vis-à-vis de la prestation.</p>
 </div></td></tr></table>
 
 <h3 id="capabilitystatement">CapabilityStatement</h3>
@@ -296,21 +288,21 @@ Il correspond au SI-SDO.</p>
 
 <p>Liste des CodeSystem définis dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du CodeSystem</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="CodeSystem-input-task-sdo-codesystem.html">InputTaskSDOCodeSystem</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
+<table class="lines"><tr><td style="background-color: #eeeeee">Titre du CodeSystem</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="CodeSystem-input-task-sdo-codesystem.html">InputTaskSDOCodeSystem</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource ESMSTask</p>
 </div></td></tr></table>
 
 <h3 id="valueset">ValueSet</h3>
 
 <p>Liste des ValueSet définis dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Titre du ValueSet</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="ValueSet-type-document-reference-esms-valueset.html">DocumentReferenceTypeESMSValueSet</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource SDOTask</p>
+<table class="lines"><tr><td style="background-color: #eeeeee">Titre du ValueSet</td><td style="background-color: #eeeeee">Description</td></tr><tr><td><a href="ValueSet-type-document-reference-esms-valueset.html">DocumentReferenceTypeESMSValueSet</a></td><td><div><p>Code System pour la définition des éléments spécifiques de input dans ressource ESMSTask</p>
 </div></td></tr></table>
 
 <h3 id="instances">Instances</h3>
 
 <p>Liste des instances de ressources définies dans le volet SI-ESMS de ce guide d'implémentation :</p>
 
-<table class="lines"><tr><td style="background-color: #eeeeee">Id de l'instance</td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">exemple-bundle-resultat-recherche-decision-evaluation-elements</a></td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">exemple-bundle-resultat-recherche-decision-evaluation</a></td></tr><tr><td><a href="Bundle-exemple-sdo-bundle-resultat-recherche-notifications-esms.html">exemple-sdo-bundle-resultat-recherche-notifications-esms</a></td></tr><tr><td><a href="Consent-exemple-consent.html">exemple-consent</a></td></tr><tr><td><a href="DocumentReference-exemple-esms-document-reference.html">exemple-esms-document-reference</a></td></tr><tr><td><a href="DocumentReference-exemple-sdo-document-reference.html">exemple-sdo-document-reference</a></td></tr><tr><td><a href="Task-exemple-sdo-task.html">exemple-sdo-task</a></td></tr></table>
+<table class="lines"><tr><td style="background-color: #eeeeee">Id de l'instance</td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation-elements.html">exemple-bundle-resultat-recherche-decision-evaluation-elements</a></td></tr><tr><td><a href="Bundle-exemple-bundle-resultat-recherche-decision-evaluation.html">exemple-bundle-resultat-recherche-decision-evaluation</a></td></tr><tr><td><a href="Bundle-exemple-esms-bundle-resultat-recherche-notifications-esms.html">exemple-esms-bundle-resultat-recherche-notifications-esms</a></td></tr><tr><td><a href="Consent-exemple-consent.html">exemple-consent</a></td></tr><tr><td><a href="DocumentReference-exemple-esms-document-reference.html">exemple-esms-document-reference</a></td></tr><tr><td><a href="Task-exemple-esms-task.html">exemple-esms-task</a></td></tr></table>
 
 
 
@@ -352,7 +344,7 @@ Il correspond au SI-SDO.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 13, 2025 14:57+0000">2025-10-13</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.sdo#4.0.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 15, 2025 14:22+0000">2025-12-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
