@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Quick start IG - Documentation des guides d'implémentation de l'ANS v0.1.9</title>
+    <title>Quick start IG - Documentation des guides d'implémentation de l'ANS v0.1.8</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Documentation des guides d&#39;implémentation de l&#39;ANS</span>
             <br/>
-            <span style="display:inline-block;">0.1.9 - trial-use
+            <span style="display:inline-block;">0.1.8 - trial-use
 
 
 
@@ -201,7 +201,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.9: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.8: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Quick start IG</h2>
   
 
@@ -439,8 +439,6 @@ bash _genonce.sh <span class="c"># Génère l'IG</span>
 
 <h3 id="publication-dune-nouvelle-version-dun-guide-dimplémentation">Publication d’une nouvelle version d’un guide d’implémentation</h3>
 
-<p>Une fois le guide d’implémentation prêt, il est nécessaire de le publier pour que celui-ci soit versionné, historisé, et publier dans le FHIR Package Registry.</p>
-
 <h4 id="au-sein-de-lans">Au sein de l’ANS</h4>
 
 <p>Pour publier une nouvelle version (release) d’un guide d’implémentation, il est nécessaire de remplir à la racine du répertoire GitHub un fichier publication-request.json dont <a href="https://confluence.hl7.org/spaces/FHIR/pages/144970227/IG+Publication+Request+Documentation">la documentation peut être trouvée ici</a>.
@@ -450,38 +448,13 @@ Ensuite, il suffit de lancer le workflow de release sur GitHub.</p>
 
 <p>Pour publier des guides d’implémentation en dehors de l’ANS, il est nécessaire de :</p>
 
-<ul>
-  <li>
-    <p>1/ [optionnel] Créer un template adapté à votre organisation (<a href="https://github.com/ansforge/IG-template">exemple de celui de l’ANS</a>)</p>
-  </li>
-  <li>
-    <p>2/ [requis la première fois] Créer un répertoire GitHub qui va porter le contenu des pages web à publier (<a href="https://github.com/ansforge/IG-website-release">exemple de celui de l’ANS</a>). Celui-ci doit avoir la bonne arborescence de dossiers avec les submodules et le fichier publication-setup bien paramétré.</p>
-  </li>
-  <li>
-    <p>3/ [requis à chaque publication d’IG] Créer un fichier publication-request.json à la racine du repository du guide d’implémentation pour définir la release en suivant cette <a href="https://confluence.hl7.org/spaces/FHIR/pages/144970227/IG+Publication+Request+Documentation">documentation</a>.</p>
-  </li>
-  <li>
-    <p>4/ [requis à chaque publication d’IG] Lancer l’IG publisher avec l’option -go-publish (<a href="https://confluence.hl7.org/spaces/FHIR/pages/104580055/Process+for+Publishing+a+FHIR+Implementation+Guide+for+non-HL7+IGs">Documentation</a>)</p>
-  </li>
-</ul>
-
-<p>Lancer le publisher avec l’option -go-publish permet de publier votre IG avec les bonnes redirections pour que celui-ci soit prêt à être publié sur un serveur web. Les URLs canoniques doivent mimer le lien où sera publié le site web.</p>
-
-<ul>
-  <li>
-    <p>5/ [requis à chaque publication d’IG] Publier le contenu du dossier www dans le répertoire GitHub IG-website-release sur un serveur web</p>
-  </li>
-  <li>
-    <p>6/ [requis la première fois] Faire une Pull Request dans <a href="https://github.com/FHIR/ig-registry">ce repository</a> pour ajouter votre flux rss (dans le fichier package-feeds.json)</p>
-  </li>
-</ul>
+<p>1/ Créer un template pour votre organisation (<a href="https://github.com/ansforge/IG-template">exemple de celui de l’ANS</a>)
+2/ Créer un répertoire GitHub qui va contenir le contenu des pages web à publier (<a href="https://github.com/ansforge/IG-website-release">exemple de celui de l’ANS</a>)
+3/ Lancer l’IG publisher avec l’option -go-publish (<a href="https://confluence.hl7.org/spaces/FHIR/pages/104580055/Process+for+Publishing+a+FHIR+Implementation+Guide+for+non-HL7+IGs">Documentation</a>)
+4/ Publier le contenu sur un serveur web
+5/ Faire une Pull Request dans <a href="https://github.com/FHIR/ig-registry">ce repo</a> pour ajouter votre flux rss (dans le fichier package-feeds.json)</p>
 
 <p>Pour rappel, les bonnes pratiques imposent de respecter les modélisations faites au niveau national : <a href="https://hl7.fr/ig/fhir/core">FrCore</a> et <a href="https://interop.esante.gouv.fr/ig/fhir/">guides d’implémentation de l’ANS</a></p>
-
-<p>Liens vers les documentations internationales :</p>
-<ul>
-  <li><a href="https://build.fhir.org/ig/FHIR/ig-guidance/index.html">documentation sur les templates et bonnes pratiques</a></li>
-</ul>
 
 
 
@@ -523,7 +496,7 @@ Ensuite, il suffit de lancer le workflow de release sur GitHub.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.9 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:49+0000">2025-12-17</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 28, 2025 16:37+0000">2025-04-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
