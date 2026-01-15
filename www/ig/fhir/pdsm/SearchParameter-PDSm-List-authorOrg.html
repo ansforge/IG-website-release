@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDSm-List-authorOrg - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>PDSm-List-authorOrg - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"5.7"}
-    h3,h4,h5,h6{--heading-prefix:"5.7"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.7"}
+    h3,h4,h5,h6{--heading-prefix:"6.7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -163,6 +175,9 @@
   </li>
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+  </li>
+  <li>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -197,9 +212,8 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -253,7 +267,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-authorOrg<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-authorOrg"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">3.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-authorOrg|3.1.0"/></span>
+      <span class="copy-text">3.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/SearchParameter/PDSm-List-authorOrg|3.1.1"/></span>
       </td>
     </tr>
 
@@ -269,7 +283,7 @@
         
           Active
           
-            as of 2024-05-29
+            as of 2026-01-15
           
         
       </td>
@@ -286,13 +300,13 @@
 
 
 <p>
-<p>Recherche sur l’auteur d’une organisation</p>
+<p>Recherche sur l'auteur d'une organisation</p>
 
 </p>
 
 
 <p>
-<p>Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l’auteur quand celui-ci correspond à une organisation</p>
+<p>Paramètre de recherche créé pour le volet PDSm de manière à pouvoir utiliser comme critère de recherche l'auteur quand celui-ci correspond à une organisation</p>
 
 </p>
 
@@ -308,8 +322,8 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>PDSmAuthorOrg</h2><p>Parameter <code>authorOrg</code>:<code>reference</code></p><div><p>Recherche sur l'auteur d'une organisation</p>
-</div><table class="grid"><tr><td>Resource</td><td><a href="http://hl7.org/fhir/R4/list.html">List</a></td></tr><tr><td>Expression</td><td><code>List.extension.where(url='https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-authorOrg').value</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="PDSm-List-authorOrg"> </a><a name="hcPDSm-List-authorOrg"> </a><h2>PDSmAuthorOrg</h2><p>Paramètre <code>authorOrg</code>:<code>reference</code></p><div><p>Recherche sur l'auteur d'une organisation</p>
+</div><table class="grid" data-fhir="generated"><tr><td>Ressource</td><td><a href="http://hl7.org/fhir/R4/list.html">List</a></td></tr><tr><td>Expression</td><td><code>List.extension.where(url='https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-authorOrg').value</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd : Cest au serveur de décider si le paramètre peut se répéter pour spécifier plusieurs valeurs qui doivent toutes être vraies</li><li>multipleOr : Cest au serveur de décider si le paramètre peut avoir plusieurs valeurs (séparées par des virgules) dont au moins une doit être vraie</li></ul></td></tr></table></div>
 
   <!-- insert notes if present -->
   
@@ -356,12 +370,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>

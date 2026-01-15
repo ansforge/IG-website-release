@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mise à jour de documents - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>Mise à jour de documents - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"2.3"}
-    h3,h4,h5,h6{--heading-prefix:"2.3"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.2"}
+    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -164,6 +176,9 @@
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
+  <li>
+    <a href="changes.html">Historique</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -176,7 +191,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_techniques.html'><b>Specifications Techniques</b></a></li><li><b>Mise à jour de documents</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='construction_des_flux.html'><b>Spécifications techniques - vue d'ensemble</b></a></li><li><b>Mise à jour de documents</b></li>
 
           <span style="float:right;">
 
@@ -197,7 +212,6 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -206,7 +220,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mise à jour de documents</h2>
   
 
@@ -233,9 +247,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="flux-03--mise-à-jour-des-métadonnées-de-la-fiche">Flux 03 : mise à jour des métadonnées de la fiche</h3>
 
-<p>Le flux de mise à jour des métadonnées de la fiche est basé sur l’interaction « <a href="https://www.hl7.org/fhir/http.html#patch">patch</a> » de l’API REST FHIR qui est assurée par une requête HTTP PATCH. Elle permet la mise à jour partielle d’une ressource DocumentReference.</p>
+<p>Le flux de mise à jour des métadonnées de la fiche est basé sur l’interaction « <a href="https://www.hl7.org/fhir/R4/http.html#patch">patch</a> » de l’API REST FHIR qui est assurée par une requête HTTP PATCH. Elle permet la mise à jour partielle d’une ressource DocumentReference.</p>
 
-<p>Au niveau applicatif, les mises à jour sont restreintes aux éléments DocumentReference.status, DocumentReference.securityLabel et l’extension PDSm_isArchived.</p>
+<p>Au niveau applicatif, les mises à jour sont restreintes aux éléments <code class="language-plaintext highlighter-rouge">DocumentReference.status</code>, <code class="language-plaintext highlighter-rouge">DocumentReference.securityLabel</code> et l’extension <a href="StructureDefinition-pdsm-ext-is-archived.html">PDSm_IsArchived</a>.</p>
 
 <p>La requête Patch contient l’identifiant métier de la ressource à modifier ainsi que la liste des mises à jour à effectuer.</p>
 
@@ -245,14 +259,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><a href="https://datatracker.ietf.org/doc/html/rfc6902">JSON patch</a> (status : Proposed standard),</li>
   <li><a href="https://datatracker.ietf.org/doc/html/rfc5261">XML patch</a> (status : Proposed standard),</li>
-  <li><a href="https://www.hl7.org/fhir/fhirpatch.html">FHIRPath Patch utilisant la ressource Parameters</a> (niveau de maturité : 2).</li>
+  <li><a href="https://www.hl7.org/fhir/R4/fhirpatch.html">FHIRPath Patch utilisant la ressource Parameters</a> (niveau de maturité : 2).</li>
 </ul>
 
 <p>A noter que la méthode JSON patch est mature et plus adaptée à un usage en mobilité.</p>
 
-<p>Lorsque toutes les modifications sont traitées, le serveur traite la fiche du document de la même façon qu’au cours d’une opération update créant ainsi une nouvelle version (modification des éléments meta.versionId et meta.lastUpdated).</p>
+<p>Lorsque toutes les modifications sont traitées, le serveur traite la fiche du document de la même façon qu’au cours d’une opération update créant ainsi une nouvelle version (modification des éléments <code class="language-plaintext highlighter-rouge">meta.versionId</code> et <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code>).</p>
 
 <p>Ci-dessous un exemple de requête avec le body en JSON :</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PATCH [base]/DocumentReference?identifier=http://my-lab-system|123 HTTP/1.1
 Content-Type: application/json-patch+json
 </code></pre></div></div>
@@ -281,15 +296,16 @@ Content-Type: application/json-patch+json
 
 <p>Il doit être indiqué dans la réponse, le statut (succès ou échec) de la requête. Le contenu qui a été modifié est aussi retourné.</p>
 
-<p>Il s’agit de la réponse à la demande de mise à jour des métadonnées de la fiche.</p>
+<p>Il s'agit de la réponse à la demande de mise à jour des métadonnées de la fiche.</p>
 
-<p>Le gestionnaire de partage de documents de santé retourne un “HTTP Status code” approprié au résultat de la mise à jour de chaque élément contenu dans la requête. Par exemple :</p>
+<p>Le gestionnaire de partage de documents de santé retourne un "HTTP Status code" approprié au résultat de la mise à jour de chaque élément contenu dans la requête. Par exemple :</p>
+
 <ul>
   <li>Si la mise à jour de la ressource DocumentReference est correctement effectuée, un code HTTP 200 « OK » doit être retourné.</li>
   <li>Si la mise à jour de la ressource DocumentReference porte sur des éléments autres que status, securityLabel et PDSm_isArchived, une erreur 405 « Method Not Allowed » doit être retournée.</li>
 </ul>
 
-<p>Pour des informations sur les autres codes HTTP retournés en cas d’échec, consultez la documentation relative à <a href="https://www.hl7.org/fhir/http.html#summary">l’interaction « patch »</a> de l’API REST FHIR.</p>
+<p>Pour des informations sur les autres codes HTTP retournés en cas d’échec, consultez la documentation relative à <a href="https://www.hl7.org/fhir/R4/http.html#summary">l’interaction « patch »</a> de l’API REST FHIR.</p>
 
 <p>Le corps de la réponse doit contenir une ressource DocumentReference constituée des éléments modifiés.</p>
 
@@ -307,6 +323,7 @@ ETag : W/"2"
  …
 }
 </code></pre></div></div>
+
 
 
 
@@ -348,12 +365,13 @@ ETag : W/"2"
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>

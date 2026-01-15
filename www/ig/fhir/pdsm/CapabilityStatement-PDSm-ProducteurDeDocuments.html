@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"5.3"}
-    h3,h4,h5,h6{--heading-prefix:"5.3"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.3"}
+    h3,h4,h5,h6{--heading-prefix:"6.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -163,6 +175,9 @@
   </li>
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+  </li>
+  <li>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -197,9 +212,8 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -253,7 +267,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">3.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments|3.1.0"/></span>
+      <span class="copy-text">3.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://interop.esante.gouv.fr/ig/fhir/pdsm/CapabilityStatement/PDSm-ProducteurDeDocuments|3.1.1"/></span>
       </td>
     </tr>
 
@@ -307,10 +321,10 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2 id="title">CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments</h2><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>xml</code>, <code>json</code></li><li>Supported Patch Formats: </li><li>Published on: 2021-07-30 14:32:30+0200 </li><li>Published by: ANS </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h3 id="shallIGs">SHALL Support the Following Implementation Guides</h3><ul><li><a href="index.html">https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</a></li></ul><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>client</code></h3></div><div class="panel-body"><div><p>Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="PDSm-ProducteurDeDocuments"> </a><a name="hcPDSm-ProducteurDeDocuments"> </a><h2 id="title">CI-SIS Partage-De-Documents-De-Sante - ProducteurDeDocuments</h2><ul><li>Version du guide dimplémentation : {0} </li><li>Version de FHIR : 4.0.1 </li><li>Formats supportés : <code>xml</code>, <code>json</code></li><li>Publié sur : 2021-07-30 14:32:30+0200 </li><li>Publié par : ANS </li></ul><blockquote class="impl-note"><p><strong>Note aux implémenteurs : capacités FHIR</strong></p><p>Toute capacité FHIR peut être 'autorisée' par le système sauf si elle est explicitement marquée comme 'SHALL NOT'. Quelques éléments sont marqués comme MAY dans le guide dimplémentation pour souligner leur pertinence potentielle pour le cas dusage.</p></blockquote><h3 id="shallIGs">DOIT prendre en charge les guides d’implémentation suivants.</h3><ul><li><a href="index.html">https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</a></li></ul><h2 id="rest">Capacités RESTful FHIR</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>client</code></h3></div><div class="panel-body"><div><p>Ajout d’un lot de documents et Demande de mise à jour des métadonnées de la fiche</p>
 </div><div class="lead"><em>Security</em></div><blockquote><div><p>L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)</p>
-</div></blockquote><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction described as follows:<div><p>https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-provide-document-bundle</p>
-</div></li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#DocumentReference1-1">DocumentReference</a></td><td><a href="StructureDefinition-pdsm-comprehensive-document-reference.html">https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-document-reference</a></td><td></td><td class="text-center"></td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td></td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="DocumentReference1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>DocumentReference</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-pdsm-comprehensive-document-reference.html">https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-document-reference</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>patch</code>.</li></ul></div></div><p/></div></div></div></div>
+</div></blockquote><div class="lead"><em>Résumé des interactions au niveau du système</em></div><ul><li>Supporte le/la <code>transaction</code>Les interactions sont décrites comme suit :<div><p>https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-provide-document-bundle</p>
+</div></li></ul></div></div><h3 id="resourcesCap1">Capacités par ressource/profil</h3><h4 id="resourcesSummary1">Résumé</h4><p>Le tableau récapitulatif liste les ressources faisant partie de cette configuration, et pour chaque ressource, il liste :</p><ul><li>Les profils pertinents (le cas échéant)</li><li>Les interactions supportées par chaque ressource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>les types sont seulement présents si au moins une des ressources les prend en charge.</li><li><span>Les paramètres de recherche (SearchParameters) requis, recommandés, optionnels (le cas échéant). </span></li><li>Les ressources liées activées pour <code>_include</code></li><li>Les autres ressources activées pour <code>_revinclude</code></li><li>Les opérations sur la ressource (le cas échéant)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Type de Ressource</b></th><th><b>Profil</b></th><th class="text-center"><b title="GET dune ressource (interaction read)">R</b></th><th class="text-center"><b title="GET de lensemble des ressources du type (interaction search)">S</b></th><th class="text-center"><b title="PUT dune nouvelle version de ressource (interaction update)">U</b></th><th class="text-center"><b title="PATCH dune nouvelle version de ressource (interaction patch)">P</b></th><th class="text-center"><b title="POST dune nouvelle ressource (interaction create)">C</b></th><th><b title="Paramètres de recherche requis et recommandés">Recherches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Opérations</b></th></tr></thead><tbody><tr><td><a href="#DocumentReference1-1">DocumentReference</a></td><td><a href="StructureDefinition-pdsm-comprehensive-document-reference.html">https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-document-reference</a></td><td class="text-center"/><td class="text-center"/><td class="text-center"/><td class="text-center">y</td><td class="text-center"/><td></td><td/><td/><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div role="tab" id="heading1-1" class="panel-heading"><h4 id="DocumentReference1-1" class="panel-title"><a data-toggle="collapse" role="button" aria-controls="collapse1-1" aria-expanded="true" href="#collapse1-1"><span style="float: right;">Resource Conformance: supported</span>DocumentReference</a></h4></div><div role="tabpanel" aria-labelledby="heading1-1" id="collapse1-1" class="panel-collapse in"><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Profil système de base</span><br/><a href="StructureDefinition-pdsm-comprehensive-document-reference.html">PDSm Comprehensive DocumentReference</a></div><div class="col-lg-3"><span class="lead">Conformité au Profil</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Politique de référence</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Résumé des interactions</span><br/><ul><li>Supporte <code>patch</code>.</li></ul></div></div><p/></div></div></div></div></div>
 
   <!-- insert notes if present -->
   
@@ -357,12 +371,13 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>

@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.pdsm"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>PDSm</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.fhir.fr.pdsm</b></p><a name="ans.fhir.fr.pdsm"> </a><a name="hcans.fhir.fr.pdsm"> </a><h2>PDSm</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm"/>
-  <version value="3.1.0"/>
+  <version value="3.1.1"/>
   <name value="PDSm"/>
   <title value="Partage de Documents de Santé en mobilité (PDSm)"/>
   <status value="active"/>
-  <date value="2024-05-29T10:02:34+00:00"/>
+  <date value="2026-01-15T13:28:31+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -19,6 +19,13 @@
       <value value="https://esante.gouv.fr"/>
     </telecom>
   </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="FR"/>
+      <display value="FRANCE"/>
+    </coding>
+  </jurisdiction>
   <packageId value="ans.fhir.fr.pdsm"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -28,7 +35,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.5.0"/>
+    <version value="7.0.1"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -36,7 +43,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="ihe_iti_mhd">
     <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
@@ -46,17 +53,17 @@
   <dependsOn id="ans_fhir_fr_annuaire">
     <uri value="https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire"/>
     <packageId value="ans.fhir.fr.annuaire"/>
-    <version value="1.0.1"/>
+    <version value="1.1.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"/>
     <packageId value="hl7.fhir.fr.core"/>
-    <version value="2.0.1"/>
+    <version value="2.1.0"/>
   </dependsOn>
-  <dependsOn id="ans_fr_nos">
-    <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
-    <packageId value="ans.fr.nos"/>
-    <version value="1.2.0"/>
+  <dependsOn id="ans_fr_terminologies">
+    <uri value="https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies"/>
+    <packageId value="ans.fr.terminologies"/>
+    <version value="1.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -268,7 +275,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -523,13 +530,87 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ExampleFolder"/>
+      </reference>
+      <name value="Exemple de Classeur PDSm"/>
+      <description value="Exemple d’une instance conforme au profil PDSm_FolderComprehensive regroupant des fiches de documents."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-folder-comprehensive"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/exemple-pdsm-documentreference"/>
+      </reference>
+      <name value="Exemple de DocumentReference pour PDSm"/>
+      <description value="Exemple illustratif d’un DocumentReference conforme au profil PDSm_ComprehensiveDocumentReference."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-document-reference"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ExampleSubmissionSet"/>
+      </reference>
+      <name value="Exemple de lot de soumission PDSm"/>
+      <description value="Exemple conforme au profil PDSm_SubmissionSetComprehensive."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-submissionset-comprehensive"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/PDSmSimplifiedExample"/>
+      </reference>
+      <name value="Exemple de publication simplifiée PDSm"/>
+      <description value="Note d'évolution suite à une consultation de suivi."/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-simplified-publish"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Binary"/>
+      </extension>
+      <reference>
+        <reference value="Binary/6789"/>
+      </reference>
+      <name value="Exemple de ressource Binary - Fichier PDF"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/fr-patient-123"/>
+      </reference>
+      <name value="fr-patient-123"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/org-example"/>
+      </reference>
+      <name value="org-example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/pdsm-comprehensive-document-reference"/>
       </reference>
       <name value="PDSm Comprehensive DocumentReference"/>
-      <description value="Profil spécifique dérivé du profil IHE MHD v4.0.1 &quot;ComprehensiveDocumentReference&quot; créé pour le volet &quot;Partage de documents de santé en mobilité&quot;."/>
+      <description value="Profil contenant les métadonnées du document ainsi que le lien vers la ressource Binary contenant le document dérivé de la ressource DocumentReference et du profil IHE MHD v4.0.1 &quot;ComprehensiveDocumentReference&quot;"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -551,7 +632,7 @@
         <reference value="StructureDefinition/pdsm-find-documentreferences-comprehensive-response"/>
       </reference>
       <name value="PDSm Find DocumentReferences Comprehensive Response"/>
-      <description value="Profil de réponse de la transaction IHE &quot;Find Document References [ITI-67]&quot; basée sur le bundle MHD FindDocumentReferencesComprehensiveResponseMessage et profilé pour le volet PDSm"/>
+      <description value="Profil de réponse de la transaction IHE &quot;Find Document References [ITI-67]&quot; basée sur le bundle MHD FindDocumentReferencesComprehensiveResponseMessage"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -562,7 +643,7 @@
         <reference value="StructureDefinition/pdsm-find-lists-response"/>
       </reference>
       <name value="PDSm Find Lists Response"/>
-      <description value="Profil de réponse de la transaction IHE &quot;Find Document Lists [ITI-66]&quot; basée sur le bundle MHD FindDocumentListsResponseMessage et profilé pour le volet PDSm"/>
+      <description value="Profil de réponse de la transaction IHE &quot;Find Document Lists [ITI-66]&quot; basée sur le bundle MHD FindDocumentListsResponseMessage"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -573,7 +654,7 @@
         <reference value="StructureDefinition/pdsm-folder-comprehensive"/>
       </reference>
       <name value="PDSm Folder Comprehensive"/>
-      <description value="Profil spécifique dérivé du profil IHE MHD « Comprehensive Folder » créé pour le volet ANS &quot;Partage de documents de santé en mobilité&quot; ; ce profil concerne le classeur."/>
+      <description value="Profil du Classeur dérivé de la ressource List et du profil IHE MHD « Comprehensive Folder »."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -595,7 +676,7 @@
         <reference value="StructureDefinition/pdsm-submissionset-comprehensive"/>
       </reference>
       <name value="PDSm SubmissionSet Comprehensive"/>
-      <description value="Profil spécifique dérivé du profil IHE MHD « ComprehensiveSubmissionSet » créé pour le volet ANS &quot;Partage de documents de santé en mobilité&quot; ; ce profil concerne le lot de soumission."/>
+      <description value="Profil du lot de soumission dérivé de la ressource List et du profil IHE MHD « ComprehensiveSubmissionSet »."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -714,74 +795,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="specifications_techniques.html"/>
-        </extension>
-        <nameUrl value="specifications_techniques.html"/>
-        <title value="Specifications Techniques"/>
-        <generation value="markdown"/>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="construction_des_flux.html"/>
-          </extension>
-          <nameUrl value="construction_des_flux.html"/>
-          <title value="Construction Des Flux"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_ajout.html"/>
-          </extension>
-          <nameUrl value="st_ajout.html"/>
-          <title value="Ajout d'un lot de documents"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_maj.html"/>
-          </extension>
-          <nameUrl value="st_maj.html"/>
-          <title value="Mise à jour de documents"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_recherche_lot.html"/>
-          </extension>
-          <nameUrl value="st_recherche_lot.html"/>
-          <title value="Recherche de lot de soumission"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_recherche_fiche.html"/>
-          </extension>
-          <nameUrl value="st_recherche_fiche.html"/>
-          <title value="Recherche de fiche"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_consultation.html"/>
-          </extension>
-          <nameUrl value="st_consultation.html"/>
-          <title value="Consultation de documents"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_ajout_simplifie.html"/>
-          </extension>
-          <nameUrl value="st_ajout_simplifie.html"/>
-          <title value="Ajout simplifié d'un document"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="specifications_fonctionnelles.html"/>
         </extension>
         <nameUrl value="specifications_fonctionnelles.html"/>
-        <title value="Specifications Fonctionnelles"/>
+        <title value="Spécifications fonctionnelles - vue d'ensemble"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -818,6 +835,62 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="construction_des_flux.html"/>
+        </extension>
+        <nameUrl value="construction_des_flux.html"/>
+        <title value="Spécifications techniques - vue d'ensemble"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_ajout.html"/>
+          </extension>
+          <nameUrl value="st_ajout.html"/>
+          <title value="Ajout d'un lot de documents (ITI-65)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_maj.html"/>
+          </extension>
+          <nameUrl value="st_maj.html"/>
+          <title value="Mise à jour de documents"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_recherche_lot.html"/>
+          </extension>
+          <nameUrl value="st_recherche_lot.html"/>
+          <title value="Recherche de lot de soumission (ITI-66)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_recherche_fiche.html"/>
+          </extension>
+          <nameUrl value="st_recherche_fiche.html"/>
+          <title value="Recherche de fiche (ITI-67)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_consultation.html"/>
+          </extension>
+          <nameUrl value="st_consultation.html"/>
+          <title value="Consultation de documents (ITI-68)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="st_ajout_simplifie.html"/>
+          </extension>
+          <nameUrl value="st_ajout_simplifie.html"/>
+          <title value="Ajout simplifié d'un document (ITI-105)"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="autres_ressources.html"/>
         </extension>
         <nameUrl value="autres_ressources.html"/>
@@ -847,6 +920,14 @@
           <title value="Téléchargements et usages"/>
           <generation value="markdown"/>
         </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Historique des changements"/>
+        <generation value="markdown"/>
       </page>
     </page>
     <parameter>

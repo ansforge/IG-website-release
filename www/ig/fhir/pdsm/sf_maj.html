@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mise à jour de documents - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>Mise à jour de documents - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"3.2"}
-    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -164,6 +176,9 @@
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
+  <li>
+    <a href="changes.html">Historique</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -176,7 +191,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_fonctionnelles.html'><b>Specifications Fonctionnelles</b></a></li><li><b>Mise à jour de documents</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_fonctionnelles.html'><b>Spécifications fonctionnelles - vue d'ensemble</b></a></li><li><b>Mise à jour de documents</b></li>
 
           <span style="float:right;">
 
@@ -197,7 +212,6 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -206,7 +220,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mise à jour de documents</h2>
   
 
@@ -226,50 +240,53 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#définition" id="markdown-toc-définition">Définition</a></li>
   <li><a href="#description-et-identification-des-flux" id="markdown-toc-description-et-identification-des-flux">Description et identification des flux</a></li>
-  <li><a href="#flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations" id="markdown-toc-flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations">Flux 3 - MiseAJourMetadonneeFiche MODELISATION DES FLUX D’INFORMATIONS</a></li>
-  <li><a href="#flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations" id="markdown-toc-flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations">Flux 4 - ResultatMAJMetadonneeFiche MODELISATION DES FLUX D’INFORMATIONS</a></li>
+  <li><a href="#flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations" id="markdown-toc-flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations">Flux 3 - MiseAJourMetadonneeFiche MODELISATION DES FLUX D'INFORMATIONS</a></li>
+  <li><a href="#flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations" id="markdown-toc-flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations">Flux 4 - ResultatMAJMetadonneeFiche MODELISATION DES FLUX D'INFORMATIONS</a></li>
 </ul>
 
 </div>
 <h3 id="définition">Définition</h3>
 
-<object data="fonctionnel/fig_3.png" type="image/png"></object>
-<p><br />
-Figure 3 : Processus collaboratif “Mise à jour des métadonnées d’une fiche”</p>
+<div class="figure" style="text-align: center;">
+    <img src="fonctionnel/fig_3.png" alt="Figure 3" title="Figure 3 : Processus collaboratif Mise à jour des métadonnées d'une fiche" style="width:60%;" />
+    <figcaption><b>Figure 3 : Processus collaboratif "Mise à jour des métadonnées d'une fiche"</b></figcaption>
+</div>
+<p><br /></p>
 
 <table>
   <tbody>
     <tr>
-      <td>Service attendu</td>
+      <td><strong>Service attendu</strong></td>
       <td>Le producteur de documents envoie au gestionnaire de partage de documents les modifications des métadonnées du document : niveau de confidentialité, options de visibilité et statut. Il peut envoyer une de ces métadonnées, plusieurs ou toutes.</td>
     </tr>
     <tr>
-      <td>Pré-conditions</td>
-      <td>Le producteur de documents doit au préalable : 1. être en possession des métadonnées à modifier, 2. être habilité</td>
+      <td><strong>Pré-conditions</strong></td>
+      <td>Le producteur de documents doit au préalable : <br /> 1. être en possession des métadonnées à modifier, <br /> 2. être habilité</td>
     </tr>
     <tr>
-      <td>Post-conditions</td>
+      <td><strong>Post-conditions</strong></td>
       <td>N/A</td>
     </tr>
     <tr>
-      <td>Contraintes fonctionnelles</td>
+      <td><strong>Contraintes fonctionnelles</strong></td>
       <td>N/A</td>
     </tr>
     <tr>
-      <td>Scénario nominal</td>
+      <td><strong>Scénario nominal</strong></td>
       <td>N/A</td>
     </tr>
   </tbody>
 </table>
 
-<p>Table 2 Caractéristiques du processus collaboratif</p>
+<p><strong>Table 2 Caractéristiques du processus collaboratif</strong></p>
 
 <h3 id="description-et-identification-des-flux">Description et identification des flux</h3>
 
-<object data="fonctionnel/fig_7.png" type="image/png"></object>
+<div class="figure" style="text-align: center;">
+    <img src="fonctionnel/fig_7.png" alt="Figure 7" title="Figure 7 : Processus collaboratif Mise à jour des métadonnées d'une fiche" style="width:60%;" />
+    <figcaption><b>Figure 7 : Processus collaboratif "Mise à jour des métadonnées d'une fiche"</b></figcaption>
+</div>
 <p><br /></p>
-
-<p>Figure 7 : Processus collaboratif “Mise à jour des métadonnées d’une fiche”</p>
 
 <h4 id="description-des-flux">Description des flux</h4>
 
@@ -291,34 +308,36 @@ Figure 3 : Processus collaboratif “Mise à jour des métadonnées d’une fich
     </tr>
     <tr>
       <td>Réceptionner la demande</td>
-      <td>Le gestionnaire reçoit la demande de mise à jour des métadonnées. <br />Exécuter la demande si possible	Le gestionnaire met à jour, si possible, la ou les métadonnées de la fiche avec les éléments envoyés par le producteur.</td>
+      <td>Le gestionnaire reçoit la demande de mise à jour des métadonnées. <br /> Exécuter la demande si possible	<br /> Le gestionnaire met à jour, si possible, la ou les métadonnées de la fiche avec les éléments envoyés par le producteur.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Table 8 Tableau des actions</p>
+<p><strong>Table 8 Tableau des actions</strong></p>
 
 <h4 id="identification-des-flux">Identification des flux</h4>
 
 <table>
+  <thead>
+    <tr>
+      <th><strong>Flux</strong></th>
+      <th><strong>Processus</strong></th>
+      <th><strong>Emetteur</strong></th>
+      <th><strong>Récepteur</strong></th>
+      <th><strong>Périmètre</strong></th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>Flux</strong></td>
-      <td><strong>Processus</strong></td>
-      <td><strong>Emetteur</strong></td>
-      <td><strong>Récepteur</strong></td>
-      <td><strong>Périmètre</strong></td>
-    </tr>
-    <tr>
       <td>Flux 3 - MiseAJourMetadonneeFiche</td>
-      <td>Mise à jour des métadonnées d’une fiche</td>
+      <td>Mise à jour des métadonnées d'une fiche</td>
       <td>Producteur de documents</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Oui</td>
     </tr>
     <tr>
       <td>Flux 4 – ResultatMAJMetadonneeFiche</td>
-      <td>Mise à jour des métadonnées d’une fiche</td>
+      <td>Mise à jour des métadonnées d'une fiche</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Producteur de documents</td>
       <td>Oui</td>
@@ -326,13 +345,15 @@ Figure 3 : Processus collaboratif “Mise à jour des métadonnées d’une fich
   </tbody>
 </table>
 
-<h3 id="flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations">Flux 3 - MiseAJourMetadonneeFiche MODELISATION DES FLUX D’INFORMATIONS</h3>
+<h3 id="flux-3---miseajourmetadonneefiche-modelisation-des-flux-dinformations">Flux 3 - MiseAJourMetadonneeFiche MODELISATION DES FLUX D'INFORMATIONS</h3>
 
-<object data="fonctionnel/fig_12.png" type="image/png"></object>
-<p><br />
-Figure 12 Flux 3 - MiseAJourMetadonneeFiche</p>
+<div class="figure" style="text-align: center;">
+    <img src="fonctionnel/fig_12.png" alt="Figure 12" title="Figure 12 Flux 3 - MiseAJourMetadonneeFiche" style="width:60%;" />
+    <figcaption><b>Figure 12 : Flux 3 - MiseAJourMetadonneeFiche</b></figcaption>
+</div>
+<p><br /></p>
 
-<h4 id="classe-fiche">Classe “Fiche”</h4>
+<h4 id="classe-fiche">Classe "Fiche"</h4>
 <p>Une fiche représente le document stocké dans l’infrastructure de partage de documents. Elle contient les informations décrivant les caractéristiques principales d’un document servant au classement et à la recherche des documents.</p>
 
 <table>
@@ -344,29 +365,31 @@ Figure 12 Flux 3 - MiseAJourMetadonneeFiche</p>
   </thead>
   <tbody>
     <tr>
-      <td>idUnique : [0..1] Identifiant	Identifiant unique global affecté au document par son créateur. Il est utilisable comme référence externe dans d’autres documents.</td>
-      <td> </td>
+      <td>idUnique : [0..1] Identifiant</td>
+      <td>Identifiant unique global affecté au document par son créateur. Il est utilisable comme référence externe dans d’autres documents.</td>
     </tr>
     <tr>
       <td>statut : [1..1] Code</td>
-      <td>Représente le statut de la fiche d’un document.<br />Nomenclature(s) associée(s) :<br />** TRE_R269-AvailabilityStatusProvenanceOasis<br />** TRE_R270-AvailabilityStatus</td>
+      <td>Représente le statut de la fiche d'un document.<br />Nomenclature(s) associée(s) :<br />** TRE_R269-AvailabilityStatusProvenanceOasis<br />** TRE_R270-AvailabilityStatus</td>
     </tr>
     <tr>
       <td>niveauConfidentialite : [0..*] Code</td>
-      <td>Contient les informations définissant le niveau de confidentialité d’un document.<br />Nomenclatures utilisées :<br />** TRE_A08-Confidentiality-HL7<br />** TRE_A07-StatusVisibiliteDocument<br />** JDV_J08-XdsConfidentialityCode-CISIS</td>
+      <td>Contient les informations définissant le niveau de confidentialité d'un document.<br />Nomenclatures utilisées :<br />** TRE_A08-Confidentiality-HL7<br />** TRE_A07-StatusVisibiliteDocument<br />** JDV_J08-XdsConfidentialityCode-CISIS</td>
     </tr>
   </tbody>
 </table>
 
-<p>Table 23 Attributs de la classe “Fiche”</p>
+<p><strong>Table 23 Attributs de la classe "Fiche"</strong></p>
 
-<h3 id="flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations">Flux 4 - ResultatMAJMetadonneeFiche MODELISATION DES FLUX D’INFORMATIONS</h3>
+<h3 id="flux-4---resultatmajmetadonneefiche-modelisation-des-flux-dinformations">Flux 4 - ResultatMAJMetadonneeFiche MODELISATION DES FLUX D'INFORMATIONS</h3>
 
-<object data="fonctionnel/fig_13.png" type="image/png"></object>
-<p><br />
-Figure 13 Flux 4 - ResultatMAJMetadonneeFiche</p>
+<div class="figure" style="text-align: center;">
+    <img src="fonctionnel/fig_13.png" alt="Figure 13" title="Figure 13 Flux 4 - ResultatMAJMetadonneeFiche" style="width:60%;" />
+    <figcaption><b>Figure 13 : Flux 4 - ResultatMAJMetadonneeFiche</b></figcaption>
+</div>
+<p><br /></p>
 
-<h4 id="classe-fiche-1">Classe “Fiche”</h4>
+<h4 id="classe-fiche-1">Classe "Fiche"</h4>
 <p>Une fiche représente le document stocké dans l’infrastructure de partage de documents. Elle contient les informations décrivant les caractéristiques principales d’un document servant au classement et à la recherche des documents.</p>
 
 <table>
@@ -384,8 +407,7 @@ Figure 13 Flux 4 - ResultatMAJMetadonneeFiche</p>
   </tbody>
 </table>
 
-<p>Table 24 Attributs de la classe “Fiche”</p>
-
+<p><strong>Table 24 Attributs de la classe "Fiche"</strong></p>
 
 
 
@@ -427,12 +449,13 @@ Figure 13 Flux 4 - ResultatMAJMetadonneeFiche</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>

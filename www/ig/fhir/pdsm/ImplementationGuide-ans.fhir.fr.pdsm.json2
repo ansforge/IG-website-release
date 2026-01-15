@@ -2,21 +2,28 @@
   "resourceType" : "ImplementationGuide",
   "id" : "ans.fhir.fr.pdsm",
   "text" : {
-    "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PDSm</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</pre></div>"
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.fhir.fr.pdsm</b></p><a name=\"ans.fhir.fr.pdsm\"> </a><a name=\"hcans.fhir.fr.pdsm\"> </a><h2>PDSm</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/ImplementationGuide/ans.fhir.fr.pdsm",
-  "version" : "3.1.0",
+  "version" : "3.1.1",
   "name" : "PDSm",
   "title" : "Partage de Documents de Santé en mobilité (PDSm)",
   "status" : "active",
-  "date" : "2024-05-29T10:02:34+00:00",
+  "date" : "2026-01-15T13:28:31+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
     "telecom" : [{
       "system" : "url",
       "value" : "https://esante.gouv.fr"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "FRANCE"
     }]
   }],
   "packageId" : "ans.fhir.fr.pdsm",
@@ -30,7 +37,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.5.0"
+    "version" : "7.0.1"
   },
   {
     "id" : "hl7ext",
@@ -40,7 +47,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.1.0"
+    "version" : "5.2.0"
   },
   {
     "id" : "ihe_iti_mhd",
@@ -52,19 +59,19 @@
     "id" : "ans_fhir_fr_annuaire",
     "uri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
     "packageId" : "ans.fhir.fr.annuaire",
-    "version" : "1.0.1"
+    "version" : "1.1.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
     "uri" : "https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core",
     "packageId" : "hl7.fhir.fr.core",
-    "version" : "2.0.1"
+    "version" : "2.1.0"
   },
   {
-    "id" : "ans_fr_nos",
-    "uri" : "https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos",
-    "packageId" : "ans.fr.nos",
-    "version" : "1.2.0"
+    "id" : "ans_fr_terminologies",
+    "uri" : "https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies",
+    "packageId" : "ans.fr.terminologies",
+    "version" : "1.4.0"
   }],
   "definition" : {
     "extension" : [{
@@ -355,7 +362,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
     },
     {
       "extension" : [{
@@ -693,13 +700,94 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      }],
+      "reference" : {
+        "reference" : "List/ExampleFolder"
+      },
+      "name" : "Exemple de Classeur PDSm",
+      "description" : "Exemple d’une instance conforme au profil PDSm_FolderComprehensive regroupant des fiches de documents.",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-folder-comprehensive"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/exemple-pdsm-documentreference"
+      },
+      "name" : "Exemple de DocumentReference pour PDSm",
+      "description" : "Exemple illustratif d’un DocumentReference conforme au profil PDSm_ComprehensiveDocumentReference.",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-comprehensive-document-reference"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      }],
+      "reference" : {
+        "reference" : "List/ExampleSubmissionSet"
+      },
+      "name" : "Exemple de lot de soumission PDSm",
+      "description" : "Exemple conforme au profil PDSm_SubmissionSetComprehensive.",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-submissionset-comprehensive"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/PDSmSimplifiedExample"
+      },
+      "name" : "Exemple de publication simplifiée PDSm",
+      "description" : "Note d'évolution suite à une consultation de suivi.",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/pdsm/StructureDefinition/pdsm-simplified-publish"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Binary"
+      }],
+      "reference" : {
+        "reference" : "Binary/6789"
+      },
+      "name" : "Exemple de ressource Binary - Fichier PDF",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/fr-patient-123"
+      },
+      "name" : "fr-patient-123",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/org-example"
+      },
+      "name" : "org-example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/pdsm-comprehensive-document-reference"
       },
       "name" : "PDSm Comprehensive DocumentReference",
-      "description" : "Profil spécifique dérivé du profil IHE MHD v4.0.1 \"ComprehensiveDocumentReference\" créé pour le volet \"Partage de documents de santé en mobilité\".",
+      "description" : "Profil contenant les métadonnées du document ainsi que le lien vers la ressource Binary contenant le document dérivé de la ressource DocumentReference et du profil IHE MHD v4.0.1 \"ComprehensiveDocumentReference\"",
       "exampleBoolean" : false
     },
     {
@@ -723,7 +811,7 @@
         "reference" : "StructureDefinition/pdsm-find-documentreferences-comprehensive-response"
       },
       "name" : "PDSm Find DocumentReferences Comprehensive Response",
-      "description" : "Profil de réponse de la transaction IHE \"Find Document References [ITI-67]\" basée sur le bundle MHD FindDocumentReferencesComprehensiveResponseMessage et profilé pour le volet PDSm",
+      "description" : "Profil de réponse de la transaction IHE \"Find Document References [ITI-67]\" basée sur le bundle MHD FindDocumentReferencesComprehensiveResponseMessage",
       "exampleBoolean" : false
     },
     {
@@ -735,7 +823,7 @@
         "reference" : "StructureDefinition/pdsm-find-lists-response"
       },
       "name" : "PDSm Find Lists Response",
-      "description" : "Profil de réponse de la transaction IHE \"Find Document Lists [ITI-66]\" basée sur le bundle MHD FindDocumentListsResponseMessage et profilé pour le volet PDSm",
+      "description" : "Profil de réponse de la transaction IHE \"Find Document Lists [ITI-66]\" basée sur le bundle MHD FindDocumentListsResponseMessage",
       "exampleBoolean" : false
     },
     {
@@ -747,7 +835,7 @@
         "reference" : "StructureDefinition/pdsm-folder-comprehensive"
       },
       "name" : "PDSm Folder Comprehensive",
-      "description" : "Profil spécifique dérivé du profil IHE MHD « Comprehensive Folder » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le classeur.",
+      "description" : "Profil du Classeur dérivé de la ressource List et du profil IHE MHD « Comprehensive Folder ».",
       "exampleBoolean" : false
     },
     {
@@ -771,7 +859,7 @@
         "reference" : "StructureDefinition/pdsm-submissionset-comprehensive"
       },
       "name" : "PDSm SubmissionSet Comprehensive",
-      "description" : "Profil spécifique dérivé du profil IHE MHD « ComprehensiveSubmissionSet » créé pour le volet ANS \"Partage de documents de santé en mobilité\" ; ce profil concerne le lot de soumission.",
+      "description" : "Profil du lot de soumission dérivé de la ressource List et du profil IHE MHD « ComprehensiveSubmissionSet ».",
       "exampleBoolean" : false
     },
     {
@@ -902,82 +990,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "specifications_techniques.html"
-        }],
-        "nameUrl" : "specifications_techniques.html",
-        "title" : "Specifications Techniques",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "construction_des_flux.html"
-          }],
-          "nameUrl" : "construction_des_flux.html",
-          "title" : "Construction Des Flux",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_ajout.html"
-          }],
-          "nameUrl" : "st_ajout.html",
-          "title" : "Ajout d'un lot de documents",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_maj.html"
-          }],
-          "nameUrl" : "st_maj.html",
-          "title" : "Mise à jour de documents",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_recherche_lot.html"
-          }],
-          "nameUrl" : "st_recherche_lot.html",
-          "title" : "Recherche de lot de soumission",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_recherche_fiche.html"
-          }],
-          "nameUrl" : "st_recherche_fiche.html",
-          "title" : "Recherche de fiche",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_consultation.html"
-          }],
-          "nameUrl" : "st_consultation.html",
-          "title" : "Consultation de documents",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_ajout_simplifie.html"
-          }],
-          "nameUrl" : "st_ajout_simplifie.html",
-          "title" : "Ajout simplifié d'un document",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "specifications_fonctionnelles.html"
         }],
         "nameUrl" : "specifications_fonctionnelles.html",
-        "title" : "Specifications Fonctionnelles",
+        "title" : "Spécifications fonctionnelles - vue d'ensemble",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -1019,6 +1035,69 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "construction_des_flux.html"
+        }],
+        "nameUrl" : "construction_des_flux.html",
+        "title" : "Spécifications techniques - vue d'ensemble",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_ajout.html"
+          }],
+          "nameUrl" : "st_ajout.html",
+          "title" : "Ajout d'un lot de documents (ITI-65)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_maj.html"
+          }],
+          "nameUrl" : "st_maj.html",
+          "title" : "Mise à jour de documents",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_recherche_lot.html"
+          }],
+          "nameUrl" : "st_recherche_lot.html",
+          "title" : "Recherche de lot de soumission (ITI-66)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_recherche_fiche.html"
+          }],
+          "nameUrl" : "st_recherche_fiche.html",
+          "title" : "Recherche de fiche (ITI-67)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_consultation.html"
+          }],
+          "nameUrl" : "st_consultation.html",
+          "title" : "Consultation de documents (ITI-68)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "st_ajout_simplifie.html"
+          }],
+          "nameUrl" : "st_ajout_simplifie.html",
+          "title" : "Ajout simplifié d'un document (ITI-105)",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "autres_ressources.html"
         }],
         "nameUrl" : "autres_ressources.html",
@@ -1051,6 +1130,15 @@
           "title" : "Téléchargements et usages",
           "generation" : "markdown"
         }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "changes.html"
+        }],
+        "nameUrl" : "changes.html",
+        "title" : "Historique des changements",
+        "generation" : "markdown"
       }]
     },
     "parameter" : [{

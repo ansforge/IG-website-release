@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Recherche de fiche - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>Recherche de fiche (ITI-67) - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"2.5"}
-    h3,h4,h5,h6{--heading-prefix:"2.5"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3.4"}
+    h3,h4,h5,h6{--heading-prefix:"3.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -164,6 +176,9 @@
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
+  <li>
+    <a href="changes.html">Historique</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -176,7 +191,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_techniques.html'><b>Specifications Techniques</b></a></li><li><b>Recherche de fiche</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='construction_des_flux.html'><b>Spécifications techniques - vue d'ensemble</b></a></li><li><b>Recherche de fiche (ITI-67)</b></li>
 
           <span style="float:right;">
 
@@ -197,7 +212,6 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -206,8 +220,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Recherche de fiche</h2>
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Recherche de fiche (ITI-67)</h2>
   
 
 
@@ -225,13 +239,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#flux-05-b-de-recherche-de-fiches" id="markdown-toc-flux-05-b-de-recherche-de-fiches">Flux 05-b de recherche de fiches</a></li>
+  <li><a href="#exemples-de-requêtes" id="markdown-toc-exemples-de-requêtes">Exemples de requêtes</a></li>
   <li><a href="#flux-06b--réponse-au-flux-05-b" id="markdown-toc-flux-06b--réponse-au-flux-05-b">Flux 06b : réponse au flux 05-b</a></li>
 </ul>
 
 </div>
-<p>Ce flux intervient lorsque le consommateur de documents souhaite rechercher un ou plusieurs documents d’un patient du gestionnaire partage de documents.</p>
+<p>Ce flux intervient lorsque le consommateur de documents souhaite rechercher un ou plusieurs documents d'un patient du gestionnaire partage de documents.</p>
 
-<p>Ces flux se basent sur la requête et la réponse de la transaction IHE “Find Document References <a href="https://profiles.ihe.net/ITI/MHD/ITI-67.html">ITI-67</a> du profil MHD.</p>
+<p>Ces flux se basent sur la requête et la réponse de la transaction IHE "Find Document References <a href="https://profiles.ihe.net/ITI/MHD/ITI-67.html">ITI-67</a> du profil MHD.</p>
 
 <h3 id="flux-05-b-de-recherche-de-fiches">Flux 05-b de recherche de fiches</h3>
 
@@ -258,17 +273,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>facility</td>
       <td>token</td>
-      <td>Recherche sur le secteur d’activité associé au document</td>
+      <td>Recherche sur le secteur d'activité associé au document</td>
     </tr>
     <tr>
       <td>setting</td>
       <td>token</td>
-      <td>Recherche du cadre d’exercice du document</td>
+      <td>Recherche du cadre d'exercice du document</td>
     </tr>
     <tr>
       <td>identifier</td>
       <td>token</td>
-      <td>Recherche dans l’identifiant de la fiche (idUnique ou idFiche)</td>
+      <td>Recherche dans l'identifiant de la fiche (idUnique ou idFiche)</td>
     </tr>
     <tr>
       <td>creation</td>
@@ -283,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>status</td>
       <td>token</td>
-      <td>Description</td>
+      <td>Recherche sur le statut de la fiche</td>
     </tr>
     <tr>
       <td><a href="SearchParameter-PDSm-isArchived.html">isArchived</a>*</td>
@@ -293,12 +308,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td><a href="SearchParameter-PDSm-DocumentReference-period-start.html">period-start</a>*</td>
       <td>date</td>
-      <td>Contraindre la recherche sur la date de début de l’acte</td>
+      <td>Contraindre la recherche sur la date de début de l'acte</td>
     </tr>
     <tr>
       <td><a href="SearchParameter-PDSm-DocumentReference-period-end.html">period-end</a>*</td>
       <td>date</td>
-      <td>Contraindre la recherche sur la date de fin de l’acte</td>
+      <td>Contraindre la recherche sur la date de fin de l'acte</td>
     </tr>
     <tr>
       <td>format</td>
@@ -313,22 +328,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>relatesTo</td>
       <td>reference</td>
-      <td>Recherche de l’identifiant de la fiche associée</td>
+      <td>Recherche de l'identifiant de la fiche associée</td>
     </tr>
     <tr>
       <td>event</td>
       <td>token</td>
-      <td>Recherche sur l’acte de la pathologie</td>
+      <td>Recherche sur l'acte de la pathologie</td>
     </tr>
     <tr>
       <td>period</td>
       <td>date</td>
-      <td>Recherche sur le debut et la fin de l’acte</td>
+      <td>Recherche sur le debut et la fin de l'acte</td>
     </tr>
     <tr>
       <td>patient</td>
       <td>token</td>
-      <td>Recherche de l’identifiant du patient</td>
+      <td>Recherche de l'identifiant du patient</td>
     </tr>
     <tr>
       <td>author</td>
@@ -337,6 +352,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
   </tbody>
 </table>
+
+<blockquote>
+  <p>* Paramètre de recherche créé pour le volet PDSm</p>
+</blockquote>
+
+<div style="width: 65%">
+<blockquote class="note note">
+<p>
+  Conformément au profil MHD <a href="https://profiles.ihe.net/ITI/MHD/ITI-67.html">[ITI-67]</a>, la recherche de fiche DOIT à minima inclure les paramètres patient ou patient.identifier et status.
+</p>
+</blockquote>
+</div>
 
 <h4 id="paramètre-de-recherche-sur-les-ressources-patient--practitioner--device">Paramètre de recherche sur les ressources Patient / Practitioner / Device</h4>
 
@@ -352,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>identifier</td>
       <td>token</td>
-      <td>Recherche sur l’identifiant patient / auteur</td>
+      <td>Recherche sur l'identifiant patient / auteur</td>
     </tr>
   </tbody>
 </table>
@@ -371,12 +398,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>given</td>
       <td>token</td>
-      <td>Recherche sur le prénom de l’auteur</td>
+      <td>Recherche sur le prénom de l'auteur</td>
     </tr>
     <tr>
       <td>family</td>
       <td>token</td>
-      <td>Recherche sur le nom de l’auteur</td>
+      <td>Recherche sur le nom de l'auteur</td>
     </tr>
   </tbody>
 </table>
@@ -395,31 +422,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>name</td>
       <td>token</td>
-      <td>Recherche sur le nom ou le prénom de l’auteur</td>
+      <td>Recherche sur le nom ou le prénom de l'auteur</td>
     </tr>
   </tbody>
 </table>
 
-<p>Ci-dessous un exemple de requête :</p>
+<h3 id="exemples-de-requêtes">Exemples de requêtes</h3>
 
 <ul>
-  <li>Rechercher les ressources de type DocumentReference du patient ayant l’identifiant 32659.</li>
+  <li>Rechercher les ressources de type DocumentReference du patient ayant l’identifiant 32659 et au statut courant.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET http://targetsystem.com/API/DocumentReference?patient.identifier=32659 HTTP/1.1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET http://targetsystem.com/API/DocumentReference?patient.identifier=32659&amp;status=current HTTP/1.1
 </code></pre></div></div>
 
 <h3 id="flux-06b--réponse-au-flux-05-b">Flux 06b : réponse au flux 05-b</h3>
 
-<p>Il s’agit du résultat de la recherche de documents retourné par le gestionnaire de partage de documents. La recherche de fiches retourne les ressources DocumentReference qui correspondent aux critères de recherche fournis par le consommateur de documents. On retrouve les mêmes éléments qui constituent les fiches que lors de la demande d’ajout d’un lot de documents.</p>
+<p>Il s'agit du résultat de la recherche de documents retourné par le gestionnaire de partage de documents. La recherche de fiches retourne les ressources DocumentReference qui correspondent aux critères de recherche fournis par le consommateur de documents. On retrouve les mêmes éléments qui constituent les fiches que lors de la demande d’ajout d’un lot de documents.</p>
 
 <p>Un profil spécifique dérivé du profil IHE MHD « FindDocumentReferencesComprehensiveResponse » est créé pour ce volet et nommé <a href="StructureDefinition-pdsm-comprehensive-document-reference.html">PDSm_FindDocumentReferencesComprehensiveResponse</a>. Il contient zéro ou plusieurs ressources DocumentReference répondants aux critères de la requête.</p>
 
-<p>Ce flux correspond à la réponse à la requête reposant sur l’interaction « search » du flux précédent.
-En cas de succès, le gestionnaire de partage de documents retourne un code <code class="language-plaintext highlighter-rouge">HTTP 200 OK</code> ainsi qu’un Bundle de type searchset.</p>
+<p>Ce flux correspond à la réponse à la requête reposant sur l’interaction « search » du flux précédent.</p>
 
-<p>Si le gestionnaire de partage de documents envoie des “warnings”, la ressource Bundle doit aussi contenir une ressource “OperationOutcome” qui contient ces “warnings”.
-Si le gestionnaire de partage de documents doit reporter une erreur, il doit utiliser un “<a href="http://hl7.org/fhir/R4/http.html">HTTP error response codes</a>” et doit inclure un “<a href="http://hl7.org/fhir/R4/operationoutcome.html">FHIR OperationOutcome</a>” avec plus de détails sur l’échec.</p>
+<p>En cas de succès, le gestionnaire de partage de documents retourne un code <code class="language-plaintext highlighter-rouge">HTTP 200 OK</code> ainsi qu’un Bundle de type searchset.</p>
+
+<p>Si le gestionnaire de partage de documents envoie des "warnings", la ressource Bundle doit aussi contenir une ressource "OperationOutcome" qui contient ces "warnings".</p>
+
+<p>Si le gestionnaire de partage de documents doit reporter une erreur, il doit utiliser un "<a href="http://hl7.org/fhir/R4/http.html">HTTP error response codes</a>" et doit inclure un "<a href="http://hl7.org/fhir/R4/operationoutcome.html">FHIR OperationOutcome</a>" avec plus de détails sur l'échec.</p>
 
 
 
@@ -462,12 +491,13 @@ Si le gestionnaire de partage de documents doit reporter une erreur, il doit uti
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Specifications Fonctionnelles - Partage de Documents de Santé en mobilité (PDSm) v3.1.0</title>
+    <title>Spécifications fonctionnelles - vue d&#39;ensemble - Partage de Documents de Santé en mobilité (PDSm) v3.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
     <!-- Placeholder for child template CSS declarations -->
@@ -40,23 +41,34 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"3"}
-    h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+    <a id="hl7-search-lnk" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-logo" data-no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Partage de Documents de Santé en mobilité (PDSm)</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - trial-use
+            <span style="display:inline-block;">3.1.1 - trial-use
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
 
 
             </span>
@@ -87,40 +99,12 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
-      </li>
-      <li>
-        <a href="st_ajout.html">Ajout d&apos;un lot de documents</a>
-      </li>
-      <li>
-        <a href="st_maj.html">Mise à jour de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_lot.html">Recherche de lot de documents</a>
-      </li>
-      <li>
-        <a href="st_recherche_fiche.html">Recherche de fiche</a>
-      </li>
-      <li>
-        <a href="st_consultation.html">Consultation de documents</a>
-      </li>
-      <li>
-        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications fonctionnelles
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="specifications_fonctionnelles.html">Spécifications fonctionnelles</a>
+        <a href="specifications_fonctionnelles.html">Vue d&apos;ensemble</a>
       </li>
       <li>
         <a href="sf_ajout.html">Ajout d&apos;un lot de documents</a>
@@ -133,6 +117,34 @@
       </li>
       <li>
         <a href="sf_consultation.html">Consultation de documents</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 - Détail des transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="construction_des_flux.html">Vue d&apos;ensemble</a>
+      </li>
+      <li>
+        <a href="st_ajout.html">Ajout d&apos;un lot de soumission (ITI-65)</a>
+      </li>
+      <li>
+        <a href="st_maj.html">Mise à jour des métadonnées d&apos;un document</a>
+      </li>
+      <li>
+        <a href="st_recherche_lot.html">Recherche de lot de soumission (ITI-66)</a>
+      </li>
+      <li>
+        <a href="st_recherche_fiche.html">Recherche de fiche (ITI-67)</a>
+      </li>
+      <li>
+        <a href="st_consultation.html">Consultation de documents (ITI-68)</a>
+      </li>
+      <li>
+        <a href="st_ajout_simplifie.html">Ajout simplifié d&apos;un document (ITI-105)</a>
       </li>
     </ul>
   </li>
@@ -164,6 +176,9 @@
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
   </li>
+  <li>
+    <a href="changes.html">Historique</a>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -176,11 +191,11 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Specifications Fonctionnelles</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Spécifications fonctionnelles - vue d'ensemble</b></li>
 
           <span style="float:right;">
 
-            <a href="st_ajout_simplifie.html">&lt;prev</a> | 
+            <a href="index.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -197,7 +212,6 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -206,8 +220,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Specifications Fonctionnelles</h2>
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Partage de Documents de Santé en mobilité (PDSm) (v3.1.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Spécifications fonctionnelles - vue d&#39;ensemble</h2>
   
 
 
@@ -228,19 +242,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#organisation-du-contexte-metier" id="markdown-toc-organisation-du-contexte-metier">ORGANISATION DU CONTEXTE METIER</a></li>
   <li><a href="#description-des-processus-collaboratifs-et-identification-des-flux" id="markdown-toc-description-des-processus-collaboratifs-et-identification-des-flux">DESCRIPTION DES PROCESSUS COLLABORATIFS ET IDENTIFICATION DES FLUX</a></li>
   <li><a href="#identification-des-concepts-vehicules-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos" id="markdown-toc-identification-des-concepts-vehicules-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos">IDENTIFICATION DES CONCEPTS VEHICULES DANS LES FLUX D’INFORMATIONS ET CORRESPONDANCE AVEC LES CLASSES ET ATTRIBUTS DU MOS</a></li>
-  <li><a href="#modelisation-des-flux-dinformations" id="markdown-toc-modelisation-des-flux-dinformations">MODELISATION DES FLUX D’INFORMATIONS</a></li>
+  <li><a href="#modelisation-des-flux-dinformations" id="markdown-toc-modelisation-des-flux-dinformations">MODELISATION DES FLUX D'INFORMATIONS</a></li>
+  <li><a href="#navigation-vers-les-spécifications-fonctionnelles-détaillées" id="markdown-toc-navigation-vers-les-spécifications-fonctionnelles-détaillées">Navigation vers les spécifications fonctionnelles détaillées</a></li>
 </ul>
 
 </div>
-<h3 id="cadre-juridique-et-orientations-organisationnelles">CADRE JURIDIQUE ET ORIENTATIONS ORGANISATIONNELLES</h3>
+<p>Ces spécifications fonctionnelles présentent une étude métier pour la mise en œuvre du volet « Partage de documents de santé ». Les processus décrits dans ce volet permettent de regrouper l’ensemble des documents de santé d’un patient disposant d’un dossier partagé, d’en permettre la modification, la dépublication, la recherche et la consultation.</p>
 
-<p>Ce document présente une étude métier pour la mise en œuvre du volet « Partage de documents de santé ». Les processus décrits dans ce volet permettent de regrouper l’ensemble des documents de santé d’un patient disposant d’un dossier partagé, d’en permettre la modification, la dépublication, la recherche et la consultation.</p>
+<p>Ces spécifications fonctionnelles sont dérivées en deux spécifications techniques :</p>
+
+<ul>
+  <li>Les spécifications techniques se basant sur le standard FHIR et IHE MHD (dans ce guide)</li>
+  <li>Les spécifications techniques se basant sur IHE XDS accessible dans la page CI-SIS https://esante.gouv.fr/volet-partage-de-documents-de-sante</li>
+</ul>
+
+<h3 id="cadre-juridique-et-orientations-organisationnelles">CADRE JURIDIQUE ET ORIENTATIONS ORGANISATIONNELLES</h3>
 
 <p>L’étude menée concerne la modélisation des flux qui existent entre les composants d’un système d’information ou entre des systèmes d’informations qui participent à la mise en œuvre du partage de documents de santé. Elle englobe les actions de modification du contenu du dossier patient, ainsi que de recherche et de consultation des documents selon divers critères de recherche qui sont présentés dans ce document.</p>
 
 <p>A noter que les contraintes de sécurité concernant les flux échangés ne sont pas traitées dans ce document. En effet, les aspects relatifs à la sécurité sont du ressort du système d’information les implémentant et des volets transport du CI-SIS.</p>
 
-<h4 id="exemple-de-cas-dusage">Exemple de cas d’usage</h4>
+<h4 id="exemple-de-cas-dusage">Exemple de cas d'usage</h4>
 
 <p>Un médecin généraliste envoie son patient faire une radiographie.</p>
 
@@ -250,13 +272,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="organisation-du-contexte-metier">ORGANISATION DU CONTEXTE METIER</h3>
 
-<object data="fonctionnel/fig_1.png" type="image/png"></object>
-<p><br />
-Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p>
+<div class="figure" style="text-align: center;">
+    <img src="fonctionnel/fig_1.png" alt="Figure 1" title="Figure 1 Organisation du contexte métier de l'étude Dossier Patient" style="width:50%;" />
+    <figcaption><b>Figure 1 Organisation du contexte métier de l'étude "Dossier Patient"</b></figcaption>
+</div>
+<p><br /></p>
 
-<p>Le périmètre de l’étude englobe les processus en couleur sur le diagramme de paquetage.</p>
+<p>Le périmètre de l'étude englobe les processus en couleur sur le diagramme de paquetage.</p>
 
-<h4 id="liste-des-acteurs-pour-lensemble-des-processus">Liste des acteurs pour l’ensemble des processus</h4>
+<h4 id="liste-des-acteurs-pour-lensemble-des-processus">Liste des acteurs pour l'ensemble des processus</h4>
 
 <table>
   <thead>
@@ -272,7 +296,7 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
     </tr>
     <tr>
       <td>Gestionnaire de partage de documents</td>
-      <td>Il s’agit d’un système d’information ou d’un composant d’un système d’information qui stocke, classe et archive les documents d’un dossier patient.<br /> Exemple de système : <br /> -Infrastructure du DMP</td>
+      <td>Il s’agit d’un système d’information ou d’un composant d'un système d’information qui stocke, classe et archive les documents d’un dossier patient.<br /> Exemple de système : <br /> -Infrastructure du DMP</td>
     </tr>
     <tr>
       <td>Producteur de documents</td>
@@ -281,48 +305,50 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
   </tbody>
 </table>
 
-<p>Table 5 Table des acteurs</p>
+<p><strong>Table 5 : Table des acteurs</strong></p>
 
 <h3 id="description-des-processus-collaboratifs-et-identification-des-flux">DESCRIPTION DES PROCESSUS COLLABORATIFS ET IDENTIFICATION DES FLUX</h3>
 
 <h4 id="synthèse-des-flux">Synthèse des flux</h4>
 
 <table>
+  <thead>
+    <tr>
+      <th><strong>Flux</strong></th>
+      <th><strong>Processus</strong></th>
+      <th><strong>Emetteur</strong></th>
+      <th><strong>Récepteur</strong></th>
+      <th><strong>Périmètre</strong></th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>Flux</strong></td>
-      <td><strong>Processus</strong></td>
-      <td><strong>Emetteur</strong></td>
-      <td><strong>Récepteur</strong></td>
-      <td><strong>Périmètre</strong></td>
-    </tr>
-    <tr>
       <td>Flux 1 - AjoutLotDocument</td>
-      <td>Ajout d’un lot de documents</td>
+      <td>Ajout d'un lot de documents</td>
       <td>Producteur de documents</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Oui</td>
     </tr>
     <tr>
       <td>Flux 2 - ResultatAjoutLotDocument</td>
-      <td>Ajout d’un lot de documents</td>
+      <td>Ajout d'un lot de documents</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Producteur de documents</td>
       <td>Oui</td>
     </tr>
     <tr>
       <td>Flux 3 - Mise AJourMetadonneeFiche</td>
-      <td>Mise à jour des métadonnées d’une fiche</td>
+      <td>Mise à jour des métadonnées d'une fiche</td>
       <td>Producteur de documents</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Oui</td>
     </tr>
     <tr>
-      <td>Flux 4 – ResultatMAJMetadonneeFiche	Mise à jour des métadonnées d’une fiche</td>
+      <td>Flux 4 – ResultatMAJMetadonneeFiche</td>
+      <td>Mise à jour des métadonnées d'une fiche</td>
       <td>Gestionnaire de partage de documents</td>
       <td>Producteur de documents</td>
       <td>Oui</td>
-      <td> </td>
     </tr>
     <tr>
       <td>Flux 5 - RechercheDocument</td>
@@ -360,15 +386,17 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
 <h4 id="concepts-métier---factorisation-par-concept">Concepts métier - Factorisation par concept</h4>
 
 <table>
+  <thead>
+    <tr>
+      <th><strong>Nom</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Flux</strong></th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td><strong>Nom</strong></td>
-      <td><strong>Description</strong></td>
-      <td><strong>Flux</strong></td>
-    </tr>
-    <tr>
       <td>Document</td>
-      <td>Un document est la plus petite unité d’information déposée dans l’infrastructure de partage de documents. Une fois stocké dans l’infrastructure de partage de documents avec un identifiant unique, le document ne subit plus aucune modification.</td>
+      <td>Un document est la plus petite unité d'information déposée dans l’infrastructure de partage de documents. Une fois stocké dans l’infrastructure de partage de documents avec un identifiant unique, le document ne subit plus aucune modification.</td>
       <td>Flux 1 - AjoutLotDocument <br />Flux 7 - ResultatDemandeConsultationDocument</td>
     </tr>
     <tr>
@@ -383,19 +411,28 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
     </tr>
     <tr>
       <td>LotSoumission</td>
-      <td>Un lot de soumission regroupe les fiches et les classeurs faisant partie d’une même demande de modification du contenu du dossier. Il atteste l’existence et le statut de la demande et est décrit par un ensemble d’attributs, ses métadonnées. Une fois créé, un lot de soumission est immuable à l’exception de son statut.</td>
+      <td>Un lot de soumission regroupe les fiches et les classeurs faisant partie d’une même demande de modification du contenu du dossier. Il atteste l’existence et le statut de la demande et est décrit par un ensemble d’attributs, ses métadonnées. Une fois créé, un lot de soumission est immuable à l'exception de son statut.</td>
       <td>Flux 1 - AjoutLotDocument <br /> Flux 2 - ResultatAjoutLotDocument <br /> Flux 5 - ResultatRechercheDocument </td>
     </tr>
   </tbody>
 </table>
 
 <h4 id="mise-en-équivalence-mos">Mise en équivalence MOS</h4>
-<p>Il n’y pas de concepts équivalent dans le MOS au moment de l’étude.</p>
+<p>Il n'y pas de concepts équivalent dans le MOS au moment de l'étude.</p>
 
-<h3 id="modelisation-des-flux-dinformations">MODELISATION DES FLUX D’INFORMATIONS</h3>
-<p>Les types de données complexes sont décrits dans les classes communes du MOS de l’ANS</p>
+<h3 id="modelisation-des-flux-dinformations">MODELISATION DES FLUX D'INFORMATIONS</h3>
+<p>Les types de données complexes sont décrits dans les classes communes du MOS de l'ANS</p>
 
-<p> </p>
+<h3 id="navigation-vers-les-spécifications-fonctionnelles-détaillées">Navigation vers les spécifications fonctionnelles détaillées</h3>
+
+<p>Pour consulter les spécifications fonctionnelles détaillées de chaque processus :</p>
+
+<ul>
+  <li><a href="sf_ajout.html">Ajout d'un lot de documents</a></li>
+  <li><a href="sf_maj.html">Mise à jour de documents</a></li>
+  <li><a href="sf_recherche.html">Recherche de documents</a></li>
+  <li><a href="sf_consultation.html">Consultation de documents</a></li>
+</ul>
 
 
 
@@ -420,7 +457,7 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="st_ajout_simplifie.html">&lt;prev</a>
+                <a href="index.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -438,12 +475,13 @@ Figure 1 Organisation du contexte métier de l’étude “Dossier Patient”</p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 29, 2024 10:02+0000">2024-05-29</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.pdsm#3.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 13:28+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
-<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions </a>
+            Liens : <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/fhir/pdsm/history.html">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/documentation">Documentation</a>
  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG-partage-de-documents-de-sante-fhir/issues/new">New Issue</a>
 
           </span>
