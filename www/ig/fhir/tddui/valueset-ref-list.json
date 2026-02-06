@@ -1,6 +1,52 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ParticipantType",
+      "title" : "Participant type",
+      "description" : "This value set defines a set of codes that can be used to indicate how an individual participates in an encounter.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/participant-type",
+        "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.250"],
+      "sources" : ["2.16.840.1.113883.4.642.3.250"],
+      "uses" : {
+      },
+      "ValueSet-tddui-encounter-participant.html" : "TDDUI Encounter Participant"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "Identifier Type Codes",
+      "title" : "IdentifierType",
+      "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+      "oids" : ["2.16.840.1.113883.4.642.3.45"],
+      "sources" : ["2.16.840.1.113883.4.642.3.45"],
+      "uses" : {
+      },
+      "ValueSet-tddui-patient-identifier.html" : "TDDUI Patient Identifier",
+      "ValueSet-tddui-encounter-identifier.html" : "TDDUI Encounter Identifier"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v3-Country",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "Country",
+      "title" : "Country",
+      "description" : "Countries of the world. ISO 3166, part 1, alpha-3 set.",
+      "systems" : ["urn:iso:std:iso:3166"],
+      "oids" : ["2.16.840.1.113883.1.11.171"],
+      "sources" : ["2.16.840.1.113883.1.11.171"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-nationality.html" : "TDDUI Nationality Extension"
+    },
+    {
       "url" : "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-encounter-discharge-disposition",
       "version" : "2.1.0",
       "status" : "active",
@@ -42,7 +88,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
+      "ValueSet-tddui-encounter-type.html" : "TDDUI Encounter Type"
     },
     {
       "url" : "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-location-physical-type",
@@ -59,6 +105,18 @@
       "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
     },
     {
+      "url" : "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-organization-identifier-type",
+      "version" : "2.1.0",
+      "status" : "active",
+      "name" : "FRCoreValueSetOrganizationIdentifierType",
+      "title" : "FR Core ValueSet Organization identifier type",
+      "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose (Organizations).",
+      "systems" : ["https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-organization.html" : "TDDUI Organization"
+    },
+    {
       "url" : "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-patient-gender-INS",
       "version" : "2.1.0",
       "status" : "active",
@@ -68,19 +126,278 @@
       "systems" : ["http://hl7.org/fhir/administrative-gender"],
       "uses" : {
       },
+      "StructureDefinition-tddui-related-person-contact.html" : "TDDUI RelatedPerson Contact",
       "StructureDefinition-tddui-patient.html" : "TDDUI Patient"
     },
     {
-      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-serafin-valueset",
-      "version" : "2.1.0",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-care-plan-supporting-info",
+      "version" : "2.2.0",
       "status" : "active",
-      "name" : "TDDUISerafinValueSet",
-      "title" : "TDDUI SERAFIN ValueSet",
+      "name" : "TDDUICarePlanSupportingInfo",
+      "title" : "TDDUI CarePlan supportingInfo",
+      "description" : "ValueSet définissant les types de notes pour l'élément CarePlan.supportingInfo.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-careplan-projet-personnalise.html" : "TDDUI CarePlan Projet Personalise"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-contact-protection-juridique",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIContactProtectionJuridique",
+      "title" : "TDDUI Contact Protection Juridique",
+      "description" : "ValueSet définissant la protection juridique.",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R217-ProtectionJuridique/FHIR/TRE-R217-ProtectionJuridique"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-related-person-contact.html" : "TDDUI RelatedPerson Contact",
+      "ValueSet-tddui-contact-related-person-relashionship.html" : "TDDUI Related Person Relashionship"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-contact-related-person-relashionship",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIRelatedPersonRelashionship",
+      "title" : "TDDUI Related Person Relashionship",
+      "description" : "ValueSet définissant les slices de RelatedPerson.relationship.",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R260-HL7RoleClass/FHIR/TRE-R260-HL7RoleClass",
+        "https://mos.esante.gouv.fr/NOS/TRE_R216-HL7RoleCode/FHIR/TRE-R216-HL7RoleCode",
+        "https://mos.esante.gouv.fr/NOS/TRE_R217-ProtectionJuridique/FHIR/TRE-R217-ProtectionJuridique"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-related-person-contact.html" : "TDDUI RelatedPerson Contact"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-contact-relation",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIContactRelation",
+      "title" : "TDDUI Contact Relation",
+      "description" : "ValueSet définissant les relations.",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R216-HL7RoleCode/FHIR/TRE-R216-HL7RoleCode",
+        "https://mos.esante.gouv.fr/NOS/TRE_R217-ProtectionJuridique/FHIR/TRE-R217-ProtectionJuridique"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-related-person-contact.html" : "TDDUI RelatedPerson Contact",
+      "ValueSet-tddui-contact-related-person-relashionship.html" : "TDDUI Related Person Relashionship"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-discriminator",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIDiscriminator",
+      "title" : "TDDUI Discriminator",
+      "description" : "ValueSet définissant les codes discriminants.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-discriminator.html" : "TDDUI Discriminator",
+      "ValueSet-tddui-goal-attente-note.html" : "TDDUI Goal Attente Note",
+      "ValueSet-tddui-goal-objectif-note.html" : "TDDUI Goal Objectif Note",
+      "ValueSet-tddui-care-plan-supporting-info.html" : "TDDUI CarePlan supportingInfo"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-identifier",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIEncounterIdentifier",
+      "title" : "TDDUI Encounter Identifier",
+      "description" : "ValueSet pour la définition des codes d'identifiant de séjour",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-encounter-identifier",
+        "http://terminology.hl7.org/CodeSystem/v2-0203"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-encounter-sejour.html" : "TDDUI Encounter Sejour"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-participant",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIEncounterParticipant",
+      "title" : "TDDUI Encounter Participant",
+      "description" : "ValueSet pour la définition des codes de participant d'un événement",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-encounter-participant",
+        "http://terminology.hl7.org/CodeSystem/participant-type",
+        "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-type",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIEncounterType",
+      "title" : "TDDUI Encounter Type",
+      "description" : "ValueSet pour la définition des codes de type de séjour",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v2-0007",
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/terminologie-cisis",
+        "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-type-admission",
+        "https://smt.esante.gouv.fr/terminologie-SERAFINPH",
+        "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-goal-attente-note",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIGoalAttenteNote",
+      "title" : "TDDUI Goal Attente Note",
+      "description" : "ValueSet définissant les types de notes pour l'élément Goal.note.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-goal-attente.html" : "TDDUI Goal Attente"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-goal-objectif-note",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIGoalObjectifNote",
+      "title" : "TDDUI Goal Objectif Note",
+      "description" : "ValueSet définissant les types de notes pour l'élément Goal.note.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-goal-objectif.html" : "TDDUI Goal Objectif"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-patient-identifier",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUIPatientIdentifier",
+      "title" : "TDDUI Patient Identifier",
+      "description" : "ValueSet pour la définition des codes d'identifiant de l'usager",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-identifier",
+        "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "https://hl7.fr/ig/fhir/core/CodeSystem/fr-core-cs-v2-0203"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-patient.html" : "TDDUI Patient",
+      "StructureDefinition-tddui-patient-ins.html" : "TDDUI Patient INS"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-serafin",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUISerafin",
+      "title" : "TDDUI SERAFIN",
       "description" : "ValueSet contenant les codes SERAFIN (prestations directes et indirectes) pour le profil TDDUI Encounter Evenement.",
       "systems" : ["https://smt.esante.gouv.fr/terminologie-SERAFINPH"],
       "uses" : {
       },
-      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
+      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement",
+      "ValueSet-tddui-encounter-type.html" : "TDDUI Encounter Type",
+      "StructureDefinition-tddui-task-prestation.html" : "TDDUI Task Prestation"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-input-action",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskInputAction",
+      "title" : "TDDUI Task Input Action",
+      "description" : "ValueSet pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les actions du projet personnalisé.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-action"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-action.html" : "TDDUI Task Action"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-input-bilan",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskInputBilan",
+      "title" : "TDDUI Task Input Bilan",
+      "description" : "ValueSet pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour le bilan du projet personnalisé.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-bilan"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-bilan.html" : "TDDUI Task Bilan"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-input-moyen-ressource",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskInputMoyenRessource",
+      "title" : "TDDUI Task Input Moyen Ressource",
+      "description" : "ValueSet  pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les moyens et ressources du projet personnalisé.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-moyen-ressource"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-moyen-ressource.html" : "TDDUI Task MoyenRessource"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-input-prestation",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskInputPrestation",
+      "title" : "TDDUI Task Input Prestation",
+      "description" : "ValueSet pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les prestations du projet personnalisé.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-prestation"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-prestation.html" : "TDDUI Task Prestation"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-input-transport",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskInputTransport",
+      "title" : "TDDUI Task Input Transport",
+      "description" : "ValueSet pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les transports dans le cadre du DUI.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-transport"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-transport.html" : "TDDUI Task Transport"
+    },
+    {
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-task-output-bilan",
+      "version" : "2.2.0",
+      "status" : "active",
+      "name" : "TDDUITaskOutputBilan",
+      "title" : "TDDUI Task Output Bilan",
+      "description" : "ValueSet pour la définition des éléments spécifiques des output dans la ressource Task utilisée pour le bilan du projet personnalisé.",
+      "systems" : [
+        "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-output-bilan"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-bilan.html" : "TDDUI Task Bilan"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J01-XdsAuthorSpecialty-CISIS/FHIR/JDV-J01-XdsAuthorSpecialty-CISIS",
@@ -191,6 +508,23 @@
       "StructureDefinition-tddui-document-reference.html" : "TDDUI DocumentReference"
     },
     {
+      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J11-RelationPatient-CISIS/FHIR/JDV-J11-RelationPatient-CISIS",
+      "version" : "20200424120000",
+      "status" : "active",
+      "name" : "JDV_J11_RelationPatient_CISIS",
+      "title" : null,
+      "description" : "Relation par rapport au patient - CI-SIS",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R216-HL7RoleCode/FHIR/TRE-R216-HL7RoleCode",
+        "https://mos.esante.gouv.fr/NOS/TRE_R217-ProtectionJuridique/FHIR/TRE-R217-ProtectionJuridique"
+      ],
+      "oids" : ["1.2.250.1.213.3.3.16"],
+      "sources" : ["1.2.250.1.213.3.3.16"],
+      "uses" : {
+      },
+      "ValueSet-tddui-contact-relation.html" : "TDDUI Contact Relation"
+    },
+    {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J117-ModeExercice-ENREG/FHIR/JDV-J117-ModeExercice-ENREG",
       "version" : "20210827120000",
       "status" : "active",
@@ -204,7 +538,23 @@
       "sources" : ["1.2.250.1.213.1.6.1.188"],
       "uses" : {
       },
-      "StructureDefinition-tddui-exercise-mode.html" : "Mode d'exercice"
+      "StructureDefinition-tddui-exercise-mode.html" : "TDDUI Exercise Mode"
+    },
+    {
+      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J14-QualiteRepresentantLegal-CISIS/FHIR/JDV-J14-QualiteRepresentantLegal-CISIS",
+      "version" : "20241213120000",
+      "status" : "active",
+      "name" : "JDV_J14_QualiteRepresentantLegal_CISIS",
+      "title" : null,
+      "description" : "Qualité représentant légal - CI-SIS",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R216-HL7RoleCode/FHIR/TRE-R216-HL7RoleCode"
+      ],
+      "oids" : ["1.2.250.1.213.1.1.5.468"],
+      "sources" : ["1.2.250.1.213.1.1.5.468"],
+      "uses" : {
+      },
+      "ValueSet-tddui-contact-relation.html" : "TDDUI Contact Relation"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J245-Civilite-CISIS/FHIR/JDV-J245-Civilite-CISIS",
@@ -248,7 +598,7 @@
       "sources" : ["1.2.250.1.213.3.3.252"],
       "uses" : {
       },
-      "ValueSet-tddui-serafin-valueset.html" : "TDDUI SERAFIN ValueSet"
+      "ValueSet-tddui-serafin.html" : "TDDUI SERAFIN"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J284-PrestationsDirects_SERAFIN/FHIR/JDV-J284-PrestationsDirects-SERAFIN",
@@ -262,7 +612,21 @@
       "sources" : ["1.2.250.1.213.3.3.253"],
       "uses" : {
       },
-      "ValueSet-tddui-serafin-valueset.html" : "TDDUI SERAFIN ValueSet"
+      "ValueSet-tddui-serafin.html" : "TDDUI SERAFIN"
+    },
+    {
+      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J285-Besoins_SERAFIN/FHIR/JDV-J285-Besoins-SERAFIN",
+      "version" : "20241025120000",
+      "status" : "active",
+      "name" : "JDV_J285_Besoins_SERAFIN",
+      "title" : null,
+      "description" : "Liste des besoins provenant de la terminologie SERAFIN",
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-SERAFINPH"],
+      "oids" : ["1.2.250.1.213.3.3.254"],
+      "sources" : ["1.2.250.1.213.3.3.254"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-service-request-besoin.html" : "TDDUI ServiceRequest Besoin"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J47-FunctionCode-CISIS/FHIR/JDV-J47-FunctionCode-CISIS",
@@ -296,7 +660,7 @@
       "sources" : ["1.2.250.1.213.1.1.5.808"],
       "uses" : {
       },
-      "StructureDefinition-tddui-ressources-used.html" : "Ressources utilisées"
+      "StructureDefinition-tddui-ressources-used.html" : "TDDUI Ressources Used"
     },
     {
       "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-detail-ressource-immobiliere-utilisee-cisis",
@@ -312,7 +676,56 @@
       "sources" : ["1.2.250.1.213.1.1.5.809"],
       "uses" : {
       },
-      "StructureDefinition-tddui-ressources-used.html" : "Ressources utilisées"
+      "StructureDefinition-tddui-ressources-used.html" : "TDDUI Ressources Used"
+    },
+    {
+      "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-j366-statut-bilan-projet-personnalise-ms",
+      "version" : "20250415120000",
+      "status" : "active",
+      "name" : "JdvJ366StatutBilanProjetPersonnaliseMs",
+      "title" : "Jdv J366 Statut Bilan Projet Personnalise Ms",
+      "description" : "Statut du bilan du projet personnalisé.",
+      "systems" : [
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r389-statut-bilan-projet-personnalise"
+      ],
+      "oids" : ["1.2.250.1.213.3.4.220"],
+      "sources" : ["1.2.250.1.213.3.4.220"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-task-bilan.html" : "TDDUI Task Bilan"
+    },
+    {
+      "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-j367-type-projet-personnalise-ms",
+      "version" : "20250422120000",
+      "status" : "active",
+      "name" : "JdvJ367TypeProjetPersonnaliseMs",
+      "title" : "Jdv J367 Type Projet Personnalise Ms",
+      "description" : "Cette nomenclature donne le type de projet personnalisé qui est un document co-construit par l'usager, son entourage familial et professionnel du médico-social.",
+      "systems" : [
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r390-type-projet-personnalise"
+      ],
+      "oids" : ["1.2.250.1.213.3.4.221"],
+      "sources" : ["1.2.250.1.213.3.4.221"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-careplan-projet-personnalise.html" : "TDDUI CarePlan Projet Personalise"
+    },
+    {
+      "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-j384-role-membre-famille-ms",
+      "version" : "20260202120000",
+      "status" : "active",
+      "name" : "JdvJ384RoleMembreFamilleMs",
+      "title" : "Jdv J384 Role Membre Famille Ms",
+      "description" : "Rôle d'un membre de la famille ou d'un proche de l'usager.",
+      "systems" : [
+        "https://mos.esante.gouv.fr/NOS/TRE_R260-HL7RoleClass/FHIR/TRE-R260-HL7RoleClass"
+      ],
+      "oids" : ["1.2.250.1.213.3.4.227"],
+      "sources" : ["1.2.250.1.213.3.4.227"],
+      "uses" : {
+      },
+      "StructureDefinition-tddui-related-person-contact.html" : "TDDUI RelatedPerson Contact",
+      "ValueSet-tddui-contact-related-person-relashionship.html" : "TDDUI Related Person Relashionship"
     },
     {
       "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-mode-de-transport-cisis",
@@ -344,7 +757,7 @@
       "sources" : ["1.2.250.1.213.1.1.5.803"],
       "uses" : {
       },
-      "StructureDefinition-tddui-event-cancel-reason.html" : "Évènement annulé"
+      "StructureDefinition-tddui-event-cancel-reason.html" : "TDDUI Event Cancel Reason"
     },
     {
       "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-ressource-utilisee-cisis",
@@ -361,7 +774,7 @@
       "sources" : ["1.2.250.1.213.1.1.5.807"],
       "uses" : {
       },
-      "StructureDefinition-tddui-ressources-used.html" : "Ressources utilisées"
+      "StructureDefinition-tddui-ressources-used.html" : "TDDUI Ressources Used"
     },
     {
       "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-type-evenement-ssiad-cisis",
@@ -377,7 +790,8 @@
       "sources" : ["1.2.250.1.213.1.1.5.811"],
       "uses" : {
       },
-      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement"
+      "StructureDefinition-tddui-encounter-evenement.html" : "TDDUI Encounter Evenement",
+      "ValueSet-tddui-encounter-type.html" : "TDDUI Encounter Type"
     },
     {
       "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-type-motorisation-cisis",

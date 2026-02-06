@@ -3,6 +3,7 @@
 <head>
   <title>TDDUI : Terminology Server Report</title>
   <link href="fhir.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
   <style>
     span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
     span.toggle  { background-color: #e6f2ff; color: black; border: solid 1px #0056b3; padding: 2px; font-size: 10px }
@@ -11,7 +12,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Terminology Server Report for TDDUI</h1>
- <p>Generated Mon Dec 08 14:39:35 UTC 2025, FHIR version 4.0.1 for ans.fhir.fr.tddui#2.1.0 (canonical = <a href="https://interop.esante.gouv.fr/ig/fhir/tddui">https://interop.esante.gouv.fr/ig/fhir/tddui</a> (<a href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">history</a>))</p>
+ <p>Generated Fri Feb 06 14:56:53 UTC 2026, FHIR version 4.0.1 for ans.fhir.fr.tddui#2.2.0 (canonical = <a href="https://interop.esante.gouv.fr/ig/fhir/tddui">https://interop.esante.gouv.fr/ig/fhir/tddui</a> (<a href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">history</a>))</p>
 <p>This page provides a report on which terminology servers were used while publishing this IG. Note that terminology caching reduces the server hit count - this page only reports content that wasn't cached</p>
 <h2>Terminology Parameters</h2>
 <ul>
@@ -24,7 +25,7 @@
 :     <code>fr</code>
   </li>
 </ul>
-<h2>Tx Manager report for 'http://tx.fhir.org/tx-reg'</h2>
+<h2>Tx Manager report for 'https://tx.fhir.org/tx-reg'</h2>
 <p>
   <b>Decisions</b>
 </p>
@@ -47,23 +48,44 @@
     </td>
   </tr>
   <tr>
-    <td>System not handled by any servers. Using primary server</td>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
-    <td>http://hl7.org/fhir/fhir-types</td>
-    <td>auth = , candidates=</td>
+    <td>urn:iso:std:iso:3166</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Fallback: primary server</td>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
-    <td>http://hl7.org/fhir/fhir-types</td>
-    <td>auth = , candidates=</td>
+    <td>http://hl7.org/fhir/sid/icf</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=http://tx.hl7europe.eu/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server https://smt.esante.gouv.fr/fhir</td>
+    <td>https://smt.esante.gouv.fr/fhir</td>
+    <td>null</td>
+    <td>https://smt.esante.gouv.fr/terminologie-cim-10</td>
+    <td>auth = https://smt.esante.gouv.fr/fhir, candidates=</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server https://smt.esante.gouv.fr/fhir</td>
+    <td>https://smt.esante.gouv.fr/fhir</td>
+    <td>null</td>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM</td>
+    <td>auth = https://smt.esante.gouv.fr/fhir, candidates=</td>
+  </tr>
+  <tr>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
   </tr>
 </table>
-<h2>Primary Server: http://tx.fhir.org/r4</h2>
-<a href="http://tx.fhir.org/r4"></a>
-<p>Use Count: 1. Code Systems used: </p>
+<h2>Primary Server: https://tx.fhir.org/r4</h2>
+<a href="https://tx.fhir.org/r4"></a>
+<p>Use Count: 0. Code Systems used: </p>
 <table class="grid">
   <tr>
     <th>
@@ -80,10 +102,63 @@
     </th>
   </tr>
   <tr>
-    <td>http://hl7.org/fhir/fhir-types</td>
+    <td>http://hl7.org/fhir/sid/icf</td>
     <td>0</td>
     <td>1</td>
-    <td></td>
+    <td>
+      <a href="http://terminology.hl7.org/6.5.0/CodeSystem-ICF.html">International Classification of Functioning, Disability and Health</a>
+    </td>
+  </tr>
+  <tr>
+    <td>http://loinc.org</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a>
+    </td>
+  </tr>
+  <tr>
+    <td>urn:iso:std:iso:3166</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>
+    </td>
+  </tr>
+</table>
+<h2>Server: https://smt.esante.gouv.fr/fhir</h2>
+<a href="https://smt.esante.gouv.fr/fhir"></a>
+<p>Use Count: 0. Code Systems used: </p>
+<table class="grid">
+  <tr>
+    <th>
+      <b>System</b>
+    </th>
+    <th>
+      <b>#Exp.</b>
+    </th>
+    <th>
+      <b>#Val.</b>
+    </th>
+    <th>
+      <b>Details</b>
+    </th>
+  </tr>
+  <tr>
+    <td>https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="https://interop.esante.gouv.fr/terminologies/1.4.0/CodeSystem-TRE-R13-CommuneOM.html">TRE_R13_CommuneOM</a>
+    </td>
+  </tr>
+  <tr>
+    <td>https://smt.esante.gouv.fr/terminologie-cim-10</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="https://interop.esante.gouv.fr/terminologies/1.4.0/CodeSystem-terminologie-cim-10.html">Classification internationale des maladies et des problèmes de santé connexes - 10ème révision - Version française à usage PMSI (Programme Médicalisé des Systèmes d'Information)</a>
+    </td>
   </tr>
 </table>
 </body>
