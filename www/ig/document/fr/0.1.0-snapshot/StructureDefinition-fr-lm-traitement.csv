@@ -1,0 +1,39 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-traitement","fr-lm-traitement","","","",0,*,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Traitement","Traitement","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-traitement.identifiant","fr-lm-traitement.identifiant","","","",1,*,"","","","Identifier {[]} {[]}
+","Identifiant de l'entrée. L'entrée Traitement doit être identifiée de manière unique","Identifiant de l'entrée. L'entrée Traitement doit être identifiée de manière unique","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.identifiant",1,*,"",""
+"fr-lm-traitement.code","fr-lm-traitement.code","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Acte ou situation","Acte ou situation","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.code",0,1,"",""
+"fr-lm-traitement.note","fr-lm-traitement.note","","","",1,1,"","","","Narrative {[]} {[]}
+","Partie narrative de l’entrée","Partie narrative de l’entrée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.note",1,1,"",""
+"fr-lm-traitement.status","fr-lm-traitement.status","","","",1,1,"","","","code {[]} {[]}
+","Statut de l’entrée","Statut de l’entrée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.status",1,1,"",""
+"fr-lm-traitement.occurancePeriod","fr-lm-traitement.occurancePeriod","","","",0,1,"","","","dateTime {[]} {[]}
+","Durée du traitement","Durée du traitement","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.occurancePeriod",0,1,"",""
+"fr-lm-traitement.occuranceDateTim","fr-lm-traitement.occuranceDateTim","","","",0,1,"","","","Period {[]} {[]}
+","Fréquence d'administration","Fréquence d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.occuranceDateTim",0,1,"",""
+"fr-lm-traitement.dosage","fr-lm-traitement.dosage","","","",0,1,"","","","Base {[]} {[]}
+","Dosage","Dosage","","","","","","","","","",,"","SNOMED CT (2.16.840.1.113883.6.96)","","",,,,"fr-lm-traitement.dosage",0,1,"",""
+"fr-lm-traitement.dosage.route","fr-lm-traitement.dosage.route","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Voie d'administration","Voie d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.dosage.route",0,1,"",""
+"fr-lm-traitement.dosage.site","fr-lm-traitement.dosage.site","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","Région anatomique d'administration","Région anatomique d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.dosage.site",0,*,"",""
+"fr-lm-traitement.dosage.dose","fr-lm-traitement.dosage.dose","","","",0,1,"","","","Quantity {[]} {[]}
+","Dose à administrer","Dose à administrer","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.dosage.dose",0,1,"",""
+"fr-lm-traitement.dosage.rate[x]","fr-lm-traitement.dosage.rate[x]","","","",0,1,"","","","Ratio {[]} {[]}
+Quantity {[]} {[]}","Rythme d'administration","Rythme d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.dosage.rate[x]",0,1,"",""
+"fr-lm-traitement.dosage.doseMaximale","fr-lm-traitement.dosage.doseMaximale","","","",0,1,"","","","Ratio {[]} {[]}
+","Dose maximale","Dose maximale","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.dosage.doseMaximale",0,1,"",""
+"fr-lm-traitement.medicament","fr-lm-traitement.medicament","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-produit-sante {[]} {[]}
+","Médicament","Médicament","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.medicament",1,1,"",""
+"fr-lm-traitement.reason","fr-lm-traitement.reason","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-reference-interne {[]} {[]}
+","Motif du traitement","Motif du traitement","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.reason",0,*,"",""
+"fr-lm-traitement.prescription","fr-lm-traitement.prescription","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prescription-entree {[]} {[]}
+","Prescription","Prescription","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.prescription",0,*,"",""
+"fr-lm-traitement.subordinateTreatment","fr-lm-traitement.subordinateTreatment","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-subordonne {[]} {[]}
+","Traitement subordonné","Traitement subordonné","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.subordinateTreatment",0,*,"",""
+"fr-lm-traitement.instructionsPatient","fr-lm-traitement.instructionsPatient","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-patient {[]} {[]}
+","Instruction au patient","Instruction au patient","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.instructionsPatient",0,1,"",""
+"fr-lm-traitement.precondition","fr-lm-traitement.precondition","","","",0,1,"","","","Base {[]} {[]}
+","Précondition","Précondition","","","","","","","","","",,,,,"",,,,"fr-lm-traitement.precondition",0,1,"",""

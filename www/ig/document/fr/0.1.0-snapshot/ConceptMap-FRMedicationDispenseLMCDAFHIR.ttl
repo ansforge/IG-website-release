@@ -1,0 +1,201 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationDispenseLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRMedicationDispenseLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRMedicationDispenseLMCDAFHIR</b></p><a name=\"FRMedicationDispenseLMCDAFHIR\"> </a><a name=\"hcFRMedicationDispenseLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-traitement-dispense.html\">Modèle logique métier - FR LM Traitement dispensé</a> to <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense</code></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMTraitementDispense</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense</td></tr><tr><td>FRLMTraitementDispense.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.id</td></tr><tr><td>FRLMTraitementDispense.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.code</td></tr><tr><td>FRLMTraitementDispense.description</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.text</td></tr><tr><td>FRLMTraitementDispense.quantite</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.quantity</td></tr><tr><td>FRLMTraitementDispense.medicamentDelivre</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.product:frProduitDeSante</td></tr><tr><td>FRLMTraitementDispense.referencePrescription</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.entryRelationship:frReferenceItemPrescription</td></tr><tr><td>FRLMTraitementDispense.traitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.entryRelationship:frTraitement</td></tr><tr><td>FRLMTraitementDispense.instructionsPatient</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.entryRelationship.frInstructionsAuPatient</td></tr><tr><td>FRLMTraitementDispense.notesDispensateur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.entryRelationship.frNotesDuDispensateur</td></tr><tr><td>FRLMTraitementDispense.substitution</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementDispense.entryRelationship.frActeSubstitution</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense</code> to <a href=\"StructureDefinition-fr-medication-dispense-document.html\">MedicationDispense - FR Medication Dispense Document</a></p><table class=\"grid\"><tr><td colspan=\"2\"><b>Détails du concept source</b></td><td><b>relation</b></td><td colspan=\"2\"><b>Détails du concept cible</b></td></tr><tr><td colspan=\"2\"><b>Codes</b> de https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense</td><td/><td colspan=\"2\"><b>Codes</b> de https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-dispense-document</td></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.id</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.identifier</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.code</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.type</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.text</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.type.text</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.quantity</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.quantity</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.product:frProduitDeSante</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.medication[x]</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.entryRelationship:frReferenceItemPrescription</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.authorizingPrescription</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.entryRelationship:frTraitement</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.supportingInformation</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px; border-bottom-style: none\">FRCDATraitementDispense.entryRelationship:frInstructionsAuPatient</td><td style=\"border-left-width: 0px; border-bottom-style: none\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.dosageInstruction.patientInstruction</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px; border-top-style: none\"/><td style=\"border-top-style: none; border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.dosageInstruction.additionalInstruction</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.entryRelationship:frNotesDuDispensateur</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.dosageInstruction.text</td><td style=\"border-left-width: 0px\"/></tr><tr><td style=\"border-right-width: 0px\">FRCDATraitementDispense.entryRelationship:frActeSubstitution</td><td style=\"border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">FRMedicationDispenseDocument.substitution</td><td style=\"border-left-width: 0px\"/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationDispenseLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationDispenseLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Traitement dispensé\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-03-13T22:56:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMTraitementDispense vers le profil CDA FRCDATraitementDispense, puis vers le profil FHIR FRMedicationDispenseDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-dispense"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-dispense>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMTraitementDispense" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.description" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.quantite" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.quantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.medicamentDelivre" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.product:frProduitDeSante" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.referencePrescription" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frReferenceItemPrescription" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.traitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frTraitement" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.instructionsPatient" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship.frInstructionsAuPatient" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.notesDispensateur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship.frNotesDuDispensateur" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementDispense.substitution" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship.frActeSubstitution" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-dispense>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-dispense-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-dispense-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDATraitementDispense" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.type.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.quantity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.quantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.product:frProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.medication[x]" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frReferenceItemPrescription" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.authorizingPrescription" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.supportingInformation" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frInstructionsAuPatient" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.dosageInstruction.patientInstruction" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.dosageInstruction.additionalInstruction" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frNotesDuDispensateur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.dosageInstruction.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementDispense.entryRelationship:frActeSubstitution" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDispenseDocument.substitution" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

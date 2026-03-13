@@ -1,0 +1,63 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-traitement-prescrit","fr-lm-traitement-prescrit","","","",0,*,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Traitement Prescrit","Traitement prescrit","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-traitement-prescrit.identifiant","fr-lm-traitement-prescrit.identifiant","","","",1,*,"","","","Identifier {[]} {[]}
+","Identifiant de l'entrée","Identifiant de l'entrée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.identifiant",1,*,"",""
+"fr-lm-traitement-prescrit.code","fr-lm-traitement-prescrit.code","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Acte ou situation","Acte ou situation","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.code",0,1,"",""
+"fr-lm-traitement-prescrit.description","fr-lm-traitement-prescrit.description","","","",1,1,"","","","Narrative {[]} {[]}
+","Partie narrative de l’entrée","Partie narrative de l’entrée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.description",1,1,"",""
+"fr-lm-traitement-prescrit.status","fr-lm-traitement-prescrit.status","","","",1,1,"","","","code {[]} {[]}
+","Statut de l’entrée","Statut de l’entrée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.status",1,1,"",""
+"fr-lm-traitement-prescrit.dureeTraitement","fr-lm-traitement-prescrit.dureeTraitement","","","",0,1,"","","","dateTime {[]} {[]}
+","Durée du traitement","Durée du traitement","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.dureeTraitement",0,1,"",""
+"fr-lm-traitement-prescrit.frequenceAdministration","fr-lm-traitement-prescrit.frequenceAdministration","","","",0,1,"","","","dateTime {[]} {[]}
+","Fréquence d'administration","Fréquence d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.frequenceAdministration",0,1,"",""
+"fr-lm-traitement-prescrit.nombreRenouvellement","fr-lm-traitement-prescrit.nombreRenouvellement","","","",0,1,"","","","integer {[]} {[]}
+","Nombre de renouvellement(s) possible(s)","Nombre de renouvellement(s) possible(s)","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.nombreRenouvellement",0,1,"",""
+"fr-lm-traitement-prescrit.voieAdministration","fr-lm-traitement-prescrit.voieAdministration","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Voie d'administration","Voie d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.voieAdministration",0,1,"",""
+"fr-lm-traitement-prescrit.regionAnatomique","fr-lm-traitement-prescrit.regionAnatomique","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","région anatomique d'administration","région anatomique d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.regionAnatomique",0,*,"",""
+"fr-lm-traitement-prescrit.dose","fr-lm-traitement-prescrit.dose","","","",0,1,"","","","Quantity {[]} {[]}
+","Dose à administrer","Dose à administrer","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.dose",0,1,"",""
+"fr-lm-traitement-prescrit.rythmeAdministration[x]","fr-lm-traitement-prescrit.rythmeAdministration[x]","","","",0,1,"","","","Ratio {[]} {[]}
+Quantity {[]} {[]}","Rythme d'administration","Rythme d'administration","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.rythmeAdministration[x]",0,1,"",""
+"fr-lm-traitement-prescrit.doseMaximale[x]","fr-lm-traitement-prescrit.doseMaximale[x]","","","",0,*,"","","","Ratio {[]} {[]}
+Quantity {[]} {[]}","Dose maximale","Dose maximale","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.doseMaximale[x]",0,*,"",""
+"fr-lm-traitement-prescrit.produitSante","fr-lm-traitement-prescrit.produitSante","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-produit-sante {[]} {[]}
+","Produit de santé","Produit de santé","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.produitSante",1,1,"",""
+"fr-lm-traitement-prescrit.prescripteur","fr-lm-traitement-prescrit.prescripteur","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur {[]} {[]}
+","Prescripteur","Prescripteur","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.prescripteur",0,1,"",""
+"fr-lm-traitement-prescrit.auteur","fr-lm-traitement-prescrit.auteur","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur {[]} {[]}
+","Auteur du document Prescription","Auteur du document Prescription","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.auteur",0,1,"",""
+"fr-lm-traitement-prescrit.motifTraitement","fr-lm-traitement-prescrit.motifTraitement","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-reference-interne {[]} {[]}
+","Motif du traitement (Référence interne)","Motif du traitement (Référence interne)","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.motifTraitement",0,*,"",""
+"fr-lm-traitement-prescrit.traitementPrescritSubordonnee","fr-lm-traitement-prescrit.traitementPrescritSubordonnee","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-prescrit-subordonne {[]} {[]}
+","Traitement prescrit subordonnée","Traitement prescrit subordonnée","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.traitementPrescritSubordonnee",0,*,"",""
+"fr-lm-traitement-prescrit.referenceItemPlanTraitement","fr-lm-traitement-prescrit.referenceItemPlanTraitement","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-reference-item-plan-traitement {[]} {[]}
+","Référence à un item du plan de traitement","Référence à un item du plan de traitement","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.referenceItemPlanTraitement",0,*,"",""
+"fr-lm-traitement-prescrit.instructionsPatient","fr-lm-traitement-prescrit.instructionsPatient","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-patient {[]} {[]}
+","Instructions au patient","Instructions au patient","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.instructionsPatient",0,1,"",""
+"fr-lm-traitement-prescrit.instructionsDispensateur","fr-lm-traitement-prescrit.instructionsDispensateur","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-au-dispensateur {[]} {[]}
+","Instructions au dispensateur","Instructions au dispensateur","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.instructionsDispensateur",0,1,"",""
+"fr-lm-traitement-prescrit.quantiteProduit","fr-lm-traitement-prescrit.quantiteProduit","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-quantite-produit {[]} {[]}
+","Quantite de produit","Quantite de produit","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.quantiteProduit",0,1,"",""
+"fr-lm-traitement-prescrit.autorisationSubstitution","fr-lm-traitement-prescrit.autorisationSubstitution","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-autorisation-substitution {[]} {[]}
+","Autorisation de substitution","Autorisation de substitution","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.autorisationSubstitution",1,1,"",""
+"fr-lm-traitement-prescrit.periodeRenouvellement","fr-lm-traitement-prescrit.periodeRenouvellement","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-periode-de-renouvellement {[]} {[]}
+","Periode de renouvellement","Periode de renouvellement","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.periodeRenouvellement",0,1,"",""
+"fr-lm-traitement-prescrit.enRapportAvecALD","fr-lm-traitement-prescrit.enRapportAvecALD","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-en-rapport-avec-ald {[]} {[]}
+","En rapport avec ALD","En rapport avec ALD","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.enRapportAvecALD",1,1,"",""
+"fr-lm-traitement-prescrit.enRapportAvecAccidentTravail","fr-lm-traitement-prescrit.enRapportAvecAccidentTravail","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-en-rapport-avec-accident-travail {[]} {[]}
+","En rapport avec accident travail","En rapport avec accident travail","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.enRapportAvecAccidentTravail",1,1,"",""
+"fr-lm-traitement-prescrit.enRapportAvecPrevention","fr-lm-traitement-prescrit.enRapportAvecPrevention","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-en-rapport-avec-la-prevention {[]} {[]}
+","En rapport avec la prevention","En rapport avec la prevention","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.enRapportAvecPrevention",1,1,"",""
+"fr-lm-traitement-prescrit.nonRemboursable","fr-lm-traitement-prescrit.nonRemboursable","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-non-remboursable {[]} {[]}
+","Non remboursable","Non remboursable","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.nonRemboursable",1,1,"",""
+"fr-lm-traitement-prescrit.horsAMM","fr-lm-traitement-prescrit.horsAMM","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-hors-amm {[]} {[]}
+","Hors AMM","Hors AMM","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.horsAMM",1,1,"",""
+"fr-lm-traitement-prescrit.referencePrescription","fr-lm-traitement-prescrit.referencePrescription","","","",0,*,"","","","Base {[]} {[]}
+","Référence de la prescription","Référence de la prescription","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.referencePrescription",0,*,"",""
+"fr-lm-traitement-prescrit.precondition","fr-lm-traitement-prescrit.precondition","","","",0,1,"","","","Base {[]} {[]}
+","Précondition à l'utilisation du médicament","Précondition à l'utilisation du médicament","","","","","","","","","",,,,,"",,,,"fr-lm-traitement-prescrit.precondition",0,1,"",""

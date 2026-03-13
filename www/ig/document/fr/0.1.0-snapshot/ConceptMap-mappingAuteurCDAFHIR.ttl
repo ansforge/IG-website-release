@@ -1,0 +1,140 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingAuteurCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingAuteurCDAFHIR</b></p><a name=\"mappingAuteurCDAFHIR\"> </a><a name=\"hcmappingAuteurCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-auteur.html\">Modèle logique métier - FR LM Auteur</a> to <a href=\"StructureDefinition-fr-cda-author.html\">CDA - author</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>FRLMAuteur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>author</td><td/></tr><tr><td>FRLMAuteur.roleFonctionnel</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>author.functionCode</td><td/></tr><tr><td>FRLMAuteur.horodatageParticipation</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>author.time</td><td/></tr><tr><td>FRLMAuteur.FRLMPersonneStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>author.assignedAuthor</td><td>L'élément PersonneStructure est de type PersonneStructure.</td></tr><tr><td>FRLMAuteur.FRLMSystemeStructureAuteur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>author.assignedAuthor</td><td>L'élément SystemeStructureAuteur est de type Systeme</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-author.html\">CDA - author</a> to <a href=\"StructureDefinition-fr-composition-document.html\">FR Composition Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>author</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author</td><td/></tr><tr><td>author.time</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author.extension:time</td><td/></tr><tr><td>author.functionCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author.PractitionerRole.code</td><td>Auteur du document est un professionnel et author.ofType(PractitionerRole)</td></tr><tr><td>author.assignedAuthor</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author.Practitioner</td><td>Composition.author.resolve().ofType(Practitioner)</td></tr><tr><td>author.assignedAuthor</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author.Patient</td><td>Composition.author.resolve().ofType(Patient)</td></tr><tr><td>author.assignedAuthor</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.author.Device</td><td>Composition.author.resolve().ofType(Device)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Auteur\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Auteur\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-13T22:56:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap présente deux groupes de mapping : \n - Mapping 1 : entre le modèle métier \\\"Auteur\\\" et l'élément CDA \\\"author\\\"\n - Mapping 2 : entre l'élément CDA \\\"author\\\" et l'élément FHIR \\\"Composition.author\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-author"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-author>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMAuteur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "author" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAuteur.roleFonctionnel" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "author.functionCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAuteur.horodatageParticipation" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "author.time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAuteur.FRLMPersonneStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "author.assignedAuthor" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "L'élément PersonneStructure est de type PersonneStructure." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAuteur.FRLMSystemeStructureAuteur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "author.assignedAuthor" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "L'élément SystemeStructureAuteur est de type Systeme" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-author"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-author>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "author" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "author.time" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author.extension:time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "author.functionCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author.PractitionerRole.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Auteur du document est un professionnel et author.ofType(PractitionerRole)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "author.assignedAuthor" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author.Practitioner" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Composition.author.resolve().ofType(Practitioner)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "author.assignedAuthor" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author.Patient" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Composition.author.resolve().ofType(Patient)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "author.assignedAuthor" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.author.Device" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Composition.author.resolve().ofType(Device)" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

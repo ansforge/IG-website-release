@@ -1,0 +1,20 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-cr-bio-chapitre","fr-lm-cr-bio-chapitre","","","",0,*,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Compte rendu de biologie de 1er niveau","Section Compte rendu de biologie de 1er niveau","","","","","","","","","",,,,,"",,,,"Base",0,*,"","crbio-choice:La section doit contenir soit une ou plusieurs sous-sections CRBIOSousChapitre, soit une ou plusieurs entrées ResultatsExamensBiologieMedicale, mais pas les deux. {(choice.where(resolve() is CRBIOSousChapitre).exists() and not choice.where(resolve() is ResultatsExamensBiologieMedicale).exists()) or (not choice.where(resolve() is CRBIOSousChapitre).exists() and choice.where(resolve() is ResultatsExamensBiologieMedicale).exists())}
+"
+"fr-lm-cr-bio-chapitre.codeSection","fr-lm-cr-bio-chapitre.codeSection","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Code de la section","Code de la section","","","","","","","","","",,,,,"",,,,"fr-lm-section.codeSection",1,1,"",""
+"fr-lm-cr-bio-chapitre.titreSection","fr-lm-cr-bio-chapitre.titreSection","","","",0,1,"","","","string {[]} {[]}
+","Titre de la section","Titre de la section","","","","","","","","","",,,,,"",,,,"fr-lm-section.titreSection",0,1,"",""
+"fr-lm-cr-bio-chapitre.blocNarratif","fr-lm-cr-bio-chapitre.blocNarratif","","","",1,1,"","","","Narrative {[]} {[]}
+","Bloc narratif","Bloc narratif","","","","","","","","","",,,,,"",,,,"fr-lm-section.blocNarratif",1,1,"",""
+"fr-lm-cr-bio-chapitre.sousSection","fr-lm-cr-bio-chapitre.sousSection","","","",0,0,"","","","Base {[]} {[]}
+","Sous-sections","Sous-sections","","","","","","","","","",,,,,"",,,,"fr-lm-section.sousSection",0,*,"",""
+"fr-lm-cr-bio-chapitre.entree","fr-lm-cr-bio-chapitre.entree","","","",0,0,"","","","Base {[]} {[]}
+","Entrées","Entrées","","","","","","","","","",,,,,"",,,,"fr-lm-section.entree",0,*,"",""
+"fr-lm-cr-bio-chapitre.choice[x]","fr-lm-cr-bio-chapitre.choice[x]","","","",1,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-cr-bio-sous-chapitre {[]} {[]}
+https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultats-examens-biologie-medicale {[]} {[]}","Section de 1er niveau (Chapitre) qui contient : 
+  • soit une seule entrée FR-Resultats-examens-de-biologie-medicale,  
+  • soit une ou plusieurs sous-sections FR-CR-BIO-Sous-Chapitre","Section de 1er niveau (Chapitre) qui contient : 
+  • soit une seule entrée FR-Resultats-examens-de-biologie-medicale,  
+  • soit une ou plusieurs sous-sections FR-CR-BIO-Sous-Chapitre","","","","","","","","","",,,,,"",,,,"fr-lm-cr-bio-chapitre.choice[x]",1,*,"",""

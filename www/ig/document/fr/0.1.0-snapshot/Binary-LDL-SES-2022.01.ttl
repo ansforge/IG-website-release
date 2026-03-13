@@ -1,0 +1,2104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+#  
+#      **************************************************************************************************************
+#      Document Lettre de liaison à la sortie d'un établissement de soins (LDL-SES_2022.01)
+#      Auteur : ANS
+#	  **************************************************************************************************************
+#      format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+#      **************************************************************************************************************
+#      Sections utilisées dans ce document :
+#            [1..1] FR-Statut-du-document-LDL-SES           : 1.2.250.1.213.1.1.2.35
+#            [1..1] FR-Raison-de-la-recommandation-non-code : 1.3.6.1.4.1.19376.1.5.3.1.3.1
+#            [1..1] FR-Resultats-evenements-LDL-SES         : 1.3.6.1.4.1.19376.1.7.3.1.1.13.7
+#            [0..1] FR-Traitements-administres              : 1.3.6.1.4.1.19376.1.5.3.1.3.21
+#            [1..1] FR-Traitements-a-la-sortie              : 1.3.6.1.4.1.19376.1.5.3.1.3.22
+#            [0..1] FR-Resultats-examens-non-code           : 1.3.6.1.4.1.19376.1.5.3.1.3.27
+#            [0..1] FR-Plan-de-soins                        : 1.3.6.1.4.1.19376.1.5.3.1.3.36
+#            [0..1] FR-Dispositifs-medicaux                 : 1.2.250.1.213.1.1.2.1
+#            [0..1] FR-Allergies-et-intolerances            : 1.3.6.1.4.1.19376.1.5.3.1.3.13
+#      **************************************************************************************************************      
+#      11/06/2018 : Correction d'erreurs suite à la mise à jour des schématrons
+#      03/09/2018 : Mise en conformmité Volet LDL 2.1
+#      14/04/2020 : Mise en conformité Volet LDL-SES_2020.01
+#      26/06/2020 : Correction des OIDs du DM
+#      03/05/2021 : Mise à jour des card dans les commentaires
+#      09/02/2022 : Mise à jour de la codification d'un DM avec EMDN
+#      11/04/2022 : Migration des terminologies et JDVs en SNOMED CT et mise en conformité LDL-EES_2022.01
+#      28/08/2023 : MAJ des JDV
+#      21/08/2025 : MAJ de l'entrée FR-Allergie-ou-hypersensibilite (value)
+#      **************************************************************************************************************
+#   
+
+[a fhir:ClinicalDocument ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:realmCode ( [
+     fhir:code [ fhir:v "FR" ]
+  ] ) ; # 
+#    *************************
+#	EN TETE DU DOCUMENT
+#	*************************
+#    
+  fhir:typeId [
+     fhir:extension [ fhir:v "POCD_HD000040" ] ;
+     fhir:root [ fhir:v "2.16.840.1.113883.1.3" ]
+  ] ; # 
+  fhir:templateId ( [
+     fhir:root [ fhir:v "2.16.840.1.113883.2.8.2.1" ]
+  ] [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.1" ]
+  ] [
+     fhir:extension [ fhir:v "2022.01" ] ;
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.29" ]
+  ] ) ; #  Conformité spécifications HL7 France 
+  fhir:id [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.29.2022.1.1" ]
+  ] ; #  Identifiant du document 
+  fhir:code [
+     fhir:code [ fhir:v "11490-0" ] ;
+     fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+     fhir:codeSystemName [ fhir:v "LOINC" ] ;
+     fhir:displayName [ fhir:v "Lettre de liaison à la sortie d'un établissement de soins" ]
+  ] ; #  Type de document 
+  fhir:title [
+     fhir:xmlText [ fhir:v "Lettre de liaison à la sortie de l'établissement de santé" ]
+  ] ; #  Titre du document 
+  fhir:effectiveTime [
+     fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+  ] ; #  Date de création du document 
+  fhir:confidentialityCode [
+     fhir:code [ fhir:v "N" ] ;
+     fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.25" ] ;
+     fhir:displayName [ fhir:v "Normal" ]
+  ] ; #  Niveau de confidentialité du document 
+  fhir:languageCode [
+     fhir:code [ fhir:v "fr-FR" ]
+  ] ; #  Langue du document 
+  fhir:setId [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.29.2022.1" ]
+  ] ; #  Identifiant commun à toutes les versions successives du document 
+  fhir:versionNumber [
+     fhir:value [ fhir:v 1 ]
+  ] ; #  Numéro de la version du présent document (entier positif) 
+  fhir:recordTarget ( [
+     fhir:patientRole [
+       fhir:id ( [
+         fhir:extension [ fhir:v "279035121518989" ] ;
+         fhir:root [ fhir:v "1.2.250.1.213.1.4.10" ]
+       ] [
+         fhir:extension [ fhir:v "1234567890121" ] ;
+         fhir:root [ fhir:v "1.2.3.4.567.8.9.10" ]
+       ] ) ; #  INS-NIR de test : 1.2.250.1.213.1.4.10 
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "28" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Avenue de Breteuil" ]
+           ]
+         ] [
+           fhir:unitID [
+             fhir:xmlText [ fhir:v "Escalier A" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75007" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] [
+           fhir:country [
+             fhir:xmlText [ fhir:v "FRANCE" ]
+           ]
+         ] )
+       ] ) ; #  Adresse du patient 
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "H" ] ) ;
+         fhir:value [
+           fhir:v "tel:0144534551"^^xsd:anyURI ;
+           fhir:l fhir:tel:0144534551
+         ]
+       ] [
+         fhir:use ( [ fhir:v "MC" ] ) ;
+         fhir:value [
+           fhir:v "tel:0647151010"^^xsd:anyURI ;
+           fhir:l fhir:tel:0647151010
+         ]
+       ] [
+         fhir:value [
+           fhir:v "mailto:279035121518989@patient.mssante.fr"^^xsd:anyURI ;
+           fhir:l fhir:mailto:279035121518989@patient.mssante.fr
+         ]
+       ] ) ; #  Coordonnées télécom du patient 
+       fhir:patient [
+         fhir:classCode [ fhir:v "PSN" ] ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "PAT-TROIS" ] ;
+               fhir:qualifier ( [ fhir:v "BR" ] )
+             ] ) #  Nom et prénom(s) de naissance ,  Nom de l’acte de naissance 
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "DOMINIQUE MARIE-LOUISE" ]
+             ] ) #  Prénoms de l’acte de naissance 
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "DOMINIQUE" ] ;
+               fhir:qualifier ( [ fhir:v "BR" ] )
+             ] ) #  Premier prénom de l’acte de naissance 
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "PAT-TROIS" ] ;
+               fhir:qualifier ( [ fhir:v "CL" ] )
+             ] ) #  Nom et prénom utilisés 
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "DOMINIQUE" ] ;
+               fhir:qualifier ( [ fhir:v "CL" ] )
+             ] )
+           ] )
+         ] ) ;
+         fhir:administrativeGenderCode [
+           fhir:code [ fhir:v "F" ] ;
+           fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.1" ] ;
+           fhir:displayName [ fhir:v "Féminin" ]
+         ] ;
+         fhir:birthTime [
+           fhir:value [ fhir:v "1979-03-28"^^xsd:date ]
+         ] ;
+         fhir:guardian ( [
+           fhir:addr ( [
+             fhir:use ( [ fhir:v "H" ] ) ;
+             fhir:item ( [
+               fhir:houseNumber [
+                 fhir:xmlText [ fhir:v "28" ]
+               ]
+             ] [
+               fhir:streetName [
+                 fhir:xmlText [ fhir:v "Avenue de Breteuil" ]
+               ]
+             ] [
+               fhir:postalCode [
+                 fhir:xmlText [ fhir:v "75007" ]
+               ]
+             ] [
+               fhir:city [
+                 fhir:xmlText [ fhir:v "PARIS" ]
+               ]
+             ] [
+               fhir:country [
+                 fhir:xmlText [ fhir:v "FRANCE" ]
+               ]
+             ] )
+           ] ) ;
+           fhir:telecom ( [
+             fhir:use ( [ fhir:v "H" ] ) ;
+             fhir:value [
+               fhir:v "tel:0147150000"^^xsd:anyURI ;
+               fhir:l fhir:tel:0147150000
+             ]
+           ] ) ;
+           fhir:guardianPerson [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:prefix ( [
+                   fhir:xmlText [ fhir:v "MME" ]
+                 ] )
+               ] [
+                 fhir:family ( [
+                   fhir:xmlText [ fhir:v "NESSI" ]
+                 ] )
+               ] [
+                 fhir:given ( [
+                   fhir:xmlText [ fhir:v "Jeanne" ]
+                 ] )
+               ] )
+             ] )
+           ]
+         ] ) ; #  Représentant du patient 
+         fhir:birthplace [
+           fhir:place [
+             fhir:addr [
+               fhir:item ( [
+                 fhir:county [
+                   fhir:xmlText [ fhir:v "51215" ]
+                 ]
+               ] [
+                 fhir:city [
+                   fhir:xmlText [ fhir:v "DOMPREMY" ]
+                 ]
+               ] )
+             ]
+           ]
+         ] #  Lieu de naissance du patient 
+       ] #  Identité du patient 
+     ]
+  ] ) ; #  Patient 
+  fhir:author ( [
+     fhir:time [
+       fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+     ] ;
+     fhir:assignedAuthor [
+       fhir:classCode [ fhir:v "ASSIGNED" ] ;
+       fhir:id ( [
+         fhir:extension [ fhir:v "801234567897" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  Identifiant RPPS du PS 
+       fhir:code [
+         fhir:code [ fhir:v "G15_10/SM27" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+         fhir:displayName [ fhir:v "Médecin - Médecine interne (SM)" ]
+       ] ; #  Profession \/ spécialité du PS 
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "20" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Rue Leblanc" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75015" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] )
+       ] ) ;
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "WP" ] ) ;
+         fhir:value [
+           fhir:v "tel:0141297500"^^xsd:anyURI ;
+           fhir:l fhir:tel:0141297500
+         ]
+       ] ) ;
+       fhir:assignedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Charles" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "DAVID" ]
+             ] )
+           ] [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "DR" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:representedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750803447" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  établissement identifié par son N° FINESS 
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Hôpital Européen Georges Pompidou" ]
+           ] )
+         ] )
+       ] #  ES (optionnel) 
+     ]
+  ] ) ; #  Auteur du document
+  fhir:informant ( [
+     fhir:relatedEntity [
+       fhir:classCode [ fhir:v "ECON" ] ;
+       fhir:code [
+         fhir:code [ fhir:v "SIS" ] ;
+         fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.111" ] ;
+         fhir:displayName [ fhir:v "Soeur" ]
+       ] ;
+       fhir:addr ( [
+         fhir:nullFlavor [ fhir:v "NAV" ]
+       ] ) ;
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "MC" ] ) ;
+         fhir:value [
+           fhir:v "tel:0647150100"^^xsd:anyURI ;
+           fhir:l fhir:tel:0647150100
+         ]
+       ] ) ;
+       fhir:relatedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "NESSI" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Sophie" ]
+             ] )
+           ] )
+         ] )
+       ]
+     ]
+  ] [
+     fhir:relatedEntity [
+       fhir:classCode [ fhir:v "NOK" ] ;
+       fhir:code [
+         fhir:code [ fhir:v "SIS" ] ;
+         fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.111" ] ;
+         fhir:displayName [ fhir:v "Soeur" ]
+       ] ;
+       fhir:addr ( [
+         fhir:nullFlavor [ fhir:v "NAV" ]
+       ] ) ;
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "MC" ] ) ;
+         fhir:value [
+           fhir:v "tel:0647150100"^^xsd:anyURI ;
+           fhir:l fhir:tel:0647150100
+         ]
+       ] ) ;
+       fhir:relatedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "NESSI" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Sophie" ]
+             ] )
+           ] )
+         ] )
+       ]
+     ]
+  ] ) ; #  Personne à prévenir en cas d'urgence 
+  fhir:custodian [
+     fhir:assignedCustodian [
+       fhir:representedCustodianOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750803447" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Hôpital Européen Georges Pompidou" ]
+           ] )
+         ] ;
+         fhir:telecom [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0141297500"^^xsd:anyURI ;
+             fhir:l fhir:tel:0141297500
+           ]
+         ] ;
+         fhir:addr [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "20" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Leblanc" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75015" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "PARIS" ]
+             ]
+           ] )
+         ]
+       ]
+     ]
+  ] ; #  Organisation chargée de la conservation du document 
+  fhir:informationRecipient ( [
+     fhir:intendedRecipient [
+       fhir:id ( [
+         fhir:extension [ fhir:v "801234567897" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ;
+       fhir:informationRecipient [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "BOILEAU" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Charles" ]
+             ] )
+           ] [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "DR" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:receivedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1120456789" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Centre de soins du Belvédère" ]
+           ] )
+         ] )
+       ]
+     ]
+  ] [
+     fhir:intendedRecipient [
+       fhir:id ( [
+         fhir:extension [ fhir:v "801234567896" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ;
+       fhir:informationRecipient [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "DUCOUT" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Elsa" ]
+             ] )
+           ] [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "MME" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:receivedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1120456789" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Cabinet infirmière libérale" ]
+           ] )
+         ] )
+       ]
+     ]
+  ] ) ; #  Destinataire du document 
+  fhir:legalAuthenticator [
+     fhir:time [
+       fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+     ] ;
+     fhir:signatureCode [
+       fhir:code [ fhir:v "S" ]
+     ] ;
+     fhir:assignedEntity [
+       fhir:id ( [
+         fhir:extension [ fhir:v "801234567897" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  Identifiant RPPS du PS 
+       fhir:assignedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Léon" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "AUGUIN" ]
+             ] )
+           ] [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "PR" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:representedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750803447" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  établissement identifié par son N° FINESS 
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Hôpital Européen Georges Pompidou" ]
+           ] )
+         ] ) ;
+         fhir:telecom ( [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0141297500"^^xsd:anyURI ;
+             fhir:l fhir:tel:0141297500
+           ]
+         ] ) ;
+         fhir:addr ( [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "20" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Leblanc" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75015" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "PARIS" ]
+             ]
+           ] )
+         ] ) ;
+         fhir:standardIndustryClassCode [
+           fhir:code [ fhir:v "ETABLISSEMENT" ] ;
+           fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.9" ] ;
+           fhir:codeSystemName [ fhir:v "practiceSettingCode" ] ;
+           fhir:displayName [ fhir:v "Etablissement de santé" ]
+         ]
+       ] #  ES (optionnel) 
+     ]
+  ] ; #  Responsable du document 
+  fhir:participant ( [
+     fhir:typeCode [ fhir:v "INF" ] ;
+     fhir:functionCode [
+       fhir:code [ fhir:v "PCP" ] ;
+       fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.88" ] ;
+       fhir:displayName [ fhir:v "Médecin Traitant" ]
+     ] ;
+     fhir:time [
+       fhir:nullFlavor [ fhir:v "NA" ]
+     ] ;
+     fhir:associatedEntity [
+       fhir:classCode [ fhir:v "PROV" ] ;
+       fhir:id ( [
+         fhir:extension [ fhir:v "801984758437" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ;
+       fhir:code [
+         fhir:code [ fhir:v "G15_10/SM26" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+         fhir:displayName [ fhir:v "Médecin - Qualifié en Médecine Générale (SM)" ]
+       ] ;
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "3" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Rue Petit Pont" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75005" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] )
+       ] ) ;
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "WP" ] ) ;
+         fhir:value [
+           fhir:v "tel:0147150000"^^xsd:anyURI ;
+           fhir:l fhir:tel:0147150000
+         ]
+       ] ) ;
+       fhir:associatedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "DR" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Stéphane" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "MEDIONI" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:scopingOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "2801984755893" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Cabinet du Dr Medioni" ]
+           ] )
+         ] ) ;
+         fhir:telecom ( [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0142515100"^^xsd:anyURI ;
+             fhir:l fhir:tel:0142515100
+           ]
+         ] ) ;
+         fhir:addr ( [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "3" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Petit Pont" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75005" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "PARIS" ]
+             ]
+           ] )
+         ] )
+       ]
+     ]
+  ] ) ; #  Medecin traitant
+  fhir:documentationOf ( [
+     fhir:serviceEvent [
+       fhir:code [
+         fhir:code [ fhir:v "IMP" ] ;
+         fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.4" ] ;
+         fhir:codeSystemName [ fhir:v "HL7:ActCode" ] ;
+         fhir:displayName [ fhir:v "Hospitalisation (établissement, y compris HAD)" ]
+       ] ;
+       fhir:effectiveTime [
+         fhir:low [
+           fhir:value [ fhir:v "2019-10-29T11:17:00+01:00"^^xsd:dateTime ]
+         ] ; #  Date de début d'hospitalisation 
+         fhir:high [
+           fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+         ] #  Date de fin d'hospitalisation (date de décès le cas échéant) 
+       ] ;
+       fhir:performer ( [
+         fhir:typeCode [ fhir:v "PRF" ] ;
+         fhir:time [
+           fhir:high [
+             fhir:value [ fhir:v "2019-10-29T11:17:00+01:00"^^xsd:dateTime ]
+           ]
+         ] ;
+         fhir:assignedEntity [
+           fhir:id ( [
+             fhir:extension [ fhir:v "801234567897" ] ;
+             fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+           ] ) ; #  Identifiant RPPS du PS 
+           fhir:assignedPerson [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:given ( [
+                   fhir:xmlText [ fhir:v "Léon" ]
+                 ] )
+               ] [
+                 fhir:family ( [
+                   fhir:xmlText [ fhir:v "AUGUIN" ]
+                 ] )
+               ] [
+                 fhir:prefix ( [
+                   fhir:xmlText [ fhir:v "M" ]
+                 ] )
+               ] [
+                 fhir:suffix ( [
+                   fhir:xmlText [ fhir:v "DR" ]
+                 ] )
+               ] )
+             ] )
+           ] ;
+           fhir:representedOrganization [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:xmlText [ fhir:v "Service de Cardiologie" ]
+               ] )
+             ] ) ;
+             fhir:telecom ( [
+               fhir:nullFlavor [ fhir:v "NAV" ]
+             ] ) ;
+             fhir:standardIndustryClassCode [
+               fhir:code [ fhir:v "ETABLISSEMENT" ] ;
+               fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.9" ] ;
+               fhir:codeSystemName [ fhir:v "practiceSettingCode" ] ;
+               fhir:displayName [ fhir:v "Etablissement de santé" ]
+             ]
+           ]
+         ]
+       ] ) #  Réalisation de l'acte 
+     ]
+  ] ) ; #  Actes documentés
+  fhir:componentOf [
+     fhir:encompassingEncounter [
+       fhir:effectiveTime [
+         fhir:low [
+           fhir:value [ fhir:v "2019-10-29T11:17:00+01:00"^^xsd:dateTime ]
+         ] ;
+         fhir:high [
+           fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+         ]
+       ] ;
+       fhir:location [
+         fhir:healthCareFacility [
+           fhir:code [
+             fhir:code [ fhir:v "SA01" ] ;
+             fhir:codeSystem [ fhir:v "1.2.250.1.71.4.2.4" ] ;
+             fhir:displayName [ fhir:v "Etablissement public de santé" ]
+           ]
+         ]
+       ]
+     ]
+  ] ; #  Prise en charge 
+  fhir:component [
+     fhir:structuredBody [
+       fhir:component ( [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.35" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.35.1" ]
+           ] ) ; #  Conformité CI-SIS Template Parent 
+           fhir:id [
+             fhir:root [ fhir:v "2DB3E431-03B4-4FC4-99E5-AA2E3CE1D12A" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "33557-0" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Etat d'achèvement" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Statut du document" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><tbody align=\"left\"><tr><td>Statut du document</td><td><span id=\"statutDoc\">En cours</span></td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.16" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.16.1" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "402F3A79-F829-4572-8B65-65BC43367B70" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "GEN-065" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Statut du document" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#statutDoc"^^xsd:anyURI ;
+                     fhir:l <#statutDoc>
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:code [ fhir:v "385651009" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.96" ] ;
+                 fhir:codeSystemName [ fhir:v "SNOMED CT" ] ;
+                 fhir:displayName [ fhir:v "en cours d'exécution" ]
+               ] )
+             ]
+           ] ) #  [1..1] Entrée FR-Statut-document-LDL-SES 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.1" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.127" ]
+           ] ) ; #  Conformité IHE PCC Reason for Referral 
+           fhir:code [
+             fhir:code [ fhir:v "42349-1" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Raison de la recommandation" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Motif de l'hospitalisation" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><tbody align=\"left\"><tr><td>Episode psychotique – cachexie/anorexie</td></tr></tbody></table></div>"^^rdf:XMLLiteral ]
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.1.21.2.9" ]
+           ] [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.7.3.1.1.13.7" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.163" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.163.1" ]
+           ] ) ; #  Conformité IHE PCC Event Outcomes 
+           fhir:id [
+             fhir:root [ fhir:v "E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "42545-4" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Evènements observés" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Synthèse médicale du séjour" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th colspan=\"2\">Synthèse médicale du séjour</th></tr></thead><tbody><tr><td>Modalité et date d'entrée en hospitalisation </td><td><span id=\"modaliteE\">29/10/2018, Transfert</span></td></tr><tr><td>Modalité et date de sortie d'hospitalisation</td><td><span id=\"modaliteS\">05/11/2018, Autre établissement de santé</span></td></tr><tr><td>Synthèse médicale</td><td><span id=\"synthese\">Infection respiratoire aigüe</span></td></tr><tr><td>Evénements indésirables survenus pendant l'hospitalisation</td><td><span id=\"EvenementIndesirable\">Aucun</span></td></tr><tr><td>Recherche de microorganismes multi-résistants ou émergents effectuée</td><td><span id=\"RechercheMicroMulti\">10/07/2018, Oui</span></td></tr><tr><td>Identification de micro-organismes multirésistants</td><td><span id=\"identMicroOrg\">Streptococcus pneumoniae</span></td></tr><tr><td>Transfusion de produits sanguins</td><td><span id=\"transfu\">Non</span></td></tr><tr><td>Accidents transfusionnels</td><td><span id=\"AccidentsTransfusionnels\">Aucun</span></td></tr><tr><td>Administration de dérivés du sang</td><td><span id=\"adminSang\">Non</span></td></tr><tr><td>Evènements indésirables suite à l'administration de dérivés du sang</td><td><span id=\"admiSang-evenement-indesirable\">Aucun</span></td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.6" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "F597BFD5-2BD0-4163-892A-7C51830E2BA6" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "ORG-070" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Modalité d'entrée" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "modaliteE"^^xsd:anyURI ;
+                     fhir:l fhir:modaliteE
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-10-29"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:code [ fhir:v "107724000" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.96" ] ;
+                 fhir:codeSystemName [ fhir:v "SNOMED CT" ] ;
+                 fhir:displayName [ fhir:v "transfert d'un(e) patient(e)" ]
+               ] ) ;
+               fhir:author ( [
+                 fhir:time [
+                   fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+                 ] ;
+                 fhir:assignedAuthor [
+                   fhir:classCode [ fhir:v "ASSIGNED" ] ;
+                   fhir:id ( [
+                     fhir:extension [ fhir:v "801234567897" ] ;
+                     fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+                   ] ) ; #  N°RPPS du PS 
+                   fhir:code [
+                     fhir:code [ fhir:v "G15_10/SM27" ] ;
+                     fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+                     fhir:displayName [ fhir:v "Médecin - Médecine interne (SM)" ]
+                   ] ; #  Profession \/ spécialité du PS 
+                   fhir:addr ( [
+                     fhir:item ( [
+                       fhir:houseNumber [
+                         fhir:xmlText [ fhir:v "20" ]
+                       ]
+                     ] [
+                       fhir:streetName [
+                         fhir:xmlText [ fhir:v "Rue Leblanc" ]
+                       ]
+                     ] [
+                       fhir:postalCode [
+                         fhir:xmlText [ fhir:v "75015" ]
+                       ]
+                     ] [
+                       fhir:city [
+                         fhir:xmlText [ fhir:v "PARIS" ]
+                       ]
+                     ] )
+                   ] ) ;
+                   fhir:telecom ( [
+                     fhir:nullFlavor [ fhir:v "NASK" ]
+                   ] ) ;
+                   fhir:assignedPerson [
+                     fhir:name ( [
+                       fhir:item ( [
+                         fhir:given ( [
+                           fhir:xmlText [ fhir:v "Charles" ]
+                         ] )
+                       ] [
+                         fhir:family ( [
+                           fhir:xmlText [ fhir:v "DAVID" ]
+                         ] )
+                       ] [
+                         fhir:prefix ( [
+                           fhir:xmlText [ fhir:v "M" ]
+                         ] )
+                       ] [
+                         fhir:suffix ( [
+                           fhir:xmlText [ fhir:v "DR" ]
+                         ] )
+                       ] )
+                     ] )
+                   ] ;
+                   fhir:representedOrganization [
+                     fhir:id ( [
+                       fhir:extension [ fhir:v "1750803447" ] ;
+                       fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+                     ] ) ; #  N° FINESS de l'ES 
+                     fhir:name ( [
+                       fhir:item ( [
+                         fhir:xmlText [ fhir:v "Hôpital Européen Georges Pompidou" ]
+                       ] )
+                     ] ) ;
+                     fhir:telecom ( [
+                       fhir:nullFlavor [ fhir:v "NAV" ]
+                     ] ) ;
+                     fhir:addr ( [
+                       fhir:item ( [
+                         fhir:houseNumber [
+                           fhir:xmlText [ fhir:v "20" ]
+                         ]
+                       ] [
+                         fhir:streetName [
+                           fhir:xmlText [ fhir:v "Rue Leblanc" ]
+                         ]
+                       ] [
+                         fhir:postalCode [
+                           fhir:xmlText [ fhir:v "75015" ]
+                         ]
+                       ] [
+                         fhir:city [
+                           fhir:xmlText [ fhir:v "PARIS" ]
+                         ]
+                       ] )
+                     ] )
+                   ] #  Etablissement du PS (optionnel)  
+                 ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.7" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "1E384EA2-2083-4F17-B825-6A088D2A0E6E" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "ORG-074" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Modalité de sortie" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "modaliteS"^^xsd:anyURI ;
+                     fhir:l fhir:modaliteS
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:code [ fhir:v "GEN-092.06.01" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Autre établissement de santé" ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.9" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "174F6D84-986E-4032-8F99-91975403B955" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-142" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "TA_ASIP" ] ;
+                 fhir:displayName [ fhir:v "Synthèse médicale" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "synthese"^^xsd:anyURI ;
+                     fhir:l fhir:synthese
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Infection respiratoire aigüe" ]
+               ] ) ;
+               fhir:author ( [
+                 fhir:time [
+                   fhir:value [ fhir:v "2019-12-03T13:30:00+01:00"^^xsd:dateTime ]
+                 ] ;
+                 fhir:assignedAuthor [
+                   fhir:classCode [ fhir:v "ASSIGNED" ] ;
+                   fhir:id ( [
+                     fhir:extension [ fhir:v "801234567897" ] ;
+                     fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+                   ] ) ; #  N°RPPS du PS 
+                   fhir:code [
+                     fhir:code [ fhir:v "G15_10/SM27" ] ;
+                     fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+                     fhir:displayName [ fhir:v "Médecin - Médecine interne (SM)" ]
+                   ] ; #  Profession \/ spécialité du PS 
+                   fhir:addr ( [
+                     fhir:item ( [
+                       fhir:houseNumber [
+                         fhir:xmlText [ fhir:v "20" ]
+                       ]
+                     ] [
+                       fhir:streetName [
+                         fhir:xmlText [ fhir:v "Rue Leblanc" ]
+                       ]
+                     ] [
+                       fhir:postalCode [
+                         fhir:xmlText [ fhir:v "75015" ]
+                       ]
+                     ] [
+                       fhir:city [
+                         fhir:xmlText [ fhir:v "PARIS" ]
+                       ]
+                     ] )
+                   ] ) ;
+                   fhir:telecom ( [
+                     fhir:nullFlavor [ fhir:v "NASK" ]
+                   ] ) ;
+                   fhir:assignedPerson [
+                     fhir:name ( [
+                       fhir:item ( [
+                         fhir:given ( [
+                           fhir:xmlText [ fhir:v "Charles" ]
+                         ] )
+                       ] [
+                         fhir:family ( [
+                           fhir:xmlText [ fhir:v "DAVID" ]
+                         ] )
+                       ] [
+                         fhir:prefix ( [
+                           fhir:xmlText [ fhir:v "M" ]
+                         ] )
+                       ] [
+                         fhir:suffix ( [
+                           fhir:xmlText [ fhir:v "DR" ]
+                         ] )
+                       ] )
+                     ] )
+                   ] ;
+                   fhir:representedOrganization [
+                     fhir:id ( [
+                       fhir:extension [ fhir:v "1750803447" ] ;
+                       fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+                     ] ) ; #  N° FINESS de l'ES 
+                     fhir:name ( [
+                       fhir:item ( [
+                         fhir:xmlText [ fhir:v "Hôpital Européen Georges Pompidou" ]
+                       ] )
+                     ] ) ;
+                     fhir:telecom ( [
+                       fhir:nullFlavor [ fhir:v "NAV" ]
+                     ] ) ;
+                     fhir:addr ( [
+                       fhir:item ( [
+                         fhir:houseNumber [
+                           fhir:xmlText [ fhir:v "20" ]
+                         ]
+                       ] [
+                         fhir:streetName [
+                           fhir:xmlText [ fhir:v "Rue Leblanc" ]
+                         ]
+                       ] [
+                         fhir:postalCode [
+                           fhir:xmlText [ fhir:v "75015" ]
+                         ]
+                       ] [
+                         fhir:city [
+                           fhir:xmlText [ fhir:v "PARIS" ]
+                         ]
+                       ] )
+                     ] )
+                   ] #  Etablissement du PS (optionnel)  
+                 ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.3" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "D1DFF1EF-CCE0-40DE-8C78-1827B31208EE" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-143" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Evènements indésirables survenus pendant l'hospitalisation" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "EvenementIndesirable"^^xsd:anyURI ;
+                     fhir:l fhir:EvenementIndesirable
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Aucun" ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.8" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "D1DFF1EF-CCE0-40DE-8C78-1827B31208AA" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-309" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Recherche de microorganismes multi-résistants ou émergents effectuée" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "RechercheMicroMulti"^^xsd:anyURI ;
+                     fhir:l fhir:RechercheMicroMulti
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:value [ fhir:v true ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.5" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "53C6C420-96EF-47D4-8ECA-B25460140B8F" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-144" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Identification de micro-organismes multirésistants" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "identMicroOrg"^^xsd:anyURI ;
+                     fhir:l fhir:identMicroOrg
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Streptococcus pneumoniae" ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.10" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "53C6C420-96EF-47D4-8ECA-B25460140B8F" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-145" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Transfusion de produits sanguins" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "transfu"^^xsd:anyURI ;
+                     fhir:l fhir:transfu
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:value [ fhir:v false ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.1" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "12DA3A06-18E7-40B7-9397-1FA5B1552456" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-146" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Accidents transfusionnels" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "AccidentsTransfusionnels"^^xsd:anyURI ;
+                     fhir:l fhir:AccidentsTransfusionnels
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Aucun" ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.2" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "12DA3A06-18E7-40B7-9397-1FA5B1552472" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-147" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Administration de dérivés du sang" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "admiSang"^^xsd:anyURI ;
+                     fhir:l fhir:admiSang
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:value [ fhir:v false ]
+               ] )
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.13" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.48.4" ]
+               ] ) ; #  Conformité IHE PCC Simple Observation 
+               fhir:id ( [
+                 fhir:root [ fhir:v "12DA3A06-18E7-40B7-9397-1FA5B1552433" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "MED-148" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Evènements indésirables suite à l'administration de dérivés du sang" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "admiSang-evenement-indesirable"^^xsd:anyURI ;
+                     fhir:l fhir:admiSang-evenement-indesirable
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2018-12-03"^^xsd:date ]
+               ] ;
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Aucun" ]
+               ] )
+             ]
+           ] ) #  [1..1] Entrée FR-Modalite-entree 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.21" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.145" ]
+           ] ) ; #  Conformité IHE PCC 
+           fhir:id [
+             fhir:root [ fhir:v "4A402640-1CF6-4153-B5BA-D56B623004C8" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "18610-6" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Traitements administrés" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Traitements arrêtés durant le séjour" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th>Date de début</th><th>Date de fin</th><th>Médicament</th><th>Dose</th><th>Fréquence</th><th>Voie admin.</th><th>Rythme admin.</th><th>Dose max</th><th>Commentaire</th></tr></thead><tbody><tr><td>01/08/2018</td><td>29/10/2019</td><td><span id=\"MED-001\">SOLIAN 100 mg</span></td><td>1 comprimé</td><td>1 fois / jour</td><td>prendre par la bouche</td><td>100 mg / jour</td><td>200 mg / jour</td><td>arrêt suite à analyses médicales</td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:substanceAdministration [
+               fhir:classCode [ fhir:v "SBADM" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.42" ]
+               ] [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.24" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.1" ]
+               ] ) ; #  Conformité CI-SIS 
+               fhir:id ( [
+                 fhir:root [ fhir:v "2ED5EF29-8305-4383-8945-C13F2A988D5E" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "DRUG" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.4" ] ;
+                 fhir:codeSystemName [ fhir:v "HL7:ActCode" ] ;
+                 fhir:displayName [ fhir:v "Médicament" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#MED-001"^^xsd:anyURI ;
+                     fhir:l <#MED-001>
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime ( [
+                 fhir:low [
+                   fhir:value [ fhir:v "2018-08-01"^^xsd:date ]
+                 ] ;
+                 fhir:high [
+                   fhir:value [ fhir:v "2019-10-29"^^xsd:date ]
+                 ]
+               ] [
+                 fhir:operator [ fhir:v "A" ] ;
+                 fhir:period [
+                   fhir:unit [ fhir:v "d" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ) ; #  Durée du traitement 
+               fhir:doseQuantity [
+                 fhir:low [
+                   fhir:unit [ fhir:v "{tbl}" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ] ;
+                 fhir:high [
+                   fhir:unit [ fhir:v "{tbl}" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ; #  Dose 
+               fhir:rateQuantity [
+                 fhir:low [
+                   fhir:unit [ fhir:v "mg/d" ] ;
+                   fhir:value [ fhir:v "100"^^xsd:decimal ]
+                 ] ;
+                 fhir:high [
+                   fhir:unit [ fhir:v "mg/d" ] ;
+                   fhir:value [ fhir:v "100"^^xsd:decimal ]
+                 ]
+               ] ; #  Rythme d'administration 
+               fhir:maxDoseQuantity [
+                 fhir:numerator [
+                   fhir:unit [ fhir:v "mg" ] ;
+                   fhir:value [ fhir:v "200"^^xsd:decimal ]
+                 ] ;
+                 fhir:denominator [
+                   fhir:unit [ fhir:v "d" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ; #  Dose max 
+               fhir:consumable [
+                 fhir:manufacturedProduct [
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.43" ]
+                   ] [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.53" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.2" ]
+                   ] ) ; #  Conformité CI-SIS 
+                   fhir:manufacturedMaterial [
+                     fhir:code [
+                       fhir:code [ fhir:v "60019927" ] ;
+                       fhir:codeSystem [ fhir:v "1.2.250.1.213.2.3.1" ] ;
+                       fhir:codeSystemName [ fhir:v "CIS" ] ;
+                       fhir:displayName [ fhir:v "SOLIAN 100 mg, comprimé sécable" ] ;
+                       fhir:originalText [
+                         fhir:reference [
+                           fhir:value [
+                             fhir:v "#MED-001"^^xsd:anyURI ;
+                             fhir:l <#MED-001>
+                           ]
+                         ]
+                       ] ;
+                       fhir:translation ( [
+                         fhir:code [ fhir:v "3400934874741" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.213.2.3.2" ] ;
+                         fhir:codeSystemName [ fhir:v "CIP" ] ;
+                         fhir:displayName [ fhir:v "SOLIAN 100 mg, comprimé sécable, plaquette(s) thermoformée(s) PVC-Aluminium de 30 comprimé(s)" ]
+                       ] ) #  Code médicament - CIP 
+                     ] ; #  Code médicament - CIS 
+                     fhir:name [
+                       fhir:item ( [
+                         fhir:xmlText [ fhir:v "SOLIAN 100 mg" ]
+                       ] )
+                     ] #  Nom de Spécialité 
+                   ]
+                 ]
+               ] #  Entrée Produit de santé 
+             ]
+           ] ) #  [1..*] Entrée FR-Traitement 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.22" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.146" ]
+           ] ) ; #  Conformité IHE PCC Hospital Discharge Medications 
+           fhir:id [
+             fhir:root [ fhir:v "D2E72AFE-401E-4CD2-8583-8473714A32A5" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "10183-2" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Traitements à la sortie" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Traitements à la sortie" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th>Date de début</th><th>Date de fin</th><th>Médicament</th><th>Dose</th><th>Fréquence</th><th>Voie admin.</th><th>Rythme admin.</th><th>Dose max</th><th>Commentaire</th></tr></thead><tbody><tr><td>03/12/2019</td><td>02/02/2020</td><td><span id=\"MED-002\">LEPONEX 100 mg</span></td><td>1 comprimé</td><td>1 fois / jour</td><td>prendre par la bouche</td><td>100 mg / jour</td><td>300 mg / jour</td><td/></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:substanceAdministration [
+               fhir:classCode [ fhir:v "SBADM" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.42" ]
+               ] [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.24" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.1" ]
+               ] ) ; #  Conformité CI-SIS 
+               fhir:id ( [
+                 fhir:root [ fhir:v "2ED5EF29-8305-4383-8945-C13F2A988D5E" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "DRUG" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.4" ] ;
+                 fhir:codeSystemName [ fhir:v "HL7:ActCode" ] ;
+                 fhir:displayName [ fhir:v "Médicament" ]
+               ] ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#MED-002"^^xsd:anyURI ;
+                     fhir:l <#MED-002>
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime ( [
+                 fhir:low [
+                   fhir:value [ fhir:v "2019-12-03"^^xsd:date ]
+                 ] ;
+                 fhir:high [
+                   fhir:value [ fhir:v "2020-02-02"^^xsd:date ]
+                 ]
+               ] [
+                 fhir:operator [ fhir:v "A" ] ;
+                 fhir:period [
+                   fhir:unit [ fhir:v "d" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ) ; #  Durée du traitement 
+               fhir:doseQuantity [
+                 fhir:low [
+                   fhir:unit [ fhir:v "{tbl}" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ] ;
+                 fhir:high [
+                   fhir:unit [ fhir:v "{tbl}" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ; #  Dose 
+               fhir:rateQuantity [
+                 fhir:low [
+                   fhir:unit [ fhir:v "mg/d" ] ;
+                   fhir:value [ fhir:v "100"^^xsd:decimal ]
+                 ] ;
+                 fhir:high [
+                   fhir:unit [ fhir:v "mg/d" ] ;
+                   fhir:value [ fhir:v "100"^^xsd:decimal ]
+                 ]
+               ] ; #  Rythme d'administration 
+               fhir:maxDoseQuantity [
+                 fhir:numerator [
+                   fhir:unit [ fhir:v "mg" ] ;
+                   fhir:value [ fhir:v "300"^^xsd:decimal ]
+                 ] ;
+                 fhir:denominator [
+                   fhir:unit [ fhir:v "d" ] ;
+                   fhir:value [ fhir:v "1"^^xsd:decimal ]
+                 ]
+               ] ; #  Dose max 
+               fhir:consumable [
+                 fhir:manufacturedProduct [
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.43" ]
+                   ] [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.53" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.2" ]
+                   ] ) ; #  Conformité CI-SIS 
+                   fhir:manufacturedMaterial [
+                     fhir:code [
+                       fhir:code [ fhir:v "62552920" ] ;
+                       fhir:codeSystem [ fhir:v "1.2.250.1.213.2.3.1" ] ;
+                       fhir:codeSystemName [ fhir:v "CIS" ] ;
+                       fhir:displayName [ fhir:v "LEPONEX 100 mg, comprimé sécable" ] ;
+                       fhir:originalText [
+                         fhir:reference [
+                           fhir:value [
+                             fhir:v "#MED-002"^^xsd:anyURI ;
+                             fhir:l <#MED-002>
+                           ]
+                         ]
+                       ] ;
+                       fhir:translation ( [
+                         fhir:code [ fhir:v "N05AH02" ] ;
+                         fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.73" ] ;
+                         fhir:codeSystemName [ fhir:v "ATC" ] ;
+                         fhir:displayName [ fhir:v "Clozapine" ]
+                       ] ) #  Code médicament - ATC 
+                     ] ; #  Code médicament - CIS 
+                     fhir:name [
+                       fhir:item ( [
+                         fhir:xmlText [ fhir:v "LEPONEX 100 mg" ]
+                       ] )
+                     ] #  Nom de Spécialité 
+                   ]
+                 ]
+               ] #  Entrée Produit de santé 
+             ]
+           ] ) #  [1..*] Entrée FR-Traitement 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.27" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.150" ]
+           ] ) ; #  Conformité IHE PCC Results 
+           fhir:id [
+             fhir:root [ fhir:v "A6C982F6-ACAE-4CDC-A901-C400AB8972E6" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "30954-2" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Résultats d'examens" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Résultats d'examens / Autres informations attendus" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th colspan=\"3\">Résultats d'examens / Autres informations attendus</th></tr></thead><tbody><tr><td><span id=\"comment01\"> Echographie attendue</span></td></tr></tbody></table></div>"^^rdf:XMLLiteral ]
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.10" ]
+           ] [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.36" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.158" ]
+           ] ) ; #  Conformité CCD 
+           fhir:id [
+             fhir:root [ fhir:v "FC21DC59-43D5-4BB0-ACC7-3601784BFBC0" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "18776-5" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Plan de soins" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Suites à donner" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th colspan=\"3\">Actes</th></tr></thead><tbody><tr><td>ECQH010 [CCAM]</td><td><span id=\"ACT01\">Scanographie des vaisseaux du thorax et/ou du cœur [Angioscanner thoracique]</span></td><td>Urgent</td></tr></tbody></table><br/><table border=\"0\"><thead><tr><th colspan=\"3\">Demandes d'examen / de suivi</th></tr></thead><tbody><tr><td>Suivi</td><td><span id=\"EXAM01\">Suivi par le psychiatre à prévoir</span></td><td>01/01/2020</td></tr></tbody></table><br/><table border=\"0\"><thead><tr><th colspan=\"3\">Consultations</th></tr></thead><tbody><tr><td>Ambulatoire</td><td><span id=\"CONSULT01\">Médecin traitant</span></td><td>05/12/2019 (recontacter pour fixer RDV)</td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:procedure [
+               fhir:classCode [ fhir:v "PROC" ] ;
+               fhir:moodCode [ fhir:v "INT" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.25" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.19" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.62" ]
+               ] ) ; #  Conformité CCD 
+               fhir:id ( [
+                 fhir:root [ fhir:v "A6BC7FD2-EC3F-4E01-B567-854B087D1D9B" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "ECQH010" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.215.300.1" ] ;
+                 fhir:codeSystemName [ fhir:v "CCAM" ] ;
+                 fhir:displayName [ fhir:v "Scanographie des vaisseaux du thorax et/ou du cœur [Angioscanner thoracique]" ]
+               ] ; #  Type d'acte 
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#ACT01"^^xsd:anyURI ;
+                     fhir:l <#ACT01>
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "active" ]
+               ] ; #  Statut de l'entrée 
+               fhir:effectiveTime [
+                 fhir:nullFlavor [ fhir:v "UNK" ]
+               ] ; #  Date de l'acte 
+               fhir:priorityCode [
+                 fhir:code [ fhir:v "UR" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.7" ] ;
+                 fhir:codeSystemName [ fhir:v "HL7:ActPriority" ] ;
+                 fhir:displayName [ fhir:v "Urgent" ]
+               ] #  Priorité de l'acte 
+             ]
+           ] [
+             fhir:observation [
+               fhir:classCode [ fhir:v "OBS" ] ;
+               fhir:moodCode [ fhir:v "INT" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.25" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.27" ]
+               ] ) ; #  Conformité CCD 
+               fhir:id ( [
+                 fhir:root [ fhir:v "F83D3DB2-C511-4CFA-B216-773F6DEADB4D" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "ORG-064" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.322" ] ;
+                 fhir:codeSystemName [ fhir:v "terminologie-cisis-fr" ] ;
+                 fhir:displayName [ fhir:v "Demande d'examen ou de suivi" ]
+               ] ; #  Type d'examen 
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#EXAM01"^^xsd:anyURI ;
+                     fhir:l <#EXAM01>
+                   ]
+                 ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "active" ]
+               ] ; #  Statut de l'entrée 
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2021-01-01"^^xsd:date ]
+               ] ; #  Date prévisionnelle ou attendue de l'examen 
+               fhir:value ( [
+                 fhir:xmlText [ fhir:v "Suivi par le psychiatre à prévoir" ]
+               ] )
+             ]
+           ] [
+             fhir:encounter [
+               fhir:classCode [ fhir:v "ENC" ] ;
+               fhir:moodCode [ fhir:v "ARQ" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.21" ]
+               ] [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.25" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.14" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.58" ]
+               ] ) ; #  Conformité CCD (rencontre réalisée) 
+               fhir:id ( [
+                 fhir:root [ fhir:v "4AA6DCFC-6628-42E7-8D6F-68621568F584" ]
+               ] ) ;
+               fhir:code [
+                 fhir:code [ fhir:v "AMB" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.4" ] ;
+                 fhir:codeSystemName [ fhir:v "ActEncounterCode" ] ;
+                 fhir:displayName [ fhir:v "Ambulatoire (hors établissement)" ]
+               ] ; #  Type de rencontre 
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#CONSULT01"^^xsd:anyURI ;
+                     fhir:l <#CONSULT01>
+                   ]
+                 ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:value [ fhir:v "2019-12-05"^^xsd:date ]
+               ] ; #  Date de la rencontre 
+               fhir:priorityCode [
+                 fhir:code [ fhir:v "CS" ] ;
+                 fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.7" ] ;
+                 fhir:codeSystemName [ fhir:v "ActPriority" ] ;
+                 fhir:displayName [ fhir:v "recontacter pour fixer RDV" ]
+               ]
+             ]
+           ] ) #  [0..*] Entrée FR-Acte 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "2.16.840.1.11383.10.20.1.7" ]
+           ] [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.1" ]
+           ] ) ; #  Conformité CCD Medical Equipment 
+           fhir:id [
+             fhir:root [ fhir:v "CE20BE10-E414-410D-875E-57FE35303CE1" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "46264-8" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Dispositifs médicaux" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Dispositifs médicaux" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\"><thead><tr><th>Date d'utilisation</th><th>Catégorie de DM</th><th>Identifiant unique du DM</th></tr></thead><tbody><tr><td>24/09/2018</td><td><span id=\"DM001-categorie\">STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE</span></td><td>[1.2.250.1.213.1.1.9.9 (OID de test)] eee</td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:supply [
+               fhir:classCode [ fhir:v "SPLY" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.34" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.20" ]
+               ] ) ; #  Conformité CCD 
+               fhir:id ( [
+                 fhir:extension [ fhir:v "eee" ] ;
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.9.9" ]
+               ] ) ; #  Identifiant de la fourniture du DM (OID de test) 
+               fhir:effectiveTime ( [
+                 fhir:low [
+                   fhir:value [ fhir:v "2018-12-03T09:49:14+01:00"^^xsd:dateTime ]
+                 ]
+               ] ) ; #  Date d'utilisation 
+               fhir:participant ( [
+                 fhir:typeCode [ fhir:v "DEV" ] ;
+                 fhir:participantRole [
+                   fhir:classCode [ fhir:v "MANU" ] ;
+                   fhir:id ( [
+                     fhir:extension [ fhir:v "{01}00844588003288{17}141120{10}7654321D{21}10987654d321" ] ;
+                     fhir:root [ fhir:v "xxxxxxxxxxxxxxxxxxxxxx" ]
+                   ] ) ; #  UDI-DI + UDI-PI du DM (EUDAMED) ou Référence catalogue 
+                   fhir:playingDevice [
+                     fhir:classCode [ fhir:v "DEV" ] ;
+                     fhir:determinerCode [ fhir:v "INSTANCE" ] ;
+                     fhir:code [
+                       fhir:code [ fhir:v "J010104" ] ;
+                       fhir:codeSystem [ fhir:v "1.2.250.1.213.2.68" ] ;
+                       fhir:codeSystemName [ fhir:v "EMDN" ] ;
+                       fhir:displayName [ fhir:v "STIMULATEURS CARDIAQUES IMPLANTABLES TRIPLE CHAMBRE" ] ;
+                       fhir:originalText [
+                         fhir:reference [
+                           fhir:value [
+                             fhir:v "#DM001-categorie"^^xsd:anyURI ;
+                             fhir:l <#DM001-categorie>
+                           ]
+                         ]
+                       ] ;
+                       fhir:translation ( [
+                         fhir:code [ fhir:v "C50FA05" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.213.2.65" ] ;
+                         fhir:codeSystemName [ fhir:v "CLADIMED" ] ;
+                         fhir:displayName [ fhir:v "STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE" ]
+                       ] [
+                         fhir:code [ fhir:v "3408693" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.215.200.2.1" ] ;
+                         fhir:codeSystemName [ fhir:v "LPP" ] ;
+                         fhir:displayName [ fhir:v "STIMULATEUR CARDIAQUE DE RE-SYNCHRO VENTRICULAIRE, BIOTRONIK, EDORA 8 HF-T." ]
+                       ] )
+                     ]
+                   ] #  [1..1] Catégorie de DM 
+                 ]
+               ] ) #  Dispositif médical 
+             ]
+           ] ) #  [1..*] Entrée FR-Dispositif-medical 
+         ]
+       ] [
+         fhir:section [
+           fhir:templateId ( [
+             fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.2" ]
+           ] [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.3.13" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.137" ]
+           ] ) ; #  Conformité CCD 
+           fhir:id [
+             fhir:root [ fhir:v "29085A50-9B57-48CB-9295-3DFCDD194069" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "48765-2" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Allergies et hypersensibilités" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Allergies identifiées pendant le séjour" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" id=\"NO-ALL\">Aucune allergie / hypersensibilité non allergiques, intolérances, idiosyncrasie identifiée pendant le séjour</div>"^^rdf:XMLLiteral ] ;
+           fhir:entry ( [
+             fhir:act [
+               fhir:classCode [ fhir:v "ACT" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.27" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.5.1" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.5.3" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.40" ]
+               ] ) ; #  Conformité CCD 
+               fhir:id ( [
+                 fhir:root [ fhir:v "1269C206-4D59-4A9D-AA2D-AA0C4622D525" ]
+               ] ) ;
+               fhir:code [
+                 fhir:nullFlavor [ fhir:v "NA" ]
+               ] ;
+               fhir:statusCode [
+                 fhir:code [ fhir:v "completed" ]
+               ] ;
+               fhir:effectiveTime [
+                 fhir:low [
+                   fhir:nullFlavor [ fhir:v "NA" ]
+                 ] ;
+                 fhir:high [
+                   fhir:nullFlavor [ fhir:v "NA" ]
+                 ]
+               ] ;
+               fhir:entryRelationship ( [
+                 fhir:inversionInd [ fhir:v false ] ;
+                 fhir:typeCode [ fhir:v "SUBJ" ] ;
+                 fhir:observation [
+                   fhir:classCode [ fhir:v "OBS" ] ;
+                   fhir:moodCode [ fhir:v "EVN" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.28" ]
+                   ] [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.18" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.5" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.6" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.41" ]
+                   ] ) ; #  Conformité CCD Problem observation
+                   fhir:id ( [
+                     fhir:root [ fhir:v "C64C6013-C8AF-4938-AD10-1B7D26DEE2A0" ]
+                   ] ) ;
+                   fhir:code [
+                     fhir:code [ fhir:v "416098002" ] ;
+                     fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.96" ] ;
+                     fhir:codeSystemName [ fhir:v "SNOMED CT" ] ;
+                     fhir:displayName [ fhir:v "allergie médicamenteuse" ]
+                   ] ; #  Type d'allergie \/ intolérance ,  Valeur issue du jdv-type-evenement-indesirable-previsible-cisis(1.2.250.1.213.1.1.5.794)
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#NO-ALL"^^xsd:anyURI ;
+                         fhir:l <#NO-ALL>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ] ;
+                   fhir:effectiveTime [
+                     fhir:low [
+                       fhir:nullFlavor [ fhir:v "UNK" ]
+                     ]
+                   ] ; #  Date de l'allergie \/ intolérance 
+                   fhir:value ( [
+                     fhir:code [ fhir:v "no-known-allergies" ] ;
+                     fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.1150.1" ] ;
+                     fhir:codeSystemName [ fhir:v "AbsentAndUnknownDataUvIps" ] ;
+                     fhir:displayName [ fhir:v "Pas d'allergie/hypersensibilité connue" ] ;
+                     fhir:originalText [
+                       fhir:reference [
+                         fhir:value [
+                           fhir:v "#NO-ALL"^^xsd:anyURI ;
+                           fhir:l <#NO-ALL>
+                         ]
+                       ]
+                     ]
+                   ] ) #  Description clinique de l'allergie 
+                 ]
+               ] ) #  [1..*] Entrée FR-Allergie-ou-hypersensibilite 
+             ]
+           ] ) #  [1..1] Entrée FR-Liste-des-allergies-et-hypersensibilites 
+         ]
+       ] ) #  [1..1] Section FR-Statut-du-document-LDL-SES 
+     ]
+  ]] . # 	**************************************************************************************************************
+#		CORPS DU DOCUMENT
+#		**************************************************************************************************************    
+
+# -------------------------------------------------------------------------------------
+

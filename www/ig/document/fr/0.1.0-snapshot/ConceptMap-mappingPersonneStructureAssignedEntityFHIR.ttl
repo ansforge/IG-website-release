@@ -1,0 +1,262 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureAssignedEntityFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingPersonneStructureAssignedEntityFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingPersonneStructureAssignedEntityFHIR</b></p><a name=\"mappingPersonneStructureAssignedEntityFHIR\"> </a><a name=\"hcmappingPersonneStructureAssignedEntityFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-personne-structure.html\">Modèle logique métier - FR LM Personne et/ou Structure</a> to <a href=\"StructureDefinition-fr-cda-assigned-entity.html\">CDA - assignedEntity</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMPersonneStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity</td></tr><tr><td>FRLMPersonneStructure.personne.identifiantPersonne</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.id</td></tr><tr><td>FRLMPersonneStructure.personne.professionRole</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.code</td></tr><tr><td>FRLMPersonneStructure.personne.adresse</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.addr</td></tr><tr><td>FRLMPersonneStructure.personne.coordonneesTelecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.telecom</td></tr><tr><td>FRLMPersonneStructure.personne.IdentitePersonne</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.assignedPerson</td></tr><tr><td>FRLMPersonneStructure.personne.IdentitePersonne.nomPersonne</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.assignedPerson.name.family</td></tr><tr><td>FRLMPersonneStructure.personne.IdentitePersonne.prenomPersonne</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.assignedPerson.name.given</td></tr><tr><td>FRLMPersonneStructure.personne.IdentitePersonne.civilite</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.assignedPerson.name.prefix</td></tr><tr><td>FRLMPersonneStructure.personne.IdentitePersonne.titre</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.assignedPerson.name.suffix</td></tr><tr><td>FRLMPersonneStructure.structure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization</td></tr><tr><td>FRLMPersonneStructure.structure.identifiantStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization.id</td></tr><tr><td>FRLMPersonneStructure.structure.nomStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization.name</td></tr><tr><td>FRLMPersonneStructure.structure.adresse</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization.addr</td></tr><tr><td>FRLMPersonneStructure.structure.coordonneesTelecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization.telecom</td></tr><tr><td>FRLMPersonneStructure.structure.secteurActivite</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedEntity.representedOrganization.standardIndustryClassCode</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-assigned-entity.html\">CDA - assignedEntity</a> to <a href=\"StructureDefinition-fr-practitionerRole-document.html\">FR PractitionerRole Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>assignedEntity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole</td><td/></tr><tr><td>assignedEntity.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.practitioner.identifier</td><td>PractitionerRole.practitioner.resolve().ofType(Practitioner)</td></tr><tr><td>assignedEntity.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.qualification.code</td><td/></tr><tr><td>assignedEntity.addr</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.address</td><td/></tr><tr><td>assignedEntity.telecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.telecom</td><td/></tr><tr><td>assignedEntity.assignedPerson.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.name</td><td/></tr><tr><td>assignedEntity.assignedPerson.name.family</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.name.family</td><td/></tr><tr><td>assignedEntity.assignedPerson.name.given</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.name.given</td><td/></tr><tr><td>assignedEntity.assignedPerson.name.prefix</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.name.prefix</td><td/></tr><tr><td>assignedEntity.assignedPerson.name.suffix</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Practitioner.name.suffix</td><td/></tr><tr><td>assignedEntity.representedOrganization</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization</td><td>PractitionerRole.organization.resolve().ofType(Organization)</td></tr><tr><td>assignedEntity.representedOrganization.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization.identifier</td><td/></tr><tr><td>assignedEntity.representedOrganization.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization.name</td><td/></tr><tr><td>assignedEntity.representedOrganization.addr</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization.address</td><td/></tr><tr><td>assignedEntity.representedOrganization.telecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization.telecom</td><td/></tr><tr><td>assignedEntity.representedOrganization.standardIndustryClassCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>PractitionerRole.Organization.type</td><td/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureAssignedEntityFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureAssignedEntityFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Personne / Structure (AssignedEntity)\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Personne / Structure (AssignedEntity)\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-13T22:56:29+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap de l'élément PersonneStructure présente deux groupes de mapping : \n - Mapping 1 : entre le modèle métier \\\"PersonneStructure\\\" et l'élément CDA \\\"assignedEntity\\\"\n - Mapping 2 : entre l'élément CDA \\\"assignedEntity\\\" et le profil FHIR \\\"FrPractitionerRoleDocument\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-personne-structure"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-personne-structure>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-entity"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-entity>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMPersonneStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.identifiantPersonne" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.professionRole" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.adresse" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.addr" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.coordonneesTelecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.IdentitePersonne" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.assignedPerson" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.IdentitePersonne.nomPersonne" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.assignedPerson.name.family" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.IdentitePersonne.prenomPersonne" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.assignedPerson.name.given" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.IdentitePersonne.civilite" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.assignedPerson.name.prefix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.personne.IdentitePersonne.titre" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.assignedPerson.name.suffix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure.identifiantStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure.nomStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure.adresse" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization.addr" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure.coordonneesTelecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMPersonneStructure.structure.secteurActivite" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedEntity.representedOrganization.standardIndustryClassCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-entity"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-entity>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-practitionerRole-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-practitionerRole-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "assignedEntity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.practitioner.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "PractitionerRole.practitioner.resolve().ofType(Practitioner)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.qualification.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.addr" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.telecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.assignedPerson.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.assignedPerson.name.family" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.name.family" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.assignedPerson.name.given" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.name.given" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.assignedPerson.name.prefix" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.name.prefix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.assignedPerson.name.suffix" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Practitioner.name.suffix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "PractitionerRole.organization.resolve().ofType(Organization)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization.addr" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization.telecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedEntity.representedOrganization.standardIndustryClassCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "PractitionerRole.Organization.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>FHIR - ANS IG document core v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"2.4"}
+    h3,h4,h5,h6{--heading-prefix:"2.4"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+<div style="display: flex; flex-direction: column;" id="family-nav">
+  <a no-external="true" style="scale: 0.5;" id="hl7-search-lnk" href="http://hl7.org/fhir">
+    <img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" style="display: block; width: 100%;" height="50"/> 
+  </a>
+  <a no-external="true" style="scale: 0.5;" id="hl7-search-lnk" href="http://hl7.org/cda">
+    <img src="assets/images/cda-logo-www.png" alt="Visit the CDA website" style="display: block; width: 100%;" height="50"/> 
+  </a>
+</div>
+
+  <div style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; " id="ans-nav">
+    <a no-external="true" id="hl7-logo" href="https://esante.gouv.fr/"><img src="assets/images/logo-ANS.svg" alt="ANS Logo" height="50"/></a>
+    <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+  </div>
+
+  <div id="ig-search">
+ </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">ANS IG document core</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img src="assets/images/fra.svg" alt="France flag" title="France" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Structure générale document
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="exigencesSpecifiques.html">Exigences spécifiques</a>
+      </li>
+      <li>
+        <a href="ressourcesCDA-struc-gen.html">CDA</a>
+      </li>
+      <li>
+        <a href="ressourcesFHIR-struc-gen.html">FHIR</a>
+      </li>
+      <li>
+        <a href="mappingCDA-FHIR-struc-gen.html">Mapping CDA / FHIR</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Entête document
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-fr-lm-entete-document.html">Modèle logique métier</a>
+      </li>
+      <li>
+        <a href="ressourcesCDA-entete.html">CDA</a>
+      </li>
+      <li>
+        <a href="ressourcesFHIR-entete.html">FHIR</a>
+      </li>
+      <li>
+        <a href="mappingCDA-FHIR-entete.html">Mapping Métier/CDA/FHIR</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Corps d'un document
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-fr-lm-corps-document.html">Modèle logique métier</a>
+      </li>
+      <li>
+        <a href="ressourcesCDA-corps.html">CDA</a>
+      </li>
+      <li>
+        <a href="ressourcesFHIR-corps.html">FHIR</a>
+      </li>
+      <li>
+        <a href="mappingCDA-FHIR-corps.html">Mapping Métier/CDA/FHIR</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Ressources de conformité</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication" target="_blank">Espace de publication du CI-SIS</a>
+      </li>
+      <li>
+        <a href="https://smt.esante.gouv.fr/" target="_blank">Serveur Multi-terminologies</a>
+      </li>
+      <li>
+        <a href="https://smt.esante.gouv.fr/fhir" target="_blank">Serveur Multi-terminologies / FHIR</a>
+      </li>
+      <li>
+        <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/index.html" target="_blank">IG terminologies et jeux de valeurs du CI-SIS</a>
+      </li>
+      <li>
+        <a href="https://interop.esante.gouv.fr/" target="_blank">Espace de tests du CI-SIS</a>
+      </li>
+      <li>
+        <a href="https://github.com/ansforge/TestContenuCDA-3-0" target="_blank">testContenuCDA</a>
+      </li>
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="https://hl7.org/cda/stds/online-navigation/index.html" target="_blank">Standard CDA</a>
+      </li>
+      <li>
+        <a href="https://hl7.org/fhir/R4/index.html" target="_blank">Standard FHIR</a>
+      </li>
+      <li>
+        <a href="https://interop.esante.gouv.fr/ig/documentation/index.html" target="_blank">Documentation des guides d'implémentation de l'ANS</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="structureGenerale.html"><b>Structure générale document</b></a></li><li><b>FHIR</b></li>
+
+          <span style="float:right;">
+
+            <a href="ressourcesCDA-struc-gen.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="mappingCDA-FHIR-struc-gen.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the ANS IG document core (v0.1.0-snapshot: Draft Draft) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. No current official version has been published yet.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/document/core/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>FHIR</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#standard-fhir" id="markdown-toc-standard-fhir">Standard FHIR&reg;</a></li>
+  <li><a href="#structure-dun-document-fhir" id="markdown-toc-structure-dun-document-fhir">Structure d’un document FHIR</a></li>
+  <li><a href="#spécifications-françaises-des-documents-fhir" id="markdown-toc-spécifications-françaises-des-documents-fhir">Spécifications françaises des documents FHIR</a></li>
+  <li><a href="#conformité-des-documents-fhir" id="markdown-toc-conformité-des-documents-fhir">Conformité des documents FHIR</a></li>
+  <li><a href="#visualisation-dun-document-fhir" id="markdown-toc-visualisation-dun-document-fhir">Visualisation d’un document FHIR</a></li>
+</ul>
+
+</div>
+<h3 id="standard-fhir">Standard FHIR&reg;</h3>
+<p>FHIR&reg; est un standard d’échange de données de santé publié par HL7&reg;
+Pour en savoir plus, voir <a href="https://hl7.org/fhir/R4/index.html">https://hl7.org/fhir/R4/index.html</a>.</p>
+
+<p>Les ressources FHIR peuvent être utilisées pour créer des documents sous la forme d’une composition : un ensemble cohérent d’informations rédigées et/ou attestées par des humains, des organisations ou des dispositifs et enregistrées dans des ressources.</p>
+
+<p>Les documents FHIR peuvent être échangés entre les systèmes et conservés dans des plateformes de partage.</p>
+
+<p>Les documents au format FHIR doivent respecter les spécifications <a href="https://hl7.org/fhir/R4/documents.html">FHIR Document (R4)</a>.</p>
+
+<p>Un guide d’implémentation <a href="https://hl7.org/fhir/uv/fhir-clinical-document/">FHIR Clinical Documents</a> produit par HL7 vient en support du standard.</p>
+
+<p>Un document FHIR, par sa conception, permet de respecter les exigences spécifiques aux documents dématérialisés énoncées au paragraphe “Exigences spécifiques aux documents dématérialisés”.</p>
+
+<p>Le standard FHIR permet de coupler dans un même document :</p>
+
+<ul>
+  <li>le <strong>contenu lisible par un humain</strong>, sans médiation et présenté dans son contexte avec toute la clarté requise,</li>
+  <li>les <strong>données codées et structurées</strong> dont dérivent ce contenu, directement intégrables dans les bases de données des SIS consommateurs des professionnels qui le souhaitent.</li>
+</ul>
+
+<h3 id="structure-dun-document-fhir">Structure d’un document FHIR</h3>
+
+<p>D’un point de vue technique, un <strong>document FHIR</strong> est un <strong>Bundle</strong> de type “document” contenant une première ressource Composition suivie d’autres ressources référencées dans la Composition. La Composition est similaire à un index, mais contient également des informations d’entête clés.</p>
+
+<p>Le Bundle rassemble tout le contenu du document dans un seul document XML ou JSON qui peut être signé et géré selon les besoins.</p>
+
+<p>Un document conforme au standard FHIR se compose :</p>
+
+<ul>
+  <li>d’un <strong>Bundle</strong> contenant
+    <ul>
+      <li>des éléments propres au Bundle : Identifiant unique du document, Date de création du Bundle</li>
+      <li>une ressource <strong>Composition</strong> contenant :
+        <ul>
+          <li>des éléments propres à la Composition : Modèle du document et version du modèle, type de document, Identifiant du lot de version et Numéro de version, titre, langue, etc…</li>
+          <li>les <strong>références des ressources</strong> utilisées avec au minimum :
+            <ul>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.subject">Composition.subject</a>   Patient / usager</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.encounter">Composition.encounter</a>   Association du document à une prise en charge</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.author">Composition.author</a>   Auteur du document</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.attester.party">Composition.attester.party</a>   Responsable du document et Personne attestant la validité du contenu du document</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.custodian">Composition.custodian</a>   Structure chargée de la conservation du document</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.event.detail">Composition.event.detail</a>   Evènement documenté</li>
+              <li><a href="https://hl7.org/fhir/R4/composition-definitions.html#Composition.section.author">Composition.section</a>    Sections</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>les <strong>ressources référencées</strong> dans la Composition</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="lentête-dun-document-fhir">L’entête d’un document FHIR</h4>
+
+<p>Les éléments du <strong>Bundle</strong> et de la <strong>Composition</strong> rassemblent les informations générales et nécessaires à la gestion du document (cela correspond à l’entête d’un document CDA). Ces informations permettent de relier le document au contexte dans lequel il a été produit, de le classer dans les catégories adéquates et de gérer son évolution et son accessibilité dans la durée. La structure de base Bundle/Composition est identique quel que soit le type de document et quel que soit le degré de structuration choisi.</p>
+
+<p>Les éléments du <strong>Bundle</strong> et de la <strong>Composition</strong> portent sur :</p>
+
+<ul>
+  <li><strong>La qualification du document</strong> : identifiant globalement unique, type, modèles, date de création, titre, langue, niveau de confidentialité, etc. ;</li>
+  <li><strong>La qualification de l’évènement ou des évènements documentés</strong> : code évènement, horodatage, cadre d’exercice, modalité d’exercice, lieu d’exercice, etc. ;</li>
+  <li><strong>Les participants</strong> : patient/usager, auteur, responsable, structure chargée de conservation du document, valideurs, destinataires prévus, autres participants, etc.</li>
+</ul>
+
+<h4 id="le-corps-dun-document-fhir">Le corps d’un document FHIR</h4>
+
+<p>La ressource <strong>Composition</strong> contient les différentes sections du document dans des ressources Composition.section (l’ensemble de ces ressources <strong>Composition.section</strong> correspond au corps d’un document CDA).</p>
+
+<p>Une Composition.section peut contenir :</p>
+
+<ul>
+  <li><strong>Un document non structuré</strong> (PDF ou TEXT), encodé en base 64 : Pour encapsuler un document non structuré, utiliser une ressource Composition contenant <strong>une seule Composition.section</strong> avec une <strong>Composition.section.entry</strong> qui fait référence à la ressource de type <a href="https://hl7.org/fhir/R4/binary.html">Binary</a> portant le document non structuré encodé en B64. La ressource <a href="https://hl7.org/fhir/R4/binary.html">Binary</a> précisera le mediaType (“application/pdf” ou “text/plain”) dans Binary.contentType et portera le document encodé en B64 dans Binary.data.</li>
+</ul>
+
+<p>Exemple :</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;Binary&gt;</span>
+    <span class="nt">&lt;contentType</span> <span class="na">value=</span><span class="s">"application/pdf"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;language</span> <span class="na">value=</span><span class="s">"fr"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">value=</span><span class="s">"/9j/4...KAP//Z"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- document encodé en B64 --&gt;</span>
+    <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Document PDF"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/Binary&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>Des données structurées</strong> : La section est organisée en structures de données afin de permettre les traitements informatiques.
+ Chacune de ces sections possède un code (élément <strong>section.code</strong>), un titre (élément <strong>section.title</strong>) et un bloc narratif (élément <strong>section.text</strong>). En outre une section peut contenir des sous-sections (élément <strong>section.section</strong>) et des entrées (élément <strong>section.entry</strong>) fournissant les données du SI producteur à l’aide desquelles a été construit le bloc narratif. Ces données sont codées et structurées, importables et intégrables dans la base de données des SI consommateurs du document.</p>
+
+    <p>Une section DOIT contenir au moins un texte ou une entrée ou une sous-section. Par exemple, une section peut n’avoir que la partie narrative (Composition.section.text) et pas de sous-section, ni d’entrée.</p>
+  </li>
+</ul>
+
+<p>Une section ne peut avoir un section.emptyReason que si elle est vide.</p>
+
+<p>Les sous-sections FHIR ne peuvent pas contenir de partie narrative. Toute la partie narrative est dans la section de 1er niveau.</p>
+
+<p><strong>Les entrées</strong> des sections <strong>sont des références à d’autres ressources</strong> qui contiennent les données de l’entrée.</p>
+
+<p>Les sections peuvent être slicées pour les préciser. Par exemple, dans un <a href="https://hl7.eu/fhir/laboratory/StructureDefinition-Composition-eu-lab.html">CR-BIO</a> (ex HL7 Europe Laboratory Report), on pourra avoir les sections suivantes :</p>
+<ul>
+  <li><a href="https://hl7.eu/fhir/laboratory/StructureDefinition-Composition-eu-lab-definitions.html#Composition.section:lab-no-subsections">section:lab-no-subsections</a> : section avec des entrées et sans sous-section</li>
+  <li><a href="https://hl7.eu/fhir/laboratory/StructureDefinition-Composition-eu-lab-definitions.html#Composition.section:lab-subsections">section:lab-subsections</a> : section avec des sous-sections</li>
+  <li><a href="https://hl7.eu/fhir/laboratory/StructureDefinition-Composition-eu-lab-definitions.html#Composition.section:annotations">section:annotations</a> : section Commentaire</li>
+</ul>
+
+<p>Les entrées peuvent aussi être profilées : Par exemple, dans un <a href="https://hl7.eu/fhir/laboratory/StructureDefinition-Composition-eu-lab.html">CR-BIO</a> (ex HL7 Europe Laboratory Report), on pourra avoir les entrées suivantes :</p>
+
+<ul>
+  <li><a href="https://hl7.eu/fhir/laboratory/0.1.0/StructureDefinition-Observation-resultslab-eu-lab.html">ObservationResultsLaboratoryEu</a> : entrée Résultats d’examen biologique</li>
+</ul>
+
+<h3 id="spécifications-françaises-des-documents-fhir">Spécifications françaises des documents FHIR</h3>
+
+<p>Les spécifications françaises des documents FHIR définies dans le CI-SIS :</p>
+
+<ul>
+  <li>s’appuient sur le standard FHIR,</li>
+  <li>s’appuient sur le guide d’implémentation <a href="https://hl7.org/fhir/uv/fhir-clinical-document">FHIR Clinical Documents</a></li>
+  <li>portent les exigences complémentaires et spécifiques au contexte français.</li>
+</ul>
+
+<h4 id="spécifications-françaises-de-lentête-des-documents-fhir">Spécifications françaises de l’entête des documents FHIR</h4>
+
+<p>Pour être conforme aux exigences françaises de l’entête, un document FHIR DOIT respecter les profils suivants :</p>
+
+<ul>
+  <li><strong><a href="StructureDefinition-fr-bundle-document.html">FRBundleDocument</a></strong> : profil du Bundle de type “document” qui assemble les éléments de l’entête et du corps d’un document.</li>
+  <li><strong><a href="StructureDefinition-fr-composition-document.html">FRCompositionDocument</a></strong> : profil de la ressource Composition qui représente l’entête du document médical.</li>
+</ul>
+
+<p>Les ressources référencées dans l’entête du document DOIVENT également respecter les profils français spécifiques :</p>
+
+<ul>
+  <li><strong><a href="StructureDefinition-fr-patient-ins-document.html">FRPatientINSDocument</a></strong> ou <strong><a href="StructureDefinition-fr-patient-document.html">FRPatientDocument</a></strong> : profil du patient/usager</li>
+  <li><strong><a name="l898">​</a><a href="StructureDefinition-fr-practitionerrole-document.html">FRPractitionerRoleDocument</a></strong> : profil de la situation d’exercice d’un professionnel de santé</li>
+  <li><strong><a href="StructureDefinition-fr-practitioner-document.html">FRPractitionerDocument</a></strong> : profil du professionnel de santé</li>
+  <li><strong><a href="StructureDefinition-fr-organization-document.html">FROrganizationDocument</a></strong> : profil de l’organisation/structure</li>
+  <li><strong><a href="StructureDefinition-fr-device-auteur-document.html">FRDeviceAuteurDocument</a></strong> : profil du dispositif auteur (si applicable)</li>
+  <li><strong><a href="StructureDefinition-fr-encounter-care-document.html">FREncounterCareDocument</a></strong> : profil de la prise en charge</li>
+  <li><strong><a href="StructureDefinition-fr-location-document.html">FRLocationDocument</a></strong> : profil du lieu d’exercice</li>
+  <li><strong><a name="l934">​</a><a href="StructureDefinition-fr-relatedperson-document.html">FRRelatedPersonDocument</a></strong> : profil d’une personne en relation avec le patient (si applicable)</li>
+</ul>
+
+<p>Ces profils portent les exigences complémentaires et spécifiques au contexte français, notamment :</p>
+
+<ul>
+  <li>Les contraintes d’identification (INS pour les patients, identifiants nationaux pour les professionnels et structures)</li>
+  <li>Les codes issus des nomenclatures françaises (JDV du CI-SIS)</li>
+  <li>Les éléments obligatoires pour assurer la traçabilité et la responsabilité des documents (auteur, responsable, structure de conservation, etc.)</li>
+  <li>Les extensions nécessaires pour porter des informations non prévues dans le standard FHIR de base</li>
+</ul>
+
+<h4 id="spécifications-françaises-dédiées-à-un-type-de-document-fhir-cr-bio-vsm-">Spécifications françaises dédiées à un type de document FHIR (CR-Bio, VSM, …)</h4>
+
+<p>Au-delà de la conformité aux exigences générales de l’entête, chaque <strong>volet de contenu du CI-SIS</strong> définit un <strong>modèle de document spécifique</strong> adapté à un contexte métier particulier.</p>
+
+<p>Pour être conforme à un modèle de document spécifique, un document FHIR DOIT :</p>
+
+<ol>
+  <li><strong>Hériter des profils de base français</strong> :
+    <ul>
+      <li>Le Bundle DOIT être conforme au profil <strong>FRBundleDocument</strong> (ou à un profil qui en dérive)</li>
+      <li>La Composition DOIT être conforme au profil <strong>FRCompositionDocument</strong> (ou à un profil qui en dérive)</li>
+    </ul>
+  </li>
+  <li><strong>Respecter les contraintes spécifiques du volet</strong> définies dans le profil de Composition du volet, notamment :
+    <ul>
+      <li><strong>Type de document</strong> (<code class="language-plaintext highlighter-rouge">Composition.type</code>) : code fixé ou contraint selon la nomenclature du volet</li>
+      <li><strong>Sections obligatoires</strong> : structure de sections définie par slicing avec codes, titres et cardinalités spécifiques</li>
+      <li><strong>Entrées obligatoires ou recommandées</strong> : profils des ressources référencées dans les sections (Observation, Procedure, MedicationStatement, etc.)</li>
+      <li><strong>Extensions métier</strong> : extensions spécifiques au contexte du volet</li>
+      <li><strong>Jeux de valeurs métier</strong> : codes issus des nomenclatures spécifiques au domaine (biologie, radiologie, etc.)</li>
+    </ul>
+  </li>
+  <li><strong>Déclarer sa conformité</strong> dans <code class="language-plaintext highlighter-rouge">Composition.meta.profile</code> en référençant le profil canonique du volet</li>
+</ol>
+
+<h4 id="spécifications-françaises-des-modèles-de-contenus-sections-et-entrées">Spécifications françaises des modèles de contenus (sections et entrées)</h4>
+
+<h5 id="rattachement-dune-section-et-dune-entrée-à-une-personne">Rattachement d’une section et d’une entrée à une personne</h5>
+
+<p>La norme FHIR permet d’indiquer de façon optionnelle le rattachement d’une section et/ou d’une entrée d’un document FHIR à une personne différente du patient/usager. Dans ce cas, elle remplace la personne décrite au niveau supérieur.</p>
+
+<ul>
+  <li>Dans une section, la personne concernée par les informations de la section, si elle est différente du patient/usager, est indiquée dans l’élément <strong>Composition.section.focus</strong>.</li>
+  <li>Dans une entrée, la personne concernée par les informations de l’entrée, si elle est différente du patient/usager, est indiquée dans l’élément <strong>subject</strong>.</li>
+</ul>
+
+<p>Chaque entrée d’un document peut avoir un <strong>subject</strong>. Si l’entrée ne contient pas de subject, l’entrée concerne la personne indiquée dans l’élément <strong>Composition.section.focus</strong> de la section. Si la section ne contient pas d’élément <strong>Composition.section.focus</strong>, la section concerne la personne indiquée dans l’élément <strong>subject</strong> du document.
+C’est le principe de propagation du contexte et qui part du document vers les sections, sous-sections, entrées et sous-entrées emboitées.</p>
+
+<h3 id="conformité-des-documents-fhir">Conformité des documents FHIR</h3>
+
+<p>Les documents au format FHIR définis dans le CI-SIS doivent être conformes :</p>
+
+<ul>
+  <li>aux exigences françaises de l’entête</li>
+  <li>aux exigences d’un modèle spécifique défini dans un volet du CI-SIS</li>
+</ul>
+
+<h4 id="conformité-aux-exigences-françaises-de-lentête">Conformité aux exigences françaises de l’entête</h4>
+
+<p>Les documents doivent être conformes aux spécifications françaises de l’entête. Ces spécifications sont communes à l’ensemble des documents FHIR produits en France.</p>
+
+<h4 id="conformité-à-un-modèle-de-document-spécifique-défini-dans-le-ci-sis">Conformité à un modèle de document spécifique défini dans le CI-SIS</h4>
+
+<p><strong>Exemples de volets du CI-SIS</strong> :</p>
+
+<ul>
+  <li><strong>CR-BIO</strong> (Compte rendu d’examens de biologie médicale) : définit les sections pour les résultats de biologie, les profils d’Observation pour les résultats de laboratoire, etc.</li>
+  <li><strong>IPS-FR</strong> (International Patient Summary France) : définit les sections standardisées pour le résumé patient (allergies, problèmes, traitements, vaccinations, etc.)</li>
+  <li><strong>e-Prescription</strong> : définit les sections pour les prescriptions médicamenteuses, les profils MedicationRequest spécifiques, etc.</li>
+</ul>
+
+<p><strong>Guides d’implémentation dédiés par type de document</strong> :</p>
+
+<p>Des <strong>guides d’implémentation FHIR dédiés à chaque type de document</strong> seront créés pour préciser spécifiquement la structure des documents selon leur contexte métier. Ces guides :</p>
+
+<ul>
+  <li>S’appuieront sur les <strong>sections et entrées génériques</strong> définies dans le présent guide d’implémentation (IG-document-core)</li>
+  <li>Spécifieront les <strong>profils de Composition</strong> propres à chaque volet avec leurs contraintes métier</li>
+  <li>Définiront les <strong>sections obligatoires et recommandées</strong> spécifiques au type de document</li>
+  <li>Préciseront les <strong>profils d’entrées</strong> (Observation, Procedure, MedicationStatement, etc.) adaptés au contexte</li>
+  <li>S’appuieront sur les <strong>travaux de l’Espace Européen des Données de Santé (EEDS)</strong> pour assurer l’alignement avec les initiatives européennes et favoriser l’interopérabilité transfrontalière</li>
+</ul>
+
+<p>Chaque guide d’implémentation dédié précisera :</p>
+
+<ul>
+  <li>Les profils obligatoires à respecter</li>
+  <li>La structure documentaire attendue</li>
+  <li>Les exemples d’instances conformes</li>
+  <li>Les règles métier spécifiques sous forme d’invariants</li>
+</ul>
+
+<h4 id="convention-sur-le-traitement-des-éléments-hors-modèle">Convention sur le traitement des éléments hors modèle</h4>
+
+<p>Une application productrice est autorisée à ajouter dans l’en-tête et dans le corps d’un document qu’elle produit des éléments non prévus dans le modèle dont se réclame le document, à condition que ces éléments restent conformes au standard FHIR.</p>
+
+<p>Une application consommatrice de document n’est pas tenue de traiter les éléments non définis dans le modèle, et dans le cas où elle ne les comprend pas, elle doit les ignorer.</p>
+
+<p>En d’autres termes, ce n’est pas une erreur de mettre dans un document plus d’éléments que n’en spécifie le modèle ; en revanche c’est une erreur de rejeter un tel document.</p>
+
+<p>Cette convention préserve la capacité aux implémentations d’apporter de la valeur ajoutée par rapport aux modèles.</p>
+
+<p>Elle protège en outre la compatibilité ascendante, en permettant que des versions ultérieures d’un modèle apportant des éléments nouveaux, restent compatibles avec des implémentations qui ne connaîtraient qu’une version plus ancienne du modèle.</p>
+
+<h4 id="vérification-de-la-conformité-dun-document-fhir">Vérification de la conformité d’un document FHIR</h4>
+
+<p>L’ANS met à disposition des outils permettant de vérifier la conformité des documents FHIR.
+Voir <a href="https://interop.esante.gouv.fr/ig/documentation/tests.html">https://interop.esante.gouv.fr/ig/documentation/tests.html</a></p>
+
+<h5 id="lespace-de-tests">L’espace de tests</h5>
+
+<p>L’espace de test est composé de deux outils :</p>
+
+<ul>
+  <li><strong>EVSClient</strong>, qui permet de vérifier la conformité : des documents CDA et FHIR, des archives IHE_XDM.ZIP utilisées pour les échanges, des ressources FHIR…</li>
+  <li><strong>Gazelle</strong> Test Management, qui permet de tester des scénarios complets avec plusieurs interactions d’échanges de données.</li>
+</ul>
+
+<p>Ces outils sont accessibles <strong>en ligne</strong> sur le site <a href="https://interop.esante.gouv.fr/">https://interop.esante.gouv.fr/</a> et notamment utilisés lors des Projectathons organisés par l’ANS pour les éditeurs.</p>
+
+<p>Attention : l’espace de tests ne doit pas être utilisé pour vérifier la conformité de documents de production (produits pour un patient réel).</p>
+
+<h5 id="matchbox">Matchbox</h5>
+
+<p>Matchbox est un outil permettant notamment de valider des instances de ressources FHIR contre un profil.</p>
+
+<h5 id="hapi-fhir">HAPI FHIR</h5>
+
+<p>Ce serveur FHIR open source est particulièrement utile pour importer des profils et tester la validité des ressources générées contre les profils.</p>
+
+<h3 id="visualisation-dun-document-fhir">Visualisation d’un document FHIR</h3>
+
+<p><a href="https://hl7.org/fhir/R4/narrative.html">FHIR core narrative guidance</a> stipulent que la partie narrative d’une ressource “DOIT refléter tout le contenu de la ressource nécessaire à la compréhension par un humain des informations de cette ressource”.</p>
+
+<p>De plus, pour assurer la compréhension sans ambiguïté de la partie narrative d’un document :</p>
+
+<ol>
+  <li>Le contenu narratif d’un document FHIR DOIT être visualisable via un navigateur Web standard.</li>
+  <li>La visualisation d’un document FHIR par un humain NE DOIT PAS nécessiter la transmission d’une feuille de style spécifique par l’expéditeur. La visualisation d’un document FHIR DOIT être possible avec une seule feuille de style ou des outils d’affichage grand public.</li>
+  <li>Les exigences pour la visualisation par un humain ne concernent que le contenu narratif du document FHIR. Le document FHIR peut contenir des informations supplémentaires pour le traitement automatique uniquement et n’ont pas vocation à être restituées à l’affichage.</li>
+</ol>
+
+<p>Comme les données de l’entête d’un document CDA, les métadonnées du document (par exemple, nom et date de naissance du patient, participants) doivent pouvoir être affichées.</p>
+
+<p>Les parties narratives d’un document FHIR peuvent être contenues dans Composition.text et dans Composition.section.text. Il est recommandé de transmettre les métadonnées dans Composition.text et les contenus narratifs dans Composition.section.text.</p>
+
+<p>De plus, bien que le destinataire du document doive être en mesure d’afficher le contenu de Composition.section.text, il peut choisir d’afficher ou d’ignorer Composition.text, en particulier lorsqu’il est capable d’analyser les champs structurés de la composition.</p>
+
+<p><strong>En résumé :</strong></p>
+
+<p>Le producteur du document FHIR :</p>
+
+<ul>
+  <li>DOIT enregistrer la partie narrative de chaque section dans Composition.section.text.</li>
+  <li>DEVRAIT enregistrer les métadonnées du document (par exemple, le patient) dans Composition.text.</li>
+  <li>NE DEVRAIT PAS enregistrer de manière redondante des informations destinées à l’affichage à la fois dans Composition.text et Composition.section.text.</li>
+  <li>PEUT inclure des informations narratives qui ne sont dérivées de données structurées.</li>
+  <li>PEUT inclure une liste des sections du document dans Composition.text</li>
+</ul>
+
+<p>Le consommateur d’un document FHIR :</p>
+
+<ul>
+  <li>DOIT afficher, au minimum, Composition.title, Composition.section.title et Composition.section.text.</li>
+  <li>PEUT afficher Composition.text</li>
+  <li>PEUT afficher des informations supplémentaires (telles que le nom du patient et sa date de naissance) dérivées de champs structurés de la Composition.</li>
+</ul>
+
+<p>Les bonnes pratiques recommandent que les éléments suivants soient affichés :</p>
+
+<ul>
+  <li>Titre du document</li>
+  <li>Dates du document</li>
+  <li>Types et dates des évènements documentés</li>
+  <li>Identifiant, nom, rôle, adresse, télécom et date de participation des participants et organisations</li>
+  <li>Données d’identification du patient/usager</li>
+</ul>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="ressourcesCDA-struc-gen.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="mappingCDA-FHIR-struc-gen.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.document.fr.core#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 13, 2026 22:56+0000">2026-03-13</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+            Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="https://interop.esante.gouv.fr/ig/document/core/history.html" target="_blank">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new" target="_blank">New Issue</a>
+
+          
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+
+    <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+    <!-- Fin ajout ANS -->
+
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  
+
+    <!-- Analytics Below
+  ================================================== -->
+
+
+    <!-- AJOUT ANS -->
+
+<footer role="contentinfo" class="footer footer-principal">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a rel="nofollow" href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" loading="lazy" height="77"/>
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a rel="nofollow" href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" loading="lazy" height="74"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+            <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg aria-hidden="true" focusable="false" class="svg-icon svg-angle-right"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+                <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li> -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+      <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
