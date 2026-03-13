@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Pression Artérielle - Testing - Guide d'implémentation FHIR - Mesures de santé v3.1.0</title>
+    <title>Pression Artérielle - Testing - Guide d'implémentation FHIR - Mesures de santé v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -44,9 +44,10 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"7.9"}
-    h3,h4,h5,h6{--heading-prefix:"7.9"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9.17"}
+    h3,h4,h5,h6{--heading-prefix:"9.17"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -55,12 +56,17 @@
   </div>
   <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
     <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
   </div>
+
+  <div id="ig-search">
+ </div>
+
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Guide d&#39;implémentation FHIR - Mesures de santé</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - final-text
+            <span style="display:inline-block;">3.2.0 - final-text
 
 
 
@@ -100,10 +106,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="Le-flux-d-alimentation-des-mesures.html">Flux d&apos;alimentation des mesures</a>
+        <a href="flux-alimentation-signes-vitaux.html">Flux d&apos;alimentation des signes vitaux</a>
       </li>
       <li>
-        <a href="Les-profils-utilises-pour-les-mesures-de-sante.html">Les profils utilisés pour les mesures de santé</a>
+        <a href="profils-signes-vitaux.html">Les profils FHIR des signes vitaux</a>
+      </li>
+      <li>
+        <a href="profils-biologie.html">Les profils FHIR des paramètres biologiques</a>
       </li>
       <li>
         <a href="Le-profil-FHIR-des-objets-connectes.html">Le profil FHIR des objets connectés</a>
@@ -115,9 +124,6 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li>
-        <a href="StructureDefinition-mesures-diabetis-type.html">MesDiabetisType - Types de diabète</a>
-      </li>
       <li>
         <a href="StructureDefinition-mesures-reason-for-measurement.html">MesReasonForMeasurement - Motif de la mesure</a>
       </li>
@@ -132,14 +138,14 @@
   <li>
     <a href="artifacts.html">Ressources de conformité</a>
   </li>
-  <li>
-    <a href="Terminologies.html">Terminologies</a>
-  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="Terminologies.html">Terminologies</a>
+      </li>
       <li>
         <a href="downloads.html">Téléchargements et usages</a>
       </li>
@@ -153,6 +159,9 @@
   </li>
   <li>
     <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation</a>
+  </li>
+  <li>
+    <a href="changes.html">Historique</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -189,7 +198,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Mesures de santé (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Guide d'implémentation FHIR - Mesures de santé (v3.2.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/mesures/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -272,7 +281,7 @@
         
           Active
           
-            as of 2024-10-02
+            as of 2026-02-18
           
         
       </td>
@@ -344,7 +353,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.mesures#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 2, 2024 08:41+0000">2024-10-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.mesures#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 18, 2026 13:49+0000">2026-02-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

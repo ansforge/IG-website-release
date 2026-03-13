@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.mesures"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.mesures</b></p><a name="ans.fhir.fr.mesures"> </a><a name="hcans.fhir.fr.mesures"> </a><a name="ans.fhir.fr.mesures-fr-FR"> </a><h2>Mesures</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/mesures/ImplementationGuide/ans.fhir.fr.mesures</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.fhir.fr.mesures</b></p><a name="ans.fhir.fr.mesures"> </a><a name="hcans.fhir.fr.mesures"> </a><h2>Mesures</h2><p>L'URL officielle pour ce guide d'implémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/mesures/ImplementationGuide/ans.fhir.fr.mesures</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/mesures/ImplementationGuide/ans.fhir.fr.mesures"/>
-  <version value="3.1.0"/>
+  <version value="3.2.0"/>
   <name value="Mesures"/>
   <title value="Guide d'implémentation FHIR - Mesures de santé"/>
   <status value="active"/>
-  <date value="2024-10-02T08:41:57+00:00"/>
+  <date value="2026-02-18T13:49:04+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -35,7 +35,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.0.2"/>
+    <version value="7.0.1"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -43,22 +43,22 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_fr_core">
     <uri value="https://hl7.fr/ig/fhir/core/ImplementationGuide/hl7.fhir.fr.core"/>
     <packageId value="hl7.fhir.fr.core"/>
-    <version value="2.0.1"/>
+    <version value="2.1.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_uv_phd">
     <uri value="http://hl7.org/fhir/uv/phd/ImplementationGuide/hl7.fhir.uv.phd"/>
     <packageId value="hl7.fhir.uv.phd"/>
     <version value="1.0.0"/>
   </dependsOn>
-  <dependsOn id="ans_fr_nos">
-    <uri value="https://interop.esante.gouv.fr/ig/nos/ImplementationGuide/ans.fr.nos"/>
-    <packageId value="ans.fr.nos"/>
-    <version value="1.2.0"/>
+  <dependsOn id="ans_fr_terminologies">
+    <uri value="https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies"/>
+    <packageId value="ans.fr.terminologies"/>
+    <version value="1.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -270,7 +270,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.2.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -493,32 +493,112 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-bundle-flux-alimentation-biologie"/>
+      </reference>
+      <name value="Bundle d'alimentation des mesures de biologie"/>
+      <description value="Profil biologie de la ressource Bundle du flux d'alimentation des mesures de biologie à transmettre"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-cholesterol-aspect"/>
+      </reference>
+      <name value="Cholestérol - aspect"/>
+      <description value="Profil biologie de la ressource Observation pour définir l'aspect du cholestérol"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-cholesterol-hdl"/>
+      </reference>
+      <name value="Cholestérol - HDL"/>
+      <description value="Profil biologie de la ressource Observation pour définir le cholestérol HDL"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-cholesterol-ldl"/>
+      </reference>
+      <name value="Cholestérol - LDL"/>
+      <description value="Profil biologie de la ressource Observation pour définir le cholestérol LDL"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-cholesterol-total"/>
+      </reference>
+      <name value="Cholestérol - total"/>
+      <description value="Profil biologie de la ressource Observation pour définir le cholestérol total"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-cholesterol-trigly"/>
+      </reference>
+      <name value="Cholestérol - triglycerides"/>
+      <description value="Profil biologie de la ressource Observation pour définir le cholestérol triglycerides"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-diagnostic-report"/>
+      </reference>
+      <name value="DiagnosticReport mesures biologie"/>
+      <description value="Profil biologie de la ressource DiagnosticReport pour définir un rapport de biologie"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/bundle-example"/>
+        <reference value="Bundle/example-mes-fr-bundle-bio-003"/>
       </reference>
-      <name value="bundle-example"/>
+      <name value="Exemple de bundle FHIR pour un bilan lipidique et une glycémie"/>
+      <description value="Exemple de bundle FHIR pour un bilan lipidique et une glycémie"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-bundle-flux-alimentation-biologie"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/example-mes-fr-bundle-body-weight"/>
+      </reference>
+      <name value="Exemple de bundle FHIR pour une mesure de poids corporel avec un dispositif PHD"/>
+      <description value="Exemple de bundle FHIR pour une mesure de poids corporel avec un dispositif PHD"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-bundle-flux-alimentation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
+        <valueString value="Device"/>
       </extension>
       <reference>
-        <reference value="Patient/ExamplefrPatient001"/>
+        <reference value="Device/example-mes-fr-phd-device-001"/>
       </reference>
-      <name value="ExamplefrPatient001"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
-        <reference value="Practitioner/ExampleFrPractitionner001"/>
-      </reference>
-      <name value="ExampleFrPractitionner001"/>
+      <name value="Exemple de dispositif PHD : un oxymètre Nonin"/>
+      <description value="Exemple de dispositif PHD : un oxymètre Nonin"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -526,9 +606,10 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesFrObservationBmi001"/>
+        <reference value="Observation/example-mes-fr-observation-bmi-001"/>
       </reference>
-      <name value="ExampleMesFrObservationBmi001"/>
+      <name value="Exemple de mesure de l'IMC"/>
+      <description value="Exemple de mesure de l'IMC"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-bmi"/>
     </resource>
     <resource>
@@ -536,49 +617,10 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesFrObservationBodyHeight001"/>
+        <reference value="Observation/example-mes-fr-observation-heartrate-001"/>
       </reference>
-      <name value="ExampleMesFrObservationBodyHeight001"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-bodyheight"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/ExampleMesFrObservationBodyTemperature001"/>
-      </reference>
-      <name value="ExampleMesFrObservationBodyTemperature001"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-body-temperature"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/ExampleMesFrObservationBodyWeight001"/>
-      </reference>
-      <name value="ExampleMesFrObservationBodyWeight001"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-body-weight"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/ExampleMesFrObservationBP001"/>
-      </reference>
-      <name value="ExampleMesFrObservationBP001"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-bp"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/ExampleMesFrObservationHeartrate001"/>
-      </reference>
-      <name value="ExampleMesFrObservationHeartrate001"/>
+      <name value="Exemple de mesure de la fréquence cardiaque"/>
+      <description value="Exemple de mesure de la fréquence cardiaque"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-heartrate"/>
     </resource>
     <resource>
@@ -586,19 +628,10 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesFrOxygenSat"/>
+        <reference value="Observation/example-mes-fr-observation-resp-rate-001"/>
       </reference>
-      <name value="ExampleMesFrOxygenSat"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-oxygen-sat"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/ExampleMesFrRespRate"/>
-      </reference>
-      <name value="ExampleMesFrRespRate"/>
+      <name value="Exemple de mesure de la fréquence respiratoire"/>
+      <description value="Exemple de mesure de la fréquence respiratoire"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-resp-rate"/>
     </resource>
     <resource>
@@ -606,9 +639,10 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesObservationGlucose001"/>
+        <reference value="Observation/8057b6ec-1417-4f1f-9a00-b0c46e7e71b1"/>
       </reference>
-      <name value="ExampleMesObservationGlucose001"/>
+      <name value="Exemple de mesure de la glycémie"/>
+      <description value="Exemple de mesure de la glycémie"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-glucose"/>
     </resource>
     <resource>
@@ -616,19 +650,43 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesObservationHeadCircumference001"/>
+        <reference value="Observation/example-mes-fr-observation-glucose-001"/>
       </reference>
-      <name value="ExampleMesObservationHeadCircumference001"/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-head-circumference"/>
+      <name value="Exemple de mesure de la glycémie (001)"/>
+      <description value="Exemple de mesure de la glycémie (001)"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-glucose"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesObservationPainSeverity001"/>
+        <reference value="Observation/example-mes-fr-observation-bp-001"/>
       </reference>
-      <name value="ExampleMesObservationPainSeverity001"/>
+      <name value="Exemple de mesure de la pression artérielle"/>
+      <description value="Exemple de mesure de la pression artérielle"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-bp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-oxygen-sat-001"/>
+      </reference>
+      <name value="Exemple de mesure de la saturation en oxygène"/>
+      <description value="Exemple de mesure de la saturation en oxygène"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-oxygen-sat"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-pain-severity-001"/>
+      </reference>
+      <name value="Exemple de mesure de la sévérité de la douleur"/>
+      <description value="Exemple de mesure de la sévérité de la douleur"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-pain-severity"/>
     </resource>
     <resource>
@@ -636,9 +694,87 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleMesObservationStepsByDay001"/>
+        <reference value="Observation/example-mes-fr-observation-body-temperature-001"/>
       </reference>
-      <name value="ExampleMesObservationStepsByDay001"/>
+      <name value="Exemple de mesure de la température corporelle"/>
+      <description value="Exemple de mesure de la température corporelle"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-body-temperature"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-body-weight-001"/>
+      </reference>
+      <name value="Exemple de mesure de poids corporel"/>
+      <description value="Exemple de mesure de poids corporel"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-body-weight"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-body-height-001"/>
+      </reference>
+      <name value="Exemple de mesure de taille corporelle"/>
+      <description value="Exemple de mesure de taille corporelle"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-fr-observation-bodyheight"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/7b166d82-27b6-4878-9765-3fe101618edf"/>
+      </reference>
+      <name value="Exemple de mesure du cholestérol HDL"/>
+      <description value="Exemple de mesure du cholestérol HDL"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-cholesterol-hdl"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/9bd2b013-27b0-4283-aa9e-fe7a5e0c6f1e"/>
+      </reference>
+      <name value="Exemple de mesure du cholestérol LDL"/>
+      <description value="Exemple de mesure du cholestérol LDL"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-cholesterol-ldl"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/b7a049e3-c07e-4e1c-95a5-909da37f75ce"/>
+      </reference>
+      <name value="Exemple de mesure du cholestérol total"/>
+      <description value="Exemple de mesure du cholestérol total"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-cholesterol-total"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/645f7341-715f-44fb-87e9-93f2e7d125a5"/>
+      </reference>
+      <name value="Exemple de mesure du cholestérol triglycérides (003)"/>
+      <description value="Exemple de mesure du cholestérol triglycérides (003)"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-cholesterol-trigly"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-steps-by-day-001"/>
+      </reference>
+      <name value="Exemple de mesure du nombre de pas par jour"/>
+      <description value="Exemple de mesure du nombre de pas par jour"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-steps-by-day"/>
     </resource>
     <resource>
@@ -646,10 +782,66 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/ExampleObservationWaistCircumference001"/>
+        <reference value="Observation/example-mes-fr-observation-head-circumference-001"/>
       </reference>
-      <name value="ExampleObservationWaistCircumference001"/>
+      <name value="Exemple de mesure du périmètre crânien"/>
+      <description value="Exemple de mesure du périmètre crânien"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-head-circumference"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-waist-circum-001"/>
+      </reference>
+      <name value="Exemple de mesure du tour de taille"/>
+      <description value="Exemple de mesure du tour de taille"/>
       <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-waist-circumference"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/example-mes-fr-observation-hb1ac-001"/>
+      </reference>
+      <name value="Exemple de mesure Hb1Ac"/>
+      <description value="Observation d'une hémoglobine glyquée mesurée à 6.5 %"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-observation-hb1ac"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/example-mes-fr-patient-001"/>
+      </reference>
+      <name value="Exemple de patient français"/>
+      <description value="Exemple de patient français (ressource Patient)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/example-mes-fr-practitionner-001"/>
+      </reference>
+      <name value="Exemple de practicien français"/>
+      <description value="Exemple de practicien français (ressource Practitioner)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/example-mes-fr-diagnostic-report-cholesterol-003"/>
+      </reference>
+      <name value="Exemple de rapport diagnostique de bilan lipidique"/>
+      <description value="Exemple de rapport diagnostique de bilan lipidique"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/mesures/StructureDefinition/mesures-diagnostic-report"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -681,7 +873,18 @@
         <reference value="StructureDefinition/mesures-observation-glucose"/>
       </reference>
       <name value="Glycémie"/>
-      <description value="Profil de la ressource Observation pour définir une Glycémie&#xA;&#xA;Ce profil permet de gérer 4 types d'indicateurs de glycémie:&#xA;- le taux de glucose sanguin, mesuré en mg/dl&#xA;- le taux de glucose interstitiel, mesuré en mg/dl&#xA;- l’hémoglobine glyquée (Hb1Ac) mesurée en %&#xA;- l’index de gestion de glycémie (IGG) qui procure une estimation de l’HbA1c également mesuré en %&#xA;&#xA;L'extension MesNumberOfDays permet de spécifier le nombre de jours dans la mesure du taux de glucose interstitiel et de l’index de gestion de glycémie (IGG) .&#xA;&#xA;L'extension MesMomentOfMeasurement (contexte de la mesure) est utilisée dans le cas de la mesure du glucose sanguin."/>
+      <description value="Profil biologie de la ressource Observation pour définir une Glycémie&#xA;&#xA;Ce profil permet de gérer 3 types d'indicateurs de glycémie:&#xA;- le taux de glucose sanguin, mesuré en mg/dl&#xA;- le taux de glucose interstitiel, mesuré en mg/dl&#xA;- l’index de gestion de glycémie (IGG) qui procure une estimation de l’HbA1c également mesuré en %&#xA;&#xA;L'extension MesNumberOfDays permet de spécifier le nombre de jours dans la mesure du taux de glucose interstitiel et de l’index de gestion de glycémie (IGG) .&#xA;&#xA;L'extension MesMomentOfMeasurement (contexte de la mesure) est utilisée dans le cas de la mesure du glucose sanguin."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mesures-observation-hb1ac"/>
+      </reference>
+      <name value="Hémoglobine glyquée (Hb1Ac)"/>
+      <description value="Profil de la ressource Observation pour définir l’hémoglobine glyquée (Hb1Ac) mesurée en %."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -703,7 +906,7 @@
         <reference value="StructureDefinition/mesures-moment-of-measurement"/>
       </reference>
       <name value="Moment de la mesure"/>
-      <description value="Moment de la mesure.&#xA;Peut être exprimé par un texte libre ou un code."/>
+      <description value="Extension pour indiquer le moment de la mesure"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -752,16 +955,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Device"/>
-      </extension>
-      <reference>
-        <reference value="Device/phd-74E8FFFEFF051C00"/>
-      </reference>
-      <name value="phd-74E8FFFEFF051C00"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -801,7 +994,7 @@
         <reference value="StructureDefinition/mesures-reason-for-measurement"/>
       </reference>
       <name value="Raison de la mesure"/>
-      <description value="Extension du Motif de la mesure, exprimé en texte libre  (ex. diabète, surpoids, maladie du cœur et des vaisseaux, cholestérol…)."/>
+      <description value="Extension du Motif de la mesure, exprimé en texte libre."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -853,10 +1046,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/mesures-diabetis-type"/>
+        <reference value="StructureDefinition/mesures-original-data"/>
       </reference>
-      <name value="Type de diabète"/>
-      <description value="Extension sur le type de diabète"/>
+      <name value="Valeur originale"/>
+      <description value="Extension permettant de renseigner la donnée originale. &#xD;&#xA;Dans le cas où une conversion d'unité a été effectuée sur la valeur de la mesure, cette extension permet de conserver la valeur originale telle que mesurée par le dispositif."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -876,18 +1069,26 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="Le-flux-d-alimentation-des-mesures.html"/>
+          <valueUrl value="flux-alimentation-signes-vitaux.html"/>
         </extension>
-        <nameUrl value="Le-flux-d-alimentation-des-mesures.html"/>
-        <title value="Le flux d'alimentation des mesures de santé"/>
+        <nameUrl value="flux-alimentation-signes-vitaux.html"/>
+        <title value="Le flux d'alimentation des signes vitaux"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="Les-profils-utilises-pour-les-mesures-de-sante.html"/>
+          <valueUrl value="profils-signes-vitaux.html"/>
         </extension>
-        <nameUrl value="Les-profils-utilises-pour-les-mesures-de-sante.html"/>
-        <title value="Les profils utilisés pour les mesures de santé"/>
+        <nameUrl value="profils-signes-vitaux.html"/>
+        <title value="Les profils FHIR des signes vitaux"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="profils-biologie.html"/>
+        </extension>
+        <nameUrl value="profils-biologie.html"/>
+        <title value="Les profils FHIR des paramètres biologiques"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -912,6 +1113,14 @@
         </extension>
         <nameUrl value="downloads.html"/>
         <title value="Téléchargements et usages"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Historique des changements"/>
         <generation value="markdown"/>
       </page>
     </page>

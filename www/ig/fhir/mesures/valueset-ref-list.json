@@ -14,16 +14,15 @@
       "sources" : ["2.16.840.1.113883.4.642.3.399"],
       "uses" : {
       },
+      "StructureDefinition-mesures-fr-observation-bmi.html" : "Indice de Masse Corporelle",
       "StructureDefinition-mesures-fr-observation-bp.html" : "Pression Artérielle",
-      "StructureDefinition-mesures-fr-observation-bodyheight.html" : "Taille",
-      "StructureDefinition-mesures-fr-observation-body-weight.html" : "Poids",
       "StructureDefinition-mesures-fr-observation-heartrate.html" : "Fréquence Cardiaque",
       "StructureDefinition-mesures-fr-observation-body-temperature.html" : "Température",
-      "StructureDefinition-mesures-fr-observation-bmi.html" : "Indice de Masse Corporelle"
+      "StructureDefinition-mesures-fr-observation-body-weight.html" : "Poids"
     },
     {
       "url" : "https://interop.esante.gouv.fr/ig/fhir/mesures/ValueSet/method-glucose-vs",
-      "version" : "3.1.0",
+      "version" : "3.2.0",
       "status" : "active",
       "name" : "MethodeGlucoseVS",
       "title" : "Méthode de mesures de glycémie sanguine ou interstitielle",
@@ -34,16 +33,17 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-mesures-observation-glucose.html" : "Glycémie"
+      "StructureDefinition-mesures-observation-glucose.html" : "Glycémie",
+      "StructureDefinition-mesures-observation-hb1ac.html" : "Hémoglobine glyquée (Hb1Ac)"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J145-MethodBodyWeight-ENS/FHIR/JDV-J145-MethodBodyWeight-ENS",
-      "version" : "1.2.0",
+      "version" : "20240726120000",
       "status" : "active",
-      "name" : "JDV_J145-MethodBodyWeight-ENS",
+      "name" : "JDV_J145_MethodBodyWeight_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de mesure du poids",
-      "systems" : ["https://webgate.ec.europa.eu/dyna2/emdn"],
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-emdn"],
       "oids" : ["1.2.250.1.213.1.1.5.600"],
       "sources" : ["1.2.250.1.213.1.1.5.600"],
       "uses" : {
@@ -52,14 +52,14 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J146-MethodBodyHeight-ENS/FHIR/JDV-J146-MethodBodyHeight-ENS",
-      "version" : "1.2.0",
+      "version" : "20240927120000",
       "status" : "active",
-      "name" : "JDV_J146-MethodBodyHeight-ENS",
+      "name" : "JDV_J146_MethodBodyHeight_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de mesure de la taille",
       "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R307-NCIT/FHIR/TRE-R307-NCIT",
-        "https://webgate.ec.europa.eu/dyna2/emdn"
+        "https://smt.esante.gouv.fr/terminologie-emdn",
+        "https://smt.esante.gouv.fr/terminologie-ncit"
       ],
       "oids" : ["1.2.250.1.213.1.1.5.601"],
       "sources" : ["1.2.250.1.213.1.1.5.601"],
@@ -69,47 +69,27 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J147-MethodHeartrate-ENS/FHIR/JDV-J147-MethodHeartrate-ENS",
-      "version" : "1.2.0",
+      "version" : "20240726120000",
       "status" : "active",
-      "name" : "JDV_J147-MethodHeartrate-ENS",
+      "name" : "JDV_J147_MethodHeartrate_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de mesure de fréquence cardiaque",
       "systems" : [
-        "https://webgate.ec.europa.eu/dyna2/emdn",
+        "https://smt.esante.gouv.fr/terminologie-emdn",
         "http://snomed.info/sct"
       ],
       "oids" : ["1.2.250.1.213.1.1.5.602"],
       "sources" : ["1.2.250.1.213.1.1.5.602"],
       "uses" : {
       },
-      "StructureDefinition-mesures-fr-observation-oxygen-sat.html" : "Saturation en Oxygène",
-      "StructureDefinition-mesures-fr-observation-heartrate.html" : "Fréquence Cardiaque"
-    },
-    {
-      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J148-ReferenceRangeAppliesTo-CISIS/FHIR/JDV-J148-ReferenceRangeAppliesTo-CISIS",
-      "version" : "1.2.0",
-      "status" : "active",
-      "name" : "JDV_J148-ReferenceRangeAppliesTo-CISIS",
-      "title" : null,
-      "description" : "JDV pour le champ d'application de l'intervalle de référence",
-      "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R303-HL7v3AdministrativeGender/FHIR/TRE-R303-HL7v3AdministrativeGender",
-        "http://snomed.info/sct"
-      ],
-      "oids" : ["1.2.250.1.213.1.1.5.603"],
-      "sources" : ["1.2.250.1.213.1.1.5.603"],
-      "uses" : {
-      },
-      "StructureDefinition-mesures-fr-observation-bp.html" : "Pression Artérielle",
-      "StructureDefinition-mesures-observation-glucose.html" : "Glycémie",
       "StructureDefinition-mesures-fr-observation-heartrate.html" : "Fréquence Cardiaque",
-      "StructureDefinition-mesures-fr-observation-bmi.html" : "Indice de Masse Corporelle"
+      "StructureDefinition-mesures-fr-observation-oxygen-sat.html" : "Saturation en Oxygène"
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J149-BodySiteBP-ENS/FHIR/JDV-J149-BodySiteBP-ENS",
-      "version" : "1.2.0",
+      "version" : "20240927120000",
       "status" : "active",
-      "name" : "JDV_J149-BodySiteBP-ENS",
+      "name" : "JDV_J149_BodySiteBP_ENS",
       "title" : null,
       "description" : "JDV pour la localisation de la mesure de la pression artérielle",
       "systems" : ["http://snomed.info/sct"],
@@ -121,12 +101,12 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J150-MethodBP-ENS/FHIR/JDV-J150-MethodBP-ENS",
-      "version" : "1.2.0",
+      "version" : "20240726120000",
       "status" : "active",
-      "name" : "JDV_J150-MethodBP-ENS",
+      "name" : "JDV_J150_MethodBP_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de mesure de la pression artérielle",
-      "systems" : ["https://webgate.ec.europa.eu/dyna2/emdn"],
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-emdn"],
       "oids" : ["1.2.250.1.213.1.1.5.605"],
       "sources" : ["1.2.250.1.213.1.1.5.605"],
       "uses" : {
@@ -134,13 +114,27 @@
       "StructureDefinition-mesures-fr-observation-bp.html" : "Pression Artérielle"
     },
     {
-      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J152-MethodBodyTemperature-ENS/FHIR/JDV-J152-MethodBodyTemperature-ENS",
-      "version" : "1.2.0",
+      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J151-BodySiteBodyTemperature-ENS/FHIR/JDV-J151-BodySiteBodyTemperature-ENS",
+      "version" : "20240927120000",
       "status" : "active",
-      "name" : "JDV_J152-MethodBodyTemperature-ENS",
+      "name" : "JDV_J151_BodySiteBodyTemperature_ENS",
+      "title" : null,
+      "description" : "JDV de localisation de la mesure de la température",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["1.2.250.1.213.1.1.5.606"],
+      "sources" : ["1.2.250.1.213.1.1.5.606"],
+      "uses" : {
+      },
+      "StructureDefinition-mesures-fr-observation-body-temperature.html" : "Température"
+    },
+    {
+      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J152-MethodBodyTemperature-ENS/FHIR/JDV-J152-MethodBodyTemperature-ENS",
+      "version" : "20240726120000",
+      "status" : "active",
+      "name" : "JDV_J152_MethodBodyTemperature_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de la mesure de la température",
-      "systems" : ["https://webgate.ec.europa.eu/dyna2/emdn"],
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-emdn"],
       "oids" : ["1.2.250.1.213.1.1.5.607"],
       "sources" : ["1.2.250.1.213.1.1.5.607"],
       "uses" : {
@@ -148,33 +142,15 @@
       "StructureDefinition-mesures-fr-observation-body-temperature.html" : "Température"
     },
     {
-      "url" : "https://mos.esante.gouv.fr/NOS/JDV_J153-TypeDiabete-ENS/FHIR/JDV-J153-TypeDiabete-ENS",
-      "version" : "1.2.0",
-      "status" : "active",
-      "name" : "JDV_J153-TypeDiabete-ENS",
-      "title" : null,
-      "description" : "JDV pour caractériser le type de diabète dans l'extension DiabetisType",
-      "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R308-TAASIP/FHIR/TRE-R308-TAASIP",
-        "https://mos.esante.gouv.fr/NOS/TRE_R311-RegroupementSurCIM10ATIH/FHIR/TRE-R311-RegroupementSurCIM10ATIH",
-        "https://mos.esante.gouv.fr/NOS/TRE_R310-CIM10ATIH/FHIR/TRE-R310-CIM10ATIH"
-      ],
-      "oids" : ["1.2.250.1.213.1.1.5.608"],
-      "sources" : ["1.2.250.1.213.1.1.5.608"],
-      "uses" : {
-      },
-      "StructureDefinition-mesures-diabetis-type.html" : "Type de diabète"
-    },
-    {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J154-TypeGlucose-ENS/FHIR/JDV-J154-TypeGlucose-ENS",
-      "version" : "1.2.0",
+      "version" : "20250728120000",
       "status" : "active",
-      "name" : "JDV_J154-TypeGlucose-ENS",
+      "name" : "JDV_J154_TypeGlucose_ENS",
       "title" : null,
       "description" : "JDV pour caractériser le type de glucose",
       "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_A04-Loinc/FHIR/TRE-A04-Loinc",
-        "https://mos.esante.gouv.fr/NOS/TRE_R308-TAASIP/FHIR/TRE-R308-TAASIP"
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/terminologie-cisis",
+        "http://loinc.org"
       ],
       "oids" : ["1.2.250.1.213.1.1.5.609"],
       "sources" : ["1.2.250.1.213.1.1.5.609"],
@@ -184,14 +160,14 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J157-MomentGlucose-ENS/FHIR/JDV-J157-MomentGlucose-ENS",
-      "version" : "1.2.0",
+      "version" : "20250728120000",
       "status" : "active",
-      "name" : "JDV_J157-MomentGlucose-ENS",
+      "name" : "JDV_J157_MomentGlucose_ENS",
       "title" : null,
       "description" : "JDV pour caractériser le moment de la mesure de glucose",
       "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_A04-Loinc/FHIR/TRE-A04-Loinc",
-        "https://mos.esante.gouv.fr/NOS/TRE_R308-TAASIP/FHIR/TRE-R308-TAASIP"
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/terminologie-cisis",
+        "http://loinc.org"
       ],
       "oids" : ["1.2.250.1.213.1.1.5.612"],
       "sources" : ["1.2.250.1.213.1.1.5.612"],
@@ -201,12 +177,12 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J158-MethodStepsByDay-ENS/FHIR/JDV-J158-MethodStepsByDay-ENS",
-      "version" : "1.2.0",
+      "version" : "20240726120000",
       "status" : "active",
-      "name" : "JDV_J158-MethodStepsByDay-ENS",
+      "name" : "JDV_J158_MethodStepsByDay_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de la mesure de nombre de pas par jour",
-      "systems" : ["https://webgate.ec.europa.eu/dyna2/emdn"],
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-emdn"],
       "oids" : ["1.2.250.1.213.1.1.5.613"],
       "sources" : ["1.2.250.1.213.1.1.5.613"],
       "uses" : {
@@ -215,14 +191,12 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J159-MethodPainSeverity-ENS/FHIR/JDV-J159-MethodPainSeverity-ENS",
-      "version" : "1.2.0",
+      "version" : "20240927120000",
       "status" : "active",
-      "name" : "JDV_J159-MethodPainSeverity-ENS",
+      "name" : "JDV_J159_MethodPainSeverity_ENS",
       "title" : null,
       "description" : "JDV pour la méthode de la mesure du niveau de douleur",
-      "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R307-NCIT/FHIR/TRE-R307-NCIT"
-      ],
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-ncit"],
       "oids" : ["1.2.250.1.213.1.1.5.614"],
       "sources" : ["1.2.250.1.213.1.1.5.614"],
       "uses" : {
@@ -231,14 +205,12 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J163-GlucoseUnits-ENS/FHIR/JDV-J163-GlucoseUnits-ENS",
-      "version" : "1.2.0",
+      "version" : "20240927120000",
       "status" : "active",
-      "name" : "JDV_J163-GlucoseUnits-ENS",
+      "name" : "JDV_J163_GlucoseUnits_ENS",
       "title" : null,
       "description" : "Liste fermée des unités utilisables pour la mesure du glucose avec le profil ENS_ObservationGlucose",
-      "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R247-UcumUniteMesure/FHIR/TRE-R247-UcumUniteMesure"
-      ],
+      "systems" : ["http://unitsofmeasure.org"],
       "oids" : ["1.2.250.1.213.1.1.5.639"],
       "sources" : ["1.2.250.1.213.1.1.5.639"],
       "uses" : {
@@ -247,19 +219,36 @@
     },
     {
       "url" : "https://mos.esante.gouv.fr/NOS/JDV_J164-GlucoseNumberOfDays-ENS/FHIR/JDV-J164-GlucoseNumberOfDays-ENS",
-      "version" : "1.2.0",
+      "version" : "20250728120000",
       "status" : "active",
-      "name" : "JDV_J164-GlucoseNumberOfDays-ENS",
+      "name" : "JDV_J164_GlucoseNumberOfDays_ENS",
       "title" : null,
       "description" : "Liste fermée des codes utilisables pour la mesure du taux de glucose interstitiel et de l'index de gestion de glycémie (IGG) avec le profil ENS_ObservationGlucose",
       "systems" : [
-        "https://mos.esante.gouv.fr/NOS/TRE_R308-TAASIP/FHIR/TRE-R308-TAASIP"
+        "https://smt.esante.gouv.fr/fhir/CodeSystem/terminologie-cisis"
       ],
       "oids" : ["1.2.250.1.213.1.1.5.640"],
       "sources" : ["1.2.250.1.213.1.1.5.640"],
       "uses" : {
       },
       "StructureDefinition-mesures-number-of-days.html" : "Nombre de jours"
+    },
+    {
+      "url" : "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-technique-biologie-cisis",
+      "version" : "20251028115833",
+      "status" : "active",
+      "name" : "JdvTechniqueBiologieCisis",
+      "title" : "JDV Technique Biologie CISIS",
+      "description" : "JDV Technique Biologie CISIS",
+      "systems" : ["https://smt.esante.gouv.fr/terminologie-tccr"],
+      "oids" : ["1.2.250.1.213.1.1.5.789"],
+      "sources" : ["1.2.250.1.213.1.1.5.789"],
+      "uses" : {
+      },
+      "StructureDefinition-mesures-observation-cholesterol-total.html" : "Cholestérol - total",
+      "StructureDefinition-mesures-observation-cholesterol-aspect.html" : "Cholestérol - aspect",
+      "StructureDefinition-mesures-observation-cholesterol-hdl.html" : "Cholestérol - HDL",
+      "StructureDefinition-mesures-observation-cholesterol-ldl.html" : "Cholestérol - LDL"
     }
   ]
 }
