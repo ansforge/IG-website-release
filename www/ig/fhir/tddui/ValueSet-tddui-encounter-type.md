@@ -1,4 +1,4 @@
-# TDDUI Encounter Type - Médicosocial - Transfert de données DUI v2.2.0
+# TDDUI Encounter Type - Médicosocial - Transfert de données DUI v2.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-type | *Version*:2.2.0 |
-| Active as of 2026-02-06 | *Computable Name*:TDDUIEncounterType |
+| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-type | *Version*:2.3.0 |
+| Active as of 2026-03-16 | *Computable Name*:TDDUIEncounterType |
 
  
 ValueSet pour la définition des codes de type de séjour 
@@ -49,57 +49,41 @@ ValueSet pour la définition des codes de type de séjour
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-encounter-type",
-  "version" : "2.2.0",
+  "version" : "2.3.0",
   "name" : "TDDUIEncounterType",
   "title" : "TDDUI Encounter Type",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-02-06T14:53:05+00:00",
+  "date" : "2026-03-16T15:53:20+00:00",
   "publisher" : "ANS",
-  "contact" : [
-    {
-      "name" : "ANS",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://esante.gouv.fr"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ANS",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    }]
+  }],
   "description" : "ValueSet pour la définition des codes de type de séjour",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "FR",
-          "display" : "FRANCE"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France"
+    }]
+  }],
   "compose" : {
-    "include" : [
-      {
-        "valueSet" : [
-          "https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-encounter-type"
-        ]
-      },
-      {
-        "valueSet" : [
-          "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-serafin"
-        ]
-      },
-      {
-        "valueSet" : [
-          "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-type-evenement-ssiad-cisis"
-        ]
-      },
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
-      }
-    ]
+    "include" : [{
+      "valueSet" : ["https://hl7.fr/ig/fhir/core/ValueSet/fr-core-vs-encounter-type"]
+    },
+    {
+      "valueSet" : ["https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-serafin"]
+    },
+    {
+      "valueSet" : ["https://smt.esante.gouv.fr/fhir/ValueSet/jdv-type-evenement-ssiad-cisis"]
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+    }]
   }
 }
 

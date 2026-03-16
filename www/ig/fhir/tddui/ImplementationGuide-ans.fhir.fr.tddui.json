@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.fhir.fr.tddui</b></p><a name=\"ans.fhir.fr.tddui\"> </a><a name=\"hcans.fhir.fr.tddui\"> </a><h2>TDDUI</h2><p>L'URL officielle pour ce guide d'implémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui</pre></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ImplementationGuide/ans.fhir.fr.tddui",
-  "version" : "2.2.0",
+  "version" : "2.3.0",
   "name" : "TDDUI",
   "title" : "Médicosocial - Transfert de données DUI",
   "status" : "active",
-  "date" : "2026-02-06T14:53:05+00:00",
+  "date" : "2026-03-16T15:53:20+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -23,7 +23,7 @@
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
       "code" : "FR",
-      "display" : "FRANCE"
+      "display" : "France"
     }]
   }],
   "packageId" : "ans.fhir.fr.tddui",
@@ -37,7 +37,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.0.1"
+    "version" : "7.1.0"
   },
   {
     "id" : "hl7_fhir_fr_core",
@@ -49,7 +49,7 @@
     "id" : "ans_fr_terminologies",
     "uri" : "https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies",
     "packageId" : "ans.fr.terminologies",
-    "version" : "1.4.0"
+    "version" : "1.7.0"
   },
   {
     "id" : "hl7_fhir_uv_extensions",
@@ -62,6 +62,12 @@
     "uri" : "https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd",
     "packageId" : "ihe.iti.mhd",
     "version" : "4.2.0"
+  },
+  {
+    "id" : "ans_fhir_fr_annuaire",
+    "uri" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/ImplementationGuide/ans.fhir.fr.annuaire",
+    "packageId" : "ans.fhir.fr.annuaire",
+    "version" : "1.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -698,6 +704,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/tddui-assessment-method"
+      },
+      "name" : "TDDUI Assessment Method",
+      "description" : "Mode d'évaluation, texte libre permettant de mettre le contexte de l'évaluation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/tddui-attachment"
       },
       "name" : "TDDUI Attachment",
@@ -774,6 +792,18 @@
       },
       "name" : "TDDUI CarePlan supportingInfo",
       "description" : "ValueSet définissant les types de notes pour l'élément CarePlan.supportingInfo.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tddui-cim-10"
+      },
+      "name" : "TDDUI CIM10",
+      "description" : "ValueSet incluant les codes de la terminologie CIM-1O.",
       "exampleBoolean" : false
     },
     {
@@ -935,18 +965,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/tddui-encounter-participant"
-      },
-      "name" : "TDDUI Encounter Participant",
-      "description" : "CodeSystem définissant les types de participants dans le profil TDDUIEncounterEvenement.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -978,6 +996,18 @@
       },
       "name" : "TDDUI Encounter Type",
       "description" : "ValueSet pour la définition des codes de type de séjour",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-entry-date-origin"
+      },
+      "name" : "TDDUI Entry Date Origin",
+      "description" : "Extension permettant de véhiculer la date d'entrée dans l'ESSMS de provenance.",
       "exampleBoolean" : false
     },
     {
@@ -1151,6 +1181,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-household-situation"
+      },
+      "name" : "TDDUI Household Situation",
+      "description" : "Extension complexe regroupant la situation familiale, la composition du foyer et sa description textuelle de l'usager.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
@@ -1190,6 +1232,126 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/tddui-observation-cause-mortalite"
+      },
+      "name" : "TDDUI Observation Cause Mortalite",
+      "description" : "Profil de la ressource Observation permettant de représenter les causes de mortalité d'un usager.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/tddui-observation-cause-mortalite-example"
+      },
+      "name" : "TDDUI Observation Cause Mortalite Example",
+      "description" : "Exemple de la ressource TDDUIObservationMortalite",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-observation-cause-mortalite"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-observation-mobilite-usager"
+      },
+      "name" : "TDDUI Observation Mobilite Usager",
+      "description" : "Profil de la ressource Observation permettant de représenter la mobilité de l'usager.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/tddui-observation-mobilite-usager-example"
+      },
+      "name" : "TDDUI Observation Mobilite Usager Example",
+      "description" : "Exemple de la ressource TDDUIObservationMobiliteUsager",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-observation-mobilite-usager"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-observation-periode-scolaire"
+      },
+      "name" : "TDDUI Observation Periode Scolaire",
+      "description" : "Profil de la ressource Observation permettant de représenter la période scolaire de l'usager.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tddui-observation-periode-scolaire"
+      },
+      "name" : "TDDUI Observation Periode Scolaire",
+      "description" : "ValueSet pour l'Observation de la Période Scolaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tddui-observation-periode-scolaire"
+      },
+      "name" : "TDDUI Observation Periode Scolaire",
+      "description" : "CodeSystem pour l'Observation de la Période Scolaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/tddui-observation-periodescolaire-example"
+      },
+      "name" : "TDDUI Observation PeriodeScolaire Example",
+      "description" : "Exemple de la ressource TDDUIObservationPeriodeScolaire",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-observation-periode-scolaire"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tddui-observation-type"
+      },
+      "name" : "TDDUI Observation Type",
+      "description" : "ValueSet pour les types d'Observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/tddui-observation-type"
+      },
+      "name" : "TDDUI Observation Type",
+      "description" : "CodeSystem pour la défintion des types d'Observation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/tddui-organization"
       },
       "name" : "TDDUI Organization",
@@ -1207,6 +1369,30 @@
       "name" : "TDDUI Organization Example",
       "description" : "ESSMS - Les Chênes Verts",
       "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/tddui-organization-origine-example"
+      },
+      "name" : "TDDUI Organization Origine Example",
+      "description" : "ESSMS - Les Résidences du Lac",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-participant-present"
+      },
+      "name" : "TDDUI Participant Present",
+      "description" : "Indique la présence du participant à l'événement.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -1290,6 +1476,18 @@
       },
       "name" : "TDDUI Patient Present",
       "description" : "Evènement nécessitant ou non la présence physique de l’usager.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tddui-patient-validation"
+      },
+      "name" : "TDDUI Patient Validation",
+      "description" : "Validation par l'usager que l'événement a eu lieu.",
       "exampleBoolean" : false
     },
     {
@@ -1769,7 +1967,7 @@
         "reference" : "StructureDefinition/tddui-qr-participant"
       },
       "name" : "TDDUI QR Participant",
-      "description" : "Extension permettant d'ajouter le responsable de l'évaluation et l'auteur du statut de l'évaluation dans un QuestionnaireResponse.",
+      "description" : "Extension permettant d'ajouter le responsable et le porteur de l'évaluation dans un QuestionnaireResponse.",
       "exampleBoolean" : false
     },
     {
@@ -1925,7 +2123,7 @@
         "reference" : "StructureDefinition/tddui-status-author"
       },
       "name" : "TDDUI Status Author",
-      "description" : "Extension permettant de représenter la profession du professionnel.",
+      "description" : "Extension permettant de représenter l'auteur du statut.",
       "exampleBoolean" : false
     },
     {

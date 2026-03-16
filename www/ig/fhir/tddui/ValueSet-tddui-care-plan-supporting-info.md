@@ -1,4 +1,4 @@
-# TDDUI CarePlan supportingInfo - Médicosocial - Transfert de données DUI v2.2.0
+# TDDUI CarePlan supportingInfo - Médicosocial - Transfert de données DUI v2.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-care-plan-supporting-info | *Version*:2.2.0 |
-| Active as of 2026-02-06 | *Computable Name*:TDDUICarePlanSupportingInfo |
+| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-care-plan-supporting-info | *Version*:2.3.0 |
+| Active as of 2026-03-16 | *Computable Name*:TDDUICarePlanSupportingInfo |
 
  
 ValueSet définissant les types de notes pour l'élément CarePlan.supportingInfo. 
@@ -49,66 +49,50 @@ ValueSet définissant les types de notes pour l'élément CarePlan.supportingInf
     "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablevalueset"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-care-plan-supporting-info",
-  "version" : "2.2.0",
+  "version" : "2.3.0",
   "name" : "TDDUICarePlanSupportingInfo",
   "title" : "TDDUI CarePlan supportingInfo",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-02-06T14:53:05+00:00",
+  "date" : "2026-03-16T15:53:20+00:00",
   "publisher" : "ANS",
-  "contact" : [
-    {
-      "name" : "ANS",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://esante.gouv.fr"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ANS",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    }]
+  }],
   "description" : "ValueSet définissant les types de notes pour l'élément CarePlan.supportingInfo.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "FR",
-          "display" : "FRANCE"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France"
+    }]
+  }],
   "compose" : {
-    "include" : [
+    "include" : [{
+      "valueSet" : ["https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-discriminator"]
+    }],
+    "exclude" : [{
+      "system" : "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator",
+      "concept" : [{
+        "code" : "titreObjectif"
+      },
       {
-        "valueSet" : [
-          "https://interop.esante.gouv.fr/ig/fhir/tddui/ValueSet/tddui-discriminator"
-        ]
-      }
-    ],
-    "exclude" : [
+        "code" : "avisUsagerObjectif"
+      },
       {
-        "system" : "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-discriminator",
-        "concept" : [
-          {
-            "code" : "titreObjectif"
-          },
-          {
-            "code" : "avisUsagerObjectif"
-          },
-          {
-            "code" : "strategieMiseEnOeuvreObjectif"
-          },
-          {
-            "code" : "origineAttente"
-          },
-          {
-            "code" : "commentaireAttente"
-          }
-        ]
-      }
-    ]
+        "code" : "strategieMiseEnOeuvreObjectif"
+      },
+      {
+        "code" : "origineAttente"
+      },
+      {
+        "code" : "commentaireAttente"
+      }]
+    }]
   }
 }
 

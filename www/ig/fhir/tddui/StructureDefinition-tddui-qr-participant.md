@@ -1,4 +1,4 @@
-# TDDUI QR Participant - Médicosocial - Transfert de données DUI v2.2.0
+# TDDUI QR Participant - Médicosocial - Transfert de données DUI v2.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,10 +8,10 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-qr-participant | *Version*:2.2.0 |
-| Active as of 2026-02-06 | *Computable Name*:TDDUIQRParticipant |
+| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-qr-participant | *Version*:2.3.0 |
+| Active as of 2026-03-16 | *Computable Name*:TDDUIQRParticipant |
 
-Extension permettant d'ajouter le responsable de l'évaluation et l'auteur du statut de l'évaluation dans un QuestionnaireResponse.
+Extension permettant d'ajouter le responsable et le porteur de l'évaluation dans un QuestionnaireResponse.
 
 **Context of Use**
 
@@ -20,6 +20,7 @@ Extension permettant d'ajouter le responsable de l'évaluation et l'auteur du st
 **Utilisations:**
 
 * Utilise ce/t/te Extension: [TDDUI QuestionnaireResponse](StructureDefinition-tddui-questionnaire-response.md)
+* Exemples pour ce/t/te Extension: [Bundle/tddui-pp-pa-bundle-example](Bundle-tddui-pp-pa-bundle-example.md) and [QuestionnaireResponse/tddui-pp-pa-questionnaire-response-aggir-pa-example](QuestionnaireResponse-tddui-pp-pa-questionnaire-response-aggir-pa-example.md)
 
 Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.tddui|current/StructureDefinition/tddui-qr-participant)
 
@@ -42,133 +43,111 @@ Other representations of profile: [CSV](StructureDefinition-tddui-qr-participant
   "resourceType" : "StructureDefinition",
   "id" : "tddui-qr-participant",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-qr-participant",
-  "version" : "2.2.0",
+  "version" : "2.3.0",
   "name" : "TDDUIQRParticipant",
   "title" : "TDDUI QR Participant",
   "status" : "active",
-  "date" : "2026-02-06T14:53:05+00:00",
+  "date" : "2026-03-16T15:53:20+00:00",
   "publisher" : "ANS",
-  "contact" : [
-    {
-      "name" : "ANS",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://esante.gouv.fr"
-        }
-      ]
-    }
-  ],
-  "description" : "Extension permettant d'ajouter le responsable de l'évaluation et l'auteur du statut de l'évaluation dans un QuestionnaireResponse.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "FR",
-          "display" : "FRANCE"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ANS",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    }]
+  }],
+  "description" : "Extension permettant d'ajouter le responsable et le porteur de l'évaluation dans un QuestionnaireResponse.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "QuestionnaireResponse"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "QuestionnaireResponse"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "TDDUI QR Participant",
-        "definition" : "Extension permettant d'ajouter le responsable de l'évaluation et l'auteur du statut de l'évaluation dans un QuestionnaireResponse."
-      },
-      {
-        "id" : "Extension.extension:TDDUIResponsible",
-        "path" : "Extension.extension",
-        "sliceName" : "TDDUIResponsible",
-        "short" : "Responsable de l'évaluation.",
-        "min" : 0,
-        "max" : "1"
-      },
-      {
-        "id" : "Extension.extension:TDDUIResponsible.extension",
-        "path" : "Extension.extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.extension:TDDUIResponsible.url",
-        "path" : "Extension.extension.url",
-        "fixedUri" : "TDDUIResponsible"
-      },
-      {
-        "id" : "Extension.extension:TDDUIResponsible.value[x]",
-        "path" : "Extension.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-practitioner"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Extension.extension:TDDUIStatusAuthor",
-        "path" : "Extension.extension",
-        "sliceName" : "TDDUIStatusAuthor",
-        "short" : "Auteur du statut de l'évaluation.",
-        "min" : 0,
-        "max" : "1"
-      },
-      {
-        "id" : "Extension.extension:TDDUIStatusAuthor.extension",
-        "path" : "Extension.extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.extension:TDDUIStatusAuthor.url",
-        "path" : "Extension.extension.url",
-        "fixedUri" : "TDDUIStatusAuthor"
-      },
-      {
-        "id" : "Extension.extension:TDDUIStatusAuthor.value[x]",
-        "path" : "Extension.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-practitioner"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-qr-participant"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "max" : "0"
-      }
-    ]
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "TDDUI QR Participant",
+      "definition" : "Extension permettant d'ajouter le responsable et le porteur de l'évaluation dans un QuestionnaireResponse."
+    },
+    {
+      "id" : "Extension.extension:TDDUIResponsible",
+      "path" : "Extension.extension",
+      "sliceName" : "TDDUIResponsible",
+      "short" : "Responsable de l'évaluation.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:TDDUIResponsible.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:TDDUIResponsible.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "TDDUIResponsible"
+    },
+    {
+      "id" : "Extension.extension:TDDUIResponsible.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-practitioner"]
+      }]
+    },
+    {
+      "id" : "Extension.extension:TDDUIHolder",
+      "path" : "Extension.extension",
+      "sliceName" : "TDDUIHolder",
+      "short" : "Personne morale porteuse de l'évaluation de l'usager.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Extension.extension:TDDUIHolder.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:TDDUIHolder.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "TDDUIHolder"
+    },
+    {
+      "id" : "Extension.extension:TDDUIHolder.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-organization"]
+      }]
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-qr-participant"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "max" : "0"
+    }]
   }
 }
 

@@ -1,0 +1,683 @@
+FHIR IG Publisher Version 2.1.2 (Git# 1fdde7f9e667). Built 2026-03-01T18:54:08.225Z (14 days old)
+Detected Java version: 17.0.10 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64 on amd64 (64bit). 4000MB available
+dir = /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui, path = /opt/hostedtoolcache/Ruby/3.3.10/x64/bin:/opt/hostedtoolcache/node/20.20.1/x64/bin:/opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -go-publish -authorise-non-conformant-tx-servers -source ./igSource -web ./IG-website-release/www/ig/fhir -registry ./IG-website-release/ig-registry/fhir-ig-list.json -history ./IG-website-release/fhir-ig-history-template -templates ./IG-website-release/templates
+---------------
+Publication Run: publish ./igSource to ./IG-website-release/www/ig/fhir
+Relative directory for IG is '/tddui'
+===== Web Publication Run Details ===============================
+ Source IG: ans.fhir.fr.tddui#2.3.0 : https://interop.esante.gouv.fr/ig/fhir/tddui (R4) from ./igSource
+All checks passed. Do the publication build from /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui/./igSource and publish to /tmp/web-root/run-20260316/tddui
+Prepare Build space in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0
+Build IG at /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui/./igSource: final copy suitable for publication (in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0)
+FHIR IG Publisher Version 2.1.2 (Git# 1fdde7f9e667). Built 2026-03-01T18:54:08.225Z (14 days old)   
+Detected Java version: 17.0.10 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64 on Linux/amd64 (64bit). 4000MB available
+dir = /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui, path = /opt/hostedtoolcache/Ruby/3.3.10/x64/bin:/opt/hostedtoolcache/node/20.20.1/x64/bin:/opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -publish https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0 -no-exit -ig /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0 -resetTx
+Character encoding = UTF-8 / UTF-8                                                                  
+Start Clock @ Monday, March 16, 2026 at 3:48:50 PM Coordinated Universal Time (2026-03-16T15:48:50Z)
+                                                                                                    
+Build FHIR IG from /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0                                            (00:00.021 / 00:00.021, 45Mb)
+Build Formal Publication package, intended for https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0    (00:00.002 / 00:00.023, 45Mb)
+API keys loaded from /home/runner/.fhir/fhir-settings.json                                           (00:00.000 / 00:00.024, 45Mb)
+Package Cache: /home/runner/.fhir/packages                                                           (00:00.003 / 00:00.028, 45Mb)
+Run Sushi on /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0                                                  (00:00.002 / 00:00.031, 45Mb)
+Sushi: info  Running SUSHI v3.18.1 (implements FHIR Shorthand specification v3.0.0)                  (00:00.688 / 00:00.719, 47Mb)
+Sushi: info  Arguments:                                                                              (00:00.001 / 00:00.720, 47Mb)
+Sushi: info    --require-latest                                                                      (00:00.001 / 00:00.721, 47Mb)
+Sushi: info    --out /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0                                          (00:00.001 / 00:00.722, 47Mb)
+Sushi: info    /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0                                                (00:00.001 / 00:00.723, 47Mb)
+Sushi: info  Using configuration file: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/sushi-config.yaml      (00:00.581 / 00:01.305, 47Mb)
+Sushi: info  Importing FSH text...                                                                   (00:00.106 / 00:01.412, 47Mb)
+Sushi: info  Preprocessed 155 documents with 117 aliases.                                            (00:00.470 / 00:01.882, 47Mb)
+Sushi: info  Imported 87 definitions and 62 instances.                                               (00:00.077 / 00:01.960, 47Mb)
+Sushi: warn  Detected FSH entity definitions with duplicate names. While FSH allows for duplicate names across entity types, they can lead to ambiguous results when referring to these entities by name elsewhere (e.g., in references). Consider using unique names in FSH declarations and assigning duplicated names using caret assignment rules instead. Detected duplicate names: TDDUIConsentAccord, TDDUIObservationPeriodeScolaire, TDDUIDiscriminator, TDDUIEncounterIdentifier, TDDUIObservationType, TDDUITaskInputAction, TDDUITaskInputBilan, TDDUITaskInputMoyenRessource, TDDUITaskInputPrestation, TDDUITaskInputTransport, TDDUITaskOutputBilan. (00:00.018 / 00:01.979, 47Mb)
+Sushi: info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources                             (00:00.097 / 00:02.076, 47Mb)
+Sushi: info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 1.1.0                          (00:00.708 / 00:02.785, 47Mb)
+Sushi: info  Loaded hl7.fhir.uv.tools.r4#1.1.0 with 119 resources                                    (00:00.074 / 00:02.859, 47Mb)
+Sushi: info  Resolved hl7.terminology.r4#latest to concrete version 7.1.0                            (00:00.164 / 00:03.023, 47Mb)
+Sushi: info  Loaded hl7.terminology.r4#7.1.0 with 4103 resources                                     (00:02.668 / 00:05.691, 47Mb)
+Sushi: info  Loaded hl7.fhir.fr.core#2.1.0 with 120 resources                                        (00:00.343 / 00:06.035, 47Mb)
+Sushi: info  Resolved ans.fr.terminologies#latest to concrete version 1.7.0                          (00:00.172 / 00:06.208, 47Mb)
+Sushi: info  Loaded ans.fr.terminologies#1.7.0 with 1139 resources                                   (00:01.281 / 00:07.490, 47Mb)
+Sushi: info  Loading supplemental version of FHIR to support extensions from hl7.fhir.extensions.r5  (00:00.001 / 00:07.491, 47Mb)
+Sushi: info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources                                       (00:01.512 / 00:09.004, 47Mb)
+Sushi: info  Loaded ihe.iti.mhd#4.2.0 with 65 resources                                              (00:00.058 / 00:09.062, 47Mb)
+Sushi: info  Loaded ans.fhir.fr.annuaire#1.1.0 with 65 resources                                     (00:00.069 / 00:09.132, 47Mb)
+Sushi: info  Loaded hl7.fhir.r4.core#4.0.1 with 4581 resources                                       (00:01.250 / 00:10.382, 47Mb)
+Sushi: info  Loaded hl7.fhir.uv.extensions#5.2.0 with 759 resources                                  (00:00.408 / 00:10.791, 47Mb)
+Sushi: info  Loaded virtual package sushi-local#LOCAL with 0 resources                               (00:00.006 / 00:10.797, 47Mb)
+Sushi: info  Converting FSH to FHIR resources...                                                     (00:00.016 / 00:10.814, 47Mb)
+Sushi: warn  The name "tddui-humanname" may not be suitable for machine processing applications such as code generation. Valid names start with an upper-case ASCII letter ('A'..'Z') followed by any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z'), numerals ('0'..'9') and '_', with a length limit of 255 characters. (00:00.028 / 00:10.843, 47Mb)
+Sushi:   File: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/input/fsh/DataType/tddui-human-name.fsh        (00:00.001 / 00:10.845, 47Mb)
+Sushi:   Line: 1 - 6                                                                                 (00:00.000 / 00:10.846, 47Mb)
+Sushi: info  Converted 55 FHIR StructureDefinitions.                                                 (00:05.648 / 00:16.494, 47Mb)
+Sushi: info  Converted 11 FHIR CodeSystems.                                                          (00:00.222 / 00:16.717, 47Mb)
+Sushi: info  Converted 21 FHIR ValueSets.                                                            (00:00.357 / 00:17.075, 47Mb)
+Sushi: info  Converted 62 FHIR instances.                                                            (00:09.906 / 00:26.981, 47Mb)
+Sushi: info  Exporting FHIR resources as JSON...                                                     (00:00.113 / 00:27.094, 47Mb)
+Sushi: info  Exported 149 FHIR resources as JSON.                                                    (00:00.213 / 00:27.308, 47Mb)
+Sushi: info  Assembling Implementation Guide sources...                                              (00:00.004 / 00:27.312, 47Mb)
+Sushi: info  Generated ImplementationGuide-ans.fhir.fr.tddui.json                                    (00:00.036 / 00:27.349, 47Mb)
+Sushi: info  Assembled Implementation Guide sources; ready for IG Publisher.                         (00:00.001 / 00:27.350, 47Mb)
+Sushi: ========================= SUSHI RESULTS ===========================                           (00:00.000 / 00:27.351, 47Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:27.351, 47Mb)
+Sushi: | |    Profiles   |  Extensions  |   Logicals   |   Resources   | |                           (00:00.000 / 00:27.352, 47Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:27.353, 47Mb)
+Sushi: | |      27       |      28      |      0       |       0       | |                           (00:00.000 / 00:27.353, 47Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:27.354, 47Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:27.355, 47Mb)
+Sushi: | |      ValueSets     |    CodeSystems    |     Instances      | |                           (00:00.000 / 00:27.356, 47Mb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:27.356, 47Mb)
+Sushi: | |         21         |        11         |         62         | |                           (00:00.000 / 00:27.357, 47Mb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:27.358, 47Mb)
+Sushi: |                                                                 |                           (00:00.000 / 00:27.358, 47Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:27.359, 47Mb)
+Sushi: | This looks a bit fishy.                0 Errors      2 Warnings |                           (00:00.000 / 00:27.360, 47Mb)
+Sushi: ===================================================================                           (00:00.000 / 00:27.360, 47Mb)
+Root directory: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0                                               (00:00.022 / 00:27.383, 47Mb)
+Unable to load IG as an r5 IG - try R4 (property code is a class com.google.gson.JsonPrimitive looking for an object) (00:00.440 / 00:27.824, 71Mb)
+Load Template from https://github.com/ansforge/IG-template                                           (00:00.461 / 00:28.285, 88Mb)
+ Load Template from fhir.base.template#current                                                       (00:01.325 / 00:29.610, 61Mb)
+Scanning directory: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/template
+======================================================================
+Terminology Cache is at /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/input-cache/txcache. Clearing now     (00:05.164 / 00:34.775, 124Mb)
+Core Package hl7.fhir.r4.core#4.0.1                                                                  (00:00.002 / 00:34.778, 124Mb)
+Running Terminology Log: /tmp/ohfu-fhir-ig-9546907923498849331.html
+Connect to Terminology Server at http://tx.fhir.org                                                  (00:03.933 / 00:38.711, 629Mb)
+[39mLoad Package hl7.fhir.pubpack#0.2.4
+[0;39m[39mLoad Package hl7.fhir.xver-extensions#0.1.0
+[0;39m[39mLoad Package hl7.terminology.r4#7.1.0
+[0;39m[39mLoad Package hl7.terminology.r4#6.0.2
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r4#5.1.0
+[0;39m[39mLoad Package ans.fr.nos#1.3.0
+[0;39m[39mLoad Package hl7.fhir.fr.core#2.1.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r4#5.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#7.0.1
+[0;39m[39mLoad Package hl7.terminology.r4#5.0.0
+[0;39m[39mLoad Package fhir.dicom#2022.4.20221006
+[0;39m[39mLoad Package hl7.fhir.uv.ips#1.1.0
+[0;39m[39mLoad Package ans.fr.terminologies#1.7.0
+[0;39mVersion mismatch. This IG is version 4.0.1, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0 (will try to run anyway) (00:11.104 / 00:49.815, 764Mb)
+Ignore Dependency on Core FHIR hl7.fhir.r5.core#5.0.0, from package 'hl7.terminology.r5#6.2.0'       (00:00.071 / 00:49.886, 811Mb)
+[39mLoad Package hl7.terminology.r5#6.2.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions#5.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#4.0.0
+[0;39m[39mLoad Package ihe.iti.balp#1.1.1
+[0;39m[39mLoad Package ihe.formatcode.fhir#1.1.0
+[0;39m[39mLoad Package ihe.iti.mhd#4.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#6.2.0
+[0;39m[39mLoad Package ans.fr.nos#1.5.0
+[0;39m[39mLoad Package hl7.terminology.r4#5.5.0
+[0;39m[39mLoad Package ans.fhir.fr.annuaire#1.1.0
+[0;39m[39mLoad Package hl7.fhir.uv.tools.r4#0.9.0
+[0;39mLoad R5 Specials
+Cannot find or generate snapshot for base definition http://hl7.org/fhir/StructureDefinition/CanonicalResource from http://hl7.org/fhir/StructureDefinition/TestCases
+Initialization complete                                                                              (00:13.398 / 01:03.285, 1Gb)
+Load IG                                                                                              (00:00.000 / 01:03.286, 1Gb)
+Load Content                                                                                         (00:00.003 / 01:03.289, 1Gb)
+Using fr_FR as the default narrative language. (inferred from ImplementationGuide.jurisdiction=FR)   (00:00.074 / 01:03.364, 1Gb)
+Process Loaded Resources                                                                             (00:02.095 / 01:05.459, 911Mb)
+Generating Snapshots                                                                                 (00:00.906 / 01:06.366, 1Gb)
+[1;31mUnable to generate snapshot @3 for https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient: Profile TDDUIPatient (https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient), element StructureDefinition-tddui-patient.html. Error generating snapshot: Error sorting Differential: The element Patient.extension:birthPlace.value[x].extension:inseeCode @diff[4] is out of order (and maybe others after it)
+[0;39m[1;31mUnable to generate snapshot @3 for https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient-ins: Profile TDDUIPatientINS (https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient-ins), element StructureDefinition-tddui-patient-ins.html. Error generating snapshot: Error sorting Differential: The element Patient.extension:birthPlace.value[x].extension:inseeCode @diff[4] is out of order (and maybe others after it)
+[0;39m
+Signing Certificate: RSA key for Subject: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us from: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us
+Fetch https://interop.esante.gouv.fr/ig/fhir/tddui/package-list.json for version check               (00:02.151 / 01:08.517, 993Mb)
+Checking Language                                                                                    (00:00.702 / 01:09.219, 999Mb)
+Load Dependency Info                                                                                 (00:00.004 / 01:09.224, 999Mb)
+Load Info                                                                                            (00:00.001 / 01:09.226, 999Mb)
+Load Paths                                                                                           (00:00.001 / 01:09.227, 1000Mb)
+Check R4 / R4B                                                                                       (00:00.001 / 01:09.228, 1000Mb)
+Assign Comparison Ids                                                                                (00:00.050 / 01:09.279, 1020Mb)
+Propagating status                                                                                   (00:00.000 / 01:09.280, 1020Mb)
+Generating Narratives                                                                                (00:00.000 / 01:09.281, 1020Mb)
+Validating Conformance Resources                                                                     (00:06.815 / 01:16.096, 1Gb)
+Check profiles & code systems                                                                        (00:29.662 / 01:45.759, 1Gb)
+Check realm rules                                                                                    (00:00.006 / 01:45.766, 1Gb)
+Previous Version Comparison                                                                          (00:00.000 / 01:45.766, 1Gb)
+Checking for Bundles to sign                                                                         (00:00.043 / 01:45.810, 1Gb)
+Validating Resources                                                                                 (00:00.000 / 01:45.811, 1Gb)
+Processing Provenance Records                                                                        (00:07.400 / 01:53.212, 1Gb)
+Generating Outputs in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/output                                  (00:00.001 / 01:53.213, 1Gb)
+Generate Native Outputs                                                                              (00:00.257 / 01:53.470, 1Gb)
+Run Template                                                                                         (00:13.716 / 02:07.187, 1Gb)
+Generate HTML Outputs                                                                                (00:04.343 / 02:11.530, 1Gb)
+Generate Spreadsheets                                                                                (00:19.253 / 02:30.783, 2Gb)
+Generate Summaries                                                                                   (00:09.560 / 02:40.345, 1Gb)
+Generating Summary Outputs                                                                           (00:00.000 / 02:40.345, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code AA - User-assigned       (00:15.536 / 02:55.882, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QM - User-assigned       (00:00.000 / 02:55.883, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QN - User-assigned       (00:00.000 / 02:55.884, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QO - User-assigned       (00:00.000 / 02:55.884, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QP - User-assigned       (00:00.000 / 02:55.885, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QQ - User-assigned       (00:00.000 / 02:55.886, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QR - User-assigned       (00:00.000 / 02:55.887, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QS - User-assigned       (00:00.001 / 02:55.888, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QT - User-assigned       (00:00.000 / 02:55.889, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QU - User-assigned       (00:00.001 / 02:55.890, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QV - User-assigned       (00:00.000 / 02:55.891, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QW - User-assigned       (00:00.000 / 02:55.892, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QX - User-assigned       (00:00.000 / 02:55.892, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QY - User-assigned       (00:00.000 / 02:55.893, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QZ - User-assigned       (00:00.000 / 02:55.894, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XA - User-assigned       (00:00.000 / 02:55.894, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XB - User-assigned       (00:00.000 / 02:55.895, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XC - User-assigned       (00:00.000 / 02:55.896, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XD - User-assigned       (00:00.000 / 02:55.896, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XE - User-assigned       (00:00.000 / 02:55.897, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XF - User-assigned       (00:00.000 / 02:55.898, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XG - User-assigned       (00:00.000 / 02:55.898, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XH - User-assigned       (00:00.000 / 02:55.899, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XI - User-assigned       (00:00.000 / 02:55.900, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XJ - User-assigned       (00:00.000 / 02:55.900, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XK - Kosovo              (00:00.000 / 02:55.901, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XL - User-assigned       (00:00.000 / 02:55.901, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XM - User-assigned       (00:00.000 / 02:55.902, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XN - User-assigned       (00:00.000 / 02:55.902, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XO - User-assigned       (00:00.000 / 02:55.903, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XP - User-assigned       (00:00.000 / 02:55.903, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XQ - User-assigned       (00:00.000 / 02:55.904, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XR - User-assigned       (00:00.000 / 02:55.904, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XS - User-assigned       (00:00.000 / 02:55.905, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XT - User-assigned       (00:00.000 / 02:55.905, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XU - User-assigned       (00:00.000 / 02:55.906, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XV - User-assigned       (00:00.000 / 02:55.906, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XW - User-assigned       (00:00.000 / 02:55.907, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XX - Unknown             (00:00.000 / 02:55.907, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XY - User-assigned       (00:00.000 / 02:55.908, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XZ - International Waters (00:00.000 / 02:55.908, 2Gb)
+Unable to find 3-character code having same country code as ISO 2-char code ZZ - Unknown or Invalid Territory (00:00.000 / 02:55.909, 2Gb)
+DB Cumulative Time invested: 00:00:00.344
+Sending Usage Stats to Server                                                                        (00:00.169 / 02:56.078, 2Gb)
+## Memory (MB): Use = 2433, Free = 1566, Total = 4000, Max = 4000                                    (00:00.005 / 02:56.083, 2Gb)
+Reclaiming memory...                                                                                 (00:00.000 / 02:56.084, 2Gb)
+## Memory (MB): Use = 1573, Free = 2426, Total = 4000, Max = 4000                                    (00:01.057 / 02:57.141, 1Gb)
+Run jekyll: jekyll build --destination "/tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/output" (in folder /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/temp/pages) (00:00.001 / 02:57.142, 1Gb)
+Troubleshooting Note: usual cases for Jekyll to fail are:                                            (00:00.001 / 02:57.143, 1Gb)
+* A failure to produce a fragment that is already logged in the output above                         (00:00.000 / 02:57.144, 1Gb)
+* A reference to a manually edited file that hasn't been provided                                    (00:00.000 / 02:57.144, 1Gb)
+Jekyll: Source: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/temp/pages                                    (00:00.579 / 02:57.724, 1Gb)
+Jekyll: Generating...                                                                                (00:00.000 / 02:57.725, 1Gb)
+Jekyll: done in 6.017 seconds.                                                                       (00:06.016 / 03:03.741, 1Gb)
+[39m
+[0;39m[39mInstalling ans.fhir.fr.tddui#2.3.0
+[0;39m[39m done.
+[0;39mChecking Output HTML                                                                                 (00:07.259 / 03:11.001, 2Gb)
+Processed /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/output - % reduction = 100 (221601784 ==> 1691396)
+found 2608 files                                                                                     (00:04.595 / 03:15.596, 3Gb)
+........................................
+........................................
+  ... 2608 html files, 0 pages invalid xhtml (0%)                                                    (00:56.162 / 04:11.759, 1Gb)
+  ... 933507 links, 0 broken links (0%)                                                              (00:00.001 / 04:11.760, 1Gb)
+Generate fragment-usage-analysis.csv                                                                 (00:00.000 / 04:11.761, 1Gb)
+Build final .zip                                                                                     (00:00.007 / 04:11.768, 1Gb)
+Final .zip built                                                                                     (00:06.784 / 04:18.553, 3Gb)
+Built. Times: loading: 00:05.930, generate: 03:16.282, narrative generation: 00:06.814, realm-rules: 00:00.000, previous-version: 00:00.000, jekyll: 00:06.655, validation: 00:36.454 (#150), template: 00:04.287 (#3) (00:06.949 / 04:25.502, 2Gb)
+Generating QA                                                                                        (00:00.001 / 04:25.504, 2Gb)
+Validation output in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0/output/qa.html
+Errors: 111, Warnings: 257, Info: 221, Broken Links: 2 (00:00.875 / 04:26.379, 1Gb)
+Finished @ 16/03/2026 15:53. Max Memory Used = 3Gb. Log file saved in /tmp/fhir-ig-publisher-tmp.log (00:00.042 / 04:26.422, 1Gb)
+Prepare Build space in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone
+Build IG at /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui/./igSource: final copy suitable for publication (in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone) (milestone build)
+FHIR IG Publisher Version 2.1.2 (Git# 1fdde7f9e667). Built 2026-03-01T18:54:08.225Z (14 days old)   
+Detected Java version: 17.0.10 from /opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64 on Linux/amd64 (64bit). 4000MB available
+dir = /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui, path = /opt/hostedtoolcache/Ruby/3.3.10/x64/bin:/opt/hostedtoolcache/node/20.20.1/x64/bin:/opt/hostedtoolcache/Java_Microsoft_jdk/17.0.10/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Parameters: -publish https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0 -no-exit -ig /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone -milestone
+Character encoding = UTF-8 / UTF-8                                                                  
+Start Clock @ Monday, March 16, 2026 at 3:53:20 PM Coordinated Universal Time (2026-03-16T15:53:20Z)
+                                                                                                    
+Build FHIR IG from /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone                                  (00:00.002 / 00:00.002, 1Gb)
+Build Formal Publication package, intended for https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0    (00:00.000 / 00:00.002, 1Gb)
+API keys loaded from /home/runner/.fhir/fhir-settings.json                                           (00:00.000 / 00:00.002, 1Gb)
+Package Cache: /home/runner/.fhir/packages                                                           (00:00.000 / 00:00.003, 1Gb)
+Run Sushi on /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone                                        (00:00.000 / 00:00.003, 1Gb)
+Sushi: info  Running SUSHI v3.18.1 (implements FHIR Shorthand specification v3.0.0)                  (00:00.429 / 00:00.433, 1Gb)
+Sushi: info  Arguments:                                                                              (00:00.000 / 00:00.433, 1Gb)
+Sushi: info    --require-latest                                                                      (00:00.000 / 00:00.434, 1Gb)
+Sushi: info    --out /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone                                (00:00.000 / 00:00.434, 1Gb)
+Sushi: info    /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone                                      (00:00.000 / 00:00.435, 1Gb)
+Sushi: info  Using configuration file: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/sushi-config.yaml (00:00.380 / 00:00.816, 1Gb)
+Sushi: info  Importing FSH text...                                                                   (00:00.105 / 00:00.922, 1Gb)
+Sushi: info  Preprocessed 155 documents with 117 aliases.                                            (00:00.476 / 00:01.398, 1Gb)
+Sushi: info  Imported 87 definitions and 62 instances.                                               (00:00.071 / 00:01.470, 1Gb)
+Sushi: warn  Detected FSH entity definitions with duplicate names. While FSH allows for duplicate names across entity types, they can lead to ambiguous results when referring to these entities by name elsewhere (e.g., in references). Consider using unique names in FSH declarations and assigning duplicated names using caret assignment rules instead. Detected duplicate names: TDDUIConsentAccord, TDDUIObservationPeriodeScolaire, TDDUIDiscriminator, TDDUIEncounterIdentifier, TDDUIObservationType, TDDUITaskInputAction, TDDUITaskInputBilan, TDDUITaskInputMoyenRessource, TDDUITaskInputPrestation, TDDUITaskInputTransport, TDDUITaskOutputBilan. (00:00.016 / 00:01.486, 1Gb)
+Sushi: info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources                             (00:00.100 / 00:01.587, 1Gb)
+Sushi: info  Resolved hl7.fhir.uv.tools.r4#latest to concrete version 1.1.0                          (00:00.732 / 00:02.319, 1Gb)
+Sushi: info  Loaded hl7.fhir.uv.tools.r4#1.1.0 with 119 resources                                    (00:00.052 / 00:02.371, 1Gb)
+Sushi: info  Resolved hl7.terminology.r4#latest to concrete version 7.1.0                            (00:00.168 / 00:02.539, 1Gb)
+Sushi: info  Loaded hl7.terminology.r4#7.1.0 with 4103 resources                                     (00:00.929 / 00:03.469, 1Gb)
+Sushi: info  Loaded hl7.fhir.fr.core#2.1.0 with 120 resources                                        (00:00.048 / 00:03.517, 1Gb)
+Sushi: info  Resolved ans.fr.terminologies#latest to concrete version 1.7.0                          (00:00.170 / 00:03.688, 1Gb)
+Sushi: info  Loaded ans.fr.terminologies#1.7.0 with 1139 resources                                   (00:00.354 / 00:04.042, 1Gb)
+Sushi: info  Loading supplemental version of FHIR to support extensions from hl7.fhir.extensions.r5  (00:00.000 / 00:04.043, 1Gb)
+Sushi: info  Loaded hl7.fhir.r5.core#5.0.0 with 2968 resources                                       (00:00.752 / 00:04.796, 1Gb)
+Sushi: info  Loaded ihe.iti.mhd#4.2.0 with 65 resources                                              (00:00.037 / 00:04.833, 1Gb)
+Sushi: info  Loaded ans.fhir.fr.annuaire#1.1.0 with 65 resources                                     (00:00.050 / 00:04.883, 1Gb)
+Sushi: info  Loaded hl7.fhir.r4.core#4.0.1 with 4581 resources                                       (00:00.920 / 00:05.803, 1Gb)
+Sushi: info  Loaded hl7.fhir.uv.extensions#5.2.0 with 759 resources                                  (00:00.197 / 00:06.001, 1Gb)
+Sushi: info  Loaded virtual package sushi-local#LOCAL with 0 resources                               (00:00.006 / 00:06.007, 1Gb)
+Sushi: info  Converting FSH to FHIR resources...                                                     (00:00.022 / 00:06.030, 1Gb)
+Sushi: warn  The name "tddui-humanname" may not be suitable for machine processing applications such as code generation. Valid names start with an upper-case ASCII letter ('A'..'Z') followed by any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z'), numerals ('0'..'9') and '_', with a length limit of 255 characters. (00:00.028 / 00:06.059, 1Gb)
+Sushi:   File: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/input/fsh/DataType/tddui-human-name.fsh (00:00.001 / 00:06.060, 1Gb)
+Sushi:   Line: 1 - 6                                                                                 (00:00.000 / 00:06.061, 1Gb)
+Sushi: info  Converted 55 FHIR StructureDefinitions.                                                 (00:05.752 / 00:11.813, 1Gb)
+Sushi: info  Converted 11 FHIR CodeSystems.                                                          (00:00.226 / 00:12.040, 1Gb)
+Sushi: info  Converted 21 FHIR ValueSets.                                                            (00:00.360 / 00:12.400, 1Gb)
+Sushi: info  Converted 62 FHIR instances.                                                            (00:10.098 / 00:22.499, 1Gb)
+Sushi: info  Exporting FHIR resources as JSON...                                                     (00:00.116 / 00:22.615, 1Gb)
+Sushi: info  Exported 149 FHIR resources as JSON.                                                    (00:00.221 / 00:22.836, 1Gb)
+Sushi: info  Assembling Implementation Guide sources...                                              (00:00.004 / 00:22.841, 1Gb)
+Sushi: info  Generated ImplementationGuide-ans.fhir.fr.tddui.json                                    (00:00.037 / 00:22.878, 1Gb)
+Sushi: info  Assembled Implementation Guide sources; ready for IG Publisher.                         (00:00.000 / 00:22.879, 1Gb)
+Sushi: ========================= SUSHI RESULTS ===========================                           (00:00.001 / 00:22.880, 1Gb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:22.880, 1Gb)
+Sushi: | |    Profiles   |  Extensions  |   Logicals   |   Resources   | |                           (00:00.000 / 00:22.881, 1Gb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:22.881, 1Gb)
+Sushi: | |      27       |      28      |      0       |       0       | |                           (00:00.000 / 00:22.882, 1Gb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:22.882, 1Gb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:22.883, 1Gb)
+Sushi: | |      ValueSets     |    CodeSystems    |     Instances      | |                           (00:00.000 / 00:22.883, 1Gb)
+Sushi: | |-------------------------------------------------------------| |                           (00:00.000 / 00:22.884, 1Gb)
+Sushi: | |         21         |        11         |         62         | |                           (00:00.000 / 00:22.884, 1Gb)
+Sushi: |  -------------------------------------------------------------  |                           (00:00.000 / 00:22.885, 1Gb)
+Sushi: |                                                                 |                           (00:00.000 / 00:22.885, 1Gb)
+Sushi: ===================================================================                           (00:00.000 / 00:22.885, 1Gb)
+Sushi: | Don't get stuck in the doldrums.       0 Errors      2 Warnings |                           (00:00.000 / 00:22.886, 1Gb)
+Sushi: ===================================================================                           (00:00.000 / 00:22.886, 1Gb)
+Root directory: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone                                     (00:00.025 / 00:22.912, 1Gb)
+Unable to load IG as an r5 IG - try R4 (property code is a class com.google.gson.JsonPrimitive looking for an object) (00:00.008 / 00:22.920, 1Gb)
+Load Template from https://github.com/ansforge/IG-template                                           (00:00.020 / 00:22.941, 1Gb)
+ Load Template from fhir.base.template#current                                                       (00:00.872 / 00:23.814, 1Gb)
+Scanning directory: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/template
+======================================================================
+Terminology Cache is at /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/input-cache/txcache. 18 files in cache (00:03.617 / 00:27.431, 1Gb)
+Core Package hl7.fhir.r4.core#4.0.1                                                                  (00:00.000 / 00:27.432, 1Gb)
+Running Terminology Log: /tmp/ohfu-fhir-ig-10474044209875476644.html
+Connect to Terminology Server at http://tx.fhir.org                                                  (00:02.090 / 00:29.523, 3Gb)
+[39mLoad Package hl7.fhir.pubpack#0.2.4
+[0;39m[39mLoad Package hl7.fhir.xver-extensions#0.1.0
+[0;39m[39mLoad Package hl7.terminology.r4#7.1.0
+[0;39m[39mLoad Package hl7.terminology.r4#6.0.2
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r4#5.1.0
+[0;39m[39mLoad Package ans.fr.nos#1.3.0
+[0;39m[39mLoad Package hl7.fhir.fr.core#2.1.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions.r4#5.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#7.0.1
+[0;39m[39mLoad Package hl7.terminology.r4#5.0.0
+[0;39m[39mLoad Package fhir.dicom#2022.4.20221006
+[0;39m[39mLoad Package hl7.fhir.uv.ips#1.1.0
+[0;39m[39mLoad Package ans.fr.terminologies#1.7.0
+[0;39mVersion mismatch. This IG is version 4.0.1, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0 (will try to run anyway) (00:08.246 / 00:37.769, 2Gb)
+Ignore Dependency on Core FHIR hl7.fhir.r5.core#5.0.0, from package 'hl7.terminology.r5#6.2.0'       (00:00.056 / 00:37.826, 2Gb)
+[39mLoad Package hl7.terminology.r5#6.2.0
+[0;39m[39mLoad Package hl7.fhir.uv.extensions#5.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#4.0.0
+[0;39m[39mLoad Package ihe.iti.balp#1.1.1
+[0;39m[39mLoad Package ihe.formatcode.fhir#1.1.0
+[0;39m[39mLoad Package ihe.iti.mhd#4.2.0
+[0;39m[39mLoad Package hl7.terminology.r4#6.2.0
+[0;39mSending usage stats failed: Connection timed out
+[39mLoad Package ans.fr.nos#1.5.0
+[0;39m[39mLoad Package hl7.terminology.r4#5.5.0
+[0;39m[39mLoad Package ans.fhir.fr.annuaire#1.1.0
+[0;39m[39mLoad Package hl7.fhir.uv.tools.r4#0.9.0
+[0;39mLoad R5 Specials
+Cannot find or generate snapshot for base definition http://hl7.org/fhir/StructureDefinition/CanonicalResource from http://hl7.org/fhir/StructureDefinition/TestCases
+Initialization complete                                                                              (00:14.054 / 00:51.881, 1Gb)
+Load IG                                                                                              (00:00.000 / 00:51.881, 1Gb)
+Load Content                                                                                         (00:00.002 / 00:51.884, 1Gb)
+Using fr_FR as the default narrative language. (inferred from ImplementationGuide.jurisdiction=FR)   (00:00.011 / 00:51.895, 1Gb)
+Process Loaded Resources                                                                             (00:01.242 / 00:53.138, 1Gb)
+Generating Snapshots                                                                                 (00:00.620 / 00:53.759, 2Gb)
+[1;31mUnable to generate snapshot @3 for https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient: Profile TDDUIPatient (https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient), element StructureDefinition-tddui-patient.html. Error generating snapshot: Error sorting Differential: The element Patient.extension:birthPlace.value[x].extension:inseeCode @diff[4] is out of order (and maybe others after it)
+[0;39m[1;31mUnable to generate snapshot @3 for https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient-ins: Profile TDDUIPatientINS (https://interop.esante.gouv.fr/ig/fhir/tddui/StructureDefinition/tddui-patient-ins), element StructureDefinition-tddui-patient-ins.html. Error generating snapshot: Error sorting Differential: The element Patient.extension:birthPlace.value[x].extension:inseeCode @diff[4] is out of order (and maybe others after it)
+[0;39m
+Signing Certificate: RSA key for Subject: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us from: OU=IG Publisher, L=Ann Arbor, CN=hl7.org, O=HL7, ST=Missouri, C=us
+Fetch https://interop.esante.gouv.fr/ig/fhir/tddui/package-list.json for version check               (00:01.012 / 00:54.772, 3Gb)
+Checking Language                                                                                    (00:00.506 / 00:55.279, 3Gb)
+Load Dependency Info                                                                                 (00:00.004 / 00:55.283, 3Gb)
+Load Info                                                                                            (00:00.000 / 00:55.284, 3Gb)
+Load Paths                                                                                           (00:00.000 / 00:55.285, 3Gb)
+Check R4 / R4B                                                                                       (00:00.000 / 00:55.286, 3Gb)
+Assign Comparison Ids                                                                                (00:00.124 / 00:55.410, 1Gb)
+Propagating status                                                                                   (00:00.000 / 00:55.411, 1Gb)
+Generating Narratives                                                                                (00:00.000 / 00:55.411, 1Gb)
+Validating Conformance Resources                                                                     (00:02.291 / 00:57.703, 1Gb)
+Check profiles & code systems                                                                        (00:14.301 / 01:12.004, 2Gb)
+Check realm rules                                                                                    (00:00.005 / 01:12.010, 2Gb)
+Previous Version Comparison                                                                          (00:00.001 / 01:12.011, 2Gb)
+Checking for Bundles to sign                                                                         (00:00.026 / 01:12.038, 2Gb)
+Validating Resources                                                                                 (00:00.000 / 01:12.039, 2Gb)
+Processing Provenance Records                                                                        (00:01.990 / 01:14.030, 3Gb)
+Generating Outputs in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/output                        (00:00.000 / 01:14.031, 3Gb)
+Generate Native Outputs                                                                              (00:00.139 / 01:14.170, 3Gb)
+Run Template                                                                                         (00:13.438 / 01:27.608, 1Gb)
+Generate HTML Outputs                                                                                (00:04.838 / 01:32.447, 1Gb)
+Generate Spreadsheets                                                                                (00:13.179 / 01:45.626, 2Gb)
+Generate Summaries                                                                                   (00:06.199 / 01:51.825, 1Gb)
+Generating Summary Outputs                                                                           (00:00.000 / 01:51.826, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code AA - User-assigned       (00:10.763 / 02:02.590, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QM - User-assigned       (00:00.000 / 02:02.591, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QN - User-assigned       (00:00.000 / 02:02.592, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QO - User-assigned       (00:00.001 / 02:02.593, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QP - User-assigned       (00:00.001 / 02:02.594, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QQ - User-assigned       (00:00.000 / 02:02.595, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QR - User-assigned       (00:00.001 / 02:02.596, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QS - User-assigned       (00:00.000 / 02:02.597, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QT - User-assigned       (00:00.000 / 02:02.597, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QU - User-assigned       (00:00.000 / 02:02.598, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QV - User-assigned       (00:00.000 / 02:02.599, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QW - User-assigned       (00:00.000 / 02:02.600, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QX - User-assigned       (00:00.000 / 02:02.600, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QY - User-assigned       (00:00.000 / 02:02.601, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code QZ - User-assigned       (00:00.000 / 02:02.602, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XA - User-assigned       (00:00.000 / 02:02.603, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XB - User-assigned       (00:00.000 / 02:02.603, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XC - User-assigned       (00:00.000 / 02:02.604, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XD - User-assigned       (00:00.000 / 02:02.605, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XE - User-assigned       (00:00.000 / 02:02.606, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XF - User-assigned       (00:00.000 / 02:02.606, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XG - User-assigned       (00:00.000 / 02:02.607, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XH - User-assigned       (00:00.000 / 02:02.608, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XI - User-assigned       (00:00.000 / 02:02.608, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XJ - User-assigned       (00:00.000 / 02:02.609, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XK - Kosovo              (00:00.000 / 02:02.610, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XL - User-assigned       (00:00.000 / 02:02.610, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XM - User-assigned       (00:00.000 / 02:02.611, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XN - User-assigned       (00:00.000 / 02:02.612, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XO - User-assigned       (00:00.000 / 02:02.612, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XP - User-assigned       (00:00.000 / 02:02.612, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XQ - User-assigned       (00:00.000 / 02:02.613, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XR - User-assigned       (00:00.000 / 02:02.613, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XS - User-assigned       (00:00.000 / 02:02.614, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XT - User-assigned       (00:00.000 / 02:02.614, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XU - User-assigned       (00:00.000 / 02:02.614, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XV - User-assigned       (00:00.000 / 02:02.615, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XW - User-assigned       (00:00.000 / 02:02.615, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XX - Unknown             (00:00.000 / 02:02.615, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XY - User-assigned       (00:00.000 / 02:02.616, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code XZ - International Waters (00:00.000 / 02:02.616, 1Gb)
+Unable to find 3-character code having same country code as ISO 2-char code ZZ - Unknown or Invalid Territory (00:00.000 / 02:02.617, 1Gb)
+DB Cumulative Time invested: 00:00:00.307
+Sending Usage Stats to Server                                                                        (00:00.090 / 02:02.708, 1Gb)
+## Memory (MB): Use = 1943, Free = 2056, Total = 4000, Max = 4000                                    (00:00.001 / 02:02.709, 1Gb)
+Reclaiming memory...                                                                                 (00:00.000 / 02:02.710, 1Gb)
+## Memory (MB): Use = 1578, Free = 2421, Total = 4000, Max = 4000                                    (00:00.798 / 02:03.508, 1Gb)
+Run jekyll: jekyll build --destination "/tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/output" (in folder /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/temp/pages) (00:00.001 / 02:03.510, 1Gb)
+Troubleshooting Note: usual cases for Jekyll to fail are:                                            (00:00.001 / 02:03.511, 1Gb)
+* A failure to produce a fragment that is already logged in the output above                         (00:00.001 / 02:03.512, 1Gb)
+* A reference to a manually edited file that hasn't been provided                                    (00:00.000 / 02:03.513, 1Gb)
+Jekyll: Source: /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/temp/pages                          (00:00.351 / 02:03.865, 1Gb)
+Jekyll: Generating...                                                                                (00:00.000 / 02:03.865, 1Gb)
+Jekyll: done in 6.079 seconds.                                                                       (00:06.078 / 02:09.944, 1Gb)
+[39m
+[0;39m[39mInstalling ans.fhir.fr.tddui#2.3.0
+[0;39mChecking Output HTML                                                                                 (00:04.961 / 02:14.905, 2Gb)
+Processed /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/output - % reduction = 100 (221602014 ==> 1691396)
+found 2608 files                                                                                     (00:03.734 / 02:18.640, 2Gb)
+........................................
+........................................
+  ... 2608 html files, 0 pages invalid xhtml (0%)                                                    (00:54.203 / 03:12.843, 2Gb)
+  ... 933507 links, 0 broken links (0%)                                                              (00:00.000 / 03:12.844, 2Gb)
+Generate fragment-usage-analysis.csv                                                                 (00:00.000 / 03:12.845, 2Gb)
+Build final .zip                                                                                     (00:00.009 / 03:12.855, 2Gb)
+Final .zip built                                                                                     (00:06.575 / 03:19.430, 2Gb)
+Built. Times: loading: 00:03.395, generate: 02:31.580, narrative generation: 00:02.290, realm-rules: 00:00.001, previous-version: 00:00.000, jekyll: 00:06.494, validation: 00:15.576 (#150), template: 00:04.842 (#3) (00:07.429 / 03:26.860, 2Gb)
+Generating QA                                                                                        (00:00.001 / 03:26.861, 2Gb)
+Validation output in /tmp/ig-builds/ans.fhir.fr.tddui#2.3.0-milestone/output/qa.html
+Errors: 111, Warnings: 257, Info: 221, Broken Links: 2 (00:00.381 / 03:27.242, 1Gb)
+Finished @ 16/03/2026 15:56. Max Memory Used = 3Gb. Log file saved in /tmp/fhir-ig-publisher-tmp.log (00:00.018 / 03:27.261, 1Gb)
+Keep a copy of the build directory at /tmp/web-root/run-20260316/ig-build-zips/ans.fhir.fr.tddui#2.3.0.zip
+
+ok. All checks passed. Publish v2.3.0 to /tmp/web-root/run-20260316/tddui/2.3.0
+Copy the IG to /tmp/web-root/run-20260316/tddui/2.3.0
+Update /tmp/web-root/run-20260316/tddui/package-list.json
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.3.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 995 files checked, 995 updated
+  .. 303 clones checked, 606 updated
+  .. 150 redirections (150 created/updated)
+This is a milestone release - publish v2.3.0 to /tmp/web-root/run-20260316/tddui
+Update publish box for version 2.3.0-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.3.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 995 files checked, 995 updated
+  .. 303 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.3.0-ballot url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0-ballot, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ................................................................................
+  .....................
+ ..Finished
+Update publish box for version 2.2.0 @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.2.0
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.2.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 884 files checked, 884 updated
+  .. 417 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.2.0 url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.2.0, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ................................................................................
+  ....................................
+ ..Finished
+Update publish box for version 2.2.0-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.2.0-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.2.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 841 files checked, 841 updated
+  .. 387 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.2.0-ballot url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.2.0-ballot, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ................................................................................
+  ............................
+ ..Finished
+Update publish box for version 2.1.0 @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.1.0
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.1.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 433 files checked, 433 updated
+  .. 206 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.1.0 url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.1.0, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ..........................................................
+ ..Finished
+Update publish box for version 2.1.0-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.1.0-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.1.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 433 files checked, 433 updated
+  .. 160 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.1.0-ballot url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.1.0-ballot, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ..................................Sending usage stats failed: Connection timed out
+...................
+ ..Finished
+Update publish box for version 2.0.0 @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.0.0
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 163 files checked, 163 updated
+  .. 82 clones checked, 0 updated
+Building download for /tmp/web-root/run-20260316/tddui/2.0.0 url = https://interop.esante.gouv.fr/ig/fhir/tddui/2.0.0, canonical = https://interop.esante.gouv.fr/ig/fhir/tddui
+  ........................
+ ..Finished
+Update publish box for version 2.0.0-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.0.0-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.0.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 163 files checked, 163 updated
+  .. 52 clones checked, 0 updated
+Update publish box for version 1.1.0 @ https://interop.esante.gouv.fr/ig/fhir/tddui/1.1.0
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v1.1.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.2.246-2024-10-21T160707.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.809-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.11-2024-10-22T162900.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.802-2024-09-06T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.36-2024-11-14T144916.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.18-2024-10-29T143105.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.216-2024-12-19T141744.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.2.79-2024-10-29T140733.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.12-2024-09-10T104919.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.467-2010-11-04T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.25-2024-09-30T105040.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.9-2023-12-14T150730.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/terminology.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.3.252-2024-10-25T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.14-2023-12-15T163609.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.719-2023-03-31T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.214-2024-11-19T121425.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.588-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.817-2024-12-19T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.124-2018-03-30T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.528-2021-01-29T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.125-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.803-2024-09-06T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.3.16-2016-09-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-2.16.840.1.113883.1.11.10228-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.58-2025-01-21T160337.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.218-2024-09-17T165718.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.18-2024-04-22T162929.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.2.37-2024-10-29T141153.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-2.16.840.1.113883.1.11.10901-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.220-2024-11-19T102244.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.99.99.10.85-2024-10-31T171901.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.808-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.801-2024-09-02T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.217-2024-09-06T142804.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.10-2024-12-03T172030.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.816-2024-12-19T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.53-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.1.58.2024.11.2-2024-09-30T145837.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.73-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.6.1.168-2019-08-30T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.806-2025-01-15T171206.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.811-2024-09-24T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.591-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.61-2024-10-29T142700.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-2.16.840.1.113883.1.11.15933-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.805-2025-01-15T171230.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.4-2024-11-20T161310.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.7-2024-09-27T104314.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.3.253-2024-10-25T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.590-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.95-2024-10-16T152305.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.48.6-2024-10-29T152050.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.24-2024-09-10T092953.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.4.218-2023-12-15T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.466-2014-10-08T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.1.58.2024.11.1-2024-09-30T145433.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.17-2024-02-20T154733.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.15-2023-12-15T171349.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.109-2024-11-20T154401.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.2-2024-12-20T130919.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.48-2024-10-29T154828.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.25-2024-10-21T164618.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.32-2024-10-29T142132.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.13-2023-12-15T171555.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.126-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.5-2017-12-11T145049.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.94-2024-10-29T152810.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.3-2024-04-29T110947.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.3.254-2024-10-25T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.807-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.48.7-2024-10-21T174323.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.140-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.16-2023-12-15T170436.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.4.219-2024-09-27T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.215-2024-10-18T170010.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.2.248-2024-09-06T174901.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.2.249-2024-09-18T104731.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.3.3.251-2024-10-25T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.6-2024-10-11T151018.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.48.18-2024-11-14T165825.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.718-2023-03-31T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.1.1.10.19-2020-02-06T100000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.461-2012-11-12T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.589-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/tmp-1.2.250.1.213.1.1.3.219-2024-10-17T211142.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.1.58.2024.11.3-2024-09-30T150022.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0/cda/voc-1.2.250.1.213.1.1.5.804-2024-09-06T000000.html
+  .. 81 files checked, 81 updated
+  .. 27 clones checked, 0 updated
+Update publish box for version 1.1.0-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/1.1.0-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v1.1.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.2.246-2024-10-21T160707.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.809-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.11-2024-10-22T162900.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.802-2024-09-06T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.18-2024-10-29T143105.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.2.79-2024-10-29T140733.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.12-2024-09-10T104919.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.109-2024-06-14T153411.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.467-2010-11-04T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.25-2024-09-30T105040.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.48.18-2024-09-17T093403.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.9-2023-12-14T150730.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/terminology.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.14-2023-12-15T163609.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.719-2023-03-31T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.588-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.124-2018-03-30T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.528-2021-01-29T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.125-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.803-2024-09-06T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.3.3.16-2016-09-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-2.16.840.1.113883.1.11.10228-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.10-2023-12-15T171520.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.218-2024-09-17T165718.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.18-2024-04-22T162929.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.2.37-2024-10-29T141153.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.58-2024-07-04T090407.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-2.16.840.1.113883.1.11.10901-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.36-2024-10-29T154421.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.808-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.801-2024-09-02T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.217-2024-09-06T142804.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.214-2024-10-21T172216.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.53-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.466-2024-10-31T144004.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.1.58.2024.11.2-2024-09-30T145837.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.73-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.6.1.168-2019-08-30T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.2-2023-12-15T171133.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.811-2024-09-24T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.591-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.61-2024-10-29T142700.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-2.16.840.1.113883.1.11.15933-2014-03-26T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.7-2024-09-27T104314.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.590-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.95-2024-10-16T152305.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.48.6-2024-10-29T152050.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.24-2024-09-10T092953.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.1.58.2024.11.1-2024-09-30T145433.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.17-2024-02-20T154733.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.99.99.10.85-2023-10-13T105059.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.15-2023-12-15T171349.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.48-2024-10-29T154828.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.25-2024-10-21T164618.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.32-2024-10-29T142132.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.13-2023-12-15T171555.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.126-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.5-2017-12-11T145049.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.94-2024-10-29T152810.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.3-2024-04-29T110947.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.807-2024-09-18T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.48.7-2024-10-21T174323.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.140-2010-01-01T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.16-2023-12-15T170436.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.3.4.219-2024-09-27T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.215-2024-10-18T170010.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.2.248-2024-09-06T174901.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.2.249-2024-09-18T104731.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.6-2024-10-11T151018.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.718-2023-03-31T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.19-2020-02-06T100000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.461-2012-11-12T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.216-2024-10-18T100433.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.589-2021-03-26T120000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.3.219-2024-10-17T211142.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.1.58.2024.11.3-2024-09-30T150022.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/voc-1.2.250.1.213.1.1.5.804-2024-09-06T000000.html
+no html insert in /tmp/web-root/run-20260316/tddui/1.1.0-ballot/cda/TDDUI-html/tmp-1.2.250.1.213.1.1.1.1.10.4-2023-12-15T171243.html
+  .. 74 files checked, 74 updated
+  .. 47 clones checked, 0 updated
+Update publish box for version 1.0.1 @ https://interop.esante.gouv.fr/ig/fhir/tddui/1.0.1
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v1.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 49 files checked, 49 updated
+  .. 22 clones checked, 0 updated
+Update publish box for version 1.0.1-ballot @ https://interop.esante.gouv.fr/ig/fhir/tddui/1.0.1-ballot
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v1.0.1-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. The current version which supersedes this version is <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui{{fn}}">2.3.0</a>.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 49 files checked, 49 updated
+  .. 14 clones checked, 0 updated
+Publish Box Statement: This page is part of the Médicosocial - Transfert de données DUI (v2.3.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/tddui/history.html">Directory of published versions</a>
+  .. 995 files checked, 995 updated
+  .. 303 clones checked, 606 updated
+  .. 150 redirections (150 created/updated)
+Check for Files to delete
+  ... 0 files
+Copy to new IG /tmp/web-root/run-20260316/tddui
+ans.fhir.fr.tddui (https://interop.esante.gouv.fr/ig/fhir/tddui): Médicosocial - Transfert de données DUI @ https://ansforge.github.io/IG-fhir-medicosocial-transfert-donnees-dui/ig/main
+  release: trial-implementation 2.3.0/4.0.1 @ https://interop.esante.gouv.fr/ig/fhir/tddui/2.3.0
+Build is complete. Copy from /tmp/web-root/run-20260316
+Update history page at /tmp/web-root/run-20260316/tddui from /home/runner/work/IG-fhir-medicosocial-transfert-donnees-dui/IG-fhir-medicosocial-transfert-donnees-dui/./IG-website-release/fhir-ig-history-template and ./IG-website-release/templates

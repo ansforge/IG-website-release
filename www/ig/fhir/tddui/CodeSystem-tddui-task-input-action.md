@@ -1,4 +1,4 @@
-# TDDUI Task Input Action - Médicosocial - Transfert de données DUI v2.2.0
+# TDDUI Task Input Action - Médicosocial - Transfert de données DUI v2.3.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-action | *Version*:2.2.0 |
-| Active as of 2026-02-06 | *Computable Name*:TDDUITaskInputAction |
+| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-action | *Version*:2.3.0 |
+| Active as of 2026-03-16 | *Computable Name*:TDDUITaskInputAction |
 
  
 CodeSystem pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les actions du projet personnalisé. 
@@ -27,71 +27,59 @@ CodeSystem pour la définition des éléments spécifiques des input dans la res
   "resourceType" : "CodeSystem",
   "id" : "tddui-task-input-action",
   "meta" : {
-    "profile" : [
-      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
-    ]
+    "profile" : ["http://hl7.org/fhir/StructureDefinition/shareablecodesystem"]
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/tddui/CodeSystem/tddui-task-input-action",
-  "version" : "2.2.0",
+  "version" : "2.3.0",
   "name" : "TDDUITaskInputAction",
   "title" : "TDDUI Task Input Action",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-02-06T14:53:05+00:00",
+  "date" : "2026-03-16T15:53:20+00:00",
   "publisher" : "ANS",
-  "contact" : [
-    {
-      "name" : "ANS",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://esante.gouv.fr"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ANS",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://esante.gouv.fr"
+    }]
+  }],
   "description" : "CodeSystem pour la définition des éléments spécifiques des input dans la ressource Task utilisée pour les actions du projet personnalisé.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "FR",
-          "display" : "FRANCE"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "FR",
+      "display" : "France"
+    }]
+  }],
   "caseSensitive" : true,
   "compositional" : false,
   "content" : "complete",
   "count" : 6,
-  "concept" : [
-    {
-      "code" : "titre",
-      "display" : "Titre de l'action à mener."
-    },
-    {
-      "code" : "evaluation",
-      "display" : "Evaluation de l'action."
-    },
-    {
-      "code" : "avisUsager",
-      "display" : "Avis de l'usager sur l'action."
-    },
-    {
-      "code" : "resultatAttendu",
-      "display" : "Résultat attendu de l'action."
-    },
-    {
-      "code" : "pieceJointe",
-      "display" : "Pièce(s) jointe(s) de l'action."
-    },
-    {
-      "code" : "objectif",
-      "display" : "Objectif(s)."
-    }
-  ]
+  "concept" : [{
+    "code" : "titre",
+    "display" : "Titre de l'action à mener."
+  },
+  {
+    "code" : "evaluation",
+    "display" : "Evaluation de l'action."
+  },
+  {
+    "code" : "avisUsager",
+    "display" : "Avis de l'usager sur l'action."
+  },
+  {
+    "code" : "resultatAttendu",
+    "display" : "Résultat attendu de l'action."
+  },
+  {
+    "code" : "pieceJointe",
+    "display" : "Pièce(s) jointe(s) de l'action."
+  },
+  {
+    "code" : "objectif",
+    "display" : "Objectif(s)."
+  }]
 }
 
 ```
