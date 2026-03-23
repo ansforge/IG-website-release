@@ -1,0 +1,117 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingConsentementCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingConsentementCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingConsentementCDAFHIR</b></p><a name=\"mappingConsentementCDAFHIR\"> </a><a name=\"hcmappingConsentementCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-consentement.html\">Modèle logique métier - FR LM Consentement</a> to <a href=\"StructureDefinition-fr-cda-authorization.html\">CDA - authorization</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMConsentement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authorization</td></tr><tr><td>FRLMConsentement.identifiantConsentement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authorization.consent.id</td></tr><tr><td>FRLMConsentement.typeConsentement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authorization.consent.code</td></tr><tr><td>FRLMConsentement.statutConsentement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authorization.consent.statusCode=\"completed\"</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-authorization.html\">CDA - authorization</a> to <a href=\"http://hl7.org/fhir/uv/fhir-clinical-document/STU1.0.1/StructureDefinition-consent-extension.html\">Consent Extension</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>authorization</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>extension:ConsentExtension.ValueReference.Consent</td><td>ValueReference.resolve().ofType(Consent)</td></tr><tr><td>authorization.consent.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>extension:ConsentExtension.ValueReference.Consent.identifier</td><td/></tr><tr><td>authorization.consent.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>extension:ConsentExtension.ValueReference.Consent.category</td><td/></tr><tr><td>authorization.consent.statusCode=\"completed\"</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>extension:ConsentExtension.ValueReference.Consent.status:active</td><td/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingConsentementCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingConsentementCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Consentement\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Consentement\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-23T13:48:54+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap présente deux groupes de mapping : \n - Mapping 1 : entre le modèle métier \\\"ConsentementAssocie\\\" et l'élément CDA \\\"authorization\\\"\n - Mapping 2 : entre l'élément CDA \\\"authorization\\\" et l'extension FHIR \\\"ConsentExtension\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-consentement"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-consentement>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authorization"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authorization>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMConsentement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authorization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMConsentement.identifiantConsentement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authorization.consent.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMConsentement.typeConsentement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authorization.consent.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMConsentement.statutConsentement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authorization.consent.statusCode=\"completed\"" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authorization"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authorization>
+     ] ;
+     fhir:target [
+       fhir:v "http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/consent-extension"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/consent-extension>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "authorization" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "extension:ConsentExtension.ValueReference.Consent" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "ValueReference.resolve().ofType(Consent)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authorization.consent.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "extension:ConsentExtension.ValueReference.Consent.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authorization.consent.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "extension:ConsentExtension.ValueReference.Consent.category" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authorization.consent.statusCode=\"completed\"" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "extension:ConsentExtension.ValueReference.Consent.status:active" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

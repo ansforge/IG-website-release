@@ -1,0 +1,246 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImmunizationLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRImmunizationLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRImmunizationLMCDAFHIR</b></p><a name=\"FRImmunizationLMCDAFHIR\"> </a><a name=\"hcFRImmunizationLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-vaccination.html\">Modèle logique métier - FR LM Vaccination</a> to <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination</code></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination</td></tr><tr><td>FRLMVaccination.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.id</td></tr><tr><td>FRLMVaccination.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.code</td></tr><tr><td>FRLMVaccination.description</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.text</td></tr><tr><td>FRLMVaccination.statut</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.statusCode</td></tr><tr><td>FRLMVaccination.dateVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.effectiveTime</td></tr><tr><td>FRLMVaccination.voieAadministration</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.routeCode</td></tr><tr><td>FRLMVaccination.regionAnatomique</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.approachSiteCode</td></tr><tr><td>FRLMVaccination.doseVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.doseQuantity</td></tr><tr><td>FRLMVaccination.vaccin</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.consumable:FRCDAProduitDeSante</td></tr><tr><td>FRLMVaccination.prescription</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.entryRelationship:frPrescription</td></tr><tr><td>FRLMVaccination.rangVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.entryRelationship:frRangDeLaVaccination</td></tr><tr><td>FRLMVaccination.reaction</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.entryRelationship:frProbleme</td></tr><tr><td>FRLMVaccination.commentaire</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.entryRelationship:frCommentaireER</td></tr><tr><td>FRLMVaccination.DoseAntigene</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAVaccination.entryRelationship:frDoseAntigene</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination</code> to <a href=\"StructureDefinition-fr-immunization-document.html\">Immunization - FR Immunization Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDAVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument</td></tr><tr><td>FRCDAVaccination.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.identifier</td></tr><tr><td>FRCDAVaccination.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.protocolApplied.series</td></tr><tr><td>FRCDAVaccination.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.vaccineCode.text</td></tr><tr><td>FRCDAVaccination.statusCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.status</td></tr><tr><td>FRCDAVaccination.effectiveTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.occurrence[x]</td></tr><tr><td>FRCDAVaccination.approachSiteCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.site</td></tr><tr><td>FRCDAVaccination.routeCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.route</td></tr><tr><td>FRCDAVaccination.doseQuantity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.doseQuantity</td></tr><tr><td>FRCDAVaccination.consumable:FRCDAProduitDeSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.vaccineCode</td></tr><tr><td>FRCDAVaccination.entryRelationship:frPrescription</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.extension:immunization-basedOn-r5</td></tr><tr><td>FRCDAVaccination.entryRelationship:frRangDeLaVaccination</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.protocolApplied.doseNumberPositiveInt</td></tr><tr><td>FRCDAVaccination.entryRelationship:frProbleme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.reasonReference</td></tr><tr><td>FRCDAVaccination.entryRelationship:frCommentaireER</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.note</td></tr><tr><td>FRCDAVaccination.entryRelationship:frDoseAntigene</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImmunizationDocument.extension:immunization-administeredProduct-r5</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImmunizationLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImmunizationLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Vaccination\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-03-23T13:48:54+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMVaccination vers le profil CDA FRCDAVaccination, puis vers le profil FHIR FRImmunizationDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-vaccination"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-vaccination>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.description" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.statut" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.statusCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.dateVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.voieAadministration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.routeCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.regionAnatomique" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.approachSiteCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.doseVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.doseQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.vaccin" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.consumable:FRCDAProduitDeSante" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.prescription" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frPrescription" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.rangVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frRangDeLaVaccination" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.reaction" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frProbleme" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.commentaire" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frCommentaireER" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMVaccination.DoseAntigene" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frDoseAntigene" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-vaccination>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDAVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.protocolApplied.series" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.vaccineCode.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.statusCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.status" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.effectiveTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.occurrence[x]" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.approachSiteCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.site" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.routeCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.route" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.doseQuantity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.doseQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.consumable:FRCDAProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.vaccineCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frPrescription" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.extension:immunization-basedOn-r5" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frRangDeLaVaccination" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.protocolApplied.doseNumberPositiveInt" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frProbleme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.reasonReference" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frCommentaireER" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.note" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAVaccination.entryRelationship:frDoseAntigene" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImmunizationDocument.extension:immunization-administeredProduct-r5" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

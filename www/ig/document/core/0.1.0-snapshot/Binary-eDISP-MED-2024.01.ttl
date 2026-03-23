@@ -1,0 +1,1758 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+#  
+#    **********************************************************************************************************
+#    Document : eDispensation de médicaments (eDISP-MED_2024.01)
+#    Auteur : ANS
+#    **********************************************************************************************************
+#    format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+#    **********************************************************************************************************
+#    Notes:
+#    17/06/2024 : Création exemple
+#    21/08/2025 : MAJ des références entre parties narratives et entrées
+#    **********************************************************************************************************
+#
+
+[a fhir:ClinicalDocument ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:realmCode ( [
+     fhir:code [ fhir:v "FR" ]
+  ] ) ; #  
+#    ********************************************************
+#    *              En-tête du document                     *
+#    ********************************************************
+#    ,  Périmètre d'utilisation 
+  fhir:typeId [
+     fhir:extension [ fhir:v "POCD_HD000040" ] ;
+     fhir:root [ fhir:v "2.16.840.1.113883.1.3" ]
+  ] ; #  Référence au standard CDA R2 
+  fhir:templateId ( [
+     fhir:root [ fhir:v "2.16.840.1.113883.2.8.2.1" ]
+  ] [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.1" ]
+  ] [
+     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.1.1" ]
+  ] [
+     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.1.3" ]
+  ] [
+     fhir:extension [ fhir:v "2024.01" ] ;
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.54" ]
+  ] ) ; #  Conformité spécifications HL7 France 
+  fhir:id [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.54.2024.1.1" ]
+  ] ; #  Identifiant du document CDA 
+  fhir:code [
+     fhir:code [ fhir:v "60593-1" ] ;
+     fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+     fhir:codeSystemName [ fhir:v "LOINC" ] ;
+     fhir:displayName [ fhir:v "Dispensation médicamenteuse" ]
+  ] ; #  Type de document 
+  fhir:title [
+     fhir:xmlText [ fhir:v "Dispensation médicamenteuse" ]
+  ] ; #  Titre du document 
+  fhir:effectiveTime [
+     fhir:value [ fhir:v "2024-12-25T09:30:00+01:00"^^xsd:dateTime ]
+  ] ; #  Date de création du document = Date de rédaction de la prescription 
+  fhir:confidentialityCode [
+     fhir:code [ fhir:v "N" ] ;
+     fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.25" ] ;
+     fhir:displayName [ fhir:v "Normal" ]
+  ] ; #  Niveau de confidentialité du document 
+  fhir:languageCode [
+     fhir:code [ fhir:v "fr-FR" ]
+  ] ; #  Langue du document 
+  fhir:setId [
+     fhir:root [ fhir:v "1.2.250.1.213.1.1.1.54.2024.1" ]
+  ] ; #  Identifiant commun à toutes les versions successives du document 
+  fhir:versionNumber [
+     fhir:value [ fhir:v 1 ]
+  ] ; #  Numéro de la version du présent document (entier positif) 
+  fhir:recordTarget ( [
+     fhir:patientRole [
+       fhir:id ( [
+         fhir:extension [ fhir:v "277076322082910" ] ;
+         fhir:root [ fhir:v "1.2.250.1.213.1.4.8" ]
+       ] [
+         fhir:extension [ fhir:v "1234567890121" ] ;
+         fhir:root [ fhir:v "1.2.3.4.567.8.9.10" ]
+       ] ) ; #  INS-NIR de production : 1.2.250.1.213.1.4.8 
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "28" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Avenue de Breteuil" ]
+           ]
+         ] [
+           fhir:unitID [
+             fhir:xmlText [ fhir:v "Escalier A" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75007" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] [
+           fhir:country [
+             fhir:xmlText [ fhir:v "FRANCE" ]
+           ]
+         ] )
+       ] ) ; #  Adresse du patient 
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "H" ] ) ;
+         fhir:value [
+           fhir:v "tel:0144534551"^^xsd:anyURI ;
+           fhir:l fhir:tel:0144534551
+         ]
+       ] [
+         fhir:use ( [ fhir:v "MC" ] ) ;
+         fhir:value [
+           fhir:v "tel:0647151010"^^xsd:anyURI ;
+           fhir:l fhir:tel:0647151010
+         ]
+       ] [
+         fhir:value [
+           fhir:v "mailto:277076322082910@patient.mssante.fr"^^xsd:anyURI ;
+           fhir:l fhir:mailto:277076322082910@patient.mssante.fr
+         ]
+       ] ) ; #  Coordonnées télécom du patient 
+       fhir:patient [
+         fhir:classCode [ fhir:v "PSN" ] ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "RUTH" ] ;
+               fhir:qualifier ( [ fhir:v "BR" ] )
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "ISABELLE" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "NESSI" ] ;
+               fhir:qualifier ( [ fhir:v "BR" ] )
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "DECOURCY" ] ;
+               fhir:qualifier ( [ fhir:v "CL" ] )
+             ] )
+           ] )
+         ] ) ;
+         fhir:administrativeGenderCode [
+           fhir:code [ fhir:v "F" ] ;
+           fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.1" ] ;
+           fhir:displayName [ fhir:v "Féminin" ]
+         ] ;
+         fhir:birthTime [
+           fhir:value [ fhir:v "1977-07-14"^^xsd:date ]
+         ] ;
+         fhir:guardian ( [
+           fhir:addr ( [
+             fhir:use ( [ fhir:v "H" ] ) ;
+             fhir:item ( [
+               fhir:houseNumber [
+                 fhir:xmlText [ fhir:v "28" ]
+               ]
+             ] [
+               fhir:streetNameType [
+                 fhir:xmlText [ fhir:v "Av" ]
+               ]
+             ] [
+               fhir:streetName [
+                 fhir:xmlText [ fhir:v "de Breteuil" ]
+               ]
+             ] [
+               fhir:additionalLocator [
+                 fhir:nullFlavor [ fhir:v "NA" ]
+               ]
+             ] [
+               fhir:postalCode [
+                 fhir:xmlText [ fhir:v "75007" ]
+               ]
+             ] [
+               fhir:city [
+                 fhir:xmlText [ fhir:v "PARIS" ]
+               ]
+             ] [
+               fhir:country [
+                 fhir:xmlText [ fhir:v "FRANCE" ]
+               ]
+             ] )
+           ] ) ;
+           fhir:telecom ( [
+             fhir:use ( [ fhir:v "H" ] ) ;
+             fhir:value [
+               fhir:v "tel:0147150000"^^xsd:anyURI ;
+               fhir:l fhir:tel:0147150000
+             ]
+           ] ) ;
+           fhir:guardianPerson [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:prefix ( [
+                   fhir:xmlText [ fhir:v "MME" ]
+                 ] )
+               ] [
+                 fhir:family ( [
+                   fhir:xmlText [ fhir:v "NESSI" ]
+                 ] )
+               ] [
+                 fhir:given ( [
+                   fhir:xmlText [ fhir:v "Jeanne" ]
+                 ] )
+               ] )
+             ] )
+           ]
+         ] ) ; #  Représentant du patient 
+         fhir:birthplace [
+           fhir:place [
+             fhir:addr [
+               fhir:item ( [
+                 fhir:county [
+                   fhir:xmlText [ fhir:v "51215" ]
+                 ]
+               ] [
+                 fhir:city [
+                   fhir:xmlText [ fhir:v "DOMPREMY" ]
+                 ]
+               ] )
+             ]
+           ]
+         ] #  Lieu de naissance du patient 
+       ] #  Identité du patient 
+     ]
+  ] ) ; #  [1..1] Patient 
+  fhir:author ( [
+     fhir:time [
+       fhir:value [ fhir:v "2024-12-25T09:30:00+01:00"^^xsd:dateTime ]
+     ] ; #  [1..1] Date et heure de création du document par le DP 
+     fhir:assignedAuthor [
+       fhir:id ( [
+         fhir:extension [ fhir:v "578435954900010/1.2.250.1.176.1" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  Identifiant du DP 
+       fhir:code [
+         fhir:code [ fhir:v "DISPOSITIF" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.6" ] ;
+         fhir:displayName [ fhir:v "Dispositif médical" ]
+       ] ;
+       fhir:assignedAuthoringDevice [
+         fhir:manufacturerModelName [
+           fhir:xmlText [ fhir:v "." ]
+         ] ; #  Identifiant du DP 
+         fhir:softwareName [
+           fhir:xmlText [ fhir:v "Dossier Pharmaceutique" ]
+         ]
+       ] ; #  Système : DP 
+       fhir:representedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "378435954900010" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  Identifiant du CNOP 
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "CONSEIL NATIONAL ORDRE DES PHARMACIENS" ]
+           ] )
+         ] )
+       ] #  Structure : CNOP 
+     ] #  [1..1] Identification de l'auteur 
+  ] [
+     fhir:time [
+       fhir:value [ fhir:v "2024-12-25T09:30:00+01:00"^^xsd:dateTime ]
+     ] ; #  [1..1] Date et heure de création du document par le DP 
+     fhir:assignedAuthor [
+       fhir:id ( [
+         fhir:extension [ fhir:v "807505123456" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  Identifiant du Pharmacien dispensateur 
+       fhir:code [
+         fhir:code [ fhir:v "G15_21" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+         fhir:displayName [ fhir:v "Pharmacien" ]
+       ] ;
+       fhir:assignedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Pierre" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "DELIVE" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "PG" ]
+             ] )
+           ] )
+         ] )
+       ] ;
+       fhir:representedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750512345" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Pharmacie du village" ]
+           ] )
+         ] ) ;
+         fhir:telecom ( [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0142726071"^^xsd:anyURI ;
+             fhir:l fhir:tel:0142726071
+           ]
+         ] ) ; #  [0..*] Coordonnées Télécom Structure 
+         fhir:addr ( [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "26" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Temple" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75004" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "Paris" ]
+             ]
+           ] )
+         ] ) ; #  [0..*] Adresse Structure 
+         fhir:standardIndustryClassCode [
+           fhir:code [ fhir:v "AMBULATOIRE" ] ;
+           fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.9" ] ;
+           fhir:codeSystemName [ fhir:v "practiceSettingCode" ] ;
+           fhir:displayName [ fhir:v "Ambulatoire" ]
+         ] #  Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) 
+       ] #  Structure : Pharmacie 
+     ] #  [1..1] Identification de l'auteur 
+  ] ) ; #  [1..1] Auteur du document : Dossier Pharmaceutique 
+  fhir:custodian [
+     fhir:assignedCustodian [
+       fhir:representedCustodianOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "378435954900010" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  Identifiant du DP 
+         fhir:name [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "CONSEIL NATIONAL ORDRE DES PHARMACIENS" ]
+           ] )
+         ] #  Nom de l'organisation 
+       ]
+     ]
+  ] ; #  [1..1] Structure chargée de la conservation du document : CONSEIL NATIONAL ORDRE DES PHARMACIENS 
+  fhir:legalAuthenticator [
+     fhir:time [
+       fhir:value [ fhir:v "2024-12-25T09:30:00+01:00"^^xsd:dateTime ]
+     ] ; #  Date et heure de la prise de responsabilité 
+     fhir:signatureCode [
+       fhir:code [ fhir:v "S" ]
+     ] ;
+     fhir:assignedEntity [
+       fhir:id ( [
+         fhir:extension [ fhir:v "578435954900010/1.2.250.1.176.1" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  Identifiant du responsable : Dossier Pharmaceutique 
+       fhir:assignedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "Dossier pharmaceutique" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "." ]
+             ] )
+           ] )
+         ] )
+       ] ; #  Responsable : Dossier Pharmaceutique 
+       fhir:representedOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "378435954900010" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ;
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "CONSEIL NATIONAL ORDRE DES PHARMACIENS" ]
+           ] )
+         ] )
+       ] #  Structure : CONSEIL NATIONAL ORDRE DES PHARMACIENS 
+     ]
+  ] ; #  [1..1] Responsable du document : Dossier Pharmaceutique 
+  fhir:participant ( [
+     fhir:typeCode [ fhir:v "REF" ] ;
+     fhir:time [
+       fhir:low [
+         fhir:value [ fhir:v "2021-12-01T09:30:00+01:00"^^xsd:dateTime ]
+       ]
+     ] ; #  Date de la prescription 
+     fhir:associatedEntity [
+       fhir:classCode [ fhir:v "PROV" ] ;
+       fhir:id ( [
+         fhir:extension [ fhir:v "801234567897" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  [1..1] PS identifié par son N°RPPS 
+       fhir:code [
+         fhir:code [ fhir:v "G15_10/SM26" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+         fhir:displayName [ fhir:v "Médecin - Qualifié en Médecine Générale (SM)" ]
+       ] ; #  [1..1] Profession \/ spécialité du PS (obligatoire pour les PS) 
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "25" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Rue Berthollet" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75005" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] )
+       ] ) ; #  [0..*] Adresse du PS 
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "WP" ] ) ;
+         fhir:value [
+           fhir:v "tel:0158432300"^^xsd:anyURI ;
+           fhir:l fhir:tel:0158432300
+         ]
+       ] ) ; #  [0..*] Télécom du PS 
+       fhir:associatedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Romain" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "PIOU" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "DR" ]
+             ] )
+           ] )
+         ] )
+       ] ; #  [0..1] Identité du PS 
+       fhir:scopingOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750512345" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  [1..1] Identifiant de l'organisation de rattachement du PS (FINESS) 
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Cabinet du DR Pierre JOLI" ]
+           ] )
+         ] ) ; #  [1..1] Nom de l'organisation de rattachement du PS 
+         fhir:telecom ( [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0158432300"^^xsd:anyURI ;
+             fhir:l fhir:tel:0158432300
+           ]
+         ] ) ; #  [0..*] Télécom du PS 
+         fhir:addr ( [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "25" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Berthollet" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75005" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "PARIS" ]
+             ]
+           ] )
+         ] ) #  [0..*] Adresse du PS 
+       ] #  [1..1] Organisation de rattachement du PS 
+     ]
+  ] [
+     fhir:typeCode [ fhir:v "REF" ] ;
+     fhir:functionCode [
+       fhir:code [ fhir:v "353" ] ;
+       fhir:codeSystem [ fhir:v "1.2.250.1.213.1.6.1.107" ] ;
+       fhir:displayName [ fhir:v "Membre de l'équipe de soins" ]
+     ] ;
+     fhir:time [
+       fhir:nullFlavor [ fhir:v "UNK" ]
+     ] ;
+     fhir:associatedEntity [
+       fhir:classCode [ fhir:v "PROV" ] ;
+       fhir:id ( [
+         fhir:extension [ fhir:v "807505123456" ] ;
+         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+       ] ) ; #  [1..1] PS identifié par son N°RPPS 
+       fhir:code [
+         fhir:code [ fhir:v "G15_10/SM26" ] ;
+         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+         fhir:displayName [ fhir:v "Médecin - Qualifié en Médecine Générale (SM)" ]
+       ] ; #  [1..1] Profession \/ spécialité du PS (obligatoire pour les PS) 
+       fhir:addr ( [
+         fhir:item ( [
+           fhir:houseNumber [
+             fhir:xmlText [ fhir:v "25" ]
+           ]
+         ] [
+           fhir:streetName [
+             fhir:xmlText [ fhir:v "Rue Berthollet" ]
+           ]
+         ] [
+           fhir:postalCode [
+             fhir:xmlText [ fhir:v "75005" ]
+           ]
+         ] [
+           fhir:city [
+             fhir:xmlText [ fhir:v "PARIS" ]
+           ]
+         ] )
+       ] ) ; #  [0..*] Adresse du PS 
+       fhir:telecom ( [
+         fhir:use ( [ fhir:v "WP" ] ) ;
+         fhir:value [
+           fhir:v "tel:0158432300"^^xsd:anyURI ;
+           fhir:l fhir:tel:0158432300
+         ]
+       ] ) ; #  [0..*] Télécom du PS 
+       fhir:associatedPerson [
+         fhir:name ( [
+           fhir:item ( [
+             fhir:prefix ( [
+               fhir:xmlText [ fhir:v "M" ]
+             ] )
+           ] [
+             fhir:given ( [
+               fhir:xmlText [ fhir:v "Pierre" ]
+             ] )
+           ] [
+             fhir:family ( [
+               fhir:xmlText [ fhir:v "JOLI" ]
+             ] )
+           ] [
+             fhir:suffix ( [
+               fhir:xmlText [ fhir:v "DR" ]
+             ] )
+           ] )
+         ] )
+       ] ; #  [0..1] Identité du PS 
+       fhir:scopingOrganization [
+         fhir:id ( [
+           fhir:extension [ fhir:v "1750512345" ] ;
+           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+         ] ) ; #  [1..1] Identifiant de l'organisation de rattachement du PS (FINESS) 
+         fhir:name ( [
+           fhir:item ( [
+             fhir:xmlText [ fhir:v "Cabinet du DR Pierre JOLI" ]
+           ] )
+         ] ) ; #  [1..1] Nom de l'organisation de rattachement du PS 
+         fhir:telecom ( [
+           fhir:use ( [ fhir:v "WP" ] ) ;
+           fhir:value [
+             fhir:v "tel:0158432300"^^xsd:anyURI ;
+             fhir:l fhir:tel:0158432300
+           ]
+         ] ) ; #  [0..*] Télécom du PS 
+         fhir:addr ( [
+           fhir:item ( [
+             fhir:houseNumber [
+               fhir:xmlText [ fhir:v "25" ]
+             ]
+           ] [
+             fhir:streetName [
+               fhir:xmlText [ fhir:v "Rue Berthollet" ]
+             ]
+           ] [
+             fhir:postalCode [
+               fhir:xmlText [ fhir:v "75005" ]
+             ]
+           ] [
+             fhir:city [
+               fhir:xmlText [ fhir:v "PARIS" ]
+             ]
+           ] )
+         ] ) #  [0..*] Adresse du PS 
+       ] #  [1..1] Organisation de rattachement du PS 
+     ]
+  ] ) ; #  [0..1] Participant : prescripteur 
+  fhir:inFulfillmentOf ( [
+     fhir:order [
+       fhir:id ( [
+         fhir:root [ fhir:v "1.2.250.1.213.1.1.1.39.1.1" ]
+       ] ) #  Identifiant <id> de la prescription CDA 
+     ]
+  ] ) ; #  [0..*] Association du document à une prescription 
+  fhir:documentationOf ( [
+     fhir:serviceEvent [
+       fhir:id ( [
+         fhir:root [ fhir:v "FC146494-9805-11ED-A8FC-0242AC120002" ]
+       ] ) ; #  Identifiant EPU de la dispensation et\/ou autre identifiant (LAD, DP) 
+       fhir:code [
+         fhir:code [ fhir:v "60593-1" ] ;
+         fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+         fhir:codeSystemName [ fhir:v "LOINC" ] ;
+         fhir:displayName [ fhir:v "Dispensation médicamenteuse" ]
+       ] ; #  Code évènement documenté 
+       fhir:effectiveTime [
+         fhir:low [
+           fhir:value [ fhir:v "2024-12-25T09:00:00+01:00"^^xsd:dateTime ]
+         ]
+       ] ; #  Date et heure de la dispensation 
+       fhir:performer ( [
+         fhir:typeCode [ fhir:v "PRF" ] ;
+         fhir:assignedEntity [
+           fhir:id ( [
+             fhir:extension [ fhir:v "807505123456" ] ;
+             fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+           ] ) ; #  Pharmacien identifié par son N°RPPS 
+           fhir:code [
+             fhir:code [ fhir:v "G15_21/A" ] ;
+             fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+             fhir:displayName [ fhir:v "Pharmacien titulaire d'officine" ]
+           ] ; #  [1..1] Profession \/ spécialité du PS : Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) 
+           fhir:addr ( [
+             fhir:item ( [
+               fhir:houseNumber [
+                 fhir:xmlText [ fhir:v "26" ]
+               ]
+             ] [
+               fhir:streetName [
+                 fhir:xmlText [ fhir:v "Rue Temple" ]
+               ]
+             ] [
+               fhir:postalCode [
+                 fhir:xmlText [ fhir:v "75004" ]
+               ]
+             ] [
+               fhir:city [
+                 fhir:xmlText [ fhir:v "Paris" ]
+               ]
+             ] )
+           ] ) ; #  Adresse du pharmacien 
+           fhir:telecom ( [
+             fhir:use ( [ fhir:v "WP" ] ) ;
+             fhir:value [
+               fhir:v "tel:0142726071"^^xsd:anyURI ;
+               fhir:l fhir:tel:0142726071
+             ]
+           ] ) ; #  Coordonnées télécom du pharmacien
+           fhir:assignedPerson [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:prefix ( [
+                   fhir:xmlText [ fhir:v "M" ]
+                 ] )
+               ] [
+                 fhir:given ( [
+                   fhir:xmlText [ fhir:v "Pierre" ]
+                 ] )
+               ] [
+                 fhir:family ( [
+                   fhir:xmlText [ fhir:v "DELIVE" ]
+                 ] )
+               ] [
+                 fhir:suffix ( [
+                   fhir:xmlText [ fhir:v "PG" ]
+                 ] )
+               ] )
+             ] )
+           ] ; #  Identité du pharmacien 
+           fhir:representedOrganization [
+             fhir:id ( [
+               fhir:extension [ fhir:v "1750512345" ] ;
+               fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+             ] ) ;
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:xmlText [ fhir:v "Pharmacie du village" ]
+               ] )
+             ] ) ;
+             fhir:telecom ( [
+               fhir:use ( [ fhir:v "WP" ] ) ;
+               fhir:value [
+                 fhir:v "tel:0142726071"^^xsd:anyURI ;
+                 fhir:l fhir:tel:0142726071
+               ]
+             ] ) ; #  [0..*] Coordonnées Télécom Structure 
+             fhir:addr ( [
+               fhir:item ( [
+                 fhir:houseNumber [
+                   fhir:xmlText [ fhir:v "26" ]
+                 ]
+               ] [
+                 fhir:streetName [
+                   fhir:xmlText [ fhir:v "Rue Temple" ]
+                 ]
+               ] [
+                 fhir:postalCode [
+                   fhir:xmlText [ fhir:v "75004" ]
+                 ]
+               ] [
+                 fhir:city [
+                   fhir:xmlText [ fhir:v "Paris" ]
+                 ]
+               ] )
+             ] ) ; #  [0..*] Adresse Structure 
+             fhir:standardIndustryClassCode [
+               fhir:code [ fhir:v "AMBULATOIRE" ] ;
+               fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.9" ] ;
+               fhir:codeSystemName [ fhir:v "practiceSettingCode" ] ;
+               fhir:displayName [ fhir:v "Ambulatoire" ]
+             ] #  Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) 
+           ] #  Structure : Pharmacie 
+         ]
+       ] ) #  Pharmacien dispensateur 
+     ]
+  ] ) ; #  [1..1] Evènement documenté : dispensation 
+  fhir:componentOf [
+     fhir:encompassingEncounter [
+       fhir:code [
+         fhir:code [ fhir:v "AMB" ] ;
+         fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.4" ] ;
+         fhir:displayName [ fhir:v "Ambulatoire (hors établissement)" ]
+       ] ; #  Type de prise en charge : Valeur issue du JDV_J142-TypeRencontre-CISIS (1.2.250.1.213.1.1.5.589) 
+       fhir:effectiveTime [
+         fhir:high [
+           fhir:value [ fhir:v "2024-12-25T09:00:00+01:00"^^xsd:dateTime ]
+         ]
+       ] ; #  Date et heure de la dispensation 
+       fhir:responsibleParty [
+         fhir:assignedEntity [
+           fhir:id ( [
+             fhir:extension [ fhir:v "807505123456" ] ;
+             fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+           ] ) ; #  Pharmacien identifié par son N°RPPS 
+           fhir:code [
+             fhir:code [ fhir:v "G15_21/A" ] ;
+             fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+             fhir:displayName [ fhir:v "Pharmacien titulaire d'officine" ]
+           ] ; #  [1..1] Profession \/ spécialité du PS : Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) 
+           fhir:addr ( [
+             fhir:item ( [
+               fhir:houseNumber [
+                 fhir:xmlText [ fhir:v "26" ]
+               ]
+             ] [
+               fhir:streetName [
+                 fhir:xmlText [ fhir:v "Rue Temple" ]
+               ]
+             ] [
+               fhir:postalCode [
+                 fhir:xmlText [ fhir:v "75004" ]
+               ]
+             ] [
+               fhir:city [
+                 fhir:xmlText [ fhir:v "Paris" ]
+               ]
+             ] )
+           ] ) ; #  Adresse du pharmacien 
+           fhir:telecom ( [
+             fhir:use ( [ fhir:v "WP" ] ) ;
+             fhir:value [
+               fhir:v "tel:0142726071"^^xsd:anyURI ;
+               fhir:l fhir:tel:0142726071
+             ]
+           ] ) ; #  Coordonnées télécom du pharmacien
+           fhir:assignedPerson [
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:prefix ( [
+                   fhir:xmlText [ fhir:v "M" ]
+                 ] )
+               ] [
+                 fhir:given ( [
+                   fhir:xmlText [ fhir:v "Pierre" ]
+                 ] )
+               ] [
+                 fhir:family ( [
+                   fhir:xmlText [ fhir:v "DELIVE" ]
+                 ] )
+               ] [
+                 fhir:suffix ( [
+                   fhir:xmlText [ fhir:v "PG" ]
+                 ] )
+               ] )
+             ] )
+           ] ; #  Identité du pharmacien 
+           fhir:representedOrganization [
+             fhir:id ( [
+               fhir:extension [ fhir:v "1750512345" ] ;
+               fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+             ] ) ;
+             fhir:name ( [
+               fhir:item ( [
+                 fhir:xmlText [ fhir:v "Pharmacie du village" ]
+               ] )
+             ] ) ;
+             fhir:telecom ( [
+               fhir:use ( [ fhir:v "WP" ] ) ;
+               fhir:value [
+                 fhir:v "tel:0142726071"^^xsd:anyURI ;
+                 fhir:l fhir:tel:0142726071
+               ]
+             ] ) ; #  [0..*] Coordonnées Télécom Structure 
+             fhir:addr ( [
+               fhir:item ( [
+                 fhir:houseNumber [
+                   fhir:xmlText [ fhir:v "26" ]
+                 ]
+               ] [
+                 fhir:streetName [
+                   fhir:xmlText [ fhir:v "Rue Temple" ]
+                 ]
+               ] [
+                 fhir:postalCode [
+                   fhir:xmlText [ fhir:v "75004" ]
+                 ]
+               ] [
+                 fhir:city [
+                   fhir:xmlText [ fhir:v "Paris" ]
+                 ]
+               ] )
+             ] ) ; #  [0..*] Adresse Structure 
+             fhir:standardIndustryClassCode [
+               fhir:code [ fhir:v "AMBULATOIRE" ] ;
+               fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.9" ] ;
+               fhir:codeSystemName [ fhir:v "practiceSettingCode" ] ;
+               fhir:displayName [ fhir:v "Ambulatoire" ]
+             ] #  Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) 
+           ] #  Structure : Pharmacie 
+         ]
+       ] ; #  Responsable de la prise en charge : Pharmacien 
+       fhir:location [
+         fhir:healthCareFacility [
+           fhir:code [
+             fhir:code [ fhir:v "SA33" ] ;
+             fhir:codeSystem [ fhir:v "1.2.250.1.71.4.2.4" ] ;
+             fhir:displayName [ fhir:v "Pharmacie d'officine" ]
+           ] ; #  Modalité d’exercice : Valeur issue du JDV_J02-XdsHealthcareFacilityTypeCode-CISIS (1.2.250.1.213.1.1.5.466) 
+           fhir:location [
+             fhir:name [
+               fhir:item ( [
+                 fhir:xmlText [ fhir:v "Pharmacie du Temple" ]
+               ] )
+             ] ;
+             fhir:addr [
+               fhir:item ( [
+                 fhir:houseNumber [
+                   fhir:xmlText [ fhir:v "26" ]
+                 ]
+               ] [
+                 fhir:streetName [
+                   fhir:xmlText [ fhir:v "rue du Temple" ]
+                 ]
+               ] [
+                 fhir:postalCode [
+                   fhir:xmlText [ fhir:v "75004" ]
+                 ]
+               ] [
+                 fhir:city [
+                   fhir:xmlText [ fhir:v "Paris" ]
+                 ]
+               ] )
+             ]
+           ]
+         ]
+       ] #  Lieu de la prise en charge : Pharmacie 
+     ]
+  ] ; #  [1..1] Contexte de la prise en charge 
+  fhir:component [
+     fhir:structuredBody [
+       fhir:component ( [
+         fhir:section [
+           fhir:classCode [ fhir:v "DOCSECT" ] ;
+           fhir:moodCode [ fhir:v "EVN" ] ;
+           fhir:templateId ( [
+             fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.2.3" ]
+           ] [
+             fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.8" ]
+           ] [
+             fhir:root [ fhir:v "1.2.250.1.213.1.1.2.236" ]
+           ] ) ; #  Conformité Dispense Section (IHE PHARM DIS) 
+           fhir:id [
+             fhir:root [ fhir:v "F28128CA-1D38-11EC-9621-0242AC130002" ]
+           ] ;
+           fhir:code [
+             fhir:code [ fhir:v "60590-7" ] ;
+             fhir:codeSystem [ fhir:v "2.16.840.1.113883.6.1" ] ;
+             fhir:codeSystemName [ fhir:v "LOINC" ] ;
+             fhir:displayName [ fhir:v "Médicaments délivrés" ]
+           ] ;
+           fhir:title [
+             fhir:xmlText [ fhir:v "Médicaments délivrés" ]
+           ] ;
+           fhir:text [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">  <!-- Médicament 1 --><table border=\"0\"><thead><tr><th>Durée du traitement</th><th>Médicament</th><th>Quantité délivrée</th><th>Fréquence d'administration</th><th>Dose</th><th>Rythme d'administration</th><th>Voie d'administration</th><th>Substitution</th></tr></thead><tbody><tr id=\"med-001\"><td><span id=\"med-001-duree\">du 25/01/2023 au 27/01/2023</span></td><td><span id=\"med-001-delivre\">PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)</span></td><td>2 Boites</td><td><span id=\"med-001-frequence\">4 fois/j à partir du 25/01/2021 pendant 2 jours</span></td><td><span id=\"med-001-dose-min\">1 cp</span> à <span id=\"med-001-dose-max\">1 cp</span></td><td><span id=\"med-001-rate-min\">1500 mg/j</span> à <span id=\"med-001-rate-max\">3000 mg/j</span></td><td><span id=\"med-001-voie\">Voie orale</span></td><td><span id=\"med-001-substitution\">Substitution par un produit générique</span></td></tr><tr><td colspan=\"1\">Instruction au patient</td><td colspan=\"7\"><span id=\"med-001-instruction-patient\">A prendre au cours d'un repas</span></td></tr><tr><td colspan=\"1\">Notes du dispensateur</td><td colspan=\"7\"><span id=\"med-001-notes-dispensateur\">J'ai averti le patient de ne pas prendre un autre médicament contenant du paracetamol.</span></td></tr></tbody></table><br/>  <!-- Médicament 2 --><table border=\"0\"><thead><tr><th>Durée du traitement</th><th>Médicament</th><th>Quantité délivrée</th><th>Fréquence d'administration</th><th>Dose</th><th>Rythme d'administration</th><th>Voie d'administration</th><th>Substitution</th></tr></thead><tbody><tr id=\"med-002\"><td>du 25/01/2023 au 27/01/2023</td><td><span id=\"med-002-delivre\">Préparation magistrale :<br/>- 30g de diprosone<br/>- 70g de Cérat Frais de Galien</span></td><td>1 Récipient</td><td/><td/><td/><td/><td/></tr><tr><td colspan=\"1\">Instruction au patient</td><td colspan=\"7\"><span id=\"med-002-instruction-patient\">Diminuer la posologie progressivement une fois la poussée traitée. Par exemple en appliquant la préparation une fois par jour pendant 5 jours, puis 1 jour sur 2 pendant 5 jours environ avant d’arrêter.</span></td></tr><tr><td colspan=\"1\">Notes du dispensateur</td><td colspan=\"7\"><span id=\"med-002-notes-dispensateur\">Préparation remise dans un flacon</span></td></tr></tbody></table></div>"^^rdf:XMLLiteral ] ;
+           fhir:author ( [
+             fhir:time [
+               fhir:value [ fhir:v "2021-12-01T09:30:00+01:00"^^xsd:dateTime ]
+             ] ; #  [1..1] Horodatage de la validation par l'auteur 
+             fhir:assignedAuthor [
+               fhir:classCode [ fhir:v "ASSIGNED" ] ;
+               fhir:id ( [
+                 fhir:extension [ fhir:v "801234567897" ] ;
+                 fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+               ] ) ; #  [1..1] Identifiant de l'auteur (Id RPPS du PS obligatoire pour les PS) 
+               fhir:code [
+                 fhir:code [ fhir:v "G15_21" ] ;
+                 fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+                 fhir:displayName [ fhir:v "Pharmacien" ]
+               ] ; #  [1..1] Profession \/ spécialité du PS (obligatoire pour les PS) 
+               fhir:addr ( [
+                 fhir:item ( [
+                   fhir:houseNumber [
+                     fhir:xmlText [ fhir:v "26" ]
+                   ]
+                 ] [
+                   fhir:streetName [
+                     fhir:xmlText [ fhir:v "rue du Temple" ]
+                   ]
+                 ] [
+                   fhir:postalCode [
+                     fhir:xmlText [ fhir:v "75004" ]
+                   ]
+                 ] [
+                   fhir:city [
+                     fhir:xmlText [ fhir:v "Paris" ]
+                   ]
+                 ] )
+               ] ) ; #  [0..*] Adresse du PS 
+               fhir:telecom ( [
+                 fhir:use ( [ fhir:v "WP" ] ) ;
+                 fhir:value [
+                   fhir:v "tel:0158432300"^^xsd:anyURI ;
+                   fhir:l fhir:tel:0158432300
+                 ]
+               ] ) ; #  [0..*] Télécom du PS 
+               fhir:assignedPerson [
+                 fhir:name ( [
+                   fhir:item ( [
+                     fhir:prefix ( [
+                       fhir:xmlText [ fhir:v "M" ]
+                     ] )
+                   ] [
+                     fhir:given ( [
+                       fhir:xmlText [ fhir:v "Pierre" ]
+                     ] )
+                   ] [
+                     fhir:family ( [
+                       fhir:xmlText [ fhir:v "DELIVE" ]
+                     ] )
+                   ] [
+                     fhir:suffix ( [
+                       fhir:xmlText [ fhir:v "PG" ]
+                     ] )
+                   ] )
+                 ] )
+               ] ; #  [0..1] Identité du PS 
+               fhir:representedOrganization [
+                 fhir:id ( [
+                   fhir:extension [ fhir:v "1750512345" ] ;
+                   fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+                 ] ) ; #  [1..1] Identifiant de la pharmacie (FINESS) 
+                 fhir:name ( [
+                   fhir:item ( [
+                     fhir:xmlText [ fhir:v "Pharmacie du village" ]
+                   ] )
+                 ] ) ; #  [1..1] Nom de la pharmacie 
+                 fhir:telecom ( [
+                   fhir:use ( [ fhir:v "WP" ] ) ;
+                   fhir:value [
+                     fhir:v "tel:0142726071"^^xsd:anyURI ;
+                     fhir:l fhir:tel:0142726071
+                   ]
+                 ] ) ; #  [0..*] Télécom de la pharmacie 
+                 fhir:addr ( [
+                   fhir:item ( [
+                     fhir:houseNumber [
+                       fhir:xmlText [ fhir:v "26" ]
+                     ]
+                   ] [
+                     fhir:streetName [
+                       fhir:xmlText [ fhir:v "rue du Temple" ]
+                     ]
+                   ] [
+                     fhir:postalCode [
+                       fhir:xmlText [ fhir:v "75004" ]
+                     ]
+                   ] [
+                     fhir:city [
+                       fhir:xmlText [ fhir:v "Paris" ]
+                     ]
+                   ] )
+                 ] ) #  [0..*] Adresse de la pharmacie 
+               ] #  [1..1] Organisation de rattachement du PS : pharmacie 
+             ] #  [1..1] Identification de l'auteur 
+           ] ) ; #  [1..1] Dispensateur 
+           fhir:entry ( [
+             fhir:supply [
+               fhir:classCode [ fhir:v "SPLY" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.34" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.3" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.4" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.204" ]
+               ] ) ; #  Conformité Supply Activity (CCD) 
+               fhir:id ( [
+                 fhir:root [ fhir:v "AADC9C14-F1CA-4177-B2C8-A5178D5B3CA9" ]
+               ] ) ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#med-001"^^xsd:anyURI ;
+                     fhir:l <#med-001>
+                   ]
+                 ]
+               ] ;
+               fhir:quantity [
+                 fhir:unit [ fhir:v "30009000" ] ;
+                 fhir:value [ fhir:v "2"^^xsd:decimal ]
+               ] ; #  Unité issue de EDQM Packaging (30009000 \"Boite\")
+               fhir:product [
+                 fhir:manufacturedProduct [
+                   fhir:classCode [ fhir:v "MANU" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.53" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.2" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.43" ]
+                   ] ) ; #  Conformité Product (CCD) 
+                   fhir:manufacturedMaterial [
+                     fhir:classCode [ fhir:v "MMAT" ] ;
+                     fhir:determinerCode [ fhir:v "KIND" ] ;
+                     fhir:templateId ( [
+                       fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.1" ]
+                     ] ) ; #  Medicine Entry (IHE PHARM PRE)
+                     fhir:code [
+                       fhir:originalText [
+                         fhir:reference [
+                           fhir:value [
+                             fhir:v "#med-001-delivre"^^xsd:anyURI ;
+                             fhir:l <#med-001-delivre>
+                           ]
+                         ]
+                       ] ;
+                       fhir:translation ( [
+                         fhir:code [ fhir:v "3400933516390" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.213.2.3.2" ] ;
+                         fhir:codeSystemName [ fhir:v "CIP" ] ;
+                         fhir:displayName [ fhir:v "PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)" ] ;
+                         fhir:originalText [
+                           fhir:reference [
+                             fhir:value [
+                               fhir:v "#med-001-delivre"^^xsd:anyURI ;
+                               fhir:l <#med-001-delivre>
+                             ]
+                           ]
+                         ]
+                       ] ) #  Code CIP du médicament 
+                     ] ; #  Code CIS du médicament 
+                     fhir:name [
+                       fhir:item ( [
+                         fhir:xmlText [ fhir:v "PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)" ]
+                       ] )
+                     ] ; #  Nom de la marque 
+                     fhir:lotNumberText [
+                       fhir:xmlText [ fhir:v "12345" ]
+                     ]
+                   ]
+                 ] #  [1..1] FR-Produit-de-sante (CI-SIS) 
+               ] ;
+               fhir:entryRelationship ( [
+                 fhir:inversionInd [ fhir:v false ] ;
+                 fhir:typeCode [ fhir:v "REFR" ] ;
+                 fhir:substanceAdministration [
+                   fhir:classCode [ fhir:v "SBADM" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.11" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.90" ]
+                   ] ) ; #  Conformité Prescription Item (IHE PHARM PRE) 
+                   fhir:id ( [
+                     fhir:root [ fhir:v "AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0" ]
+                   ] ) ; #  Référence de la ligne de prescription 
+                   fhir:code [
+                     fhir:code [ fhir:v "PREItem" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.9.2.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHE Pharmacy Item Type List" ] ;
+                     fhir:displayName [ fhir:v "Prescription Item" ]
+                   ] ;
+                   fhir:consumable [
+                     fhir:manufacturedProduct [
+                       fhir:manufacturedMaterial [
+                         fhir:nullFlavor [ fhir:v "NA" ] ;
+                         fhir:name [
+                           fhir:nullFlavor [ fhir:v "NA" ]
+                         ]
+                       ]
+                     ]
+                   ] ;
+                   fhir:author ( [
+                     fhir:time [
+                       fhir:value [ fhir:v "2021-12-01T09:30:00+01:00"^^xsd:dateTime ]
+                     ] ; #  [1..1] Horodatage de la validation par l'auteur 
+                     fhir:assignedAuthor [
+                       fhir:classCode [ fhir:v "ASSIGNED" ] ;
+                       fhir:id ( [
+                         fhir:extension [ fhir:v "801234567897" ] ;
+                         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+                       ] ) ; #  [1..1] Identifiant de l'auteur (Id RPPS du PS obligatoire pour les PS) 
+                       fhir:code [
+                         fhir:code [ fhir:v "G15_10/SM26" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+                         fhir:displayName [ fhir:v "Médecin - Qualifié en Médecine Générale (SM)" ]
+                       ] ; #  [1..1] Profession \/ spécialité du PS (obligatoire pour les PS) 
+                       fhir:addr ( [
+                         fhir:item ( [
+                           fhir:houseNumber [
+                             fhir:xmlText [ fhir:v "142" ]
+                           ]
+                         ] [
+                           fhir:streetName [
+                             fhir:xmlText [ fhir:v "Rue Belvédère" ]
+                           ]
+                         ] [
+                           fhir:postalCode [
+                             fhir:xmlText [ fhir:v "92100" ]
+                           ]
+                         ] [
+                           fhir:city [
+                             fhir:xmlText [ fhir:v "Boulogne-Billancourt" ]
+                           ]
+                         ] )
+                       ] ) ; #  [0..*] Adresse du PS 
+                       fhir:telecom ( [
+                         fhir:use ( [ fhir:v "WP" ] ) ;
+                         fhir:value [
+                           fhir:v "tel:0158432300"^^xsd:anyURI ;
+                           fhir:l fhir:tel:0158432300
+                         ]
+                       ] ) ; #  [0..*] Télécom du PS 
+                       fhir:assignedPerson [
+                         fhir:name ( [
+                           fhir:item ( [
+                             fhir:given ( [
+                               fhir:xmlText [ fhir:v "Jacques" ]
+                             ] )
+                           ] [
+                             fhir:family ( [
+                               fhir:xmlText [ fhir:v "BIDEAULT" ]
+                             ] )
+                           ] [
+                             fhir:suffix ( [
+                               fhir:xmlText [ fhir:v "DR" ]
+                             ] )
+                           ] )
+                         ] )
+                       ] ; #  [0..1] Identité du PS 
+                       fhir:representedOrganization [
+                         fhir:id ( [
+                           fhir:extension [ fhir:v "1750512345" ] ;
+                           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+                         ] ) ; #  [1..1] Identifiant de l'organisation de rattachement du PS (FINESS) 
+                         fhir:name ( [
+                           fhir:item ( [
+                             fhir:xmlText [ fhir:v "Clinique du Belvédère" ]
+                           ] )
+                         ] ) ; #  [1..1] Nom de l'organisation de rattachement du PS 
+                         fhir:telecom ( [
+                           fhir:use ( [ fhir:v "WP" ] ) ;
+                           fhir:value [
+                             fhir:v "tel:0157826011"^^xsd:anyURI ;
+                             fhir:l fhir:tel:0157826011
+                           ]
+                         ] ) ; #  [0..*] Télécom du PS 
+                         fhir:addr ( [
+                           fhir:item ( [
+                             fhir:houseNumber [
+                               fhir:xmlText [ fhir:v "142" ]
+                             ]
+                           ] [
+                             fhir:streetName [
+                               fhir:xmlText [ fhir:v "Rue Belvédère" ]
+                             ]
+                           ] [
+                             fhir:postalCode [
+                               fhir:xmlText [ fhir:v "92100" ]
+                             ]
+                           ] [
+                             fhir:city [
+                               fhir:xmlText [ fhir:v "Boulogne-Billancourt" ]
+                             ]
+                           ] )
+                         ] ) #  [0..*] Adresse du PS 
+                       ] #  [1..1] Organisation de rattachement du PS 
+                     ] #  [1..1] Identification de l'auteur 
+                   ] ) ;
+                   fhir:reference ( [
+                     fhir:typeCode [ fhir:v "XCRPT" ] ;
+                     fhir:externalDocument [
+                       fhir:id ( [
+                         fhir:root [ fhir:v "1.2.250.1.213.1.1.1.39.12345.1" ]
+                       ] )
+                     ]
+                   ] ) #  Référence de la prescription 
+                 ]
+               ] [
+                 fhir:inversionInd [ fhir:v true ] ;
+                 fhir:typeCode [ fhir:v "SUBJ" ] ;
+                 fhir:act [
+                   fhir:classCode [ fhir:v "ACT" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.49" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.3" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.33" ]
+                   ] ) ; #  Conformité Patient instructions (CCD) 
+                   fhir:code [
+                     fhir:code [ fhir:v "PINSTRUCT" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.5.3.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHEActCode" ]
+                   ] ;
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#med-001-instruction-patient"^^xsd:anyURI ;
+                         fhir:l <#med-001-instruction-patient>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ]
+                 ]
+               ] [
+                 fhir:inversionInd [ fhir:v true ] ;
+                 fhir:typeCode [ fhir:v "SUBJ" ] ;
+                 fhir:act [
+                   fhir:classCode [ fhir:v "ACT" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.43" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.3.1" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.207" ]
+                   ] ) ; #  Conformité Fulfillment instructions (CCD) 
+                   fhir:code [
+                     fhir:code [ fhir:v "FINSTRUCT" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.5.3.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHEActCode" ]
+                   ] ;
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#med-001-notes-dispensateur"^^xsd:anyURI ;
+                         fhir:l <#med-001-notes-dispensateur>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ]
+                 ]
+               ] [
+                 fhir:typeCode [ fhir:v "COMP" ] ;
+                 fhir:substanceAdministration [
+                   fhir:classCode [ fhir:v "SBADM" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.24" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.42" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.6" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.1" ]
+                   ] ) ; #  Medication Activity (CCD) 
+                   fhir:id ( [
+                     fhir:root [ fhir:v "4B007F00-973B-11ED-A8FC-0242AC120002" ]
+                   ] ) ;
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#med-001-duree"^^xsd:anyURI ;
+                         fhir:l <#med-001-duree>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ] ;
+                   fhir:effectiveTime ( [
+                     fhir:low [
+                       fhir:value [ fhir:v "2023-01-25"^^xsd:date ]
+                     ] ;
+                     fhir:high [
+                       fhir:value [ fhir:v "2023-01-27"^^xsd:date ]
+                     ]
+                   ] [
+                     fhir:operator [ fhir:v "A" ] ;
+                     fhir:comp ( [
+                       fhir:operator [ fhir:v "A" ] ;
+                       fhir:low [
+                         fhir:value [ fhir:v "2023-01-25"^^xsd:date ]
+                       ] ;
+                       fhir:width [
+                         fhir:unit [ fhir:v "d" ] ;
+                         fhir:value [ fhir:v "2"^^xsd:decimal ]
+                       ]
+                     ] [
+                       fhir:operator [ fhir:v "A" ] ;
+                       fhir:period [
+                         fhir:unit [ fhir:v "h" ] ;
+                         fhir:value [ fhir:v "16"^^xsd:decimal ] ;
+                         fhir:translation ( [
+                           fhir:originalText [
+                             fhir:reference [
+                               fhir:value [
+                                 fhir:v "#med-001-frequence"^^xsd:anyURI ;
+                                 fhir:l <#med-001-frequence>
+                               ]
+                             ]
+                           ]
+                         ] )
+                       ]
+                     ] )
+                   ] ) ; #  Durée de traitement 
+                   fhir:routeCode [
+                     fhir:code [ fhir:v "20053000" ] ;
+                     fhir:codeSystem [ fhir:v "0.4.0.127.0.16.1.1.2.1" ] ;
+                     fhir:codeSystemName [ fhir:v "EDQM" ] ;
+                     fhir:displayName [ fhir:v "Voie orale" ] ;
+                     fhir:originalText [
+                       fhir:reference [
+                         fhir:value [
+                           fhir:v "#med-001-voie"^^xsd:anyURI ;
+                           fhir:l <#med-001-voie>
+                         ]
+                       ]
+                     ]
+                   ] ; #  valeur issue d'EDQM Standard terms (0.4.0.127.0.16.1.1.2.1) \/ classe ROA (Voie d'administration) 
+                   fhir:doseQuantity [
+                     fhir:low [
+                       fhir:unit [ fhir:v "{tablet}" ] ;
+                       fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+                       fhir:translation ( [
+                         fhir:originalText [
+                           fhir:reference [
+                             fhir:value [
+                               fhir:v "#med-001-dose-min"^^xsd:anyURI ;
+                               fhir:l <#med-001-dose-min>
+                             ]
+                           ]
+                         ]
+                       ] )
+                     ] ;
+                     fhir:high [
+                       fhir:unit [ fhir:v "{tablet}" ] ;
+                       fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+                       fhir:translation ( [
+                         fhir:originalText [
+                           fhir:reference [
+                             fhir:value [
+                               fhir:v "#med-001-dose-max"^^xsd:anyURI ;
+                               fhir:l <#med-001-dose-max>
+                             ]
+                           ]
+                         ]
+                       ] )
+                     ]
+                   ] ; #  [0..1] Région anatomique d'administration : uniquement si posologie structurée ,  valeur issue du jdv-human-substance-administration-site-cisis (1.2.250.1.213.1.1.5.686) ,  <approachSiteCode> <\/approachSiteCode> ,  Dose à administrer : 2 cp 
+                   fhir:rateQuantity [
+                     fhir:low [
+                       fhir:unit [ fhir:v "mg/d" ] ;
+                       fhir:value [ fhir:v "1500"^^xsd:decimal ] ;
+                       fhir:translation ( [
+                         fhir:originalText [
+                           fhir:reference [
+                             fhir:value [
+                               fhir:v "#med-001-rate-min"^^xsd:anyURI ;
+                               fhir:l <#med-001-rate-min>
+                             ]
+                           ]
+                         ]
+                       ] )
+                     ] ;
+                     fhir:high [
+                       fhir:unit [ fhir:v "mg/d" ] ;
+                       fhir:value [ fhir:v "3000"^^xsd:decimal ] ;
+                       fhir:translation ( [
+                         fhir:originalText [
+                           fhir:reference [
+                             fhir:value [
+                               fhir:v "#med-001-rate-max"^^xsd:anyURI ;
+                               fhir:l <#med-001-rate-max>
+                             ]
+                           ]
+                         ]
+                       ] )
+                     ]
+                   ] ; #  [0..1] Rythme d'administration : uniquement si posologie structurée 
+                   fhir:consumable [
+                     fhir:manufacturedProduct [
+                       fhir:templateId ( [
+                         fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.53" ]
+                       ] [
+                         fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.2" ]
+                       ] [
+                         fhir:root [ fhir:v "1.2.250.1.213.1.1.3.43" ]
+                       ] ) ; #  Conformité Product (CCD) 
+                       fhir:manufacturedMaterial [
+                         fhir:nullFlavor [ fhir:v "NA" ] ;
+                         fhir:templateId ( [
+                           fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.1" ]
+                         ] ) ; #  Medicine Entry (IHE PHARM PRE)
+                         fhir:code [
+                           fhir:nullFlavor [ fhir:v "NA" ]
+                         ] ; #  Code CIS du médicament 
+                         fhir:name [
+                           fhir:nullFlavor [ fhir:v "NA" ]
+                         ]
+                       ]
+                     ]
+                   ] #  Médicament fixé à nullFlavor=\"NA\" (IHE PHARM-DIS) 
+                 ]
+               ] [
+                 fhir:typeCode [ fhir:v "COMP" ] ;
+                 fhir:act [
+                   fhir:classCode [ fhir:v "ACT" ] ;
+                   fhir:moodCode [ fhir:v "EVN" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.9.2" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.206" ]
+                   ] ) ; #  Substitution act (IHE PHARM DIS) 
+                   fhir:code [
+                     fhir:code [ fhir:v "G" ] ;
+                     fhir:codeSystem [ fhir:v "2.16.840.1.113883.5.1070" ] ;
+                     fhir:codeSystemName [ fhir:v "HL7_substanceAdminSubstitution" ] ;
+                     fhir:displayName [ fhir:v "Substitution autorisée par un produit générique" ] ;
+                     fhir:originalText [
+                       fhir:reference [
+                         fhir:value [
+                           fhir:v "#med-001-substitution"^^xsd:anyURI ;
+                           fhir:l <#med-001-substitution>
+                         ]
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ]
+                 ]
+               ] ) #  [0..1] FR-Reference-item-prescription 
+             ]
+           ] [
+             fhir:supply [
+               fhir:classCode [ fhir:v "SPLY" ] ;
+               fhir:moodCode [ fhir:v "EVN" ] ;
+               fhir:templateId ( [
+                 fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.34" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.3" ]
+               ] [
+                 fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.4" ]
+               ] [
+                 fhir:root [ fhir:v "1.2.250.1.213.1.1.3.204" ]
+               ] ) ; #  Conformité Supply Activity (CCD) 
+               fhir:id ( [
+                 fhir:root [ fhir:v "BBDC9C14-F1CA-4177-B2C8-A5178D5B3DB0" ]
+               ] ) ;
+               fhir:text [
+                 fhir:reference [
+                   fhir:value [
+                     fhir:v "#med-002"^^xsd:anyURI ;
+                     fhir:l <#med-002>
+                   ]
+                 ]
+               ] ;
+               fhir:quantity [
+                 fhir:unit [ fhir:v "30015500" ] ;
+                 fhir:value [ fhir:v "1"^^xsd:decimal ]
+               ] ; #  Unité issue de EDQM Packaging (30015500 \"Récipient\")
+               fhir:product [
+                 fhir:manufacturedProduct [
+                   fhir:classCode [ fhir:v "MANU" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.53" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.7.2" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.43" ]
+                   ] ) ; #  Conformité Product (CCD) 
+                   fhir:manufacturedMaterial [
+                     fhir:classCode [ fhir:v "MMAT" ] ;
+                     fhir:determinerCode [ fhir:v "KIND" ] ;
+                     fhir:templateId ( [
+                       fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.1" ]
+                     ] ) ;
+                     fhir:code [
+                       fhir:nullFlavor [ fhir:v "NA" ] ;
+                       fhir:originalText [
+                         fhir:reference [
+                           fhir:value [
+                             fhir:v "#med-002-delivre"^^xsd:anyURI ;
+                             fhir:l <#med-002-delivre>
+                           ]
+                         ]
+                       ]
+                     ] ; #  Code CIS du médicament 
+                     fhir:name [
+                       fhir:nullFlavor [ fhir:v "NA" ]
+                     ] #  Nom de la marque 
+                   ]
+                 ] #  [1..1] FR-Produit-de-sante (CI-SIS) 
+               ] ;
+               fhir:entryRelationship ( [
+                 fhir:inversionInd [ fhir:v false ] ;
+                 fhir:typeCode [ fhir:v "REFR" ] ;
+                 fhir:substanceAdministration [
+                   fhir:classCode [ fhir:v "SBADM" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.9.1.3.11" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.90" ]
+                   ] ) ; #  Conformité Prescription Item (IHE PHARM PRE) 
+                   fhir:id ( [
+                     fhir:root [ fhir:v "BBDC9C14-F1CA-4177-B2C8-A5178D5B3DB1" ]
+                   ] ) ; #  Référence de la ligne de prescription 
+                   fhir:code [
+                     fhir:code [ fhir:v "PREItem" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.9.2.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHE Pharmacy Item Type List" ] ;
+                     fhir:displayName [ fhir:v "Prescription Item" ]
+                   ] ;
+                   fhir:consumable [
+                     fhir:manufacturedProduct [
+                       fhir:manufacturedMaterial [
+                         fhir:nullFlavor [ fhir:v "NA" ] ;
+                         fhir:name [
+                           fhir:nullFlavor [ fhir:v "NA" ]
+                         ]
+                       ]
+                     ]
+                   ] ;
+                   fhir:author ( [
+                     fhir:time [
+                       fhir:value [ fhir:v "2021-12-01T09:30:00+01:00"^^xsd:dateTime ]
+                     ] ; #  [1..1] Horodatage de la validation par l'auteur 
+                     fhir:assignedAuthor [
+                       fhir:classCode [ fhir:v "ASSIGNED" ] ;
+                       fhir:id ( [
+                         fhir:extension [ fhir:v "801234567897" ] ;
+                         fhir:root [ fhir:v "1.2.250.1.71.4.2.1" ]
+                       ] ) ; #  [1..1] Identifiant de l'auteur (Id RPPS du PS obligatoire pour les PS) 
+                       fhir:code [
+                         fhir:code [ fhir:v "G15_10/SM26" ] ;
+                         fhir:codeSystem [ fhir:v "1.2.250.1.213.1.1.4.5" ] ;
+                         fhir:displayName [ fhir:v "Médecin - Qualifié en Médecine Générale (SM)" ]
+                       ] ; #  [1..1] Profession \/ spécialité du PS (obligatoire pour les PS) 
+                       fhir:addr ( [
+                         fhir:item ( [
+                           fhir:houseNumber [
+                             fhir:xmlText [ fhir:v "142" ]
+                           ]
+                         ] [
+                           fhir:streetName [
+                             fhir:xmlText [ fhir:v "Rue Belvédère" ]
+                           ]
+                         ] [
+                           fhir:postalCode [
+                             fhir:xmlText [ fhir:v "92100" ]
+                           ]
+                         ] [
+                           fhir:city [
+                             fhir:xmlText [ fhir:v "Boulogne-Billancourt" ]
+                           ]
+                         ] )
+                       ] ) ; #  [0..*] Adresse du PS 
+                       fhir:telecom ( [
+                         fhir:use ( [ fhir:v "WP" ] ) ;
+                         fhir:value [
+                           fhir:v "tel:0158432300"^^xsd:anyURI ;
+                           fhir:l fhir:tel:0158432300
+                         ]
+                       ] ) ; #  [0..*] Télécom du PS 
+                       fhir:assignedPerson [
+                         fhir:name ( [
+                           fhir:item ( [
+                             fhir:given ( [
+                               fhir:xmlText [ fhir:v "Jacques" ]
+                             ] )
+                           ] [
+                             fhir:family ( [
+                               fhir:xmlText [ fhir:v "BIDEAULT" ]
+                             ] )
+                           ] [
+                             fhir:suffix ( [
+                               fhir:xmlText [ fhir:v "DR" ]
+                             ] )
+                           ] )
+                         ] )
+                       ] ; #  [0..1] Identité du PS 
+                       fhir:representedOrganization [
+                         fhir:id ( [
+                           fhir:extension [ fhir:v "1750512345" ] ;
+                           fhir:root [ fhir:v "1.2.250.1.71.4.2.2" ]
+                         ] ) ; #  [1..1] Identifiant de l'organisation de rattachement du PS (FINESS) 
+                         fhir:name ( [
+                           fhir:item ( [
+                             fhir:xmlText [ fhir:v "Clinique du Belvédère" ]
+                           ] )
+                         ] ) ; #  [1..1] Nom de l'organisation de rattachement du PS 
+                         fhir:telecom ( [
+                           fhir:use ( [ fhir:v "WP" ] ) ;
+                           fhir:value [
+                             fhir:v "tel:0157826011"^^xsd:anyURI ;
+                             fhir:l fhir:tel:0157826011
+                           ]
+                         ] ) ; #  [0..*] Télécom du PS 
+                         fhir:addr ( [
+                           fhir:item ( [
+                             fhir:houseNumber [
+                               fhir:xmlText [ fhir:v "142" ]
+                             ]
+                           ] [
+                             fhir:streetName [
+                               fhir:xmlText [ fhir:v "Rue Belvédère" ]
+                             ]
+                           ] [
+                             fhir:postalCode [
+                               fhir:xmlText [ fhir:v "92100" ]
+                             ]
+                           ] [
+                             fhir:city [
+                               fhir:xmlText [ fhir:v "Boulogne-Billancourt" ]
+                             ]
+                           ] )
+                         ] ) #  [0..*] Adresse du PS 
+                       ] #  [1..1] Organisation de rattachement du PS 
+                     ] #  [1..1] Identification de l'auteur 
+                   ] ) ;
+                   fhir:reference ( [
+                     fhir:typeCode [ fhir:v "XCRPT" ] ;
+                     fhir:externalDocument [
+                       fhir:id ( [
+                         fhir:root [ fhir:v "1.2.250.1.213.1.1.1.39.12345.1" ]
+                       ] )
+                     ]
+                   ] ) #  Référence de la prescription 
+                 ]
+               ] [
+                 fhir:inversionInd [ fhir:v true ] ;
+                 fhir:typeCode [ fhir:v "SUBJ" ] ;
+                 fhir:act [
+                   fhir:classCode [ fhir:v "ACT" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.49" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.3" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.33" ]
+                   ] ) ; #  Conformité Patient instructions (CCD) 
+                   fhir:code [
+                     fhir:code [ fhir:v "PINSTRUCT" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.5.3.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHEActCode" ]
+                   ] ;
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#med-002-instruction-patient"^^xsd:anyURI ;
+                         fhir:l <#med-002-instruction-patient>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ]
+                 ]
+               ] [
+                 fhir:inversionInd [ fhir:v true ] ;
+                 fhir:typeCode [ fhir:v "SUBJ" ] ;
+                 fhir:act [
+                   fhir:classCode [ fhir:v "ACT" ] ;
+                   fhir:moodCode [ fhir:v "INT" ] ;
+                   fhir:templateId ( [
+                     fhir:root [ fhir:v "2.16.840.1.113883.10.20.1.43" ]
+                   ] [
+                     fhir:root [ fhir:v "1.3.6.1.4.1.19376.1.5.3.1.4.3.1" ]
+                   ] [
+                     fhir:root [ fhir:v "1.2.250.1.213.1.1.3.207" ]
+                   ] ) ; #  Conformité Fulfillment instructions (CCD) 
+                   fhir:code [
+                     fhir:code [ fhir:v "FINSTRUCT" ] ;
+                     fhir:codeSystem [ fhir:v "1.3.6.1.4.1.19376.1.5.3.2" ] ;
+                     fhir:codeSystemName [ fhir:v "IHEActCode" ]
+                   ] ;
+                   fhir:text [
+                     fhir:reference [
+                       fhir:value [
+                         fhir:v "#med-002-notes-dispensateur"^^xsd:anyURI ;
+                         fhir:l <#med-002-notes-dispensateur>
+                       ]
+                     ]
+                   ] ;
+                   fhir:statusCode [
+                     fhir:code [ fhir:v "completed" ]
+                   ]
+                 ]
+               ] ) #  [0..1] FR-Reference-item-prescription 
+             ]
+           ] ) #  [1..*] FR-Traitement-dispense 1
+         ]
+       ] ) #  [1..1] Section FR-Dispensation-medicaments 
+     ]
+  ]] . # *********************************,    Corps structuré du document   , *********************************
+
+# -------------------------------------------------------------------------------------
+

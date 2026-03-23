@@ -1,0 +1,199 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingValidateurCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingValidateurCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingValidateurCDAFHIR</b></p><a name=\"mappingValidateurCDAFHIR\"> </a><a name=\"hcmappingValidateurCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-validateur.html\">Modèle logique métier - FR LM Validateur</a> to <a href=\"StructureDefinition-fr-cda-authenticator.html\">CDA - authenticator</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>FRLMValidateur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authenticator</td><td/></tr><tr><td>FRLMValidateur.dateHeureAttestationValidite</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authenticator.time</td><td/></tr><tr><td>FRLMValidateur.validateur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>authenticator.assignedEntity</td><td>L'élément validateur est de type : PersonneStructure</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-authenticator.html\">CDA - authenticator</a> to <a href=\"StructureDefinition-fr-composition-document.html\">FR Composition Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>authenticator</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester</td><td>attester.where(mode='professional')</td></tr><tr><td>authenticator.time</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.time</td><td/></tr><tr><td>authenticator.assignedEntity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole</td><td>attester.party.resolve().ofType(PractitionerRole)</td></tr><tr><td>authenticator.assignedEntity.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.identifier</td><td>attester.party.resolve().ofType(PractitionerRole).practitioner.resolve()</td></tr><tr><td>authenticator.assignedEntity.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.qualification.code</td><td/></tr><tr><td>authenticator.assignedEntity.addr</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.address</td><td/></tr><tr><td>authenticator.assignedEntity.telecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.telecom</td><td/></tr><tr><td>authenticator.assignedEntity.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.name</td><td/></tr><tr><td>authenticator.assignedEntity.name.family</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.name.family</td><td/></tr><tr><td>authenticator.assignedEntity.name.given</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.name.given</td><td/></tr><tr><td>authenticator.assignedEntity.name.prefix</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.name.prefix</td><td/></tr><tr><td>authenticator.assignedEntity.name.suffix</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Practitioner.name.suffix</td><td/></tr><tr><td>authenticator.assignedEntity.representedOrganization</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization</td><td>attester.party.resolve().ofType(PractitionerRole).organization.resolve()</td></tr><tr><td>authenticator.assignedEntity.representedOrganization.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization.identifier</td><td/></tr><tr><td>authenticator.assignedEntity.representedOrganization.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization.name</td><td/></tr><tr><td>authenticator.assignedEntity.representedOrganization.telecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization.telecom</td><td/></tr><tr><td>authenticator.assignedEntity.representedOrganization.addr</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization.address</td><td/></tr><tr><td>authenticator.assignedEntity.representedOrganization.standardIndustryClassCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.attester.party.PractitionerRole.Organization.type</td><td/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingValidateurCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingValidateurCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Validateur\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Validateur\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-23T13:48:54+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap présente deux groupes de mapping : \n - Mapping 1 : entre le modèle métier \\\"validateur\\\" et l'élément CDA \\\"authenticator\\\"\n - Mapping 2 : entre l'élément CDA \\\"authenticator\\\" et l'élément FHIR \\\"Composition.attester\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-validateur"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-validateur>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authenticator"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authenticator>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMValidateur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authenticator" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMValidateur.dateHeureAttestationValidite" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authenticator.time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMValidateur.validateur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "authenticator.assignedEntity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "L'élément validateur est de type : PersonneStructure" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authenticator"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-authenticator>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "authenticator" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "attester.where(mode='professional')" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.time" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "attester.party.resolve().ofType(PractitionerRole)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "attester.party.resolve().ofType(PractitionerRole).practitioner.resolve()" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.qualification.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.addr" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.telecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.name.family" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.name.family" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.name.given" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.name.given" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.name.prefix" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.name.prefix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.name.suffix" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Practitioner.name.suffix" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "attester.party.resolve().ofType(PractitionerRole).organization.resolve()" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization.telecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization.addr" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "authenticator.assignedEntity.representedOrganization.standardIndustryClassCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.attester.party.PractitionerRole.Organization.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

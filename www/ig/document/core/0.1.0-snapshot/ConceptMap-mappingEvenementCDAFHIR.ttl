@@ -1,0 +1,166 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingEvenementCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingEvenementCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingEvenementCDAFHIR</b></p><a name=\"mappingEvenementCDAFHIR\"> </a><a name=\"hcmappingEvenementCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-evenement.html\">Modèle logique métier - FR LM Évènement</a> to <a href=\"StructureDefinition-fr-cda-documentation-of.html\">CDA - documentationOf</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMEvenement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf</td></tr><tr><td>FRLMEvenement.identifiantEvenement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.id</td></tr><tr><td>FRLMEvenement.codeEvenement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.code</td></tr><tr><td>FRLMEvenement.dateHeureEvenement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.effectiveTime</td></tr><tr><td>FRLMEvenement.executantEvenement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.performer@typeCode=\"PRF\"</td></tr><tr><td>FRLMEvenement.executantEvenement.roleFonctionnel</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.performer.functionCode</td></tr><tr><td>FRLMEvenement.executantEvenement.dateHeureParticipation</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.performer.time</td></tr><tr><td>FRLMEvenement.executantEvenement.executant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>documentationOf.serviceEvent.performer.assignedEntity</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-documentation-of.html\">CDA - documentationOf</a> to <a href=\"StructureDefinition-fr-composition-document.html\">FR Composition Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>documentationOf</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event</td><td/></tr><tr><td>documentationOf.serviceEvent.id</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Cette donnée est fournie dans un autre élément : Composition.relatesTo</td></tr><tr><td>documentationOf.serviceEvent.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event.code</td><td/></tr><tr><td>documentationOf.serviceEvent.effectiveTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event.period</td><td/></tr><tr><td>documentationOf.serviceEvent.performer@typeCode=\"PRF\"</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event.extension:perfomer.PractitionerRole</td><td>Composition.event.extension:perfomer.ValueReference.resolve().ofType(FrPractitionerRoleDocument)</td></tr><tr><td>documentationOf.serviceEvent.performer.functionCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event.extension:perfomer.PractitionerRole.code</td><td/></tr><tr><td>documentationOf.serviceEvent.performer.time</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Mapped in Composition.event.period </td></tr><tr><td>documentationOf.serviceEvent.performer.assignedEntity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Composition.event.extension:perfomer.PractitionerRole.Practitioner</td><td>Composition.event.extension:perfomer.ValueReference.resolve().ofType(FrPractitionerRoleDocument).Practitioner.resolve()</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingEvenementCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingEvenementCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Evènement documenté\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Evènement documenté\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-23T13:48:54+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap présente deux groupes de mapping : \n - Mapping 1 :entre le modèle métier \\\"evenement\\\" et l'élément CDA \\\"documentationOf\\\"\n - Mapping 2 : entre l'élément CDA \\\"documentationOf\\\" et l'élément FHIR \\\"Composition.event\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evenement"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evenement>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-documentation-of"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-documentation-of>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMEvenement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.identifiantEvenement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.codeEvenement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.dateHeureEvenement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.executantEvenement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.performer@typeCode=\"PRF\"" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.executantEvenement.roleFonctionnel" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.performer.functionCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.executantEvenement.dateHeureParticipation" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.performer.time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEvenement.executantEvenement.executant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "documentationOf.serviceEvent.performer.assignedEntity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-documentation-of"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-documentation-of>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "documentationOf" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.id" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Cette donnée est fournie dans un autre élément : Composition.relatesTo" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.effectiveTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event.period" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.performer@typeCode=\"PRF\"" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event.extension:perfomer.PractitionerRole" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Composition.event.extension:perfomer.ValueReference.resolve().ofType(FrPractitionerRoleDocument)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.performer.functionCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event.extension:perfomer.PractitionerRole.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.performer.time" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Mapped in Composition.event.period " ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "documentationOf.serviceEvent.performer.assignedEntity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Composition.event.extension:perfomer.PractitionerRole.Practitioner" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Composition.event.extension:perfomer.ValueReference.resolve().ofType(FrPractitionerRoleDocument).Practitioner.resolve()" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

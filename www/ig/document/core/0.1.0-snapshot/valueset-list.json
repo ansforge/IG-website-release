@@ -1,0 +1,92 @@
+{
+  "codeSystems" : [{
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-doc-vs-participation-type",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetParticipationType",
+    "title" : "FR ValueSet Participation Type",
+    "description" : "Type de participation : destinataire",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ParticipationType"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-doc-vs-role-prise-charge",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetRolePriseCharge",
+    "title" : "Fr ValueSet RolePriseCharge",
+    "description" : "Pour les professions 41 (Assistant de service social) et 99 (Acteur caractérisé par son rôle).",
+    "systems" : ["https://mos.esante.gouv.fr/NOS/TRE_R85-RolePriseCharge/FHIR/TRE-R85-RolePriseCharge"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-actor-type-document",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetActorTypeDocument",
+    "title" : "ValueSet - FR ValueSet Actor Type Document",
+    "description" : "Jeu de valeurs pour les types d'acteurs.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ParticipationType"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-allergy-substance",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetAllergySubstanceDocument",
+    "title" : "ValueSet – FR ValueSet Allergy Substance Document",
+    "description" : "Jeu de valeurs permettant de coder l’agent responsable d’une allergie :\n- Médicaments : CIP ou UCD\n- Substances : SMS\n- Aliments : CIM-11 Chapitre X Extensions – Allergènes ou substances non médicinales\n- Agents environnementaux ou physiques : idem CIM-11 Chapitre X Extensions\n- Allergènes pouvant induire une contre-indication vaccinale : jdv-allergie-vaccin-cisis",
+    "systems" : ["http://id.who.int/icd/release/11/mms",
+    "https://smt.esante.gouv.fr/terminologie-bdpm",
+    "https://smt.esante.gouv.fr/terminologie-cip_ucd",
+    "http://snomed.info/sct",
+    "http://www.whocc.no/atc"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-edqm-document",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetEDQMDocument",
+    "title" : "ValueSet - FR ValueSet EDQM Document",
+    "description" : "ValueSet basé sur le CodeSystem EDQM fourni par SMT",
+    "systems" : ["https://smt.esante.gouv.fr/terminologie-standardterms"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-evaluation-type",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetEvaluationTypeDocument",
+    "title" : "ValueSet – FR ValueSet Type d'évaluation",
+    "description" : "Codes autorisés pour indiquer le type d'évaluation.\nInclut LOINC, ICF, et permet d'autres systèmes si aucun code approprié n'est trouvé.",
+    "systems" : ["http://hl7.org/fhir/sid/icf", "http://loinc.org"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-medication-translation-document",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetMedicationTranslationDocument",
+    "title" : "ValueSet - FR ValueSet Medication Translation Document",
+    "description" : "Systèmes autorisés pour les autres codifications.",
+    "systems" : ["https://smt.esante.gouv.fr/terminologie-medicabase",
+    "https://smt.esante.gouv.fr/terminologie-bdpm",
+    "https://smt.esante.gouv.fr/terminologie-cip_ucd",
+    "https://smt.esante.gouv.fr/terminologie-atc"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-procedure-code",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetProcedureCodeDocument",
+    "title" : "ValueSet – FR ValueSet Codes d’actes",
+    "description" : "Codes autorisés pour indiquer un acte.\nInclut :\n- Terminologie CCAM\n- NCIT (code C25218 : 'Intervention') si l'acte n'est pas trouvé dans CCAM\n- CISIS jdv-absent-or-unknown-procedure-cisis pour actes chirurgicaux inconnus ou absents.\n\nSi aucun code approprié n’est disponible, l’acte peut être décrit en texte libre.",
+    "systems" : ["http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+    "https://smt.esante.gouv.fr/terminologie-ccam",
+    "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"]
+  },
+  {
+    "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-result-type-document",
+    "version" : "0.1.0-snapsnot",
+    "status" : "draft",
+    "name" : "FRValueSetResultTypeDocument",
+    "title" : "ValueSet - FR ValueSet Result Type Document",
+    "description" : "ValueSet contenant les codes LOINC autorisés pour les types de résultats",
+    "systems" : ["http://loinc.org"]
+  }]
+}
