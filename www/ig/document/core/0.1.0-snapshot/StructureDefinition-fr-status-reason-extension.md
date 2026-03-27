@@ -1,4 +1,4 @@
-# FR Status Reason Extension - ANS IG document core v0.1.0-snapsnot
+# FR Status Reason Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-status-reason-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-status-reason-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRStatusReasonExtension |
 
 Extension permettant d’indiquer le motif du statut métier d’une évaluation.
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-status-reason-ext
   "resourceType" : "StructureDefinition",
   "id" : "fr-status-reason-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-status-reason-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRStatusReasonExtension",
   "title" : "FR Status Reason Extension",
   "status" : "draft",

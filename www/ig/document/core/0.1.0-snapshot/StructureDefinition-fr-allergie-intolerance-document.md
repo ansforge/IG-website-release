@@ -1,4 +1,4 @@
-# AllergyIntolerance - FR Allergy and intolerance Document - ANS IG document core v0.1.0-snapsnot
+# AllergyIntolerance - FR Allergy and intolerance Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-allergie-intolerance-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-allergie-intolerance-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRAllergyIntoleranceDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-allergie-intolera
   "resourceType" : "StructureDefinition",
   "id" : "fr-allergie-intolerance-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-allergie-intolerance-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRAllergyIntoleranceDocument",
   "title" : "AllergyIntolerance - FR Allergy and intolerance Document",
   "status" : "draft",

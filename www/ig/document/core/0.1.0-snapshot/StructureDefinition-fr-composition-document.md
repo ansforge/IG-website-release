@@ -1,4 +1,4 @@
-# FR Composition Document - ANS IG document core v0.1.0-snapsnot
+# FR Composition Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRCompositionDocument |
 
  
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-composition-docum
   "resourceType" : "StructureDefinition",
   "id" : "fr-composition-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRCompositionDocument",
   "title" : "FR Composition Document",
   "status" : "draft",

@@ -1,4 +1,4 @@
-# Observation - FR Observation Antenatal Testing And Surveillance Battery Document - ANS IG document core v0.1.0-snapsnot
+# Observation - FR Observation Antenatal Testing And Surveillance Battery Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-antenatal-testing-surveillance-battery-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-antenatal-testing-surveillance-battery-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRObservationAntenatalTestingAndSurveillanceBatteryDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-observation-anten
   "resourceType" : "StructureDefinition",
   "id" : "fr-observation-antenatal-testing-surveillance-battery-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-antenatal-testing-surveillance-battery-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRObservationAntenatalTestingAndSurveillanceBatteryDocument",
   "title" : "Observation - FR Observation Antenatal Testing And Surveillance Battery Document",
   "status" : "draft",

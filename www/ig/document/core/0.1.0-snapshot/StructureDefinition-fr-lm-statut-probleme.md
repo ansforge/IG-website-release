@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Statut du problème - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Statut du problème - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-statut-probleme | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-statut-probleme | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMStatutProbleme |
 
  
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-statut-problem
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-statut-probleme",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMStatutProbleme",
   "title" : "Modèle logique métier - FR LM Statut du problème",
   "status" : "draft",

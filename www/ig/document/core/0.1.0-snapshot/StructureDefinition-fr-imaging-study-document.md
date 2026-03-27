@@ -1,4 +1,4 @@
-# ImagingStudy - FR Imaging study Document - ANS IG document core v0.1.0-snapsnot
+# ImagingStudy - FR Imaging study Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-imaging-study-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-imaging-study-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRImagingStudyDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-imaging-study-doc
   "resourceType" : "StructureDefinition",
   "id" : "fr-imaging-study-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-imaging-study-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRImagingStudyDocument",
   "title" : "ImagingStudy - FR Imaging study Document",
   "status" : "draft",

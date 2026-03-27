@@ -1,4 +1,4 @@
-# Autres Ressources - ANS IG document core v0.1.0-snapsnot
+# Autres Ressources - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * **Autres Ressources**

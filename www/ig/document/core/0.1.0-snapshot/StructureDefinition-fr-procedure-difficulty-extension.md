@@ -1,4 +1,4 @@
-# FR Procedure Difficulty Extension - ANS IG document core v0.1.0-snapsnot
+# FR Procedure Difficulty Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-difficulty-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-difficulty-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRProcedureDifficultyExtension |
 
 Extension permettant d’indiquer la difficulté perçue ou mesurée d’un acte.
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-procedure-difficu
   "resourceType" : "StructureDefinition",
   "id" : "fr-procedure-difficulty-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-difficulty-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRProcedureDifficultyExtension",
   "title" : "FR Procedure Difficulty Extension",
   "status" : "draft",

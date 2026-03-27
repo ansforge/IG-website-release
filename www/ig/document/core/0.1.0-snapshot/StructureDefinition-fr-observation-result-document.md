@@ -1,4 +1,4 @@
-# Observation - FR Observation Result Document - ANS IG document core v0.1.0-snapsnot
+# Observation - FR Observation Result Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-result-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-result-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRObservationResultDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-observation-resul
   "resourceType" : "StructureDefinition",
   "id" : "fr-observation-result-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-result-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRObservationResultDocument",
   "title" : "Observation - FR Observation Result Document",
   "status" : "draft",

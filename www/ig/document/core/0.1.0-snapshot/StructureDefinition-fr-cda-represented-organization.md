@@ -1,4 +1,4 @@
-# CDA - representedOrganization - ANS IG document core v0.1.0-snapsnot
+# CDA - representedOrganization - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-represented-organization | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-represented-organization | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRCDARepresentedOrganization |
 
  
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-cda-represented-o
     "valueUri" : "cda"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-represented-organization",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRCDARepresentedOrganization",
   "title" : "CDA - representedOrganization",
   "status" : "draft",

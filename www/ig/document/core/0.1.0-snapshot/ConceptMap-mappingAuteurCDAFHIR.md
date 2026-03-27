@@ -1,4 +1,4 @@
-# Mapping Métier/CDA/FHIR : "Auteur" - ANS IG document core v0.1.0-snapsnot
+# Mapping Métier/CDA/FHIR : "Auteur" - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:Mapping Métier/CDA/FHIR : "Auteur" |
 
  
@@ -26,7 +26,7 @@ Ce ConceptMap présente deux groupes de mapping :
   "resourceType" : "ConceptMap",
   "id" : "mappingAuteurCDAFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingAuteurCDAFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "Mapping Métier/CDA/FHIR : \"Auteur\"",
   "title" : "Mapping Métier/CDA/FHIR : \"Auteur\"",
   "status" : "draft",

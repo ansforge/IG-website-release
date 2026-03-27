@@ -1,4 +1,4 @@
-# Mapping Métier/CDA/FHIR : "Système / Structure Auteur" - ANS IG document core v0.1.0-snapsnot
+# Mapping Métier/CDA/FHIR : "Système / Structure Auteur" - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:Mapping Métier/CDA/FHIR : "Système / Structure Auteur" |
 
  
@@ -26,7 +26,7 @@ Ce ConceptMap de l’élément SystemeStructureAuteur présente deux groupes de 
   "resourceType" : "ConceptMap",
   "id" : "mappingSystemeFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "Mapping Métier/CDA/FHIR : \"Système / Structure Auteur\"",
   "title" : "Mapping Métier/CDA/FHIR : \"Système / Structure Auteur\"",
   "status" : "draft",

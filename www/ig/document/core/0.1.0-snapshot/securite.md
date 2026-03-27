@@ -1,4 +1,4 @@
-# Sécurité - ANS IG document core v0.1.0-snapsnot
+# Sécurité - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Autres Ressources**](autres_ressources.md)

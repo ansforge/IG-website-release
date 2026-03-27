@@ -1,4 +1,4 @@
-# Mapping FRLMParticipantCorps -> FRCDAParticipant -> FRActorExtension - ANS IG document core v0.1.0-snapsnot
+# Mapping FRLMParticipantCorps -> FRCDAParticipant -> FRActorExtension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRParticipantCorpsLMCDAFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRParticipantCorpsLMCDAFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*: |
 
  
@@ -23,7 +23,7 @@ Mapping des éléments du modele metier FRLMParticipantCorps vers le profil CDA 
   "resourceType" : "ConceptMap",
   "id" : "FRParticipantCorpsLMCDAFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRParticipantCorpsLMCDAFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "title" : "Mapping Metier/CDA/FHIR : \"Participant\"",
   "status" : "draft",
   "date" : "2026-03-23T13:48:54+00:00",

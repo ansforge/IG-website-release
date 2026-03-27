@@ -1,4 +1,4 @@
-# Mapping FRLMRechercheDeMicroOrganismes → FRCDARechercheDeMicroOrganismes → FRObservationMicroorganismDetectionDocument - ANS IG document core v0.1.0-snapsnot
+# Mapping FRLMRechercheDeMicroOrganismes → FRCDARechercheDeMicroOrganismes → FRObservationMicroorganismDetectionDocument - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationMicroorganismDetectionLMCDAFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationMicroorganismDetectionLMCDAFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*: |
 
  
@@ -23,7 +23,7 @@ Mapping des éléments du modèle métier FRLMRechercheDeMicroOrganismes vers le
   "resourceType" : "ConceptMap",
   "id" : "FRObservationMicroorganismDetectionLMCDAFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationMicroorganismDetectionLMCDAFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "title" : "Mapping Métier/CDA/FHIR : \"Recherche de micro organismes\"",
   "status" : "draft",
   "date" : "2026-03-23T13:48:54+00:00",

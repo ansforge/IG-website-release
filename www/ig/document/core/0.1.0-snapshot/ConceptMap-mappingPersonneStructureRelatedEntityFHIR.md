@@ -1,4 +1,4 @@
-# Mapping Métier/CDA/FHIR : "Personne / Structure (RelatedEntity)" - ANS IG document core v0.1.0-snapsnot
+# Mapping Métier/CDA/FHIR : "Personne / Structure (RelatedEntity)" - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureRelatedEntityFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureRelatedEntityFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:Mapping Métier/CDA/FHIR : "Personne / Structure (RelatedEntity)" |
 
  
@@ -27,7 +27,7 @@ Ce ConceptMap de l’élément PersonneStructure présente trois groupes de mapp
   "resourceType" : "ConceptMap",
   "id" : "mappingPersonneStructureRelatedEntityFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingPersonneStructureRelatedEntityFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "Mapping Métier/CDA/FHIR : \"Personne / Structure (RelatedEntity)\"",
   "title" : "Mapping Métier/CDA/FHIR : \"Personne / Structure (RelatedEntity)\"",
   "status" : "draft",

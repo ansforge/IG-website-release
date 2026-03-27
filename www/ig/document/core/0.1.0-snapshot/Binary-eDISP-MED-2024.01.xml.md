@@ -1,4 +1,4 @@
-# eDISP-MED-2024.01 - XML Representation - ANS IG document core v0.1.0-snapsnot
+# eDISP-MED-2024.01 - XML Representation - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

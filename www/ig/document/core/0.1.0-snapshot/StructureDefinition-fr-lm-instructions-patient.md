@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Instructions au patient - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Instructions au patient - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-patient | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-patient | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMInstructionsPatient |
 
  
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-instructions-p
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-instructions-patient",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMInstructionsPatient",
   "title" : "Modèle logique métier - FR LM Instructions au patient",
   "status" : "draft",

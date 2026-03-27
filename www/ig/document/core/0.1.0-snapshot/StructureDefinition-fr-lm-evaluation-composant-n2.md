@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Evaluation Composant N2 - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Evaluation Composant N2 - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evaluation-composant-n2 | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evaluation-composant-n2 | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMEvaluationComposantN2 |
 
  
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-evaluation-com
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evaluation-composant-n2",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMEvaluationComposantN2",
   "title" : "Modèle logique métier - FR LM Evaluation Composant N2",
   "status" : "draft",

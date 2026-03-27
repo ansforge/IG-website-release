@@ -1,4 +1,4 @@
-# CDA - relatedEntity - ANS IG document core v0.1.0-snapsnot
+# CDA - relatedEntity - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-related-entity | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-related-entity | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRCDARelatedEntity |
 
  
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-cda-related-entit
     "valueUri" : "cda"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-related-entity",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRCDARelatedEntity",
   "title" : "CDA - relatedEntity",
   "status" : "draft",

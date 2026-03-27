@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Points de vigilance (non-codés) - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Points de vigilance (non-codés) - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-points-de-vigilances-non-code | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-points-de-vigilances-non-code | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMPointsDeVigilancesNonCode |
 
  
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-points-de-vigi
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-points-de-vigilances-non-code",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMPointsDeVigilancesNonCode",
   "title" : "Modèle logique métier - FR LM Points de vigilance (non-codés)",
   "status" : "draft",

@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Performer - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Performer - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-performer | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-performer | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMPerformer |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-performer.csv)
   "resourceType" : "StructureDefinition",
   "id" : "fr-lm-performer",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-performer",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMPerformer",
   "title" : "Modèle logique métier - FR LM Performer",
   "status" : "draft",

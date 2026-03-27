@@ -1,4 +1,4 @@
-# FR Number of Frames Extension - ANS IG document core v0.1.0-snapsnot
+# FR Number of Frames Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-number-of-frames-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-number-of-frames-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRNumberOfFramesExtension |
 
 Extension permettant d’indiquer le nombre de cadres référencés dans une instance ImagingStudy, conforme aux exigences du modèle logique Xt-EHR.
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-number-of-frames-
   "resourceType" : "StructureDefinition",
   "id" : "fr-number-of-frames-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-number-of-frames-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRNumberOfFramesExtension",
   "title" : "FR Number of Frames Extension",
   "status" : "draft",

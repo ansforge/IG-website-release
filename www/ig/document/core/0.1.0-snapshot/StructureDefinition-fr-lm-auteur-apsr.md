@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Auteur APSR - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Auteur APSR - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur-apsr | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur-apsr | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMAuteurAPSR |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-auteur-apsr.cs
   "resourceType" : "StructureDefinition",
   "id" : "fr-lm-auteur-apsr",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur-apsr",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMAuteurAPSR",
   "title" : "Modèle logique métier - FR LM Auteur APSR",
   "status" : "draft",

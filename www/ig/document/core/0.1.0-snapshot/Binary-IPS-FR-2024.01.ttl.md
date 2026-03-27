@@ -1,4 +1,4 @@
-# IPS-FR - TTL Representation - ANS IG document core v0.1.0-snapsnot
+# IPS-FR - TTL Representation - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

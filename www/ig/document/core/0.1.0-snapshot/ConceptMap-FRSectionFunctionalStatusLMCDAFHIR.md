@@ -1,4 +1,4 @@
-# Mapping FRLMStatutFonctionnel → FRCDAStatutFonctionnel → FRCompositionDocument.section:FRFunctionalStatus - ANS IG document core v0.1.0-snapsnot
+# Mapping FRLMStatutFonctionnel → FRCDAStatutFonctionnel → FRCompositionDocument.section:FRFunctionalStatus - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionFunctionalStatusLMCDAFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionFunctionalStatusLMCDAFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*: |
 
  
@@ -23,7 +23,7 @@ Mapping des éléments du modèle métier FRLMStatutFonctionnel vers la section 
   "resourceType" : "ConceptMap",
   "id" : "FRSectionFunctionalStatusLMCDAFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionFunctionalStatusLMCDAFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "title" : "Mapping Métier/CDA/FHIR : \"Statut fonctionnel\"",
   "status" : "draft",
   "date" : "2026-03-23T13:48:54+00:00",

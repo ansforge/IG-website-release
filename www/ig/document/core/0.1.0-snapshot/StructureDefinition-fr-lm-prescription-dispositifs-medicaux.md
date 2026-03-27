@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Prescription de dispositifs médicaux - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Prescription de dispositifs médicaux - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prescription-dispositifs-medicaux | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prescription-dispositifs-medicaux | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMPrescriptionDispositifsMedicaux |
 
  
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-prescription-d
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prescription-dispositifs-medicaux",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMPrescriptionDispositifsMedicaux",
   "title" : "Modèle logique métier - FR LM Prescription de dispositifs médicaux",
   "status" : "draft",

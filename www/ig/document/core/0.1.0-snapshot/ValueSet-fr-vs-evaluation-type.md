@@ -1,4 +1,4 @@
-# ValueSet – FR ValueSet Type d'évaluation - ANS IG document core v0.1.0-snapsnot
+# ValueSet – FR ValueSet Type d'évaluation - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-evaluation-type | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-evaluation-type | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRValueSetEvaluationTypeDocument |
 
  
@@ -46,7 +46,7 @@ Codes autorisés pour indiquer le type d’évaluation. Inclut LOINC, ICF, et pe
   "resourceType" : "ValueSet",
   "id" : "fr-vs-evaluation-type",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-evaluation-type",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRValueSetEvaluationTypeDocument",
   "title" : "ValueSet – FR ValueSet Type d'évaluation",
   "status" : "draft",

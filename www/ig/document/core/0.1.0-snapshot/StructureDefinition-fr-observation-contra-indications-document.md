@@ -1,4 +1,4 @@
-# Observation - FR Observation Contra Indications Document - ANS IG document core v0.1.0-snapsnot
+# Observation - FR Observation Contra Indications Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-contra-indications-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-contra-indications-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRObservationContraIndicationsImagingDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-observation-contr
   "resourceType" : "StructureDefinition",
   "id" : "fr-observation-contra-indications-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-contra-indications-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRObservationContraIndicationsImagingDocument",
   "title" : "Observation - FR Observation Contra Indications Document",
   "status" : "draft",

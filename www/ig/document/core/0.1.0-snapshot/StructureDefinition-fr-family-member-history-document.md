@@ -1,4 +1,4 @@
-# FamilyMemberHistory - FR Family Member History Document - ANS IG document core v0.1.0-snapsnot
+# FamilyMemberHistory - FR Family Member History Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-family-member-history-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-family-member-history-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRFamilyMemberHistoryDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-family-member-his
   "resourceType" : "StructureDefinition",
   "id" : "fr-family-member-history-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-family-member-history-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRFamilyMemberHistoryDocument",
   "title" : "FamilyMemberHistory - FR Family Member History Document",
   "status" : "draft",

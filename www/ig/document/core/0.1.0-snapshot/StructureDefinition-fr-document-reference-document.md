@@ -1,4 +1,4 @@
-# DocumentReference - FR Document reference Document - ANS IG document core v0.1.0-snapsnot
+# DocumentReference - FR Document reference Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-document-reference-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-document-reference-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRDocumentReferenceDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-document-referenc
   "resourceType" : "StructureDefinition",
   "id" : "fr-document-reference-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-document-reference-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRDocumentReferenceDocument",
   "title" : "DocumentReference - FR Document reference Document",
   "status" : "draft",

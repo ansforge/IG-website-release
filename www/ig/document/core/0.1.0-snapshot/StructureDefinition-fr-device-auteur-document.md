@@ -1,4 +1,4 @@
-# FR Device Document - ANS IG document core v0.1.0-snapsnot
+# FR Device Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-auteur-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-auteur-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRDeviceAuteurDocument |
 
  
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-device-auteur-doc
   "resourceType" : "StructureDefinition",
   "id" : "fr-device-auteur-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-auteur-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRDeviceAuteurDocument",
   "title" : "FR Device Document",
   "status" : "draft",

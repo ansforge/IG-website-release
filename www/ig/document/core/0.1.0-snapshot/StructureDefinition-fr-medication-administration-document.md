@@ -1,4 +1,4 @@
-# MedicationAdministration - FR Medication Administration Document - ANS IG document core v0.1.0-snapsnot
+# MedicationAdministration - FR Medication Administration Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-administration-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-administration-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRMedicationAdministrationDocument |
 
  
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-medication-admini
   "resourceType" : "StructureDefinition",
   "id" : "fr-medication-administration-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-administration-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRMedicationAdministrationDocument",
   "title" : "MedicationAdministration - FR Medication Administration Document",
   "status" : "draft",

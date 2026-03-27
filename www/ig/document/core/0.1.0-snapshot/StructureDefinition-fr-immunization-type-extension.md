@@ -1,4 +1,4 @@
-# FR Immunization Type Extension - ANS IG document core v0.1.0-snapsnot
+# FR Immunization Type Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-type-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-type-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRImmunizationTypeExtension |
 
 Extension permettant de représenter le type de vaccination (ex: INITIMMUNIZ, BOOSTER, IMMUNIZ).
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-immunization-type
   "resourceType" : "StructureDefinition",
   "id" : "fr-immunization-type-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-type-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRImmunizationTypeExtension",
   "title" : "FR Immunization Type Extension",
   "status" : "draft",

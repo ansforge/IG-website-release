@@ -1,4 +1,4 @@
-# Immunization - FR Immunization Document - ANS IG document core v0.1.0-snapsnot
+# Immunization - FR Immunization Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRImmunizationDocument |
 
  
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-immunization-docu
   "resourceType" : "StructureDefinition",
   "id" : "fr-immunization-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-immunization-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRImmunizationDocument",
   "title" : "Immunization - FR Immunization Document",
   "status" : "draft",

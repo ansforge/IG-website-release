@@ -1,4 +1,4 @@
-# Accueil - ANS IG document core v0.1.0-snapsnot
+# Accueil - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * **Accueil**
@@ -7,7 +7,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ImplementationGuide/ans.document.fr.core | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ImplementationGuide/ans.document.fr.core | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRDocumentCore |
 
  **Guide de mise en œuvre des documents dématérialisés produits en France dans le domaine sanitaire et le domaine médico-social.**
@@ -140,7 +140,7 @@ Pour les terminologies qui ne sont pas publiées dans le SMT, se renseigner aupr
   "resourceType" : "ImplementationGuide",
   "id" : "ans.document.fr.core",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ImplementationGuide/ans.document.fr.core",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRDocumentCore",
   "title" : "ANS IG document core",
   "status" : "draft",

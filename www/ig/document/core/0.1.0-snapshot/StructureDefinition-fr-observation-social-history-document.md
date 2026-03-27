@@ -1,4 +1,4 @@
-# Observation - FR Observation Social History Document - ANS IG document core v0.1.0-snapsnot
+# Observation - FR Observation Social History Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-social-history-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-social-history-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRObservationSocialHistoryDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-observation-socia
   "resourceType" : "StructureDefinition",
   "id" : "fr-observation-social-history-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-social-history-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRObservationSocialHistoryDocument",
   "title" : "Observation - FR Observation Social History Document",
   "status" : "draft",

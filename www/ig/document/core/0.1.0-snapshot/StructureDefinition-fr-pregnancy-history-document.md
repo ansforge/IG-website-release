@@ -1,4 +1,4 @@
-# List - FR Pregnancy History Document - ANS IG document core v0.1.0-snapsnot
+# List - FR Pregnancy History Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-pregnancy-history-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-pregnancy-history-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRPregnancyHistoryDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-pregnancy-history
   "resourceType" : "StructureDefinition",
   "id" : "fr-pregnancy-history-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-pregnancy-history-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRPregnancyHistoryDocument",
   "title" : "List - FR Pregnancy History Document",
   "status" : "draft",

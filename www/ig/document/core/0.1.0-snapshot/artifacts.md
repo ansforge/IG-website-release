@@ -1,4 +1,4 @@
-# Artifacts Summary - ANS IG document core v0.1.0-snapsnot
+# Artifacts Summary - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**

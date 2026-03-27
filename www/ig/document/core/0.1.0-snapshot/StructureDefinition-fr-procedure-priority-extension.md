@@ -1,4 +1,4 @@
-# FR Procedure Priority Extension - ANS IG document core v0.1.0-snapsnot
+# FR Procedure Priority Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-priority-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-priority-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRProcedurePriorityExtension |
 
 Extension permettant d’indiquer d’indique la priorité clinique de l’observation.
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-procedure-priorit
   "resourceType" : "StructureDefinition",
   "id" : "fr-procedure-priority-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-procedure-priority-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRProcedurePriorityExtension",
   "title" : "FR Procedure Priority Extension",
   "status" : "draft",

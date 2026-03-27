@@ -1,4 +1,4 @@
-# CDA - ANS IG document core v0.1.0-snapsnot
+# CDA - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Structure générale document**](structureGenerale.md)

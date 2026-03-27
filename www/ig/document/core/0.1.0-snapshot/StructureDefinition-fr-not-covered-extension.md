@@ -1,4 +1,4 @@
-# FR Not Covered Extension - ANS IG document core v0.1.0-snapsnot
+# FR Not Covered Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-not-covered-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-not-covered-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRNotCoveredExtension |
 
 Extension permettant d’indiquer si le traitement est non remboursable.
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-not-covered-exten
   "resourceType" : "StructureDefinition",
   "id" : "fr-not-covered-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-not-covered-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRNotCoveredExtension",
   "title" : "FR Not Covered Extension",
   "status" : "draft",

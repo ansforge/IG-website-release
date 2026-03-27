@@ -1,4 +1,4 @@
-# FR Human Name Document - ANS IG document core v0.1.0-snapsnot
+# FR Human Name Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-human-name-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-human-name-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRHumanNameDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-human-name-docume
   "resourceType" : "StructureDefinition",
   "id" : "fr-human-name-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-human-name-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRHumanNameDocument",
   "title" : "FR Human Name Document",
   "status" : "draft",

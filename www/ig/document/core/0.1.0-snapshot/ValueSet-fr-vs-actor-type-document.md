@@ -1,4 +1,4 @@
-# ValueSet - FR ValueSet Actor Type Document - ANS IG document core v0.1.0-snapsnot
+# ValueSet - FR ValueSet Actor Type Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-actor-type-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-actor-type-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRValueSetActorTypeDocument |
 
  
@@ -46,7 +46,7 @@ Jeu de valeurs pour les types d’acteurs.
   "resourceType" : "ValueSet",
   "id" : "fr-vs-actor-type-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-actor-type-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRValueSetActorTypeDocument",
   "title" : "ValueSet - FR ValueSet Actor Type Document",
   "status" : "draft",

@@ -1,4 +1,4 @@
-# FR Comparison Studies Extension - ANS IG document core v0.1.0-snapsnot
+# FR Comparison Studies Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-comparison-studies-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-comparison-studies-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRComparisonStudiesExtension |
 
 Examen de comparaison radiologique
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-comparison-studie
   "resourceType" : "StructureDefinition",
   "id" : "fr-comparison-studies-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-comparison-studies-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRComparisonStudiesExtension",
   "title" : "FR Comparison Studies Extension",
   "status" : "draft",

@@ -1,4 +1,4 @@
-# Modèle logique métier - FR LM Habitus et modes de vie - ANS IG document core v0.1.0-snapsnot
+# Modèle logique métier - FR LM Habitus et modes de vie - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-habitus-mode-de-vie | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-habitus-mode-de-vie | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRLMHabitusModeDeVie |
 
  
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-lm-habitus-mode-d
     "valueCode" : "can-be-target"
   }],
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-habitus-mode-de-vie",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRLMHabitusModeDeVie",
   "title" : "Modèle logique métier - FR LM Habitus et modes de vie",
   "status" : "draft",

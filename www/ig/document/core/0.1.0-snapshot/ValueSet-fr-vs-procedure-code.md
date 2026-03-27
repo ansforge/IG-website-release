@@ -1,4 +1,4 @@
-# ValueSet – FR ValueSet Codes d’actes - ANS IG document core v0.1.0-snapsnot
+# ValueSet – FR ValueSet Codes d’actes - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-procedure-code | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-procedure-code | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRValueSetProcedureCodeDocument |
 
  
@@ -51,7 +51,7 @@ Si aucun code approprié n’est disponible, l’acte peut être décrit en text
   "resourceType" : "ValueSet",
   "id" : "fr-vs-procedure-code",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ValueSet/fr-vs-procedure-code",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRValueSetProcedureCodeDocument",
   "title" : "ValueSet – FR ValueSet Codes d’actes",
   "status" : "draft",

@@ -1,4 +1,4 @@
-#  - ANS IG document core v0.1.0-snapsnot
+#  - ANS IG document core v0.1.0-snapshot
 
 ## : Binary/eDISP-MED-2024.01 - Change History
 

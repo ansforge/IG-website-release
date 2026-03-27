@@ -1,4 +1,4 @@
-# null - JSON Representation - ANS IG document core v0.1.0-snapsnot
+# null - JSON Representation - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

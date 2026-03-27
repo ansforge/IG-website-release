@@ -1,4 +1,4 @@
-# BIO-CR-BIO_2024.01_Microbiologie_V1 - JSON Representation - ANS IG document core v0.1.0-snapsnot
+# BIO-CR-BIO_2024.01_Microbiologie_V1 - JSON Representation - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

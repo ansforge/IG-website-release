@@ -1,4 +1,4 @@
-# Mapping Métier/CDA/FHIR : Codes-barres - ANS IG document core v0.1.0-snapsnot
+# Mapping Métier/CDA/FHIR : Codes-barres - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionBarCodesLMCDAFHIR | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionBarCodesLMCDAFHIR | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*: |
 
  
@@ -23,7 +23,7 @@ Mapping des éléments du modèle métier FRLMCodesAbarres vers la section CDA F
   "resourceType" : "ConceptMap",
   "id" : "FRSectionBarCodesLMCDAFHIR",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionBarCodesLMCDAFHIR",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "title" : "Mapping Métier/CDA/FHIR : \"Code à barres\"",
   "status" : "draft",
   "date" : "2026-03-23T13:48:54+00:00",

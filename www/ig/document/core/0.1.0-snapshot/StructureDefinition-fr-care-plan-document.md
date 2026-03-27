@@ -1,4 +1,4 @@
-# CarePlan - FR Care Plan Document - ANS IG document core v0.1.0-snapsnot
+# CarePlan - FR Care Plan Document - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-care-plan-document | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-care-plan-document | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRCarePlanDocument |
 
  
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-care-plan-documen
   "resourceType" : "StructureDefinition",
   "id" : "fr-care-plan-document",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-care-plan-document",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRCarePlanDocument",
   "title" : "CarePlan - FR Care Plan Document",
   "status" : "draft",

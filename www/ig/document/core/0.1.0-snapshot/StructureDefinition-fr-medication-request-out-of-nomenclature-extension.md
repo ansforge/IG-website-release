@@ -1,4 +1,4 @@
-# FR Medication Request Out Of Nomenclature Extension - ANS IG document core v0.1.0-snapsnot
+# FR Medication Request Out Of Nomenclature Extension - ANS IG document core v0.1.0-snapshot
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-request-out-of-nomenclature-extension | *Version*:0.1.0-snapsnot |
+| *Official URL*:https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-request-out-of-nomenclature-extension | *Version*:0.1.0-snapshot |
 | Draft as of 2026-03-23 | *Computable Name*:FRMedicationRequestOutOfNomenclatureExtension |
 
 Extension permettant d’indiquer si le traitement prescrit est hors autorisation de mise sur le marché (AMM)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-fr-medication-reques
   "resourceType" : "StructureDefinition",
   "id" : "fr-medication-request-out-of-nomenclature-extension",
   "url" : "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-request-out-of-nomenclature-extension",
-  "version" : "0.1.0-snapsnot",
+  "version" : "0.1.0-snapshot",
   "name" : "FRMedicationRequestOutOfNomenclatureExtension",
   "title" : "FR Medication Request Out Of Nomenclature Extension",
   "status" : "draft",
