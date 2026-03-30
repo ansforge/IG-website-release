@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/ruim/CodeSystem/cs-ruim-property-codes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cs-ruim-property-codes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CodeSystem cs-ruim-property-codes</b></p><a name=\"cs-ruim-property-codes\"> </a><a name=\"hccs-ruim-property-codes\"> </a><p>This case-sensitive code system <code>http://data.esante.gouv.fr/ansm/medicament</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Affichage</b></td><td><b>Définition</b></td></tr><tr><td style=\"white-space:nowrap\">packageType<a name=\"cs-ruim-property-codes-packageType\"> </a></td><td>Type de conditionnement</td><td>Type de contenant du médicament (ex : flacon, plaquette, ampoule).</td></tr><tr><td style=\"white-space:nowrap\">packageSize<a name=\"cs-ruim-property-codes-packageSize\"> </a></td><td>Taille du conditionnement</td><td>Nombre d'unités dans le conditionnement (ex : 1, 4, 28).</td></tr><tr><td style=\"white-space:nowrap\">doseForm<a name=\"cs-ruim-property-codes-doseForm\"> </a></td><td>Forme pharmaceutique</td><td>Forme galénique du médicament (ex : comprimé, solution pour perfusion).</td></tr><tr><td style=\"white-space:nowrap\">brandName<a name=\"cs-ruim-property-codes-brandName\"> </a></td><td>Nom de marque</td><td>Dénomination commerciale du médicament.</td></tr><tr><td style=\"white-space:nowrap\">activeStrength<a name=\"cs-ruim-property-codes-activeStrength\"> </a></td><td>Dosage du principe actif</td><td>Quantité de principe actif par unité de prise (ex : 10 mg pour 1 ml).</td></tr><tr><td style=\"white-space:nowrap\">activeIngredient<a name=\"cs-ruim-property-codes-activeIngredient\"> </a></td><td>Principe actif</td><td>Dénomination commune internationale (DCI) du principe actif.</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://data.esante.gouv.fr/ansm/medicament"^^xsd:anyURI ;
+     fhir:l <http://data.esante.gouv.fr/ansm/medicament>
+  ] ; # 
+  fhir:version [ fhir:v "0.0.1"] ; # 
+  fhir:name [ fhir:v "CSRuimPropertyCodes"] ; # 
+  fhir:title [ fhir:v "RUIM - Codes des propriétés médicament"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-30T15:24:56+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem définissant les codes de propriétés utilisés dans le CodeSystem RUIM pour décrire les spécialités pharmaceutiques."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "packageType" ] ;
+     fhir:display [ fhir:v "Type de conditionnement" ] ;
+     fhir:definition [ fhir:v "Type de contenant du médicament (ex : flacon, plaquette, ampoule)." ]
+  ] [
+     fhir:code [ fhir:v "packageSize" ] ;
+     fhir:display [ fhir:v "Taille du conditionnement" ] ;
+     fhir:definition [ fhir:v "Nombre d'unités dans le conditionnement (ex : 1, 4, 28)." ]
+  ] [
+     fhir:code [ fhir:v "doseForm" ] ;
+     fhir:display [ fhir:v "Forme pharmaceutique" ] ;
+     fhir:definition [ fhir:v "Forme galénique du médicament (ex : comprimé, solution pour perfusion)." ]
+  ] [
+     fhir:code [ fhir:v "brandName" ] ;
+     fhir:display [ fhir:v "Nom de marque" ] ;
+     fhir:definition [ fhir:v "Dénomination commerciale du médicament." ]
+  ] [
+     fhir:code [ fhir:v "activeStrength" ] ;
+     fhir:display [ fhir:v "Dosage du principe actif" ] ;
+     fhir:definition [ fhir:v "Quantité de principe actif par unité de prise (ex : 10 mg pour 1 ml)." ]
+  ] [
+     fhir:code [ fhir:v "activeIngredient" ] ;
+     fhir:display [ fhir:v "Principe actif" ] ;
+     fhir:definition [ fhir:v "Dénomination commune internationale (DCI) du principe actif." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
