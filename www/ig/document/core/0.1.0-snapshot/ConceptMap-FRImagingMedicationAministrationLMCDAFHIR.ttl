@@ -1,0 +1,186 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingMedicationAministrationLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRImagingMedicationAministrationLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRImagingMedicationAministrationLMCDAFHIR</b></p><a name=\"FRImagingMedicationAministrationLMCDAFHIR\"> </a><a name=\"hcFRImagingMedicationAministrationLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-administration-produit-de-sante.html\">Modèle logique métier - FR LM Administration produit de sante</a> to <a href=\"StructureDefinition-fr-cda-dicom-administration-produit-de-sante.html\">CDA - FR DICOM Administration produit de sante</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMAdministrationProduitDeSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante</td></tr><tr><td>FRLMAdministrationProduitDeSante.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.id</td></tr><tr><td>FRLMAdministrationProduitDeSante.description</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.text</td></tr><tr><td>FRLMAdministrationProduitDeSante.statut</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.statusCode</td></tr><tr><td>FRLMAdministrationProduitDeSante.voieAdministration</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.routeCode</td></tr><tr><td>FRLMAdministrationProduitDeSante.dose</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.doseQuantity</td></tr><tr><td>FRLMAdministrationProduitDeSante.rythme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.rateQuantity</td></tr><tr><td>FRLMAdministrationProduitDeSante.medicament.produit</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial</td></tr><tr><td>FRLMAdministrationProduitDeSante.medicament.produit.codeProduit</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.code</td></tr><tr><td>FRLMAdministrationProduitDeSante.medicament.produit.codeProduit.autreCodification</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.code.translation</td></tr><tr><td>FRLMAdministrationProduitDeSante.medicament.produit.nomMarque</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.name</td></tr><tr><td>FRLMAdministrationProduitDeSante.medicament.produit.numeroLot</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.lotNumberText</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-dicom-administration-produit-de-sante.html\">CDA - FR DICOM Administration produit de sante</a> to <a href=\"StructureDefinition-fr-medication-administration-document.html\">MedicationAdministration - FR Medication Administration Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.identifier</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.category.text</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.statusCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.status</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.routeCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.dosage.route</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.doseQuantity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.dosage.dose</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.rateQuantity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.dosage.rate[x]</td></tr><tr><td>FRCDADICOMAdministrationProduitDeSante.consumable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationAdministrationDocument.medication:FRMedicationDocument</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingMedicationAministrationLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingMedicationAministrationLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Metier/CDA/FHIR : \"Administration de produit de sante en imagerie\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modele metier FRLMAdministrationProduitDeSante vers le profil CDA FRCDADICOMAdministrationProduitDeSante, puis vers le profil FHIR FRMedicationAdministrationDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-administration-produit-de-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-administration-produit-de-sante>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-administration-produit-de-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-administration-produit-de-sante>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.description" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.statut" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.statusCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.voieAdministration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.routeCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.dose" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.doseQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.rythme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.rateQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.medicament.produit" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.medicament.produit.codeProduit" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.medicament.produit.codeProduit.autreCodification" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.code.translation" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.medicament.produit.nomMarque" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMAdministrationProduitDeSante.medicament.produit.numeroLot" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable.manufacturedProduct.manufacturedMaterial.lotNumberText" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-administration-produit-de-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-administration-produit-de-sante>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-administration-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-administration-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.category.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.statusCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.status" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.routeCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.dosage.route" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.doseQuantity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.dosage.dose" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.rateQuantity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.dosage.rate[x]" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMAdministrationProduitDeSante.consumable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationAdministrationDocument.medication:FRMedicationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

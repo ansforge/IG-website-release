@@ -1,0 +1,209 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRAdverseEventLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRAdverseEventLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRAdverseEventLMCDAFHIR</b></p><a name=\"FRAdverseEventLMCDAFHIR\"> </a><a name=\"hcFRAdverseEventLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-effet-indesirable.html\">Modèle logique métier - FR LM Effet indesirable</a> to <a href=\"StructureDefinition-fr-cda-effet-indesirable.html\">CDA - FR Effet indesirable</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable</td></tr><tr><td>FRLMEffetIndesirable.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.id</td></tr><tr><td>FRLMEffetIndesirable.typeEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.code</td></tr><tr><td>FRLMEffetIndesirable.description</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.text</td></tr><tr><td>FRLMEffetIndesirable.dateDebut</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.effectiveTime.low</td></tr><tr><td>FRLMEffetIndesirable.dateFin</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.effectiveTime.high</td></tr><tr><td>FRLMEffetIndesirable.valeur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.value</td></tr><tr><td>FRLMEffetIndesirable.traitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.entryRelationship:frTraitement</td></tr><tr><td>FRLMEffetIndesirable.probleme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.entryRelationship:frProbleme</td></tr><tr><td>FRLMEffetIndesirable.imputabiliteEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.entryRelationship:frImputabiliteEffetIndesirable</td></tr><tr><td>FRLMEffetIndesirable.graviteEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.entryRelationship:frGraviteEffetIndesirable</td></tr><tr><td>FRLMEffetIndesirable.evolutionEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAEffetIndesirable.entryRelationship:frEvolutionEffetIndesirable</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-effet-indesirable.html\">CDA - FR Effet indesirable</a> to <a href=\"StructureDefinition-fr-adverse-event-document.html\">AdverseEvent - FR adverse event Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDAEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument</td></tr><tr><td>FRCDAEffetIndesirable.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.identifier</td></tr><tr><td>FRCDAEffetIndesirable.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.category</td></tr><tr><td>FRCDAEffetIndesirable.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.category.text</td></tr><tr><td>FRCDAEffetIndesirable.effectiveTime.low</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.date</td></tr><tr><td>FRCDAEffetIndesirable.effectiveTime.high</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.detected</td></tr><tr><td>FRCDAEffetIndesirable.value</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>FRCDAEffetIndesirable.entryRelationship:frTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.suspectEntity.instance</td></tr><tr><td>FRCDAEffetIndesirable.entryRelationship:frProbleme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.resultingCondition</td></tr><tr><td>FRCDAEffetIndesirable.entryRelationship:frImputabiliteEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.suspectEntity.causality</td></tr><tr><td>FRCDAEffetIndesirable.entryRelationship:frGraviteEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.seriousness</td></tr><tr><td>FRCDAEffetIndesirable.entryRelationship:frEvolutionEffetIndesirable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRAdverseEventDocument.outcome</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRAdverseEventLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRAdverseEventLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Effet Indésirable\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMEvenementIndesirable vers le profil CDA FRCDAEvenementIndesirable, puis vers le profil FHIR FRAdverseEvent."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-effet-indesirable"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-effet-indesirable>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-effet-indesirable"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-effet-indesirable>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.typeEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.description" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.dateDebut" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.effectiveTime.low" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.dateFin" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.effectiveTime.high" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.valeur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.value" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.traitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frTraitement" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.probleme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frProbleme" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.imputabiliteEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frImputabiliteEffetIndesirable" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.graviteEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frGraviteEffetIndesirable" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMEffetIndesirable.evolutionEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frEvolutionEffetIndesirable" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-effet-indesirable"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-effet-indesirable>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-adverse-event-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-adverse-event-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.category" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.category.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.effectiveTime.low" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.date" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.effectiveTime.high" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.detected" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.value" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.suspectEntity.instance" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frProbleme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.resultingCondition" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frImputabiliteEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.suspectEntity.causality" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frGraviteEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.seriousness" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAEffetIndesirable.entryRelationship:frEvolutionEffetIndesirable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRAdverseEventDocument.outcome" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,186 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingSeriesLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRImagingSeriesLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRImagingSeriesLMCDAFHIR</b></p><a name=\"FRImagingSeriesLMCDAFHIR\"> </a><a name=\"hcFRImagingSeriesLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-serie-imagerie.html\">Modèle logique métier - FR LM Serie imagerie</a> to <a href=\"StructureDefinition-fr-cda-dicom-serie-imagerie.html\">CDA - FR DICOM Serie imagerie</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMSerieImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie</td></tr><tr><td>FRLMSerieImagerie.uuidSerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.id</td></tr><tr><td>FRLMSerieImagerie.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.code</td></tr><tr><td>FRLMSerieImagerie.description</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.text</td></tr><tr><td>FRLMSerieImagerie.date</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.effectiveTime</td></tr><tr><td>FRLMSerieImagerie.instanceSOP</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation</td></tr><tr><td>FRLMSerieImagerie.referenceWado</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text</td></tr><tr><td>FRLMSerieImagerie.referenceWado.iHEInvokeImage</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference</td></tr><tr><td>FRLMSerieImagerie.referenceWado.reference</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference</td></tr><tr><td>FRLMSerieImagerie.referenceWado.typeMedia</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.mediaType</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-dicom-serie-imagerie.html\">CDA - FR DICOM Serie imagerie</a> to <a href=\"StructureDefinition-fr-imaging-study-document.html\">ImagingStudy - FR Imaging study Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>FRCDADICOMSerieImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.uid</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.code</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">FRImagingStudyDocument.series ne possède pas d'élément 'code' pour mapper cette donnée.</td></tr><tr><td>FRCDADICOMSerieImagerie.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.description</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.effectiveTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.started</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.instance</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.endpoint</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.endpoint.connectionType</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.endpoint.address</td><td/></tr><tr><td>FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.mediaType</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRImagingStudyDocument.series.endpoint.payloadMimeType</td><td/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingSeriesLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRImagingSeriesLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Série d'imagerie\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMSerieImagerie vers le profil CDA FRCDADICOMSerieImagerie, puis vers le profil FHIR FRImagingStudyDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-serie-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-serie-imagerie>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-serie-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-serie-imagerie>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMSerieImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.uuidSerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.description" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.date" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.instanceSOP" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.referenceWado" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.referenceWado.iHEInvokeImage" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.referenceWado.reference" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSerieImagerie.referenceWado.typeMedia" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.mediaType" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-serie-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-serie-imagerie>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-imaging-study-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-imaging-study-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.uid" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.code" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "FRImagingStudyDocument.series ne possède pas d'élément 'code' pour mapper cette donnée." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.description" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.effectiveTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.started" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.instance" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.endpoint" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.endpoint.connectionType" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.reference" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.endpoint.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMSerieImagerie.entryRelationship:frDICOMSOPInstanceObservation.text.mediaType" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRImagingStudyDocument.series.endpoint.payloadMimeType" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

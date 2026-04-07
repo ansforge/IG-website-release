@@ -1,0 +1,178 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionImagingActLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRSectionImagingActLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRSectionImagingActLMCDAFHIR</b></p><a name=\"FRSectionImagingActLMCDAFHIR\"> </a><a name=\"hcFRSectionImagingActLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-acte-imagerie.html\">Modèle logique métier - FR LM Acte d'imagerie</a> to <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie</code></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMActeImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie</td></tr><tr><td>FRLMActeImagerie.codeSection</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.code</td></tr><tr><td>FRLMActeImagerie.titreSection</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.title</td></tr><tr><td>FRLMActeImagerie.blocNarratif</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.text</td></tr><tr><td>FRLMActeImagerie.sousSection.complicationsActe</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.component:frDICOMComplications</td></tr><tr><td>FRLMActeImagerie.sousSection.expositionsRadiations</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.component:frDICOMExpositionsAuxRadiations</td></tr><tr><td>FRLMActeImagerie.sousSection.catalogueObjects</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.component:frDICOMObjectCatalog</td></tr><tr><td>FRLMActeImagerie.entree.techniqueImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.entry.frDICOMTechniqueImagerie</td></tr><tr><td>FRLMActeImagerie.entree.administrationProduits</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADICOMActeImagerie.entry.frDICOMAdministrationProduitDeSante</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie</code> to <a href=\"StructureDefinition-fr-composition-document.html\">FR Composition Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDADICOMActeImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy</td></tr><tr><td>FRCDADICOMActeImagerie.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.code</td></tr><tr><td>FRCDADICOMActeImagerie.title</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.title</td></tr><tr><td>FRCDADICOMActeImagerie.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.text</td></tr><tr><td>FRCDADICOMActeImagerie.component:frDICOMComplications</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.section:Complications</td></tr></table><hr/><p><b>Groupe 3 </b>Mapping de <code>terminologie de référence (CodeSystem) non spécifiée</code> to <code>terminologie de référence (CodeSystem) non spécifiée</code></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>FRCDADICOMActeImagerie.component:frDICOMExpositionsAuxRadiations</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.section:radiationExposure</td><td/></tr><tr><td>FRCDADICOMActeImagerie.component:frDICOMObjectCatalog</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.section:ObjectCatalog</td><td/></tr><tr><td>FRCDADICOMActeImagerie.entry.frDICOMTechniqueImagerie</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.entry:ImagingStudy.procedureReference:FRProcedureImagingDocument</td><td>Correspondance avec une référence à une ressource FRProcedureImagingDocument de type Procedure dans l'entrée de la section ImagingStudy.\nsection:ImagingStudy = Reference(FRImagingStudyDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference = Reference(FRProcedureImagingDocument).</td></tr><tr><td>FRCDADICOMActeImagerie.entry.frDICOMAdministrationProduitDeSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCompositionDocument.section:ImagingStudy.entry:ImagingStudy.procedureReference:FRProcedureImagingDocument.partOf:FRMedicationAdministrationDocument</td><td>Correspondance avec une référence à une ressource FRMedicationAdministrationDocument de type MedicationAdministration dans l'entrée de la section ImagingStudy.\nsection:ImagingStudy = Reference(FRImagingStudyDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference = Reference(FRProcedureImagingDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference.partOf = Reference(FRMedicationAdministrationDocument).</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionImagingActLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRSectionImagingActLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Acte d'imagerie\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMActeImagerie vers la section CDA FRCDADICOMActeImagerie, puis vers le profil FHIR FRCompositionDocument.section:ImagingStudy."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-acte-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-acte-imagerie>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMActeImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.codeSection" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.titreSection" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.title" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.blocNarratif" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.sousSection.complicationsActe" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMComplications" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.sousSection.expositionsRadiations" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMExpositionsAuxRadiations" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.sousSection.catalogueObjects" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMObjectCatalog" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.entree.techniqueImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.entry.frDICOMTechniqueImagerie" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMActeImagerie.entree.administrationProduits" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADICOMActeImagerie.entry.frDICOMAdministrationProduitDeSante" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-dicom-acte-imagerie>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-composition-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.title" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.title" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMComplications" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.section:Complications" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMExpositionsAuxRadiations" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.section:radiationExposure" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.component:frDICOMObjectCatalog" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.section:ObjectCatalog" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.entry.frDICOMTechniqueImagerie" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.entry:ImagingStudy.procedureReference:FRProcedureImagingDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Correspondance avec une référence à une ressource FRProcedureImagingDocument de type Procedure dans l'entrée de la section ImagingStudy.\nsection:ImagingStudy = Reference(FRImagingStudyDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference = Reference(FRProcedureImagingDocument)." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADICOMActeImagerie.entry.frDICOMAdministrationProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCompositionDocument.section:ImagingStudy.entry:ImagingStudy.procedureReference:FRProcedureImagingDocument.partOf:FRMedicationAdministrationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Correspondance avec une référence à une ressource FRMedicationAdministrationDocument de type MedicationAdministration dans l'entrée de la section ImagingStudy.\nsection:ImagingStudy = Reference(FRImagingStudyDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference = Reference(FRProcedureImagingDocument) et section:ImagingStudy.entry:ImagingStudy.procedureReference.partOf = Reference(FRMedicationAdministrationDocument)." ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

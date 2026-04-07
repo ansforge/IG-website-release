@@ -1,0 +1,124 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-patient-usager","fr-lm-patient-usager","","","",1,1,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Patient Usager","Patient/Usager concerné par le document.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-patient-usager.identifiantPatient","fr-lm-patient-usager.identifiantPatient","","","",1,*,"","","","Identifier {[]} {[]}
+","Identifiant du patient / usager.
+- Première occurrence obligatoire pour un document mis en partage dans un système d’information de santé partagé : Matricule INS du patient/usager tel que défini dans le cadre juridique.
+- Occurrence(s) suivante(s) (optionnelles) : Identifiant connu pour le patient/usager dans le système d’information du producteur du document (IPP, NIP, etc.).","Identifiant du patient / usager.
+- Première occurrence obligatoire pour un document mis en partage dans un système d’information de santé partagé : Matricule INS du patient/usager tel que défini dans le cadre juridique.
+- Occurrence(s) suivante(s) (optionnelles) : Identifiant connu pour le patient/usager dans le système d’information du producteur du document (IPP, NIP, etc.).","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.identifiantPatient",1,*,"",""
+"fr-lm-patient-usager.adresse","fr-lm-patient-usager.adresse","","","",0,*,"","","","Address {[]} {[]}
+","Adresse géopostale du patient/usager.","Adresse géopostale du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.adresse",0,*,"",""
+"fr-lm-patient-usager.coordonneesTelecom","fr-lm-patient-usager.coordonneesTelecom","","","",0,*,"","","","ContactPoint {[]} {[]}
+","Coordonnées télécom du patient/usager (numéro de téléphone, adresse e-mail, …).","Coordonnées télécom du patient/usager (numéro de téléphone, adresse e-mail, …).","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.coordonneesTelecom",0,*,"",""
+"fr-lm-patient-usager.personnePhysique","fr-lm-patient-usager.personnePhysique","","","",1,1,"","","","Base {[]} {[]}
+","Eléments permettant de décrire l’identité du patient/usager, son sexe, sa date et son lieu de naissance, son (ses) représentant(s), etc...","Eléments permettant de décrire l’identité du patient/usager, son sexe, sa date et son lieu de naissance, son (ses) représentant(s), etc...","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique",1,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient","","","",1,1,"","","","Base {[]} {[]}
+","Noms et prénoms du patient/usager.","Noms et prénoms du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient",1,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom","","","",1,*,"","","","Base {[]} {[]}
+","Nom du patient/usager.","Nom du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom",1,*,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomNaissance","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomNaissance","","","",0,1,"","","","string {[]} {[]}
+","Nom de naissance (ou nom de famille) du patient/usager. 
+      - Obligatoire si le matricule INS est présent.","Nom de naissance (ou nom de famille) du patient/usager. 
+      - Obligatoire si le matricule INS est présent.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomNaissance",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomUtilise","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomUtilise","","","",0,1,"","","","string {[]} {[]}
+","Nom utilisé du patient/usager.","Nom utilisé du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.nom.nomUtilise",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom","","","",1,*,"","","","Base {[]} {[]}
+","Prénom du patient/usager.","Prénom du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom",1,*,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.listePrenoms","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.listePrenoms","","","",0,1,"","","","string {[]} {[]}
+","Liste des prénoms de l'acte de naissance.Obligatoire si le matricule INS est présent.","Liste des prénoms de l'acte de naissance.Obligatoire si le matricule INS est présent.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.listePrenoms",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.premierPrenom","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.premierPrenom","","","",0,1,"","","","string {[]} {[]}
+","Premier prénom de l'acte de naissance.Obligatoire si le matricule INS est présent","Premier prénom de l'acte de naissance.Obligatoire si le matricule INS est présent","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.premierPrenom",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.prenomUtilise","fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.prenomUtilise","","","",0,1,"","","","string {[]} {[]}
+","Prénom utilisé.","Prénom utilisé.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.nomsPrenomsPatient.prenom.prenomUtilise",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.sexe","fr-lm-patient-usager.personnePhysique.sexe","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Sexe administratif du patient/usager.","Sexe administratif du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.sexe",1,1,"",""
+"fr-lm-patient-usager.personnePhysique.dateNaissance","fr-lm-patient-usager.personnePhysique.dateNaissance","","","",1,1,"","","","dateTime {[]} {[]}
+","Date et heure de naissance du patient/usager.","Date et heure de naissance du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.dateNaissance",1,1,"",""
+"fr-lm-patient-usager.personnePhysique.indicateurDeces","fr-lm-patient-usager.personnePhysique.indicateurDeces","","","",0,1,"","","","boolean {[]} {[]}
+","Patient/usager décédé","Patient/usager décédé","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.indicateurDeces",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.dateDeces","fr-lm-patient-usager.personnePhysique.dateDeces","","","",0,1,"","","","dateTime {[]} {[]}
+","Date et heure du décès du patient/usager.","Date et heure du décès du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.dateDeces",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.grossesseMultiple","fr-lm-patient-usager.personnePhysique.grossesseMultiple","","","",0,1,"","","","boolean {[]} {[]}
+","Patient/usager né d'une grossesse multiple.","Patient/usager né d'une grossesse multiple.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.grossesseMultiple",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.numeroOrdreNaissance","fr-lm-patient-usager.personnePhysique.numeroOrdreNaissance","","","",0,1,"","","","string {[]} {[]}
+","Numéro d’ordre de naissance.","Numéro d’ordre de naissance.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.numeroOrdreNaissance",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient","fr-lm-patient-usager.personnePhysique.representantPatient","","","",0,*,"","","","Base {[]} {[]}
+","Représentant du patient/usager.","Représentant du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient",0,*,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.adresse","fr-lm-patient-usager.personnePhysique.representantPatient.adresse","","","",0,*,"","","","Address {[]} {[]}
+","Adresse géopostale.","Adresse géopostale.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.adresse",0,*,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.coordonneesTelecom","fr-lm-patient-usager.personnePhysique.representantPatient.coordonneesTelecom","","","",0,*,"","","","ContactPoint {[]} {[]}
+","Coordonnées télécom.","Coordonnées télécom.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.coordonneesTelecom",0,*,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient","fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient","","","",0,1,"","","","Base {[]} {[]}
+","Personne représentant le patient/usager.","Personne représentant le patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient","fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient","","","",1,1,"","","","Base {[]} {[]}
+","Noms et Prénoms du représentant.","Noms et Prénoms du représentant.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient",1,1,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.nom","fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.nom","","","",1,3,"","","","string {[]} {[]}
+","Nom du représentant.","Nom du représentant.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.nom",1,3,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.prenom","fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.prenom","","","",0,*,"","","","string {[]} {[]}
+","Prénom du représentant.","Prénom du représentant.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.personneRepresentantPatient.nomsPrenomsRepresentantPatient.prenom",0,*,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient","fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient","","","",0,1,"","","","Base {[]} {[]}
+","Structure représentant le patient/usager.","Structure représentant le patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.identifiant","fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.identifiant","","","",0,1,"","","","Identifier {[]} {[]}
+","Identifiant de la structure.","Identifiant de la structure.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.identifiant",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.nom","fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.nom","","","",0,1,"","","","string {[]} {[]}
+","Nom de la structure.","Nom de la structure.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.representantPatient.structureRepresentantPatient.nom",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.lieuNaissance","fr-lm-patient-usager.personnePhysique.lieuNaissance","","","",0,1,"","","","Base {[]} {[]}
+","Lieu de naissance.
+  - Obligatoire si le matricule INS est présent pour porter le code officiel géographique (COG) du lieu de naissance.
+  - Le lieu de naissance est constitué du nom et/ou de l’adresse du lieu de naissance du patient/usager.","Lieu de naissance.
+  - Obligatoire si le matricule INS est présent pour porter le code officiel géographique (COG) du lieu de naissance.
+  - Le lieu de naissance est constitué du nom et/ou de l’adresse du lieu de naissance du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.lieuNaissance",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.nomLieuNaissance","fr-lm-patient-usager.personnePhysique.lieuNaissance.nomLieuNaissance","","","",0,1,"","","","string {[]} {[]}
+","Nom du lieu de naissance du patient/usager.","Nom du lieu de naissance du patient/usager.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.lieuNaissance.nomLieuNaissance",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance","","","",0,1,"","","","Address {[]} {[]}
+","Adresse et code officiel géographique du lieu de naissance.","Adresse et code officiel géographique du lieu de naissance.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.id","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.extension","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.use","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.use","","","",0,1,"","Y","Y","code {[]} {[]}
+","home | work | temp | old | billing - purpose of this address","The purpose of this address.","Applications can assume that an address is current unless it explicitly says that it is temporary or old.","Allows an appropriate address to be chosen from a list of many.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""home""/>","","",,"required","The use of an address.","http://hl7.org/fhir/ValueSet/address-use|4.0.1","",,,,"Address.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.type","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.type","","","",0,1,"","","Y","code {[]} {[]}
+","postal | physical | both","Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.","The definition of Address states that ""address is intended to describe postal addresses, not physical locations"". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""both""/>","","",,"required","The type of an address (physical / postal).","http://hl7.org/fhir/ValueSet/address-type|4.0.1","",,,,"Address.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.text","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.text","","","",0,1,"","","Y","string {[]} {[]}
+","Text representation of the address","Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street, Erewhon 9132""/>","","",,,,,"",,,,"Address.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.line","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.line","","","",0,*,"","","Y","string {[]} {[]}
+","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.city","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.city","","Municpality
+","",0,1,"","","Y","string {[]} {[]}
+","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.district","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.district","","County
+","",0,1,"","","Y","string {[]} {[]}
+","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.state","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.state","","Province
+Territory","",0,1,"","","Y","string {[]} {[]}
+","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,,,,"",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.postalCode","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.postalCode","","Zip
+","",0,1,"","","Y","string {[]} {[]}
+","Postal code for area","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.country","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.country","","","",0,1,"","","Y","string {[]} {[]}
+","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.period","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.period","","","",0,1,"","","Y","Period {[]} {[]}
+","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
+  <start value=""2010-03-23""/>
+  <end value=""2010-07-01""/>
+</valuePeriod>","","",,,,,"",,,,"Address.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.codeOfficielGeographiqueLieuNaissance","fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.codeOfficielGeographiqueLieuNaissance","","","",0,1,"","","","string {[]} {[]}
+","Code Officiel Géographique (COG) de la commune ou du pays du lieu de naissance.
+     - Le COG est obligatoire si le matricule INS est présent.","Code Officiel Géographique (COG) de la commune ou du pays du lieu de naissance.
+     - Le COG est obligatoire si le matricule INS est présent.","","","","","","","","","",,,,,"",,,,"fr-lm-patient-usager.personnePhysique.lieuNaissance.adresseLieuNaissance.codeOfficielGeographiqueLieuNaissance",0,1,"",""

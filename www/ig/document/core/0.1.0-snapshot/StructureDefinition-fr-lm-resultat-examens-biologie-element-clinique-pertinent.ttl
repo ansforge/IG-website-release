@@ -1,0 +1,639 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultat-examens-biologie-element-clinique-pertinent> a fhir:StructureDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : DéfinitionStructure fr-lm-resultat-examens-biologie-element-clinique-pertinent</b></p><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Le nom logique de l'élément\">Nom</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Informations sur l'utilisation de l'élément\">Drapeaux</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Nombre minimum et maximum de fois que l'élément peut apparaître dans l'instance\">Card.</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Référence au type de l'élément\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Informations supplémentaires sur l'élément\">Description et contraintes</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent\" title=\"Résultat d'examens de biologie / élement clinique pertinent\">fr-lm-resultat-examens-biologie-element-clinique-pertinent</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.5\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.5\">*</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://build.fhir.org/types.html#Base\">Base</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Modèle logique métier - FR LM Résultat d'examens de biologie / élement clinique pertinent<br/><span style=\"font-weight:bold\">Les instances de ce modèle logique peuvent être la cible d'une référence</span></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant\" title=\"#x9;Identifiant du résultat\">identifiant</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">	Identifiant du résultat</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification\" title=\"Code d'identification de l'analyse ou de l'observation\">codeIdentification</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Code d'identification de l'analyse ou de l'observation</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée primitif\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut\" title=\"Niveau de complétude\">statut</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Niveau de complétude</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Type de donnée primitif\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat\" title=\"Date et heure de ce résultat\">dateResultat</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Date et heure de ce résultat</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat\" title=\"Valeur du résultat\">valeurResultat</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Valeur du résultat</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation\" title=\"Code d'interprétation\">interpretation</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Code d'interprétation</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode\" title=\"Méthode ou technique employée\">methode</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Méthode ou technique employée</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_choice.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Choix de types\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]\" title=\"Sujet non humain ou Patient avec sujet non humain\">choice[x]</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice_x_\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Sujet non humain ou Patient avec sujet non humain</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <span title=\"Sujet non humain\">choiceFr-lm-sujet-non-humain</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-sujet-non-humain.html\">fr-lm-sujet-non-humain</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <span title=\"Patient avec sujet non humain\">choiceFr-lm-patient-sujet-non-humain</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-patient-sujet-non-humain.html\">fr-lm-patient-sujet-non-humain</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant\" title=\"Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs.\">laboratoireExecutant</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-laboratoire-executant.html\">fr-lm-laboratoire-executant</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs.<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur\" title=\"Auteur\">auteur</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-auteur.html\">fr-lm-auteur</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Auteur<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur\" title=\"Valideur de ces résultats\">valideur</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-participant-corps.html\">fr-lm-participant-corps</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Valideur de ces résultats</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable\" title=\"Responsable de cet examen\">responsable</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-participant-corps.html\">fr-lm-participant-corps</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Responsable de cet examen</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique\" title=\"Dispositif automatique impliqué dans la production des résultats\">dispositifAutomatique</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-participant-corps.html\">fr-lm-participant-corps</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Dispositif automatique impliqué dans la production des résultats<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire\" title=\"Commentaire d'interprétation des résultats\">commentaire</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-commentaire-er.html\">fr-lm-commentaire-er</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Commentaire d'interprétation des résultats<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Ressource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement\" title=\"Prélèvement\">prelevement</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-fr-lm-prelevement.html\">fr-lm-prelevement</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Prélèvement<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs\" title=\"Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. #xA; - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage.\">resultatsAnterieurs</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Base</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. \n - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage.<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Type de donnée\" class=\"hierarchy\"/> <a href=\"StructureDefinition-fr-lm-resultat-examens-biologie-element-clinique-pertinent-definitions.html#fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference\" title=\"Intervalles de référence\">intervallesReference</a><a name=\"fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Base</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Intervalles de référence</td></tr>#xD;\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Légende pour ce format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation pour ce format</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "can-be-target"
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultat-examens-biologie-element-clinique-pertinent"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultat-examens-biologie-element-clinique-pertinent>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:name [ fhir:v "FRLMResultatExamensBiologieElementCliniquePertinent"] ; # 
+  fhir:title [ fhir:v "Modèle logique métier - FR LM Résultat d'examens de biologie / élement clinique pertinent"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Résultat d'examens de biologie / élement clinique pertinent"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:kind [ fhir:v "logical"] ; # 
+  fhir:abstract [ fhir:v false] ; # 
+  fhir:type [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultat-examens-biologie-element-clinique-pertinent"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-resultat-examens-biologie-element-clinique-pertinent>
+  ] ; # 
+  fhir:baseDefinition [
+     fhir:v "http://hl7.org/fhir/StructureDefinition/Base"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/StructureDefinition/Base>
+  ] ; # 
+  fhir:derivation [ fhir:v "specialization"] ; # 
+  fhir:snapshot [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version>
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "4.0.1"
+       ]
+     ] ) ;
+     fhir:element ( [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent" ] ;
+       fhir:short [ fhir:v "Modèle logique métier - FR LM Résultat d'examens de biologie / élement clinique pertinent" ] ;
+       fhir:definition [ fhir:v "Résultat d'examens de biologie / élement clinique pertinent" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "Base" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:isModifier [ fhir:v false ]
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant" ] ;
+       fhir:short [ fhir:v "	Identifiant du résultat" ] ;
+       fhir:definition [ fhir:v "	Identifiant du résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Identifier"^^xsd:anyURI ;
+           fhir:l fhir:Identifier
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification" ] ;
+       fhir:short [ fhir:v "Code d'identification de l'analyse ou de l'observation" ] ;
+       fhir:definition [ fhir:v "Code d'identification de l'analyse ou de l'observation" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut" ] ;
+       fhir:short [ fhir:v "Niveau de complétude" ] ;
+       fhir:definition [ fhir:v "Niveau de complétude" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut" ] ;
+         fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat" ] ;
+       fhir:short [ fhir:v "Date et heure de ce résultat" ] ;
+       fhir:definition [ fhir:v "Date et heure de ce résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "dateTime"^^xsd:anyURI ;
+           fhir:l fhir:dateTime
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat" ] ;
+       fhir:short [ fhir:v "Valeur du résultat" ] ;
+       fhir:definition [ fhir:v "Valeur du résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation" ] ;
+       fhir:short [ fhir:v "Code d'interprétation" ] ;
+       fhir:definition [ fhir:v "Code d'interprétation" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode" ] ;
+       fhir:short [ fhir:v "Méthode ou technique employée" ] ;
+       fhir:definition [ fhir:v "Méthode ou technique employée" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]" ] ;
+       fhir:short [ fhir:v "Sujet non humain ou Patient avec sujet non humain" ] ;
+       fhir:definition [ fhir:v "Sujet non humain ou Patient avec sujet non humain" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-sujet-non-humain"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-sujet-non-humain>
+         ]
+       ] [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-patient-sujet-non-humain"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-patient-sujet-non-humain>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant" ] ;
+       fhir:short [ fhir:v "Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs." ] ;
+       fhir:definition [ fhir:v "Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-laboratoire-executant"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-laboratoire-executant>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur" ] ;
+       fhir:short [ fhir:v "Auteur" ] ;
+       fhir:definition [ fhir:v "Auteur" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur" ] ;
+       fhir:short [ fhir:v "Valideur de ces résultats" ] ;
+       fhir:definition [ fhir:v "Valideur de ces résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable" ] ;
+       fhir:short [ fhir:v "Responsable de cet examen" ] ;
+       fhir:definition [ fhir:v "Responsable de cet examen" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique" ] ;
+       fhir:short [ fhir:v "Dispositif automatique impliqué dans la production des résultats" ] ;
+       fhir:definition [ fhir:v "Dispositif automatique impliqué dans la production des résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire" ] ;
+       fhir:short [ fhir:v "Commentaire d'interprétation des résultats" ] ;
+       fhir:definition [ fhir:v "Commentaire d'interprétation des résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-commentaire-er"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-commentaire-er>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement" ] ;
+       fhir:short [ fhir:v "Prélèvement" ] ;
+       fhir:definition [ fhir:v "Prélèvement" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prelevement"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prelevement>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs" ] ;
+       fhir:short [ fhir:v "Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. \n - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage." ] ;
+       fhir:definition [ fhir:v "Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. \n - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "*" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Base"^^xsd:anyURI ;
+           fhir:l fhir:Base
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference" ] ;
+       fhir:short [ fhir:v "Intervalles de référence" ] ;
+       fhir:definition [ fhir:v "Intervalles de référence" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:base [
+         fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference" ] ;
+         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+         fhir:max [ fhir:v "1" ]
+       ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Base"^^xsd:anyURI ;
+           fhir:l fhir:Base
+         ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:differential [
+     fhir:element ( [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent" ] ;
+       fhir:short [ fhir:v "Modèle logique métier - FR LM Résultat d'examens de biologie / élement clinique pertinent" ] ;
+       fhir:definition [ fhir:v "Résultat d'examens de biologie / élement clinique pertinent" ]
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.identifiant" ] ;
+       fhir:short [ fhir:v "	Identifiant du résultat" ] ;
+       fhir:definition [ fhir:v "	Identifiant du résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Identifier"^^xsd:anyURI ;
+           fhir:l fhir:Identifier
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.codeIdentification" ] ;
+       fhir:short [ fhir:v "Code d'identification de l'analyse ou de l'observation" ] ;
+       fhir:definition [ fhir:v "Code d'identification de l'analyse ou de l'observation" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.statut" ] ;
+       fhir:short [ fhir:v "Niveau de complétude" ] ;
+       fhir:definition [ fhir:v "Niveau de complétude" ] ;
+       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "code"^^xsd:anyURI ;
+           fhir:l fhir:code
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dateResultat" ] ;
+       fhir:short [ fhir:v "Date et heure de ce résultat" ] ;
+       fhir:definition [ fhir:v "Date et heure de ce résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "dateTime"^^xsd:anyURI ;
+           fhir:l fhir:dateTime
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valeurResultat" ] ;
+       fhir:short [ fhir:v "Valeur du résultat" ] ;
+       fhir:definition [ fhir:v "Valeur du résultat" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.interpretation" ] ;
+       fhir:short [ fhir:v "Code d'interprétation" ] ;
+       fhir:definition [ fhir:v "Code d'interprétation" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.methode" ] ;
+       fhir:short [ fhir:v "Méthode ou technique employée" ] ;
+       fhir:definition [ fhir:v "Méthode ou technique employée" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "CodeableConcept"^^xsd:anyURI ;
+           fhir:l fhir:CodeableConcept
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.choice[x]" ] ;
+       fhir:short [ fhir:v "Sujet non humain ou Patient avec sujet non humain" ] ;
+       fhir:definition [ fhir:v "Sujet non humain ou Patient avec sujet non humain" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-sujet-non-humain"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-sujet-non-humain>
+         ]
+       ] [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-patient-sujet-non-humain"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-patient-sujet-non-humain>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.laboratoireExecutant" ] ;
+       fhir:short [ fhir:v "Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs." ] ;
+       fhir:definition [ fhir:v "Laboratoire sous-traitant. Apparaît à ce niveau si et et seulement si ce résultat a été produit par un laboratoire exécutant distinct du laboratoire exécutant déclaré aux niveaux supérieurs." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-laboratoire-executant"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-laboratoire-executant>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.auteur" ] ;
+       fhir:short [ fhir:v "Auteur" ] ;
+       fhir:definition [ fhir:v "Auteur" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.valideur" ] ;
+       fhir:short [ fhir:v "Valideur de ces résultats" ] ;
+       fhir:definition [ fhir:v "Valideur de ces résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.responsable" ] ;
+       fhir:short [ fhir:v "Responsable de cet examen" ] ;
+       fhir:definition [ fhir:v "Responsable de cet examen" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.dispositifAutomatique" ] ;
+       fhir:short [ fhir:v "Dispositif automatique impliqué dans la production des résultats" ] ;
+       fhir:definition [ fhir:v "Dispositif automatique impliqué dans la production des résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant-corps>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.commentaire" ] ;
+       fhir:short [ fhir:v "Commentaire d'interprétation des résultats" ] ;
+       fhir:definition [ fhir:v "Commentaire d'interprétation des résultats" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-commentaire-er"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-commentaire-er>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.prelevement" ] ;
+       fhir:short [ fhir:v "Prélèvement" ] ;
+       fhir:definition [ fhir:v "Prélèvement" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prelevement"^^xsd:anyURI ;
+           fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prelevement>
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.resultatsAnterieurs" ] ;
+       fhir:short [ fhir:v "Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. \n - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage." ] ;
+       fhir:definition [ fhir:v "Résultats antérieurs. Plusieurs résultats antérieurs peuvent être ajoutés. \n - Ils doivent être comparables avec le résultat rendu, c'est-à-dire obtenus suivant la même méthode ou une méthode comparable, et exprimés dans la même unité ou dans le même système de codage." ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "*" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Base"^^xsd:anyURI ;
+           fhir:l fhir:Base
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference" ] ;
+       fhir:path [ fhir:v "fr-lm-resultat-examens-biologie-element-clinique-pertinent.intervallesReference" ] ;
+       fhir:short [ fhir:v "Intervalles de référence" ] ;
+       fhir:definition [ fhir:v "Intervalles de référence" ] ;
+       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type ( [
+         fhir:code [
+           fhir:v "Base"^^xsd:anyURI ;
+           fhir:l fhir:Base
+         ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

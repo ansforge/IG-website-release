@@ -1,0 +1,144 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationsCombinaisonLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRMedicationsCombinaisonLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRMedicationsCombinaisonLMCDAFHIR</b></p><a name=\"FRMedicationsCombinaisonLMCDAFHIR\"> </a><a name=\"hcFRMedicationsCombinaisonLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-subordonne</code> to <a href=\"StructureDefinition-fr-cda-traitement-subordonne.html\">CDA - FR Traitement subordonne</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMTraitementSubordonne</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne</td></tr><tr><td>FRLMTraitementSubordonne.identifiantTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.id</td></tr><tr><td>FRLMTraitementSubordonne.descriptionTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.text</td></tr><tr><td>FRLMTraitementSubordonne.statutTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.statusCode</td></tr><tr><td>FRLMTraitementSubordonne.frequenceAdministration</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.effectiveTime</td></tr><tr><td>FRLMTraitementSubordonne.doseAadministrer</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.doseQuantity</td></tr><tr><td>FRLMTraitementSubordonne.rythmeAdministration</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.rateQuantity</td></tr><tr><td>FRLMTraitementSubordonne.medicamentTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.consumable</td></tr><tr><td>FRLMTraitementSubordonne.preconditionTraitement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDATraitementSubordonne.precondition</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-traitement-subordonne.html\">CDA - FR Traitement subordonne</a> to <a href=\"StructureDefinition-fr-medications-combinaison-document.html\">Medication - FR Medications Combinaison Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDATraitementSubordonne.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationsCombinaisonDocument.identifier</td></tr><tr><td>FRCDATraitementSubordonne.text</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationsCombinaisonDocument.code.text</td></tr><tr><td>FRCDATraitementSubordonne.statusCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationsCombinaisonDocument.status</td></tr><tr><td>FRCDATraitementSubordonne.consumable</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationsCombinaisonDocument.ingredient.itemReference:FRMedicationDocument</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationsCombinaisonLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationsCombinaisonLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : Traitement subordonné"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMTraitementSubordonne vers la sous-entrée CDA FRCDATraitementSubordonne puis vers le profil FHIR FRMedicationsCombinaisonDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-subordonne"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-traitement-subordonne>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-subordonne"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-subordonne>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.identifiantTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.descriptionTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.statutTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.statusCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.frequenceAdministration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.doseAadministrer" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.doseQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.rythmeAdministration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.rateQuantity" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.medicamentTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.consumable" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMTraitementSubordonne.preconditionTraitement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDATraitementSubordonne.precondition" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-subordonne"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-traitement-subordonne>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medications-combinaison-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medications-combinaison-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDATraitementSubordonne.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationsCombinaisonDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementSubordonne.text" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationsCombinaisonDocument.code.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementSubordonne.statusCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationsCombinaisonDocument.status" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDATraitementSubordonne.consumable" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationsCombinaisonDocument.ingredient.itemReference:FRMedicationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

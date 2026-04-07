@@ -1,0 +1,210 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRMedicationLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRMedicationLMCDAFHIR</b></p><a name=\"FRMedicationLMCDAFHIR\"> </a><a name=\"hcFRMedicationLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-produit-sante.html\">Modèle logique métier - FR LM Produit de santé</a> to <a href=\"StructureDefinition-fr-cda-produit-de-sante.html\">CDA - FR Produit de sante</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMProduitSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante</td></tr><tr><td>FRLMProduitSante.medicament</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial</td></tr><tr><td>FRLMProduitSante.medicament.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code</td></tr><tr><td>FRLMProduitSante.medicament.code.autreCodification</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code.translation</td></tr><tr><td>FRLMProduitSante.nomProduit</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.name</td></tr><tr><td>FRLMProduitSante.formeGalenique</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.pharm:formCode</td></tr><tr><td>FRLMProduitSante.numeroLot</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.lotNumberText</td></tr><tr><td>FRLMProduitSante.dateExpiration</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.pharm:expirationTime</td></tr><tr><td>FRLMProduitSante.conditionnement</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.pharm:asContent</td></tr><tr><td>FRLMProduitSante.equivalentGenerique</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.pharm:asSpecializedKind</td></tr><tr><td>FRLMProduitSante.substanceActive</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDAProduitDeSante.pharm:ingredient</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-produit-de-sante.html\">CDA - FR Produit de sante</a> to <a href=\"StructureDefinition-fr-medication-document.html\">Medication - FR Medication Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDAProduitDeSante</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument</td></tr><tr><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.code</td></tr><tr><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code.translation</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.code.coding</td></tr><tr><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.extension:ihe-ext-medication-productname</td></tr><tr><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.pharm:formCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.form</td></tr><tr><td>FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.lotNumberText</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.batch.lotNumber</td></tr><tr><td>FRCDAProduitDeSante.pharm:expirationTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.batch.expirationDate</td></tr><tr><td>FRCDAProduitDeSante.pharm:asContent</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.extension:ihe-ext-medication-characteristic</td></tr><tr><td>FRCDAProduitDeSante.pharm:asSpecializedKind</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.extension:ihe-ext-medication-classification</td></tr><tr><td>FRCDAProduitDeSante.pharm:ingredient</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.ingredient:substanceActive</td></tr><tr><td>FRCDAProduitDeSante.pharm:ingredient.pharm:quantity</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.ingredient:substanceActive.strength</td></tr><tr><td>FRCDAProduitDeSante.pharm:ingredient.pharm:ingredient.pharm:code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.ingredient:substanceActive.itemCodeableConcept</td></tr><tr><td>FRCDAProduitDeSante.pharm:ingredient.pharm:ingredient.pharm:name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRMedicationDocument.ingredient:substanceActive.itemCodeableConcept.text</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRMedicationLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapsnot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Produit de santé\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-07T08:54:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMProduitSante vers le profil CDA FRCDAProduitDeSante, puis vers le profil FHIR FRMedicationDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-produit-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-produit-sante>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-produit-de-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-produit-de-sante>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMProduitSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.medicament" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.medicament.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.medicament.code.autreCodification" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code.translation" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.nomProduit" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.formeGalenique" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.pharm:formCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.numeroLot" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.lotNumberText" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.dateExpiration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:expirationTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.conditionnement" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:asContent" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.equivalentGenerique" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:asSpecializedKind" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMProduitSante.substanceActive" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:ingredient" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-produit-de-sante"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-produit-de-sante>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-medication-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDAProduitDeSante" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.code.translation" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.code.coding" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.extension:ihe-ext-medication-productname" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.pharm:formCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.form" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.manufacturedProduct.manufacturedMaterial.lotNumberText" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.batch.lotNumber" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:expirationTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.batch.expirationDate" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:asContent" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.extension:ihe-ext-medication-characteristic" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:asSpecializedKind" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.extension:ihe-ext-medication-classification" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:ingredient" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.ingredient:substanceActive" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:ingredient.pharm:quantity" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.ingredient:substanceActive.strength" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:ingredient.pharm:ingredient.pharm:code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.ingredient:substanceActive.itemCodeableConcept" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDAProduitDeSante.pharm:ingredient.pharm:ingredient.pharm:name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRMedicationDocument.ingredient:substanceActive.itemCodeableConcept.text" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
