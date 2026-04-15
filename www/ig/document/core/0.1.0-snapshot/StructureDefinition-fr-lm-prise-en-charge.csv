@@ -1,0 +1,57 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-prise-en-charge","fr-lm-prise-en-charge","","","",1,1,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Prise en charge","Association du document à une prise en charge du patient/usager par un professionnel ou par une structure.
+ - Exemples :
+   - Dans une structure hospitalière, cette prise en charge est une hospitalisation complète ou partielle, des actes et soins externes, une consultation, etc.
+   - Dans un cabinet, cette prise en charge est une consultation ou des actes et soins.
+ - Pour un document d'expression personnelle du patient ou pour un document élaboré sans la présence du patient (ex : synthèse médicale) ou pour un document produit via un SNR, la prise en charge n'a pas de signification. Dans ce cas, on ne renseignera que les données obligatoires : date de prise en charge (avec nulllFlavor possible) et secteur d'activité.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-prise-en-charge.identifiantPriseEnCharge","fr-lm-prise-en-charge.identifiantPriseEnCharge","","","",0,*,"","","","Identifier {[]} {[]}
+","Identifiant de la prise en charge.","Identifiant de la prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.identifiantPriseEnCharge",0,*,"",""
+"fr-lm-prise-en-charge.typePriseEnCharge","fr-lm-prise-en-charge.typePriseEnCharge","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Type de prise en charge.","Type de prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.typePriseEnCharge",0,1,"",""
+"fr-lm-prise-en-charge.dateDebutFinPriseEnCharge","fr-lm-prise-en-charge.dateDebutFinPriseEnCharge","","","",1,1,"","","","dateTime {[]} {[]}
+","Date de début et de fin de la prise en charge.","Date de début et de fin de la prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.dateDebutFinPriseEnCharge",1,1,"",""
+"fr-lm-prise-en-charge.typeSortie","fr-lm-prise-en-charge.typeSortie","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Type sortie.","Type sortie.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.typeSortie",0,1,"",""
+"fr-lm-prise-en-charge.responsablePriseEnCharge","fr-lm-prise-en-charge.responsablePriseEnCharge","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-personne-structure {[]} {[]}
+","Responsable de la prise en charge.","Responsable de la prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.responsablePriseEnCharge",0,1,"",""
+"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge","fr-lm-prise-en-charge.personneImpliqueePriseEnCharge","","","",0,*,"","","","Base {[]} {[]}
+","Personne impliquée dans la prise en charge.","Personne impliquée dans la prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge",0,*,"",""
+"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.typeParticipation","fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.typeParticipation","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Type de participation.","Type de participation.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.typeParticipation",1,1,"",""
+"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.dateDebutFinParticipation","fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.dateDebutFinParticipation","","","",0,1,"","","","dateTime {[]} {[]}
+","Date de début et de fin de la participation.","Date de début et de fin de la participation.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.dateDebutFinParticipation",0,1,"",""
+"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.professionnelImplique","fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.professionnelImplique","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-personne-structure {[]} {[]}
+","Professionnel impliqué.","Professionnel impliqué.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.personneImpliqueePriseEnCharge.professionnelImplique",1,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge","fr-lm-prise-en-charge.lieuPriseEnCharge","","","",1,1,"","","","Base {[]} {[]}
+","Lieu de la prise en charge.","Lieu de la prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge",1,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure","fr-lm-prise-en-charge.lieuPriseEnCharge.structure","","","",0,1,"","","","Base {[]} {[]}
+","Structure","Structure","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.identifiantStructure","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.identifiantStructure","","","",0,1,"","","","Identifier {[]} {[]}
+","Identifiant de la structure","Identifiant de la structure","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.identifiantStructure",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.nomStructure","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.nomStructure","","","",0,1,"","","","string {[]} {[]}
+","Nom de la structure","Nom de la structure","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.nomStructure",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.adresse","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.adresse","","","",0,1,"","","","Address {[]} {[]}
+","Adresse géopostale","Adresse géopostale","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.adresse",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.coordonneesTelecom","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.coordonneesTelecom","","","",0,*,"","","","ContactPoint {[]} {[]}
+","Coordonnées télécom","Coordonnées télécom","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.coordonneesTelecom",0,*,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Secteur d'activité","Secteur d'activité","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.id","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.extension","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.coding","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.text","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.text","","","",0,1,"","","Y","string {[]} {[]}
+","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.categorieEtablissement","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.categorieEtablissement","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Catégorie d'établissement","Catégorie d'établissement","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.secteurActivite.categorieEtablissement",0,1,"",""
+"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.typeStructure","fr-lm-prise-en-charge.lieuPriseEnCharge.structure.typeStructure","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Type de structure","Type de structure","","","","","","","","","",,,,,"",,,,"fr-lm-prise-en-charge.lieuPriseEnCharge.structure.typeStructure",0,1,"",""

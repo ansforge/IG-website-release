@@ -1,0 +1,195 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mappingSystemeFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts mappingSystemeFHIR</b></p><a name=\"mappingSystemeFHIR\"> </a><a name=\"hcmappingSystemeFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-systeme</code> to <a href=\"StructureDefinition-fr-cda-assigned-author.html\">CDA - assignedAuthor</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMSysteme.identificationAuteur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor</td></tr><tr><td>FRLMSysteme.identificationAuteur.identifiantAuteur</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.id</td></tr><tr><td>FRLMSysteme.identificationAuteur.professionSavoirFaireRole</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.code</td></tr><tr><td>FRLMSysteme.identificationAuteur.systeme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.assignedAuthoringDevice</td></tr><tr><td>FRLMSysteme.identificationAuteur.systeme.nomModeleSysteme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.assignedAuthoringDevice.manufacturerModelName</td></tr><tr><td>FRLMSysteme.identificationAuteur.systeme.nomSysteme</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.assignedAuthoringDevice.softwareName</td></tr><tr><td>FRLMSysteme.identificationAuteur.structure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.representedOrganization</td></tr><tr><td>FRLMSysteme.identificationAuteur.structure.identifiantStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.representedOrganization.id</td></tr><tr><td>FRLMSysteme.identificationAuteur.structure.nomStructure</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.representedOrganization.name</td></tr><tr><td>FRLMSysteme.identificationAuteur.structure.adresse</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.representedOrganization.addr</td></tr><tr><td>FRLMSysteme.identificationAuteur.structure.coordonneesTelecom</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>assignedAuthor.representedOrganization.telecom</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-assigned-author.html\">CDA - assignedAuthor</a> to <code>https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-document</code></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td><td><b>Commentaire</b></td></tr><tr><td>assignedAuthor</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device</td><td/></tr><tr><td>assignedAuthor.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.identifier</td><td/></tr><tr><td>assignedAuthor.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.type</td><td/></tr><tr><td>assignedAuthor.assignedAuthoringDevice.manufacturerModelName</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.deviceName.name</td><td/></tr><tr><td>assignedAuthor.assignedAuthoringDevice.softwareName</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.deviceName.type</td><td/></tr><tr><td>assignedAuthor.representedOrganization</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.owner.organization</td><td>Device.owner.organization.resolve().ofType(Organization)</td></tr><tr><td>assignedAuthor.representedOrganization.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.owner.organization.identifier</td><td/></tr><tr><td>assignedAuthor.representedOrganization.name</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.owner.organization.name</td><td/></tr><tr><td>assignedAuthor.representedOrganization.addr</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.owner.organization.address</td><td/></tr><tr><td>assignedAuthor.representedOrganization.telecomm</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>Device.owner.organization.telecom</td><td/></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/mappingSystemeFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapshot"] ; # 
+  fhir:name [ fhir:v "Mapping Métier/CDA/FHIR : \"Système / Structure Auteur\""] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Système / Structure Auteur\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-04-15T16:11:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Ce ConceptMap de l'élément SystemeStructureAuteur présente deux groupes de mapping : \n - Mapping 1 : entre le modèle métier \\\"SystemeStructureAuteur\\\" et l'élément CDA \\\"assignedAuthor\\\"\n - Mapping 2 : entre l'élément CDA \\\"assignedAuthor\\\" et le profil FHIR \\\"FrDeviceDocument\\\" "] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-systeme"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-systeme>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-author"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-author>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.identifiantAuteur" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.professionSavoirFaireRole" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.systeme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.assignedAuthoringDevice" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.systeme.nomModeleSysteme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.assignedAuthoringDevice.manufacturerModelName" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.systeme.nomSysteme" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.assignedAuthoringDevice.softwareName" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.structure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.representedOrganization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.structure.identifiantStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.representedOrganization.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.structure.nomStructure" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.representedOrganization.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.structure.adresse" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.representedOrganization.addr" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMSysteme.identificationAuteur.structure.coordonneesTelecom" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "assignedAuthor.representedOrganization.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-author"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-assigned-author>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-device-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "assignedAuthor" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.assignedAuthoringDevice.manufacturerModelName" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.deviceName.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.assignedAuthoringDevice.softwareName" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.deviceName.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.representedOrganization" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.owner.organization" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Device.owner.organization.resolve().ofType(Organization)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.representedOrganization.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.owner.organization.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.representedOrganization.name" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.owner.organization.name" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.representedOrganization.addr" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.owner.organization.address" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "assignedAuthor.representedOrganization.telecomm" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "Device.owner.organization.telecom" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

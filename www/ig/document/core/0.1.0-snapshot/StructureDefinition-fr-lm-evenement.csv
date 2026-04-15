@@ -1,0 +1,68 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-evenement","fr-lm-evenement","","","",1,*,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Évènement","Évènement (acte, traitement, diagnostic, etc…) décrit dans le document. Il y a au minimum une occurrence de cet élément pour décrire l'évènement principal avec obligatoirement une date de début et un exécutant.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-evenement.identifiantEvenement","fr-lm-evenement.identifiantEvenement","","","",0,*,"","","","Identifier {[]} {[]}
+","Identifiant de l’évènement documenté. 
+ Obligatoire pour :
+  - une demande d'acte d'imagerie pour porter l'Order Placer Number.
+  - un CR d’imagerie pour porter le studyInstanceUID.
+ Fourni si connu pour :
+  - une prescription pour porter l'identifiant EPU de la prescription.","Identifiant de l’évènement documenté. 
+ Obligatoire pour :
+  - une demande d'acte d'imagerie pour porter l'Order Placer Number.
+  - un CR d’imagerie pour porter le studyInstanceUID.
+ Fourni si connu pour :
+  - une prescription pour porter l'identifiant EPU de la prescription.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.identifiantEvenement",0,*,"",""
+"fr-lm-evenement.codeEvenement","fr-lm-evenement.codeEvenement","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Code de l’évènement documenté.  
+ Obligatoire pour :
+  - une demande d'actes d'imagerie (code LOINC ='55115-0' 'Demande d’actes d’imagerie')
+  - un CR d’imagerie (code LOINC de l'acte d'imagerie),
+  - un CR d’examen de l’enfant (code SNOMED CT ='11429006' 'consultation'),
+  - un document d’expression personnelle du patient/usager (code TRE_A00 'EXP_PATIENT' 'Expression personnelle du patient').","Code de l’évènement documenté.  
+ Obligatoire pour :
+  - une demande d'actes d'imagerie (code LOINC ='55115-0' 'Demande d’actes d’imagerie')
+  - un CR d’imagerie (code LOINC de l'acte d'imagerie),
+  - un CR d’examen de l’enfant (code SNOMED CT ='11429006' 'consultation'),
+  - un document d’expression personnelle du patient/usager (code TRE_A00 'EXP_PATIENT' 'Expression personnelle du patient').","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.codeEvenement",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-evenement.codeEvenement.id","fr-lm-evenement.codeEvenement.id","","","",0,0,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"fr-lm-evenement.codeEvenement.extension","fr-lm-evenement.codeEvenement.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"fr-lm-evenement.codeEvenement.coding","fr-lm-evenement.codeEvenement.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-evenement.codeEvenement.text","fr-lm-evenement.codeEvenement.text","","","",0,1,"","","Y","string {[]} {[]}
+","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"fr-lm-evenement.codeEvenement.translation","fr-lm-evenement.codeEvenement.translation","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","Translation. 
+ Obligatoire pour : 
+  - un CR d’imagerie pour indiquer
+   - 1..* la (ou les) modalité(s) d'acquisition,
+   - 1..* la (ou les) région(s) anatomique(s)
+  - un CR d’examen de l’enfant pour indiquer l'examen (jdv-examen-enfant-obligatoire-cisis).","Translation. 
+ Obligatoire pour : 
+  - un CR d’imagerie pour indiquer
+   - 1..* la (ou les) modalité(s) d'acquisition,
+   - 1..* la (ou les) région(s) anatomique(s)
+  - un CR d’examen de l’enfant pour indiquer l'examen (jdv-examen-enfant-obligatoire-cisis).","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.codeEvenement.translation",0,*,"",""
+"fr-lm-evenement.dateHeureEvenement","fr-lm-evenement.dateHeureEvenement","","","",0,1,"","","","dateTime {[]} {[]}
+","Date et heure de début et de fin de l’évènement documenté. 
+  Date de début obligatoire pour l'évènement documenté principal.","Date et heure de début et de fin de l’évènement documenté. 
+  Date de début obligatoire pour l'évènement documenté principal.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.dateHeureEvenement",0,1,"",""
+"fr-lm-evenement.executantEvenement","fr-lm-evenement.executantEvenement","","","",0,1,"","","","Base {[]} {[]}
+","Exécutant. 
+  Obligatoire pour l'évènement documenté principal.","Exécutant. 
+  Obligatoire pour l'évènement documenté principal.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.executantEvenement",0,1,"",""
+"fr-lm-evenement.executantEvenement.roleFonctionnel","fr-lm-evenement.executantEvenement.roleFonctionnel","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Rôle fonctionnel.","Rôle fonctionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.executantEvenement.roleFonctionnel",0,1,"",""
+"fr-lm-evenement.executantEvenement.dateHeureParticipation","fr-lm-evenement.executantEvenement.dateHeureParticipation","","","",0,1,"","","","dateTime {[]} {[]}
+","Date et heure de participation.","Date et heure de participation.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.executantEvenement.dateHeureParticipation",0,1,"",""
+"fr-lm-evenement.executantEvenement.executant","fr-lm-evenement.executantEvenement.executant","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-personne-structure {[]} {[]}
+","Exécutant. 
+  Le cadre d'exercice est obligatoire pour l'évènement documenté principal.","Exécutant. 
+  Le cadre d'exercice est obligatoire pour l'évènement documenté principal.","","","","","","","","","",,,,,"",,,,"fr-lm-evenement.executantEvenement.executant",1,1,"",""

@@ -1,0 +1,144 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationBirthEventLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRObservationBirthEventLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRObservationBirthEventLMCDAFHIR</b></p><a name=\"FRObservationBirthEventLMCDAFHIR\"> </a><a name=\"hcFRObservationBirthEventLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-naissance.html\">Modèle logique métier - FR LM Naissance</a> to <a href=\"StructureDefinition-fr-cda-naissance.html\">CDA - FR Naissance</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMNaissance</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance</td></tr><tr><td>FRLMNaissance.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.id</td></tr><tr><td>FRLMNaissance.Code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.code</td></tr><tr><td>FRLMNaissance.statut</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.status</td></tr><tr><td>FRLMNaissance.periode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.effectiveTime</td></tr><tr><td>FRLMNaissance.identificationNouveauNe</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.subject</td></tr><tr><td>FRLMNaissance.observationNaissance</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDANaissance.component:frObservationSurLaGrossesse</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-naissance.html\">CDA - FR Naissance</a> to <a href=\"StructureDefinition-fr-observation-birth-event-document.html\">Observation - FR Observation Birth Event Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDANaissance.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.identifier</td></tr><tr><td>FRCDANaissance.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.code</td></tr><tr><td>FRCDANaissance.status</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.status</td></tr><tr><td>FRCDANaissance.effectiveTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.effectiveDateTime</td></tr><tr><td>FRCDANaissance.subject</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.focus:RelatedPerson</td></tr><tr><td>FRCDANaissance.component:frObservationSurLaGrossesse</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRObservationBirthEventDocument.hasMember:FRObservationPregnancyDocument</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationBirthEventLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRObservationBirthEventLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapshot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : Naissance"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-15T16:11:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMNaissance vers le profil CDA FRCDANaissance, puis vers le profil FHIR FRObservationBirthEventDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-naissance"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-naissance>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-naissance"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-naissance>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMNaissance" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.Code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.statut" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.status" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.periode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.identificationNouveauNe" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.subject" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMNaissance.observationNaissance" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDANaissance.component:frObservationSurLaGrossesse" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-naissance"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-naissance>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-birth-event-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-observation-birth-event-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDANaissance.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDANaissance.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDANaissance.status" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.status" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDANaissance.effectiveTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.effectiveDateTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDANaissance.subject" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.focus:RelatedPerson" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDANaissance.component:frObservationSurLaGrossesse" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRObservationBirthEventDocument.hasMember:FRObservationPregnancyDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

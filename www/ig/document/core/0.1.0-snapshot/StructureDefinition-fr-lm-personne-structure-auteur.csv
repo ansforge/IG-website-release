@@ -1,0 +1,49 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-personne-structure-auteur","fr-lm-personne-structure-auteur","","","",0,*,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM Personne et/ou Structure Auteur","Une personne (professionnel ou patient ou autre) et/ou une structure (pour les professionnels).","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-personne-structure-auteur.personne","fr-lm-personne-structure-auteur.personne","","","",0,1,"","","","Base {[]} {[]}
+","Personne","Personne","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne",0,1,"",""
+"fr-lm-personne-structure-auteur.personne.identifiantPersonne","fr-lm-personne-structure-auteur.personne.identifiantPersonne","","","",1,*,"","","","Identifier {[]} {[]}
+","Identifiant de la personne.","Identifiant de la personne.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.identifiantPersonne",1,*,"",""
+"fr-lm-personne-structure-auteur.personne.professionRole","fr-lm-personne-structure-auteur.personne.professionRole","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","
+- Profession pour les professionnels.
+- Rôle pour les non professionnels.
+- Obligatoire pour un professionnel.","
+- Profession pour les professionnels.
+- Rôle pour les non professionnels.
+- Obligatoire pour un professionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.professionRole",0,1,"",""
+"fr-lm-personne-structure-auteur.personne.adresse","fr-lm-personne-structure-auteur.personne.adresse","","","",0,*,"","","","Address {[]} {[]}
+","Adresse géopostale.
+  - Obligatoire pour un professionnel.","Adresse géopostale.
+  - Obligatoire pour un professionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.adresse",0,*,"",""
+"fr-lm-personne-structure-auteur.personne.coordonneesTelecom","fr-lm-personne-structure-auteur.personne.coordonneesTelecom","","","",0,*,"","","","ContactPoint {[]} {[]}
+","Coordonnées télécom.
+  - Obligatoire pour un professionnel.","Coordonnées télécom.
+  - Obligatoire pour un professionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.coordonneesTelecom",0,*,"",""
+"fr-lm-personne-structure-auteur.personne.IdentitePersonne","fr-lm-personne-structure-auteur.personne.IdentitePersonne","","","",1,1,"","","","Base {[]} {[]}
+","Identité de la personne","Identité de la personne","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.IdentitePersonne",1,1,"",""
+"fr-lm-personne-structure-auteur.personne.IdentitePersonne.nomPersonne","fr-lm-personne-structure-auteur.personne.IdentitePersonne.nomPersonne","","","",1,*,"","","","Base {[]} {[]}
+","Nom de la personne","Nom de la personne","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.IdentitePersonne.nomPersonne",1,*,"",""
+"fr-lm-personne-structure-auteur.personne.IdentitePersonne.prenomPersonne","fr-lm-personne-structure-auteur.personne.IdentitePersonne.prenomPersonne","","","",0,*,"","","","string {[]} {[]}
+","Prénom de la personne","Prénom de la personne","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.IdentitePersonne.prenomPersonne",0,*,"",""
+"fr-lm-personne-structure-auteur.personne.IdentitePersonne.civilite","fr-lm-personne-structure-auteur.personne.IdentitePersonne.civilite","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Civilité","Civilité","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.IdentitePersonne.civilite",0,1,"",""
+"fr-lm-personne-structure-auteur.personne.IdentitePersonne.titre","fr-lm-personne-structure-auteur.personne.IdentitePersonne.titre","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Titre","Titre","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.personne.IdentitePersonne.titre",0,1,"",""
+"fr-lm-personne-structure-auteur.structure","fr-lm-personne-structure-auteur.structure","","","",0,1,"","","","Base {[]} {[]}
+","Structure","Structure","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure",0,1,"",""
+"fr-lm-personne-structure-auteur.structure.identifiantStructure","fr-lm-personne-structure-auteur.structure.identifiantStructure","","","",0,1,"","","","Identifier {[]} {[]}
+","Identifiant de la structure.
+  - Obligatoire pour un professionnel.","Identifiant de la structure.
+  - Obligatoire pour un professionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure.identifiantStructure",0,1,"",""
+"fr-lm-personne-structure-auteur.structure.nomStructure","fr-lm-personne-structure-auteur.structure.nomStructure","","","",0,1,"","","","string {[]} {[]}
+","Nom de la structure.
+  - Obligatoire pour un professionnel.","Nom de la structure.
+  - Obligatoire pour un professionnel.","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure.nomStructure",0,1,"",""
+"fr-lm-personne-structure-auteur.structure.adresse","fr-lm-personne-structure-auteur.structure.adresse","","","",0,*,"","","","Address {[]} {[]}
+","Adresse géopostale","Adresse géopostale","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure.adresse",0,*,"",""
+"fr-lm-personne-structure-auteur.structure.coordonneesTelecom","fr-lm-personne-structure-auteur.structure.coordonneesTelecom","","","",0,*,"","","","ContactPoint {[]} {[]}
+","Coordonnées télécom","Coordonnées télécom","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure.coordonneesTelecom",0,*,"",""
+"fr-lm-personne-structure-auteur.structure.secteurActivite","fr-lm-personne-structure-auteur.structure.secteurActivite","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Secteur d'activité","Secteur d'activité","","","","","","","","","",,,,,"",,,,"fr-lm-personne-structure-auteur.structure.secteurActivite",0,1,"",""

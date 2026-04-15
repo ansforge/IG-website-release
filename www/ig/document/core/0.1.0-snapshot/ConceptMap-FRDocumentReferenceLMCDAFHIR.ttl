@@ -1,0 +1,173 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRDocumentReferenceLMCDAFHIR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "FRDocumentReferenceLMCDAFHIR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : CarteDeConcepts FRDocumentReferenceLMCDAFHIR</b></p><a name=\"FRDocumentReferenceLMCDAFHIR\"> </a><a name=\"hcFRDocumentReferenceLMCDAFHIR\"> </a><p>Mapping de (non spécifié) vers (non spécifié)</p><br/><p><b>Groupe 1 </b>Mapping de <a href=\"StructureDefinition-fr-lm-document-attache.html\">Modèle logique métier - FR LM Document attaché</a> to <a href=\"StructureDefinition-fr-cda-document-attache.html\">CDA - FR Document attache</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRLMDocumentAttache</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache</td></tr><tr><td>FRLMDocumentAttache.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.id</td></tr><tr><td>FRLMDocumentAttache.code</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.code</td></tr><tr><td>FRLMDocumentAttache.statut</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.statusCode</td></tr><tr><td>FRLMDocumentAttache.date</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.effectiveTime</td></tr><tr><td>FRLMDocumentAttache.typeDocumentAttache</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.component:frTypeDocumentAttache</td></tr><tr><td>FRLMDocumentAttache.documentAttache</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.component.observationMedia</td></tr><tr><td>FRLMDocumentAttache.documentAttache.observationMedia.identifiant</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.component.observationMedia.id</td></tr><tr><td>FRLMDocumentAttache.documentAttache.observationMedia.documentAttacheEncode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRCDADocumentAttache.component.observationMedia.value</td></tr></table><hr/><p><b>Groupe 2 </b>Mapping de <a href=\"StructureDefinition-fr-cda-document-attache.html\">CDA - FR Document attache</a> to <a href=\"StructureDefinition-fr-document-reference-document.html\">DocumentReference - FR Document reference Document</a></p><table class=\"grid\"><tr><td><b>Code source</b></td><td><b>relation</b></td><td><b>Code cible</b></td></tr><tr><td>FRCDADocumentAttache</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument</td></tr><tr><td>FRCDADocumentAttache.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.identifier</td></tr><tr><td>FRCDADocumentAttache.code</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>FRCDADocumentAttache.statusCode</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.docStatus</td></tr><tr><td>FRCDADocumentAttache.effectiveTime</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.date</td></tr><tr><td>FRCDADocumentAttache.component:frTypeDocumentAttache</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.type</td></tr><tr><td>FRCDADocumentAttache.component.observationMedia</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.content.attachment</td></tr><tr><td>FRCDADocumentAttache.component.observationMedia.id</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.content.attachment.id</td></tr><tr><td>FRCDADocumentAttache.component.observationMedia.value</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>FRDocumentReferenceDocument.content.attachment.data</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRDocumentReferenceLMCDAFHIR"^^xsd:anyURI ;
+     fhir:l <https://interop.esante.gouv.fr/ig/document/core/ConceptMap/FRDocumentReferenceLMCDAFHIR>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0-snapshot"] ; # 
+  fhir:title [ fhir:v "Mapping Métier/CDA/FHIR : \"Document Referencé\""] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-04-15T16:11:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://esante.gouv.fr" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping des éléments du modèle métier FRLMDocumentAttache vers le profil CDA FRCDADocumentAttache, puis vers le profil FHIR FRDocumentReferenceDocument."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "FR" ] ;
+       fhir:display [ fhir:v "FRANCE" ]
+     ] )
+  ] ) ; # 
+  fhir:group ( [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-document-attache"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-document-attache>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-document-attache"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-document-attache>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRLMDocumentAttache" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.code" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.code" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.statut" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.statusCode" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.date" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.effectiveTime" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.typeDocumentAttache" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.component:frTypeDocumentAttache" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.documentAttache" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.documentAttache.observationMedia.identifiant" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRLMDocumentAttache.documentAttache.observationMedia.documentAttacheEncode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia.value" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-document-attache"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-cda-document-attache>
+     ] ;
+     fhir:target [
+       fhir:v "https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-document-reference-document"^^xsd:anyURI ;
+       fhir:l <https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-document-reference-document>
+     ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "FRCDADocumentAttache" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.identifier" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.code" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.statusCode" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.docStatus" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.effectiveTime" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.date" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.component:frTypeDocumentAttache" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.type" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.content.attachment" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia.id" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.content.attachment.id" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FRCDADocumentAttache.component.observationMedia.value" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "FRDocumentReferenceDocument.content.attachment.data" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

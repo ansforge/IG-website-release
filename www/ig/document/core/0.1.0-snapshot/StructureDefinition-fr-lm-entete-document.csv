@@ -1,0 +1,51 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"fr-lm-entete-document","fr-lm-entete-document","","","",1,1,"","","","null {[]} {[]}
+","Modèle logique métier - FR LM En-tête document","Eléments de l'entête d'un document contenant les informations générales et nécessaires à la gestion du document (identification et type du document, patient/usager, auteur, évènement documenté, etc...).","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"fr-lm-entete-document.identifiantUniqueDocument","fr-lm-entete-document.identifiantUniqueDocument","","","",1,1,"","","","Identifier {[]} {[]}
+","Identifiant unique du document.","Identifiant unique du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.identifiantUniqueDocument",1,1,"",""
+"fr-lm-entete-document.modeleDocument","fr-lm-entete-document.modeleDocument","","","",1,1,"","","","Identifier {[]} {[]}
+","Modèle du document et version du modèle.","Modèle du document et version du modèle.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.modeleDocument",1,1,"",""
+"fr-lm-entete-document.typeDocument","fr-lm-entete-document.typeDocument","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Type de document.","Type de document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.typeDocument",1,1,"",""
+"fr-lm-entete-document.titreDocument","fr-lm-entete-document.titreDocument","","","",1,1,"","","","string {[]} {[]}
+","Titre du document.","Titre du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.titreDocument",1,1,"",""
+"fr-lm-entete-document.dateDeCreationDocument","fr-lm-entete-document.dateDeCreationDocument","","","",1,1,"","","","dateTime {[]} {[]}
+","Date de création du document.","Date de création du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.dateDeCreationDocument",1,1,"",""
+"fr-lm-entete-document.niveauConfidentialiteDocument","fr-lm-entete-document.niveauConfidentialiteDocument","","","",1,1,"","","","code {[]} {[]}
+","Niveau de confidentialité du document.","Niveau de confidentialité du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.niveauConfidentialiteDocument",1,1,"",""
+"fr-lm-entete-document.languePrincipaleDocument","fr-lm-entete-document.languePrincipaleDocument","","","",1,1,"","","","code {[]} {[]}
+","Langue principale du document.","Langue principale du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.languePrincipaleDocument",1,1,"",""
+"fr-lm-entete-document.identifiantLotDeVersionsDocument","fr-lm-entete-document.identifiantLotDeVersionsDocument","","","",1,1,"","","","Identifier {[]} {[]}
+","Identifiant du lot de versions du même document.","Identifiant du lot de versions du même document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.identifiantLotDeVersionsDocument",1,1,"",""
+"fr-lm-entete-document.versionDocument","fr-lm-entete-document.versionDocument","","","",1,1,"","","","string {[]} {[]}
+","Numéro de version du document.","Numéro de version du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.versionDocument",1,1,"",""
+"fr-lm-entete-document.statutDocument","fr-lm-entete-document.statutDocument","","","",1,1,"","","","code {[]} {[]}
+","Statut du document.","Statut du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.statutDocument",1,1,"",""
+"fr-lm-entete-document.patient","fr-lm-entete-document.patient","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-patient-usager {[]} {[]}
+","Patient / Usager.","Patient / Usager.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.patient",1,1,"",""
+"fr-lm-entete-document.auteur","fr-lm-entete-document.auteur","","","",1,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-auteur {[]} {[]}
+","Auteur du document.","Auteur du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.auteur",1,*,"",""
+"fr-lm-entete-document.operateurSaisie","fr-lm-entete-document.operateurSaisie","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-operateur-saisie {[]} {[]}
+","Opérateur de saisie.","Opérateur de saisie.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.operateurSaisie",0,1,"",""
+"fr-lm-entete-document.informateur","fr-lm-entete-document.informateur","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-informateur {[]} {[]}
+","Informateur ayant fourni des informations utiles à la production du document.","Informateur ayant fourni des informations utiles à la production du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.informateur",0,*,"",""
+"fr-lm-entete-document.structureConservation","fr-lm-entete-document.structureConservation","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-structure-conservation {[]} {[]}
+","Structure chargée de la conservation du document.","Structure chargée de la conservation du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.structureConservation",1,1,"",""
+"fr-lm-entete-document.destinataire","fr-lm-entete-document.destinataire","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-destinataire-prevu {[]} {[]}
+","Destinataire prévu du document.","Destinataire prévu du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.destinataire",0,*,"",""
+"fr-lm-entete-document.responsable","fr-lm-entete-document.responsable","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-responsable {[]} {[]}
+","Responsable du document.","Responsable du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.responsable",1,1,"",""
+"fr-lm-entete-document.validateur","fr-lm-entete-document.validateur","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-validateur {[]} {[]}
+","Professionnel attestant la validité du contenu du document.","Professionnel attestant la validité du contenu du document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.validateur",0,*,"",""
+"fr-lm-entete-document.participant","fr-lm-entete-document.participant","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-participant {[]} {[]}
+","Participant, différent de l'auteur, du responsable, de l'opérateur de saisie, de l'informateur ou du destinataire.","Participant, différent de l'auteur, du responsable, de l'opérateur de saisie, de l'informateur ou du destinataire.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.participant",0,*,"",""
+"fr-lm-entete-document.prescription","fr-lm-entete-document.prescription","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prescription {[]} {[]}
+","Association du document à une prescription.","Association du document à une prescription.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.prescription",0,*,"",""
+"fr-lm-entete-document.evenement","fr-lm-entete-document.evenement","","","",1,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-evenement {[]} {[]}
+","Evènement documenté et notamment le cadre d'exercice.","Evènement documenté et notamment le cadre d'exercice.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.evenement",1,*,"",""
+"fr-lm-entete-document.documentDeReference","fr-lm-entete-document.documentDeReference","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-document-reference {[]} {[]}
+","Document de référence (à remplacer, transformé, …).","Document de référence (à remplacer, transformé, …).","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.documentDeReference",0,1,"",""
+"fr-lm-entete-document.consentementAssocie","fr-lm-entete-document.consentementAssocie","","","",0,*,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-consentement {[]} {[]}
+","Consentement associé au document.","Consentement associé au document.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.consentementAssocie",0,*,"",""
+"fr-lm-entete-document.priseEncharge","fr-lm-entete-document.priseEncharge","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/document/core/StructureDefinition/fr-lm-prise-en-charge {[]} {[]}
+","Association du document à une prise en charge.","Association du document à une prise en charge.","","","","","","","","","",,,,,"",,,,"fr-lm-entete-document.priseEncharge",1,1,"",""
