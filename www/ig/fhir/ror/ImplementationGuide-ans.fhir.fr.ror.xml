@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.fhir.fr.ror"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.ror</b></p><a name="ans.fhir.fr.ror"> </a><a name="hcans.fhir.fr.ror"> </a><a name="ans.fhir.fr.ror-fr-FR"> </a><h2>ROR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.ror</b></p><a name="ans.fhir.fr.ror"> </a><a name="hcans.fhir.fr.ror"> </a><a name="ans.fhir.fr.ror-fr-FR"> </a><h2>ROR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0.1 du ROR</p>
 </div></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"/>
-  <version value="0.6.0"/>
+  <version value="0.7.0"/>
   <name value="ROR"/>
   <title value="Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social"/>
   <status value="draft"/>
-  <date value="2025-07-30T09:54:01+00:00"/>
+  <date value="2026-04-29T15:35:52+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -20,12 +20,12 @@
       <value value="https://esante.gouv.fr"/>
     </telecom>
   </contact>
-  <description value="Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR"/>
+  <description value="Ressources de conformité basées sur le modèle d'exposition 3.0.1 du ROR"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
       <code value="FR"/>
-      <display value="FRANCE"/>
+      <display value="France (la)"/>
     </coding>
   </jurisdiction>
   <packageId value="ans.fhir.fr.ror"/>
@@ -37,15 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.5.0"/>
-  </dependsOn>
-  <dependsOn id="hl7ext">
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
-      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
-    </extension>
-    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
-    <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.2.0"/>
+    <version value="7.1.0"/>
   </dependsOn>
   <dependsOn id="ans_annuaire_fhir_r4">
     <uri value="http://fhir.org/packages/ans.annuaire.fhir.r4/ImplementationGuide/ans.annuaire.fhir.r4"/>
@@ -61,6 +53,16 @@
     <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
     <packageId value="hl7.fhir.uv.bulkdata"/>
     <version value="2.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_extensions_r4">
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_sdc">
+    <uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
+    <packageId value="hl7.fhir.uv.sdc"/>
+    <version value="3.0.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -517,14 +519,14 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Questionnaire"/>
+        <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/ror-questionnaire-offre-de-ville"/>
+        <reference value="CodeSystem/ror-launch-context-codesystem"/>
       </reference>
-      <name value="Consignes fiche de saisie Cabinet de ville de médecine générale"/>
-      <description value="Exemple 'fake' pour RORQuestionnaire n'ayant pas forcément de cohérence fonctionnelle."/>
-      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-questionnaire"/>
+      <name value="Code System définissant le contexte standard du lancement d'un questionnaire dans le cadre du ROR"/>
+      <description value="Code System pour étendre http://hl7.org/fhir/uv/sdc/CodeSystem-launchContext.html afin de l'adapter au contexte de lancement des questionnaires dans le cadre du ROR"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -561,6 +563,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ror-launchcontext"/>
+      </reference>
+      <name value="Profil de LaunchContextExtension créé dans le cadre du ROR afin d'ajouter le name 'ror-structure' acceptant les ressources FHIR 'Organization', 'HealthcareService' et 'Location'"/>
+      <description value="Profil de l'extension http://hl7.org/fhir/uv/sdc/StructureDefinition-sdc-questionnaire-launchContext.html créé dans le cadre du ROR afin d'ajouter le name 'structure' acceptant les ressources FHIR 'Organization', 'HealthcareService' et 'Location'"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
@@ -569,6 +582,17 @@
       <name value="ROR-Consommateur"/>
       <description value="Capability Statement pour les systèmes qui sont autorisés à consommer les données du ROR. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/1234564"/>
+      </reference>
+      <name value="ror-healthcareservice-exemple"/>
+      <description value="Exemple de HealthcareService ROR - Unité hospitalière de gynécologie (Chirurgie gynécologique - HC)"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1048,6 +1072,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ror-comment"/>
+      </reference>
+      <name value="RORComment"/>
+      <description value="Extension créée dans le cadre du ROR pour décrire le commentaire qui permet à la structure de donner des informations complémentaires"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ror-commune-cog"/>
       </reference>
       <name value="RORCommuneCog"/>
@@ -1216,7 +1251,7 @@
         <reference value="StructureDefinition/ror-healthcareservice-sensitive-unit"/>
       </reference>
       <name value="RORHealthcareServiceSensitiveUnit"/>
-      <description value="Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d'une offre sont confidentielles car elles présentent un risque d'utilisation à des fins malveillantes."/>
+      <description value="Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d'une offre sont confidentielles car elles présentent un risque d'utilisation à des fins malveillantes, ou que le porteur d'offre ne souhaite pas diffuser."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1316,6 +1351,17 @@
       </reference>
       <name value="RORMetaCreationDate"/>
       <description value="Extension créée dans le cadre du ROR qui correspond à la date de création (dans le ROR régional) présente dans les métadonnées."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ror-meta-questionnaire-used-as-a-template"/>
+      </reference>
+      <name value="RORMetaQuestionnaireUsedAsATemplate"/>
+      <description value="Extension créée dans le cadre du ROR qui correspond au questionnaire de saisie utilisé comme modèle associé à la ressource."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1521,10 +1567,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/ror-questionnaire"/>
+        <reference value="StructureDefinition/ror-questionnaire-healthcareservice"/>
       </reference>
       <name value="RORQuestionnaire"/>
-      <description value="Fiche de saisie de l'offre de soins"/>
+      <description value="Modèle de saisie des Offres Opérationnelles.  &#xA;Les questionnaires créés à partir de cette ressource sont utilisés par les établissements pour saisir leurs offres opérationnelles."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1584,6 +1630,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ror-questionnaire-status-vs"/>
+      </reference>
+      <name value="Statuts autorisés pour les Questionnaires ROR"/>
+      <description value="Restriction des statuts de publication FHIR aux valeurs applicables aux modèles de saisie ROR. La valeur 'unknown' est exclue."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/ror-questionnaire-offre-mco"/>
+      </reference>
+      <name value="Unité hospitalière de gynécologie"/>
+      <description value="Extrait du questionnaire (modèle de saisie) permettant de renseigner l'Offre Opérationnelle d'une unité hospitalière de gynécologie"/>
+      <exampleCanonical value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-questionnaire-healthcareservice"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1609,10 +1677,21 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/ror-launch-context-vs"/>
+      </reference>
+      <name value="Value Set pour le contexte standard du lancement d'un questionnaire dans le cadre du ROR"/>
+      <description value="Extension du Value Set https://hl7.org/fhir/uv/sdc/ValueSet-launchContext.html afin de l'adapter au contexte de lancement des questionnaires dans le cadre du ROR"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/ror-usage-context-type-vs"/>
       </reference>
-      <name value="Value Set type pour le contexte d'usage de la fiche de saisie"/>
-      <description value="Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d'usage de la fiche de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession"/>
+      <name value="Value Set type pour le contexte d'usage du modèle de saisie"/>
+      <description value="Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d'usage du modèle de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1707,10 +1786,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="consignes_fiche_saisie_offre.html"/>
+          <valueUrl value="modeles_de_saisie_offre.html"/>
         </extension>
-        <nameUrl value="consignes_fiche_saisie_offre.html"/>
-        <title value="Consignes fiche de saisie de l'offre"/>
+        <nameUrl value="modeles_de_saisie_offre.html"/>
+        <title value="Modèles de saisie de l'offre"/>
         <generation value="markdown"/>
       </page>
       <page>

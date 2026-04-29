@@ -56,10 +56,10 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole"/>
-  <version value="0.6.0"/>
+  <version value="0.7.0"/>
   <name value="RORPractitionerRole"/>
   <status value="draft"/>
-  <date value="2025-07-30T09:54:01+00:00"/>
+  <date value="2026-04-29T15:35:52+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -73,13 +73,13 @@
     <coding>
       <system value="urn:iso:std:iso:3166"/>
       <code value="FR"/>
-      <display value="FRANCE"/>
+      <display value="France (la)"/>
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
     <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
-    <uri value="https://industriels.esante.gouv.fr/sites/default/files/media/document/ROR_ME_V3.0_ModeleExposition_VFD2.1_20231031.pdf"/>
+    <uri value="https://esante.gouv.fr/sites/default/files/media/document/ROR_ME_V3.0.1_ModeleExposition_VFD_20260316.pdf"/>
     <name value="ExerciceProfessionnel du Modèle exposition ROR V3"/>
   </mapping>
   <mapping>
@@ -175,10 +175,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="ExerciceProfessionnel"/>
+        <comment value="Profils ayant Accès"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="SituationOperationnelle"/>
+        <comment value="Profils ayant Accès"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -219,10 +221,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="metadonnee.identifiant"/>
+        <comment value="Profil 1,  &#xA;Profil 2 si uniteSensible = Non ,  &#xA;Profil 3 si champ d'activité de l'offre = MS et si uniteSensible = Non,  &#xA;Profil4,  &#xA;Profil5 si uniteSensible = Non,  &#xA;Profil 0 uniquement si champs d'activité de l'offre 'Ville'  "/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="metadonnee.identifiant"/>
+        <comment value="Profil 1,  &#xA;Profil 2 si uniteSensible = Non ,  &#xA;Profil 3 si champ d'activité de l'offre = MS et si uniteSensible = Non,  &#xA;Profil4,  &#xA;Profil5 si uniteSensible = Non,  &#xA;Profil 0 uniquement si champs d'activité de l'offre 'Ville'  "/>
       </mapping>
     </element>
     <element id="PractitionerRole.meta">
@@ -252,10 +256,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="metadonnee"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="metadonnee"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -335,7 +341,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -405,10 +411,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="dateMiseJour"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="dateMiseJour"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -619,10 +627,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="regionSource"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="regionSource"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -818,7 +828,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.extension:ror-practitionerrole-unit-exercise-mode">
@@ -852,13 +862,13 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="modeExerciceOffre"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:ror-practitionerrole-name">
@@ -892,11 +902,13 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="ExerciceProfessionnel (civiliteExercice,nomExercice,prenomExercice)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:contracted">
@@ -930,7 +942,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -1061,7 +1073,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="secteurConventionnement"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -1103,7 +1115,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -1246,7 +1258,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="optionContratAccèsAuxSoins"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -1288,7 +1300,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -1431,7 +1443,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="carteVitaleAcceptee"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -1473,7 +1485,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -1508,7 +1520,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -1559,7 +1571,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them"/>
@@ -1601,7 +1613,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="identifiantSituationOperationnelle"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -1711,7 +1723,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Contract"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1775,7 +1787,7 @@
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/RequestGroup"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Composition"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
@@ -1828,7 +1840,7 @@
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/RequestGroup"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Composition"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -1878,7 +1890,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="profession"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2013,7 +2025,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.typeSavoirFaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2078,7 +2090,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.specialite"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2143,7 +2155,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.competence"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2208,7 +2220,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.competenceExclusive"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2273,7 +2285,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.orientationParticuliere"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2338,7 +2350,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.capacite"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2403,7 +2415,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.qualificationPAC"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2468,7 +2480,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.DESCNonQualifiant"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2533,7 +2545,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.droitExerciceComplémentaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2598,7 +2610,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="competenceSpecifique"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2661,7 +2673,7 @@
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/RequestGroup"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Composition"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -2717,7 +2729,7 @@
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/RequestGroup"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Composition"/>
       </constraint>
       <mustSupport value="true"/>
       <mapping>
@@ -2771,14 +2783,14 @@
         <human value="A system is required if a value is provided."/>
         <expression value="value.empty() or system.exists()"/>
         <xpath value="not(exists(f:value)) or exists(f:system)"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/HealthcareService"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
       </constraint>
       <mustSupport value="true"/>
       <isSummary value="true"/>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="telecommunication"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Profil 1,  &#xA;Profil 2 et Profil 5 si niveau de confidentialité de la telecommunication différent de 'très restreint' et uniteSensible = Non  &#xA;Profil 3 si champ d'activité MS et si si niveau de confidentialité de la telecommunication différent de 'très restreint' et uniteSensible = Non  &#xA;Profil 4 si niveau de confidentialité  de la telecommunication = 'public'  &#xA;Profil 0 si niveau de confidentialité  de la telecommunication = 'public' et uniteSensible = Non  "/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2861,7 +2873,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
     </element>
     <element id="PractitionerRole.telecom.extension:ror-telecom-communication-channel">
@@ -2895,7 +2907,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -2930,7 +2942,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -2965,7 +2977,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
     </element>
@@ -3050,7 +3062,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="adresseTelecom"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="cf telecommunication"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3186,7 +3198,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Contract"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
       </constraint>
       <isSummary value="true"/>
       <mapping>
@@ -3242,7 +3254,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="horaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3322,7 +3334,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3364,9 +3376,14 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="typePlageHoraire"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.extension:ror-available-time-effective-opening-closing-date">
       <path value="PractitionerRole.availableTime.extension"/>
@@ -3399,9 +3416,14 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="debutDateEffective/finDateEffective"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.extension:ror-available-time-number-days-of-week">
       <path value="PractitionerRole.availableTime.extension"/>
@@ -3434,9 +3456,14 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="jourSemaine"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.modifierExtension">
       <path value="PractitionerRole.availableTime.modifierExtension"/>
@@ -3472,7 +3499,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
@@ -3587,7 +3614,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="heureDebut"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3626,7 +3653,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="heureFin"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3738,7 +3765,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3783,7 +3810,7 @@
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <isModifier value="true"/>
       <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
@@ -3856,7 +3883,7 @@
         <human value="If present, start SHALL have a lower value than end"/>
         <expression value="start.hasValue().not() or end.hasValue().not() or (start &lt;= end)"/>
         <xpath value="not(exists(f:start/@value)) or not(exists(f:end/@value)) or (xs:dateTime(f:start/@value) &lt;= xs:dateTime(f:end/@value))"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Contract"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3940,7 +3967,7 @@
         <human value="SHALL have a contained resource if a local reference is provided"/>
         <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %rootResource.contained.id.trace('ids'))"/>
         <xpath value="not(starts-with(f:reference/@value, '#')) or exists(ancestor::*[self::f:entry or self::f:parameter]/f:resource/f:*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')]|/*/f:contained/f:*[f:id/@value=substring-after(current()/f:reference/@value, '#')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/RequestGroup"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Composition"/>
       </constraint>
       <mapping>
         <identity value="rim"/>
@@ -3958,10 +3985,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="ExerciceProfessionnel"/>
+        <comment value="Profils ayant Accès"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="SituationOperationnelle"/>
+        <comment value="Profils ayant Accès"/>
       </mapping>
     </element>
     <element id="PractitionerRole.id">
@@ -3969,10 +3998,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="metadonnee.identifiant"/>
+        <comment value="Profil 1,  &#xA;Profil 2 si uniteSensible = Non ,  &#xA;Profil 3 si champ d'activité de l'offre = MS et si uniteSensible = Non,  &#xA;Profil4,  &#xA;Profil5 si uniteSensible = Non,  &#xA;Profil 0 uniquement si champs d'activité de l'offre 'Ville'  "/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="metadonnee.identifiant"/>
+        <comment value="Profil 1,  &#xA;Profil 2 si uniteSensible = Non ,  &#xA;Profil 3 si champ d'activité de l'offre = MS et si uniteSensible = Non,  &#xA;Profil4,  &#xA;Profil5 si uniteSensible = Non,  &#xA;Profil 0 uniquement si champs d'activité de l'offre 'Ville'  "/>
       </mapping>
     </element>
     <element id="PractitionerRole.meta">
@@ -3980,10 +4011,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="metadonnee"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="metadonnee"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.meta.lastUpdated">
@@ -3993,10 +4026,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="dateMiseJour"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="dateMiseJour"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.meta.tag">
@@ -4024,10 +4059,12 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="regionSource"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="regionSource"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension">
@@ -4048,7 +4085,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="modeExerciceOffre"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:ror-practitionerrole-name">
@@ -4063,7 +4100,9 @@
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="ExerciceProfessionnel (civiliteExercice,nomExercice,prenomExercice)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:contracted">
@@ -4092,7 +4131,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="secteurConventionnement"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:optionCAS">
@@ -4112,7 +4151,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="optionContratAccèsAuxSoins"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:vitalAccepted">
@@ -4132,7 +4171,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="carteVitaleAcceptee"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.extension:ror-meta-creation-date">
@@ -4167,7 +4206,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="identifiantSituationOperationnelle"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -4205,7 +4244,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="profession"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty">
@@ -4234,7 +4273,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.typeSavoirFaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:specialty">
@@ -4251,7 +4290,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.specialite"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:competence">
@@ -4268,7 +4307,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.competence"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:exclusiveCompetence">
@@ -4285,7 +4324,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.competenceExclusive"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:specificOrientation">
@@ -4302,7 +4341,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.orientationParticuliere"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:expertiseCapacity">
@@ -4319,7 +4358,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.capacite"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:qualificationPAC">
@@ -4336,7 +4375,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.qualificationPAC"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:nonQualifyingDESC">
@@ -4353,7 +4392,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.DESCNonQualifiant"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:supplementaryExerciseRight">
@@ -4370,7 +4409,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="SavoirFaire.droitExerciceComplémentaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty:specificCompetence">
@@ -4387,7 +4426,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-exercicePro"/>
         <map value="competenceSpecifique"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.location">
@@ -4421,7 +4460,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="telecommunication"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Profil 1,  &#xA;Profil 2 et Profil 5 si niveau de confidentialité de la telecommunication différent de 'très restreint' et uniteSensible = Non  &#xA;Profil 3 si champ d'activité MS et si si niveau de confidentialité de la telecommunication différent de 'très restreint' et uniteSensible = Non  &#xA;Profil 4 si niveau de confidentialité  de la telecommunication = 'public'  &#xA;Profil 0 si niveau de confidentialité  de la telecommunication = 'public' et uniteSensible = Non  "/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom.extension">
@@ -4472,7 +4511,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="adresseTelecom"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="cf telecommunication"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime">
@@ -4483,7 +4522,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="horaire"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime.extension:ror-available-time-type-of-time">
@@ -4497,6 +4536,11 @@
         <profile value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-type-of-time"/>
       </type>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="typePlageHoraire"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.extension:ror-available-time-effective-opening-closing-date">
       <path value="PractitionerRole.availableTime.extension"/>
@@ -4509,6 +4553,11 @@
         <profile value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-effective-opening-closing-date"/>
       </type>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="debutDateEffective/finDateEffective"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.extension:ror-available-time-number-days-of-week">
       <path value="PractitionerRole.availableTime.extension"/>
@@ -4521,6 +4570,11 @@
         <profile value="https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-number-days-of-week"/>
       </type>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
+        <map value="jourSemaine"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
+      </mapping>
     </element>
     <element id="PractitionerRole.availableTime.availableStartTime">
       <path value="PractitionerRole.availableTime.availableStartTime"/>
@@ -4529,7 +4583,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="heureDebut"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
     <element id="PractitionerRole.availableTime.availableEndTime">
@@ -4539,7 +4593,7 @@
       <mapping>
         <identity value="specmetier-to-RORPractitionerRole-situationOp"/>
         <map value="heureFin"/>
-        <comment value="Profil 1,&#xA;Profil 2 (sauf si uniteSensible = Oui),&#xA;Profil 3 si champ d'activité = MS ou Ambulatoire (sauf si uniteSensible = Oui)&#xA;Profil 0 si champ d'activité = Ambulatoire (sauf si uniteSensible = Oui)"/>
+        <comment value="Similaire aux accès de metadonnee.identifiant"/>
       </mapping>
     </element>
   </differential>

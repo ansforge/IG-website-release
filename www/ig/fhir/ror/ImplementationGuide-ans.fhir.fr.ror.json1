@@ -3,14 +3,14 @@
   "id" : "ans.fhir.fr.ror",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.ror</b></p><a name=\"ans.fhir.fr.ror\"> </a><a name=\"hcans.fhir.fr.ror\"> </a><a name=\"ans.fhir.fr.ror-fr-FR\"> </a><h2>ROR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide ans.fhir.fr.ror</b></p><a name=\"ans.fhir.fr.ror\"> </a><a name=\"hcans.fhir.fr.ror\"> </a><a name=\"ans.fhir.fr.ror-fr-FR\"> </a><h2>ROR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0.1 du ROR</p>\n</div></div>"
   },
   "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror",
-  "version" : "0.6.0",
+  "version" : "0.7.0",
   "name" : "ROR",
   "title" : "Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social",
   "status" : "draft",
-  "date" : "2025-07-30T09:54:01+00:00",
+  "date" : "2026-04-29T15:35:52+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -19,12 +19,12 @@
       "value" : "https://esante.gouv.fr"
     }]
   }],
-  "description" : "Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR",
+  "description" : "Ressources de conformité basées sur le modèle d'exposition 3.0.1 du ROR",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
       "code" : "FR",
-      "display" : "FRANCE"
+      "display" : "France (la)"
     }]
   }],
   "packageId" : "ans.fhir.fr.ror",
@@ -38,17 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "6.5.0"
-  },
-  {
-    "id" : "hl7ext",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-    }],
-    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-    "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "7.1.0"
   },
   {
     "id" : "ans_annuaire_fhir_r4",
@@ -67,6 +57,18 @@
     "uri" : "http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata",
     "packageId" : "hl7.fhir.uv.bulkdata",
     "version" : "2.0.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_extensions_r4",
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.2.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_sdc",
+    "uri" : "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+    "packageId" : "hl7.fhir.uv.sdc",
+    "version" : "3.0.0"
   }],
   "definition" : {
     "extension" : [{
@@ -684,14 +686,14 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Questionnaire"
+        "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "Questionnaire/ror-questionnaire-offre-de-ville"
+        "reference" : "CodeSystem/ror-launch-context-codesystem"
       },
-      "name" : "Consignes fiche de saisie Cabinet de ville de médecine générale",
-      "description" : "Exemple 'fake' pour RORQuestionnaire n'ayant pas forcément de cohérence fonctionnelle.",
-      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-questionnaire"
+      "name" : "Code System définissant le contexte standard du lancement d'un questionnaire dans le cadre du ROR",
+      "description" : "Code System pour étendre http://hl7.org/fhir/uv/sdc/CodeSystem-launchContext.html afin de l'adapter au contexte de lancement des questionnaires dans le cadre du ROR",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -732,6 +734,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ror-launchcontext"
+      },
+      "name" : "Profil de LaunchContextExtension créé dans le cadre du ROR afin d'ajouter le name 'ror-structure' acceptant les ressources FHIR 'Organization', 'HealthcareService' et 'Location'",
+      "description" : "Profil de l'extension http://hl7.org/fhir/uv/sdc/StructureDefinition-sdc-questionnaire-launchContext.html créé dans le cadre du ROR afin d'ajouter le name 'structure' acceptant les ressources FHIR 'Organization', 'HealthcareService' et 'Location'",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CapabilityStatement"
       }],
       "reference" : {
@@ -740,6 +754,18 @@
       "name" : "ROR-Consommateur",
       "description" : "Capability Statement pour les systèmes qui sont autorisés à consommer les données du ROR. Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "HealthcareService"
+      }],
+      "reference" : {
+        "reference" : "HealthcareService/1234564"
+      },
+      "name" : "ror-healthcareservice-exemple",
+      "description" : "Exemple de HealthcareService ROR - Unité hospitalière de gynécologie (Chirurgie gynécologique - HC)",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice"
     },
     {
       "extension" : [{
@@ -1263,6 +1289,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/ror-comment"
+      },
+      "name" : "RORComment",
+      "description" : "Extension créée dans le cadre du ROR pour décrire le commentaire qui permet à la structure de donner des informations complémentaires",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/ror-commune-cog"
       },
       "name" : "RORCommuneCog",
@@ -1446,7 +1484,7 @@
         "reference" : "StructureDefinition/ror-healthcareservice-sensitive-unit"
       },
       "name" : "RORHealthcareServiceSensitiveUnit",
-      "description" : "Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d'une offre sont confidentielles car elles présentent un risque d'utilisation à des fins malveillantes.",
+      "description" : "Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d'une offre sont confidentielles car elles présentent un risque d'utilisation à des fins malveillantes, ou que le porteur d'offre ne souhaite pas diffuser.",
       "exampleBoolean" : false
     },
     {
@@ -1555,6 +1593,18 @@
       },
       "name" : "RORMetaCreationDate",
       "description" : "Extension créée dans le cadre du ROR qui correspond à la date de création (dans le ROR régional) présente dans les métadonnées.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ror-meta-questionnaire-used-as-a-template"
+      },
+      "name" : "RORMetaQuestionnaireUsedAsATemplate",
+      "description" : "Extension créée dans le cadre du ROR qui correspond au questionnaire de saisie utilisé comme modèle associé à la ressource.",
       "exampleBoolean" : false
     },
     {
@@ -1779,10 +1829,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ror-questionnaire"
+        "reference" : "StructureDefinition/ror-questionnaire-healthcareservice"
       },
       "name" : "RORQuestionnaire",
-      "description" : "Fiche de saisie de l'offre de soins",
+      "description" : "Modèle de saisie des Offres Opérationnelles.  \nLes questionnaires créés à partir de cette ressource sont utilisés par les établissements pour saisir leurs offres opérationnelles.",
       "exampleBoolean" : false
     },
     {
@@ -1848,6 +1898,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ror-questionnaire-status-vs"
+      },
+      "name" : "Statuts autorisés pour les Questionnaires ROR",
+      "description" : "Restriction des statuts de publication FHIR aux valeurs applicables aux modèles de saisie ROR. La valeur 'unknown' est exclue.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/ror-questionnaire-offre-mco"
+      },
+      "name" : "Unité hospitalière de gynécologie",
+      "description" : "Extrait du questionnaire (modèle de saisie) permettant de renseigner l'Offre Opérationnelle d'une unité hospitalière de gynécologie",
+      "exampleCanonical" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-questionnaire-healthcareservice"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -1875,10 +1949,22 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/ror-launch-context-vs"
+      },
+      "name" : "Value Set pour le contexte standard du lancement d'un questionnaire dans le cadre du ROR",
+      "description" : "Extension du Value Set https://hl7.org/fhir/uv/sdc/ValueSet-launchContext.html afin de l'adapter au contexte de lancement des questionnaires dans le cadre du ROR",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/ror-usage-context-type-vs"
       },
-      "name" : "Value Set type pour le contexte d'usage de la fiche de saisie",
-      "description" : "Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d'usage de la fiche de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession",
+      "name" : "Value Set type pour le contexte d'usage du modèle de saisie",
+      "description" : "Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d'usage du modèle de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession",
       "exampleBoolean" : false
     },
     {
@@ -1985,10 +2071,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "consignes_fiche_saisie_offre.html"
+          "valueUrl" : "modeles_de_saisie_offre.html"
         }],
-        "nameUrl" : "consignes_fiche_saisie_offre.html",
-        "title" : "Consignes fiche de saisie de l'offre",
+        "nameUrl" : "modeles_de_saisie_offre.html",
+        "title" : "Modèles de saisie de l'offre",
         "generation" : "markdown"
       },
       {

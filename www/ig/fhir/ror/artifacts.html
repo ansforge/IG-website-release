@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.6.0</title>
+    <title>Artifacts Summary - Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social v0.7.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,11 +62,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</span>
             <br/>
-            <span style="display:inline-block;">0.6.0 - trial-implementation
+            <span style="display:inline-block;">0.7.0 - trial-implementation
 
 
 
-  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+  France (la)
 
 
             </span>
@@ -126,7 +126,7 @@
         <a href="specifications_techniques_10.html">Création et Mise à jour du lieu de réalisation de l&apos;offre</a>
       </li>
       <li>
-        <a href="consignes_fiche_saisie_offre.html">Consignes fiche de saisie de l&apos;offre</a>
+        <a href="modeles_de_saisie_offre.html">Modèles de saisie de l&apos;offre</a>
       </li>
       <li>
         <a href="saisie_offre.html">Saisie de l&apos;offre</a>
@@ -227,7 +227,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.6.0: <a no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>1) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social (v0.7.0: <a no-external="true" href="https://confluence.hl7.org/display/HL7/HL7+Balloting" title="Standard for Trial-Use">STU</a>1) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="https://interop.esante.gouv.fr/ig/fhir/ror/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -694,11 +694,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-ror-questionnaire.html"
-                  title="StructureDefinition/ror-questionnaire">RORQuestionnaire</a>
+               <a href="StructureDefinition-ror-questionnaire-healthcareservice.html"
+                  title="StructureDefinition/ror-questionnaire-healthcareservice">RORQuestionnaire</a>
             </td>
             <td>
-<p>Fiche de saisie de l’offre de soins</p>
+<p>Modèle de saisie des Offres Opérationnelles.<br />
+Les questionnaires créés à partir de cette ressource sont utilisés par les établissements pour saisir leurs offres opérationnelles.</p>
 </td>
          </tr>
          <tr>
@@ -725,6 +726,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Extension créée dans le cadre du ROR pour indiquer le lieu dit</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ror-launchcontext.html"
+                  title="StructureDefinition/ror-launchcontext">Profil de LaunchContextExtension créé dans le cadre du ROR afin d'ajouter le name 'ror-structure' acceptant les ressources FHIR 'Organization', 'HealthcareService' et 'Location'</a>
+            </td>
+            <td>
+<p>Profil de l’extension http://hl7.org/fhir/uv/sdc/StructureDefinition-sdc-questionnaire-launchContext.html créé dans le cadre du ROR afin d’ajouter le name ‘structure’ acceptant les ressources FHIR ‘Organization’, ‘HealthcareService’ et ‘Location’</p>
 </td>
          </tr>
          <tr>
@@ -761,6 +771,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Extension créée dans le cadre du ROR pour apporter un contexte à la plage horaire définie par la suite. Un planning peut être constitué de plusieurs plages horaires du même type ou de type différent.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ror-comment.html"
+                  title="StructureDefinition/ror-comment">RORComment</a>
+            </td>
+            <td>
+<p>Extension créée dans le cadre du ROR pour décrire le commentaire qui permet à la structure de donner des informations complémentaires</p>
 </td>
          </tr>
          <tr>
@@ -895,7 +914,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/ror-healthcareservice-sensitive-unit">RORHealthcareServiceSensitiveUnit</a>
             </td>
             <td>
-<p>Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d’une offre sont confidentielles car elles présentent un risque d’utilisation à des fins malveillantes.</p>
+<p>Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d’une offre sont confidentielles car elles présentent un risque d’utilisation à des fins malveillantes, ou que le porteur d’offre ne souhaite pas diffuser.</p>
 </td>
          </tr>
          <tr>
@@ -951,6 +970,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Extension créée dans le cadre du ROR qui correspond à la date de création (dans le ROR régional) présente dans les métadonnées.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ror-meta-questionnaire-used-as-a-template.html"
+                  title="StructureDefinition/ror-meta-questionnaire-used-as-a-template">RORMetaQuestionnaireUsedAsATemplate</a>
+            </td>
+            <td>
+<p>Extension créée dans le cadre du ROR qui correspond au questionnaire de saisie utilisé comme modèle associé à la ressource.</p>
 </td>
          </tr>
          <tr>
@@ -1144,6 +1172,15 @@ Cela inclut notamment les divisions territoriales dans lesquelles les profession
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ror-questionnaire-status-vs.html"
+                  title="ValueSet/ror-questionnaire-status-vs">Statuts autorisés pour les Questionnaires ROR</a>
+            </td>
+            <td>
+<p>Restriction des statuts de publication FHIR aux valeurs applicables aux modèles de saisie ROR. La valeur ‘unknown’ est exclue.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ror-include-associated-data-vs.html"
                   title="ValueSet/ror-include-associated-data-vs">Value Set afin d'étendre le Value Set pour query parameter includeAssociatedData</a>
             </td>
@@ -1153,11 +1190,20 @@ Cela inclut notamment les divisions territoriales dans lesquelles les profession
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-ror-usage-context-type-vs.html"
-                  title="ValueSet/ror-usage-context-type-vs">Value Set type pour le contexte d'usage de la fiche de saisie</a>
+               <a href="ValueSet-ror-launch-context-vs.html"
+                  title="ValueSet/ror-launch-context-vs">Value Set pour le contexte standard du lancement d'un questionnaire dans le cadre du ROR</a>
             </td>
             <td>
-<p>Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d’usage de la fiche de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession</p>
+<p>Extension du Value Set https://hl7.org/fhir/uv/sdc/ValueSet-launchContext.html afin de l’adapter au contexte de lancement des questionnaires dans le cadre du ROR</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ror-usage-context-type-vs.html"
+                  title="ValueSet/ror-usage-context-type-vs">Value Set type pour le contexte d'usage du modèle de saisie</a>
+            </td>
+            <td>
+<p>Extension du Value Set http://hl7.org/fhir/ValueSet/usage-context-type pour fixer le type de contexte d’usage du modèle de saisie avec le code EG ou le S pour Spécialité ordinale ou P01 pour le type de profession</p>
 </td>
          </tr>
          <tr>
@@ -1197,6 +1243,15 @@ Cela inclut notamment les divisions territoriales dans lesquelles les profession
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ror-launch-context-codesystem.html"
+                  title="CodeSystem/ror-launch-context-codesystem">Code System définissant le contexte standard du lancement d'un questionnaire dans le cadre du ROR</a>
+            </td>
+            <td>
+<p>Code System pour étendre http://hl7.org/fhir/uv/sdc/CodeSystem-launchContext.html afin de l’adapter au contexte de lancement des questionnaires dans le cadre du ROR</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-input-task-ror-codesystem.html"
                   title="CodeSystem/input-task-ror-codesystem">InputTaskRORCodeSystem</a>
             </td>
@@ -1232,11 +1287,19 @@ Cela inclut notamment les divisions territoriales dans lesquelles les profession
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-ror-questionnaire-offre-de-ville.html"
-                  title="Questionnaire/ror-questionnaire-offre-de-ville">Consignes fiche de saisie Cabinet de ville de médecine générale</a>
+               <a href="Questionnaire-ror-questionnaire-offre-mco.html"
+                  title="Questionnaire/ror-questionnaire-offre-mco">Unité hospitalière de gynécologie</a>
             </td>
             <td>
-<p>Exemple ‘fake’ pour RORQuestionnaire n’ayant pas forcément de cohérence fonctionnelle.</p>
+<p>Extrait du questionnaire (modèle de saisie) permettant de renseigner l’Offre Opérationnelle d’une unité hospitalière de gynécologie</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="HealthcareService-1234564.html" title="HealthcareService/1234564">ror-healthcareservice-exemple</a>
+            </td>
+            <td>
+<p>Exemple de HealthcareService ROR - Unité hospitalière de gynécologie (Chirurgie gynécologique - HC)</p>
 </td>
          </tr>
          <tr>
@@ -1298,7 +1361,7 @@ Cela inclut notamment les divisions territoriales dans lesquelles les profession
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.6.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 30, 2025 09:54+0000">2025-07-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fhir.fr.ror#0.7.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 29, 2026 15:36+0000">2026-04-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
