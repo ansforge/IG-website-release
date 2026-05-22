@@ -91,6 +91,42 @@
                 margin-bottom: 10px
             }
 
+            .ig-search-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 16px;
+                padding: 0 15px;
+            }
+
+            .ig-search-wrapper .search-group {
+                max-width: 500px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .ig-version-badge {
+                display: inline-block;
+                font-size: 0.78rem;
+                font-weight: 600;
+                color: var(--primary, #1d71b8);
+                background: #e8f4f8;
+                border: 1px solid #b3d6ec;
+                border-radius: 2rem;
+                padding: 0.1rem 0.7rem;
+                margin-left: 0.6rem;
+                vertical-align: middle;
+                letter-spacing: 0.02em;
+            }
+
+            .no-results-msg {
+                display: none;
+                text-align: center;
+                color: var(--body-color, #697097);
+                font-style: italic;
+                padding: 24px 0;
+            }
+
         </style>
         
         <style>
@@ -152,7 +188,7 @@
                                             <ul class="navbar-nav nav-lvl--1">
                                                 <li class="nav-item dropdown ">
                                                     <button class="nav-link" type="button" data-toggle="collapse" data-target="#nav1simple-nav-collapse-submenu--1680" aria-controls="nav1simple-nav-collapse-submenu--1680" aria-expanded="false">CI-SIS</button>
-                                                    <div class="nav-collapse collapse" id="nav1simple-nav-collapse-submenu--1680" data-parent="#menuPrincipal" style="">
+                                                    <div class="nav-collapse collapse" id="nav1simple-nav-collapse-submenu--1680" data-parent="#menuPrincipal">
                                                         <div class="nav-collapse-inner">
                                                             <ul class="navbar-nav nav-lvl--2">
                                                                 <li class="nav-item common-nav-item ">
@@ -194,6 +230,19 @@
                     </div>
                 </div>
 
+                <div class="ig-search-wrapper">
+                    <div class="search-group">
+                        <input type="text" class="form-control" id="ig-search" placeholder="Rechercher un guide par titre ou description…" autocomplete="off" oninput="filterGuides()">
+                        <button class="btn btn--icon-only btn-icon--header" type="button" aria-label="Rechercher" onclick="filterGuides()">
+                            <svg class="svg-icon svg-search" aria-hidden="true" focusable="false" width="20" height="20">
+                                <use xlink:href="./svg-icons/icon-sprite.svg#search"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="no-results-msg" id="no-results">Aucun guide ne correspond à votre recherche.</div>
+
                 <div class="cbx">
                     <div class="checkbox-wrapper-2">
                         <input class="sc-gJwTLC ikxBAC" type="checkbox" onclick="showMe(this, 'doc')" checked><label>Documentation</label>
@@ -212,11 +261,11 @@
                 <div class="container" id="doc">
                     
                     <!-- DOCTRINE -->
-                    <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="/ig/doctrine/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Doctrine du CI-SIS</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Doctrine du CI-SIS<span class="ig-version-badge"></span></h3>
                                     <p> Ce guide d'implémentation a pour objectif de présenter la doctrine ainsi que son articulation avec la gouvernance du cadre d'interopérabilité du système d'informations de santé. </p>
                                     <p>
                                         <a style="margin-left:20px" href="/ig/doctrine" class="btn btn--style1 btn--white">Guide d'implémentation</a>
@@ -229,11 +278,11 @@
 
                     <h1 class="m-0 text-center">Documentation</h1><br/>
                     <!-- DOC -->
-                    <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-2 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="/ig/documentation/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Documentation des guides d'implémentation</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Documentation des guides d'implémentation<span class="ig-version-badge"></span></h3>
                                     <p> Ce guide d'implémentation contient la documentation pour la création et l'utilisation des guides d'implémentation. Il est à destination des modelers (créateur de guide d'implémentation) et des FHIR Implementers (implémenteur de spécification).</p>
                                     <p>
                                         <a style="margin-left:20px" href="/ig/documentation" class="btn btn--style1 btn--white">Guide d'implémentation</a>
@@ -251,12 +300,12 @@
 
 
                     <!-- PDSm -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./pdsm/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
 
-                                    <h3 class="o-sg-block-title__subtitle">Partage des Documents de Santé en mobilité (PDSm)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Partage des Documents de Santé en mobilité (PDSm)<span class="ig-version-badge"></span></h3>
                                     <p class="tag"><strong>CI-SIS</strong> <strong>FHIR</strong></p>
                         
                                     <p>Structuration des données pour partage de documents de santé en FHIR</p>
@@ -270,11 +319,11 @@
                     </div>
 
                     <!-- Mesures -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./mesures/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Mesures de santé (mesures)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Mesures de santé (mesures)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"><strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Structuration des mesures de santé et spécification de la consommation et de l'alimentation de systèmes </p>
                                     <p>
@@ -289,11 +338,11 @@
 
 
                     <!-- SDO -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./sdo/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Suivi Décisions Orientation (SDO)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Suivi Décisions Orientation (SDO)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong> <strong>MEDICOSOCIAL</strong></p>
                                     <p> Ce document présente les spécifications techniques du volet « SI-ESMS » (ST SI-ESMS). Ces dernières spécifient les échanges d’information entre le Système d’Information de Suivi des Orientations (SI-SdO) et le Système d'Information des Etablissements et Services Médico-Sociaux (SI-ESMS) suite à une notification de décision d’orientation prise par la Commission des Droits et de l’Autonomie des Personnes Handicapées (CDAPH).</p>
                                     <p>
@@ -306,11 +355,11 @@
                     </div>
 
                     <!-- TDDUI -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./tddui/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Transfert de données - dossier usager informatisé (TDDUI)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Transfert de données - dossier usager informatisé (TDDUI)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong> <strong>MEDICOSOCIAL</strong></p>
                                     <p> Dans la continuité des travaux menés dans le cadre du programme ESMS numérique, la CNSA et l’ANS créent un nouveau volet de la couche Métier « Transfert de données DUI ». L’objectif de ce volet est de définir la nature et le format des données à transmettre lors d’un export depuis un logiciel DUI afin d’assurer le transfert de données des usagers</p>
                                     <p>
@@ -323,11 +372,11 @@
                     </div>
 
                     <!-- GAP -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./gap/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Gestion d'Agendas Partagés (GAP)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Gestion d'Agendas Partagés (GAP)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Cet IG a pour objet de permettre la gestion de ressources (personnes, lieux ou objets), la gestion des disponibilités de ces ressources, la consultation et la synchronisation d’agenda et la prise de rendez-vous. </p>
                                     <p>
@@ -340,11 +389,11 @@
                     </div>
 
                     <!-- CDS -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./cds/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Cercle De Soins (CDS)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Cercle De Soins (CDS)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Le volet Gestion du cercle de soins doit permettre la mise en œuvre de mécanismes de gestion du cercle de soins d’une personne dans le domaine sanitaire, médico-administratif, médico-social et social afin d’identifier l’ensemble des intervenants (personnes, professionnels et structures) participant à la prise en charge et aux actions de coordination du parcours de santé de la personne : création et mise à jour, recherche et consultation d’un cercle de soins. </p>
                                     <p>
@@ -357,11 +406,11 @@
                     </div>
 
                     <!-- CDL -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./cdl/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Cahier De Liaison (CDL)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Cahier De Liaison (CDL)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Ce volet spécifie les flux d’échange d’information entre 1/ un système cible, gestionnaire du cahier de liaison, stockant, indexant et mettant à disposition des notes relatives à une personne prise en charge ; 2/ un système initiateur, une application mobile par exemple, souhaitant créer, mettre à jour, supprimer ou rechercher des notes dans le cahier de liaison</p>
                                     <p>
@@ -374,11 +423,11 @@
                     </div>
 
                     <!-- TDE -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./tde/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Traçabilité des événements (TDE)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Traçabilité des événements (TDE)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Ce guide d'implémentation présente une spécification générique des échanges pour la gestion des traces.</p>
                                     <p>Les traces sont l’ensemble des informations enregistrées relatant les actions entreprises par un système en conséquence d’un événement. Les informations peuvent aussi bien porter sur des dispositifs physiques, comme par exemple un dispositif médical implantable (changement de lieu, mise à jour du statut), que sur des actions utilisateurs (connexion à un système, création d'un utilisateur). Dans le cadre de cette étude, les processus qui sont à l'origine des traces sont hors périmètre.</p>
@@ -393,11 +442,11 @@
 
 
                     <!-- NDE -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./nde/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Notifications d'Evenements (NDE)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Notifications d'Evenements (NDE)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>CI-SIS</strong> <strong>FHIR</strong></p>
                                     <p> Ce guide d'implémentation (IG) décrit un mécanisme de notification d’évènements permettant d’informer automatiquement une personne lorsqu’un évènement survient au cours de sa prise en charge. Il s'agit par exemple, de recevoir une information lorsqu’un document est disponible, lorsqu’une hospitalisation débute ou se termine, ou lorsqu’une information significative est ajoutée à un dossier. Ces notifications peuvent concerner un patient ou un usager, un professionnel de santé, ou toute autre personne autorisée.</p>
                                     <p>
@@ -416,12 +465,12 @@
                     <h1 class="m-0 text-center">Guides projet</h1><br/>
 
                         <!-- Annuaire -->
-                        <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                        <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./annuaire/package-list.json">
                             <div class="wp-block-group__inner-container">
                                 <div class="wp-block-image color-blue">
                                     <figure class="aligncenter size-large">
-    
-                                        <h3 class="o-sg-block-title__subtitle">Annuaire santé (AnnuaireSante)</h3>
+
+                                        <h3 class="o-sg-block-title__subtitle">Annuaire santé (AnnuaireSante)<span class="ig-version-badge"></span></h3>
                                         <p class="tag"><strong>FHIR</strong></p>
                             
                                         <p>Documentation de l'API annuaire santé de l'ANS. L'IG annuaire santé contient également les profils FHIR génériques des practiciens français.</p>
@@ -435,11 +484,11 @@
                         </div>
 
                     <!-- ROR -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./ror/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Répertoire Offre Ressources en santé (ROR)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Répertoire Offre Ressources en santé (ROR)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>FHIR</strong></p>
                                     <p> Spécifications du Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social</p>
                                     <p>
@@ -452,11 +501,11 @@
                     </div>
 
                     <!-- ECLAIRE -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./eclaire/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème (ECLAIRE)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Essais CLiniques Accessibles Interconnectés pour la Recherche ouverts à l'Ecosystème (ECLAIRE)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>FHIR</strong></p>
                                     <p> La France, en tête des pays européens dans le domaine de la recherche clinique, doit néanmoins renforcer la visibilité des essais cliniques en cours et faciliter l’accès au recrutement. C’est dans ce contexte et dans le cadre du plan Innovation santé 2030 que s’inscrit le projet de création d’une plateforme nationale référençant les essais cliniques.</br>
                                     L'objectif de cet IG est de spécifier l'API FHIR de diffusion des données caractérisant les essais cliniques référencés dans ECLAIRE.
@@ -471,11 +520,11 @@
                     </div>
 
                     <!-- SAS -->
-                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white">
+                    <div class="wp-container-1 wp-block-group border shadow rounded-md p-3 mb-2 bg-white" data-ig-pkg="./sas/package-list.json">
                         <div class="wp-block-group__inner-container">
                             <div class="wp-block-image color-blue">
                                 <figure class="aligncenter size-large">
-                                    <h3 class="o-sg-block-title__subtitle">Service d'Accès aux Soins (SAS)</h3>
+                                    <h3 class="o-sg-block-title__subtitle">Service d'Accès aux Soins (SAS)<span class="ig-version-badge"></span></h3>
                                     <p  class="tag"> <strong>FHIR</strong></p>
                                     <p> Le guide d'implémentation SAS décrit les spécifications à mettre en œuvre par les éditeurs réalisant des travaux d'interopérabilité avec la plateforme numérique du SAS
                                     </p>
@@ -609,19 +658,60 @@
 
         <script>
             let searchParams = new URLSearchParams(window.location.search)
-            searchParams.has('name') 
+            searchParams.has('name')
             let fhir = searchParams.get('fhir')
             if(fhir !==null) {
                 $( "p.tag:contains('FHIR')" ).parent().parent().parent().parent().css("display", "none");
-
             }
 
             function showMe (cbox, box) {
                 vis = cbox.checked ? "block" : "none";
-
                 document.getElementById(box).style.display = vis;
+                filterGuides();
             }
-                
+
+            function normalize(str) {
+                return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+            }
+
+            function filterGuides() {
+                const query = normalize(document.getElementById('ig-search').value.trim());
+                const cards = document.querySelectorAll('[data-ig-pkg]');
+                let anyVisible = false;
+
+                cards.forEach(card => {
+                    const title = card.querySelector('.o-sg-block-title__subtitle')?.textContent || '';
+                    const desc  = card.querySelector('figure')?.textContent || '';
+                    const text  = normalize(title + ' ' + desc);
+                    const matchesSearch = query === '' || text.includes(query);
+
+                    const parentSection = card.closest('[id]');
+                    const sectionVisible = !parentSection || parentSection.style.display !== 'none';
+
+                    if (matchesSearch && sectionVisible) {
+                        card.style.display = '';
+                        anyVisible = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('no-results').style.display = (query !== '' && !anyVisible) ? 'block' : 'none';
+            }
+
+            document.querySelectorAll('[data-ig-pkg]').forEach(card => {
+                const badge = card.querySelector('.ig-version-badge');
+                if (!badge) return;
+                fetch(card.dataset.igPkg)
+                    .then(r => r.ok ? r.json() : null)
+                    .then(data => {
+                        if (!data) return;
+                        const current = data.list.find(e => e.current === true)
+                                     || data.list.find(e => e.version !== 'current');
+                        if (current) badge.textContent = current.version;
+                    })
+                    .catch(() => {});
+            });
         </script>
 
     
