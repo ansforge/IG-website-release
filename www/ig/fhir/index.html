@@ -119,6 +119,27 @@
                 letter-spacing: 0.02em;
             }
 
+            .ig-sequence-badge {
+                display: inline-block;
+                font-size: 0.82rem;
+                font-weight: 500;
+                color: var(--body-color, #697097);
+                background: #f0f0f0;
+                border: 1px solid #ccc;
+                border-radius: 2rem;
+                padding: 0.15rem 0.7rem;
+                margin-left: 0.4rem;
+                vertical-align: middle;
+                text-decoration: none;
+                letter-spacing: 0.02em;
+            }
+
+            .ig-sequence-badge:hover {
+                background: #e4e4e4;
+                color: var(--primary, #1d71b8);
+                text-decoration: none;
+            }
+
             .no-results-msg {
                 display: none;
                 text-align: center;
@@ -144,6 +165,16 @@
             .doc-row > .wp-container-2 {
                 flex: 1;
                 margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .doc-row .wp-container-2 .wp-block-group__inner-container,
+            .doc-row .wp-container-2 .wp-block-image,
+            .doc-row .wp-container-2 figure {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
             }
 
             .doc-row a.btn--style1 {
@@ -186,7 +217,8 @@
             }
 
             #refer .wp-container-1 figure > p:last-child,
-            #projets .wp-container-1 figure > p:last-child {
+            #projets .wp-container-1 figure > p:last-child,
+            .doc-row .wp-container-2 figure > p:last-child {
                 margin-top: auto;
                 margin-bottom: 0;
                 padding-top: 0.5rem;
@@ -773,7 +805,18 @@
                         if (!data) return;
                         const current = data.list.find(e => e.current === true)
                                      || data.list.find(e => e.version !== 'current');
-                        if (current) badge.textContent = current.version;
+                        if (current) {
+                            badge.textContent = current.version;
+                            if (current.sequence) {
+                                const seq = document.createElement('a');
+                                seq.className = 'ig-sequence-badge';
+                                seq.href = 'https://interop.esante.gouv.fr/ig/doctrine/cycle-de-vie.html';
+                                seq.target = '_blank';
+                                seq.rel = 'noopener';
+                                seq.textContent = current.sequence;
+                                badge.insertAdjacentElement('afterend', seq);
+                            }
+                        }
                     })
                     .catch(() => {});
             });
