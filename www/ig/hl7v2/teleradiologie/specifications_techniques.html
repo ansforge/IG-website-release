@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Volume 2 : Détail des transactions - Volet Téléradiologie v0.1.0-ballot</title>
+    <title>Volume 2 : Détail des transactions - Volet Téléradiologie v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Volet Téléradiologie</span>
             <br/>
-            <span style="display:inline-block;">0.1.0-ballot - ci-build
+            <span style="display:inline-block;">0.2.0 - trial-implementation
 
 
 
-  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+  France (la)
 
 
             </span>
@@ -227,7 +227,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the Volet Téléradiologie (v0.1.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the Volet Téléradiologie (v0.2.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Volume 2 : Détail des transactions</h2>
   
 
@@ -792,6 +792,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <p>Le message <strong>ORM^O01</strong> du flux 1 permet au système demandeur (RIS) de transmettre au système effecteur (SI Téléradiologie) l’ensemble des informations associées à la prise en charge du patient ainsi que les éléments relatifs à une demande d’examen d’imagerie le concernant.</p>
 
 <p>Outre les éléments standards concernant la demande et la prescription portés par les segments <strong>ORC</strong> et <strong>OBR</strong>, ce flux s’appuie sur des <strong>groupes OBSERVATION (OBX)</strong> afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :</p>
+
 <ul>
   <li>la <strong>localisation anatomique</strong> et, le cas échéant, une <strong>précision topographique</strong></li>
   <li>les <strong>antécédents médicaux du patient</strong></li>
@@ -1768,7 +1769,23 @@ En conséquence, le message <strong>OMI^O23</strong> est défini sur la base du 
 
 <p>Le message <strong>OMI^O23</strong> du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des <strong>compléments d’information post-acte</strong> relatifs à un examen d’imagerie déjà réalisé.</p>
 
-<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le <strong>rattachement</strong> de ces informations à la demande d’examen initiale.</p>
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le rattachement de ces informations à la demande d’examen initiale.</p>
+
+<p>Dans le cadre du flux 4, <strong>chaque occurrence du groupe ORDER représente un examen d’imagerie</strong>.</p>
+
+<p>Un examen est identifié par son <strong>StudyInstanceUID</strong> et est associé :</p>
+
+<ul>
+  <li>à un <strong>Accession Number</strong></li>
+  <li>à une <strong>URL de visionneuse</strong> permettant d’accéder aux images correspondantes</li>
+  <li>à la <strong>demande d’examen initiale</strong>, identifiée par l’<strong>Order Placer Number</strong>.</li>
+</ul>
+
+<p>Ainsi, <strong>un groupe ORDER correspond à un examen d’imagerie rattaché à une demande d’examen</strong>.</p>
+
+<p>Dans le cas où un même flux doit véhiculer des informations associées à plusieurs examens, le système émetteur <strong>répète le groupe ORDER autant de fois que nécessaire</strong>, chaque occurrence portant les identifiants propres à l’examen correspondant (StudyInstanceUID, Accession Number, URL de visionneuse), tout en conservant l’Order Placer Number permettant de rattacher ces examens à la demande initiale.</p>
+
+<p>Cette structuration permet de conserver l’association explicite entre la demande d’examen, chaque examen réalisé et l’URL permettant d’accéder aux images correspondantes.</p>
 
 <p>Les <strong>groupes OBSERVATION (OBX)</strong> jouent un rôle central dans ce flux.<br />
 Ils permettent notamment de véhiculer :</p>
@@ -2179,7 +2196,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <p><strong>Exemple d’en-tête MSH d’un message ORM :</strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">MSH|^~\&amp;|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2</code></p>
+<p><code class="language-plaintext highlighter-rouge">MSH|^~\&amp;|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||1.0^CISIS_TLR_HL7_V2</code></p>
 
 <h5 id="les-données-concernant-le-patient-et-sa-venue">Les données concernant le patient et sa venue</h5>
 
@@ -2417,7 +2434,39 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Placer Order Number</p>
       </td>
       <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
       </td>
     </tr>
     <tr>
@@ -3238,7 +3287,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Name Of Coding System</p>
       </td>
       <td>
-        <p><span class="hl7-color">SNT</span></p>
+        <p><span class="hl7-color">SCT</span></p>
       </td>
     </tr>
     <tr>
@@ -3396,7 +3445,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Name Of Coding System</p>
       </td>
       <td>
-        <p><span class="hl7-color">SNT</span></p>
+        <p><span class="hl7-color">SCT</span></p>
       </td>
     </tr>
     <tr>
@@ -3534,31 +3583,10 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
       </td>
       <td>
         <p>Pertinence de l'antécédent</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt; OBX-8.1  </p>
-      </td>
-      <td>
-        <p>Code </p>
-      </td>
-      <td>
         <p>Valeur possible :</p>
         <p><span class="hl7-color">SANS_IMPACT</span></p>
         <p><span class="hl7-color">PERTINENT</span></p>
         <p><span class="hl7-color">MAJEUR</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt; OBX-3.3 </p>
-      </td>
-      <td>
-        <p>Name of Coding system</p>
-      </td>
-      <td>
-        <p><span class="hl7-color">HL70078</span></p>
       </td>
     </tr>
     <tr>
@@ -4060,7 +4088,38 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen d'imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
+        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
       </td>
     </tr>
     <tr>
@@ -4476,7 +4535,39 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Placer Order Number</p>
       </td>
       <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p></p>
       </td>
     </tr>
     <tr>
@@ -5147,7 +5238,39 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
         <p>Placer Order Number</p>
       </td>
       <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p></p>
       </td>
     </tr>
   </tbody>
@@ -5313,7 +5436,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
 <h5 id="segment-ipc-imaging-procedure-control">Segment IPC (Imaging Procedure Control)</h5>
 
 <p>Le segment <strong>IPC – Imaging Procedure Control</strong> est utilisé dans le cadre du <strong>flux 4</strong> pour véhiculer les informations spécifiques à la <strong>procédure d’imagerie réalisée</strong>.<br />
-Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+Il est renseigné conformément à HL7v2.5.1 et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -5357,7 +5480,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-1.1</p>
+        <p>&gt; IPC-1.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -5368,7 +5491,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-1.3</p>
+        <p>&gt; IPC-1.3</p>
       </td>
       <td>
         <p>Universal Id</p>
@@ -5379,7 +5502,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-1.4</p>
+        <p>&gt; IPC-1.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -5401,7 +5524,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-2.1</p>
+        <p>&gt; IPC-2.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -5412,20 +5535,19 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-2.3</p>
+        <p>&gt; IPC-2.3</p>
       </td>
       <td>
         <p>Universal Id</p>
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
-        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+        <p><span class="hl7-color">2.16.840.1.113883.6.1</span> (LOINC)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>IPC-2.4</p>
+        <p>&gt; IPC-2.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -5458,7 +5580,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-4.1</p>
+        <p>&gt; IPC-4.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -5469,20 +5591,19 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
-        <p>IPC-4.3</p>
+        <p>&gt; IPC-4.3</p>
       </td>
       <td>
         <p>Universal Id</p>
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
-        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+        <p><span class="hl7-color">2.16.840.1.113883.6.1</span> (LOINC)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>IPC-4.4</p>
+        <p>&gt; IPC-4.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -5560,7 +5681,7 @@ Le segment OBX portant sur l’adresse d’accès à la visionneuse est identifi
         <p>Value Type</p>
       </td>
       <td>
-        <p><span class="hl7-color">TX</span> (Text Data)</p>
+        <p><span class="hl7-color">ED</span> (Encapsulated Data)</p>
       </td>
     </tr>
     <tr>
@@ -7013,13 +7134,13 @@ ERR :</p>
 </code></pre></div></div>
 <p>Un acquittement positif retourné par le SI de téléradiologie :</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5|||||FRA|8859/15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5.1|||||FRA|8859/15
 MSA|AA|12345
 </code></pre></div></div>
 <p>Un acquittement négatif retourné par le SI de téléradiologie : version d’HL7
 inconnue</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5.1|||||FRA|8859/15
 MSA|AE|12345
 ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 </code></pre></div></div>
@@ -7065,7 +7186,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 20:12+0000">2026-02-03</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 12, 2026 09:57+0000">2026-06-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
