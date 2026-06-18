@@ -1,4 +1,4 @@
-# Accueil - Documentation des guides d'implémentation de l'ANS v0.1.10
+# Accueil - Documentation des guides d'implémentation de l'ANS v0.1.11
 
 * [**Table of Contents**](toc.md)
 * **Accueil**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation | *Version*:0.1.10 |
-| Active as of 2026-03-05 | *Computable Name*:Documentation |
+| *Official URL*:https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation | *Version*:0.1.11 |
+| Active as of 2026-06-18 | *Computable Name*:Documentation |
 
 >  Ce guide d'implémentation est l'équivalent national de l'ig guidance (https://build.fhir.org/ig/FHIR/ig-guidance).  Cette documentation explique comment créer, publier et maintenir des guides d'implémentation FHIR pour l'écosystème français de santé. Elle s'adresse aux professionnels de santé qui challengent les travaux d'interopérabilité, aux FHIR modelers qui créent et profilent les ressources, et aux FHIR implementers qui développent les APIs. L'objectif est de permettre à tout acteur de publier des spécifications versionnées et packagées, cohérentes avec le cadre national, afin de définir précisément comment échanger les données de santé et favoriser la participation de l'ensemble des parties prenantes. 
 
@@ -61,11 +61,11 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
   "resourceType" : "ImplementationGuide",
   "id" : "ans.fr.documentation",
   "url" : "https://interop.esante.gouv.fr/ig/documentation/ImplementationGuide/ans.fr.documentation",
-  "version" : "0.1.10",
+  "version" : "0.1.11",
   "name" : "Documentation",
   "title" : "Documentation des guides d'implémentation de l'ANS",
   "status" : "active",
-  "date" : "2026-03-05T09:39:58+00:00",
+  "date" : "2026-06-18T11:35:04+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -92,7 +92,7 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.0.1"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -102,7 +102,7 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   }],
   "definition" : {
     "extension" : [{
@@ -123,7 +123,7 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
       },
       {
         "url" : "value",
-        "valueString" : "trial-use"
+        "valueString" : "final-text"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -393,7 +393,7 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
     },
     {
       "extension" : [{
@@ -413,7 +413,7 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
       },
       {
         "url" : "value",
-        "valueString" : "trial-use"
+        "valueString" : "final-text"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -740,6 +740,15 @@ L’issue doit contenir un titre, et une description la plus détaillée possibl
           }],
           "nameUrl" : "mod_github.html",
           "title" : "Usage de GitHub",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "mod_publier_ig_externe.html"
+          }],
+          "nameUrl" : "mod_publier_ig_externe.html",
+          "title" : "Publier un IG externe",
           "generation" : "markdown"
         }]
       },

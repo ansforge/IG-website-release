@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Bonnes pratiques - Documentation des guides d'implémentation de l'ANS v0.1.10</title>
+    <title>Bonnes pratiques - Documentation des guides d'implémentation de l'ANS v0.1.11</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Documentation des guides d'implémentation de l'ANS</span>
             <br/>
-            <span style="display:inline-block;">0.1.10 - trial-use
+            <span style="display:inline-block;">0.1.11 - final-text
 
 
 
@@ -115,6 +115,9 @@
       </li>
       <li>
         <a href="mod_github.html">Usage de GitHub</a>
+      </li>
+      <li>
+        <a href="mod_publier_ig_externe.html">Publier un IG externe</a>
       </li>
     </ul>
   </li>
@@ -204,7 +207,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.10: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Documentation des guides d'implémentation de l'ANS (v0.1.11: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/documentation/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Bonnes pratiques</h2>
   
 
@@ -293,7 +296,7 @@ TODO : rajouter lien vers la procédure de création d'un VS -->
 
 <h3 id="règles-de-nommage-des-ressources-de-conformité">Règles de nommage des ressources de conformité</h3>
 
-<p><a name="l521">​</a>Ces règles de nommage ont été établies en s’inspirant des ressources us-core et des bonnes pratiques indiquées <a href="[https://build.fhir.org/ig/HL7/crmi-ig/artifact-conventions.html](https://hl7.org/fhir/uv/crmi/STU1/)">ici</a>.</p>
+<p><a name="l527">​</a>Ces règles de nommage ont été établies en s’inspirant des ressources us-core et des bonnes pratiques indiquées <a href="[https://build.fhir.org/ig/HL7/crmi-ig/artifact-conventions.html](https://hl7.org/fhir/uv/crmi/STU1/)">ici</a>.</p>
 
 <table class="grid">
   <thead>
@@ -377,64 +380,75 @@ Documentation :
 
 <h3 id="release-dun-ig-fhir">Release d’un IG FHIR</h3>
 
-<p>Le <strong>statut</strong> devra être placé à draft lorsque celui-ci n’est pas officiellement publié. Il devra être placé à active lors de la première publication. Il est également possible de définir un status par profil si certaines parties de la spécification sont en mode draft.</p>
+<p>Quatre paramètres configurent la publication d’un IG. Le tableau en fin de section synthétise les valeurs à utiliser selon le statut CI-SIS.</p>
 
-<p>Configuration : le statut doit se placer dans l’attribut “status” du fichier sushi-config.</p>
+<p><strong>Statut</strong> — <code class="language-plaintext highlighter-rouge">sushi-config</code> &gt; <code class="language-plaintext highlighter-rouge">status</code></p>
 
-<p>Le numéro de <strong>version</strong> doit respecter le processus semver, soit majeur.mineur.patch. Son usage est précisément défini dans la <a href="https://semver.org/lang/fr/">documentation semver</a>.</p>
+<p><code class="language-plaintext highlighter-rouge">draft</code> tant que l’IG n’est pas officiellement publié, <code class="language-plaintext highlighter-rouge">active</code> dès la première publication. Il est possible de définir un statut différent par profil si certaines parties de la spécification restent en cours de rédaction.</p>
 
-<p>Configuration : le statut doit se placer dans l’attribut “version” du fichier sushi-config et dans l’attribut “version” du fichier publication-request</p>
+<p><strong>Version</strong> — <code class="language-plaintext highlighter-rouge">sushi-config</code> &gt; <code class="language-plaintext highlighter-rouge">version</code> et <code class="language-plaintext highlighter-rouge">publication-request</code> &gt; <code class="language-plaintext highlighter-rouge">version</code></p>
 
-<p>Le <strong>label de publication</strong> doit contenir “ci-build”, “ballot”, “trial-use” ou “final-text” en fonction des cas qui seront détaillés dans le cycle de vie des spécifications bientôt publiés.
-Il est possible de préciser la maturité sous forme de release notes en début de page index en utilisant la balise &lt;blockquote class="stu-note"&gt;&lt;blockquote&gt;.</p>
+<p>Suit la convention <a href="https://semver.org/lang/fr/">semver</a> au format <code class="language-plaintext highlighter-rouge">majeur.mineur.patch</code>.</p>
 
-<p>Configuration : le label de publication doit se placer dans l’attribut “label” du fichier “publication-request” et dans l’attribut releaseLabel du fichier sushi-config.</p>
+<p><strong>Label de publication</strong> — <code class="language-plaintext highlighter-rouge">sushi-config</code> &gt; <code class="language-plaintext highlighter-rouge">releaseLabel</code></p>
 
-<p>Le <strong>mode de publication</strong> permet de paramétrer la release.</p>
+<p>Indique le stade de publication : <code class="language-plaintext highlighter-rouge">ci-build</code>, <code class="language-plaintext highlighter-rouge">ballot</code>, <code class="language-plaintext highlighter-rouge">trial-use</code> ou <code class="language-plaintext highlighter-rouge">final-text</code>. Il est possible de préciser la maturité en début de page index avec la balise &lt;blockquote class="stu-note"&gt;.</p>
 
-<p>Configuration : le mode de publication doit être indiqué dans l’attribut “mode” du fichier publication-request.</p>
+<p><strong>Statut de publication</strong> — <code class="language-plaintext highlighter-rouge">publication-request</code> &gt; <code class="language-plaintext highlighter-rouge">status</code></p>
 
-<p>Les travaux de mise à jour actuelle vont définir de nouveaux statuts pour les guides d’implémentation, voici la correspondance entre les statuts CI-SIS et les paramètres de publication :</p>
+<p>Valeurs autorisées : <code class="language-plaintext highlighter-rouge">draft</code>, <code class="language-plaintext highlighter-rouge">ballot</code>, <code class="language-plaintext highlighter-rouge">trial-use</code>, <code class="language-plaintext highlighter-rouge">update</code>, <code class="language-plaintext highlighter-rouge">preview</code>, <code class="language-plaintext highlighter-rouge">normative</code>, <code class="language-plaintext highlighter-rouge">normative+trial-use</code>, <code class="language-plaintext highlighter-rouge">informative</code>, <code class="language-plaintext highlighter-rouge">release</code>. Voir la <a href="https://confluence.hl7.org/spaces/FHIR/pages/144970227/IG+Publication+Request+Documentation">documentation officielle</a> pour la signification de chaque valeur.</p>
+
+<p><strong>Mode de publication</strong> — <code class="language-plaintext highlighter-rouge">publication-request</code> &gt; <code class="language-plaintext highlighter-rouge">mode</code></p>
+
+<p>Paramètre le type de release. Voir le tableau ci-dessous pour les valeurs selon le statut CI-SIS.</p>
+
+<p>Correspondance entre les statuts CI-SIS et les paramètres de publication :</p>
 
 <table>
   <thead>
     <tr>
-      <th>&nbsp;Statut de maturité CI-SIS</th>
-      <th>Statut IG</th>
-      <th>label de publication</th>
-      <th>Mode de publication</th>
+      <th>Statut CI-SIS</th>
+      <th><code class="language-plaintext highlighter-rouge">sushi-config</code> : <code class="language-plaintext highlighter-rouge">status</code></th>
+      <th><code class="language-plaintext highlighter-rouge">sushi-config</code> : <code class="language-plaintext highlighter-rouge">releaseLabel</code></th>
+      <th><code class="language-plaintext highlighter-rouge">publication-request</code> : <code class="language-plaintext highlighter-rouge">status</code></th>
+      <th><code class="language-plaintext highlighter-rouge">publication-request</code> : <code class="language-plaintext highlighter-rouge">mode</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>draft</td>
-      <td>draft</td>
-      <td>ci-build</td>
+      <td><code class="language-plaintext highlighter-rouge">draft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ci-build</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ci-build</code></td>
       <td>N/A</td>
     </tr>
     <tr>
       <td>public-comment</td>
-      <td>draft</td>
-      <td>ballot</td>
-      <td>working</td>
+      <td><code class="language-plaintext highlighter-rouge">draft</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ballot</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ballot</code></td>
+      <td><code class="language-plaintext highlighter-rouge">working</code></td>
     </tr>
     <tr>
       <td>for implementation</td>
-      <td>active</td>
-      <td>trial-use</td>
-      <td>milestone</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">trial-use</code></td>
+      <td><code class="language-plaintext highlighter-rouge">trial-use</code></td>
+      <td><code class="language-plaintext highlighter-rouge">milestone</code></td>
     </tr>
     <tr>
       <td>final-text</td>
-      <td>active</td>
-      <td>final-text</td>
-      <td>milestone</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">final-text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">release</code></td>
+      <td><code class="language-plaintext highlighter-rouge">milestone</code></td>
     </tr>
     <tr>
       <td>withdrawn ou deprecated</td>
-      <td>retired</td>
-      <td>resp. withdrawn ou retired</td>
-      <td>withdrawal</td>
+      <td><code class="language-plaintext highlighter-rouge">retired</code></td>
+      <td>N/A</td>
+      <td><code class="language-plaintext highlighter-rouge">withdrawn</code> ou <code class="language-plaintext highlighter-rouge">retired</code></td>
+      <td><code class="language-plaintext highlighter-rouge">withdrawal</code></td>
     </tr>
   </tbody>
 </table>
@@ -647,7 +661,7 @@ Description: "Description du modèle logique."
   <tbody>
     <tr>
       <td>id</td>
-      <td>uuid</td>
+      <td>id-de-lexemple (indiqué dans Instance: “…”)</td>
     </tr>
     <tr>
       <td>name</td>
@@ -896,7 +910,7 @@ Usage: #definition
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.10 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 5, 2026 09:39+0000">2026-03-05</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.documentation#0.1.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 18, 2026 11:35+0000">2026-06-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
