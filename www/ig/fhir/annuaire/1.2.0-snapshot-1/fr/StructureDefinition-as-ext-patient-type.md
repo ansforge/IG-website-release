@@ -1,4 +1,4 @@
-# AS Patient Type Extension - Annuaire Santé v1.2.0-snapshot-1
+# AS Patient Type Extension - Annuaire Santé v1.2.0-snapshot-2
 
 ## Extension: AS Patient Type Extension 
 
@@ -60,11 +60,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-patient-
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-patient-type",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-patient-type",
-  "version" : "1.2.0-snapshot-1",
+  "version" : "1.2.0-snapshot-2",
   "name" : "AsPatientTypeExtension",
   "title" : "AS Patient Type Extension",
   "status" : "draft",
-  "date" : "2026-06-16T14:13:23+00:00",
+  "date" : "2026-06-19T14:20:56+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
