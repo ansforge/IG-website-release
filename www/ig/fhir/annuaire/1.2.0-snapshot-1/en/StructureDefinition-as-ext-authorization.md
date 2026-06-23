@@ -1,4 +1,4 @@
-# AS Authorization Extension - Annuaire Santé v1.2.0-snapshot-2
+# AS Authorization Extension - Annuaire Santé v1.2.0-snapshot-1
 
 ## Extension: AS Authorization Extension 
 
@@ -31,11 +31,11 @@ Other representations of profile: [CSV](../StructureDefinition-as-ext-authorizat
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-authorization",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-authorization",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-1",
   "name" : "AsAuthorizationExtension",
   "title" : "AS Authorization Extension",
   "status" : "draft",
-  "date" : "2026-06-19T14:20:56+00:00",
+  "date" : "2026-06-16T14:13:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
