@@ -1,4 +1,4 @@
-# AS Donnée Publique Practitioner Profile - Annuaire Santé v1.2.0-snapshot-2
+# AS Donnée Publique Practitioner Profile - Annuaire Santé v1.2.0-snapshot-1
 
 ## Profil de ressource: AS Donnée Publique Practitioner Profile 
 
@@ -8,7 +8,7 @@ Profil public applicatif créé à partir du profil générique as-practitioner 
 **Utilisations:**
 
 * Exemples pour ce/t/te Profil: [Practitioner/334081DP](Practitioner-334081DP.md) and [Practitioner/3719500DP](Practitioner-3719500DP.md)
-* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-2]](CapabilityStatement-AsServerDPCapabilityStatement.md)
+* CapabilityStatements utilisant ce Profil: [CapabilityStatement[https://interop.esante.gouv.fr/ig/fhir/annuaire/CapabilityStatement/AsServerDPCapabilityStatement|1.2.0-snapshot-1]](CapabilityStatement-AsServerDPCapabilityStatement.md)
 
 Vous pouvez également vérifier [les usages dans le FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.annuaire|current/StructureDefinition/as-dp-practitioner)
 
@@ -44,7 +44,7 @@ Obligatoire : 3 éléments(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -80,7 +80,7 @@ Obligatoire : 3 éléments(2 éléments obligatoire(s) imbriqué(s))
 
 Cette structure fait référence à ces extensions:
 
-* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2](StructureDefinition-as-ext-data-trace.md)
+* [https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1](StructureDefinition-as-ext-data-trace.md)
 
 **Slices**
 
@@ -101,11 +101,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
   "resourceType" : "StructureDefinition",
   "id" : "as-dp-practitioner",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-1",
   "name" : "AsDpPractitionerProfile",
   "title" : "AS Donnée Publique Practitioner Profile",
   "status" : "draft",
-  "date" : "2026-06-19T14:20:56+00:00",
+  "date" : "2026-06-16T14:13:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -185,7 +185,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
   "kind" : "resource",
   "abstract" : false,
   "type" : "Practitioner",
-  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-2",
+  "baseDefinition" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-practitioner|1.2.0-snapshot-1",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -200,7 +200,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-2"]
+        "profile" : ["https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-data-trace|1.2.0-snapshot-1"]
       }],
       "mustSupport" : true
     },
@@ -226,7 +226,7 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
       "sliceName" : "as-dp-canonical",
       "min" : 1,
       "max" : "1",
-      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-2"
+      "patternCanonical" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-dp-practitioner|1.2.0-snapshot-1"
     },
     {
       "id" : "Practitioner.extension:as-ext-registration",
@@ -425,12 +425,6 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-dp-practitio
       "id" : "Practitioner.qualification:savoirFaire",
       "path" : "Practitioner.qualification",
       "sliceName" : "savoirFaire"
-    },
-    {
-      "id" : "Practitioner.qualification:savoirFaire.code.coding:savoirFaire",
-      "path" : "Practitioner.qualification.code.coding",
-      "sliceName" : "savoirFaire",
-      "short" : "Compétence acquise par le professionnel (competence) R39 ou Compétence exclusive exercée par le professionnel à titre exclusif (competenceExclusive) R40 ou Diplôme d'études spécialisées complémentaires (DESC)DESCnonQualifian R42 ou Capacité (savoir-faire)de médecine (capaciteSavoirFaire) R43 ou Qualification de praticien adjoint contractuel (qualificationPAC) R44 ou Fonction qualifiée (Synonyme: fonctionQualifiee) R45 ou Droit d'exercice complémentaire (Synonyme: droitExerciceComplementaire) R97."
     },
     {
       "id" : "Practitioner.qualification:savoirFaire.period",
