@@ -1,4 +1,4 @@
-# AS Organization Budget Type Extension - Annuaire Santé v1.2.0-snapshot-2
+# AS Organization Budget Type Extension - Annuaire Santé v1.2.0-snapshot-1
 
 ## Extension: AS Organization Budget Type Extension 
 
@@ -60,11 +60,11 @@ Autres représentations du profil : [CSV](../StructureDefinition-as-ext-organiza
   "resourceType" : "StructureDefinition",
   "id" : "as-ext-organization-budget-type",
   "url" : "https://interop.esante.gouv.fr/ig/fhir/annuaire/StructureDefinition/as-ext-organization-budget-type",
-  "version" : "1.2.0-snapshot-2",
+  "version" : "1.2.0-snapshot-1",
   "name" : "AsOrganizationBudgetTypeExtension",
   "title" : "AS Organization Budget Type Extension",
   "status" : "draft",
-  "date" : "2026-06-19T14:20:56+00:00",
+  "date" : "2026-06-16T14:13:23+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
