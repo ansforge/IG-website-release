@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns:mif="urn:hl7-org:v3/mif"
+ xmlns:cnsaSDO="urn:cnsaSDO"
+ xmlns:sch="http://www.ascc.net/xml/schematron"
+ xmlns="urn:hl7-org:v3"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 
+      **********************************************************************************************************
+      Document : Dossier de décision d'orientation en ESMS (CNSA_ESMS-Decision)
+      Auteur : ANS / KER
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+      **********************************************************************************************************
+      Historique:   
+      29/01/2025    Suppression de l'idNat_Decision au niveau de l'id du document
+                    Mise à jour de l'id du document
+                    Mise à jour de l'élément setID pour y ajouter l'attribut extension qui porte l'idNat_Decision 
+                    Mise à jour du setID
+                    Mise à jour de l'id contenu dans RelatedDocument
+      **********************************************************************************************************
+   -->   
+    <realmCode code="FR"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="1.2.250.1.213.1.1.1.4.9"/>
+    <templateId root="2.16.840.1.113883.10.12.2"/>
+    <id root="1.2.250.1.213.8.1.235.2"/>
+    <code code="18825-0" codeSystem="2.16.840.1.113883.4.642.3.240" displayName="Medical social services attachment"/>
+    <title>Exemple ESMS Evaluation</title>
+    <effectiveTime value="20230110"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/>
+	<languageCode code="fr-FR" />
+    <setId root="1.2.250.1.213.8.1.235" extension="idNat_Decision"/>
+	<versionNumber value="2"/>
+
+    
+    <recordTarget>
+        <patientRole>
+            <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
+            <id extension="276059205062865" root="1.2.250.1.213.1.4.8"/>
+            <!-- Identifiant initial au sein de la MDPH ayant créé le dossier individu-->
+            <id extension="idDossierIndividu" root="1.2.250.1.213.7.14"/>
+            <!-- Adresse -->
+            <addr use="PHYS">
+                <streetAddressLine>17 AV de Bruxelles</streetAddressLine>
+                <postalCode>35830</postalCode>
+                <city>Betton</city>
+            </addr>
+            <!-- MDPH en charge du dossier  -->
+            <cnsaSDO:idMDPHResponsable extension="06-ALPES MARITIMES" root="1.2.250.1.213.7.6"></cnsaSDO:idMDPHResponsable>
+        </patientRole>
+    </recordTarget>
+    
+    <!-- Structure émettrice du document  -->
+    <author contextControlCode="OP" typeCode="AUT">
+        <time value="20230110172308+0100"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <id root="1.2.250.1.213.8.1" extension="ViaTrajectoire"/>
+        </assignedAuthor>
+    </author>
+                     
+    <!-- Structure en charge du cycle de vie des données du document  -->
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.2.250.1.213.8.1" extension="ViaTrajectoire"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+	
+	<!-- On renseigne ici l'identifiant du document remplacé en précisant qu'il s'agit d'un remplacement -->
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id root="1.2.250.1.213.8.1.235.1"/>
+		</parentDocument>
+	</relatedDocument>
+
+    <!-- Corps du document  -->
+    <component>
+        <structuredBody> 
+            <component>
+                <!-- Section représentant l’évaluation d’un individu -->
+                <section>
+                    <templateId root="1.2.250.1.213.1.1.2.229"/> 
+                    <templateId root="2.16.840.1.113883.10.12.201"/>
+                    <text>20230110</text> <!-- Date de dernière mise à jour de la qualification de la situation et des besoins -->
+                    
+                    <!-- Eléments environnementaux -->
+                    <component>
+                        <section> 
+                            <templateId root="1.2.250.1.213.1.1.2.230"/>  
+                            <templateId root="2.16.840.1.113883.10.12.201"/>
+                            <!-- Composition du foyer -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.177"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code nullFlavor="NA">
+                                        <originalText>CompositionFoyer</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="II.1.bis.1" codeSystem="1.2.250.1.213.3.3.106" displayName="vit seule"></value>
+                                </observation>
+                            </entry>
+                            <!-- type d'hébergement -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.178"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code><originalText>TypeHebergement</originalText></code>
+                                    <value xsi:type="CE" code="III.1.1" codeSystem="1.2.250.1.213.3.3.207" displayName="Domicile personnel"></value>
+                                </observation>
+                            </entry>
+                            <!-- Caractéristiques du logement -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.179"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code><originalText>CaracteristiqueLogement</originalText></code> 
+                                    <value xsi:type="CE" code="III.5.4" codeSystem="1.2.250.1.213.3.3.99" displayName="logement accessible, adapté"></value>
+                                </observation>
+                            </entry>
+                            <!-- Ressources propres de la personne -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.180"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code><originalText>RessourceProprePersonne</originalText></code> 
+                                    <value xsi:type="CE" code="II.3.2.a" codeSystem="1.2.250.1.213.3.3.174" displayName="a des ressources personnelles issues d'un salaire ou d'autre revenu du travail" ></value>
+                                </observation>
+                            </entry>
+                            <!-- Caractéristiques transport -->
+                            <entry>                                 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.181"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>CaracteristiqueTransport</originalText></code> 
+                                    <value xsi:type="CE" code="IV.2" codeSystem="1.2.250.1.213.3.3.201" displayName="utilisation des transports en commun"></value>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    
+                    <!-- Eléments médicaux -->
+                    <component>
+                        <section> 
+                            <templateId root="1.2.250.1.213.1.1.2.231"></templateId>
+                            <templateId root="2.16.840.1.113883.10.12.201"></templateId>
+                            <!-- Pathologie principale -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.182"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>PathologiePrincipale</originalText></code> 
+                                    <value xsi:type="CE"  code="A81" codeSystem="1.2.250.1.213.3.3.162" displayName="Infections atypiques à virus, du système nerveux central"></value>
+                                </observation>
+                            </entry>
+                            <!-- Pathologie secondaire -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.183"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>PathologieSecondaire</originalText></code> 
+                                    <value xsi:type="CE" code="C17" codeSystem="1.2.250.1.213.3.3.162" displayName="Tumeur maligne de l'intestin grêle"></value>
+                                </observation>
+                            </entry>
+                            <!-- Maladie rare -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.184"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>MaladieRare</originalText></code> 
+                                    <value xsi:type="CE" code="VII.1.b" codeSystem="1.2.250.1.213.3.3.224" displayName="non, ce n'est pas une maladie rare"></value>
+                                </observation>
+                            </entry>
+                            <!-- Handicap rare -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.185"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>HandicapRare</originalText></code> 
+                                    <value xsi:type="CE" code="VII.9.bis.2" codeSystem="1.2.250.1.213.3.3.225"></value>
+                                </observation>
+                            </entry>
+                            <!-- Déficience principale -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.186"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>DeficiencePrincipale</originalText></code> 
+                                    <value xsi:type="CE" code="9999" codeSystem="1.2.250.1.213.3.3.108" displayName="Pas de déficience"></value>
+                                </observation>
+                            </entry>
+                            <!-- Prise en charge -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.188"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>PriseEnCharge</originalText></code> 
+                                    <value xsi:type="CE" code="VII.10.2.k.3" codeSystem="1.2.250.1.213.3.3.170" displayName="nécessité d'assurer une prévention pulmonaire"></value>
+                                </observation>
+                            </entry>
+                            <!-- Difficulté rencontrée -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.189"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>DifficulteRencontree</originalText></code> 
+                                    <value xsi:type="CE" code="IX.2.b.6.g" codeSystem="1.2.250.1.213.3.3.86" displayName="gère seul et avec difficulté l'activité utiliser les transports en commun"></value>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                    
+                    <!-- Eléments Scolaires ou Professionnels -->
+                    <component>
+                        <section> 
+                            <templateId root="1.2.250.1.213.1.1.2.232"></templateId>
+                            <templateId root="2.16.840.1.113883.10.12.201"></templateId>
+                            <!-- Situation par rapport à la scolarité -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.190"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>SituationScolarite</originalText></code> 
+                                    <value xsi:type="CE" code="II.2.2.a.9" codeSystem="1.2.250.1.213.3.3.178" displayName="Formation en CFA "></value>
+                                </observation>
+                            </entry>
+                            <!-- Temps de scolarisation -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.191"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>TempsScolarisation</originalText></code> 
+                                    <value xsi:type="CE" code="V.5.10" codeSystem="1.2.250.1.213.3.3.198" displayName="9 demi-journées"></value>
+                                </observation>
+                            </entry>
+                            <!-- Evaluation scolarité -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.192"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>EvaluationScolarite</originalText></code> 
+                                    <value xsi:type="CE" code="V.2.1" codeSystem="1.2.250.1.213.3.3.122" displayName="scolarité sans aménagements avec acquisitions comparables en rythme et en contenu à la classe d'âge"></value>
+                                </observation>
+                            </entry>
+                            <!-- Niveau de formation professionnelle -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.193"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>NiveauFormationProfessionnelle</originalText></code> 
+                                    <value xsi:type="CE" code="VI.1.bis.10" codeSystem="1.2.250.1.213.3.3.152" displayName="Niv. 6 - Bac + 4 - Maîtrise"></value>
+                                </observation>
+                            </entry>
+                            <!-- Situation par rapport au travail -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.194"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>SituationProfessionnelle</originalText></code> 
+                                    <value xsi:type="CE" code="VI.3.bis.2.e" codeSystem="1.2.250.1.213.3.3.179" displayName="travaille en CDI"></value>
+                                </observation>
+                            </entry>
+                            <!-- Aptitude actuelle au poste -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.195"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>AptitudePoste</originalText></code> 
+                                    <value xsi:type="CE" code="VI.4.septies.1.a" codeSystem="1.2.250.1.213.3.3.89" displayName="apte sans restriction sans aménagement de poste"></value>
+                                </observation>
+                            </entry>
+                            <!-- Perspectives professionnelles -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.196"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>PerspectiveProfessionnelle</originalText></code> 
+                                    <value xsi:type="CE" code="VI.5.4" codeSystem="1.2.250.1.213.3.3.164" displayName="reconversion professionnelle"></value>
+                                </observation>
+                            </entry>   
+                        </section>
+                    </component>        
+                    
+                    <!-- Evolution et Besoins -->
+                    <component>
+                        <section> 
+                            <templateId root="1.2.250.1.213.1.1.2.233"></templateId>
+                            <templateId root="2.16.840.1.113883.10.12.201"></templateId>
+                            <!-- Evolution envisagée -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.197"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>EvolutionEnvisagee</originalText></code> 
+                                    <value xsi:type="CE" code="VII.7.2" codeSystem="1.2.250.1.213.3.3.124" displayName="stabilité envisagée"></value>
+                                </observation>
+                            </entry> 
+                            <!-- Evolution constatée -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.198"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>EvolutionConstatee</originalText></code> 
+                                    <value xsi:type="CE" code="VII.8.1" codeSystem="1.2.250.1.213.3.3.123" displayName="amélioration depuis la précédente évaluation"></value>
+                                </observation>
+                            </entry>   
+                            <!--Besoins de compensation identifiés -->
+                            <entry> 
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.2.250.1.213.1.1.3.199"></templateId>
+                                    <templateId root="2.16.840.1.113883.10.12.303"></templateId>
+                                    <code> <originalText>BesoinCompensation</originalText></code> 
+                                    <value xsi:type="CE" code="9999" codeSystem="1.2.250.1.213.3.3.94" displayName="Pas de besoins"></value>
+                                </observation>
+                            </entry>   
+                        </section>
+                    </component>
+                </section>
+            </component>
+
+       </structuredBody>
+    </component>
+</ClinicalDocument>

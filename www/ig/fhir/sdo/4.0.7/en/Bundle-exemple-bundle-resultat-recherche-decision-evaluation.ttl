@@ -1,0 +1,123 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/exemple-bundle-resultat-recherche-decision-evaluation> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "exemple-bundle-resultat-recherche-decision-evaluation"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-bundle-resultat-recherche-decision-evaluation>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Bundle.type [ fhir:value "searchset"] ;
+  fhir:Bundle.entry [
+     fhir:index -1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/DocumentReference/exemple-esms-documentreference-1-in-bundle" ] ;
+     fhir:Bundle.entry.resource <https://example.com/base/DocumentReference/exemple-esms-documentreference-1-in-bundle>
+  ], [
+     fhir:index -1 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/DocumentReference/exemple-esms-documentreference-2-in-bundle" ] ;
+     fhir:Bundle.entry.resource <https://example.com/base/DocumentReference/exemple-esms-documentreference-2-in-bundle>
+  ] .
+
+<https://example.com/base/DocumentReference/exemple-esms-documentreference-1-in-bundle> a fhir:DocumentReference ;
+  fhir:Resource.id [ fhir:value "exemple-esms-documentreference-1-in-bundle"] ;
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2023-01-26T16:46:48.054+00:00"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ] ;
+  fhir:DocumentReference.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "usual" ] ;
+     fhir:Identifier.value [ fhir:value "idDecision1" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "idNat_Decision1" ]
+  ] ;
+  fhir:DocumentReference.status [ fhir:value "current"] ;
+  fhir:DocumentReference.type [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a loinc:57830-2 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "57830-2" ] ;
+       fhir:Coding.display [ fhir:value "Admission request Document" ]
+     ]
+  ] ;
+  fhir:DocumentReference.content [
+     fhir:index -1 ;
+     fhir:DocumentReference.content.attachment [
+       fhir:Attachment.contentType [ fhir:value "text/plain" ] ;
+       fhir:Attachment.language [ fhir:value "fr" ] ;
+       fhir:Attachment.data [ fhir:value "SGVsbG8gd29ybGQ="^^xsd:base64Binary ] ;
+       fhir:Attachment.title [ fhir:value "Document Individu et décision" ]
+     ]
+  ] .
+
+<https://example.com/base/DocumentReference/exemple-esms-documentreference-2-in-bundle> a fhir:DocumentReference ;
+  fhir:Resource.id [ fhir:value "exemple-esms-documentreference-2-in-bundle"] ;
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2019-12-08T10:07:46.748+00:00"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-document-reference>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ]
+  ] ;
+  fhir:DocumentReference.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "usual" ] ;
+     fhir:Identifier.value [ fhir:value "idDecision2" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "idNat_Decision2" ]
+  ] ;
+  fhir:DocumentReference.status [ fhir:value "current"] ;
+  fhir:DocumentReference.type [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a loinc:57830-2 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "57830-2" ] ;
+       fhir:Coding.display [ fhir:value "Admission request Document" ]
+     ]
+  ] ;
+  fhir:DocumentReference.content [
+     fhir:index -1 ;
+     fhir:DocumentReference.content.attachment [
+       fhir:Attachment.contentType [ fhir:value "text/plain" ] ;
+       fhir:Attachment.language [ fhir:value "fr" ] ;
+       fhir:Attachment.data [ fhir:value "SGVsbG8gd29ybGQ="^^xsd:base64Binary ] ;
+       fhir:Attachment.title [ fhir:value "Document Individu et décision" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/Bundle/exemple-bundle-resultat-recherche-decision-evaluation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

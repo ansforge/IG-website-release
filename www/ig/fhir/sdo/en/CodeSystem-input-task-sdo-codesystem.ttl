@@ -1,0 +1,147 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "input-task-sdo-codesystem"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablecodesystem" ;
+       fhir:index -1 ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablecodesystem>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem input-task-sdo-codesystem</b></p><a name=\"en-input-task-sdo-codesystem\"> </a><a name=\"en-hcinput-task-sdo-codesystem\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/R4/shareablecodesystem.html\">Shareable CodeSystem</a></p></div><p>This case-sensitive code system <code>https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">idNat_Struct<a name=\"en-input-task-sdo-codesystem-idNat_Struct\"> </a></td><td>Identifiant de l'ESMS accueillant l'individu en situation de handicap. Cet identifiant est obtenu par la concaténation du type d'identifiant national de structure (provenant de la nomenclature TRE_G07-TypeIdentifiantStructure) et de l'identifiant de la structure: ** 1 + N° FINESS (entité juridique et entité géographique indéterminées);** 3 + N° SIRET</td></tr><tr><td style=\"white-space:nowrap\">nomESMS<a name=\"en-input-task-sdo-codesystem-nomESMS\"> </a></td><td>Permet de définir le nom de l’ESMS</td></tr><tr><td style=\"white-space:nowrap\">statutESMS<a name=\"en-input-task-sdo-codesystem-statutESMS\"> </a></td><td>Statut de l’usager dans l'ESMS</td></tr><tr><td style=\"white-space:nowrap\">motifESMS<a name=\"en-input-task-sdo-codesystem-motifESMS\"> </a></td><td>Permet de définir le motif associé au statut de l’usager dans l’ESMS. Motifs obligatoires pour certains statuts suivant la table : https://mos.esante.gouv.fr/NOS/ASS_A32-StatutMotifPersonnePriseCharge/ASS_A32-StatutMotifPersonnePriseCharge.pdf</td></tr><tr><td style=\"white-space:nowrap\">dateStatutESMS<a name=\"en-input-task-sdo-codesystem-dateStatutESMS\"> </a></td><td>La spécification fonctionnelle des échanges (https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph) donne la signification de cette date par rapport au statut ESMS</td></tr><tr><td style=\"white-space:nowrap\">idUnite<a name=\"en-input-task-sdo-codesystem-idUnite\"> </a></td><td>Identifiant de l'unité qui correspond à l’identifiant de l'organisation interne, unique et persistant au niveau national, et généré par une instance régionale du ROR (pour plus de précision, voir la spécification « ANS ROR - Modèle Exposition</td></tr><tr><td style=\"white-space:nowrap\">nomUnite<a name=\"en-input-task-sdo-codesystem-nomUnite\"> </a></td><td>Nom de l'unité</td></tr><tr><td style=\"white-space:nowrap\">categorieOrganisation<a name=\"en-input-task-sdo-codesystem-categorieOrganisation\"> </a></td><td>Permet de définir la catégorie d’organisation qui caractérise la nature particulière de l’offre de santé portée par l'unité</td></tr><tr><td style=\"white-space:nowrap\">temporaliteAccueil<a name=\"en-input-task-sdo-codesystem-temporaliteAccueil\"> </a></td><td>Permet de définir la fréquence d'accueil lors d'une prise en charge en ESMS</td></tr><tr><td style=\"white-space:nowrap\">accueilSequentiel<a name=\"en-input-task-sdo-codesystem-accueilSequentiel\"> </a></td><td>Permet de définir l’accueil séquentiel</td></tr><tr><td style=\"white-space:nowrap\">modePriseCharge<a name=\"en-input-task-sdo-codesystem-modePriseCharge\"> </a></td><td>Permet de définir le mode de prise en charge</td></tr><tr><td style=\"white-space:nowrap\">statutUnite<a name=\"en-input-task-sdo-codesystem-statutUnite\"> </a></td><td>Statut de la personne orientée au niveau de l’unité, définis dans le cadre fonctionnel du système d'information de suivi des orientations de la CNSA</td></tr><tr><td style=\"white-space:nowrap\">dateStatutUnite<a name=\"en-input-task-sdo-codesystem-dateStatutUnite\"> </a></td><td>La spécification fonctionnelle des échanges (https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph) donne la signification de cette date par rapport au statut de l’unité</td></tr><tr><td style=\"white-space:nowrap\">motifUnite<a name=\"en-input-task-sdo-codesystem-motifUnite\"> </a></td><td>Permet de définir le motif de sortie ou d’admission impossible</td></tr><tr><td style=\"white-space:nowrap\">typeDroitPrestation<a name=\"en-input-task-sdo-codesystem-typeDroitPrestation\"> </a></td><td>Permet de définir le type de droit et prestation caractérisant la décision d'orientation.</td></tr><tr><td style=\"white-space:nowrap\">idDecision<a name=\"en-input-task-sdo-codesystem-idDecision\"> </a></td><td>Permet de définir l’identifiant de la décision unique au sein de la MDPH</td></tr><tr><td style=\"white-space:nowrap\">idNat_Decision<a name=\"en-input-task-sdo-codesystem-idNat_Decision\"> </a></td><td>Identifiant technique national de la décision, généré par ViaTrajectoire. Cet identifiant unique est retourné dans le Flux 1 par ViaTrajectoire à la MDPH lorsque la décision est créée dans le SI-SdO.</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem"] ;
+  fhir:CodeSystem.version [ fhir:value "4.0.7"] ;
+  fhir:CodeSystem.name [ fhir:value "InputTaskSDOCodeSystem"] ;
+  fhir:CodeSystem.title [ fhir:value "InputTaskSDOCodeSystem"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-06-29T08:46:20+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "ANS"] ;
+  fhir:CodeSystem.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "ANS" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Code System pour la définition des éléments spécifiques de input dans ressource ESMSTask"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "FR" ] ;
+       fhir:Coding.display [ fhir:value "France (la)" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.compositional [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "17"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "idNat_Struct" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "idNat_Struct" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Identifiant de l'ESMS accueillant l'individu en situation de handicap. Cet identifiant est obtenu par la concaténation du type d'identifiant national de structure (provenant de la nomenclature TRE_G07-TypeIdentifiantStructure) et de l'identifiant de la structure: ** 1 + N° FINESS (entité juridique et entité géographique indéterminées);** 3 + N° SIRET" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "nomESMS" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "nomESMS" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir le nom de l’ESMS" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "statutESMS" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "statutESMS" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Statut de l’usager dans l'ESMS" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "motifESMS" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "motifESMS" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir le motif associé au statut de l’usager dans l’ESMS. Motifs obligatoires pour certains statuts suivant la table : https://mos.esante.gouv.fr/NOS/ASS_A32-StatutMotifPersonnePriseCharge/ASS_A32-StatutMotifPersonnePriseCharge.pdf" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "dateStatutESMS" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "dateStatutESMS" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "La spécification fonctionnelle des échanges (https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph) donne la signification de cette date par rapport au statut ESMS" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "idUnite" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "idUnite" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Identifiant de l'unité qui correspond à l’identifiant de l'organisation interne, unique et persistant au niveau national, et généré par une instance régionale du ROR (pour plus de précision, voir la spécification « ANS ROR - Modèle Exposition" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "nomUnite" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "nomUnite" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Nom de l'unité" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "categorieOrganisation" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "categorieOrganisation" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir la catégorie d’organisation qui caractérise la nature particulière de l’offre de santé portée par l'unité" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "temporaliteAccueil" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "temporaliteAccueil" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir la fréquence d'accueil lors d'une prise en charge en ESMS" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "accueilSequentiel" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "accueilSequentiel" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir l’accueil séquentiel" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "modePriseCharge" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "modePriseCharge" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir le mode de prise en charge" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "statutUnite" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "statutUnite" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Statut de la personne orientée au niveau de l’unité, définis dans le cadre fonctionnel du système d'information de suivi des orientations de la CNSA" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "dateStatutUnite" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "dateStatutUnite" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "La spécification fonctionnelle des échanges (https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph) donne la signification de cette date par rapport au statut de l’unité" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "motifUnite" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "motifUnite" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir le motif de sortie ou d’admission impossible" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "typeDroitPrestation" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "typeDroitPrestation" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir le type de droit et prestation caractérisant la décision d'orientation." ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "idDecision" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "idDecision" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Permet de définir l’identifiant de la décision unique au sein de la MDPH" ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "idNat_Decision" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "idNat_Decision" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Identifiant technique national de la décision, généré par ViaTrajectoire. Cet identifiant unique est retourné dans le Flux 1 par ViaTrajectoire à la MDPH lorsque la décision est créée dans le SI-SdO." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,234 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/Task/exemple-esms-task> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "exemple-esms-task"] ;
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2017-01-01T00:00:00.000Z"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-task" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/sdo/StructureDefinition/esms-task>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Task exemple-esms-task</b></p><a name=\"en-exemple-esms-task\"> </a><a name=\"en-hcexemple-esms-task\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2017-01-01 00:00:00+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-esms-task.html\">ESMSTask</a></p></div><p><b>status</b>: Completed</p><p><b>intent</b>: plan</p><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem idNat_Struct}\">idNat_Struct</span></p><p><b>value</b>: value idNat_Struct</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem nomESMS}\">nomESMS</span></p><p><b>value</b>: value nomESMS</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem idDecision}\">idDecision</span></p><p><b>value</b>: IdDecision</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem idNat_Decision}\">idNat_Decision</span></p><p><b>value</b>: IdNat_Decision</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem statutESMS}\">statutESMS</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R357-StatutPersonnePriseCharge/FHIR/TRE-R357-StatutPersonnePriseCharge 48}\">Usager sorti</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem dateStatutESMS}\">dateStatutESMS</span></p><p><b>value</b>: 2012-10-25</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem idUnite}\">idUnite</span></p><p><b>value</b>: idUnite</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem nomUnite}\">nomUnite</span></p><p><b>value</b>: test NomUnite</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem categorieOrganisation}\">categorieOrganisation</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R244-CategorieOrganisation/FHIR/TRE-R244-CategorieOrganisation 01}\">Appartement thérapeutique</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem temporaliteAccueil}\">temporaliteAccueil</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R240-TemporaliteAccueil/FHIR/TRE-R240-TemporaliteAccueil 01}\">Temporaire</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem accueilSequentiel}\">accueilSequentiel</span></p><p><b>value</b>: true</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem modePriseCharge}\">modePriseCharge</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R213-ModePriseEnCharge/FHIR/TRE-R213-ModePriseEnCharge 47}\">Accueil de jour</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem statutUnite}\">statutUnite</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R357-StatutPersonnePriseCharge/FHIR/TRE-R357-StatutPersonnePriseCharge 188}\">Fin de prise en charge</span></p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem dateStatutUnite}\">dateStatutUnite</span></p><p><b>value</b>: 2021-10-25</p></blockquote><blockquote><p><b>input</b></p><p><b>type</b>: <span title=\"Codes:{https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem motifUnite}\">motifUnite</span></p><p><b>value</b>: <span title=\"Codes:{https://mos.esante.gouv.fr/NOS/TRE_R358-MotifStatutPersonnePriseCharge/FHIR/TRE-R358-MotifStatutPersonnePriseCharge 89}\">L'usager ne souhaite plus être pris en charge par l'ESMS</span></p></blockquote></div>"
+  ] ;
+  fhir:Task.status [ fhir:value "completed"] ;
+  fhir:Task.intent [ fhir:value "plan"] ;
+  fhir:Task.input [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "idNat_Struct" ]
+       ]
+     ] ;
+     fhir:Task.input.valueIdentifier [
+       fhir:Identifier.value [ fhir:value "value idNat_Struct" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "nomESMS" ]
+       ]
+     ] ;
+     fhir:Task.input.valueString [ fhir:value "value nomESMS" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "idDecision" ]
+       ]
+     ] ;
+     fhir:Task.input.valueIdentifier [
+       fhir:Identifier.value [ fhir:value "IdDecision" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "idNat_Decision" ]
+       ]
+     ] ;
+     fhir:Task.input.valueIdentifier [
+       fhir:Identifier.value [ fhir:value "IdNat_Decision" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "statutESMS" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R357-StatutPersonnePriseCharge/FHIR/TRE-R357-StatutPersonnePriseCharge" ] ;
+         fhir:Coding.code [ fhir:value "48" ] ;
+         fhir:Coding.display [ fhir:value "Usager sorti" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "dateStatutESMS" ]
+       ]
+     ] ;
+     fhir:Task.input.valueDate [ fhir:value "2012-10-25"^^xsd:date ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "idUnite" ]
+       ]
+     ] ;
+     fhir:Task.input.valueIdentifier [
+       fhir:Identifier.value [ fhir:value "idUnite" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "nomUnite" ]
+       ]
+     ] ;
+     fhir:Task.input.valueString [ fhir:value "test NomUnite" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "categorieOrganisation" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R244-CategorieOrganisation/FHIR/TRE-R244-CategorieOrganisation" ] ;
+         fhir:Coding.code [ fhir:value "01" ] ;
+         fhir:Coding.display [ fhir:value "Appartement thérapeutique" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "temporaliteAccueil" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R240-TemporaliteAccueil/FHIR/TRE-R240-TemporaliteAccueil" ] ;
+         fhir:Coding.code [ fhir:value "01" ] ;
+         fhir:Coding.display [ fhir:value "Temporaire" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "accueilSequentiel" ]
+       ]
+     ] ;
+     fhir:Task.input.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "modePriseCharge" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R213-ModePriseEnCharge/FHIR/TRE-R213-ModePriseEnCharge" ] ;
+         fhir:Coding.code [ fhir:value "47" ] ;
+         fhir:Coding.display [ fhir:value "Accueil de jour" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "statutUnite" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R357-StatutPersonnePriseCharge/FHIR/TRE-R357-StatutPersonnePriseCharge" ] ;
+         fhir:Coding.code [ fhir:value "188" ] ;
+         fhir:Coding.display [ fhir:value "Fin de prise en charge" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "dateStatutUnite" ]
+       ]
+     ] ;
+     fhir:Task.input.valueDate [ fhir:value "2021-10-25"^^xsd:date ]
+  ], [
+     fhir:index -1 ;
+     fhir:Task.input.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/sdo/CodeSystem/input-task-sdo-codesystem" ] ;
+         fhir:Coding.code [ fhir:value "motifUnite" ]
+       ]
+     ] ;
+     fhir:Task.input.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://mos.esante.gouv.fr/NOS/TRE_R358-MotifStatutPersonnePriseCharge/FHIR/TRE-R358-MotifStatutPersonnePriseCharge" ] ;
+         fhir:Coding.code [ fhir:value "89" ] ;
+         fhir:Coding.display [ fhir:value "L'usager ne souhaite plus être pris en charge par l'ESMS" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/sdo/Task/exemple-esms-task.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
