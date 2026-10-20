@@ -1,0 +1,21 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"xdmAuthor","xdmAuthor","","","",0,*,"","","","null {[]} {[]}
+","XDM Author","Modèle logique d'un auteur.
+
+Représente les personnes physiques et/ou les systèmes (dispositifs, automates, services numériques référencés…) auteurs d’un document ou d'un lot de soummission. 
+
+L’auteur peut être : 
+- Un professionnel (personne physique) via son logiciel de professionnel, 
+- Le patient/usager (personne physique) via Mon espace Santé, 
+- Un système de structure (dispositif, automate, appareil connecté…), 
+
+
+**author** est un ensemble constitué des sous-attributs **authorInstitution** , **authorPerson**, **authorRole** et **authorSpecialty** et ne porte pas de valeur par lui-même. ","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"xdmAuthor.institution","xdmAuthor.institution","","","",0,1,"","","","https://interop.esante.gouv.fr/ig/pdlgc/StructureDefinition/xdmAuthorInstitution {[]} {[]}
+","Cet attribut représente la structure de l’auteur.","Cet attribut représente la structure de l’auteur.","","","","","","","","","",,,,,"",,,,"xdmAuthor.institution",0,1,"",""
+"xdmAuthor.person[x]","xdmAuthor.person[x]","","","",1,1,"","","","https://interop.esante.gouv.fr/ig/pdlgc/StructureDefinition/xdmActorPs {[]} {[]}
+https://interop.esante.gouv.fr/ig/pdlgc/StructureDefinition/xdmActorPatient {[]} {[]}https://interop.esante.gouv.fr/ig/pdlgc/StructureDefinition/xdmActorSystem {[]} {[]}","Author","Author","","","","","","","","","",,,,,"",,,,"xdmAuthor.person[x]",1,1,"",""
+"xdmAuthor.role","xdmAuthor.role","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","Cet attribut représente le rôle fonctionnel joué par l’auteur vis-à-vis du patient/usager lors de la création du document, c'est-à-dire à quel titre l’auteur est intervenu vis-à-vis du patient (ex : médecin traitant, Responsable de l'admission, Membre de l'équipe de soins, etc.).","**Author Role**","","","","","","","","","",,"preferred","","https://mos.esante.gouv.fr/NOS/JDV_J47-FunctionCode-CISIS/FHIR/JDV-J47-FunctionCode-CISIS|20250523120000","",,,,"xdmAuthor.role",0,*,"",""
+"xdmAuthor.specialty","xdmAuthor.specialty","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Cet attribut représente la profession éventuellement associée au savoir-faire de l’auteur professionnel caractérisé par sa profession ou la profession associée au genre d’activité pour l’auteur professionnel caractérisé par son rôle.","**AutorSpecialty**","","","","","","","","","",,"preferred","","https://mos.esante.gouv.fr/NOS/JDV_J01-XdsAuthorSpecialty-CISIS/FHIR/JDV-J01-XdsAuthorSpecialty-CISIS|20260928120000","",,,,"xdmAuthor.specialty",0,1,"",""

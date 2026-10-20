@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Structure de l'archive de portabilité - Portabilité des Données LGC v0.1.0-ballot</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+    <link rel="stylesheet" href="assets/css/project.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+        <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+    <script src="assets/js/direction-management.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-fhirpath.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-cql.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+    <a id="hl7-search-lnk" href="http://hl7.org/fhir" data-no-external="true"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+  </div>
+  <div style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; " id="ans-nav">
+    <a id="hl7-logo" href="https://esante.gouv.fr/" data-no-external="true"><img src="assets/images/logo-ANS.svg" alt="ANS Logo" height="50"/></a>
+    <a id="hl7-search-lnk" href="searchform.html" data-no-external="true"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+  </div>
+
+  <div id="ig-search">
+ </div>
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">Portabilité des Données LGC</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0-ballot - draft
+
+
+
+
+
+  <img src="../assets/images/fra.svg" alt="France (la) flag" title="France (la)" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Spécifications
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specs-main-flux-export-archive-portabilite.html">Flux Export d'Archive de Portabilité</a>
+      </li>
+      <li>
+        <a href="specs-main-structure-archive.html">Structure de l'architecture de portabilité</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Ressources de conformité</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Annexes
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="annexe-references.html">Références</a>
+      </li>
+      <li>
+        <a href="annexe-securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="annexe-downloads.html">Téléchargements et usage</a>
+      </li>
+      <li>
+        <a href="https://esante.gouv.fr/" target="_blank">Site de l'ANS </a>
+      </li>
+      <li>
+        <a href="https://interop.esante.gouv.fr/ig/documentation/" target="_blank">Documentation des guides d'implémentation</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="change-log.html">Historique</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+
+              
+
+
+<div style="float: var(--ig-right);padding: 8px 0px;" id="language">
+  <div style="background-image: url(assets/images/icon_arrow_down.png);background-position: 133px 3px;" id="select_flg" class="flaglist">
+    <div><img src="assets/images/lang-en.png" alt="flag English" class="flag"/>English</div>
+  </div>
+  <div style="float: var(--ig-right); margin: 2px 0px; padding: 1px 0;color: var(--btn-text-color);font-size:12px">Language:</div>
+ 	<div style="display: none;position: absolute;right: 0;z-index: 100;background-image: url(assets/images/icon_arrow_up.png);background-position: 133px 3px;" id="flaglist" class="flaglist">
+    <div><img src="assets/images/lang-en.png" alt="flag en" class="flag"/>English</div>
+
+    <div><a href="../fr/specs-main-structure-archive.html"><img src="assets/images/lang-fr.png" alt="flag fr" class="flag"/>Français</a></div>
+
+  </div>
+</div>
+
+
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="specifications.html"><b>Spécifications</b></a></li><li><b>Structure de l'archive de portabilité</b></li>
+
+          <span style="float: var(--ig-right);">
+
+            <a href="specs-main-flux-export-archive-portabilite.html">&lt; prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="annexes.html">next &gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the Portabilité des données des Logiciels de Gestion de Cabinet (LGC) (v0.1.0-ballot: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="https://interop.esante.gouv.fr/ig/pdlgc/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Structure de l'archive de portabilité</h2>
+  
+
+
+
+
+<p style="border:var(--translation-box-border);background-color:var(--translation-background-color);padding: 5px 5px 5px 5px;">
+
+<p>There is no translation page available for the current page, so it has been rendered in the default language</p>
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#arborescence-globale" id="markdown-toc-arborescence-globale">Arborescence globale</a></li>
+  <li><a href="#conventions-décritures-des-répertoires-et-des-fichiers" id="markdown-toc-conventions-décritures-des-répertoires-et-des-fichiers">Conventions d'écritures des répertoires et des fichiers</a></li>
+  <li><a href="#fichiers-de-gestion-de-larchive-de-portabilité-manifest-readme-signature" id="markdown-toc-fichiers-de-gestion-de-larchive-de-portabilité-manifest-readme-signature">Fichiers de gestion de l'archive de portabilité (Manifest, readme, signature)</a></li>
+  <li><a href="#documentation-dexport-de-larchive-de-portabilité" id="markdown-toc-documentation-dexport-de-larchive-de-portabilité">Documentation d'export de l'archive de portabilité</a></li>
+  <li><a href="#archive-xdm-patient-patnnnnnzip" id="markdown-toc-archive-xdm-patient-patnnnnnzip">Archive XDM Patient <code class="language-plaintext highlighter-rouge">PATNNNNN.ZIP</code></a></li>
+  <li><a href="#archive-transverse" id="markdown-toc-archive-transverse">Archive <code class="language-plaintext highlighter-rouge">TRANSVERSE</code></a></li>
+</ul>
+
+</div>
+<p>L'archive de portabilité retient une structure de collection d'archives afin de limiter les impacts sur les mécanismes de génération et d'intégration d'archives XDM déjà implémentés par les éditeurs.</p>
+
+<h3 id="arborescence-globale">Arborescence globale</h3>
+
+<p>L'archive de portabilité est constituée de :</p>
+
+<ul>
+  <li>2 fichiers (<code class="language-plaintext highlighter-rouge">README.TXT</code> et <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code>) permettant de lire le contenu et présentant un rapport d'intégrité ;</li>
+  <li>1 fichier de signature (<code class="language-plaintext highlighter-rouge">SIGN.XML</code>) attestant de l'authenticité et de l'imputabilité des données ;</li>
+  <li>1 répertoire de documentation (<code class="language-plaintext highlighter-rouge">DOCUMENTATION/</code>) permettant d'interpréter le contenu de l'archive (dictionnaires de données, dictionnaires des terminologies, jeux d'échantillon, mapping,…) ;</li>
+  <li>1 archive de données transverses (<code class="language-plaintext highlighter-rouge">TRANSVERSE/</code>) associées au professionnel et/ou au cabinet ;</li>
+  <li>1 ou plusieurs archive(s) de patient (<code class="language-plaintext highlighter-rouge">PATNNNNN</code>), conformes au profil IHE XDM.</li>
+</ul>
+
+<figure style="text-align:center;width:80%;">
+      <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 724 528" zoomAndPan="magnify" preserveAspectRatio="none" width="724px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:724px;height:528px;background:#FFFFFF;" version="1.1" height="528px"><defs></defs><g><text lengthAdjust="spacing" x="16" font-size="12" textLength="7" y="17.1387" font-family="sans-serif" fill="#000000">&#x1F4E6;</text><text font-weight="bold" lengthAdjust="spacing" x="31" font-size="12" textLength="180" y="17.1387" font-family="sans-serif" fill="#000000">PAAAAAMMJJThhmmss.ZIP</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="133" y="17.1387" font-family="sans-serif" font-style="italic" fill="#000000">Archive de portabilité</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="87" y="31.1074" font-family="sans-serif" fill="#000000">&#x1F4C4; README.TXT</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="243" y="31.1074" font-family="sans-serif" font-style="italic" fill="#000000">Informations éditoriales et instructions</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="98" y="45.0762" font-family="sans-serif" fill="#000000">&#x1F4C4; MANIFEST.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="389" y="45.0762" font-family="sans-serif" font-style="italic" fill="#000000">Vue synthétique du contenu de l'archive et rapport d'intégrité</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="67" y="59.0449" font-family="sans-serif" fill="#000000">&#x1F4C4; SIGN.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="436" y="59.0449" font-family="sans-serif" font-style="italic" fill="#000000">Signature attestant de l'authenticité et de l'imputabilité des données</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="120" y="73.0137" font-family="sans-serif" fill="#000000">&#x1F4C1; DOCUMENTATION/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="151" y="73.0137" font-family="sans-serif" font-style="italic" fill="#000000">Documentation d'export</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="91" y="86.9824" font-family="sans-serif" fill="#000000">&#x1F4C4; DICO001.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="166" y="86.9824" font-family="sans-serif" font-style="italic" fill="#000000">Dictionnaire de données 1</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="97" y="100.9512" font-family="sans-serif" fill="#000000">&#x1F4C4; DICO002.JSON</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="166" y="100.9512" font-family="sans-serif" font-style="italic" fill="#000000">Dictionnaire de données 2</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="106" y="114.9199" font-family="sans-serif" fill="#000000">&#x1F4C4; VALUESET.JSON</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="276" y="114.9199" font-family="sans-serif" font-style="italic" fill="#000000">Dictionnaire des terminologies propriétaires</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="99" y="128.8887" font-family="sans-serif" fill="#000000">&#x1F4C4; MAPPING.JSON</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="129" y="128.8887" font-family="sans-serif" font-style="italic" fill="#000000">Mapping des fichiers</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="84" y="142.8574" font-family="sans-serif" fill="#000000">&#x1F4E6; ECH001.ZIP</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="110" y="142.8574" font-family="sans-serif" font-style="italic" fill="#000000">Jeu d'échantillons</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="23" y="156.8262" font-family="sans-serif" fill="#000000">&#x1F4C4; ...</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="156.8262" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="115" y="170.7949" font-family="sans-serif" fill="#000000">&#x1F4E6; TRANSVERSE.ZIP</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="393" y="170.7949" font-family="sans-serif" font-style="italic" fill="#000000">Archive de données transverse (professionnel et/ou structure)</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="87" y="184.7637" font-family="sans-serif" fill="#000000">&#x1F4C4; README.TXT</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="184.7637" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="95" y="198.7324" font-family="sans-serif" fill="#000000">&#x1F4C1; TRANSVERSE/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="198.7324" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="85" y="212.7012" font-family="sans-serif" fill="#000000">&#x1F4C4; AGENDA.ICS</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="212.7012" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="81" y="226.6699" font-family="sans-serif" fill="#000000">&#x1F4C4; COMPTA.txt</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="226.6699" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="71" y="240.6387" font-family="sans-serif" fill="#000000">&#x1F4C4; LOGS.CSV</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="240.6387" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="23" y="254.6074" font-family="sans-serif" fill="#000000">&#x1F4C4; ...</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="254.6074" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="98" y="268.5762" font-family="sans-serif" fill="#000000">&#x1F4E6; PAT00001.ZIP</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="285" y="268.5762" font-family="sans-serif" font-style="italic" fill="#000000">Archive XDM Patient INS_1, conforme IHE_XDM</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="77" y="282.5449" font-family="sans-serif" fill="#000000">&#x1F4C4; INDEX.HTM</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="282.5449" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="87" y="296.5137" font-family="sans-serif" fill="#000000">&#x1F4C4; README.TXT</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="296.5137" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="39" y="310.4824" font-family="sans-serif" fill="#000000">&#x1F4C1; PDF/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="496" y="310.4824" font-family="sans-serif" font-style="italic" fill="#000000">Répertoire de stockage des PDF/A-1 pour consultation, extension au profil XDM</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="67" y="324.4512" font-family="sans-serif" fill="#000000">&#x1F4C1; IHE_XDM/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="324.4512" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="79" y="338.4199" font-family="sans-serif" fill="#000000">&#x1F4C1; SUBSET01/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="113" y="338.4199" font-family="sans-serif" font-style="italic" fill="#000000">Lot de soumission</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="103" y="352.3887" font-family="sans-serif" fill="#000000">&#x1F4C4; METADATA.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="352.3887" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="104" y="366.3574" font-family="sans-serif" fill="#000000">&#x1F4C4; DOC10001.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="366.3574" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="104" y="380.3262" font-family="sans-serif" fill="#000000">&#x1F4C4; DOC10002.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="380.3262" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="23" y="394.2949" font-family="sans-serif" fill="#000000">&#x1F4C4; ...</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="394.2949" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="26" font-size="12" textLength="98" y="408.2637" font-family="sans-serif" fill="#000000">&#x1F4E6; PAT00002.ZIP</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="285" y="408.2637" font-family="sans-serif" font-style="italic" fill="#000000">Archive XDM Patient INS_2, conforme IHE_XDM</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="77" y="422.2324" font-family="sans-serif" fill="#000000">&#x1F4C4; INDEX.HTM</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="422.2324" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="87" y="436.2012" font-family="sans-serif" fill="#000000">&#x1F4C4; README.TXT</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="436.2012" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="39" y="450.1699" font-family="sans-serif" fill="#000000">&#x1F4C1; PDF/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="496" y="450.1699" font-family="sans-serif" font-style="italic" fill="#000000">Répertoire de stockage des PDF/A-1 pour consultation, extension au profil XDM</text><text lengthAdjust="spacing" x="36" font-size="12" textLength="67" y="464.1387" font-family="sans-serif" fill="#000000">&#x1F4C1; IHE_XDM/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="464.1387" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="46" font-size="12" textLength="79" y="478.1074" font-family="sans-serif" fill="#000000">&#x1F4C1; SUBSET01/</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="113" y="478.1074" font-family="sans-serif" font-style="italic" fill="#000000">Lot de soumission</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="103" y="492.0762" font-family="sans-serif" fill="#000000">&#x1F4C4; METADATA.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="492.0762" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="104" y="506.0449" font-family="sans-serif" fill="#000000">&#x1F4C4; DOC20001.XML</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="506.0449" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="56" font-size="12" textLength="23" y="520.0137" font-family="sans-serif" fill="#000000">&#x1F4C4; ...</text><text lengthAdjust="spacing" x="221" font-size="12" textLength="4" y="520.0137" font-family="sans-serif" font-style="italic" fill="#000000">&nbsp;</text><rect width="2" x="9" y="11.9844" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="14.9844" x1="10" y2="26.9531" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="26.9531" x1="10" y2="26.9531" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="14.9844" x1="10" y2="40.9219" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="40.9219" x1="10" y2="40.9219" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="14.9844" x1="10" y2="54.8906" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="54.8906" x1="10" y2="54.8906" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><rect width="2" x="19" y="67.8594" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="14.9844" x1="10" y2="68.8594" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="68.8594" x1="10" y2="68.8594" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="70.8594" x1="20" y2="82.8281" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="82.8281" x1="20" y2="82.8281" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="70.8594" x1="20" y2="96.7969" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="96.7969" x1="20" y2="96.7969" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="70.8594" x1="20" y2="110.7656" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="110.7656" x1="20" y2="110.7656" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="70.8594" x1="20" y2="124.7344" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="124.7344" x1="20" y2="124.7344" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="70.8594" x1="20" y2="138.7031" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="138.7031" x1="20" y2="138.7031" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="70.8594" x1="20" y2="152.6719" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="152.6719" x1="20" y2="152.6719" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="19" y="165.6406" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="14.9844" x1="10" y2="166.6406" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="166.6406" x1="10" y2="166.6406" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="168.6406" x1="20" y2="180.6094" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="180.6094" x1="20" y2="180.6094" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="29" y="193.5781" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="168.6406" x1="20" y2="194.5781" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="194.5781" x1="20" y2="194.5781" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="196.5781" x1="30" y2="208.5469" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="208.5469" x1="30" y2="208.5469" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><line y1="196.5781" x1="30" y2="222.5156" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="222.5156" x1="30" y2="222.5156" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><line y1="196.5781" x1="30" y2="236.4844" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="236.4844" x1="30" y2="236.4844" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><line y1="196.5781" x1="30" y2="250.4531" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="250.4531" x1="30" y2="250.4531" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><rect width="2" x="19" y="263.4219" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="14.9844" x1="10" y2="264.4219" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="264.4219" x1="10" y2="264.4219" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="266.4219" x1="20" y2="278.3906" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="278.3906" x1="20" y2="278.3906" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="266.4219" x1="20" y2="292.3594" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="292.3594" x1="20" y2="292.3594" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="266.4219" x1="20" y2="306.3281" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="306.3281" x1="20" y2="306.3281" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="29" y="319.2969" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="266.4219" x1="20" y2="320.2969" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="320.2969" x1="20" y2="320.2969" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="39" y="333.2656" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="322.2969" x1="30" y2="334.2656" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="334.2656" x1="30" y2="334.2656" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><line y1="336.2656" x1="40" y2="348.2344" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="348.2344" x1="40" y2="348.2344" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><line y1="336.2656" x1="40" y2="362.2031" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="362.2031" x1="40" y2="362.2031" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><line y1="336.2656" x1="40" y2="376.1719" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="376.1719" x1="40" y2="376.1719" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><line y1="336.2656" x1="40" y2="390.1406" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="390.1406" x1="40" y2="390.1406" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><rect width="2" x="19" y="403.1094" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="14.9844" x1="10" y2="404.1094" style="stroke:#888888;stroke-width:1.0;" x2="10"></line><line y1="404.1094" x1="10" y2="404.1094" style="stroke:#888888;stroke-width:1.0;" x2="18"></line><line y1="406.1094" x1="20" y2="418.0781" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="418.0781" x1="20" y2="418.0781" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="406.1094" x1="20" y2="432.0469" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="432.0469" x1="20" y2="432.0469" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><line y1="406.1094" x1="20" y2="446.0156" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="446.0156" x1="20" y2="446.0156" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="29" y="458.9844" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="406.1094" x1="20" y2="459.9844" style="stroke:#888888;stroke-width:1.0;" x2="20"></line><line y1="459.9844" x1="20" y2="459.9844" style="stroke:#888888;stroke-width:1.0;" x2="28"></line><rect width="2" x="39" y="472.9531" style="stroke:#888888;stroke-width:1.0;" fill="none" height="2"></rect><line y1="461.9844" x1="30" y2="473.9531" style="stroke:#888888;stroke-width:1.0;" x2="30"></line><line y1="473.9531" x1="30" y2="473.9531" style="stroke:#888888;stroke-width:1.0;" x2="38"></line><line y1="475.9531" x1="40" y2="487.9219" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="487.9219" x1="40" y2="487.9219" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><line y1="475.9531" x1="40" y2="501.8906" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="501.8906" x1="40" y2="501.8906" style="stroke:#888888;stroke-width:1.0;" x2="48"></line><line y1="475.9531" x1="40" y2="515.8594" style="stroke:#888888;stroke-width:1.0;" x2="40"></line><line y1="515.8594" x1="40" y2="515.8594" style="stroke:#888888;stroke-width:1.0;" x2="48"></line></g></svg>
+    <figcaption>Représentation graphique de la structure de l'archive de portabilité</figcaption>
+</figure>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h3 id="conventions-décritures-des-répertoires-et-des-fichiers">Conventions d'écritures des répertoires et des fichiers</h3>
+
+<p><strong>Format de nommage pour les fichiers et répertoire des lots de soumission (<code class="language-plaintext highlighter-rouge">SUBSET</code>) des archives XDM</strong></p>
+
+<p>Les noms des répertoires et des fichiers inclus dans l'archive Patient XDM doivent être conformes à la norme ISO 9660 niveau 1, comme défini dans le profil IHE_XDM :</p>
+
+<ul>
+  <li><strong>format 8.3</strong> : 8 caractères maximum pour le nom des fichiers et répertoires, 3 caractère pour l'extension des fichiers ;</li>
+  <li><strong>caractères limités</strong> : lettres en majuscules, chiffres et trait de soulignement ("underscore" en anglais, signe typographique "_").</li>
+</ul>
+
+<p>Afin de respecter ce format, les noms des fichiers et des répertoires de documents multifichiers peuvent être différents de leurs noms d'origine. Par exemple, <code class="language-plaintext highlighter-rouge">CR_SER01.XML</code> aurait pour nom d'origine <code class="language-plaintext highlighter-rouge">Compte-rendu de sérologie du 10 mai 2013.xml</code>. Le système émetteur doit alors assurer le transcodage et la traçabilité entre le nom d'origine des répertoires et des fichiers et le nom conforme à la norme ISO 9660 niveau 1 de ces mêmes répertoires et fichiers, lorsque ceux-ci sont copiés dans IHE_XDM. 
+Cette traçabilité est obtenue en exploitant la métadonnées XDS <code class="language-plaintext highlighter-rouge">typeCodeDisplayName</code> pour enregistrer le nom d'origine.</p>
+
+<p><br/></p>
+
+<p><strong>Format de nommage pour les fichiers du répertoire <code class="language-plaintext highlighter-rouge">PDF</code> des archives XDM</strong></p>
+
+<p>Les documents PDF de ce répertoire étant destinés à une lecture humaine, ils DOIVENT respecter la convention de nommage suivante, afin de faciliter l’identification des documents de santé : <code class="language-plaintext highlighter-rouge">&lt;date de l’acte&gt;_&lt;type document&gt;_&lt;NOM&gt;_&lt;prenom&gt;_&lt;numéro de dossier&gt;.pdf</code>
+Tous les champs sont obligatoires à l’exception du champ <code class="language-plaintext highlighter-rouge">&lt;numéro de dossier&gt;</code> qui est optionnel.</p>
+
+<p>Avec :</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;date de l’acte&gt;</code> : date à laquelle l’acte a été réalisé (AAAAMMJJ). Correspond à la métadonnée XDS <code class="language-plaintext highlighter-rouge">serviceStartTime</code> du document structuré équivalent ;</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;type document&gt;</code> : métadonnée XDS <code class="language-plaintext highlighter-rouge">typeCodeDisplayName</code> du document structuré équivalent. Pour une meilleure lisibilité du nom du PDF, ce libellé doit être tronqué à 40 caractères, si sa longueur est supérieure ;</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;NOM&gt;</code> : nom de naissance de l’usager en majuscule, si disponible. Sinon renseigner avec le nom usuel ;</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;prenom&gt;</code> : prénom de l’usager ;</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;numéro de dossier&gt;</code> : numéro d’identification propre à l’émetteur et partagé avec le destinataire. Pour les comptes rendus d’examens de biologie, il correspond au numéro d’enregistrement de la prescription initiale reçue par le laboratoire principal ;</li>
+  <li>« _ » : caractère underscore (ASCII - décimal 95).</li>
+</ul>
+
+<p><strong>Format de nommage pour les fichiers et répertoires de l'archive de portabilité, hors archives XDM</strong></p>
+
+<p>En dehors des répertoires et fichiers de l'archive Patient XDM, les noms des répertoires et fichiers ne sont pas soumis au format 8.3.</p>
+
+<p><br/></p>
+
+<p><strong>Conventions de nommage</strong></p>
+
+<p>Le nom de l'archive de portabilité doit respecter le format <code class="language-plaintext highlighter-rouge">&lt;PA&gt;&lt;AAAAMMJJThhmmss&gt;.ZIP</code>, avec :</p>
+
+<ul>
+  <li>PA = préfixe "Portabilité Archive" ;</li>
+  <li>AAAAMMJJThhmmss = horodatage avec AAAA = année, MM = mois, JJ = jour, T = "T" (séparateur de date et heure), hh = heure, mm = minutes, ss = secondes.</li>
+</ul>
+
+<p>Le nom des répertoires et sous-archives ZIP doit respecter le format suivant :</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DOCUMENTATION/</code>: documentation d'export permettant à l'éditeur émetteur d'interpréter et d'intégrer les données ;</li>
+  <li><code class="language-plaintext highlighter-rouge">TRANSVERSE.ZIP</code> : archive contenant les données transverses (logs, comptabilité, agenda, etc.) ;</li>
+  <li><code class="language-plaintext highlighter-rouge">TRANSVERSE/</code> : répertoire contenant les données transverses (logs, comptabilité, agenda, etc.) ;</li>
+  <li><code class="language-plaintext highlighter-rouge">PATNNNNN.ZIP</code> : contient les données d'un patient et est conforme au profil IHE_XDM, ou "NNNNN" est incrémenté à partir de 00001. Exemple : <code class="language-plaintext highlighter-rouge">PAT00183.ZIP</code>;</li>
+  <li><code class="language-plaintext highlighter-rouge">PDF</code>: sous-répertoire de l'archive patient contenant les documents PDF/A-1 destinés à la consultation humaine ;</li>
+  <li><code class="language-plaintext highlighter-rouge">IHE_XDM</code>et <code class="language-plaintext highlighter-rouge">SUBSET01</code>: sous-répertoires de l'archive XDM contenant les documents d'un patient.</li>
+</ul>
+
+<p><br/></p>
+
+<h3 id="fichiers-de-gestion-de-larchive-de-portabilité-manifest-readme-signature">Fichiers de gestion de l'archive de portabilité (Manifest, readme, signature)</h3>
+
+<h4 id="manifestxml-de-larchive-de-portabilité"><code class="language-plaintext highlighter-rouge">MANIFEST.XML</code> de l'archive de portabilité</h4>
+
+<p>Le fichier <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code>, positionné à la racine de l'archive de portabilité, fournit une vue d'ensemble synthétique et exploitable par traitement automatisé du contenu global de l'export. Il complète le <code class="language-plaintext highlighter-rouge">README.TXT</code> de niveau chapeau, destiné à la lecture humaine. Il porte exclusivement sur le pilotage de la collection d'archives. Le détail des fichiers transportés est quant à lui décrit dans le fichier <code class="language-plaintext highlighter-rouge">METADATA.XML</code> de chaque lot de soumission.</p>
+
+<p>Le <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code> recense notamment :</p>
+
+<ul>
+  <li>les informations générales de l'export ;</li>
+  <li>les statistiques générales ;</li>
+  <li>la liste des archives patients et transverses incluses avec leurs caractéristiques essentielles.</li>
+</ul>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l915">​</a>Le modèle logique associé au fichier <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code> est consultable <a href="StructureDefinition-pdlgc-manifest.html">ici</a></p>
+
+<p><strong>Exemple de <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code> de l'archive de portabilité</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;Manifest&gt;</span>
+    <span class="nt">&lt;exportId&gt;</span>75249e6c-9779-4e57-bade-9978c2313ce9<span class="nt">&lt;/exportId&gt;</span>
+    <span class="nt">&lt;exportType&gt;</span>MASSIF<span class="nt">&lt;/exportType&gt;</span>
+    <span class="nt">&lt;exportStatus&gt;</span>COMPLETE<span class="nt">&lt;/exportStatus&gt;</span>
+    <span class="nt">&lt;comments&gt;</span>Export de données LGC répondant à la demande du Dr Dupond le 13 juin 2026<span class="nt">&lt;/comments&gt;</span>
+    <span class="nt">&lt;author&gt;</span>
+      <span class="nt">&lt;lgcSoftwareVendor&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Editeur Exemple de LGC<span class="nt">&lt;/raisonSociale&gt;</span>
+        <span class="nt">&lt;idNatStruct&gt;</span>175259803546<span class="nt">&lt;/idNatStruct&gt;</span>
+        <span class="nt">&lt;institution&gt;</span>Editeur Exemple de LGC^^^^^<span class="ni">&amp;amp;</span>1.2.250.1.71.4.2.2<span class="ni">&amp;amp;</span>ISO^IDNST^^^175259803546"<span class="nt">&lt;/institution&gt;</span>
+        <span class="nt">&lt;contact&gt;</span>
+          <span class="nt">&lt;name&gt;</span>Service Portabilité<span class="nt">&lt;/name&gt;</span>
+          <span class="nt">&lt;telecom&gt;</span>
+            <span class="nt">&lt;type&gt;</span>EMAIL<span class="nt">&lt;/system&gt;</span>
+            <span class="nt">&lt;value&gt;</span>portabilite@editeur.fr<span class="nt">&lt;/value&gt;</span>
+          <span class="nt">&lt;/telecom&gt;</span>
+          <span class="nt">&lt;telecom&gt;</span>
+            <span class="nt">&lt;system&gt;</span>phone<span class="nt">&lt;/system&gt;</span>
+            <span class="nt">&lt;value&gt;</span>02 98 54 26 45<span class="nt">&lt;/value&gt;</span>
+          <span class="nt">&lt;/telecom&gt;</span>
+          <span class="nt">&lt;telephone&gt;</span>+33100000000<span class="nt">&lt;/telephone&gt;</span>
+        <span class="nt">&lt;/contact&gt;</span>
+      <span class="nt">&lt;/lgcSoftwareVendor&gt;</span>
+      <span class="nt">&lt;lgcSystem&gt;</span>175259803546/2789345815^Système exemple LGC V1.0^Modèle Exemple^^^^^<span class="ni">&amp;amp;</span>1.2.250.1.71.4.2.1<span class="ni">&amp;amp;</span>ISO^U^^^RI<span class="nt">&lt;lgcSystem&gt;</span>
+    <span class="nt">&lt;/author&gt;</span>
+    <span class="nt">&lt;statistics&gt;</span>
+      <span class="nt">&lt;patientArchiveCount&gt;</span>2<span class="nt">&lt;/PatientArchiveCount&gt;</span>
+      <span class="nt">&lt;transverseArchiveCount&gt;</span>1<span class="nt">&lt;/TransverseArchiveCount&gt;</span>
+    <span class="nt">&lt;/statistics&gt;</span>
+    <span class="nt">&lt;Archives&gt;</span>
+      <span class="nt">&lt;Archive&gt;</span>
+        <span class="nt">&lt;archiveid&gt;</span>TRANSV<span class="nt">&lt;/archiveid&gt;</span>
+        <span class="nt">&lt;type&gt;</span>Transverse<span class="nt">&lt;/type&gt;</span>
+        <span class="nt">&lt;size&gt;</span>503<span class="nt">&lt;/size&gt;</span>
+        <span class="nt">&lt;hash&gt;</span>127e6fbfe24a750e72930c220a8e138275656b8e5d8f48a98c3c92df2caba935<span class="nt">&lt;/hash&gt;</span>
+      <span class="nt">&lt;/Archive&gt;</span>
+      <span class="nt">&lt;Archive&gt;</span>
+        <span class="nt">&lt;type&gt;</span>Patient<span class="nt">&lt;/type&gt;</span>
+        <span class="nt">&lt;archiveid&gt;</span>PAT00001<span class="nt">&lt;/archiveid&gt;</span>
+        <span class="nt">&lt;patientId&gt;</span>1850615458136^^^<span class="ni">&amp;amp;</span>1.2.250.1.213.1.4.10<span class="ni">&amp;amp;</span>ISO^NH"<span class="nt">&lt;/patientId&gt;</span>
+        <span class="nt">&lt;size&gt;</span>10652<span class="nt">&lt;/size&gt;</span>
+        <span class="nt">&lt;hash&gt;</span>152e6fbfc23a758e75930a220a7e138275256b8e5c8f48a97c3c92df2ccba945<span class="nt">&lt;/hash&gt;</span>
+      <span class="nt">&lt;/Archive&gt;</span>
+      <span class="nt">&lt;Archive&gt;</span>
+        <span class="nt">&lt;type&gt;</span>Patient<span class="nt">&lt;/type&gt;</span>
+        <span class="nt">&lt;archiveid&gt;</span>PAT00002<span class="nt">&lt;archiveid&gt;</span>
+        <span class="nt">&lt;patientId&gt;</span>279035121518989^^^<span class="ni">&amp;amp;</span>1.2.250.1.213.1.4.10<span class="ni">&amp;amp;</span>ISO^NH"<span class="nt">&lt;/patientId&gt;</span>
+        <span class="nt">&lt;size&gt;</span>856<span class="nt">&lt;/size&gt;</span>
+        <span class="nt">&lt;hash&gt;</span>956e6fbfc56d758e75930a225d7e138275256c9e4c8f48a97c3c92ec2ccba945<span class="nt">&lt;/hash&gt;</span>
+      <span class="nt">&lt;/Archive&gt;</span>
+    <span class="nt">&lt;/Archives&gt;</span>
+<span class="nt">&lt;/Manifest&gt;</span>
+</code></pre></div></div>
+
+<p><br/></p>
+
+<h4 id="readme"><code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive de portabilité</h4>
+
+<p>Le fichier <code class="language-plaintext highlighter-rouge">README.TXT</code> est indépendant du contenu clinique de l'archive. Il contient des informations éditoriales dont le caractère obligatoire du système émetteur, conformément au volume 2b du cadre technique ITI :</p>
+
+<ul>
+  <li>point de contact de l'éditeur émetteur ayant créé l'archive ;</li>
+  <li>nom et version du logiciel ayant créé l'archive ;</li>
+  <li>informations générales sur la structure de l'archive (ces informations n'ont pas vocation à être spécifique au contenu stocké dans l'archive) ;</li>
+  <li>instructions permettant de visualiser les documents joints, dans le cas ou un viewer est transmis (ex. visualisation des 
+documents de santé enregistrés avec leur feuille de style dans un même répertoire).</li>
+</ul>
+
+<p>Le contenu du <code class="language-plaintext highlighter-rouge">README.TXT</code> est codé en ASCII 7 bits avec le retour chariot codé en CRLF.</p>
+
+<p>Deux niveaux de <code class="language-plaintext highlighter-rouge">README.TXT</code> coexistent dans l'archive de portabilité :</p>
+
+<ul>
+  <li>un fichier à la racine de l'archive chapeau de portabilité. Ce document complète le <code class="language-plaintext highlighter-rouge">MANIFEST.XML</code> et fournit aux destinataires les informations générales sur le contenu de l'archive de portabilité, les modalités d'accès aux documents et, le cas échéant, les informations utiles à leur consultation ;</li>
+  <li>un README.TXT au niveau de chaque archive XDM Patient et de l'archive de données transverse.</li>
+</ul>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l1265">​</a>Le modèle logique associé au fichier <code class="language-plaintext highlighter-rouge">README.TXT</code> est consultable <a href="StructureDefinition-pdlgc-readme.html">ici</a></p>
+
+<p><strong>Exemple de <code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive de portabilité</strong></p>
+
+<pre><code class="language-txt">Fournisseur Sortant :
+=============
+    . IdNatStruct : 175259803546
+    . raisonSociale : Editeur Exemple de LGC
+    . Contact de Portabilité : service Portabilité
+        . email : portabilite@editeur.fr
+        . Téléphone : +33100000000
+
+Application de l'éditeur émetteur :
+=========================
+    . Modèle : LGC modèle
+    . Nom : LGC example
+    . Version : 1.2
+    . Identifiant : 175259803546/2789345815
+
+Instructions :
+=============
+. Consultez les fichiers de documentation accessibles dans le répertoire DOCUMENTATION\ pour interpréter les données
+
+Arborescence :
+============
+     README.TXT
+     MANIFEST.XML
+     + DOCUMENTATION
+        DICO001.XML
+        DICOOO2.XML
+        VALUESET.JSON
+        MAPPING.JSON
+        ECH001.ZIP     
+     + TRANSVERSE.ZIP
+     + PAT00001.ZIP
+     + PAT00002.ZIP
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="signxml-de-larchive-de-portabilité"><code class="language-plaintext highlighter-rouge">SIGN.XML</code> de l'archive de portabilité</h4>
+
+<p>Le fichier <code class="language-plaintext highlighter-rouge">SIGN.XML</code>, positionné à la racine de l'archive de portabilité, contient la signature électronique de l'archive conformément au format XAdES. Il garantit l'intégrité de l'ensemble des fichiers de données LGC constituant l'archive et permet de vérifier l'identité du signataire ainsi que l'imputabilité de la production de l'archive. Les fichiers à vocation documentaire (README, documentation technique, schémas, exemples, etc.) ne sont pas couverts par la signature électronique.</p>
+
+<p>Le fichier est destiné à être traité automatiquement par le système destinataire lors de l'import de l'archive.</p>
+
+<p>Le <code class="language-plaintext highlighter-rouge">SIGN.XML</code> contient notamment :</p>
+
+<ul>
+  <li>les références vers les fichiers signés ;</li>
+  <li>les empreintes cryptographiques des fichiers référencés ;</li>
+  <li>la valeur de la signature ;</li>
+  <li>le certificat électronique utilisé pour la signature ;</li>
+  <li>les propriétés XAdES nécessaires à la validation de la signature.</li>
+</ul>
+
+<p>Toute modification du contenu de l'archive après sa signature conduit à l'échec de la vérification de la signature électronique.</p>
+
+<p><br/></p>
+
+<h3 id="documentation-dexport-de-larchive-de-portabilité">Documentation d'export de l'archive de portabilité</h3>
+
+<p>Le répertoire <code class="language-plaintext highlighter-rouge">DOCUMENTATION/</code>, positionné à la racine de l'archive de portabilité, regroupe l'ensemble des éléments permettant au LGC destinataire d'interpréter et d'intégrer les données reçues de manière autonome, sans échange préalable avec le LGC émetteur.</p>
+
+<p>Cette documentation peut notamment comprendre les fichiers décrits ci-après.</p>
+
+<h4 id="dictionnaire-de-données">Dictionnaire de données</h4>
+
+<p>Le dictionnaire de données décrit les données exportées dans un format propriétaire structuré, pour lesquelles il n'existe pas de spécification publique de référence permettant au LGC destinataire d'en déduire la structure et la sémantique. Les données exportées conformément à un volet du CI-SIS ou à un standard publié (CDA R2, FHIR, LOINC…) n'ont pas à faire l'objet d'un dictionnaire de données : le mapping de fichiers renvoie dans ce cas directement aux spécifications applicables.</p>
+
+<p>Pour chaque donnée relevant de son périmètre, le dictionnaire couvre a minima :</p>
+
+<ul>
+  <li>son intitulé et sa définition métier ;</li>
+  <li>sa cardinalité ;</li>
+  <li>son type ;</li>
+  <li>la terminologie associée s'il s'agit d'un élément codé (terminologies de référence ou dictionnaire de terminologies propriétaires);</li>
+  <li>les conventions retenues pour distinguer les données renseignées, les données négatives et les données non renseignées, lorsque la distinction s'applique ;</li>
+  <li>si la donnée relève ou non du périmètre pivot ;</li>
+  <li>la profondeur historique.</li>
+</ul>
+
+<p>Le format du dictionnaire de données est libre. Il doit néanmoins être lisible sans logiciel propriétaire et accompagné d'une description de sa propre structure si celle-ci n'est pas autodescriptive.</p>
+
+<h4 id="mapping-de-fichiers">Mapping de fichiers</h4>
+
+<p>Le mapping de fichiers est centré sur les fichiers présents dans l'archive. Pour chaque fichier ou type de fichier produit dans l'archive, il précise :</p>
+
+<ul>
+  <li>le nom ou le schéma de nommage du fichier ;</li>
+  <li>le format technique (CDA R2 N1 ou N3, JSON, CSV, ICS…) ;</li>
+  <li>l'encodage du fichier ;</li>
+  <li>les données couvertes, par référence aux entrées correspondantes du dictionnaire de données s'il s'agit d'un format propriétaire ou à la version du volet CI-SIS s'il s'agit d'un format standardisé ;</li>
+</ul>
+
+<p>Pour les fichiers exportés dans un format propriétaire, le mapping précise en outre les règles d'interprétation nécessaires à leur exploitation.</p>
+
+<h4 id="schéma-technique">Schéma technique</h4>
+
+<p>Pour les données exportées dans un format propriétaire structuré, l'éditeur émetteur peut fournir les schémas techniques décrivant la structure des fichiers concernés (XSD, JSON Schema ou équivalent). Ces schémas constituent, au même titre que le dictionnaire de données, une ressource d'implémentation pour le système destinataire : ils lui permettent de comprendre l'organisation des données reçues et d'adapter son traitement en conséquence. 
+Comme pour le dictionnaire de données, les fichiers conformes à un volet CI-SIS ou à un standard publié n'appellent pas de schéma complémentaire : le mapping de fichiers renvoie dans ce cas aux spécifications applicables.</p>
+
+<h4 id="jeu-déchantillons">Jeu d'échantillons</h4>
+
+<p>L'éditeur émetteur peut fournir, pour chaque type de document ou de fichier structuré présent dans l'archive, un exemple anonymisé illustrant la structure et le contenu attendus. Ce jeu d'échantillons facilite l'intégration par le système destinataire.</p>
+
+<h4 id="paramètres-de-configuration">Paramètres de configuration</h4>
+
+<p>Lorsque certains paramètres de configuration de l'éditeur conditionnent l'interprétation, l'affichage, le traitement ou la production des données exportées, l'éditeur émetteur peut fournir une description de ces paramètres.</p>
+
+<p>Cette description permet à l'éditeur destinataire d'identifier les comportements applicatifs susceptibles d'avoir un impact sur l'exploitation des données et, le cas échéant, de reconfigurer son propre système afin de garantir une reprise fonctionnelle cohérente.</p>
+
+<p>Le format de cette description est libre. Elle doit être lisible sans logiciel propriétaire et permettre d'identifier sans ambiguïté les paramètres ayant une incidence sur la compréhension ou le traitement des données.</p>
+
+<p><br/></p>
+
+<h3 id="archive-xdm-patient-patnnnnnzip">Archive XDM Patient <code class="language-plaintext highlighter-rouge">PATNNNNN.ZIP</code></h3>
+
+<p>L'archive <code class="language-plaintext highlighter-rouge">PATNNNNN.ZIP</code>contient les répertoires <code class="language-plaintext highlighter-rouge">IHE_XDM/</code> et <code class="language-plaintext highlighter-rouge">PDF/</code> ainsi que les fichiers <code class="language-plaintext highlighter-rouge">INDEX.HTM</code> et <code class="language-plaintext highlighter-rouge">README.TXT</code>.</p>
+
+<p><a name="l1453">​</a>Le modèle logique associé à cette archive est consultable <a href="StructureDefinition-pdlgc-archive-patient.html">ici</a></p>
+
+<p><br/></p>
+
+<h4 id="indexhtm-de-larchive-xdm-patient"><code class="language-plaintext highlighter-rouge">INDEX.HTM</code> de l'archive XDM Patient</h4>
+
+<p>Le fichier <code class="language-plaintext highlighter-rouge">INDEX.HTM</code> est imposé par le profil IHE_XDM à la racine d'une archive XDM. Il renferme des informations éditoriales et est conforme aux spécifications XHTML et <a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">Echanges de Documents de santé</a>.</p>
+
+<p>Il contient :</p>
+
+<ul>
+  <li>l'identification obligatoire du système émetteur ayant créé le media : StructIdNat (identifiant de stucture de santé) et StructNom (nom de la structure) ;</li>
+  <li>l'avertissement optionnel de cette institution concernant la sécurité et la confidentialité;</li>
+  <li>un lien vers le fichier <code class="language-plaintext highlighter-rouge">README.TXT</code>.</li>
+</ul>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l1497">​</a>Le modèle logique associé au fichier <code class="language-plaintext highlighter-rouge">INDEX.HTM</code> est consultable <a href="StructureDefinition-pdlgc-index.html">ici</a></p>
+
+<p><strong>Exemple de fichier <code class="language-plaintext highlighter-rouge">INDEX.HTM</code></strong> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    Emetteur : LGC Exemple (3859645252)
+    Voir le fichier <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"README.TXT"</span><span class="nt">&gt;</span>ReadMe<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p><br/></p>
+
+<h4 id="readmetxt-de-larchive-xdm-patient"><code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive XDM Patient</h4>
+
+<p>Ce <code class="language-plaintext highlighter-rouge">README.TXT</code> suit la même trame que le <code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive de portabilité et les archives Patient. Voir section <a href="specs-main-structure-archive.html#readme">README.TXT de l'archive de portabilité</a>.
+Ce fichier est imposé par le profil IHE_XDM et précise la structure propre à chaque archive XDM (différente de l'archive de portabilité).</p>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l1566">​</a>Le modèle logique associé au fichier <code class="language-plaintext highlighter-rouge">README.TXT</code> est consultable <a href="StructureDefinition-pdlgc-readme.html">ici</a></p>
+
+<p><strong>Exemple de <code class="language-plaintext highlighter-rouge">README.TXT</code> d'une archive Patient</strong></p>
+
+<pre><code class="language-txt">Fournisseur Sortant :
+=============
+    . IdNatStruct : 175259803546
+    . raisonSociale : Editeur Exemple de LGC
+    . Contact de Portabilité : service Portabilité
+        . email : portabilite@editeur.fr
+        . Téléphone : +33100000000
+
+Application de l'éditeur émetteur :
+=========================
+    . Modèle : LGC modèle
+    . Nom : LGC example
+    . Version : 1.2
+    . Identifiant : 175259803546/2789345815
+
+Instructions :
+=============
+. Consultez les fichiers de documentation accessibles dans le répertoire DOCUMENTATION\ pour interpréter les données
+
+Arborescence :
+============
+     README.TXT
+     INDEX.HTM
+     + IHE_XDM
+        + SUBSET01
+        + README.TXT
+            METADATA.XML
+            DOC10001.XML
+            DOC10002.XML
+
+</code></pre>
+<p><br/></p>
+
+<h4 id="répertoire-ihe_xdm">Répertoire <code class="language-plaintext highlighter-rouge">IHE_XDM/</code></h4>
+
+<p>Ce répertoire <code class="language-plaintext highlighter-rouge">IHE_XDM</code> contient un sous-répertoire `SUBSET01 contenant l'ensemble des documents transmis :</p>
+
+<ul>
+  <li>le ou les documents de données administratives et médicales du patient ;</li>
+  <li>le document <code class="language-plaintext highlighter-rouge">METADATA.XML</code> obligatoire, contenant les métadonnées XDS, représentations logiques du lot de documents.</li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="répertoire-pdf-de-larchive-xdm-patient">Répertoire <code class="language-plaintext highlighter-rouge">PDF/</code> de l'archive XDM Patient</h4>
+
+<p>Le répertoire <code class="language-plaintext highlighter-rouge">PDF/</code>, positionné à la racine de l'archive XDM, constitue une extension au profil IHE_XDM. Il regroupe une version PDF/A-1 des documents structurés contenus dans le répertoire <code class="language-plaintext highlighter-rouge">IHE_XDM/</code> destinée exclusivement à la consultation humaine. Ces fichiers ne sont pas destinés à être exploités par un système d'information et ne se substituent en aucun cas aux documents structurés, qui demeurent la source de référence pour les traitements automatisés.</p>
+
+<p>Le nommage des fichiers PDF doit pouvoir permettre d'établir sans ambiguïté la correspondance avec le document structuré auquel ils se rapportent.</p>
+
+<p><br/></p>
+
+<h4 id="metadataxml-de-larchive-xdm-patient"><code class="language-plaintext highlighter-rouge">METADATA.XML</code> de l'archive XDM Patient</h4>
+
+<p>Conformément au profil IHE XDM, chaque archive XDM Patient contient, dans son sous-répertoire <code class="language-plaintext highlighter-rouge">SUBSET01</code>, un fichier <code class="language-plaintext highlighter-rouge">METADATA.XML</code> structuré selon le modèle de métadonnées XDS-like (lot de soumission, fiches et associations). Certaines contraintes sont appliquées à ce fichier pour s'adapter au contexte de portabilité LGC.</p>
+
+<p>La construction de ce fichier est détaillée dans les spécifications <a href="https://esante.gouv.fr/volet-echange-de-documents-de-sante">Echanges des documents de Santé</a>.</p>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l1659">​</a>Le modèle logique associé au fichier <code class="language-plaintext highlighter-rouge">METADATA.XML</code> est consultable <a href="StructureDefinition-pdlgc-metadata.html">ici</a></p>
+
+<p><strong>Exemple de <code class="language-plaintext highlighter-rouge">METADATA.XML</code> d'une archive XDM</strong></p>
+
+<p>De nombreux exemples de fichiers <code class="language-plaintext highlighter-rouge">METADATA.XML</code> sont accessibles sur le repository GitHub ANS <a href="https://github.com/ansforge/interop-exemples-xdm">interop-exemples-xdm</a>.</p>
+
+<p><br/></p>
+
+<h3 id="archive-transverse">Archive <code class="language-plaintext highlighter-rouge">TRANSVERSE</code></h3>
+
+<p>L'archive <code class="language-plaintext highlighter-rouge">TRANSVERSE.ZIP</code> est dédiée aux données transverses associées au cabinet ou au praticien, et ne relevant pas d'un dossier patient individuel.</p>
+
+<p><br/></p>
+
+<h4 id="readmetxt-de-larchive-transversezip"><code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive <code class="language-plaintext highlighter-rouge">TRANSVERSE.ZIP</code></h4>
+
+<p>Ce <code class="language-plaintext highlighter-rouge">README.TXT</code> suit la même trame que le <code class="language-plaintext highlighter-rouge">README.TXT</code> de l'archive de portabilité et les archives Patient. Voir section <a href="specs-main-structure-archive.html#readme">README.TXT de l'archive de portabilité</a></p>
+
+<p><strong>Modèle logique</strong></p>
+
+<p><a name="l1722">​</a>Le modèle logique associé au fichier README.TXT est consultable <a href="StructureDefinition-pdlgc-readme.html">ici</a></p>
+
+<p><strong>Exemple de <code class="language-plaintext highlighter-rouge">README.TXT</code> d'une archive transverse</strong></p>
+
+<pre><code class="language-txt">Fournisseur Sortant :
+=============
+    . IdNatStruct : 175259803546
+    . raisonSociale : Editeur Exemple de LGC
+    . Contact de Portabilité : service Portabilité
+        . email : portabilite@editeur.fr
+        . Téléphone : +33100000000
+
+Application de l'éditeur émetteur :
+=========================
+    . Modèle : LGC modèle
+    . Nom : LGC example
+    . Version : 1.2
+    . Identifiant : 175259803546/2789345815
+
+Instructions :
+=============
+. Consultez les fichiers de documentation accessibles dans le répertoire DOCUMENTATION\ pour interpréter les données
+
+Arborescence :
+============
+     README.TXT
+     + TRANSVERSE
+        AGENDA.ICS
+│       COMPTA.txt
+│       LOGS.CSV
+
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="sous-répertoire-transverse">Sous-répertoire <code class="language-plaintext highlighter-rouge">TRANSVERSE</code></h4>
+
+<p>Ce sous-répertoire regroupe les données propres au cabinet ou au praticien exporté : agenda, données de gestion, traces, logs d'activité,… 
+La liste des fichiers effectivement présents dépend du périmètre de l'export (se référer au <strong>Référentiel de sécurité, d'interopérabilité et d'éthique relatif à la portabilité des données des LGC</strong>) et des données disponibles dans le logiciel source.</p>
+
+<p><br/></p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+  <script src="assets/js/flags.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container" data-fhir="generated">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:var(--ig-left);">&nbsp;
+
+                <a href="specs-main-flux-export-archive-portabilite.html">&lt; prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:var(--ig-right);">&nbsp;
+
+                <a href="annexes.html">next &gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  
+          Package ans.fr.pdlgc#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-20 16:43:00 +0000">
+    2026-10-20
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="https://interop.esante.gouv.fr/ig/pdlgc/history.html" target="_blank">Historique des versions</a>
+<a style="color: var(--footer-hyperlink-text-color)" href="https://interop.esante.gouv.fr/ig/documentation" target="_blank">Documentation</a>
+ | <a style="color: var(--footer-hyperlink-text-color)" href="https://github.com/ansforge/interop-ig-portabilite/issues/new" target="_blank">New Issue</a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+
+    <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+    <!-- Fin ajout ANS -->
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+    <!-- AJOUT ANS -->
+
+<footer role="contentinfo" class="footer footer-principal">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a rel="nofollow" href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" loading="lazy" height="77"/>
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a rel="nofollow" href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" loading="lazy" height="74"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+            <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg aria-hidden="true" focusable="false" class="svg-icon svg-angle-right"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+                <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li> -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+      <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>

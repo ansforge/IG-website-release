@@ -1,0 +1,25 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: ActorXDSCDA"
+"xdmActorPatient","xdmActorPatient","","","",0,*,"","","","null {[]} {[]}
+","XDM ActorPatient","Cet attribut représente l'acteur Patient.","","","","","","","","","",,,,,"",,,,"Base",0,*,"","","ActorXDS"
+"xdmActorPatient.xcn1","xdmActorPatient.xcn1","","","",1,1,"","","","string {[CanonicalType[https://interop.esante.gouv.fr/ig/pdlgc/StructureDefinition/patId|0.1.0-ballot]]} {[]}
+","Identifiant du patient. Le matricule INS du patient, tel que défini dans le cadre juridique, est à utiliser prioritairement. À défaut, un autre identifiant (ex : IPP du système émetteur) peut être utilisé.","Identifiant de l'acteur qui. Le format de l'identifiant doit respecter le datatype PatId, PSIdNat ou SystIdNat selon le type d'acteur","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""124018852493334""/>","","",,,,,"",,,,"xdmActorXdsCore.xcn1",1,1,"","","author/assignedAuthor/id@extension"
+"xdmActorPatient.xcn2","xdmActorPatient.xcn2","","","",1,1,"","","","string {[]} {[]}
+","Nom du patient","Nom d'exercice du professionnel, nom du patient, nom du système.","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn2",1,1,"","","author/assignedAuthor/assignedPerson/name/family"
+"xdmActorPatient.xcn3","xdmActorPatient.xcn3","","","",1,1,"","","","string {[]} {[]}
+","Prénom du patient","Prénom usuel de la personne (par défaut le premier prénom), nom du modèle pour les dispositifs ou dénomination pour les autres systèmes.","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn3",1,1,"","","author/assignedAuthor/assignedPerson/name/given"
+"xdmActorPatient.xcn9","xdmActorPatient.xcn9","","","",1,1,"","","","Base {[]} {[]}
+","Autorité d’affectation","Autorité d’affectation","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn9",1,1,"","","NA"
+"xdmActorPatient.xcn9.composant1","xdmActorPatient.xcn9.composant1","","","",0,0,"","","","string {[]} {[]}
+","Vide, pas de valeur","Vide, pas de valeur","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn9.composant1",0,0,"","","NA"
+"xdmActorPatient.xcn9.composant2","xdmActorPatient.xcn9.composant2","","","",1,1,"","","","string {[]} {[]}
+","Valeur de l'OID de l’autorité d’affectation de l’identifiant. Identifiant de l’autorité d’affectation de l'identifiant utilisé.","Cet identifiant, au format HL7 v.2.5 est constitué de trois sous-composants qui prennent les valeurs suivantes en fonction du type d'identifiant.
+INS : Valeur de Namespace ID (IS) = Vide, pas de valeur | Valeur de Universal ID (ST) = OID de l’autorité d’affectation de l’INS utilisé, prise dans la liste des OID des autorités d'affectation des INS | Valeur de Universal ID type (ID) = ISO
+Autre identifiant : Valeur de Namespace ID (IS) = Vide, pas de valeur | Valeur de Universal ID (ST) = OID de l’autorité d’affectation dl'identifiant (i.e. l'instituion qui a attribué cet identifiant) | Valeur de Universal ID type (ID) = ISO
+","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn9.composant2",1,1,"","","author/assignedAuthor/id@root"
+"xdmActorPatient.xcn9.composant3","xdmActorPatient.xcn9.composant3","","","",1,1,"","","","string {[]} {[]}
+","Valeur de Universal ID type (ID). Valeur fixée à 'ISO'","Valeur de Universal ID type (ID). Valeur fixée à 'ISO'","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""ISO""/>","","","",,,,,"",,,,"xdmActorXdsCore.xcn9.composant3",1,1,"","","NA"
+"xdmActorPatient.xcn10","xdmActorPatient.xcn10","","","",1,1,"","","","code {[]} {[]}
+","Type de nom : 'D' pour les personnes physiques, 'U', pour les systèmes.","Type de nom : 'D' pour les personnes physiques, 'U', pour les systèmes.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""D""/>","","","",,,,,"",,,,"xdmActorXdsCore.xcn10",1,1,"","","NA"
+"xdmActorPatient.xcn13","xdmActorPatient.xcn13","","","",1,1,"","","","code {[]} {[]}
+","'NH' pour les patients identifiés par leur INS, 'PI' pour les patients identifiés par d'autres identifiants","Type d’identifiant","","","","","","","","","",,,,,"",,,,"xdmActorXdsCore.xcn13",1,1,"","TypeIdPatient:XCN.13 doit valoir 'NH' ou 'PI' {xcn13 = 'NH' or xcn13 = 'PI'}
+","Valeur ne provenant pas de l’en-tête CDA"

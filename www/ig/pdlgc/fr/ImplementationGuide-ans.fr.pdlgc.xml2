@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="ans.fr.pdlgc"/>
+  <language value="fr"/>
+  <text>
+    <status value="generated"/><div xml:lang="fr" lang="fr"><hr/><p><b>French</b></p><hr/><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.fr.pdlgc</b></p><a name="ans.fr.pdlgc"> </a><a name="hcans.fr.pdlgc"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Langue : fr</p></div><h2>PDLGC</h2><p>L'URL officielle pour ce guide d'implémentation est : </p><pre>https://interop.esante.gouv.fr/ig/pdlgc/ImplementationGuide/ans.fr.pdlgc</pre><div><p>Architecture d'archive de portabilité des données LGC</p>
+</div></div>
+  </text>
+  <url value="https://interop.esante.gouv.fr/ig/pdlgc/ImplementationGuide/ans.fr.pdlgc"/>
+  <version value="0.1.0-ballot"/>
+  <name value="PDLGC"/>
+  <title value="Portabilité des Données LGC"/>
+  <status value="draft"/>
+  <date value="2026-10-20T16:45:13+00:00"/>
+  <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
+  <contact>
+    <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://esante.gouv.fr"/>
+    </telecom>
+  </contact>
+  <description value="Architecture d'archive de portabilité des données LGC"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="FR"/>
+      <display value="France (la)"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="ans.fr.pdlgc"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.4.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="ans_fr_terminologies">
+    <uri value="https://interop.esante.gouv.fr/terminologies/ImplementationGuide/ans.fr.terminologies"/>
+    <packageId value="ans.fr.terminologies"/>
+    <version value="1.14.0"/>
+  </dependsOn>
+  <dependsOn id="ans_fr_mos">
+    <uri value="https://interop.esante.gouv.fr/ig/mos/ImplementationGuide/ans.fr.mos"/>
+    <packageId value="ans.fr.mos"/>
+    <version value="0.1.0-ballot"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_tools_r4">
+    <uri value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
+    <packageId value="hl7.fhir.uv.tools.r4"/>
+    <version value="1.3.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters">
+      <valueReference>
+        <reference value="Parameters/expansion-parameters"/>
+      </valueReference>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2020+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="draft"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="../../expansion-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="pin-canonicals"/>
+      </extension>
+      <extension url="value">
+        <valueString value="pin-all"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="tx"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="generate"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="init"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="progress"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="fr"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="i18n-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="translation-sources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/translations/en"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid-template"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid-template"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://interop.esante.gouv.fr/ig/pdlgc/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <grouping id="LogicalModelXDM">
+      <name value="Modèle logique Metadata XDM (Lot de soumission (SubmissionSet), DocumentEntry (XDS) et association)"/>
+      <description value="Modèles logiques associés aux différents artifacts des METADATA XDS"/>
+    </grouping>
+    <grouping id="LogicalModelArchivePortabilite">
+      <name value="Modèle logique structure Archive de portabilité"/>
+      <description value="Modèles logiques associés aux différents fichiers et répertoires structurant une archive de portabilité"/>
+    </grouping>
+    <grouping id="DataTypeIdProfile">
+      <name value="Valeur des identifiants"/>
+      <description value="Profilage du datatype string pour les identifiants"/>
+    </grouping>
+    <grouping id="DataTypeXMLProfile">
+      <name value="Datatypes XDM"/>
+      <description value="Datatypes XDM"/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmCode"/>
+      </reference>
+      <name value="Code XDM"/>
+      <description value="Type représentant un concept codé, constitué d'un code, de son libellé et de l'OID du système de codage, portés comme attributs XML. Il ne présente pas lui-même de valeur."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DataTypeXMLProfile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:primitive-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/patId"/>
+      </reference>
+      <name value="Identifiant Patient"/>
+      <description value="Identifiant du patient tel que connu par les interlocuteurs prenant part à l'échange. &#xA;- Matricule INS : le matricule INS (NIR ou NIA) du patient doit être utilisé en priorité. &#xA;- Autre identifiant : à défaut de disponibilité de l'INS, un autre identifiant (ex: IPP du système émetteur) peut être utilisé."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DataTypeIdProfile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/PDLGC-Systeme-Destinataire"/>
+      </reference>
+      <name value="LGC Destinataire"/>
+      <description value="LGC responsable de la réception et de l'intégration des données contenues dans l'archive de portabilité."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/PDLGC-Systeme-Emetteur"/>
+      </reference>
+      <name value="LGC émetteur"/>
+      <description value="LGC responsable de la production et de la mise à disposition de l'archive de portabilité à l'issue d'une demande d'export."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcArchivePatient"/>
+      </reference>
+      <name value="PDLGC Archive Patient"/>
+      <description value="Archive stockant les données médicales liées à un patient, ou NNNNN est incrémenté à partir de 00001. Chaque patient est représenté par une archive distincte conforme au profil IHE_XDM"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcArchivePortabilite"/>
+      </reference>
+      <name value="PDLGC Archive Portabilite"/>
+      <description value="L'archive de Portabilité est un conteneur structuré, regroupant l'ensemble des documents et données LGC exportées ainsi que les éléments de métadonnées, d'index et de documentation nécessaires à leur exploitation par le destinataire. Convention de nommage : PAAAAAMMJJThhmmss.ZIP, avec PA = préfixe, AAAAMMJJThhmmss = horodatage"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcArchiveTransverse"/>
+      </reference>
+      <name value="PDLGC Archive Transverse"/>
+      <description value="Archive stockant les données transverses associés au praticien et/ou au cabinet"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcAuthor"/>
+      </reference>
+      <name value="PDLGC Author"/>
+      <description value="Informations relatives à l'auteur responsable de la production de l'archive de portabilité"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcContactPortabilite"/>
+      </reference>
+      <name value="PDLGC Contact Portabilite"/>
+      <description value="PDLGC Contact Portabilite"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/PDLGC-Demandeur"/>
+      </reference>
+      <name value="PDLGC Demandeur"/>
+      <description value="Demandeur de l'export.&#xA;&#xA;Il s'agit d'un professionnel de santé libéral, responsable du contenu médical transféré.&#xA;&#xA;Il peut agir à la demande du patient, bénéficiaire de ses droits de portabilité individuelle (RGPD Art. 20, Art. L.1111-7 CSP)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/PDLGC-Destinataire"/>
+      </reference>
+      <name value="PDLGC Destinataire"/>
+      <description value="Destinataire de l'export de données de LGC.&#xA;&#xA;Il s'agit d'un professionnel de santé libéral recevant l'export via son LGC.&#xA;&#xA;Suivant le contexte de la demande, le professionnel de santé pourra transférer le dossier au patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcDocumentation"/>
+      </reference>
+      <name value="PDLGC Documentation"/>
+      <description value="Documentation d'export permettant au LGC destinataire d'intégrer les données du LGC émetteur"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcIndex"/>
+      </reference>
+      <name value="PDLGC Index"/>
+      <description value="L'INDEX.HTM est renferme des informations éditoriales et est conforme aux spécifications XHTML et Echanges de Documents de santé."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcManifest"/>
+      </reference>
+      <name value="PDLGC Manifest"/>
+      <description value="Le fichier MANIFEST.XML porte les métadonnées globales de l'export (nombre de dossiers patients, volumétrie, éléments d'intégrité), distinctes des métadonnées XDM portées par chaque `METADATA.XML` patient"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcMetadata"/>
+      </reference>
+      <name value="PDLGC Metadata"/>
+      <description value="Modèle logique décrivant la structure d'un fichier METADATA associé à un SUBSET IHE XDM.&#xA;Regroupe un SubmissionSet, ses DocumentEntries et les Associations entre objets."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcReadme"/>
+      </reference>
+      <name value="PDLGC Readme"/>
+      <description value="Informations éditoriales et instructions. Le socle du README.TXt est identique pour l'archive de portabilité, l'archive de données transverse et l'archive XDM Patient"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdlgcSoftwareVendor"/>
+      </reference>
+      <name value="PDLGC SoftwareVendor"/>
+      <description value="Editeur du logiciel"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelArchivePortabilite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-pdlgc-export-status"/>
+      </reference>
+      <name value="PDLGC Statut de l'export"/>
+      <description value="PDLGC Statut de l'export"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-pdlgc-archive-type"/>
+      </reference>
+      <name value="PDLGC Type d'archive"/>
+      <description value="PDLGC Type d'archive"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-pdlgc-export-type"/>
+      </reference>
+      <name value="PDLGC Type d'Export"/>
+      <description value="PDLGC Type d'Export"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-pdlgc-telecom-type"/>
+      </reference>
+      <name value="PDLGC Type de moyen de communication"/>
+      <description value="PDLGC Type de moyen de communication"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:primitive-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/psIdNat"/>
+      </reference>
+      <name value="PSIdNat"/>
+      <description value="Identification nationale principale du professionnel propre aux SI de l’ANS et au CI-SIS. (Correspondance dans le MOS : idNat_PS) &#xA;&#xA;L’identification nationale du PS est construite selon le tableau dessous :&#xA;- 0 + N° ADELI &#xA;- 1 + Identifiant cabinet ADELI/identifiant interne &#xA;- 3 + FINESS/identifiant interne &#xA;- 4 + SIREN/identifiant interne &#xA;- 5 + SIRET/identifiant interne &#xA;- 6 + Identifiant cabinet RPPS/identifiant interne &#xA;- 8 + N° RPPS"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DataTypeIdProfile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-pdlgc-export-status"/>
+      </reference>
+      <name value="Statut de l'export"/>
+      <description value="Statut de l'export"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:primitive-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/structIdNat"/>
+      </reference>
+      <name value="StructIdNat"/>
+      <description value="Identification nationale principale d’une structure propre aux SI de l'ANS et au CI-SIS 4. &#xA;&#xA;L’identification nationale d’une structure est construite selon le tableau dessous :&#xA;- 0 + Identifiant cabinet ADELI &#xA;- 1 + N° FINESS 2 + N° SIREN &#xA;- 3 + N° SIRET &#xA;- 4 + N° RPPS-rang &#xA;- Néant + N° technique"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DataTypeIdProfile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:primitive-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/systIdNat"/>
+      </reference>
+      <name value="SystIdNat"/>
+      <description value="Identification d'un système&#xA;&#xA;L’identification du système  est construite selon le tableau dessous :&#xA;- 1 + Identifiant cabinet ADELI/Identifiant interne du système dans la structure &#xA;- 3 + FINESS/Identifiant interne du système dans la structure  &#xA;- 4 + SIREN/Identifiant interne du système dans la structure &#xA;- 5 + SIRET/Identifiant interne du système dans la structure &#xA;- 6 + Identifiant cabinet RPPS/Identifiant interne du système dans la structure"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DataTypeIdProfile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-pdlgc-archive-type"/>
+      </reference>
+      <name value="Type d'archive"/>
+      <description value="Type d'archive"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-xdm-association-type"/>
+      </reference>
+      <name value="Type d'association XDS"/>
+      <description value="Types d'association entre objets XDS dans le contexte portabilité."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vs-association-type"/>
+      </reference>
+      <name value="Type d'association XDS (VS)"/>
+      <description value="Valeurs autorisées pour le type d'association entre objets XDS."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-pdlgc-export-type"/>
+      </reference>
+      <name value="Type d'export de données LGC"/>
+      <description value="Type d'export de données LGC"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cs-pdlgc-telecom-type"/>
+      </reference>
+      <name value="Type de moyen de communication"/>
+      <description value="Type de moyen de communication"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmActorPatient"/>
+      </reference>
+      <name value="XDM ActorPatient"/>
+      <description value="Cet attribut représente l'acteur Patient."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmActorPs"/>
+      </reference>
+      <name value="XDM ActorPS"/>
+      <description value="Cet attribut représente un acteur PS."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmActorSystem"/>
+      </reference>
+      <name value="XDM ActorSystem"/>
+      <description value="Cet attribut représente l'acteur System."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmActorXdsCore"/>
+      </reference>
+      <name value="XDM ActorXDS Core"/>
+      <description value="Cet attribut représente un acteur (humain ou système) ayant contribué au document. Pour les documents d’expression personnelle du patient, cette métadonnée fait référence au patient. &#xA;&#xA;Type xcn de HL7 v2.5"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmArchive"/>
+      </reference>
+      <name value="XDM Archive XDM"/>
+      <description value="Modèle logique décrivant la structure d'un SUBSET IHE XDM.&#xA;Regroupe un SubmissionSet, ses DocumentEntries et les Associations entre objets."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmAssociation"/>
+      </reference>
+      <name value="XDM Association"/>
+      <description value="Modèle logique d'une association IHE XDS entre deux objets de l'archive de portabilité.&#xA;Permet de relier un SubmissionSet ou un DocumentEntry à un autre (remplacement ou transformation)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmAuthor"/>
+      </reference>
+      <name value="XDM Author"/>
+      <description value="Modèle logique d'un auteur.&#xA;&#xA;Représente les personnes physiques et/ou les systèmes (dispositifs, automates, services numériques référencés…) auteurs d’un document ou d'un lot de soummission. &#xA;&#xA;L’auteur peut être : &#xA;- Un professionnel (personne physique) via son logiciel de professionnel, &#xA;- Le patient/usager (personne physique) via Mon espace Santé, &#xA;- Un système de structure (dispositif, automate, appareil connecté…), &#xA;&#xA;&#xA;**author** est un ensemble constitué des sous-attributs **authorInstitution** , **authorPerson**, **authorRole** et **authorSpecialty** et ne porte pas de valeur par lui-même."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmAuthorDocumentEntry"/>
+      </reference>
+      <name value="XDM AuthorDocumentEntry"/>
+      <description value="Modèle logique d'un auteur d'un document&#xA;Cette métadonnée représente les personnes physiques et/ou les systèmes (dispositifs, automates, services numériques référencés…) auteurs d’un document. &#xA;L’auteur peut être : &#xA;-  Un professionnel (personne physique) via son logiciel de professionnel, &#xA;- Le patient/usager (personne physique) via Mon espace Santé, &#xA;-  Un système de structure (dispositif, automate, appareil connecté…),"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmAuthorInstitution"/>
+      </reference>
+      <name value="XDM AuthorInstitution"/>
+      <description value="Cet attribut représente la structure de l’auteur. &#xA;Pour les documents d’expression personnelle du patient, cette métadonnée est absente, cela signifie que l’élément XML `&lt;rim:Slot name='authorInstitution'&gt;` n’est pas transmis."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmAuthorSubmissionSet"/>
+      </reference>
+      <name value="XDM AuthorSubmissionSet"/>
+      <description value="Modèle logique d'un auteur d'un lot de soumission&#xA;Cette métadonnée représente les personnes physiques et/ou les systèmes auteurs d’un lot de soumission. &#xA;Constituée des sous-attributs **authorInstitution**, **authorPerson**, **authorRole** et **authorSpecialty**, elle ne porte pas de valeur par elle-même."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmDocumentEntry"/>
+      </reference>
+      <name value="XDM DocumentEntry"/>
+      <description value="Modèle logique  d’une fiche"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmPatientId"/>
+      </reference>
+      <name value="XDM PatientId"/>
+      <description value="Modèle logique de patientID.&#xA;Cette métadonnée contient l'identifiant du patient tel que connu par les interlocuteurs prenant part à l'échange. Le matricule INS (NIR ou NIA) du patient doit être utilisé en priorité. À défaut de disponibilité de l'INS, un autre identifiant (ex: IPP du système émetteur) peut être utilisé."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmreferenceId"/>
+      </reference>
+      <name value="XDM referenceIdList"/>
+      <description value="Modèle logique de referenceIdList.&#xA;Cette métadonnée contient une liste d'un ou plusieurs identifiant(s) d'objet(s) associé(s) au document.Liste d'éléments de type CX du standard HL7 v2.5."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmSourcePatientId"/>
+      </reference>
+      <name value="XDM SourcePatientId"/>
+      <description value="Cette métadonnée contient l’identifiant secondaire du patient dans le système d’information du producteur (IPP) ou l’INS, s’il n’y a pas d’identifiant secondaire. Pour les documents d’expression personnelle du patient, cette métadonnée contient l’INS du patient, à savoir le même identifiant que patientId. &#xA;&#xA;Cette métadonnée reprend la structure du segment CX  défini par  HL7v2  et  conformément aux spécifications  : &#xA;- [Prise en Charge de l'INS dans les volets du CI-SIS ](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis)&#xA;- [Volet Partage de Documents de Santé](https://esante.gouv.fr/volet-partage-de-documents-de-sante)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmSourcePatientInfo"/>
+      </reference>
+      <name value="XDM SourcePatientInfo"/>
+      <description value="Cette métadonnée contient les traits d’identité du patient concerné par le document, connus par le producteur du document. Les informations présentes dans la métadonnée sourcePatientInfo ne doivent en aucun cas être réutilisées pour calculer un identifiant, ni être mises à jour après la soumission du document.&#xA;&#xA;Cette métadonnée reprend la structure du segment PID (Patient Identification) défini par  HL7v2 et l'extension du profil IHE PAM, conformément aux spécifications  : &#xA;- [Extension française du profil IHE PAM](https://www.interopsante.org/publications)&#xA;- [Prise en Charge de l'INS dans les volets du CI-SIS ](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/xdmSubmissionSet"/>
+      </reference>
+      <name value="XDM SubmissionSet"/>
+      <description value="Modèle logique d'un lot de soummission (SubmissionSet)."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="LogicalModelXDM"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Accueil"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="specifications.html"/>
+        </extension>
+        <nameUrl value="specifications.html"/>
+        <title value="Spécifications"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="specs-main-flux-export-archive-portabilite.html"/>
+          </extension>
+          <nameUrl value="specs-main-flux-export-archive-portabilite.html"/>
+          <title value="Flux Export d'Archive de Portabilité"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="specs-main-structure-archive.html"/>
+          </extension>
+          <nameUrl value="specs-main-structure-archive.html"/>
+          <title value="Structure de l'archive de portabilité"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="annexes.html"/>
+        </extension>
+        <nameUrl value="annexes.html"/>
+        <title value="Annexes"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="annexe-securite.html"/>
+          </extension>
+          <nameUrl value="annexe-securite.html"/>
+          <title value="Sécurité"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="annexe-references.html"/>
+          </extension>
+          <nameUrl value="annexe-references.html"/>
+          <title value="Références"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="annexe-downloads.html"/>
+          </extension>
+          <nameUrl value="annexe-downloads.html"/>
+          <title value="Téléchargements et usages"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="change-log.html"/>
+        </extension>
+        <nameUrl value="change-log.html"/>
+        <title value="Historique des versions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="autres_ressources.html"/>
+        </extension>
+        <nameUrl value="autres_ressources.html"/>
+        <title value="Autres Ressources"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="translationinfo.html"/>
+        </extension>
+        <nameUrl value="translationinfo.html"/>
+        <title value="Informations sur la traduction"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/assets"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
