@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-doc-vs-participation-type-participant> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "fr-doc-vs-participation-type-participant"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1" ;
+       fhir:index -1 ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/shareablevalueset|4.0.1>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "fr"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : EnsembleValeurs fr-doc-vs-participation-type-participant</b></p><a name=\"fr-doc-vs-participation-type-participant\"> </a><a name=\"hcfr-doc-vs-participation-type-participant\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profil: <a href=\"http://hl7.org/fhir/R4/shareablevalueset.html\">Shareable ValueSet</a> version : 4.0.1</p></div><ul><li>Include ce(s) code(s) tel qu'il(s) est (sont) défini(s) dans <a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html\"><code>http://terminology.hl7.org/CodeSystem/v3-ParticipationType</code></a><span title=\"La version est explicitement indiquée comme étant 7.0.0\"> version ?7.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Affichage</b></td><td><b>Définition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-INF\">INF</a></td><td style=\"color: #cccccc\">informant</td><td>A source of reported information (e.g., a next of kin who answers questions about the patient's history). For history questions, the patient is logically an informant, yet the informant of history questions is implicitly the subject.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-REF\">REF</a></td><td style=\"color: #cccccc\">referrer</td><td>A person having referred the subject of the service to the performer (referring physician). Typically, a referring physician will receive a report.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-CON\">CON</a></td><td style=\"color: #cccccc\">consultant</td><td>An advisor participating in the service by performing evaluations and making recommendations.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-PRF\">PRF</a></td><td style=\"color: #cccccc\">performer</td><td>**Definition:** A person, non-person living subject, organization or device that who actually and principally carries out the action. Device should only be assigned as a performer in circumstances where the device is performing independent of human intervention. Need not be the principal responsible actor.<br/><br/>**Exampe:** A surgery resident operating under supervision of attending surgeon, a search and rescue dog locating survivors, an electronic laboratory analyzer or the laboratory discipline requested to perform a laboratory test. The performer may also be the patient in self-care, e.g. fingerstick blood sugar. The traditional order filler is a performer. This information should accompany every service event.<br/><br/>**Note:** that existing HL7 designs assign an organization as the playing entity of the Role that is the performer. These designs should be revised in subsequent releases to make this the scooping entity for the role involved.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-RESP\">RESP</a></td><td style=\"color: #cccccc\">responsible party</td><td>The person or organization that has primary responsibility for the act. The responsible party is not necessarily present in an action, but is accountable for the action through the power to delegate, and the duty to review actions with the performing actor after the fact. This responsibility may be ethical, legal, contractual, fiscal, or fiduciary in nature.<br/><br/>*Example:* A person who is the head of a biochemical laboratory; a sponsor for a policy or government program.</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-REFB\">REFB</a></td><td style=\"color: #cccccc\">Referred By</td><td>A participant (e.g. provider) who has referred the subject of an act (e.g. patient).<br/><br/>Typically, a referred by participant will provide a report (e.g. referral).</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-v3-ParticipationType.html#v3-ParticipationType-VRF\">VRF</a></td><td style=\"color: #cccccc\">verifier</td><td>A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-doc-vs-participation-type-participant"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0-ballot"] ;
+  fhir:ValueSet.name [ fhir:value "FrValueSetParticipationTypeParticipant"] ;
+  fhir:ValueSet.title [ fhir:value "FR ValueSet Participation Type Participant"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-11-17T16:56:12+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Type de participation : participant"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "FR" ] ;
+       fhir:Coding.display [ fhir:value "France (la)" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "7.0.0" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "INF" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "REF" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "CON" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "PRF" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "RESP" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "REFB" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "VRF" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-doc-vs-participation-type-participant.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

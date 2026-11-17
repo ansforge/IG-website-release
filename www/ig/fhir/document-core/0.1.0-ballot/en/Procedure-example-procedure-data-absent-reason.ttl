@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/Procedure/example-procedure-data-absent-reason> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "example-procedure-data-absent-reason"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-procedure-document" ;
+       fhir:index -1 ;
+       fhir:link <https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-procedure-document>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xml:lang=\"en\" lang=\"en\"><hr/><p><b>English</b></p><hr/><p class=\"res-header-id\"><b>Generated Narrative: Procedure example-procedure-data-absent-reason</b></p><a name=\"en-example-procedure-data-absent-reason\"> </a><a name=\"en-hcexample-procedure-data-absent-reason\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-fr-procedure-document.html\">Procedure - FR Procedure Document</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/6.3.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt #xD;#xA;#xD;#xA;This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: #xD;#xA;#xD;#xA;Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.#xD;#xA;#xD;#xA;This OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:uuid:a1b2c3d4-e5f6-7890-abcd-ef1234567890</p><p><b>status</b>: Unknown</p><p><b>code</b>: <span title=\"Codes:\">Acte réalisé inconnu : utilisation de l'extension data-absent-reason avec code 'unknown'</span></p><p><b>subject</b>: <a href=\"Patient-ba499de3-aeae-43c3-82cb-0ba2718cfa55.html\">DOMINIQUE MARIE-LOUISE PAT-TROIS  Female, DoB: 1979-03-28 ( NIR définitif: 123456789012244 (use: official))</a></p><p><b>performed</b>: Absent because: temp-unknown</p></div>"
+  ] ;
+  fhir:Procedure.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:uuid:a1b2c3d4-e5f6-7890-abcd-ef1234567890" ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "unknown"] ;
+  fhir:Procedure.code [
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+       fhir:Extension.valueCode [ fhir:value "unknown" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Acte réalisé inconnu : utilisation de l'extension data-absent-reason avec code 'unknown'" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://interop.esante.gouv.fr/ig/fhir/document-core/Patient/ba499de3-aeae-43c3-82cb-0ba2718cfa55> ;
+     fhir:Reference.reference [ fhir:value "Patient/ba499de3-aeae-43c3-82cb-0ba2718cfa55" ]
+  ] ;
+  fhir:Procedure.performedDateTime [
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+       fhir:Extension.valueCode [ fhir:value "temp-unknown" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/Procedure/example-procedure-data-absent-reason.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

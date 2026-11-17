@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+  <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
+  <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
+  <!-- 
+    This file contains just the constraints for the profile FRCoreMedicationRequestProfile
+    It includes the base constraints for the resource as well.
+    Because of the way that schematrons and containment work, 
+    you may need to use this schematron fragment to build a, 
+    single schematron that validates contained resources (if you have any) 
+  -->
+  <sch:pattern>
+    <sch:title>f:MedicationRequest</sch:title>
+    <sch:rule context="f:MedicationRequest">
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod|0.1.0']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod|0.1.0': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction|0.1.0']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction|0.1.0': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-treatment-intent|3.0.0-ballot']) &lt;= 1">extension with URL = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-treatment-intent|3.0.0-ballot': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel']) &lt;= 1">extension with URL = 'https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-not-covered|3.0.0-ballot']) &lt;= 1">extension with URL = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-not-covered|3.0.0-ballot': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:substitution) &gt;= 1">substitution: minimum cardinality of 'substitution' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:extension</sch:title>
+    <sch:rule context="f:MedicationRequest/f:extension">
+      <sch:assert test="count(f:extension[@url = 'isOffLabelUse']) &lt;= 1">extension with URL = 'isOffLabelUse': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dosageInstruction/f:timing/f:repeat</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dosageInstruction/f:timing/f:repeat">
+      <sch:assert test="count(f:extension[@url = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-additional-when-values|3.0.0-ballot']) &lt;= 1">extension with URL = 'https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-additional-when-values|3.0.0-ballot': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dosageInstruction/f:doseAndRate/f:dose[x] 1</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dosageInstruction/f:doseAndRate/f:dose[x]">
+      <sch:assert test="count(f:low) &gt;= 1">low: minimum cardinality of 'low' is 1</sch:assert>
+      <sch:assert test="count(f:high) &gt;= 1">high: minimum cardinality of 'high' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dosageInstruction/f:doseAndRate/f:rate[x] 1</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dosageInstruction/f:doseAndRate/f:rate[x]">
+      <sch:assert test="count(f:low) &gt;= 1">low: minimum cardinality of 'low' is 1</sch:assert>
+      <sch:assert test="count(f:high) &gt;= 1">high: minimum cardinality of 'high' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dosageInstruction/f:maxDosePerPeriod</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dosageInstruction/f:maxDosePerPeriod">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:numerator) &gt;= 1">numerator: minimum cardinality of 'numerator' is 1</sch:assert>
+      <sch:assert test="count(f:numerator) &lt;= 1">numerator: maximum cardinality of 'numerator' is 1</sch:assert>
+      <sch:assert test="count(f:denominator) &gt;= 1">denominator: minimum cardinality of 'denominator' is 1</sch:assert>
+      <sch:assert test="count(f:denominator) &lt;= 1">denominator: maximum cardinality of 'denominator' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dispenseRequest</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dispenseRequest">
+      <sch:assert test="count(f:extension[@url = 'https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medicationrequest-prescribedQuantity|1.0.0-comment-2']) &lt;= 1">extension with URL = 'https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medicationrequest-prescribedQuantity|1.0.0-comment-2': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.dispenseRequest.dispenserInstruction']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.dispenseRequest.dispenserInstruction': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+</sch:schema>

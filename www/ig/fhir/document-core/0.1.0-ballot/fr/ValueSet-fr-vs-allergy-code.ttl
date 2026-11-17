@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-vs-allergy-code> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "fr-vs-allergy-code"] ;
+  fhir:Resource.language [ fhir:value "fr"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xml:lang=\"fr\" lang=\"fr\"><hr/><p><b>French</b></p><hr/><p class=\"res-header-id\"><b>Narratif généré : EnsembleValeurs fr-vs-allergy-code</b></p><a name=\"fr-vs-allergy-code\"> </a><a name=\"hcfr-vs-allergy-code\"> </a><p>Ce jeu de valeur (ValueSet) inclut les codes selon les règles suivantes :</p><ul><li>Inclut tous les codes définis dans <a href=\"https://interop.esante.gouv.fr/terminologies/1.15.0/CodeSystem-terminologie-bdpm.html\"><code>https://smt.esante.gouv.fr/terminologie-bdpm</code></a><span title=\"La version est explicitement indiquée comme étant 2026-10-01\"> version ?2026-10-01</span></li><li>Inclut tous les codes définis dans <code>https://smt.esante.gouv.fr/terminologie-cip_ucd</code><span title=\"La version n'est pas explicitement indiquée. Aucun Système de codes (Code System) correspondant trouvé\"> version non précisé(e) (utilise la dernière version provenant du serveur de terminologie)</span></li><li>Inclut tous les codes définis dans <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-ICD11MMS.html\"><code>http://id.who.int/icd/release/11/mms</code></a><span title=\"La version n'est pas explicitement indiquée. Aucun Système de codes (Code System) correspondant trouvé\"> version non précisé(e) (utilise la dernière version provenant du serveur de terminologie)</span></li><li>Importe tous les codes contenu dans <a href=\"https://interop.esante.gouv.fr/terminologies/1.15.0/ValueSet-jdv-allergie-vaccin-cisis.html\">JDV Allergie Vaccin CISIS</a></li><li>Inclut tous les codes définis dans <a href=\"https://interop.esante.gouv.fr/terminologies/1.15.0/CodeSystem-terminologie-sms.html\"><code>https://smt.esante.gouv.fr/terminologie-sms</code></a><span title=\"La version est explicitement indiquée comme étant 2026-10\"> version ?2026-10</span></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-vs-allergy-code"] ;
+  fhir:ValueSet.version [ fhir:value "0.1.0-ballot"] ;
+  fhir:ValueSet.name [ fhir:value "FRValueSetAllergyCodeDocument"] ;
+  fhir:ValueSet.title [ fhir:value "ValueSet – FR ValueSet Allergy Code Document"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.date [ fhir:value "2026-11-17T16:56:12+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://esante.gouv.fr" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Jeu de valeurs permettant de coder l’agent responsable d’une allergie :\n- Médicaments : CIP ou UCD\n- Substances : SMS\n- Aliments : CIM-11 Chapitre X Extensions – Allergènes ou substances non médicinales\n- Agents environnementaux ou physiques : idem CIM-11 Chapitre X Extensions\n- Allergènes pouvant induire une contre-indication vaccinale : jdv-allergie-vaccin-cisis"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "FR" ] ;
+       fhir:Coding.display [ fhir:value "France (la)" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://smt.esante.gouv.fr/terminologie-bdpm" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "2026-10-01" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://smt.esante.gouv.fr/terminologie-cip_ucd" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://id.who.int/icd/release/11/mms" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.valueSet [
+         fhir:value "https://smt.esante.gouv.fr/fhir/ValueSet/jdv-allergie-vaccin-cisis|20260928134054" ;
+         fhir:index -1 ;
+         fhir:link <https://smt.esante.gouv.fr/fhir/ValueSet/jdv-allergie-vaccin-cisis|20260928134054>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://smt.esante.gouv.fr/terminologie-sms" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "2026-10" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://interop.esante.gouv.fr/ig/fhir/document-core/ValueSet/fr-vs-allergy-code.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

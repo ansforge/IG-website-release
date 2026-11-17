@@ -1,0 +1,934 @@
+{
+  "package": "ans.fhir.fr.document-core",
+  "version": "0.1.0-ballot",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "FR",
+  "extensions": [
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-actor-extension",
+      "title": "FR Actor Extension",
+      "types": [
+        "code",
+        "CodeableConcept",
+        "Reference",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-author-time-extension",
+      "title": "FR Author Time Extension",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-comparison-studies-extension",
+      "title": "FR Comparison Studies Extension",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-composition-extension",
+      "title": "FR Composition Extension",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-conclusion-extension",
+      "title": "FR Conclusion Extension",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-family-member-history-body-site-extension",
+      "title": "FR Family Member History Body Site Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-finding-extension",
+      "title": "FR Finding Extension",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-imaging-procedure-extension",
+      "title": "FR Imaging Procedure Extension",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-immunization-type-extension",
+      "title": "FR Immunization Type Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-interpretation-extension",
+      "title": "FR Interpretation Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-is-principal-event-extension",
+      "title": "FR Is Principal Event Extension",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-note-type-extension",
+      "title": "FR Note Type Extension",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-number-of-frames-extension",
+      "title": "FR Number of Frames Extension",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-patient-history-extension",
+      "title": "FR Patient History Extension",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-performer-event-extension",
+      "title": "FR Performer Event Extension",
+      "types": [
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta",
+        "Reference",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-status-reason-extension",
+      "title": "FR Status Reason Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    }
+  ],
+  "profiles": {
+    "Consent": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-advance-directive-document",
+        "title": "Consent - FR Advance directive Document"
+      }
+    ],
+    "AdverseEvent": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-adverse-event-document",
+        "title": "AdverseEvent - FR adverse event Document"
+      }
+    ],
+    "AllergyIntolerance": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-allergy-intolerance-document",
+        "title": "AllergyIntolerance - FR Allergy and intolerance Document"
+      }
+    ],
+    "Bundle": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-bundle-document",
+        "title": "FR Bundle Document"
+      }
+    ],
+    "CarePlan": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-care-plan-document",
+        "title": "CarePlan - FR Care Plan Document"
+      }
+    ],
+    "Composition": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-composition-document",
+        "title": "FR Composition Document"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-condition-document",
+        "title": "Condition - FR Condition Document"
+      }
+    ],
+    "Device": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-device-auteur-document",
+        "title": "FR Device Document"
+      }
+    ],
+    "DeviceRequest": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-device-request-document",
+        "title": "DeviceRequest - FR Device request Document"
+      }
+    ],
+    "DeviceUseStatement": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-device-use-statement-document",
+        "title": "DeviceUseStatement - FR Device Use Statement Document"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-diagnostic-report-bio-chapter-document",
+        "title": "DiagnosticReport - FR Diagnostic Report BIO chapter Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-diagnostic-report-document",
+        "title": "DiagnosticReport - FR Diagnostic Report Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-diagnostic-report-imaging-document",
+        "title": "DiagnosticReport - FR Diagnostic Report Imaging Document"
+      }
+    ],
+    "DocumentReference": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-document-reference-document",
+        "title": "DocumentReference - FR Document reference Document"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-encounter-care-document",
+        "title": "FR Encounter Care Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-encounter-document",
+        "title": "Encounter - FR Encounter Document"
+      }
+    ],
+    "Endpoint": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-endpoint-wado-document",
+        "title": "Endpoint - FR Endpoint Wado Document"
+      }
+    ],
+    "FamilyMemberHistory": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-family-member-history-document",
+        "title": "FamilyMemberHistory - FR Family Member History Document"
+      }
+    ],
+    "ImagingStudy": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-imaging-study-document",
+        "title": "ImagingStudy - FR Imaging study Document"
+      }
+    ],
+    "Immunization": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-immunization-document",
+        "title": "Immunization - FR Immunization Document"
+      }
+    ],
+    "ImmunizationRecommendation": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-immunization-recommendation-document",
+        "title": "ImmunizationRecommendation - FR Immunization Recommendation Document"
+      }
+    ],
+    "Location": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-location-document",
+        "title": "FR Location Document"
+      }
+    ],
+    "Media": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-media-document",
+        "title": "Media - FR Media Document"
+      }
+    ],
+    "MedicationAdministration": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-medication-administration-document",
+        "title": "MedicationAdministration - FR Medication Administration Document"
+      }
+    ],
+    "MedicationDispense": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-medication-dispense-document",
+        "title": "MedicationDispense - FR Medication Dispense Document"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-medication-document",
+        "title": "Medication - FR Medication Document"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-medication-request-document",
+        "title": "MedicationRequest - FR Medication Request Document"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-medication-statement-document",
+        "title": "MedicationStatement - FR Medication Statement Document"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-ald-document",
+        "title": "Observation - FR Observation ALD Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-assessment-document",
+        "title": "Observation - FR Observation Assessment Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-contra-indications-document",
+        "title": "Observation - FR Observation Contra Indications Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-laboratory-report-results-document",
+        "title": "Observation - FR Observation Laboratory Report Results Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-pain-score-document",
+        "title": "Observation - FR Observation Pain Score Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-pregnancy-document",
+        "title": "Observation - FR Observation Pregnancy Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-pregnancy-history-document",
+        "title": "Observation - FR Observation Pregnancy History Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-prevention-document",
+        "title": "Observation - FR Observation Prevention Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-radiation-exposure-document",
+        "title": "Observation - FR Observation Radiation Exposure Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-result-document",
+        "title": "Observation - FR Observation Result Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-social-history-document",
+        "title": "Observation - FR Observation Social History Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-vital-signs-document",
+        "title": "Observation - FR Observation Vital Signs Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-vital-signs-panel-document",
+        "title": "Observation - FR Observation Vital Signs Panel Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-observation-work-related-accident-document",
+        "title": "Observation - FR Observation Work Related Accident Document"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-organization-document",
+        "title": "FR Organization Document"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-patient-document",
+        "title": "FR Patient Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-patient-ins-document",
+        "title": "FR Patient INS Document"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-practitioner-document",
+        "title": "FR Practitioner Document"
+      }
+    ],
+    "PractitionerRole": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-practitionerRole-document",
+        "title": "FR PractitionerRole Document"
+      }
+    ],
+    "Procedure": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-procedure-document",
+        "title": "Procedure - FR Procedure Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-procedure-imaging-document",
+        "title": "Procedure - FR Procedure Imaging Document"
+      }
+    ],
+    "RelatedPerson": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-related-person-document",
+        "title": "FR RelatedPerson Document"
+      }
+    ],
+    "ServiceRequest": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-service-request-document",
+        "title": "ServiceRequest - FR Service Request Document"
+      },
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-service-request-imaging-document",
+        "title": "ServiceRequest - FR Service Request Imaging Document"
+      }
+    ],
+    "Specimen": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-specimen-document",
+        "title": "Specimen - FR Specimen Document"
+      }
+    ],
+    "Task": [
+      {
+        "url": "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-task-patient-transport-document",
+        "title": "Task - FR Task Patient Transport Document"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.eu/fhir/StructureDefinition/information-recipient|1.3.0": [
+      "Composition"
+    ],
+    "http://hl7.eu/fhir/StructureDefinition/medication-package-type|1.3.0": [
+      "Medication"
+    ],
+    "http://hl7.eu/fhir/extensions/StructureDefinition/composition-diagnosticReportReference|1.3.0": [
+      "Composition"
+    ],
+    "http://hl7.eu/fhir/extensions/StructureDefinition/periods-of-life|1.3.0": [
+      "Immunization.occurrence[x]"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-AdverseEvent.code|3.0.0-ballot": [
+      "AdverseEvent"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-AdverseEvent.occurrence|0.1.0": [
+      "AdverseEvent"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-AdverseEvent.outcome|3.0.0-ballot": [
+      "AdverseEvent"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type|0.1.0": [
+      "AllergyIntolerance.type"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Composition.version|0.1.0": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.administeredProduct|0.1.0": [
+      "Immunization"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.basedOn|0.1.0": [
+      "Immunization"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.informationSource|0.1.0": [
+      "Immunization"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationAdministration.occurence|0.1.0": [
+      "MedicationAdministration"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.dispenseRequest.dispenserInstruction|0.1.0": [
+      "MedicationRequest.dispenseRequest"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod|0.1.0": [
+      "MedicationRequest"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction|0.1.0": [
+      "MedicationRequest"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationStatement.adherence|0.1.0": [
+      "MedicationStatement"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Organization.description|0.1.0": [
+      "Organization"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Procedure.recorded|0.1.0": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.reason|0.1.0": [
+      "ServiceRequest"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.supportingInfo|0.1.0": [
+      "ServiceRequest.supportingInfo"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Specimen.container.device|0.1.0": [
+      "Specimen.container.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.4.0": [
+      "AllergyIntolerance"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact|5.4.0": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/bodySite|5.4.0": [
+      "Condition.bodySite",
+      "Procedure.bodySite"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-assertedDate|5.4.0": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "AllergyIntolerance.code",
+      "AllergyIntolerance.reaction.manifestation",
+      "Procedure.code",
+      "Procedure.performedDateTime"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/event-basedOn|5.4.0": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order|5.4.0": [
+      "HumanName",
+      "Practitioner.name",
+      "RelatedPerson.name"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/individual-pronouns|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.4.0": [
+      "Patient.extension.value[x].line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox|5.4.0": [
+      "Patient.extension.value[x].line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.4.0": [
+      "Patient.extension.value[x].line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-codedString|5.4.0": [
+      "Patient.extension.value[x].country"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/note|5.4.0": [
+      "Composition.section",
+      "Organization"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/organization-period|5.4.0": [
+      "Organization"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-birthPlace": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-birthTime|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-citizenship|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-nationality|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse|5.4.0": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/procedure-approachBodyStructure|5.4.0": [
+      "Procedure"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo|5.4.0": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page",
+      "ImplementationGuide.definition.page.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/type-profile-constraints": [
+      "StructureDefinition.snapshot.element.type.profile"
+    ],
+    "http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/ParticipantExtension|1.1.0": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/consent-extension|1.1.0": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/data-enterer-extension|1.1.0": [
+      "Composition"
+    ],
+    "http://hl7.org/fhir/uv/fhir-clinical-document/StructureDefinition/informant-extension|1.1.0": [
+      "Composition"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-additional-when-values|3.0.0-ballot": [
+      "MedicationRequest.dosageInstruction.timing.repeat"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-address-insee-code|3.0.0-ballot": [
+      "Patient.extension.value[x]"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-comment|3.0.0-ballot": [
+      "Patient.contact"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-estimated-discharge-date|3.0.0-ballot": [
+      "Encounter"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-identity-reliability": [
+      "Patient"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-identity-reliability|3.0.0-ballot": [
+      "Patient"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-location-position-lit|3.0.0-ballot": [
+      "Location"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-location-type-chambre|3.0.0-ballot": [
+      "Location"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-medication-administration-sequence|3.0.0-ballot": [
+      "MedicationAdministration.dosage"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-method-extension|3.0.0-ballot": [
+      "FamilyMemberHistory.condition",
+      "ServiceRequest"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-not-covered|3.0.0-ballot": [
+      "DeviceRequest",
+      "DeviceUseStatement",
+      "MedicationRequest"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization-member|3.0.0-ballot": [
+      "Organization"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-organization-short-name|3.0.0-ballot": [
+      "Organization"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-birth-list-given-name": [
+      "Patient.name"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-birth-list-given-name|3.0.0-ballot": [
+      "Patient.name"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-birthdate-update-indicator|3.0.0-ballot": [
+      "Patient"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-contact-identifier|3.0.0-ballot": [
+      "Patient.contact"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-contact-relationship-category": [
+      "Patient.contact.relationship"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-contact-relationship-category|3.0.0-ballot": [
+      "Patient.contact.relationship"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-patient-death-place|3.0.0-ballot": [
+      "Patient"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-practitioner-specialty|3.0.0-ballot": [
+      "Practitioner"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-procedure-difficulty-extension|3.0.0-ballot": [
+      "Procedure"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-procedure-priority-extension|3.0.0-ballot": [
+      "Procedure"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-service-type-duration|3.0.0-ballot": [
+      "PractitionerRole"
+    ],
+    "https://hl7.fr/ig/fhir/core/StructureDefinition/fr-core-treatment-intent|3.0.0-ballot": [
+      "MedicationRequest"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-actor-extension|0.1.0-ballot": [
+      "Condition",
+      "DeviceUseStatement",
+      "DiagnosticReport.resultsInterpreter",
+      "Encounter.participant.individual",
+      "FamilyMemberHistory",
+      "Immunization",
+      "Media",
+      "Media.operator",
+      "Observation",
+      "Procedure",
+      "ServiceRequest"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-author-time-extension|0.1.0-ballot": [
+      "Composition.author"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-comparison-studies-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-composition-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-conclusion-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-family-member-history-body-site-extension|0.1.0-ballot": [
+      "FamilyMemberHistory.condition"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-finding-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-imaging-procedure-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-interpretation-extension|0.1.0-ballot": [
+      "FamilyMemberHistory.condition"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-is-principal-event-extension|0.1.0-ballot": [
+      "Composition.event"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-number-of-frames-extension|0.1.0-ballot": [
+      "ImagingStudy.series.instance"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-patient-history-extension|0.1.0-ballot": [
+      "DiagnosticReport"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-performer-event-extension|0.1.0-ballot": [
+      "Composition.event"
+    ],
+    "https://interop.esante.gouv.fr/ig/fhir/document-core/StructureDefinition/fr-status-reason-extension|0.1.0-ballot": [
+      "Observation.status"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-characteristic|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-classification|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-device|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-productname|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-sizeofitem|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-strengthsubstance|1.0.0-comment-2": [
+      "Medication.ingredient.strength"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-unitofpresentation|1.0.0-comment-2": [
+      "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medicationrequest-prescribedQuantity|1.0.0-comment-2": [
+      "MedicationRequest.dispenseRequest"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel|1.0.0-comment-2": [
+      "MedicationRequest"
+    ]
+  }
+}
